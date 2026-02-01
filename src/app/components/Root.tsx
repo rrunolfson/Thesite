@@ -1,4 +1,4 @@
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import { useEffect } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
@@ -6,7 +6,13 @@ import { NetworkBackground } from "./NetworkBackground";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 export function Root() {
+  const location = useLocation();
   useScrollReveal();
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   // Set favicon
   useEffect(() => {
@@ -18,8 +24,8 @@ export function Root() {
       // Add new favicon
       const link = document.createElement('link');
       link.rel = 'icon';
-      link.type = 'image/svg+xml';
-      link.href = '/favicon.svg';
+      link.type = 'image/png';
+      link.href = '/logo.png';
       document.head.appendChild(link);
 
       // Also set the document title

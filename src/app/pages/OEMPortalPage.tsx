@@ -7,7 +7,7 @@ export function OEMPortalPage() {
       
       <div className="relative z-10">
         {/* Hero Section */}
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative py-20 pb-8 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-6 reveal">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white from-30% to-[#217ED9] bg-clip-text text-transparent">
@@ -21,7 +21,7 @@ export function OEMPortalPage() {
         </section>
 
         {/* OEM Form */}
-        <section className="py-8">
+        <section className="pt-0 pb-8">
           <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="glass-panel p-10 reveal">
               <OEMForm />

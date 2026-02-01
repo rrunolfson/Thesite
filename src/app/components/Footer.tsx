@@ -9,9 +9,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-3 flex flex-col justify-center">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-[#217ED9] rounded px-3 py-1">
-                  <span className="font-bold text-white text-xl">LM</span>
-                </div>
+                <img src="/logo.png" alt="Last Mile" className="h-6 w-auto rounded-md" />
                 <span className="font-bold text-2xl tracking-tight text-white uppercase">
                   Last <span className="text-[#217ED9]">Mile</span>
                 </span>

@@ -21,9 +21,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer">
-            <div className="bg-[#217ED9] rounded px-3 py-1">
-              <span className="font-bold text-white text-xl">LM</span>
-            </div>
+            <img src="/logo.png" alt="Last Mile" className="h-6 w-auto rounded-md" />
             <span className="font-bold text-2xl tracking-tight text-white uppercase">
               Last <span className="text-[#217ED9]">Mile</span>
             </span>

@@ -63,9 +63,7 @@ export function HomePage() {
                 {/* Last Mile Box */}
                 <div className="border-2 border-[#217ED9] rounded-lg p-6 mb-8 bg-[#217ED9]/5 shadow-2xl shadow-[#217ED9]/50">
                   <div className="flex items-center justify-center gap-3">
-                    <div className="bg-[#217ED9] rounded px-3 py-2">
-                      <span className="font-bold text-white text-2xl">LM</span>
-                    </div>
+                    <img src="/logo.png" alt="Last Mile" className="h-11 w-auto rounded-md" />
                     <div className="text-3xl font-bold">
                       <span className="text-white">LAST </span>
                       <span className="text-[#217ED9]">MILE</span>

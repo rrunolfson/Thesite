@@ -40,7 +40,7 @@ export function IndustriesPage() {
             "Asset performance data informs procurement decisions"
           ]}
           outcomes="Reduced shrink, improved uptime, faster response, data-driven vendor negotiations"
-          imageUrl="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+          imageUrl="/images/retail.png"
         />
 
         {/* Manufacturing */}
@@ -58,7 +58,7 @@ export function IndustriesPage() {
             "Maintenance becomes predictive, not reactive"
           ]}
           outcomes="Higher uptime, lower maintenance cost, improved yield"
-          imageUrl="https://images.unsplash.com/photo-1581091870628-8045a1ccc4b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+          imageUrl="/images/manufacturing.png"
           reverse
         />
 
@@ -77,7 +77,7 @@ export function IndustriesPage() {
             "Faster outage response and documentation"
           ]}
           outcomes="Improved reliability, audit readiness, reduced penalties"
-          imageUrl="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+          imageUrl="/images/energy.png"
         />
 
         {/* Healthcare */}
@@ -95,7 +95,7 @@ export function IndustriesPage() {
             "Automated compliance tracking"
           ]}
           outcomes="Improved patient safety, reduced downtime, audit confidence"
-          imageUrl="https://images.unsplash.com/photo-1579684385127-1ef15d508118?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+          imageUrl="/images/healthcare.png"
           reverse
         />
 
@@ -114,7 +114,7 @@ export function IndustriesPage() {
             "SLA performance becomes objective"
           ]}
           outcomes="Reduced loss, improved SLA adherence, stronger customer trust"
-          imageUrl="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+          imageUrl="/images/logistics.png"
         />
 
         {/* Building Management */}
@@ -123,14 +123,16 @@ export function IndustriesPage() {
           title="Building Management"
           operationalReality={[
             "HVAC and facilities issues are tenant-reported",
-            "Preventive maintenance is inconsistent"
+            "Preventive maintenance is inconsistent",
+            "Energy waste goes undetected"
           ]}
           whatLastMileEnables={[
             "Asset alerts drive automated maintenance",
-            "Facilities teams operate proactively"
+            "Facilities teams operate proactively",
+            "Energy anomalies trigger optimization workflows"
           ]}
           outcomes="Lower energy cost, improved tenant experience"
-          imageUrl="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+          imageUrl="/images/buildings.jpg"
           reverse
         />
 
@@ -140,14 +142,16 @@ export function IndustriesPage() {
           title="Warehouse Management"
           operationalReality={[
             "Conveyor and automation failures halt throughput",
-            "Downtime is escalated informally"
+            "Downtime is escalated informally",
+            "Asset health visibility is limited"
           ]}
           whatLastMileEnables={[
             "Equipment events trigger prioritized workflows",
-            "Maintenance aligns with fulfillment impact"
+            "Maintenance aligns with fulfillment impact",
+            "Asset performance data informs capacity planning"
           ]}
           outcomes="Higher throughput, reduced downtime"
-          imageUrl="https://images.unsplash.com/photo-1553413077-190dd305871c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+          imageUrl="/images/warehouse.png"
         />
 
         {/* Oil & Gas */}
@@ -156,14 +160,16 @@ export function IndustriesPage() {
           title="Oil & Gas"
           operationalReality={[
             "Remote assets with delayed visibility",
-            "Safety and compliance risks"
+            "Safety and compliance risks",
+            "Incident response is manual and slow"
           ]}
           whatLastMileEnables={[
             "OT events routed into regulated workflows",
-            "Automated escalation and documentation"
+            "Automated escalation and documentation",
+            "Real-time alerts accelerate incident response"
           ]}
           outcomes="Improved safety, reduced downtime, regulatory confidence"
-          imageUrl="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+          imageUrl="/images/oilandgas.jpg"
           reverse
         />
 
@@ -210,17 +216,18 @@ function IndustrySection({
     <section className="py-20 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeInOnScroll>
-          <div className={`grid lg:grid-cols-2 gap-12 items-stretch ${reverse ? 'lg:flex-row-reverse' : ''}`}>
-            {/* Content */}
-            <div className={`flex flex-col ${reverse ? 'lg:order-2' : ''}`}>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-14 bg-[#217ED9]/20 border border-white rounded-lg flex items-center justify-center">
-                  {icon}
-                </div>
-                <h2 className="text-4xl font-bold">{title}</h2>
+            {/* Title - Separate from content */}
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-14 h-14 bg-[#217ED9]/20 border border-white rounded-lg flex items-center justify-center">
+                {icon}
               </div>
+              <h2 className="text-4xl font-bold">{title}</h2>
+            </div>
 
-              <div className="space-y-4 flex-1 flex flex-col">
+            <div className={`grid lg:grid-cols-2 gap-12 items-start ${reverse ? 'lg:flex-row-reverse' : ''}`}>
+              {/* Content */}
+              <div className={`flex flex-col ${reverse ? 'lg:order-2' : ''}`}>
+                <div className="space-y-4">
                 {/* Operational Reality */}
                 <div className="p-4 bg-[rgba(30,41,59,0.7)] backdrop-blur-xl rounded-lg border-2 border-[#217ED9]">
                   <h3 className="text-xl font-bold mb-3 text-[#217ED9]">Operational Reality</h3>
@@ -261,12 +268,12 @@ function IndustrySection({
             </div>
 
             {/* Image */}
-            <div className={`h-full ${reverse ? 'lg:order-1' : ''}`}>
+            <div className={`flex ${reverse ? 'lg:order-1' : ''}`}>
               <SlideInImage reverse={reverse}>
                 <img
                   src={imageUrl}
                   alt={title}
-                  className="w-full h-full object-cover rounded-lg border border-slate-700 shadow-xl"
+                  className="w-[500px] h-[500px] object-cover rounded-lg border border-slate-700 shadow-xl grayscale hover:grayscale-0 transition-all duration-500"
                   loading="lazy"
                   onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
