@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, Cpu, Globe, TrendingUp, Zap } from "lucide-react";
+import { ChevronDown, Target, Users, Zap, CheckCircle, Award } from "lucide-react";
 
 interface JobPosition {
   title: string;
@@ -266,11 +266,16 @@ export function CareersPage() {
               </h1>
               <div className="max-w-4xl mx-auto space-y-6">
                 <p className="text-xl text-slate-400 leading-relaxed">
-                  Be part of the revolution. Last Mile is at the forefront of the 4th Industrial Revolution—an AI‑first company redefining how industries operate and how societies thrive. We don't just experiment with artificial intelligence; we deploy it to create real, measurable value at scale. Here, you'll join a team that leads by example, proving every day that AI can transform economies, empower communities, and unlock human potential.
+                  Last Mile is building infrastructure software for enterprises that operate in the physical world like retail, manufacturing, logistics, healthcare, energy.  We connect operational and asset data to the enterprise systems where work actually happens, starting with ServiceNow. That sounds straightforward. It isn’t.
                 </p>
                 <p className="text-xl text-slate-400 leading-relaxed">
-                  Last Mile is where ambition meets impact. If you're ready to push boundaries, solve problems that matter, and shape the future of work, this is your stage.
+                  This is early-stage, foundational work. The problems are real, the environments are complex, and the expectations are high. We are building software that will run inside some of the largest, most operationally demanding organizations in the world.
                 </p>
+                 <p className="text-xl text-slate-400 leading-relaxed">
+                  If you are looking for a place to do careful, consequential work with smart people, clear ownership, and very little noise...you may like it here.
+                </p>
+
+
               </div>
             </div>
           </div>
@@ -282,40 +287,40 @@ export function CareersPage() {
             <h2 className="text-4xl font-bold text-center mb-12 text-white">
               Why Last Mile?
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-8">
               <div className="glass-panel p-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-[#217ED9]/20 border border-[#217ED9] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Cpu className="w-6 h-6 text-[#217ED9]" />
+                    <Target className="w-6 h-6 text-[#217ED9]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Technical Excellence</h3>
+                  <h3 className="text-2xl font-bold text-white">The Work Is Real</h3>
                 </div>
                 <p className="text-slate-400 leading-relaxed">
-                  Build the future, not just the prototype. At Last Mile, technical excellence isn't a buzzword—it's our operating system. You'll architect resilient platforms, deploy AI at industrial scale, and solve problems that matter. We don't chase hype; we build systems that deliver. Join a team where precision, performance, and pragmatism define the work—and where your code drives real-world transformation.
+                  We are not building demos, dashboards, or speculative AI products.
+                </p>
+                <p className="text-slate-400 leading-relaxed mt-4">
+                  Last Mile builds production-grade integration infrastructure that moves operational data into enterprise execution workflows. When our software works, customers prevent downtime, reduce loss, meet compliance obligations, and operate more effectively. When it doesn't, they feel it immediately.
+                </p>
+                <p className="text-slate-400 leading-relaxed mt-4">
+                  That reality shapes how we design, build, and test everything.
                 </p>
               </div>
               
               <div className="glass-panel p-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-[#217ED9]/20 border border-[#217ED9] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Globe className="w-6 h-6 text-[#217ED9]" />
+                    <Users className="w-6 h-6 text-[#217ED9]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Global Impact</h3>
+                  <h3 className="text-2xl font-bold text-white">Built by Operators</h3>
                 </div>
                 <p className="text-slate-400 leading-relaxed">
-                  Your work will ripple across industries, borders, and generations. From reshaping supply chains to powering workforce transitions, Last Mile engineers solutions that scale globally and uplift locally. We partner with governments, universities, and Fortune 500s to deploy AI where it counts. If you want your work to matter—to communities, economies, and the future of work—this is your launchpad.
+                  Last Mile was founded by people who have spent their careers inside large enterprises, implementing ServiceNow, integrating complex systems, and dealing with the consequences when things fail in the real world.
                 </p>
-              </div>
-              
-              <div className="glass-panel p-8">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-[#217ED9]/20 border border-[#217ED9] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <TrendingUp className="w-6 h-6 text-[#217ED9]" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white">Strategic Growth</h3>
-                </div>
-                <p className="text-slate-400 leading-relaxed">
-                  Grow with velocity, clarity, and purpose. We don't just offer career ladders—we build launchpads. At Last Mile, you'll scale your impact through cross-functional leadership, rapid iteration, and exposure to high-stakes strategy. Whether you're leading a summit, architecting a product, or shaping compensation governance, your growth is tied to real outcomes. We invest in talent like we invest in infrastructure: deliberately, transparently, and for the long haul.
+                <p className="text-slate-400 leading-relaxed mt-4">
+                  We know what it means to support global operations, to work with demanding customers, and to build software that has to survive scale, audits, and change.
+                </p>
+                <p className="text-slate-400 leading-relaxed mt-4">
+                  We are opinionated because experience has earned us that right.
                 </p>
               </div>
               
@@ -324,11 +329,104 @@ export function CareersPage() {
                   <div className="w-12 h-12 bg-[#217ED9]/20 border border-[#217ED9] rounded-lg flex items-center justify-center flex-shrink-0">
                     <Zap className="w-6 h-6 text-[#217ED9]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Innovation Culture</h3>
+                  <h3 className="text-2xl font-bold text-white">Early, Focused, Accountable</h3>
                 </div>
                 <p className="text-slate-400 leading-relaxed">
-                  We don't just innovate—we operationalize. Last Mile is where ideas become infrastructure. Our culture rewards bold thinking, fast execution, and ethical rigor. You'll collaborate across disciplines, pilot new models, and help define the future of AI deployment. Innovation here isn't a slide deck—it's a summit, a product launch, a measurable KPI. Come build with us.
+                  We are small by design and early by necessity.
                 </p>
+                <p className="text-slate-400 leading-relaxed mt-4">
+                  Everyone here owns meaningful surface area. There is no place to hide behind process, titles, or ambiguity. Work is visible. Decisions matter. Progress compounds quickly.
+                </p>
+                <p className="text-slate-400 leading-relaxed mt-4">
+                  If you need a large organization to feel productive, this is not the right place. If you want to help shape a company while it is still being built...this is exactly that moment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How We Work & What You Get Section */}
+        <section className="py-16 border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="glass-panel p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-[#217ED9]/20 border border-[#217ED9] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-6 h-6 text-[#217ED9]" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">How We Work</h3>
+                </div>
+                
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">We value:</h4>
+                  <ul className="space-y-2">
+                    <li className="text-slate-400 leading-relaxed flex items-start">
+                      <span className="text-[#217ED9] mr-2">•</span>
+                      <span>Clear thinking over speed theater</span>
+                    </li>
+                    <li className="text-slate-400 leading-relaxed flex items-start">
+                      <span className="text-[#217ED9] mr-2">•</span>
+                      <span>Writing things down and meaning them</span>
+                    </li>
+                    <li className="text-slate-400 leading-relaxed flex items-start">
+                      <span className="text-[#217ED9] mr-2">•</span>
+                      <span>Direct communication without ego</span>
+                    </li>
+                    <li className="text-slate-400 leading-relaxed flex items-start">
+                      <span className="text-[#217ED9] mr-2">•</span>
+                      <span>Shipping software that holds up under scrutiny</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-3">We do not value:</h4>
+                  <ul className="space-y-2">
+                    <li className="text-slate-400 leading-relaxed flex items-start">
+                      <span className="text-[#217ED9] mr-2">•</span>
+                      <span>Performative urgency</span>
+                    </li>
+                    <li className="text-slate-400 leading-relaxed flex items-start">
+                      <span className="text-[#217ED9] mr-2">•</span>
+                      <span>Buzzwords without substance</span>
+                    </li>
+                    <li className="text-slate-400 leading-relaxed flex items-start">
+                      <span className="text-[#217ED9] mr-2">•</span>
+                      <span>Chaos disguised as culture</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="glass-panel p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-[#217ED9]/20 border border-[#217ED9] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Award className="w-6 h-6 text-[#217ED9]" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">What You Get</h3>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-3">In return, we offer:</h4>
+                  <ul className="space-y-2">
+                    <li className="text-slate-400 leading-relaxed flex items-start">
+                      <span className="text-[#217ED9] mr-2">•</span>
+                      <span>Work that matters to real customers</span>
+                    </li>
+                    <li className="text-slate-400 leading-relaxed flex items-start">
+                      <span className="text-[#217ED9] mr-2">•</span>
+                      <span>Colleagues who know what they're doing</span>
+                    </li>
+                    <li className="text-slate-400 leading-relaxed flex items-start">
+                      <span className="text-[#217ED9] mr-2">•</span>
+                      <span>A chance to build something foundational, not ornamental</span>
+                    </li>
+                    <li className="text-slate-400 leading-relaxed flex items-start">
+                      <span className="text-[#217ED9] mr-2">•</span>
+                      <span>Equity in a company being built carefully, not recklessly</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
