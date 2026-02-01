@@ -1,7 +1,7 @@
 
-  # Complete Website Design
+  # Last Mile Inc.
 
-  This is a code bundle for Complete Website Design. The original project is available at https://www.figma.com/design/UwKZsE9lhakHRuuD7je1JC/Complete-Website-Design.
+  Official website for Last Mile Inc.
 
   ## Running the code
 
