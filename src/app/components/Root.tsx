@@ -29,7 +29,7 @@ export function Root() {
       document.head.appendChild(link);
 
       // Also set the document title
-      document.title = 'Last Mile Inc. - OT Intelligence Solutions';
+      document.title = 'Last Mile';
     };
 
     setFavicon();
