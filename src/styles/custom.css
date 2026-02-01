@@ -1,0 +1,83 @@
+/* Custom styles for Last Mile Inc website */
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-mono {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.glass-panel {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.data-grid-bg {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hero-title-gradient {
+  background: linear-gradient(to right, #ffffff, #217ED9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.telemetry-row:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.signal-dot {
+  box-shadow: 0 0 8px currentColor;
+}
+
+/* Scroll reveal animation - visible by default */
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Only animate when scroll reveal is active */
+.scroll-reveal-active .reveal:not(.visible) {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.scroll-reveal-active .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* Ensure content doesn't stay hidden if JS fails */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Make first-screen content visible immediately */
+@media (min-width: 768px) {
+  .reveal:first-of-type {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(33, 126, 217, 0.3);
+  color: #ffffff;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
