@@ -3,5 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/hh0h355mndjv/public_html/
     - /bin/cp dist/index.html $DEPLOYPATH
-    - /bin/cp dist/favicon.svg $DEPLOYPATH
+    - /bin/cp dist/favicon.png $DEPLOYPATH
     - /bin/cp -r dist/assets $DEPLOYPATH
+    - /bin/cp -r dist/images $DEPLOYPATH
