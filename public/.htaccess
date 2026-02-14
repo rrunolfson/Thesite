@@ -1,0 +1,46 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Serve static files directly
+  RewriteRule ^robots\.txt$ robots.txt [L]
+  RewriteRule ^sitemap\.xml$ sitemap.xml [L]
+  RewriteRule ^favicon\.png$ favicon.png [L]
+  RewriteRule ^logo\.png$ logo.png [L]
+  
+  # Don't rewrite files or directories
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # Single Page Application routing
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+  Header set X-Frame-Options "DENY"
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Correct MIME types
+<IfModule mod_mime.c>
+  AddType application/xml .xml
+  AddType text/plain .txt
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/xml "access plus 1 day"
+</IfModule>

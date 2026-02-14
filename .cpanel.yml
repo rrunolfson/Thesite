@@ -2,7 +2,16 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/hh0h355mndjv/public_html/
+    - export NODEJS_VERSION=20
+    - source /opt/nvm/nvm.sh
+    - nvm use $NODEJS_VERSION
+    - npm install
+    - npm run build
     - /bin/cp dist/index.html $DEPLOYPATH
     - /bin/cp dist/favicon.png $DEPLOYPATH
+    - /bin/cp dist/logo.png $DEPLOYPATH
+    - /bin/cp dist/robots.txt $DEPLOYPATH
+    - /bin/cp dist/sitemap.xml $DEPLOYPATH
+    - /bin/cp dist/_redirects $DEPLOYPATH
     - /bin/cp -r dist/assets $DEPLOYPATH
     - /bin/cp -r dist/images $DEPLOYPATH
