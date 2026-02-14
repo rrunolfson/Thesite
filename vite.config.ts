@@ -16,4 +16,11 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  publicDir: 'public',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    // Ensure public files are copied to build output
+    copyPublicDir: true,
+  },
 })
