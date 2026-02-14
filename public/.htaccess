@@ -2,18 +2,23 @@
   RewriteEngine On
   RewriteBase /
   
-  # Serve static files directly
+  # Serve static files directly - don't rewrite these
   RewriteRule ^robots\.txt$ robots.txt [L]
   RewriteRule ^sitemap\.xml$ sitemap.xml [L]
   RewriteRule ^favicon\.png$ favicon.png [L]
   RewriteRule ^logo\.png$ logo.png [L]
   
-  # Don't rewrite files or directories
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
+  # Don't rewrite if the file exists (fixes JS/CSS/images)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
   
-  # Single Page Application routing
-  RewriteRule . /index.html [L]
+  # Don't rewrite assets folder
+  RewriteRule ^assets/ - [L]
+  RewriteRule ^images/ - [L]
+  
+  # Single Page Application routing - only for non-existent files
+  RewriteRule ^ index.html [L]
 </IfModule>
 
 # Security Headers

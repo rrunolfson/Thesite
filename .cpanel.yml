@@ -8,10 +8,10 @@ deployment:
     - npm install
     - npm run build
     - /bin/cp dist/index.html $DEPLOYPATH
+    - /bin/cp dist/.htaccess $DEPLOYPATH
     - /bin/cp dist/favicon.png $DEPLOYPATH
     - /bin/cp dist/logo.png $DEPLOYPATH
     - /bin/cp dist/robots.txt $DEPLOYPATH
     - /bin/cp dist/sitemap.xml $DEPLOYPATH
-    - /bin/cp dist/_redirects $DEPLOYPATH
     - /bin/cp -r dist/assets $DEPLOYPATH
     - /bin/cp -r dist/images $DEPLOYPATH
