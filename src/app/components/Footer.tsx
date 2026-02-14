@@ -109,9 +109,9 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-[#217ED9] transition-colors">
+                <a href="https://lastmileinc.ai/careers/" className="hover:text-[#217ED9] transition-colors">
                   Careers
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to="/contact" className="hover:text-[#217ED9] transition-colors">

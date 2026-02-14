@@ -1,8 +1,16 @@
 import { OEMForm } from "@/app/components/OEMForm";
+import { SEO } from "@/app/components/SEO";
 
 export function OEMPortalPage() {
   return (
-    <div className="pt-20 relative min-h-screen">
+    <>
+      <SEO
+        title="OEM Partner Portal"
+        description="Join Last Mile's OEM partner program. Integrate your equipment and devices with ServiceNow through our operational data integration platform."
+        keywords="OEM portal, equipment integration, device connectivity, OEM partnership, ServiceNow integration"
+        canonicalPath="/oem-portal"
+      />
+      <div className="pt-20 relative min-h-screen">
       <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
       
       <div className="relative z-10">
@@ -30,5 +38,6 @@ export function OEMPortalPage() {
         </section>
       </div>
     </div>
+    </>
   );
 }

@@ -1,8 +1,15 @@
 import { ContactForm } from "@/app/components/ContactForm";
+import { SEO } from "@/app/components/SEO";
 
 export function ContactPage() {
   return (
-    <div className="pt-20 relative min-h-screen">
+    <>
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Last Mile. Schedule a demo, learn about our solutions, or discuss how we can help integrate your operational data with ServiceNow."
+        canonicalPath="/contact"
+      />
+      <div className="pt-20 relative min-h-screen">
       <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
       
       <div className="relative z-10">
@@ -76,5 +83,6 @@ export function ContactPage() {
         </section>
       </div>
     </div>
+    </>
   );
 }

@@ -1,9 +1,16 @@
 import { Link } from "react-router";
 import { ArrowRight, Settings, Database, Download, Link2, BarChart3 } from "lucide-react";
+import { SEO } from "@/app/components/SEO";
 
 export function HomePage() {
   return (
-    <div className="relative min-h-screen">
+    <>
+      <SEO
+        title="Last Mile Inc. - Operational Data Integration for ServiceNow"
+        description="Last Mile brings operational technology (OT) and asset performance data into ServiceNow — so enterprises can run operations, service, workforce, and vendors from a single system of execution."
+        canonicalPath="/"
+      />
+      <div className="relative min-h-screen">
       {/* Animated Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 data-grid-bg opacity-20"></div>
@@ -212,5 +219,6 @@ export function HomePage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

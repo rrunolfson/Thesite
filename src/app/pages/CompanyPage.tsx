@@ -2,10 +2,18 @@ import { Target, Zap, Users, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { SEO } from "@/app/components/SEO";
 
 export function CompanyPage() {
   return (
-    <div className="pt-20 relative min-h-screen">
+    <>
+      <SEO
+        title="About Us"
+        description="Learn about Last Mile's mission to transform operational workflows with integrated data solutions. Discover our vision for bringing operational technology and enterprise systems together."
+        keywords="about Last Mile, company mission, operational technology integration, enterprise solutions, company vision"
+        canonicalPath="/company"
+      />
+      <div className="pt-20 relative min-h-screen">
       <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
       
       <div className="relative z-10">
@@ -180,6 +188,7 @@ export function CompanyPage() {
         </section>
       </div>
     </div>
+    </>
   );
 }
 

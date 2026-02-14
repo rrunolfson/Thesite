@@ -2,10 +2,18 @@ import { ArrowRight, ShoppingCart, Factory, Zap, Heart, Truck, Building2, Wareho
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { SEO } from "@/app/components/SEO";
 
 export function IndustriesPage() {
   return (
-    <div className="pt-20 relative min-h-screen">
+    <>
+      <SEO
+        title="Industries We Serve"
+        description="Last Mile provides operational data integration solutions for retail, manufacturing, energy, healthcare, logistics, building management, and more. Transform your operations with ServiceNow integration."
+        keywords="retail operations, manufacturing automation, energy management, healthcare facilities, logistics optimization, warehouse management, building management systems"
+        canonicalPath="/industries"
+      />
+      <div className="pt-20 relative min-h-screen">
       <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
       
       <div className="relative z-10">
@@ -189,6 +197,7 @@ export function IndustriesPage() {
         </section>
       </div>
     </div>
+    </>
   );
 }
 

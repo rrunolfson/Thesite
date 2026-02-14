@@ -2,10 +2,18 @@ import { TrendingUp, Users, Briefcase, Settings, CheckCircle2, ArrowRight, Dolla
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { SEO } from "@/app/components/SEO";
 
 export function PartnersPage() {
   return (
-    <div className="pt-20 relative min-h-screen">
+    <>
+      <SEO
+        title="Partner Programs"
+        description="Join Last Mile's partner ecosystem. Become a delivery partner or OEM partner to expand your service offerings and provide operational data integration solutions to your customers."
+        keywords="partnership program, OEM partners, delivery partners, system integrators, technology partners, ServiceNow partners"
+        canonicalPath="/partners"
+      />
+      <div className="pt-20 relative min-h-screen">
       <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
       
       <div className="relative z-10">
@@ -305,6 +313,7 @@ export function PartnersPage() {
         </section>
       </div>
     </div>
+    </>
   );
 }
 
