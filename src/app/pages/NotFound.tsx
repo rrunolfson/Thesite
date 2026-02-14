@@ -1,9 +1,16 @@
 import { Link } from "react-router";
 import { Home, ArrowLeft } from "lucide-react";
+import { SEO } from "@/app/components/SEO";
 
 export function NotFound() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center px-4">
+    <>
+      <SEO
+        title="404 - Page Not Found"
+        description="The page you're looking for doesn't exist or has been moved. Return to Last Mile Inc. homepage."
+        canonicalPath="/404"
+      />
+      <div className="relative min-h-screen flex items-center justify-center px-4">
       <div className="text-center reveal">
         <h1 className="text-9xl font-bold text-[#217ED9] mb-4">404</h1>
         <h2 className="text-3xl font-bold text-white mb-4">Page Not Found</h2>
@@ -28,5 +35,6 @@ export function NotFound() {
         </div>
       </div>
     </div>
+    </>
   );
 }

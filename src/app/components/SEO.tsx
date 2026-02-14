@@ -38,6 +38,9 @@ export function SEO({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Last Mile Inc. - Operational Data Integration" />
       <meta property="og:site_name" content="Last Mile Inc." />
 
       {/* Twitter */}
@@ -46,6 +49,7 @@ export function SEO({
       <meta property="twitter:title" content={fullTitle} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={ogImage} />
+      <meta property="twitter:image:alt" content="Last Mile Inc. - Operational Data Integration" />
 
       {/* Additional SEO */}
       <meta name="robots" content="index, follow" />
