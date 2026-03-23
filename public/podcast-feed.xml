@@ -40,5 +40,20 @@
       <itunes:explicit>false</itunes:explicit>
     </item>
 
+    <!-- Episode 002 -->
+    <item>
+      <title>ServiceNow Beyond IT: The Art of the Possible.</title>
+      <description>Take a tour of the broad application of an enterprise platform like ServiceNow, by listening to some amazing use cases across three very different industries.</description>
+      <content:encoded><![CDATA[Take a tour of the broad application of an enterprise platform like ServiceNow, by listening to some amazing use cases across three very different industries.]]></content:encoded>
+      <enclosure url="https://lastmileinc.ai/audio/AI_the_art_of_the_possible.m4a" length="0" type="audio/x-m4a"/>
+      <guid isPermaLink="false">signal2action-ep002</guid>
+      <pubDate>Mon, 23 Mar 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>—</itunes:duration>
+      <itunes:episode>2</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:author>Last Mile Inc.</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+
   </channel>
 </rss>

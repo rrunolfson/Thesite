@@ -15,12 +15,13 @@ const episodes = [
   },
   {
     episode: "002",
-    title: "ServiceNow Beyond IT: Unlocking Operational Workflows",
-    guest: "Coming Soon",
+    title: "ServiceNow Beyond IT: The Art of the Possible.",
+    guest: "Our S-2-A Host Team",
     description:
-      "ServiceNow was built for IT — but the biggest untapped value is in operations. A deep dive into what's possible when OT data enters the platform.",
-    duration: "— mins",
-    date: "Coming Soon",
+      "Take a tour of the broad application of an enterprise platform like ServiceNow, by listening to some amazing use cases across three very different industries.",
+    duration: "11:26 mins",
+    date: "March 23, 2026",
+    audioUrl: "https://lastmileinc.ai/audio/AI_the_art_of_the_possible.m4a",
   },
   {
     episode: "003",
