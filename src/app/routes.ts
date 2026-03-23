@@ -7,6 +7,7 @@ import { CompanyPage } from "./pages/CompanyPage";
 import { ContactPage } from "./pages/ContactPage";
 import { CareersPage } from "./pages/CareersPage";
 import { OEMPortalPage } from "./pages/OEMPortalPage";
+import { Signal2ActionPage } from "./pages/Signal2ActionPage";
 import { NotFound } from "./pages/NotFound";
 
 export const router = createBrowserRouter([
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
       { path: "contact", Component: ContactPage },
       { path: "careers", Component: CareersPage },
       { path: "oem-portal", Component: OEMPortalPage },
+      { path: "signal-2-action", Component: Signal2ActionPage },
       { path: "*", Component: NotFound },
     ],
   },

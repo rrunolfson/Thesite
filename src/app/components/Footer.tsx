@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Linkedin, Instagram } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -17,9 +17,6 @@ export function Footer() {
               <div className="flex space-x-4 text-slate-600 justify-start mb-3">
                 <a href="https://www.linkedin.com/company/lastmile-inc/" target="_blank" rel="noopener noreferrer" className="hover:text-[#217ED9] transition-colors">
                   <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-[#217ED9] transition-colors cursor-default">
-                  <Instagram className="w-5 h-5" />
                 </a>
               </div>
               <p className="text-slate-600 text-sm whitespace-nowrap">
@@ -100,6 +97,17 @@ export function Footer() {
 
           <div>
             <h4 className="font-bold text-white mb-6 uppercase text-xs tracking-wider">
+              Podcast
+            </h4>
+            <ul className="space-y-3 text-sm text-slate-400">
+              <li>
+                <Link to="/signal-2-action" className="hover:text-[#217ED9] transition-colors">
+                  Signal 2 Action
+                </Link>
+              </li>
+            </ul>
+
+            <h4 className="font-bold text-white mt-8 mb-6 uppercase text-xs tracking-wider">
               Company
             </h4>
             <ul className="space-y-3 text-sm text-slate-400">

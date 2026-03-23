@@ -11,6 +11,7 @@ export function Navbar() {
     { to: "/", label: "Home" },
     { to: "/industries", label: "Industries" },
     { to: "/partners", label: "Partners" },
+    { to: "/signal-2-action", label: "Signal 2 Action" },
     { to: "/company", label: "Company" },
     { to: "/contact", label: "Contact" },
   ];
