@@ -79,17 +79,48 @@ export function Footer() {
 
           <div>
             <h4 className="font-bold text-white mb-6 uppercase text-xs tracking-wider">
+              Explore
+            </h4>
+            <ul className="space-y-3 text-sm text-slate-400">
+              <li>
+                <Link to="/solutions" className="hover:text-[#217ED9] transition-colors">
+                  Platform
+                </Link>
+              </li>
+              <li>
+                <Link to="/use-cases" className="hover:text-[#217ED9] transition-colors">
+                  Use Cases
+                </Link>
+              </li>
+              <li>
+                <Link to="/customers" className="hover:text-[#217ED9] transition-colors">
+                  Customers
+                </Link>
+              </li>
+              <li>
+                <Link to="/resources" className="hover:text-[#217ED9] transition-colors">
+                  Resources
+                </Link>
+              </li>
+            </ul>
+
+            <h4 className="font-bold text-white mb-6 uppercase text-xs tracking-wider">
               Partners
             </h4>
             <ul className="space-y-3 text-sm text-slate-400">
               <li>
-                <Link to="/partners#delivery" className="hover:text-[#217ED9] transition-colors">
+                <Link to="/partners/delivery" className="hover:text-[#217ED9] transition-colors">
                   Delivery Partners
                 </Link>
               </li>
               <li>
-                <Link to="/partners#oem" className="hover:text-[#217ED9] transition-colors">
+                <Link to="/partners/oem" className="hover:text-[#217ED9] transition-colors">
                   OEM Partners
+                </Link>
+              </li>
+              <li>
+                <Link to="/oem-portal" className="hover:text-[#217ED9] transition-colors">
+                  OEM Portal
                 </Link>
               </li>
             </ul>
@@ -113,13 +144,18 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-slate-400">
               <li>
                 <Link to="/company" className="hover:text-[#217ED9] transition-colors">
+                  Company
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-[#217ED9] transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <a href="https://lastmileinc.ai/careers/" className="hover:text-[#217ED9] transition-colors">
+                <Link to="/careers" className="hover:text-[#217ED9] transition-colors">
                   Careers
-                </a>
+                </Link>
               </li>
               <li>
                 <Link to="/contact" className="hover:text-[#217ED9] transition-colors">

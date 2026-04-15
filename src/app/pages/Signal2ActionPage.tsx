@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { Headphones, Rss, Apple, Music2, Play, Pause } from "lucide-react";
+import { SEO } from "@/app/components/SEO";
 
 const episodes = [
   {
@@ -36,13 +37,20 @@ const episodes = [
 
 const platforms = [
   { label: "Apple Podcasts", icon: Apple, href: "#" },
-  { label: "Spotify", icon: Music2, href: "#" },
+  { label: "Spotify", icon: Music2, href: "https://open.spotify.com/show/5yKr82EXxQrpDlr5DcRxfG" },
   { label: "RSS Feed", icon: Rss, href: "/podcast-feed.xml" },
 ];
 
 export function Signal2ActionPage() {
   return (
-    <div className="pt-20 relative min-h-screen">
+    <>
+      <SEO
+        title="Signal 2 Action Podcast"
+        description="Listen to Signal 2 Action, Last Mile's podcast on operational technology, ServiceNow workflows, partner growth, and industrial intelligence."
+        keywords="Signal 2 Action, podcast, operational technology, ServiceNow, industrial intelligence, OT data"
+        canonicalPath="/signal-2-action"
+      />
+      <div className="pt-20 relative min-h-screen">
       <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
 
       <div className="relative z-10">
@@ -162,7 +170,8 @@ export function Signal2ActionPage() {
 
 
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

@@ -51,7 +51,7 @@ export function PartnersPage() {
                 {/* Left Column: Title */}
                 <div className="flex flex-col justify-center">
                   <h3 className="text-3xl font-bold text-center">Last Mile Is Driven by OT, Not IT.</h3>
-                  <h3 className="text-3xl font-bold text-center text-[#217ED9]">Createing A Universe of NNACV Opportunities</h3>
+                  <h3 className="text-3xl font-bold text-center text-[#217ED9]">Creating A Universe of NNACV Opportunities</h3>
                 </div>
 
                 {/* Right Column: Glass Panel */}

@@ -49,7 +49,7 @@ export function ContactPage() {
                   href="mailto:enterprise@lastmileinc.ai" 
                   className="text-[#217ED9] hover:text-[#75ADE6] font-semibold"
                 >
-                  contact@lastmileinc.ai
+                  enterprise@lastmileinc.ai
                 </a>
               </div>
 
@@ -75,7 +75,7 @@ export function ContactPage() {
                   href="mailto:oems@lastmileinc.ai" 
                   className="text-[#217ED9] hover:text-[#75ADE6] font-semibold"
                 >
-                  partners@lastmileinc.ai
+                  oems@lastmileinc.ai
                 </a>
               </div>
             </div>

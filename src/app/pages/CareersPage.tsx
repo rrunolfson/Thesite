@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, Target, Users, Zap, CheckCircle, Award } from "lucide-react";
+import { SEO } from "@/app/components/SEO";
 
 interface JobPosition {
   title: string;
@@ -253,7 +254,14 @@ function JobPanel({ job }: { job: JobPosition }) {
 
 export function CareersPage() {
   return (
-    <div className="pt-20 relative min-h-screen">
+    <>
+      <SEO
+        title="Careers"
+        description="Explore career opportunities at Last Mile and join a team building production-grade infrastructure for operational data, enterprise workflows, and ServiceNow execution."
+        keywords="Last Mile careers, engineering jobs, AI jobs, data jobs, ServiceNow, operational technology"
+        canonicalPath="/careers"
+      />
+      <div className="pt-20 relative min-h-screen">
       <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
       
       <div className="relative z-10">
@@ -465,6 +473,7 @@ export function CareersPage() {
           </div>
         </section>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

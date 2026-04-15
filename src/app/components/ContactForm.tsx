@@ -6,7 +6,8 @@ import { Input } from "@/app/components/ui/input";
 import { Label } from "@/app/components/ui/label";
 
 interface FormData {
-  name: string;
+  firstname: string;
+  lastname: string;
   email: string;
   company: string;
   role: string;
@@ -16,6 +17,7 @@ interface FormData {
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const {
     register,
@@ -26,19 +28,49 @@ export function ContactForm() {
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
+    setIsError(false);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch(
+        'https://api.hsforms.com/submissions/v3/integration/submit/245388543/df5ed043-2fec-4e13-ae18-e1d17257e1da',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fields: [
+              { name: 'firstname', value: data.firstname },
+              { name: 'lastname', value: data.lastname },
+              { name: 'email', value: data.email },
+              { name: 'company', value: data.company },
+              { name: 'hs_role', value: data.role },
+              { name: 'message', value: data.message },
+            ],
+            context: {
+              pageUri: 'https://lastmileinc.ai/contact',
+              pageName: 'Contact',
+            },
+          }),
+        }
+      );
 
-    console.log("Form data:", data);
-    setIsSubmitting(false);
-    setIsSuccess(true);
+      if (!response.ok) {
+        const errBody = await response.json().catch(() => null);
+        console.error('HubSpot submission error', response.status, JSON.stringify(errBody, null, 2));
+        throw new Error('Submission failed');
+      }
 
-    // Reset after showing success message
-    setTimeout(() => {
-      setIsSuccess(false);
-      reset();
-    }, 5000);
+      setIsSubmitting(false);
+      setIsSuccess(true);
+
+      setTimeout(() => {
+        setIsSuccess(false);
+        reset();
+      }, 5000);
+    } catch (err) {
+      console.error('ContactForm caught:', err);
+      setIsSubmitting(false);
+      setIsError(true);
+    }
   };
 
   if (isSuccess) {
@@ -64,17 +96,31 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      <div>
-        <Label htmlFor="name" className="text-white">
-          Name *
-        </Label>
-        <Input
-          id="name"
-          {...register("name", { required: "Name is required" })}
-          className="mt-2 bg-slate-800/50 border-slate-700 text-white"
-          placeholder="Your name"
-        />
-        {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>}
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <Label htmlFor="firstname" className="text-white">
+            First Name *
+          </Label>
+          <Input
+            id="firstname"
+            {...register("firstname", { required: "First name is required" })}
+            className="mt-2 bg-slate-800/50 border-slate-700 text-white"
+            placeholder="First name"
+          />
+          {errors.firstname && <p className="text-red-400 text-sm mt-1">{errors.firstname.message}</p>}
+        </div>
+        <div>
+          <Label htmlFor="lastname" className="text-white">
+            Last Name *
+          </Label>
+          <Input
+            id="lastname"
+            {...register("lastname", { required: "Last name is required" })}
+            className="mt-2 bg-slate-800/50 border-slate-700 text-white"
+            placeholder="Last name"
+          />
+          {errors.lastname && <p className="text-red-400 text-sm mt-1">{errors.lastname.message}</p>}
+        </div>
       </div>
 
       <div>
@@ -114,12 +160,40 @@ export function ContactForm() {
         <Label htmlFor="role" className="text-white">
           Role *
         </Label>
-        <Input
+        <select
           id="role"
           {...register("role", { required: "Role is required" })}
-          className="mt-2 bg-slate-800/50 border-slate-700 text-white"
-          placeholder="Your role"
-        />
+          className="mt-2 w-full px-3 py-2 bg-slate-800/50 border border-slate-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-[#217ED9]"
+        >
+          <option value="" className="bg-slate-900">Select your role...</option>
+          <option value="accounting" className="bg-slate-900">Accounting</option>
+          <option value="administrative" className="bg-slate-900">Administrative</option>
+          <option value="business_development" className="bg-slate-900">Business Development</option>
+          <option value="communications" className="bg-slate-900">Communications</option>
+          <option value="consulting" className="bg-slate-900">Consulting</option>
+          <option value="customer_service" className="bg-slate-900">Customer Service</option>
+          <option value="design" className="bg-slate-900">Design</option>
+          <option value="education" className="bg-slate-900">Education</option>
+          <option value="engineering" className="bg-slate-900">Engineering</option>
+          <option value="entrepreneurship" className="bg-slate-900">Entrepreneurship</option>
+          <option value="finance" className="bg-slate-900">Finance</option>
+          <option value="health_professional" className="bg-slate-900">Health Professional</option>
+          <option value="human_resources" className="bg-slate-900">Human Resources</option>
+          <option value="information_technology" className="bg-slate-900">Information Technology</option>
+          <option value="legal" className="bg-slate-900">Legal</option>
+          <option value="marketing" className="bg-slate-900">Marketing</option>
+          <option value="operations" className="bg-slate-900">Operations</option>
+          <option value="product" className="bg-slate-900">Product</option>
+          <option value="project_management" className="bg-slate-900">Project Management</option>
+          <option value="public_relations" className="bg-slate-900">Public Relations</option>
+          <option value="quality_assurance" className="bg-slate-900">Quality Assurance</option>
+          <option value="real_estate" className="bg-slate-900">Real Estate</option>
+          <option value="recruiting" className="bg-slate-900">Recruiting</option>
+          <option value="research" className="bg-slate-900">Research</option>
+          <option value="sales" className="bg-slate-900">Sales</option>
+          <option value="support" className="bg-slate-900">Support</option>
+          <option value="retired" className="bg-slate-900">Retired</option>
+        </select>
         {errors.role && <p className="text-red-400 text-sm mt-1">{errors.role.message}</p>}
       </div>
 
@@ -135,6 +209,13 @@ export function ContactForm() {
         />
         {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>}
       </div>
+
+      {isError && (
+        <p className="text-red-400 text-sm text-center">
+          Something went wrong. Please try again or email us directly at{' '}
+          <a href="mailto:contact@lastmileinc.ai" className="underline">contact@lastmileinc.ai</a>.
+        </p>
+      )}
 
       <Button
         type="submit"

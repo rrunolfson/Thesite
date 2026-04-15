@@ -1,9 +1,17 @@
 import { Factory, Hospital, Building2, Warehouse, ArrowRight } from "lucide-react";
 import { Link } from "react-router";
+import { SEO } from "@/app/components/SEO";
 
 export function UseCasesPage() {
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="Operational Use Cases"
+        description="Review Last Mile use cases across manufacturing, healthcare, commercial real estate, and logistics with concrete problems, workflows, and outcomes."
+        keywords="use cases, manufacturing, healthcare, logistics, commercial real estate, predictive maintenance, ServiceNow"
+        canonicalPath="/use-cases"
+      />
+      <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -265,6 +273,7 @@ export function UseCasesPage() {
           </Link>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

@@ -1,9 +1,17 @@
 import { Target, Users, Award, TrendingUp, Mail, MapPin, Linkedin } from "lucide-react";
 import { Link } from "react-router";
+import { SEO } from "@/app/components/SEO";
 
 export function AboutPage() {
   return (
-    <div className="relative">
+    <>
+      <SEO
+        title="About Last Mile"
+        description="Learn about Last Mile's mission, vision, values, and operating philosophy for turning operational data into enterprise action."
+        keywords="about Last Mile, mission, vision, operational intelligence, OT integration, enterprise workflows"
+        canonicalPath="/about"
+      />
+      <div className="relative">
       {/* Hero Section */}
       <header className="relative pt-32 pb-20 overflow-hidden border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -178,6 +186,7 @@ export function AboutPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

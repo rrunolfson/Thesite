@@ -1,29 +1,44 @@
+import type { ComponentType } from "react";
 import { createBrowserRouter } from "react-router";
 import { Root } from "./components/Root";
-import { HomePage } from "./pages/HomePage";
-import { IndustriesPage } from "./pages/IndustriesPage";
-import { PartnersPage } from "./pages/PartnersPage";
-import { CompanyPage } from "./pages/CompanyPage";
-import { ContactPage } from "./pages/ContactPage";
-import { CareersPage } from "./pages/CareersPage";
-import { OEMPortalPage } from "./pages/OEMPortalPage";
-import { Signal2ActionPage } from "./pages/Signal2ActionPage";
-import { NotFound } from "./pages/NotFound";
+
+function lazyPage<T extends Record<string, unknown>>(
+  loader: () => Promise<T>,
+  exportName: keyof T,
+) {
+  return async () => {
+    const module = await loader();
+    const Component = module[exportName];
+
+    if (typeof Component !== "function") {
+      throw new Error(`Route export "${String(exportName)}" is not a component.`);
+    }
+
+    return { Component: Component as ComponentType };
+  };
+}
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
     children: [
-      { index: true, Component: HomePage },
-      { path: "industries", Component: IndustriesPage },
-      { path: "partners", Component: PartnersPage },
-      { path: "company", Component: CompanyPage },
-      { path: "contact", Component: ContactPage },
-      { path: "careers", Component: CareersPage },
-      { path: "oem-portal", Component: OEMPortalPage },
-      { path: "signal-2-action", Component: Signal2ActionPage },
-      { path: "*", Component: NotFound },
+      { index: true, lazy: lazyPage(() => import("./pages/HomePage"), "HomePage") },
+      { path: "solutions", lazy: lazyPage(() => import("./pages/SolutionsPage"), "SolutionsPage") },
+      { path: "industries", lazy: lazyPage(() => import("./pages/IndustriesPage"), "IndustriesPage") },
+      { path: "use-cases", lazy: lazyPage(() => import("./pages/UseCasesPage"), "UseCasesPage") },
+      { path: "customers", lazy: lazyPage(() => import("./pages/CustomersPage"), "CustomersPage") },
+      { path: "partners", lazy: lazyPage(() => import("./pages/PartnersPage"), "PartnersPage") },
+      { path: "partners/delivery", lazy: lazyPage(() => import("./pages/SIPartnershipsPage"), "SIPartnershipsPage") },
+      { path: "partners/oem", lazy: lazyPage(() => import("./pages/OEMPartnershipsPage"), "OEMPartnershipsPage") },
+      { path: "resources", lazy: lazyPage(() => import("./pages/ResourcesPage"), "ResourcesPage") },
+      { path: "company", lazy: lazyPage(() => import("./pages/CompanyPage"), "CompanyPage") },
+      { path: "about", lazy: lazyPage(() => import("./pages/AboutPage"), "AboutPage") },
+      { path: "careers", lazy: lazyPage(() => import("./pages/CareersPage"), "CareersPage") },
+      { path: "contact", lazy: lazyPage(() => import("./pages/ContactPage"), "ContactPage") },
+      { path: "oem-portal", lazy: lazyPage(() => import("./pages/OEMPortalPage"), "OEMPortalPage") },
+      { path: "signal-2-action", lazy: lazyPage(() => import("./pages/Signal2ActionPage"), "Signal2ActionPage") },
+      { path: "*", lazy: lazyPage(() => import("./pages/NotFound"), "NotFound") },
     ],
   },
 ]);

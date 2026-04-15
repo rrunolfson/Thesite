@@ -1,9 +1,17 @@
 import { Quote, TrendingUp, Award, CheckCircle2, Factory, Hospital, Building2 } from "lucide-react";
 import { Link } from "react-router";
+import { SEO } from "@/app/components/SEO";
 
 export function CustomersPage() {
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="Customer Success Stories"
+        description="See how manufacturers, healthcare systems, and real estate operators use Last Mile to reduce downtime, improve utilization, and automate operational workflows."
+        keywords="customer stories, case studies, predictive maintenance, healthcare operations, facilities operations, ServiceNow integration"
+        canonicalPath="/customers"
+      />
+      <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -268,6 +276,7 @@ export function CustomersPage() {
           </Link>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

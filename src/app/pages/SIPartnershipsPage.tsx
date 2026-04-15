@@ -1,9 +1,17 @@
 import { Handshake, DollarSign, Users, Target, Award, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router";
+import { SEO } from "@/app/components/SEO";
 
 export function SIPartnershipsPage() {
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="Delivery Partner Program"
+        description="See how systems integrators, MSPs, and consultants can partner with Last Mile to deliver OT intelligence and ServiceNow-connected operational workflows."
+        keywords="delivery partners, SI partnerships, MSP partnerships, ServiceNow partners, operational intelligence"
+        canonicalPath="/partners/delivery"
+      />
+      <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -203,6 +211,7 @@ export function SIPartnershipsPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

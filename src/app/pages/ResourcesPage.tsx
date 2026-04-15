@@ -1,4 +1,5 @@
 import { FileText, BookOpen, Video, TrendingUp, Factory, Hospital, ArrowRight } from "lucide-react";
+import { SEO } from "@/app/components/SEO";
 
 const resources = [
   {
@@ -47,7 +48,14 @@ const resources = [
 
 export function ResourcesPage() {
   return (
-    <div className="relative">
+    <>
+      <SEO
+        title="Resources and Insights"
+        description="Explore Last Mile playbooks, whitepapers, webinars, and industry guides on operational intelligence, predictive maintenance, and ServiceNow activation."
+        keywords="resources, whitepapers, webinars, operational intelligence, predictive maintenance, ServiceNow, industry guides"
+        canonicalPath="/resources"
+      />
+      <div className="relative">
       {/* Hero Section */}
       <header className="relative pt-32 pb-20 overflow-hidden border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,6 +130,7 @@ export function ResourcesPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

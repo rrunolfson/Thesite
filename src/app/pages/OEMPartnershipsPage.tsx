@@ -1,9 +1,17 @@
 import { Zap, TrendingUp, Award, Code, Users, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router";
+import { SEO } from "@/app/components/SEO";
 
 export function OEMPartnershipsPage() {
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="OEM Partnerships"
+        description="Learn how OEMs can partner with Last Mile to embed operational intelligence, create recurring service revenue, and connect equipment to enterprise workflows."
+        keywords="OEM partnerships, equipment telemetry, operational intelligence, embedded analytics, ServiceNow integration"
+        canonicalPath="/partners/oem"
+      />
+      <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -160,6 +168,7 @@ export function OEMPartnershipsPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

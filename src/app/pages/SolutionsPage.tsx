@@ -1,9 +1,17 @@
 import { Database, Workflow, Layers, CheckCircle2, ArrowRight } from "lucide-react";
 import { Link } from "react-router";
+import { SEO } from "@/app/components/SEO";
 
 export function SolutionsPage() {
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="Last Mile 360 Platform"
+        description="Explore the Last Mile 360 platform across data enablement, workflow activation, and enterprise truth layers for operational data in ServiceNow."
+        keywords="Last Mile 360, operational intelligence platform, ServiceNow integration, workflow activation, asset data"
+        canonicalPath="/solutions"
+      />
+      <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -216,6 +224,7 @@ export function SolutionsPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
