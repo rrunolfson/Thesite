@@ -145,7 +145,9 @@ export function OurIntegrationsPage() {
 
   const vendorCount = selectedIndustry?.vendors.length ?? 0;
   const productCount = selectedIndustry?.vendors.reduce((total, vendor) => total + vendor.products.length, 0) ?? 0;
-  const totalVendors = integrationGroups.reduce((total, group) => total + group.vendors.length, 0);
+  const totalVendors = new Set(
+    integrationGroups.flatMap((group) => group.vendors.map((vendor) => vendor.vendor_slug)),
+  ).size;
   const totalProducts = integrationGroups.reduce(
     (total, group) => total + group.vendors.reduce((groupTotal, vendor) => groupTotal + vendor.products.length, 0),
     0,

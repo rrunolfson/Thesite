@@ -38,6 +38,24 @@
 - `is_visible`: `TRUE` or `FALSE` flag for publishing control.
 - `internal_notes`: non-rendered editorial or implementation notes.
 
+## Identity Rules
+- `vendor_slug` and `vendor_name` represent the OEM or canonical vendor identity, not a product line, documentation section, or URL path segment.
+- If a single vendor portal exposes many product lines, all rows from that portal can still share one canonical `vendor_slug` and `vendor_name`.
+- Product-line, platform, suite, or business-unit labels should stay on the product row, typically in `product_name`, `product_family`, or `internal_notes`.
+- Do not create fake vendors from path segments like `/comos/`, `/insights-hub/`, or `/building-x-openness/` when those are product lines under one OEM.
+- A vendor may appear in multiple industries if its products span multiple domains, but it is still one vendor identity.
+
+Example:
+
+- Correct: `vendor_name=Siemens`, `product_family=Insights Hub`, `product_name=IoT Time Series Service`
+- Incorrect: `vendor_name=Insights Hub`, `product_name=IoT Time Series Service` when the real OEM is Siemens
+
+## Counting Rules
+- Vendor counts should use unique `vendor_slug` values across the catalog, not the raw number of vendor entries rendered inside industry groups.
+- Product counts should count product rows after validation and deduplication.
+- If one vendor appears in multiple industries, UI summaries should avoid counting that vendor more than once in global totals.
+- Industry sections may still render the same vendor separately within each industry bucket if the product set differs by industry.
+
 ## Output JSON Shape
 The exported JSON should keep the API documentation field directly on each product record using the exact key `integration_api_url`.
 
@@ -93,6 +111,22 @@ The exported JSON should keep the API documentation field directly on each produ
 - Run `npm run integrations:validate` to fail fast on missing columns, invalid slugs, duplicate products, missing logo assets, or malformed URLs.
 - If you publish the Google Sheet as CSV, create `data/integrations-source.json` from the example file and run `npm run integrations:sync-sheet`.
 
+## Vendor Scraper To Sheet Flow
+- The vendor portal scraper is intended to populate the same Google Sheet schema documented here, not a separate ad hoc worksheet shape.
+- The scraper normalizes every row to the exact required column set from `guidelines/Integrations-Google-Sheet-Template.csv` before writing to Google Sheets.
+- The canonical scraper entry point is `scripts/vendor_portal_scraper.py`.
+- Example vendor config: `scripts/vendor-scraper-siemens.json`.
+- If a portal belongs to one OEM with many product lines, configure one canonical vendor identity and preserve product-line context on the product rows.
+- Use `--replace-by-vendor` when refreshing a vendor so old rows for the same `vendor_slug` are removed before the new scrape is written.
+- Source-specific replacement logic should also remove prior rows from the same portal import when a canonical vendor mapping changes, so old incorrectly-modeled rows do not linger in the sheet.
+- After the sheet is updated, continue using the existing repo flow to sync the sheet export back into `data/integrations.csv` and regenerate `public/integrations.json`.
+
+Example command:
+
+```powershell
+"c:/Users/rruno/OneDrive - lastmileinc.ai/Documents/Last Mile/Website/.venv/Scripts/python.exe" scripts/vendor_portal_scraper.py --config scripts/vendor-scraper-siemens.json --write-google-sheet --replace-by-vendor
+```
+
 ## Scheduled Automation
 - The daily sync workflow lives at `.github/workflows/daily-integrations-sync.yml`.
 - The workflow only runs on the repository default branch because GitHub scheduled workflows do not run from non-default branches.
@@ -110,6 +144,8 @@ The exported JSON should keep the API documentation field directly on each produ
 2. Copy `data/integrations-source.example.json` to `data/integrations-source.json`.
 3. Paste the published CSV export URL into `csv_url`.
 4. Run `npm run integrations:sync-sheet`.
+
+If the sheet is being populated by the vendor scraper, run the scraper first so the worksheet already contains the canonical template columns and current vendor rows before syncing the published CSV back into the repo.
 
 That command fetches the remote CSV, validates it, optionally saves it back to `data/integrations.csv`, and regenerates `public/integrations.json`.
 

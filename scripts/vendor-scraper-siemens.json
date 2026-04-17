@@ -1,0 +1,191 @@
+{
+  "name": "siemens",
+  "source_key": "siemens-developer-portal",
+  "catalog_url": "https://developer.siemens.com/apis.html",
+  "vendor_identity": {
+    "slug": "siemens",
+    "name": "Siemens",
+    "summary": "Siemens industrial software, infrastructure, transportation, healthcare, and building platform APIs exposed through the Siemens developer ecosystem.",
+    "sort_order": 10
+  },
+  "allowed_domains": [
+    "developer.siemens.com",
+    "docs.industrial-operations-x.siemens.cloud",
+    "industrial-assets.io"
+  ],
+  "timeout_seconds": 30,
+  "sleep_seconds": 0.0,
+  "catalog_rules": {
+    "entry_include_url_patterns": [
+      "/overview.html",
+      "/api/",
+      "/home.html",
+      "/index.html",
+      ".html"
+    ],
+    "entry_exclude_url_patterns": [
+      "/tags.html",
+      "/guidelines/",
+      "/resources/",
+      "/communities/",
+      "/mcps/",
+      "/docs.html",
+      "/index.html#",
+      "mailto:",
+      "x.com/",
+      "linkedin.com/",
+      "facebook.com/",
+      "youtube.com/",
+      "instagram.com/",
+      "stackblitz.com/",
+      "marketplace.mendix.com/",
+      "github.com/"
+    ],
+    "entry_text_patterns": [
+      " API",
+      " SDK",
+      "GraphQL",
+      "REST",
+      "OpenAPI",
+      "MQTT",
+      "gRPC"
+    ]
+  },
+  "entry_rules": {
+    "product_name_cleanups": [
+      ["\\s+–\\s+API Overview$", ""],
+      ["\\s+API Overview$", ""],
+      ["^Overview$", ""]
+    ],
+    "api_url_preference_patterns": [
+      "openapi",
+      "swagger",
+      "api-reference",
+      "rest-api-spec",
+      "api_specs",
+      "protocol-documentation",
+      "graphql",
+      ".yaml",
+      ".yml",
+      ".json",
+      "/api.html",
+      "/external_api",
+      "/apiv"
+    ],
+    "api_url_reject_patterns": [
+      "quickstart",
+      "getting-started",
+      "changelog",
+      "faq",
+      "contact",
+      "sandbox",
+      "subscription",
+      "run-collection",
+      "postman"
+    ]
+  },
+  "purge_rules": {
+    "drop_without_spec": true,
+    "drop_unusable_spec_urls": false,
+    "unusable_spec_url_patterns": []
+  },
+  "field_mapping": {
+    "path_vendor_overrides": {
+      "building-x-openness": "Building X",
+      "comos": "COMOS",
+      "battery-passport": "Battery Passport",
+      "depotfinity": "DepotFinity",
+      "dta": "Drivetrain Analyzer Cloud",
+      "electrification-x": "Electrification X",
+      "enlighted-apis": "Enlighted",
+      "industrial-ai-suite": "Industrial AI Suite",
+      "industrial-asset-hub": "Industrial Asset Hub",
+      "industrial-edge": "Industrial Edge",
+      "industrial-information-hub": "Industrial Information Hub",
+      "insights-hub": "Insights Hub",
+      "mcenter": "Mcenter",
+      "nurse-call-system": "Nurse Call System",
+      "otc": "OT Companion",
+      "polarion": "Polarion",
+      "product-information-api": "Product Information Hub",
+      "railigent-x": "Railigent X",
+      "railxplore-fusion": "RailXplore Fusion",
+      "senseye": "Senseye",
+      "sigreen": "SiGREEN",
+      "sitrans-hub-iq": "SITRANS hub IQ",
+      "sitrans-scm-iq": "SITRANS SCM IQ",
+      "smartgear-x": "Sm@rtGear IE",
+      "tcpcm": "Teamcenter (X) Product Cost Management",
+      "walkinside": "Walkinside"
+    },
+    "tag_to_industry": {
+      "industrial-edge": "manufacturing",
+      "industrial-iot": "manufacturing",
+      "industrial-operations-x": "manufacturing",
+      "digital-twin": "manufacturing",
+      "application-lifecycle-management": "manufacturing",
+      "nurse-call-system": "healthcare",
+      "railigent-x": "transportation",
+      "railxplore-fusion": "transportation",
+      "emobility": "transportation",
+      "building-x-openness": "commercial-buildings",
+      "sustainability": "sustainability",
+      "energy": "energy"
+    },
+    "industry_definitions": {
+      "manufacturing": {
+        "slug": "manufacturing",
+        "name": "Manufacturing",
+        "description": "Industrial automation, asset telemetry, edge systems, and operational workflows.",
+        "sort_order": 10
+      },
+      "healthcare": {
+        "slug": "healthcare",
+        "name": "Healthcare",
+        "description": "Clinical equipment, biomedical systems, and operational coordination APIs.",
+        "sort_order": 20
+      },
+      "transportation": {
+        "slug": "transportation",
+        "name": "Transportation",
+        "description": "Fleet, rail, and charging infrastructure APIs for real-time asset operations.",
+        "sort_order": 30
+      },
+      "commercial-buildings": {
+        "slug": "commercial-buildings",
+        "name": "Commercial Buildings",
+        "description": "Building operations, energy, security, and visitor workflows for connected facilities.",
+        "sort_order": 40
+      },
+      "energy": {
+        "slug": "energy",
+        "name": "Energy",
+        "description": "Energy management, metering, emissions, and infrastructure operations APIs.",
+        "sort_order": 50
+      },
+      "sustainability": {
+        "slug": "sustainability",
+        "name": "Sustainability",
+        "description": "Product carbon footprint, procurement, and emissions data exchange APIs.",
+        "sort_order": 60
+      }
+    },
+    "vendor_summary_template": "{vendor_name} {source_product_line_name} {product_summary}"
+  },
+  "row_defaults": {
+    "industry_slug": "manufacturing",
+    "industry_name": "Manufacturing",
+    "industry_description": "Industrial automation, asset telemetry, edge systems, and operational workflows.",
+    "industry_sort_order": 10,
+    "integration_status": "built",
+    "integration_type": "REST API",
+    "is_visible": true,
+    "product_sort_start": 10,
+    "product_sort_step": 10,
+    "vendor_logo_url": "",
+    "vendor_logo_asset": ""
+  },
+  "google_sheets": {
+    "worksheet_title": "Integrations"
+  }
+}
