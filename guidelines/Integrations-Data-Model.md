@@ -5,8 +5,11 @@
 - Export the sheet as CSV.
 - Convert the CSV into a structured JSON file at build time.
 - Render the public Integrations page from that JSON.
+- Generate a second, route-addressable detail JSON layer for individual products.
 - Keep `integration_api_url` in the JSON even when it is not shown in the UI.
 - In this repo, the working CSV lives at `data/integrations.csv` and the public machine-readable output is generated to `public/integrations.json`.
+- Manual researched detail files can be authored under `data/integration-details/**/*.json`.
+- The generator writes public product detail payloads to `public/integration-details/**/*.json`.
 - The generated JSON also advertises its discovery contract in page metadata using `lastmile:integrations-data` and a JSON `alternate` link.
 
 ## Why This Works
@@ -14,6 +17,8 @@
 - Engineering gets a stable, typed structure for rendering and filtering.
 - AI agents get a machine-readable field with a predictable key name.
 - Planned integrations can exist in the catalog before the implementation is built.
+- Every visible product can present a uniform detail experience even before manual data-element research is complete.
+- Rich manually researched detail can override the generated baseline without changing the public route structure.
 
 ## Required CSV Columns
 - `industry_slug`: stable machine key for the industry group.
@@ -22,9 +27,12 @@
 - `industry_sort_order`: numeric sort order for industries.
 - `vendor_slug`: stable machine key for the OEM or vendor.
 - `vendor_name`: visible vendor label.
+- `vendor_domain`: optional canonical vendor domain used for scalable logo enrichment, for example `siemens.com`.
+- If `vendor_domain` is not explicitly supplied, the generator attempts to infer it from `integration_api_url`.
 - `vendor_logo_url`: optional external URL to the vendor logo.
 - `vendor_logo_asset`: optional local asset reference if logo files are stored in-repo.
 - `vendor_logo_asset` should point to a file under `public/`, for example `images/vendor-logo.png`.
+- Prefer `vendor_domain` over hand-curated image URLs when scaling to large catalogs. The generator can resolve vendor logos automatically from a logo provider based on domain.
 - `vendor_summary`: short vendor description shown in the UI.
 - `vendor_sort_order`: numeric sort order inside the industry.
 - `product_slug`: stable machine key for the product or integration target.
@@ -40,6 +48,7 @@
 
 ## Identity Rules
 - `vendor_slug` and `vendor_name` represent the OEM or canonical vendor identity, not a product line, documentation section, or URL path segment.
+- `vendor_domain` should represent the vendor's canonical public brand domain when known, not a temporary documentation host unless that is the only reliable source.
 - If a single vendor portal exposes many product lines, all rows from that portal can still share one canonical `vendor_slug` and `vendor_name`.
 - Product-line, platform, suite, or business-unit labels should stay on the product row, typically in `product_name`, `product_family`, or `internal_notes`.
 - Do not create fake vendors from path segments like `/comos/`, `/insights-hub/`, or `/building-x-openness/` when those are product lines under one OEM.
@@ -71,8 +80,10 @@ The exported JSON should keep the API documentation field directly on each produ
         {
           "vendor_slug": "atlas-motion-systems",
           "vendor_name": "Atlas Motion Systems",
+          "vendor_domain": "atlasmotion.com",
           "vendor_logo_url": "",
           "vendor_logo_asset": "",
+          "vendor_logo_src": "https://img.logo.dev/atlasmotion.com?token=<publishable-key>&size=160&format=png",
           "vendor_summary": "Discrete manufacturing automation and machine performance integrations.",
           "products": [
             {
@@ -83,6 +94,9 @@ The exported JSON should keep the API documentation field directly on each produ
               "integration_type": "OEM API",
               "integration_api_url": "https://my.apidocs.com",
               "product_summary": "Servo and drive integration planned for production telemetry workflows.",
+              "has_detail": true,
+              "detail_path": "/integration-details/atlas-motion-systems/atlas-servo-suite.json",
+              "data_coverage_summary": "Servo and drive integration planned for production telemetry workflows.",
               "is_visible": true
             }
           ]
@@ -90,6 +104,62 @@ The exported JSON should keep the API documentation field directly on each produ
       ]
     }
   ]
+}
+```
+
+## Product Detail Layer
+- Public product detail route shape: `/integrations/:vendorSlug/:productSlug`.
+- Public detail payload shape: `/integration-details/<resolved-detail-file>.json`.
+- The page route slug and the generated detail JSON filename are intentionally decoupled. The route resolves the correct `detail_path` from `integrations.json` before fetching the detail payload.
+- The detail layer is generated from two sources:
+  - Manual researched detail authored under `data/integration-details/**/*.json`.
+  - Automatic baseline detail generated for visible products that do not yet have a manual detail file.
+- Manual researched detail always wins over the generated baseline for the same `vendor_slug` + `product_slug` pair.
+
+### Detail Completeness
+- `detail_completeness=researched` is used for manually authored product detail with curated data-element coverage.
+- `detail_completeness=generated-summary` is used for auto-generated baseline detail created from the catalog row and linked documentation.
+- Generated baseline detail is intended to provide a uniform review surface, not to invent undocumented entities or operations.
+
+### Detail JSON Example
+
+```json
+{
+  "vendor_slug": "atlas-motion-systems",
+  "vendor_name": "Atlas Motion Systems",
+  "vendor_domain": "atlasmotion.com",
+  "vendor_logo_src": "https://img.logo.dev/atlasmotion.com?token=<publishable-key>&size=160&format=png",
+  "product_slug": "atlas-servo-suite",
+  "product_name": "Atlas Servo Suite",
+  "product_family": "Motion Control",
+  "integration_type": "OEM API",
+  "integration_api_url": "https://my.apidocs.com",
+  "spec_artifact_url": "https://my.apidocs.com",
+  "detail_path": "/integration-details/atlas-motion-systems/atlas-servo-suite.json",
+  "detail_completeness": "generated-summary",
+  "data_coverage_summary": "Servo and drive integration planned for production telemetry workflows.",
+  "asset_data_available": null,
+  "telemetry_data_available": null,
+  "writeback_supported": null,
+  "overview": "This baseline detail page was generated from the catalog metadata and linked documentation.",
+  "buyer_guidance": "Use the published OEM API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
+  "available_data": [
+    {
+      "category": "Published API Scope",
+      "description": "This standardized detail view was generated from the catalog row and linked documentation.",
+      "data_points": [
+        "Published summary: Servo and drive integration planned for production telemetry workflows.",
+        "Product family: Motion Control",
+        "Integration type: OEM API",
+        "Lifecycle status: Planned"
+      ],
+      "relevant_operations": []
+    }
+  ],
+  "source_evidence": {
+    "documentation_url": "https://my.apidocs.com",
+    "reviewed_at": "2026-04-17"
+  }
 }
 ```
 
@@ -107,8 +177,12 @@ The exported JSON should keep the API documentation field directly on each produ
 ## Current Repo Flow
 - Maintain or replace `data/integrations.csv` with the latest Google Sheet export.
 - Run `npm run integrations:generate` to refresh `public/integrations.json`.
+- The same command also regenerates `public/integration-details/**/*.json`.
+- Set `LOGO_DEV_PUBLISHABLE_KEY` or `logo_dev_publishable_key` in `data/integrations-source.json` to enable domain-based full-logo resolution via Logo.dev.
 - `npm run build` now regenerates the JSON automatically before the site build.
 - Run `npm run integrations:validate` to fail fast on missing columns, invalid slugs, duplicate products, missing logo assets, or malformed URLs.
+- If no logo provider key is configured, the generator falls back to domain-based favicon resolution so the UI still has visual vendor identifiers without manual image management.
+- If a visible product has no manual detail file, the generator emits a baseline detail payload automatically so the product still has a consistent detail page and route.
 - If you publish the Google Sheet as CSV, create `data/integrations-source.json` from the example file and run `npm run integrations:sync-sheet`.
 
 ## Vendor Scraper To Sheet Flow
@@ -154,13 +228,8 @@ If Google returns `401 Unauthorized`, the sheet is not publicly readable yet. A 
 ## JSON Discovery Contract
 - Public JSON endpoint: `https://lastmileinc.ai/integrations.json`
 - Relative JSON path: `/integrations.json`
+- Public product detail path pattern: `/integration-details/:vendorSlug/:productSlug.json`
 - Static HTML discovery meta tag in `index.html`: `lastmile:integrations-data`
 - Static HTML discovery link in `index.html`: `<link rel="alternate" type="application/json" href="https://lastmileinc.ai/integrations.json">`
 - The React page also mirrors the same discovery values at runtime for consistency.
 - AI-facing API docs field on each product: `integration_api_url`
-
-## Suggested Next Build Step
-- Stage 1: keep Google Sheet as source.
-- Stage 2: add a CSV-to-JSON transform step.
-- Stage 3: render the Integrations page from real JSON instead of mock data.
-- Stage 4: optionally publish a separate machine-readable public JSON endpoint for AI agents.

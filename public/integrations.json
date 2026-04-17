@@ -1,11 +1,11 @@
 {
   "meta": {
-    "generated_at": "2026-04-17T13:12:33.786Z",
+    "generated_at": "2026-04-17T18:38:07.644Z",
     "source_csv": "data/integrations.csv",
     "source_mode": "local-file",
     "public_json_path": "/integrations.json",
     "public_json_url": "https://lastmileinc.ai/integrations.json",
-    "record_count": 89,
+    "record_count": 81,
     "industry_count": 4,
     "discovery": {
       "html_meta_name": "lastmile:integrations-data",
@@ -16,7 +16,11 @@
     },
     "machine_readable_fields": {
       "integration_api_url": "API documentation URL for AI agents. This field is intentionally present in JSON and not rendered in the public UI.",
-      "vendor_logo_src": "Resolved public logo path or external image URL used by the UI when available."
+      "vendor_domain": "Resolved vendor domain used for scalable logo enrichment and vendor identity mapping.",
+      "vendor_logo_src": "Resolved public logo path or external image URL used by the UI when available.",
+      "detail_path": "Route-addressable JSON detail payload for a specific OEM product integration.",
+      "data_domains": "Normalized capability tags describing the main data domains exposed by the integration.",
+      "data_coverage_summary": "Short buyer-facing summary of what data can be accessed via the integration."
     }
   },
   "industries": [
@@ -28,9 +32,10 @@
         {
           "vendor_slug": "siemens",
           "vendor_name": "Siemens",
+          "vendor_domain": "siemens.com",
           "vendor_logo_url": "",
           "vendor_logo_asset": "",
-          "vendor_logo_src": "",
+          "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
           "vendor_summary": "Siemens industrial software, infrastructure, transportation, healthcare, and building platform APIs exposed through the Siemens developer ecosystem.",
           "products": [
             {
@@ -42,7 +47,15 @@
               "integration_api_url": "https://developer.siemens.com/comos/comos-rest-apispec.json",
               "product_summary": "REST-style, HTTP-based API used to interact with COMOS data and to access COMOS features.",
               "product_sort_order": 10,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/comos-web-rest-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "REST-style, HTTP-based API used to interact with COMOS data and to access COMOS features.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "battery-passport-rest-api",
@@ -53,7 +66,29 @@
               "integration_api_url": "https://developer.siemens.com/battery-passport/postman-collection.json",
               "product_summary": "The Battery Passport platform offers a rest API in order to provide data exchange in a standardized and self-described way.",
               "product_sort_order": 50,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/battery-passport-rest-api.json",
+              "data_domains": [
+                "asset-master-data",
+                "identity-access",
+                "partner-connectors",
+                "documents-and-passports",
+                "analytics",
+                "schema-management"
+              ],
+              "data_coverage_summary": "The Battery Passport REST API provides standardized access to battery passport records and related organization, connector, analytics, and schema information used to manage battery passport data exchange across the ecosystem.",
+              "asset_data_available": true,
+              "telemetry_data_available": false,
+              "writeback_supported": true,
+              "key_entities": [
+                "battery passports",
+                "passport attributes",
+                "organizations",
+                "organization users",
+                "Catena-X connectors",
+                "data schemas"
+              ]
             },
             {
               "product_slug": "charger-status-api",
@@ -64,7 +99,15 @@
               "integration_api_url": "https://developer.siemens.com/depotfinity/api_specs/ChargerStatusAPI-v2-0-0.yaml",
               "product_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
               "product_sort_order": 220,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/charger-status-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "charger-control-api",
@@ -75,7 +118,15 @@
               "integration_api_url": "https://developer.siemens.com/depotfinity/api_specs/ChargerControlAPI-v1-0-0.yaml",
               "product_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
               "product_sort_order": 230,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/charger-control-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "remote-command-api",
@@ -86,7 +137,15 @@
               "integration_api_url": "https://developer.siemens.com/depotfinity/api_specs/RemoteCommandAPI-v2-0-0.yaml",
               "product_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
               "product_sort_order": 240,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/remote-command-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "reservations-api",
@@ -97,7 +156,15 @@
               "integration_api_url": "https://developer.siemens.com/depotfinity/api_specs/ReservationsAPI-v1-0-0.yaml",
               "product_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
               "product_sort_order": 250,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/reservations-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "rfid-management-api",
@@ -108,7 +175,15 @@
               "integration_api_url": "https://developer.siemens.com/depotfinity/api_specs/RFIDAPI-v2-0-0.yaml",
               "product_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
               "product_sort_order": 260,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/rfid-management-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "transaction-management-api",
@@ -119,7 +194,15 @@
               "integration_api_url": "https://developer.siemens.com/depotfinity/api_specs/TransactionsAPI-v2-0-0.yaml",
               "product_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
               "product_sort_order": 270,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/transaction-management-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "vdv-261-api",
@@ -130,7 +213,15 @@
               "integration_api_url": "https://developer.siemens.com/depotfinity/api_specs/VDV261-v1-0-0.yaml",
               "product_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
               "product_sort_order": 280,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/vdv-261-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "electrification-x-api",
@@ -141,7 +232,15 @@
               "integration_api_url": "https://developer.siemens.com/electrification-x/api_specs/openapi-v1_0_0.yaml",
               "product_summary": "Electrification X® combines the real and digital worlds in the Xcelerator IoT Software as a Service (SaaS) offering for Electrification & Automation to tackle the challenges of energy transition.",
               "product_sort_order": 300,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/electrification-x-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Electrification X® combines the real and digital worlds in the Xcelerator IoT Software as a Service (SaaS) offering for Electrification & Automation to tackle the challenges of energy transition.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "occupancy-apis",
@@ -152,7 +251,15 @@
               "integration_api_url": "https://developer.siemens.com/enlighted-apis/occupancy/occupancy.openapi.yaml",
               "product_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security.",
               "product_sort_order": 310,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/occupancy-apis.json",
+              "data_domains": [],
+              "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "location-services-rtls-apis",
@@ -163,7 +270,15 @@
               "integration_api_url": "https://developer.siemens.com/enlighted-apis/location-services/location.openapi.yaml",
               "product_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security.",
               "product_sort_order": 320,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/location-services-rtls-apis.json",
+              "data_domains": [],
+              "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "energy-and-environment-apis",
@@ -174,18 +289,15 @@
               "integration_api_url": "https://developer.siemens.com/enlighted-apis/energy-environment/energy-environment.openapi.yaml",
               "product_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security.",
               "product_sort_order": 330,
-              "is_visible": true
-            },
-            {
-              "product_slug": "gproms-gwap-digital-twin-a-rest-api",
-              "product_name": "gPROMS gWAP Digital Twin A REST API",
-              "product_family": "Gwap",
-              "integration_status": "built",
-              "integration_type": "OpenAPI",
-              "integration_api_url": "https://developer.siemens.com/gwap/gwap-public-api.yaml",
-              "product_summary": "The gPROMS Web Applications Publisher makes complex modeling insights accessible across the business through intuitive web apps.",
-              "product_sort_order": 340,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/energy-and-environment-apis.json",
+              "data_domains": [],
+              "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "ai-asset-manager-aws-cloud-package-delivery-api",
@@ -196,7 +308,15 @@
               "integration_api_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/aws-delivery-api/aws-delivery-api.yml",
               "product_summary": "Revolutionize your AI operations across locations with seamless cloud integration. Our Industrial AI Suite runs on a new line of Industrial PCs powered by NVIDIA's GPUs accelerating AI execution. This makes complex AI tasks in advanced automation broadly available and boosts efficiency.",
               "product_sort_order": 350,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/ai-asset-manager-aws-cloud-package-delivery-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Revolutionize your AI operations across locations with seamless cloud integration. Our Industrial AI Suite runs on a new line of Industrial PCs powered by NVIDIA's GPUs accelerating AI execution. This makes complex AI tasks in advanced automation broadly available and boosts efficiency.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "ai-asset-manager-azure-cloud-package-delivery-api",
@@ -207,7 +327,15 @@
               "integration_api_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/azure-delivery-api/azure-delivery-api.yml",
               "product_summary": "Revolutionize your AI operations across locations with seamless cloud integration. Our Industrial AI Suite runs on a new line of Industrial PCs powered by NVIDIA's GPUs accelerating AI execution. This makes complex AI tasks in advanced automation broadly available and boosts efficiency.",
               "product_sort_order": 360,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/ai-asset-manager-azure-cloud-package-delivery-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Revolutionize your AI operations across locations with seamless cloud integration. Our Industrial AI Suite runs on a new line of Industrial PCs powered by NVIDIA's GPUs accelerating AI execution. This makes complex AI tasks in advanced automation broadly available and boosts efficiency.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "ai-asset-manager-cloud-api",
@@ -218,51 +346,15 @@
               "integration_api_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/cloud-api/cloud-api.yml",
               "product_summary": "Revolutionize your AI operations across locations with seamless cloud integration. Our Industrial AI Suite runs on a new line of Industrial PCs powered by NVIDIA's GPUs accelerating AI execution. This makes complex AI tasks in advanced automation broadly available and boosts efficiency.",
               "product_sort_order": 370,
-              "is_visible": true
-            },
-            {
-              "product_slug": "you-already-have-access-to-this-api-via-developer-dashboard-industrial-ai-suite-ai-asset-manager-openapi-v2-industrial-operations-x-industrial-ai-suite",
-              "product_name": "You already have access to this API via Developer Dashboard Industrial AI Suite AI Asset Manager OpenAPI V2 Industrial Operations X Industrial AI Suite",
-              "product_family": "Industrial AI Suite",
-              "integration_status": "built",
-              "integration_type": "OpenAPI",
-              "integration_api_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/open-apis/swagger_v2/public_v2_api_swagger.yaml",
-              "product_summary": "# AI Asset Manager API V2 [Download OpenAPI Specification](public_v2_api_swagger.yaml) View the OpenAPI specification",
-              "product_sort_order": 380,
-              "is_visible": true
-            },
-            {
-              "product_slug": "you-already-have-access-to-this-api-via-developer-dashboard-industrial-ai-suite-ai-asset-manager-openapi-v3-industrial-operations-x-industrial-ai-suite",
-              "product_name": "You already have access to this API via Developer Dashboard Industrial AI Suite AI Asset Manager OpenAPI V3 Industrial Operations X Industrial AI Suite",
-              "product_family": "Industrial AI Suite",
-              "integration_status": "built",
-              "integration_type": "OpenAPI",
-              "integration_api_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/open-apis/swagger_v3/public_v3_api_swagger.yaml",
-              "product_summary": "# AI Asset Manager API V3 [Download OpenAPI Specification](public_v3_api_swagger.yaml) View the OpenAPI specification",
-              "product_sort_order": 390,
-              "is_visible": true
-            },
-            {
-              "product_slug": "programming-interface",
-              "product_name": "Programming Interface",
-              "product_family": "Developers",
-              "integration_status": "built",
-              "integration_type": "OpenAPI",
-              "integration_api_url": "https://industrial-assets.io/context-hierarchies/v1-earlyaccess/hierarchies.openapi.yaml",
-              "product_summary": "Industrial Asset Hub consists of a growing amount of services supporting our users.",
-              "product_sort_order": 400,
-              "is_visible": true
-            },
-            {
-              "product_slug": "asset-gateway-getting-started",
-              "product_name": "Asset Gateway - Getting Started",
-              "product_family": "Developers",
-              "integration_status": "built",
-              "integration_type": "OpenAPI",
-              "integration_api_url": "https://industrial-assets.io/gateway-config.json",
-              "product_summary": "Industrial Asset Hub connects to existing shop floor assets via a gateway which is hosted on Industrial Edge. These assets are referred to as indirectly managed devices. The same agents can be directly integrated with devices to connect them directly to the IAH backend services (IAH native devices).",
-              "product_sort_order": 410,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/ai-asset-manager-cloud-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Revolutionize your AI operations across locations with seamless cloud integration. Our Industrial AI Suite runs on a new line of Industrial PCs powered by NVIDIA's GPUs accelerating AI execution. This makes complex AI tasks in advanced automation broadly available and boosts efficiency.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "portal-api-1-9-0",
@@ -273,7 +365,15 @@
               "integration_api_url": "https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/portal-1.9.0-openapi.yaml",
               "product_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
               "product_sort_order": 420,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/portal-api-1-9-0.json",
+              "data_domains": [],
+              "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "ie-device-apis",
@@ -284,7 +384,15 @@
               "integration_api_url": "https://developer.siemens.com/industrial-edge/api/ied/ied-api/v2.5.0/ied-2.5.0-openapi.yaml",
               "product_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
               "product_sort_order": 430,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/ie-device-apis.json",
+              "data_domains": [],
+              "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "industrial-edge-management-apis",
@@ -295,7 +403,15 @@
               "integration_api_url": "https://developer.siemens.com/industrial-edge/api/iem/api-admin/v1.0.0/admin-1.0.0-openapi.yaml",
               "product_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
               "product_sort_order": 440,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/industrial-edge-management-apis.json",
+              "data_domains": [],
+              "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "industrial-edge-management-v2-apis",
@@ -306,18 +422,15 @@
               "integration_api_url": "https://developer.siemens.com/industrial-edge/api/iemV2/api-portal/portal-dev-v2-openapi.yaml",
               "product_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
               "product_sort_order": 450,
-              "is_visible": true
-            },
-            {
-              "product_slug": "industrial-operations-x-documentation",
-              "product_name": "Industrial Operations X Documentation",
-              "product_family": "R",
-              "integration_status": "built",
-              "integration_type": "OpenAPI",
-              "integration_api_url": "https://docs.industrial-operations-x.siemens.cloud/manifest.json",
-              "product_summary": "Industrial Operations X Documentation",
-              "product_sort_order": 460,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/industrial-edge-management-v2-apis.json",
+              "data_domains": [],
+              "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "flow-creator-configurator-apis",
@@ -328,7 +441,15 @@
               "integration_api_url": "https://developer.siemens.com/industrial-edge/api/flowcreator_configurator/v2.0.0/iefc-2.0.0-openapi.yaml",
               "product_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
               "product_sort_order": 520,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/flow-creator-configurator-apis.json",
+              "data_domains": [],
+              "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "external-databus-apis",
@@ -339,7 +460,15 @@
               "integration_api_url": "https://developer.siemens.com/industrial-edge/api/external_databus/v1.0.0/external_databus_V1.0.0_openapi.yaml",
               "product_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
               "product_sort_order": 530,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/external-databus-apis.json",
+              "data_domains": [],
+              "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "industrial-edge-common-databus-payload-format",
@@ -350,7 +479,15 @@
               "integration_api_url": "https://developer.siemens.com/industrial-edge/api/databus/profinet_v1.2.0/asyncapi_profinet_io_conn.yaml",
               "product_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
               "product_sort_order": 600,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/industrial-edge-common-databus-payload-format.json",
+              "data_domains": [],
+              "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "iih-essentials-apis",
@@ -361,7 +498,15 @@
               "integration_api_url": "https://developer.siemens.com/industrial-information-hub/api/iih-essentials/v2.4/iih-essentials-2.4.0-openapi.json",
               "product_summary": "The Industrial Information Hub (IIH) is a collection of Industrial Edge apps for data integration. It captures data at the automation level and provides it to the IT level of a factory.",
               "product_sort_order": 610,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/iih-essentials-apis.json",
+              "data_domains": [],
+              "data_coverage_summary": "The Industrial Information Hub (IIH) is a collection of Industrial Edge apps for data integration. It captures data at the automation level and provides it to the IT level of a factory.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "iih-semantics-apis",
@@ -372,7 +517,15 @@
               "integration_api_url": "https://developer.siemens.com/industrial-information-hub/api/iih-semantics/v2.4/iih-semantics-2.4.0.openapi.json",
               "product_summary": "The Industrial Information Hub (IIH) is a collection of Industrial Edge apps for data integration. It captures data at the automation level and provides it to the IT level of a factory.",
               "product_sort_order": 620,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/iih-semantics-apis.json",
+              "data_domains": [],
+              "data_coverage_summary": "The Industrial Information Hub (IIH) is a collection of Industrial Edge apps for data integration. It captures data at the automation level and provides it to the IT level of a factory.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "mindconnect-nodejs",
@@ -383,7 +536,15 @@
               "integration_api_url": "https://developer.siemens.com/agentconfig.json",
               "product_summary": "Demo applications, libraries and SDKs as well as useful connectivity tools which are maintained and released as open source software.",
               "product_sort_order": 650,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/mindconnect-nodejs.json",
+              "data_domains": [],
+              "data_coverage_summary": "Demo applications, libraries and SDKs as well as useful connectivity tools which are maintained and released as open source software.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "mindconnect-node-red-node-overview",
@@ -394,7 +555,15 @@
               "integration_api_url": "https://developer.siemens.com/agentconfig.json",
               "product_summary": "Demo applications, libraries and SDKs as well as useful connectivity tools which are maintained and released as open source software.",
               "product_sort_order": 660,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/mindconnect-node-red-node-overview.json",
+              "data_domains": [],
+              "data_coverage_summary": "Demo applications, libraries and SDKs as well as useful connectivity tools which are maintained and released as open source software.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "identity-management",
@@ -405,7 +574,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/identitymanagement-v3-3-2.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 690,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/identity-management.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "resource-access-management",
@@ -416,7 +593,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/resourceaccessmanagement-v3-2-0.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 700,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/resource-access-management.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "message-broker-developer-documentation",
@@ -427,7 +612,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/messagebroker-v3-0-2.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 710,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/message-broker-developer-documentation.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "oauth-authorization-server-api",
@@ -438,7 +631,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/oauthauthorizationserver-v3-1.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 720,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/oauth-authorization-server-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "tenant-management-service",
@@ -449,7 +650,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/tenantmanagement-v4-7-0.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 730,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/tenant-management-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "token-management-service",
@@ -460,7 +669,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/tokenmanager-v3-5-0.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 740,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/token-management-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "usage-transparency-service",
@@ -471,7 +688,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/usagetransparency-v3-2-0.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 750,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/usage-transparency-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "iot-file-service",
@@ -482,7 +707,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/iotfile-v3-6-0-eu1.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 760,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/iot-file-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "iot-time-series-service",
@@ -493,7 +726,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/iottimeseries-v3-7-1.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 770,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/iot-time-series-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "notification-for-new-arrival-of-timeseries-data",
@@ -504,7 +745,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/iottimeseries-async-v3-0-1.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 780,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/notification-for-new-arrival-of-timeseries-data.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "iot-time-series-bulk-service",
@@ -515,7 +764,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/iottsbulk-v3-8-1.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 800,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/iot-time-series-bulk-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "integrated-data-lake-service",
@@ -526,7 +783,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/integrated-data-lake-v3-11-0-eu1.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 810,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/integrated-data-lake-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "agent-management-service",
@@ -537,7 +802,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/agentmanagement-v3-5-2.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 820,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/agent-management-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "mindconnect-api",
@@ -548,7 +821,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/mindconnect-v3-6-0.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 840,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/mindconnect-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "mindconnect-mqtt-api",
@@ -559,7 +840,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/mindconnect-mqtt-v3-0-0-rancher.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 860,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/mindconnect-mqtt-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "asset-management-service",
@@ -570,7 +859,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/assetmanagement-v3-18-4.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 900,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/asset-management-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "event-management",
@@ -581,7 +878,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/eventmanagement-v3-16-3.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 920,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/event-management.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "notification-service",
@@ -592,7 +897,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/notification-v4-4-2.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 940,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/notification-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "case-management-service",
@@ -603,7 +916,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/cases-v3-5-0.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 950,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/case-management-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "visual-flow-creator-service",
@@ -614,7 +935,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/visual-flow-creator-v3-0-0.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 960,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/visual-flow-creator-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "rules-management-service",
@@ -625,7 +954,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/rulesmanagement-v4-0-0.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 970,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/rules-management-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "data-exchange-service",
@@ -636,7 +973,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/dataexchange-v3-0-1.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 980,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/data-exchange-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "job-manager-service",
@@ -647,7 +992,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/jobmanager-v3-2-0.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 990,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/job-manager-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "model-management-service",
@@ -658,7 +1011,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/modelmanagement-v3-2-0.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 1000,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/model-management-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "opcenter-intelligence-service",
@@ -669,7 +1030,15 @@
               "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/ocin-proxy-app-v1-0-0.yaml",
               "product_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
               "product_sort_order": 1010,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/opcenter-intelligence-service.json",
+              "data_domains": [],
+              "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "optimize-my-plant",
@@ -680,7 +1049,15 @@
               "integration_api_url": "https://developer.siemens.com/optimize-my-plant/Optimize%20my%20plant%20collection%20-%20SaaS.json",
               "product_summary": "Optimize my plant is a Mendix app that can be deployed on Xcelerator as a Siemens operated SaaS offering, or customer can use the Optimize my plant Starter Kit to extend the Optimize my plant app and deploy and operate himself.",
               "product_sort_order": 1030,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/optimize-my-plant.json",
+              "data_domains": [],
+              "data_coverage_summary": "Optimize my plant is a Mendix app that can be deployed on Xcelerator as a Siemens operated SaaS offering, or customer can use the Optimize my plant Starter Kit to extend the Optimize my plant app and deploy and operate himself.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "ot-companion-asset-management-api",
@@ -691,7 +1068,15 @@
               "integration_api_url": "https://developer.siemens.com/otc/asset-mgt-api/asset-management.yml",
               "product_summary": "OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals.",
               "product_sort_order": 1040,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/ot-companion-asset-management-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "ot-companion-protection-settings-api",
@@ -702,7 +1087,15 @@
               "integration_api_url": "https://developer.siemens.com/otc/protection-setting-api/protection-settings.yml",
               "product_summary": "OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals.",
               "product_sort_order": 1050,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/ot-companion-protection-settings-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "polarion-rest-api",
@@ -713,29 +1106,15 @@
               "integration_api_url": "https://developer.siemens.com/polarion/polarion-rest-apispec.json",
               "product_summary": "The Polarion REST API gives external applications an integration layer with Polarion that gives you greater control over the information you use in both Polarion and the applications you use daily.",
               "product_sort_order": 1060,
-              "is_visible": true
-            },
-            {
-              "product_slug": "you-already-have-access-to-this-api-via-developer-dashboard-product-information-product-information-hub-business-intelligence-nis2-the-product-information-hub-is-offering-comprehensive-product-data-and-lifecycle-information-for-siemens-and-other-manufacturers-through-a-unified-standardized-interface",
-              "product_name": "You already have access to this API via Developer Dashboard Product Information Product Information Hub Business Intelligence NIS2 The Product Information Hub is offering comprehensive product data and lifecycle information for SIEMENS and other manufacturers through a unified, standardized interface.",
-              "product_family": "Product Information Hub",
-              "integration_status": "built",
-              "integration_type": "OpenAPI",
-              "integration_api_url": "https://developer.siemens.com/product-information-api/product-information-api.spec.yaml",
-              "product_summary": "Empowering Your CMMS with the Product Information API 🚀",
-              "product_sort_order": 1070,
-              "is_visible": true
-            },
-            {
-              "product_slug": "user-guide",
-              "product_name": "User Guide",
-              "product_family": "Sdl",
-              "integration_status": "built",
-              "integration_type": "OpenAPI",
-              "integration_api_url": "https://developer.siemens.com/sdl/spec.json",
-              "product_summary": "The Transport Carbon Calculator (TCC) web service calculates transport emissions for single-leg relations between two locations, in conformance with the Global Logistics Emissions Council (GLEC) framework.",
-              "product_sort_order": 1100,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/polarion-rest-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "The Polarion REST API gives external applications an integration layer with Polarion that gives you greater control over the information you use in both Polarion and the applications you use daily.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "sigreen-procurement-api",
@@ -746,7 +1125,15 @@
               "integration_api_url": "https://developer.siemens.com/sigreen/procurement-api/api_specs/openapi-spec-v1.16.0.yaml",
               "product_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN.",
               "product_sort_order": 1130,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/sigreen-procurement-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "sigreen-product-api",
@@ -757,7 +1144,15 @@
               "integration_api_url": "https://developer.siemens.com/sigreen/product-api/api_specs/openapi-spec-v2-1.16.0.yaml",
               "product_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN.",
               "product_sort_order": 1140,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/sigreen-product-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "sigreen-my-tasks-api",
@@ -768,7 +1163,15 @@
               "integration_api_url": "https://developer.siemens.com/sigreen/my-tasks-api/api_specs/openapi-spec-v1.16.0.yaml",
               "product_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN.",
               "product_sort_order": 1150,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/sigreen-my-tasks-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "sigreen-pcf-api",
@@ -779,7 +1182,15 @@
               "integration_api_url": "https://developer.siemens.com/sigreen/pcf-api/api_specs/openapi-spec-v1.16.1.yaml",
               "product_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN.",
               "product_sort_order": 1160,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/sigreen-pcf-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "external-apis",
@@ -790,7 +1201,15 @@
               "integration_api_url": "https://developer.siemens.com/sitrans-hub-iq/api-specs/Hub_IQ_External_APIs_V2.2.0.yaml",
               "product_summary": "External APIs ¶",
               "product_sort_order": 1170,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/external-apis.json",
+              "data_domains": [],
+              "data_coverage_summary": "External APIs ¶",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "teamcenter-x-product-cost-management-rest-api",
@@ -801,7 +1220,15 @@
               "integration_api_url": "https://developer.siemens.com/tcpcm/tcpcm-api-spec.yaml",
               "product_summary": "Move organizations forward, from a best-guess calculation to a methodical and sound assessment",
               "product_sort_order": 1200,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/teamcenter-x-product-cost-management-rest-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Move organizations forward, from a best-guess calculation to a methodical and sound assessment",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "walkinside",
@@ -812,7 +1239,15 @@
               "integration_api_url": "https://developer.siemens.com/walkinside/walkinside-api/walkinside.webapi.json",
               "product_summary": "Walkinside Services offer a robust 3D visualization platform that transforms how enterprises interact with their digital twins. By enabling dynamic navigation through virtual asset models, Walkinside leverages immersive environments to enhance operational planning, training, and safety assessments.",
               "product_sort_order": 1220,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/walkinside.json",
+              "data_domains": [],
+              "data_coverage_summary": "Walkinside Services offer a robust 3D visualization platform that transforms how enterprises interact with their digital twins. By enabling dynamic navigation through virtual asset models, Walkinside leverages immersive environments to enhance operational planning, training, and safety assessments.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             }
           ]
         }
@@ -826,9 +1261,10 @@
         {
           "vendor_slug": "siemens",
           "vendor_name": "Siemens",
+          "vendor_domain": "siemens.com",
           "vendor_logo_url": "",
           "vendor_logo_asset": "",
-          "vendor_logo_src": "",
+          "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
           "vendor_summary": "Siemens industrial software, infrastructure, transportation, healthcare, and building platform APIs exposed through the Siemens developer ecosystem.",
           "products": [
             {
@@ -840,7 +1276,15 @@
               "integration_api_url": "https://developer.siemens.com/nurse-call-system/nursecallsystem-api-spec.yaml",
               "product_summary": "The Nurse Call System API lets you integrate your Nurse Call System into Ward Manager so that advanced communication designed to enhance patient care and safety within healthcare facilities are reflected into Ward Manger.",
               "product_sort_order": 30,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/nurse-call-system-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "The Nurse Call System API lets you integrate your Nurse Call System into Ward Manager so that advanced communication designed to enhance patient care and safety within healthcare facilities are reflected into Ward Manger.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             }
           ]
         }
@@ -854,9 +1298,10 @@
         {
           "vendor_slug": "siemens",
           "vendor_name": "Siemens",
+          "vendor_domain": "siemens.com",
           "vendor_logo_url": "",
           "vendor_logo_asset": "",
-          "vendor_logo_src": "",
+          "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
           "vendor_summary": "Siemens industrial software, infrastructure, transportation, healthcare, and building platform APIs exposed through the Siemens developer ecosystem.",
           "products": [
             {
@@ -868,7 +1313,15 @@
               "integration_api_url": "https://developer.siemens.com/railigent-x/Train-API/train-api-v1.yml",
               "product_summary": "One key to advancing sustainable transportation is to digitally increase the capacity of rail systems - with less resources.",
               "product_sort_order": 1080,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/train-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "One key to advancing sustainable transportation is to digitally increase the capacity of rail systems - with less resources.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             }
           ]
         }
@@ -882,9 +1335,10 @@
         {
           "vendor_slug": "siemens",
           "vendor_name": "Siemens",
+          "vendor_domain": "siemens.com",
           "vendor_logo_url": "",
           "vendor_logo_asset": "",
-          "vendor_logo_src": "",
+          "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
           "vendor_summary": "Siemens industrial software, infrastructure, transportation, healthcare, and building platform APIs exposed through the Siemens developer ecosystem.",
           "products": [
             {
@@ -896,7 +1350,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/building-operations/operations.openapi.yaml",
               "product_summary": "RESTful API for reading data from data points or issuing commands to actuator points.",
               "product_sort_order": 60,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/building-operations-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for reading data from data points or issuing commands to actuator points.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "building-structure-api",
@@ -907,7 +1369,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/building-structure/structure.openapi.yaml",
               "product_summary": "RESTful API for creating and managing a structural representation of your buildings.",
               "product_sort_order": 70,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/building-structure-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for creating and managing a structural representation of your buildings.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "accounts-api",
@@ -918,7 +1388,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/accounts-api/accounts.openapi.yaml",
               "product_summary": "RESTful API for discovering customer, partition, role, and user group access.",
               "product_sort_order": 80,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/accounts-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for discovering customer, partition, role, and user group access.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "fire-api",
@@ -929,7 +1407,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/fire/fire.openapi.yaml",
               "product_summary": "RESTful API for reading fire events of your site.",
               "product_sort_order": 90,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/fire-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for reading fire events of your site.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "activities-api",
@@ -940,7 +1426,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/activities-v1/activities.openapi.yaml",
               "product_summary": "RESTful API for retrieving events, alarms, and user operations produced by access system and security manager services.",
               "product_sort_order": 100,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/activities-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for retrieving events, alarms, and user operations produced by access system and security manager services.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "security-identities-and-privileges-api",
@@ -951,7 +1445,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/security-api/piam-v1/security.openapi.yaml",
               "product_summary": "RESTful API for creating and managing Identities and assigning configured privileges to an identity.",
               "product_sort_order": 110,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/security-identities-and-privileges-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for creating and managing Identities and assigning configured privileges to an identity.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "security-workflow-api",
@@ -962,7 +1464,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-workflow-v1/security.workflow.openapi.yaml",
               "product_summary": "RESTful API for listing available workflows and creating new workflow instances.",
               "product_sort_order": 120,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/security-workflow-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for listing available workflows and creating new workflow instances.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "security-intrusion-api",
@@ -973,7 +1483,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-intrusion-v1/security.intrusion.openapi.yaml",
               "product_summary": "RESTful API for information about all cloud-enabled Intrusion systems.",
               "product_sort_order": 130,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/security-intrusion-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for information about all cloud-enabled Intrusion systems.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "security-monitoring-api",
@@ -984,7 +1502,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-monitoring-v1/security.monitoring.openapi.yaml",
               "product_summary": "Retrieve security-related data of your connected devices.",
               "product_sort_order": 140,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/security-monitoring-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Retrieve security-related data of your connected devices.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "point-value-ingest-api",
@@ -995,7 +1521,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
               "product_summary": "RESTful API for setting values of a Point.",
               "product_sort_order": 150,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/point-value-ingest-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for setting values of a Point.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "building-geometry-api",
@@ -1006,7 +1540,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/geometry-api/geometry.openapi.yaml",
               "product_summary": "RESTful API for creating and interacting with 2D geometry of building floorplans.",
               "product_sort_order": 160,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/building-geometry-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for creating and interacting with 2D geometry of building floorplans.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "energy-api",
@@ -1017,7 +1559,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/energy-api/energy.openapi.yaml",
               "product_summary": "RESTful API for reading energy consumption, emission, or cost data for a location or a meter in the granularity and for the period of interest.",
               "product_sort_order": 170,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/energy-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for reading energy consumption, emission, or cost data for a location or a meter in the granularity and for the period of interest.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "lifecycle-twin-api",
@@ -1028,7 +1578,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/ecodomus-api-reference.yaml",
               "product_summary": "RESTful API for creating and managing various objects in the Lifecycle Twin.",
               "product_sort_order": 180,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/lifecycle-twin-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for creating and managing various objects in the Lifecycle Twin.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "streaming-api",
@@ -1039,7 +1597,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/streaming-api/streaming.openapi.yaml",
               "product_summary": "RESTful API for configuring real-time data streaming.",
               "product_sort_order": 190,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/streaming-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for configuring real-time data streaming.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "visitor-manager-api",
@@ -1050,7 +1616,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/visitormanager-api/visitormanager.openapi.yaml",
               "product_summary": "RESTful API for retrieving and managing visitor information.",
               "product_sort_order": 200,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/visitor-manager-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for retrieving and managing visitor information.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             },
             {
               "product_slug": "sustainability-api",
@@ -1061,7 +1635,15 @@
               "integration_api_url": "https://developer.siemens.com/building-x-openness/api/sustainability-api/sustainability.openapi.yaml",
               "product_summary": "RESTful API for reading energy consumption and cost data for a customer.",
               "product_sort_order": 210,
-              "is_visible": true
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/sustainability-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "RESTful API for reading energy consumption and cost data for a customer.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": false,
+              "key_entities": []
             }
           ]
         }

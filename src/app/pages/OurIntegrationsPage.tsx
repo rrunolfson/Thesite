@@ -23,11 +23,20 @@ interface IntegrationProduct {
   integration_api_url: string;
   product_summary: string;
   is_visible: boolean;
+  has_detail: boolean;
+  detail_path: string;
+  data_domains: string[];
+  data_coverage_summary: string;
+  asset_data_available: boolean | null;
+  telemetry_data_available: boolean | null;
+  writeback_supported: boolean | null;
+  key_entities: string[];
 }
 
 interface IntegrationVendor {
   vendor_slug: string;
   vendor_name: string;
+  vendor_domain: string;
   vendor_logo_url: string;
   vendor_logo_asset: string;
   vendor_logo_src: string;
@@ -381,15 +390,16 @@ export function OurIntegrationsPage() {
                               >
                                 <div className="flex items-center gap-4">
                                   <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${accentClass} p-[1px] flex-shrink-0 shadow-[0_10px_30px_rgba(15,23,42,0.28)]`}>
-                                    <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-[15px] bg-[#08101d]">
+                                    <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-[15px] bg-white">
                                       {vendor.vendor_logo_src ? (
                                         <img
                                           src={vendor.vendor_logo_src}
                                           alt={`${vendor.vendor_name} logo`}
-                                          className="h-full w-full object-contain p-3"
+                                          className="h-full w-full object-contain p-2.5"
+                                          referrerPolicy="origin"
                                         />
                                       ) : (
-                                        <div className="flex h-full w-full items-center justify-center text-white font-bold tracking-[0.16em] text-sm">
+                                        <div className="flex h-full w-full items-center justify-center text-slate-700 font-bold tracking-[0.16em] text-sm">
                                           {logoMonogram}
                                         </div>
                                       )}
@@ -452,10 +462,25 @@ export function OurIntegrationsPage() {
                                                 {product.product_family}
                                               </div>
                                             )}
-                                            {product.product_summary && (
+                                            {product.product_summary && !product.has_detail && (
                                               <p className="mt-3 text-sm leading-relaxed text-slate-400">
                                                 {product.product_summary}
                                               </p>
+                                            )}
+                                            {product.data_coverage_summary && (
+                                              <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                                                {product.data_coverage_summary}
+                                              </p>
+                                            )}
+                                            {product.has_detail && (
+                                              <div className="mt-4 border-t border-slate-800/80 pt-4 text-center">
+                                                <Link
+                                                  to={`/integrations/${vendor.vendor_slug}/${product.product_slug}`}
+                                                  className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-[#217ED9]/50 bg-[#217ED9]/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#75ADE6] transition-colors hover:bg-[#217ED9]/20"
+                                                >
+                                                  Accessible Data -&gt;
+                                                </Link>
+                                              </div>
                                             )}
                                           </div>
                                         ))}

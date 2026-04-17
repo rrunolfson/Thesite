@@ -1,0 +1,44 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "iot-time-series-service",
+  "product_name": "IoT Time Series Service",
+  "product_family": "Insights Hub",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/iottimeseries-v3-7-1.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/iottimeseries-v3-7-1.yaml",
+  "detail_completeness": "generated-summary",
+  "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+  "data_domains": [],
+  "asset_data_available": null,
+  "telemetry_data_available": null,
+  "writeback_supported": null,
+  "key_entities": [],
+  "buyer_guidance": "Use the published Insights Hub OpenAPI documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
+  "overview": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "available_data": [
+    {
+      "category": "Published API Scope",
+      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "data_points": [
+        "Published summary: Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
+        "Product family: Insights Hub",
+        "Integration type: OpenAPI",
+        "Lifecycle status: Built",
+        "Published API documentation is available from the linked source documentation.",
+        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+      ],
+      "relevant_operations": []
+    }
+  ],
+  "ingest_considerations": [],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/insights-hub/api_specs/iottimeseries-v3-7-1.yaml",
+    "spec_url": "https://developer.siemens.com/insights-hub/api_specs/iottimeseries-v3-7-1.yaml",
+    "reviewed_at": "2026-04-17",
+    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+  },
+  "detail_path": "/integration-details/siemens/iot-time-series-service.json",
+  "vendor_domain": "siemens.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+}

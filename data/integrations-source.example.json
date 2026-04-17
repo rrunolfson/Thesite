@@ -1,4 +1,5 @@
 {
   "csv_url": "https://docs.google.com/spreadsheets/d/<sheet-id>/export?format=csv&gid=<gid>",
+  "logo_dev_publishable_key": "pk_your_logo_dev_publishable_key",
   "save_source_copy": true
 }

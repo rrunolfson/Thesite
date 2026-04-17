@@ -1,0 +1,143 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "battery-passport-rest-api",
+  "product_name": "Battery Passport REST API",
+  "product_family": "Battery Passport",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/battery-passport/rest-api-spec.html",
+  "spec_artifact_url": "https://developer.siemens.com/battery-passport/battery-passport-api-spec.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The Battery Passport REST API provides standardized access to battery passport records and related organization, connector, analytics, and schema information used to manage battery passport data exchange across the ecosystem.",
+  "data_domains": [
+    "asset-master-data",
+    "identity-access",
+    "partner-connectors",
+    "documents-and-passports",
+    "analytics",
+    "schema-management"
+  ],
+  "asset_data_available": true,
+  "telemetry_data_available": false,
+  "writeback_supported": true,
+  "key_entities": [
+    "battery passports",
+    "passport attributes",
+    "organizations",
+    "organization users",
+    "Catena-X connectors",
+    "data schemas"
+  ],
+  "buyer_guidance": "Use this integration when the customer needs governed battery passport records and related organizational context in ServiceNow. It is strongest for registry-style product, compliance, and ecosystem exchange data rather than live telemetry streaming.",
+  "overview": "The Battery Passport API is a business-data API rather than a telemetry feed. Based on the Siemens API reference, it exposes CRUD and lookup access across passport records, passport hierarchy, schema definitions, attribute assignments, connector configuration, organization data, user roles, and export-oriented flows. That makes it suitable for onboarding structured passport and ecosystem data into ServiceNow CMDB-adjacent, supplier, compliance, or sustainability workflows.",
+  "available_data": [
+    {
+      "category": "Battery passport records",
+      "description": "Core passport objects and their lifecycle state, including public and private retrieval patterns.",
+      "data_points": [
+        "passport IDs and record metadata",
+        "public passport data for external exchange",
+        "private passport data for authenticated users",
+        "passport status values",
+        "ancestor, child, and descendant passport relationships",
+        "exportable passport payloads"
+      ],
+      "relevant_operations": [
+        "GET /passport-management-service/passports",
+        "POST /passport-management-service/passports",
+        "GET /passport-management-service/passports/public/{passportId}",
+        "GET /passport-management-service/passports/{passportId}",
+        "PUT /passport-management-service/passports/{passportId}/status",
+        "GET /passport-management-service/passports/{passportId}/export"
+      ]
+    },
+    {
+      "category": "Attribute assignments and completion workflows",
+      "description": "Open assignment records used to request, update, remind, and close data obligations tied to passports or collaborating organizations.",
+      "data_points": [
+        "attribute assignment records",
+        "assignment status and open-value updates",
+        "assignee reminders",
+        "Catena-X update workflows",
+        "specific assignment lookup and deletion"
+      ],
+      "relevant_operations": [
+        "POST /assignment-management-service/attribute-assignments",
+        "GET /assignment-management-service/attribute-assignments",
+        "PATCH /assignment-management-service/attribute-assignments/api",
+        "PATCH /assignment-management-service/attribute-assignments/cx",
+        "POST /assignment-management-service/attribute-assignments/{assignmentId}/remind"
+      ]
+    },
+    {
+      "category": "Organization, user, and role data",
+      "description": "Identity and access context for the organizations participating in the battery passport ecosystem.",
+      "data_points": [
+        "organization records",
+        "organization roles",
+        "authenticated user profile",
+        "organization user memberships",
+        "user alerts",
+        "user scopes and permissions"
+      ],
+      "relevant_operations": [
+        "GET /scopes",
+        "GET /user-management-service/users/me",
+        "GET /user-management-service/organizations/{organizationId}",
+        "GET /user-management-service/organizations/{organizationId}/roles",
+        "GET /user-management-service/organizations/{organizationId}/users",
+        "PATCH /user-management-service/organizations/{organizationId}/users/{userId}/roles"
+      ]
+    },
+    {
+      "category": "Connector and ecosystem exchange configuration",
+      "description": "Configuration of partner-facing connectors used to expose or exchange passport data with external ecosystems such as Catena-X.",
+      "data_points": [
+        "configured organization connectors",
+        "connector identifiers and definitions",
+        "connector lifecycle changes",
+        "passport exposure actions to connector endpoints"
+      ],
+      "relevant_operations": [
+        "GET /user-management-service/organizations/{organizationId}/connectors",
+        "POST /user-management-service/organizations/{organizationId}/connectors",
+        "PATCH /user-management-service/organizations/{organizationId}/connectors/{connectorId}",
+        "DELETE /user-management-service/organizations/{organizationId}/connectors/{connectorId}",
+        "POST /connectors/cx/expose-passport"
+      ]
+    },
+    {
+      "category": "Analytics, schema, and configuration metadata",
+      "description": "Administrative structures that support reporting, feature enablement, and schema-driven validation of passport content.",
+      "data_points": [
+        "passport analytics information",
+        "feature configuration per organization",
+        "schema definitions for managed data",
+        "feedback submissions about data points"
+      ],
+      "relevant_operations": [
+        "GET /passport-management-service/passports/analytics",
+        "POST /feature-config",
+        "PUT /feature-config",
+        "GET /passport-management-service/definitions/schema",
+        "POST /passport-management-service/definitions/schema",
+        "POST /user-management-service/users/feedback"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Treat this as structured master and exchange data rather than high-frequency operational telemetry.",
+    "Public and private passport retrieval paths imply data segmentation and entitlement handling will matter in the ServiceNow integration design.",
+    "Connector endpoints and organization-user data may be as commercially useful as the passport records themselves for governance workflows.",
+    "Schema-definition endpoints suggest payload evolution can be managed explicitly and should be captured in implementation planning."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/battery-passport/rest-api-spec.html",
+    "spec_url": "https://developer.siemens.com/battery-passport/battery-passport-api-spec.yaml",
+    "reviewed_at": "2026-04-17",
+    "evidence_notes": "This proof-of-concept summary is based on the Siemens API reference groupings visible on the Battery Passport documentation page, including Passport Management, Attribute Assignments, Organizations, Users, Connectors, Feature Config, Analytics, and Data Schema Management."
+  },
+  "detail_path": "/integration-details/siemens/battery-passport-rest-api.json",
+  "vendor_domain": "siemens.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+}
