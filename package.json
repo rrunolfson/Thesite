@@ -4,7 +4,10 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "integrations:validate": "node scripts/generate-integrations-json.mjs --validate-only",
+    "integrations:generate": "node scripts/generate-integrations-json.mjs",
+    "integrations:sync-sheet": "node scripts/generate-integrations-json.mjs --config data/integrations-source.json --save-source",
+    "build": "npm run integrations:generate && vite build",
     "dev": "vite"
   },
   "dependencies": {

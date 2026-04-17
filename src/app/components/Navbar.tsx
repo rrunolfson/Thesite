@@ -18,6 +18,7 @@ export function Navbar() {
 
   const navItems: NavItem[] = [
     { to: "/", label: "Home" },
+    { to: "/integrations", label: "Our Integrations" },
     {
       to: "/solutions",
       label: "Solutions",

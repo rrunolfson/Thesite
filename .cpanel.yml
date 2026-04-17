@@ -13,5 +13,6 @@ deployment:
     - /bin/cp dist/logo.png $DEPLOYPATH
     - /bin/cp dist/robots.txt $DEPLOYPATH
     - /bin/cp dist/sitemap.xml $DEPLOYPATH
+    - /bin/cp dist/integrations.json $DEPLOYPATH
     - /bin/cp -r dist/assets $DEPLOYPATH
     - /bin/cp -r dist/images $DEPLOYPATH

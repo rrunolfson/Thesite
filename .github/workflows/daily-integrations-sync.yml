@@ -1,0 +1,60 @@
+name: Daily Integrations Sync
+
+on:
+  schedule:
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-integrations-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync published integrations sheet
+        run: npm run integrations:sync-sheet
+
+      - name: Validate integrations data
+        run: npm run integrations:validate
+
+      - name: Detect catalog source changes
+        id: detect_changes
+        run: |
+          if git diff --quiet -- data/integrations.csv; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build site
+        if: steps.detect_changes.outputs.changed == 'true'
+        run: npm run build
+
+      - name: Commit updated catalog artifacts
+        if: steps.detect_changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/integrations.csv public/integrations.json
+          git commit -m "chore: sync integrations catalog"
+          git push

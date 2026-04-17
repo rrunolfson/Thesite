@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "generated_at": "2026-04-17T01:11:32.292Z",
+    "source_csv": "data/integrations.csv",
+    "source_mode": "local-file",
+    "public_json_path": "/integrations.json",
+    "public_json_url": "https://lastmileinc.ai/integrations.json",
+    "record_count": 3,
+    "industry_count": 2,
+    "discovery": {
+      "html_meta_name": "lastmile:integrations-data",
+      "html_meta_content": "https://lastmileinc.ai/integrations.json",
+      "html_link_rel": "alternate",
+      "html_link_type": "application/json",
+      "api_docs_field": "integration_api_url"
+    },
+    "machine_readable_fields": {
+      "integration_api_url": "API documentation URL for AI agents. This field is intentionally present in JSON and not rendered in the public UI.",
+      "vendor_logo_src": "Resolved public logo path or external image URL used by the UI when available."
+    }
+  },
+  "industries": [
+    {
+      "industry_slug": "manufacturing",
+      "industry_name": "Manufacturing",
+      "industry_description": "Machine health, controls, production assets, and plant-floor telemetry aligned to operational workflows.",
+      "vendors": [
+        {
+          "vendor_slug": "atlas-motion-systems",
+          "vendor_name": "Atlas Motion Systems",
+          "vendor_logo_url": "",
+          "vendor_logo_asset": "",
+          "vendor_logo_src": "",
+          "vendor_summary": "Discrete manufacturing automation and machine performance integrations.",
+          "products": [
+            {
+              "product_slug": "atlas-servo-suite",
+              "product_name": "Atlas Servo Suite",
+              "product_family": "Motion Control",
+              "integration_status": "planned",
+              "integration_type": "OEM API",
+              "integration_api_url": "https://my.apidocs.com",
+              "product_summary": "Servo and drive integration planned for production telemetry workflows.",
+              "product_sort_order": 10,
+              "is_visible": true
+            },
+            {
+              "product_slug": "line-sync-controller",
+              "product_name": "LineSync Controller",
+              "product_family": "PLC / Controller",
+              "integration_status": "built",
+              "integration_type": "OEM API",
+              "integration_api_url": "https://my.apidocs.com",
+              "product_summary": "Controller integration already supported for event-driven workflow activation.",
+              "product_sort_order": 20,
+              "is_visible": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industry_slug": "healthcare",
+      "industry_name": "Healthcare",
+      "industry_description": "Clinical equipment, facilities systems, and device status integrations for biomedical and operations teams.",
+      "vendors": [
+        {
+          "vendor_slug": "northstar-clinical",
+          "vendor_name": "Northstar Clinical",
+          "vendor_logo_url": "",
+          "vendor_logo_asset": "",
+          "vendor_logo_src": "",
+          "vendor_summary": "Imaging and diagnostic equipment visibility for uptime and service coordination.",
+          "products": [
+            {
+              "product_slug": "northstar-mri-4d",
+              "product_name": "Northstar MRI 4D",
+              "product_family": "Imaging",
+              "integration_status": "planned",
+              "integration_type": "Partner API",
+              "integration_api_url": "https://my.apidocs.com",
+              "product_summary": "Imaging runtime and utilization integration candidate.",
+              "product_sort_order": 10,
+              "is_visible": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
