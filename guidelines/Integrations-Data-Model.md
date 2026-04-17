@@ -93,6 +93,18 @@ The exported JSON should keep the API documentation field directly on each produ
 - Run `npm run integrations:validate` to fail fast on missing columns, invalid slugs, duplicate products, missing logo assets, or malformed URLs.
 - If you publish the Google Sheet as CSV, create `data/integrations-source.json` from the example file and run `npm run integrations:sync-sheet`.
 
+## Scheduled Automation
+- The daily sync workflow lives at `.github/workflows/daily-integrations-sync.yml`.
+- The workflow only runs on the repository default branch because GitHub scheduled workflows do not run from non-default branches.
+- In this repo, that means the automation must stay on `main` if the daily refresh is expected to run.
+- The workflow syncs the published sheet, validates the CSV, detects whether `data/integrations.csv` actually changed, and only then rebuilds and commits refreshed catalog artifacts.
+- This avoids no-op daily commits caused only by a regenerated timestamp.
+
+## Deployment Note
+- Automatic production updates depend on deployment tracking the same branch that receives the workflow commit.
+- If cPanel or any other Git-based deploy target is tracking a different branch, the workflow can update GitHub without updating production.
+- Keep the deploy target pointed at `main` if you want the scheduled catalog sync to flow through to the live site automatically.
+
 ## Google Sheet Sync Setup
 1. Publish the Google Sheet or tab as CSV.
 2. Copy `data/integrations-source.example.json` to `data/integrations-source.json`.
