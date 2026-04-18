@@ -50,11 +50,25 @@ jobs:
         if: steps.detect_changes.outputs.changed == 'true'
         run: npm run build
 
-      - name: Commit updated catalog artifacts
+      - name: Detect generated artifact changes
         if: steps.detect_changes.outputs.changed == 'true'
+        id: detect_artifact_changes
+        run: |
+          if git diff --quiet -- data/integrations.csv public/integrations.json public/integration-details; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit updated catalog artifacts
+        if: steps.detect_changes.outputs.changed == 'true' && steps.detect_artifact_changes.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/integrations.csv public/integrations.json
+          git add data/integrations.csv public/integrations.json public/integration-details
+          if git diff --cached --quiet; then
+            echo "No generated catalog changes to commit."
+            exit 0
+          fi
           git commit -m "chore: sync integrations catalog"
           git push
