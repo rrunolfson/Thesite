@@ -35,7 +35,7 @@
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/optimize-my-plant/Optimize%20my%20plant%20collection%20-%20SaaS.json",
     "spec_url": "https://developer.siemens.com/optimize-my-plant/Optimize%20my%20plant%20collection%20-%20SaaS.json",
-    "reviewed_at": "2026-04-17",
+    "reviewed_at": "2026-04-18",
     "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
   },
   "detail_path": "/integration-details/siemens/optimize-my-plant.json",

@@ -1,0 +1,47 @@
+{
+  "serverInfo": {
+    "name": "Last Mile Public Website",
+    "version": "1.0.0"
+  },
+  "transports": [
+    {
+      "type": "webmcp",
+      "url": "https://lastmileinc.ai/",
+      "description": "Browser-exposed context for the Last Mile public website."
+    }
+  ],
+  "capabilities": {
+    "tools": {
+      "available": true
+    }
+  },
+  "tools": [
+    {
+      "name": "open_integrations_catalog",
+      "description": "Open the Last Mile integrations catalog.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {}
+      }
+    },
+    {
+      "name": "open_contact_page",
+      "description": "Open the Last Mile contact page.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {}
+      }
+    },
+    {
+      "name": "open_signal_2_action",
+      "description": "Open the Signal 2 Action podcast page.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {}
+      }
+    }
+  ]
+}

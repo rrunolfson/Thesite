@@ -35,7 +35,7 @@
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/industrial-edge/api/external_databus/v1.0.0/external_databus_V1.0.0_openapi.yaml",
     "spec_url": "https://developer.siemens.com/industrial-edge/api/external_databus/v1.0.0/external_databus_V1.0.0_openapi.yaml",
-    "reviewed_at": "2026-04-17",
+    "reviewed_at": "2026-04-18",
     "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
   },
   "detail_path": "/integration-details/siemens/external-databus-apis.json",

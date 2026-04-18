@@ -7,6 +7,7 @@ interface SEOProps {
   ogImage?: string;
   ogType?: string;
   canonicalPath?: string;
+  markdownPath?: string;
 }
 
 export function SEO({
@@ -16,6 +17,7 @@ export function SEO({
   ogImage = 'https://lastmileinc.ai/logo.png',
   ogType = 'website',
   canonicalPath = '',
+  markdownPath,
 }: SEOProps) {
   const baseUrl = 'https://lastmileinc.ai';
   const fullTitle = title.includes('Last Mile') ? title : `${title} | Last Mile Inc.`;
@@ -31,6 +33,7 @@ export function SEO({
       
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
+      {markdownPath ? <link rel="alternate" type="text/markdown" href={`${baseUrl}${markdownPath}`} /> : null}
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />

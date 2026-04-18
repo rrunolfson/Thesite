@@ -1,5 +1,53 @@
 {
+  "redirects": [
+    {
+      "source": "/solutions",
+      "destination": "/integrations",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/company",
+      "permanent": true
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/.well-known/api-catalog",
+      "destination": "/.well-known/api-catalog"
+    },
+    {
+      "source": "/.well-known/status.json",
+      "destination": "/.well-known/status.json"
+    },
+    {
+      "source": "/.well-known/mcp/server-card.json",
+      "destination": "/.well-known/mcp/server-card.json"
+    },
+    {
+      "source": "/.well-known/agent-skills/(.*)",
+      "destination": "/.well-known/agent-skills/$1"
+    },
+    {
+      "source": "/index.md",
+      "destination": "/index.md"
+    },
+    {
+      "source": "/integrations.md",
+      "destination": "/integrations.md"
+    },
+    {
+      "source": "/contact.md",
+      "destination": "/contact.md"
+    },
+    {
+      "source": "/company.md",
+      "destination": "/company.md"
+    },
+    {
+      "source": "/signal-2-action.md",
+      "destination": "/signal-2-action.md"
+    },
     {
       "source": "/sitemap.xml",
       "destination": "/sitemap.xml"
@@ -14,6 +62,145 @@
     }
   ],
   "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </integrations>; rel=\"service-doc\"; type=\"text/html\", </index.md>; rel=\"alternate\"; type=\"text/markdown\""
+        },
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    },
+    {
+      "source": "/integrations",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</integrations.md>; rel=\"alternate\"; type=\"text/markdown\""
+        },
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    },
+    {
+      "source": "/contact",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</contact.md>; rel=\"alternate\"; type=\"text/markdown\""
+        },
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    },
+    {
+      "source": "/company",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</company.md>; rel=\"alternate\"; type=\"text/markdown\""
+        },
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    },
+    {
+      "source": "/signal-2-action",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</signal-2-action.md>; rel=\"alternate\"; type=\"text/markdown\""
+        },
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/api-catalog",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/linkset+json"
+        }
+      ]
+    },
+    {
+      "source": "/index.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=UTF-8"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    },
+    {
+      "source": "/integrations.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=UTF-8"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    },
+    {
+      "source": "/contact.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=UTF-8"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    },
+    {
+      "source": "/company.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=UTF-8"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    },
+    {
+      "source": "/signal-2-action.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=UTF-8"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    },
     {
       "source": "/sitemap.xml",
       "headers": [

@@ -35,7 +35,7 @@
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/industrial-edge/api/ied/ied-api/v2.5.0/ied-2.5.0-openapi.yaml",
     "spec_url": "https://developer.siemens.com/industrial-edge/api/ied/ied-api/v2.5.0/ied-2.5.0-openapi.yaml",
-    "reviewed_at": "2026-04-17",
+    "reviewed_at": "2026-04-18",
     "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
   },
   "detail_path": "/integration-details/siemens/ie-device-apis.json",

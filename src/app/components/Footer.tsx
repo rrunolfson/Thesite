@@ -1,12 +1,20 @@
 import { Link } from "react-router";
 import { Linkedin } from "lucide-react";
 
+const footerNavItems = [
+  { to: "/", label: "Home" },
+  { to: "/integrations", label: "Our Integrations" },
+  { to: "/signal-2-action", label: "Signal 2 Action" },
+  { to: "/company", label: "Company" },
+  { to: "/contact", label: "Contact" },
+];
+
 export function Footer() {
   return (
     <footer className="bg-[#0b1120] border-t border-slate-800 pt-8 pb-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-7 gap-6">
-          <div className="col-span-1 md:col-span-3 flex flex-col justify-center">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
+          <div className="flex flex-col justify-center">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <img src="/logo.png" alt="Last Mile" className="h-6 w-auto rounded-md" />
@@ -25,148 +33,15 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="col-span-1 md:col-span-2">
-            <h4 className="font-bold text-white mb-6 uppercase text-xs tracking-wider text-center">
-              Industries&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </h4>
-            <div className="flex gap-8 justify-center">
-              <ul className="space-y-3 text-sm text-slate-400 text-right">
-                <li>
-                  <Link to="/industries" className="hover:text-[#217ED9] transition-colors">
-                    Retail & Grocery
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industries" className="hover:text-[#217ED9] transition-colors">
-                    Manufacturing
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industries" className="hover:text-[#217ED9] transition-colors">
-                    Energy & Utilities
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industries" className="hover:text-[#217ED9] transition-colors">
-                    Healthcare & Labs
-                  </Link>
-                </li>
-              </ul>
-              <ul className="space-y-3 text-sm text-slate-400 text-left">
-                <li>
-                  <Link to="/industries" className="hover:text-[#217ED9] transition-colors">
-                    Logistics & Transport
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industries" className="hover:text-[#217ED9] transition-colors">
-                    Building Management
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industries" className="hover:text-[#217ED9] transition-colors">
-                    Warehouse Management
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/industries" className="hover:text-[#217ED9] transition-colors">
-                    Oil & Gas
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
           <div>
-            <h4 className="font-bold text-white mb-6 uppercase text-xs tracking-wider">
-              Explore
-            </h4>
-            <ul className="space-y-3 text-sm text-slate-400">
-              <li>
-                <Link to="/solutions" className="hover:text-[#217ED9] transition-colors">
-                  Platform
-                </Link>
-              </li>
-              <li>
-                <Link to="/use-cases" className="hover:text-[#217ED9] transition-colors">
-                  Use Cases
-                </Link>
-              </li>
-              <li>
-                <Link to="/customers" className="hover:text-[#217ED9] transition-colors">
-                  Customers
-                </Link>
-              </li>
-              <li>
-                <Link to="/resources" className="hover:text-[#217ED9] transition-colors">
-                  Resources
-                </Link>
-              </li>
-            </ul>
-
-            <h4 className="font-bold text-white mb-6 uppercase text-xs tracking-wider">
-              Partners
-            </h4>
-            <ul className="space-y-3 text-sm text-slate-400">
-              <li>
-                <Link to="/partners/delivery" className="hover:text-[#217ED9] transition-colors">
-                  Delivery Partners
-                </Link>
-              </li>
-              <li>
-                <Link to="/partners/oem" className="hover:text-[#217ED9] transition-colors">
-                  OEM Partners
-                </Link>
-              </li>
-              <li>
-                <Link to="/oem-portal" className="hover:text-[#217ED9] transition-colors">
-                  OEM Portal
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-white mb-6 uppercase text-xs tracking-wider">
-              Podcast
-            </h4>
-            <ul className="space-y-3 text-sm text-slate-400">
-              <li>
-                <Link to="/signal-2-action" className="hover:text-[#217ED9] transition-colors">
-                  Signal 2 Action
-                </Link>
-              </li>
-            </ul>
-
-            <h4 className="font-bold text-white mt-8 mb-6 uppercase text-xs tracking-wider">
-              Company
-            </h4>
-            <ul className="space-y-3 text-sm text-slate-400">
-              <li>
-                <Link to="/company" className="hover:text-[#217ED9] transition-colors">
-                  Company
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="hover:text-[#217ED9] transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/careers" className="hover:text-[#217ED9] transition-colors">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link to="/trust" className="hover:text-[#217ED9] transition-colors">
-                  Trust Center
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-[#217ED9] transition-colors">
-                  Contact
-                </Link>
-              </li>
+            <ul className="space-y-3 text-sm text-slate-400 text-left md:text-right">
+              {footerNavItems.map((item) => (
+                <li key={item.to}>
+                  <Link to={item.to} className="hover:text-[#217ED9] transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

@@ -1,6 +1,30 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  RewriteRule ^solutions/?$ /integrations [R=301,L]
+  RewriteRule ^about/?$ /company [R=301,L]
+
+  # Serve a markdown homepage to agents that explicitly ask for it.
+  RewriteCond %{REQUEST_URI} ^/?$
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^$ index.md [L]
+
+  RewriteCond %{REQUEST_URI} ^/integrations/?$
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^integrations/?$ integrations.md [L]
+
+  RewriteCond %{REQUEST_URI} ^/contact/?$
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^contact/?$ contact.md [L]
+
+  RewriteCond %{REQUEST_URI} ^/company/?$
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^company/?$ company.md [L]
+
+  RewriteCond %{REQUEST_URI} ^/signal-2-action/?$
+  RewriteCond %{HTTP:Accept} text/markdown [NC]
+  RewriteRule ^signal-2-action/?$ signal-2-action.md [L]
   
   # Serve static files directly - don't rewrite these
   RewriteRule ^robots\.txt$ robots.txt [L]
@@ -27,12 +51,29 @@
   Header set X-Content-Type-Options "nosniff"
   Header set X-XSS-Protection "1; mode=block"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  <FilesMatch "^(index\.html|index\.md)$">
+    Header merge Vary "Accept"
+    Header add Link "</.well-known/api-catalog>; rel=\"api-catalog\""
+    Header add Link "</integrations>; rel=\"service-doc\"; type=\"text/html\""
+    Header add Link "</index.md>; rel=\"alternate\"; type=\"text/markdown\""
+  </FilesMatch>
+
+  <FilesMatch "^(index|integrations|contact|company|signal-2-action)\.md$">
+    Header set Content-Type "text/markdown; charset=UTF-8"
+    Header merge Vary "Accept"
+  </FilesMatch>
 </IfModule>
 
 # Correct MIME types
 <IfModule mod_mime.c>
   AddType application/xml .xml
   AddType text/plain .txt
+  AddType text/markdown .md
+
+  <Files "api-catalog">
+    ForceType application/linkset+json
+  </Files>
 </IfModule>
 
 # Compression

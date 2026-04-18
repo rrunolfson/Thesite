@@ -1,4 +1,61 @@
 [[redirects]]
+  from = "/solutions"
+  to = "/integrations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about"
+  to = "/company"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.md"
+  to = "/index.md"
+  status = 200
+
+[[redirects]]
+  from = "/integrations.md"
+  to = "/integrations.md"
+  status = 200
+
+[[redirects]]
+  from = "/contact.md"
+  to = "/contact.md"
+  status = 200
+
+[[redirects]]
+  from = "/company.md"
+  to = "/company.md"
+  status = 200
+
+[[redirects]]
+  from = "/signal-2-action.md"
+  to = "/signal-2-action.md"
+  status = 200
+
+[[redirects]]
+  from = "/.well-known/api-catalog"
+  to = "/.well-known/api-catalog"
+  status = 200
+
+[[redirects]]
+  from = "/.well-known/status.json"
+  to = "/.well-known/status.json"
+  status = 200
+
+[[redirects]]
+  from = "/.well-known/mcp/server-card.json"
+  to = "/.well-known/mcp/server-card.json"
+  status = 200
+
+[[redirects]]
+  from = "/.well-known/agent-skills/*"
+  to = "/.well-known/agent-skills/:splat"
+  status = 200
+
+[[redirects]]
   from = "/sitemap.xml"
   to = "/sitemap.xml"
   status = 200
@@ -15,6 +72,71 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Link = "</.well-known/api-catalog>; rel=\"api-catalog\", </integrations>; rel=\"service-doc\"; type=\"text/html\", </index.md>; rel=\"alternate\"; type=\"text/markdown\""
+    Vary = "Accept"
+
+[[headers]]
+  for = "/integrations"
+  [headers.values]
+    Link = "</integrations.md>; rel=\"alternate\"; type=\"text/markdown\""
+    Vary = "Accept"
+
+[[headers]]
+  for = "/contact"
+  [headers.values]
+    Link = "</contact.md>; rel=\"alternate\"; type=\"text/markdown\""
+    Vary = "Accept"
+
+[[headers]]
+  for = "/company"
+  [headers.values]
+    Link = "</company.md>; rel=\"alternate\"; type=\"text/markdown\""
+    Vary = "Accept"
+
+[[headers]]
+  for = "/signal-2-action"
+  [headers.values]
+    Link = "</signal-2-action.md>; rel=\"alternate\"; type=\"text/markdown\""
+    Vary = "Accept"
+
+[[headers]]
+  for = "/.well-known/api-catalog"
+  [headers.values]
+    Content-Type = "application/linkset+json"
+
+[[headers]]
+  for = "/index.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=UTF-8"
+    Vary = "Accept"
+
+[[headers]]
+  for = "/integrations.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=UTF-8"
+    Vary = "Accept"
+
+[[headers]]
+  for = "/contact.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=UTF-8"
+    Vary = "Accept"
+
+[[headers]]
+  for = "/company.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=UTF-8"
+    Vary = "Accept"
+
+[[headers]]
+  for = "/signal-2-action.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=UTF-8"
+    Vary = "Accept"
 
 [[headers]]
   for = "/sitemap.xml"

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-18T11:15:38.820Z",
+    "generated_at": "2026-04-18T20:38:01.048Z",
     "source_csv": "data/integrations.csv",
     "source_mode": "local-file",
     "public_json_path": "/integrations.json",
@@ -1819,12 +1819,35 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/servicechannel/work-orders-api.json",
+<<<<<<< HEAD
               "data_domains": [],
               "data_coverage_summary": "Work order lifecycle APIs for searching, creating, scheduling, reprioritizing, dispatching, and resolving repair orders in ServiceChannel from ServiceNow operational workflows.",
               "asset_data_available": false,
               "telemetry_data_available": false,
               "writeback_supported": false,
               "key_entities": []
+=======
+              "data_domains": [
+                "work-order-lifecycle",
+                "dispatch-and-scheduling",
+                "priority-and-category-management",
+                "resolution-and-completion",
+                "location-linked-operations"
+              ],
+              "data_coverage_summary": "The Work Orders API covers the in-flight repair order lifecycle in ServiceChannel, including search, creation, status and priority updates, scheduling, trade changes, resolution capture, caller and purchase-order updates, project approvals, and nearby or duplicate work-order discovery.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": true,
+              "key_entities": [
+                "work orders",
+                "work order status",
+                "work order priority",
+                "trade assignments",
+                "scheduled dates",
+                "resolution records",
+                "location work order lists"
+              ]
+>>>>>>> 51953206 (Launch agent-ready integrations catalog and simplify production surface)
             },
             {
               "product_slug": "service-requests-api",
@@ -1838,12 +1861,34 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/servicechannel/service-requests-api.json",
+<<<<<<< HEAD
               "data_domains": [],
               "data_coverage_summary": "Service request intake and pre-dispatch APIs for creating, updating, categorizing, reassigning, and searching incoming repair requests before or alongside work order creation.",
               "asset_data_available": false,
               "telemetry_data_available": false,
               "writeback_supported": false,
               "key_entities": []
+=======
+              "data_domains": [
+                "service-request-intake",
+                "triage-and-classification",
+                "reassignment",
+                "duplicate-detection",
+                "subscriber-request-context"
+              ],
+              "data_coverage_summary": "The Service Requests area covers pre-work-order intake and triage, including request creation, retrieval, updates, status and priority changes, category and trade changes, reassignment options, duplicate detection, and request-info retrieval flows used before dispatch finalization.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": true,
+              "key_entities": [
+                "work requests",
+                "service request info",
+                "request status",
+                "priority and category values",
+                "reassignment candidates",
+                "duplicate request sets"
+              ]
+>>>>>>> 51953206 (Launch agent-ready integrations catalog and simplify production surface)
             },
             {
               "product_slug": "providers-api",
@@ -1857,12 +1902,35 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/servicechannel/providers-api.json",
+<<<<<<< HEAD
               "data_domains": [],
               "data_coverage_summary": "Provider network APIs for creating provider records, retrieving provider details, ranking providers, managing dispatch settings, and collecting provider feedback tied to service execution.",
               "asset_data_available": false,
               "telemetry_data_available": false,
               "writeback_supported": false,
               "key_entities": []
+=======
+              "data_domains": [
+                "provider-master-data",
+                "trade-qualification",
+                "dispatch-preferences",
+                "provider-ranking",
+                "service-feedback"
+              ],
+              "data_coverage_summary": "The Providers API covers service-provider network data used for dispatch decisions, including provider creation, provider information lookup, trade-based provider retrieval, dispatch-setting updates, ranking retrieval, recent-provider discovery, and provider feedback collection.",
+              "asset_data_available": false,
+              "telemetry_data_available": false,
+              "writeback_supported": true,
+              "key_entities": [
+                "provider records",
+                "provider-subscriber links",
+                "trade-qualified providers",
+                "dispatch settings",
+                "ranking status",
+                "provider feedback",
+                "recent and last-used providers"
+              ]
+>>>>>>> 51953206 (Launch agent-ready integrations catalog and simplify production surface)
             },
             {
               "product_slug": "assets-api",
@@ -1876,12 +1944,36 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/servicechannel/assets-api.json",
+<<<<<<< HEAD
               "data_domains": [],
               "data_coverage_summary": "Asset and equipment APIs for retrieving location assets, attaching assets to work orders, updating asset master data, tracking asset history, and recording asset meter readings.",
               "asset_data_available": false,
               "telemetry_data_available": false,
               "writeback_supported": false,
               "key_entities": []
+=======
+              "data_domains": [
+                "asset-master-data",
+                "asset-to-work-linkage",
+                "location-asset-hierarchy",
+                "asset-history",
+                "meter-readings",
+                "attachments-and-tags"
+              ],
+              "data_coverage_summary": "The Assets API provides equipment and asset-management coverage, including location asset retrieval, asset creation and updates, asset-type updates, attachment to work orders and work requests, asset-location changes, asset work-order history, asset tags, validation flags, and meter-reading capture.",
+              "asset_data_available": true,
+              "telemetry_data_available": false,
+              "writeback_supported": true,
+              "key_entities": [
+                "assets",
+                "asset codes and tags",
+                "location asset trees",
+                "asset components",
+                "asset work-order history",
+                "asset meter readings",
+                "asset attachments"
+              ]
+>>>>>>> 51953206 (Launch agent-ready integrations catalog and simplify production surface)
             }
           ]
         }

@@ -49,6 +49,7 @@ export function Signal2ActionPage() {
         description="Listen to Signal 2 Action, Last Mile's podcast on operational technology, ServiceNow workflows, partner growth, and industrial intelligence."
         keywords="Signal 2 Action, podcast, operational technology, ServiceNow, industrial intelligence, OT data"
         canonicalPath="/signal-2-action"
+        markdownPath="/signal-2-action.md"
       />
       <div className="pt-20 relative min-h-screen">
       <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
@@ -63,8 +64,8 @@ export function Signal2ActionPage() {
                   <Headphones className="w-4 h-4 text-[#217ED9]" />
                   <span className="text-sm text-[#217ED9] font-medium uppercase tracking-wider">Podcast</span>
                 </div>
-                <h1 className="text-5xl md:text-6xl font-bold mb-6 pb-2 bg-gradient-to-r from-white from-30% to-[#217ED9] bg-clip-text text-transparent">
-                  Signal 2 Action
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
+                  Signal 2 <span className="bg-gradient-to-r from-white via-[#75ADE6] to-[#217ED9] text-transparent bg-clip-text">Action</span>
                 </h1>
                 <p className="text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-10">
                   Conversations at the intersection of operational technology, enterprise workflows, and the future of industrial intelligence.
@@ -102,20 +103,13 @@ export function Signal2ActionPage() {
                     Each episode features candid conversations with industry experts, enterprise practitioners, and the people building the next generation of operational intelligence and exploring what it really takes to turn raw signals into business outcomes.
                   </p>
                 </div>
-                <div className="glass-panel p-10">
-                  <div className="space-y-6">
-                    {[
-                      { label: "Topics Covered", value: "OT, ServiceNow, AI, Operations" },
-                      { label: "Format", value: "Interviews & Deep Dives" },
-                      { label: "Frequency", value: "Bi-Weekly" },
-                      { label: "Audience", value: "Ops Leaders, IT Practitioners, Partners" },
-                    ].map((item) => (
-                      <div key={item.label} className="flex justify-between items-center border-b border-slate-800 pb-4 last:border-0 last:pb-0">
-                        <span className="text-slate-500 text-sm uppercase tracking-wider">{item.label}</span>
-                        <span className="text-white font-medium text-sm">{item.value}</span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="glass-panel overflow-hidden p-3">
+                  <img
+                    src="/signal_2_action.jpg"
+                    alt="Signal 2 Action podcast artwork"
+                    className="h-full w-full rounded object-cover"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             </FadeInOnScroll>

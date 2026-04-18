@@ -4,12 +4,12 @@ import { Helmet } from "react-helmet-async";
 import { AnimatePresence, motion } from "motion/react";
 import {
   ArrowRight,
-  BadgeCheck,
   ChevronDown,
   Factory,
   HeartPulse,
   ShoppingCart,
   Truck,
+  Users,
   Zap,
 } from "lucide-react";
 import { SEO } from "@/app/components/SEO";
@@ -79,6 +79,7 @@ const industryIcons: Record<string, typeof Factory> = {
   healthcare: HeartPulse,
   retail: ShoppingCart,
   logistics: Truck,
+  "service-providers": Users,
   energy: Zap,
 };
 
@@ -87,6 +88,7 @@ const industryLabels: Record<string, string> = {
   healthcare: "Medical Device Vendors",
   retail: "Store Equipment Vendors",
   logistics: "Fleet & Automation Vendors",
+  "service-providers": "Service Providers",
   energy: "Infrastructure Vendors",
 };
 
@@ -99,13 +101,6 @@ const vendorAccentClasses = [
   "from-violet-400 to-fuchsia-500",
   "from-lime-300 to-emerald-500",
   "from-yellow-300 to-amber-500",
-];
-
-const previewSignals = [
-  "Google Sheet managed source",
-  "Generated JSON for AI agents",
-  "Industry > OEM > Products",
-  "Planned and built integrations",
 ];
 
 export function OurIntegrationsPage() {
@@ -148,7 +143,12 @@ export function OurIntegrationsPage() {
     };
   }, []);
 
-  const integrationGroups = catalog?.industries ?? [];
+  const integrationGroups = [...(catalog?.industries ?? [])]
+    .map((group) => ({
+      ...group,
+      vendors: [...group.vendors].sort((left, right) => left.vendor_name.localeCompare(right.vendor_name)),
+    }))
+    .sort((left, right) => left.industry_name.localeCompare(right.industry_name));
   const selectedIndustry =
     integrationGroups.find((group) => group.industry_slug === selectedIndustryId) ?? integrationGroups[0] ?? null;
 
@@ -159,6 +159,15 @@ export function OurIntegrationsPage() {
   ).size;
   const totalProducts = integrationGroups.reduce(
     (total, group) => total + group.vendors.reduce((groupTotal, vendor) => groupTotal + vendor.products.length, 0),
+    0,
+  );
+  const totalDetailedProducts = integrationGroups.reduce(
+    (total, group) =>
+      total +
+      group.vendors.reduce(
+        (groupTotal, vendor) => groupTotal + vendor.products.filter((product) => product.has_detail).length,
+        0,
+      ),
     0,
   );
   const discoveredIntegrationsDataUrl = catalog?.meta.public_json_url ?? integrationsDataUrl;
@@ -186,6 +195,7 @@ export function OurIntegrationsPage() {
         description="Explore Last Mile integrations by industry, OEM vendor, and supported product families in a machine-readable catalog built for both buyers and AI-driven implementation workflows."
         keywords="integrations, OEM integrations, manufacturing integrations, healthcare integrations, logistics integrations, ServiceNow"
         canonicalPath="/integrations"
+        markdownPath="/integrations.md"
       />
       <Helmet>
         <link rel="alternate" type="application/json" href={discoveredIntegrationsDataUrl} title="Last Mile Integrations Catalog Data" />
@@ -201,61 +211,36 @@ export function OurIntegrationsPage() {
         </div>
 
         <div className="relative z-10">
-          <section className="relative py-20 lg:py-24 overflow-hidden">
+          <section className="relative py-14 lg:py-16 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
+              <div className="grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
                 <div>
-                  <div className="inline-flex items-center gap-2 rounded-full border border-[#217ED9]/30 bg-[#217ED9]/10 px-4 py-2 mb-6">
-                    <BadgeCheck className="w-4 h-4 text-[#217ED9]" />
-                    <span className="text-sm font-medium uppercase tracking-[0.2em] text-[#75ADE6]">
-                      Data-Driven Catalog
-                    </span>
-                  </div>
-
                   <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
                     Our <span className="bg-gradient-to-r from-white via-[#75ADE6] to-[#217ED9] text-transparent bg-clip-text">Integrations</span>
                   </h1>
 
                   <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl">
-                    A structured integration catalog organized by industry, OEM vendor, and supported products. The public UI stays concise while a machine-readable JSON layer preserves integration metadata for downstream AI build workflows.
+                    We work where you are, supporting the vendors you count on every day to do business with a practical integration catalog built for real operations, faster decisions, and dependable execution. From industrial platforms and fleet systems to healthcare and building technologies, this catalog is designed to help teams see what is already available, understand where coverage is strongest, and move forward with greater confidence.
                   </p>
-
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    {previewSignals.map((signal) => (
-                      <div
-                        key={signal}
-                        className="rounded-full border border-slate-700/70 bg-slate-900/50 px-4 py-2 text-sm text-slate-300"
-                      >
-                        {signal}
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
                 <motion.div
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="glass-panel border border-slate-700/60 p-6 lg:p-8"
+                  className="scoreboard-shell glass-panel border border-[#75ADE6]/60 p-3 lg:p-3.5"
                 >
-                  <div className="flex items-center justify-between gap-4 mb-6">
-                    <div>
-                      <div className="text-xs uppercase tracking-[0.24em] text-slate-500 mb-2">
-                        Catalog Snapshot
-                      </div>
-                      <h2 className="text-2xl font-bold text-white">Seed Data Foundation</h2>
-                    </div>
-                    <div className="rounded-2xl border border-[#217ED9]/40 bg-[#217ED9]/10 px-4 py-3 text-right">
-                      <div className="text-3xl font-bold text-white">{String(integrationGroups.length).padStart(2, "0")}</div>
-                      <div className="text-xs uppercase tracking-[0.2em] text-[#75ADE6]">Industries</div>
-                    </div>
+                  <div className="scoreboard-header mb-2.5 flex items-center justify-center rounded-2xl px-4 py-2">
+                    <h2 className="text-lg font-semibold tracking-[0.08em] text-white sm:text-xl">Integration Scoreboard</h2>
                   </div>
 
-                  <div className="space-y-4">
-                    <SummaryRow label="Current source" value={catalog?.meta.source_mode === "remote-url" ? "Published Google Sheet CSV" : "Local CSV seed"} />
-                    <SummaryRow label="Catalog flow" value="CSV > JSON > public page" />
-                    <SummaryRow label="Catalog coverage" value={`${totalVendors} vendors / ${totalProducts} products`} />
-                    <SummaryRow label="Machine-readable field" value={catalog?.meta.discovery.api_docs_field ?? "integration_api_url"} />
+                  <div className="scoreboard-display rounded-[1.4rem] px-4 py-2.5 sm:px-5">
+                    <div className="space-y-1.5">
+                      <ScoreboardMetric value={String(totalProducts).padStart(2, "0")} label="Integrations Available" />
+                      <ScoreboardMetric value={String(integrationGroups.length).padStart(2, "0")} label="Industries Covered" />
+                      <ScoreboardMetric value={String(totalVendors).padStart(2, "0")} label="Vendors Available" />
+                      <ScoreboardMetric value={String(totalDetailedProducts).padStart(2, "0")} label="Detail Pages Available" />
+                    </div>
                   </div>
                 </motion.div>
               </div>
@@ -267,9 +252,11 @@ export function OurIntegrationsPage() {
               <div className="grid xl:grid-cols-[300px_1fr] gap-8 items-start">
                 <div className="xl:sticky xl:top-28">
                   {lastUpdatedLabel && (
-                    <div className="mb-3 px-1 text-center xl:text-left">
-                      <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Last Updated</div>
-                      <div className="mt-1 text-sm font-medium text-slate-200">{lastUpdatedLabel}</div>
+                    <div className="mb-3 flex items-center justify-center px-1 text-center">
+                      <div className="whitespace-nowrap text-sm font-medium text-slate-200">
+                        <span className="uppercase tracking-[0.22em] text-slate-500">Last Updated:</span>{" "}
+                        <span>{lastUpdatedLabel}</span>
+                      </div>
                     </div>
                   )}
 
@@ -446,7 +433,7 @@ export function OurIntegrationsPage() {
                                         {vendor.products.map((product) => (
                                           <div
                                             key={product.product_slug}
-                                            className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-4 text-slate-200"
+                                            className="flex h-full flex-col rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-4 text-slate-200"
                                           >
                                             <div className="flex items-start justify-between gap-3 mb-3">
                                               <div className="text-xs uppercase tracking-[0.2em] text-slate-500">
@@ -473,7 +460,7 @@ export function OurIntegrationsPage() {
                                               </p>
                                             )}
                                             {product.has_detail && (
-                                              <div className="mt-4 border-t border-slate-800/80 pt-4 text-center">
+                                              <div className="mt-auto border-t border-slate-800/80 pt-4 text-center">
                                                 <Link
                                                   to={`/integrations/${vendor.vendor_slug}/${product.product_slug}`}
                                                   className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-[#217ED9]/50 bg-[#217ED9]/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#75ADE6] transition-colors hover:bg-[#217ED9]/20"
@@ -501,20 +488,6 @@ export function OurIntegrationsPage() {
             </div>
           </section>
 
-          <section className="pb-24 border-t border-slate-800">
-            <div className="max-w-4xl mx-auto px-4 text-center pt-20">
-              <h2 className="text-3xl font-bold mb-6">Next Stage: Live Sheet Imports</h2>
-              <p className="text-xl text-slate-400 leading-relaxed mb-8">
-                This starter now runs on generated JSON instead of hard-coded page data. The next step is simply replacing the seeded CSV with your real Google Sheet export and regenerating the catalog.
-              </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#0a1929]/80 border-2 border-[#217ED9] hover:bg-[#0a1929] text-white font-semibold text-lg transition-all"
-              >
-                Talk To Us <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
-          </section>
         </div>
       </div>
     </>
@@ -595,11 +568,13 @@ function MetricsPanel({
   );
 }
 
-function SummaryRow({ label, value }: { label: string; value: string }) {
+function ScoreboardMetric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between gap-4 border-b border-slate-800 pb-4 last:border-0 last:pb-0">
-      <span className="text-sm uppercase tracking-[0.16em] text-slate-500">{label}</span>
-      <span className="text-sm font-medium text-slate-200 text-right">{value}</span>
+    <div className="scoreboard-row rounded-2xl border border-[#75ADE6]/35 bg-slate-950/55 px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+      <div className="scoreboard-row__label text-xs uppercase tracking-[0.18em] text-[#9cc6ef]">{label}</div>
+      <div className="flip-scoreboard" aria-label={`${label}: ${value}`}>
+        <span className="flip-scoreboard__digit">{value}</span>
+      </div>
     </div>
   );
 }

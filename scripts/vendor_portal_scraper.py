@@ -54,6 +54,21 @@ class CatalogEntry:
     summary: str
 
 
+def infer_integration_type_from_sample(sample: str, default_type: str) -> str:
+    lowered_sample = sample.lower()
+    if "graphql" in lowered_sample:
+        return "GraphQL API"
+    if "mqtt" in lowered_sample:
+        return "MQTT API"
+    if "grpc" in lowered_sample or ".proto" in lowered_sample:
+        return "gRPC API"
+    if "sdk" in lowered_sample:
+        return "SDK"
+    if any(token in lowered_sample for token in ["swagger", "openapi", ".yaml", ".json"]):
+        return "OpenAPI"
+    return default_type
+
+
 @dataclass
 class VendorIdentity:
     slug: str
@@ -224,6 +239,22 @@ class VendorPortalScraper:
         )
         self.vendor_sort_order_cache: dict[str, int] = {}
 
+    def seeded_catalog_entries(self) -> list[CatalogEntry]:
+        configured_entries = self.config.get("catalog_seed_entries", [])
+        seeded_entries: list[CatalogEntry] = []
+        for entry in configured_entries:
+            if not isinstance(entry, dict):
+                continue
+            url = self._strip_fragment(normalize_space(str(entry.get("url", ""))))
+            title = normalize_space(str(entry.get("title", "")))
+            summary = normalize_space(str(entry.get("summary", "")))
+            if not url or not title:
+                continue
+            if not self.is_allowed_url(url):
+                continue
+            seeded_entries.append(CatalogEntry(url=url, title=title, summary=summary))
+        return seeded_entries
+
     def source_key(self) -> str:
         return slugify(self.config.get("source_key") or self.config.get("name", "vendor-portal"))
 
@@ -294,7 +325,16 @@ class VendorPortalScraper:
         return ""
 
     def scrape_entry(self, entry: CatalogEntry, product_sort_order: int) -> dict[str, str]:
-        soup = self.fetch_soup(entry.url)
+        if self.config.get("seed_entries_skip_fetch", False):
+            return self.build_seeded_row(entry, product_sort_order)
+
+        try:
+            soup = self.fetch_soup(entry.url)
+        except Exception:
+            if not self.config.get("allow_seed_entry_fallback_on_fetch_error", False):
+                raise
+            return self.build_seeded_row(entry, product_sort_order)
+
         page_title = self.extract_page_title(soup) or entry.title
         product_summary = self.extract_page_summary(soup) or entry.summary or page_title
         tag_slugs = self.extract_tag_slugs(soup)
@@ -332,6 +372,45 @@ class VendorPortalScraper:
             "internal_notes": internal_notes,
         }
         return row
+
+    def build_seeded_row(self, entry: CatalogEntry, product_sort_order: int) -> dict[str, str]:
+        source_product_line_slug = self.infer_source_product_line_slug(entry.url)
+        source_product_line_name = self.infer_source_product_line_name(source_product_line_slug)
+        vendor = self.infer_vendor_identity(source_product_line_slug)
+        industry = self.infer_industry([], source_product_line_slug)
+        product_name = self.clean_product_name(entry.title) or self.fallback_product_name(entry.title, source_product_line_name, self.row_defaults.get("integration_type", "REST API"))
+        product_summary = entry.summary or product_name
+        integration_api_url = entry.url
+        integration_type = infer_integration_type_from_sample(
+            f"{product_name} {product_summary} {integration_api_url}",
+            self.row_defaults.get("integration_type", "REST API"),
+        )
+        vendor_summary = self.infer_vendor_summary(vendor, source_product_line_name, product_summary)
+        internal_notes = self.build_internal_notes(entry.url, integration_api_url, [], source_product_line_slug, source_product_line_name)
+        product_family = self.infer_product_family(product_name, integration_type, source_product_line_name)
+
+        return {
+            "industry_slug": industry["slug"],
+            "industry_name": industry["name"],
+            "industry_description": industry["description"],
+            "industry_sort_order": str(industry["sort_order"]),
+            "vendor_slug": vendor.slug,
+            "vendor_name": vendor.name,
+            "vendor_logo_url": self.row_defaults.get("vendor_logo_url", ""),
+            "vendor_logo_asset": self.row_defaults.get("vendor_logo_asset", ""),
+            "vendor_summary": vendor_summary,
+            "vendor_sort_order": str(vendor.sort_order),
+            "product_slug": slugify(product_name),
+            "product_name": product_name,
+            "product_family": product_family,
+            "integration_status": self.row_defaults.get("integration_status", "built"),
+            "integration_type": integration_type,
+            "integration_api_url": integration_api_url,
+            "product_summary": product_summary,
+            "product_sort_order": str(product_sort_order),
+            "is_visible": str(self.row_defaults.get("is_visible", True)).upper(),
+            "internal_notes": internal_notes,
+        }
 
     def infer_vendor_identity(self, source_product_line_slug: str) -> VendorIdentity:
         vendor_identity = self.config.get("vendor_identity", {})
@@ -609,18 +688,10 @@ class VendorPortalScraper:
         return score
 
     def infer_integration_type(self, page_title: str, summary: str, api_url: str) -> str:
-        sample = f"{page_title} {summary} {api_url}".lower()
-        if "graphql" in sample:
-            return "GraphQL API"
-        if "mqtt" in sample:
-            return "MQTT API"
-        if "grpc" in sample or ".proto" in sample:
-            return "gRPC API"
-        if "sdk" in sample:
-            return "SDK"
-        if any(token in sample for token in ["swagger", "openapi", ".yaml", ".json"]):
-            return "OpenAPI"
-        return self.row_defaults.get("integration_type", "REST API")
+        return infer_integration_type_from_sample(
+            f"{page_title} {summary} {api_url}",
+            self.row_defaults.get("integration_type", "REST API"),
+        )
 
     def infer_vendor_summary(self, vendor: VendorIdentity, source_product_line_name: str, product_summary: str) -> str:
         if vendor.summary:
@@ -825,7 +896,9 @@ def main() -> int:
     product_sort_start = int(scraper.row_defaults.get("product_sort_start", 10))
     product_sort_step = int(scraper.row_defaults.get("product_sort_step", 10))
 
-    entries = scraper.discover_catalog_entries(catalog_url)
+    entries = scraper.seeded_catalog_entries()
+    if not entries:
+        entries = scraper.discover_catalog_entries(catalog_url)
     if args.limit > 0:
         entries = entries[: args.limit]
 

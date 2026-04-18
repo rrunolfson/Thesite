@@ -1,0 +1,44 @@
+{
+  "vendor_slug": "samsara",
+  "vendor_name": "Samsara",
+  "product_slug": "driver-documents",
+  "product_name": "Driver Documents",
+  "product_family": "Samsara Platform",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developers.samsara.com/docs/documents-guide",
+  "spec_artifact_url": "https://developers.samsara.com/docs/documents-guide",
+  "detail_completeness": "generated-summary",
+  "data_coverage_summary": "Create and manage forms that drivers fill out in the Samsara Driver App.",
+  "data_domains": [],
+  "asset_data_available": null,
+  "telemetry_data_available": null,
+  "writeback_supported": null,
+  "key_entities": [],
+  "buyer_guidance": "Use the published Samsara Platform REST API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
+  "overview": "Create and manage forms that drivers fill out in the Samsara Driver App. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "available_data": [
+    {
+      "category": "Published API Scope",
+      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "data_points": [
+        "Published summary: Create and manage forms that drivers fill out in the Samsara Driver App.",
+        "Product family: Samsara Platform",
+        "Integration type: REST API",
+        "Lifecycle status: Built",
+        "Published API documentation is available from the linked source documentation.",
+        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+      ],
+      "relevant_operations": []
+    }
+  ],
+  "ingest_considerations": [],
+  "source_evidence": {
+    "documentation_url": "https://developers.samsara.com/docs/documents-guide",
+    "spec_url": "https://developers.samsara.com/docs/documents-guide",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+  },
+  "detail_path": "/integration-details/samsara/driver-documents.json",
+  "vendor_domain": "samsara.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=samsara.com&sz=128"
+}

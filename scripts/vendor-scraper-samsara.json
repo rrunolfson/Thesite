@@ -1,0 +1,150 @@
+{
+  "name": "samsara",
+  "source_key": "samsara-developer-portal",
+  "catalog_url": "https://developers.samsara.com/reference/overview",
+  "vendor_identity": {
+    "slug": "samsara",
+    "name": "Samsara",
+    "summary": "Samsara fleet, telematics, routing, compliance, maintenance, payroll, and logistics integration APIs exposed through the Samsara developer platform.",
+    "sort_order": 20
+  },
+  "allowed_domains": [
+    "developers.samsara.com"
+  ],
+  "catalog_seed_entries": [
+    {
+      "url": "https://developers.samsara.com/docs/telematics",
+      "title": "Telematics",
+      "summary": "Get real-time or historical GPS and onboard diagnostic data."
+    },
+    {
+      "url": "https://developers.samsara.com/docs/routing-guide",
+      "title": "Routing",
+      "summary": "Integrate route creation, assignment, and progress tracking with your TMS."
+    },
+    {
+      "url": "https://developers.samsara.com/docs/compliance-guide",
+      "title": "Compliance & ELD",
+      "summary": "Manage hours of service and records of duty status."
+    },
+    {
+      "url": "https://developers.samsara.com/docs/documents-guide",
+      "title": "Driver Documents",
+      "summary": "Create and manage forms that drivers fill out in the Samsara Driver App."
+    },
+    {
+      "url": "https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+      "title": "Maintenance & Fault Monitoring",
+      "summary": "Integrate with maintenance and work order systems by monitoring fault codes, managing DVIRs, and scheduling planned maintenance."
+    },
+    {
+      "url": "https://developers.samsara.com/docs/payroll-guide",
+      "title": "Payroll",
+      "summary": "Calculate payroll by tracking hours or miles driven."
+    },
+    {
+      "url": "https://developers.samsara.com/docs/tms-integration-guide",
+      "title": "TMS Integrations",
+      "summary": "How to integrate Samsara with a Transportation Management System."
+    }
+  ],
+  "timeout_seconds": 30,
+  "sleep_seconds": 0.0,
+  "allow_seed_entry_fallback_on_fetch_error": true,
+  "seed_entries_skip_fetch": true,
+  "catalog_rules": {
+    "entry_include_url_patterns": [
+      "/docs/telematics",
+      "/docs/routing-guide",
+      "/docs/compliance-guide",
+      "/docs/documents-guide",
+      "/docs/maintenance-fault-monitoring-guide",
+      "/docs/payroll-guide",
+      "/docs/tms-integration-guide"
+    ],
+    "entry_exclude_url_patterns": [
+      "mailto:",
+      "/changelog",
+      "/discuss",
+      "/recipes",
+      "/docs/getting-started",
+      "/docs/authentication",
+      "/docs/versioning",
+      "/docs/pagination",
+      "/docs/filtering",
+      "/docs/external-ids",
+      "/docs/webhooks",
+      "/docs/webhook-reference",
+      "/docs/postman-collection",
+      "/docs/openapi-spec"
+    ],
+    "entry_text_patterns": [
+      "Telematics",
+      "Routing",
+      "Compliance & ELD",
+      "Driver Documents",
+      "Maintenance & Fault Monitoring",
+      "Payroll",
+      "TMS Integrations"
+    ]
+  },
+  "entry_rules": {
+    "product_name_cleanups": [
+      ["^Documents$", "Driver Documents"],
+      ["^TMS integration$", "TMS Integrations"]
+    ],
+    "api_url_preference_patterns": [
+      "/reference/",
+      "openapi",
+      "rest-api",
+      ".yaml",
+      ".yml",
+      ".json"
+    ],
+    "api_url_reject_patterns": [
+      "changelog",
+      "community",
+      "discuss",
+      "newsletter",
+      "support",
+      "marketplace",
+      "partner-support"
+    ]
+  },
+  "purge_rules": {
+    "drop_without_spec": false,
+    "drop_unusable_spec_urls": false,
+    "unusable_spec_url_patterns": []
+  },
+  "field_mapping": {
+    "path_vendor_overrides": {
+      "docs": "Samsara Platform"
+    },
+    "tag_to_industry": {},
+    "industry_definitions": {
+      "transportation": {
+        "slug": "transportation",
+        "name": "Transportation",
+        "description": "Fleet telematics, routing, compliance, maintenance, payroll, and logistics integration APIs.",
+        "sort_order": 30
+      }
+    },
+    "vendor_summary_template": "{vendor_name} {product_summary}"
+  },
+  "row_defaults": {
+    "industry_slug": "transportation",
+    "industry_name": "Transportation",
+    "industry_description": "Fleet telematics, routing, compliance, maintenance, payroll, and logistics integration APIs.",
+    "industry_sort_order": 30,
+    "integration_status": "built",
+    "integration_type": "REST API",
+    "is_visible": true,
+    "product_sort_start": 10,
+    "product_sort_step": 10,
+    "vendor_logo_url": "",
+    "vendor_logo_asset": ""
+  },
+  "google_sheets": {
+    "worksheet_title": "Integrations"
+  }
+}

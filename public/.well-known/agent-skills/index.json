@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agentskills.io/schemas/agent-skills-index-v0.2.0.json",
+  "version": "0.2.0",
+  "skills": [
+    {
+      "name": "Last Mile Integrations Catalog",
+      "type": "discovery",
+      "description": "Discover the public integrations catalog and its machine-readable JSON feed.",
+      "url": "https://lastmileinc.ai/.well-known/agent-skills/integrations-catalog.md",
+      "sha256": "575bb302b01dde4ef4f8e4931b5f469c23076f7475980140f6a60f381e96ce1c"
+    },
+    {
+      "name": "Last Mile Contact And Company Discovery",
+      "type": "navigation",
+      "description": "Find the public company and contact pages for outreach and background.",
+      "url": "https://lastmileinc.ai/.well-known/agent-skills/contact-and-company.md",
+      "sha256": "b58d8ef653e369474cf6db7dbffcfad993248e733e54fd976600225cc4ec59a0"
+    },
+    {
+      "name": "Signal 2 Action Podcast Discovery",
+      "type": "media",
+      "description": "Discover the Signal 2 Action landing page and RSS feed.",
+      "url": "https://lastmileinc.ai/.well-known/agent-skills/signal-2-action.md",
+      "sha256": "15ab60dd305b83d010b0c515ec829277922afcb4fd4c548e4e6da57d4588b5a0"
+    },
+    {
+      "name": "Last Mile Markdown Pages",
+      "type": "content-negotiation",
+      "description": "Find markdown companions for the main public pages and use them when an agent prefers markdown over HTML.",
+      "url": "https://lastmileinc.ai/.well-known/agent-skills/markdown-pages.md",
+      "sha256": "38186280a7e356c1a58e6ca61ab23e1c08fe4317fcab1423c51f18ff8a8a6c4e"
+    }
+  ]
+}

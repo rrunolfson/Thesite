@@ -35,7 +35,7 @@
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/electrification-x/api_specs/openapi-v1_0_0.yaml",
     "spec_url": "https://developer.siemens.com/electrification-x/api_specs/openapi-v1_0_0.yaml",
-    "reviewed_at": "2026-04-17",
+    "reviewed_at": "2026-04-18",
     "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
   },
   "detail_path": "/integration-details/siemens/electrification-x-api.json",

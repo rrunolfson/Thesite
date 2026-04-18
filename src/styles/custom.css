@@ -81,3 +81,110 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.flip-scoreboard {
+  display: inline-flex;
+  gap: 0.375rem;
+  justify-content: center;
+}
+
+.scoreboard-shell {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(117, 173, 230, 0.16), transparent 38%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.96) 0%, rgba(8, 15, 30, 0.98) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(117, 173, 230, 0.08),
+    0 24px 60px rgba(8, 47, 73, 0.32);
+}
+
+.scoreboard-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent 28%);
+  pointer-events: none;
+}
+
+.scoreboard-header {
+  position: relative;
+  border: 1px solid rgba(117, 173, 230, 0.22);
+  background: linear-gradient(180deg, rgba(32, 50, 77, 0.9) 0%, rgba(15, 23, 42, 0.72) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.scoreboard-display {
+  border: 1px solid rgba(117, 173, 230, 0.2);
+  background:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.98) 0%, rgba(15, 23, 42, 0.98) 100%);
+  box-shadow:
+    inset 0 3px 10px rgba(0, 0, 0, 0.55),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04),
+    0 8px 24px rgba(2, 6, 23, 0.3);
+}
+
+.scoreboard-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 2rem;
+  padding: 0.52rem 0.8rem;
+  border-bottom: 1px solid rgba(71, 85, 105, 0.45);
+}
+
+.scoreboard-row:last-child {
+  border-bottom: 0;
+}
+
+.scoreboard-row__label {
+  text-align: left;
+  padding-left: 0.35rem;
+}
+
+.flip-scoreboard__digit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.55rem;
+  height: 2.7rem;
+  padding: 0.2rem 0.9rem;
+  letter-spacing: 0.08em;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background:
+    linear-gradient(180deg, rgba(148, 163, 184, 0.16) 0%, rgba(15, 23, 42, 0.1) 8%, rgba(2, 6, 23, 0.92) 52%, rgba(15, 23, 42, 0.98) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04),
+    0 10px 20px rgba(2, 6, 23, 0.3);
+  color: #ffffff;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.flip-scoreboard__digit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 32%);
+  pointer-events: none;
+}
+
+.flip-scoreboard__digit::after {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  right: 0.2rem;
+  top: 50%;
+  height: 1px;
+  background: rgba(148, 163, 184, 0.2);
+  box-shadow: 0 1px 0 rgba(2, 6, 23, 0.7);
+  pointer-events: none;
+}

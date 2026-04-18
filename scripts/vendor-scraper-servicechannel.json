@@ -1,0 +1,108 @@
+{
+  "name": "servicechannel",
+  "source_key": "servicechannel-developer-portal",
+  "catalog_url": "https://developer.servicechannel.com/basics/introduction/overview/",
+  "vendor_identity": {
+    "slug": "servicechannel",
+    "name": "ServiceChannel",
+    "summary": "ServiceChannel work order, dispatch, provider, asset, invoice, and facilities service management APIs exposed through the ServiceChannel developer platform.",
+    "sort_order": 30
+  },
+  "allowed_domains": [
+    "developer.servicechannel.com"
+  ],
+  "catalog_seed_entries": [
+    {
+      "url": "https://developer.servicechannel.com/swagger/ui/index?version=3#WorkOrders",
+      "title": "Work Orders API",
+      "summary": "Work order lifecycle APIs for searching, creating, scheduling, reprioritizing, dispatching, and resolving repair orders in ServiceChannel from ServiceNow operational workflows."
+    },
+    {
+      "url": "https://developer.servicechannel.com/swagger/ui/index?version=3#WorkRequests",
+      "title": "Service Requests API",
+      "summary": "Service request intake and pre-dispatch APIs for creating, updating, categorizing, reassigning, and searching incoming repair requests before or alongside work order creation."
+    },
+    {
+      "url": "https://developer.servicechannel.com/swagger/ui/index?version=3#Providers",
+      "title": "Providers API",
+      "summary": "Provider network APIs for creating provider records, retrieving provider details, ranking providers, managing dispatch settings, and collecting provider feedback tied to service execution."
+    },
+    {
+      "url": "https://developer.servicechannel.com/swagger/ui/index?version=3#Assets",
+      "title": "Assets API",
+      "summary": "Asset and equipment APIs for retrieving location assets, attaching assets to work orders, updating asset master data, tracking asset history, and recording asset meter readings."
+    }
+  ],
+  "timeout_seconds": 30,
+  "sleep_seconds": 0.0,
+  "allow_seed_entry_fallback_on_fetch_error": true,
+  "seed_entries_skip_fetch": true,
+  "catalog_rules": {
+    "entry_include_url_patterns": [
+      "/swagger/ui/index"
+    ],
+    "entry_exclude_url_patterns": [
+      "mailto:",
+      "/news/",
+      "/feed.xml"
+    ],
+    "entry_text_patterns": [
+      "Work Orders API",
+      "Service Requests API",
+      "Providers API",
+      "Assets API"
+    ]
+  },
+  "entry_rules": {
+    "product_name_cleanups": [],
+    "api_url_preference_patterns": [
+      "/swagger/",
+      "version=3",
+      "api",
+      "reference"
+    ],
+    "api_url_reject_patterns": [
+      "news",
+      "feed",
+      "facebook",
+      "twitter",
+      "linkedin"
+    ]
+  },
+  "purge_rules": {
+    "drop_without_spec": false,
+    "drop_unusable_spec_urls": false,
+    "unusable_spec_url_patterns": []
+  },
+  "field_mapping": {
+    "path_vendor_overrides": {
+      "swagger": "ServiceChannel Platform"
+    },
+    "tag_to_industry": {},
+    "industry_definitions": {
+      "service-providers": {
+        "slug": "service-providers",
+        "name": "Service Providers",
+        "description": "Work order, dispatch, field service, contractor coordination, and repair management APIs for operational support workflows.",
+        "sort_order": 50
+      }
+    },
+    "vendor_summary_template": "{vendor_name} {product_summary}"
+  },
+  "row_defaults": {
+    "industry_slug": "service-providers",
+    "industry_name": "Service Providers",
+    "industry_description": "Work order, dispatch, field service, contractor coordination, and repair management APIs for operational support workflows.",
+    "industry_sort_order": 50,
+    "integration_status": "built",
+    "integration_type": "REST API",
+    "is_visible": true,
+    "product_sort_start": 10,
+    "product_sort_step": 10,
+    "vendor_logo_url": "",
+    "vendor_logo_asset": ""
+  },
+  "google_sheets": {
+    "worksheet_title": "Integrations"
+  }
+}

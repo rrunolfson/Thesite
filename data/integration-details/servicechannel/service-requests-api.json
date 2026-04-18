@@ -1,0 +1,102 @@
+{
+  "vendor_slug": "servicechannel",
+  "vendor_name": "ServiceChannel",
+  "product_slug": "service-requests-api",
+  "product_name": "Service Requests API",
+  "product_family": "ServiceChannel Platform",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "spec_artifact_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The Service Requests area covers pre-work-order intake and triage, including request creation, retrieval, updates, status and priority changes, category and trade changes, reassignment options, duplicate detection, and request-info retrieval flows used before dispatch finalization.",
+  "data_domains": [
+    "service-request-intake",
+    "triage-and-classification",
+    "reassignment",
+    "duplicate-detection",
+    "subscriber-request-context"
+  ],
+  "asset_data_available": false,
+  "telemetry_data_available": false,
+  "writeback_supported": true,
+  "key_entities": [
+    "work requests",
+    "service request info",
+    "request status",
+    "priority and category values",
+    "reassignment candidates",
+    "duplicate request sets"
+  ],
+  "buyer_guidance": "Use this area when the ServiceNow workflow starts earlier than formal dispatch and needs to hand off service intake, triage, or reassignment decisions into ServiceChannel. It is best suited for front-end request management rather than downstream completion and resolution tracking.",
+  "overview": "ServiceChannel separates request intake from active work-order execution. The WorkRequests and ServiceRequest sections show APIs for creating, retrieving, updating, deleting, reprioritizing, reclassifying, rescheduling, reassigning, and searching work requests, along with subscriber-context endpoints for service request info, address/context retrieval, overrides, and duplicate detection. This makes the Service Requests area the best fit for ServiceNow incident-to-service handoff and pre-dispatch repair intake automation.",
+  "available_data": [
+    {
+      "category": "Request lifecycle and triage",
+      "description": "Core endpoints for creating, updating, searching, and deleting service requests before they are fully executed as work orders.",
+      "data_points": [
+        "service request records",
+        "request status and priority values",
+        "category and trade assignments",
+        "NTE and scheduled-date updates",
+        "search results for filtered request queues"
+      ],
+      "relevant_operations": [
+        "POST /workrequests",
+        "GET /workrequests/{id}",
+        "PUT /workrequests/{workRequestId}",
+        "DELETE /workrequests/{id}",
+        "PUT /workrequests/{workRequestId}/status",
+        "PUT /workrequests/{workRequestId}/priority",
+        "PUT /workrequests/{workRequestId}/category",
+        "PUT /workrequests/{workRequestId}/trade",
+        "POST /workrequests/search"
+      ]
+    },
+    {
+      "category": "Reassignment and provider selection",
+      "description": "Endpoints that support choosing another provider or identifying who can take a request next.",
+      "data_points": [
+        "providers available for reassignment",
+        "reassignment actions to another provider",
+        "request routing decisions before full dispatch"
+      ],
+      "relevant_operations": [
+        "PUT /workrequests/{workRequestId}/reassign",
+        "GET /workrequests/providersforreassignment",
+        "GET /servicerequest/providers"
+      ]
+    },
+    {
+      "category": "Subscriber request context and duplicate controls",
+      "description": "Read and helper endpoints for dashboard context, properties overrides, addresses, and duplicate detection around request intake.",
+      "data_points": [
+        "service request info for the current subscriber",
+        "service request info without dashboard settings",
+        "request addresses",
+        "work-order properties with overrides",
+        "open and completed duplicate request checks"
+      ],
+      "relevant_operations": [
+        "GET /subscribers/current/servicerequest/info",
+        "GET /subscribers/current/servicerequest/info/nosettings",
+        "GET /subscribers/current/servicerequest/addresses",
+        "POST /subscribers/current/servicerequest/overrides/props",
+        "POST /providers/current/subscribers/{subscriberId}/servicerequest/overrides/props",
+        "POST /subscribers/current/servicerequest/duplicates/completed",
+        "POST /subscribers/current/servicerequest/duplicates/open"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This layer is ideal when ServiceNow owns intake or triage and ServiceChannel owns vendor-facing execution after the request is accepted.",
+    "Reassignment support suggests provider-matching logic can be coordinated between ServiceNow and ServiceChannel rather than hard-coded in one place.",
+    "Duplicate detection endpoints are useful if ServiceNow incidents or OT alarms can create repeated repair demand for the same site condition.",
+    "Request-context endpoints appear subscriber-aware, so tenant and role scoping should be explicit in the integration design."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+    "spec_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+    "reviewed_at": "2026-04-17",
+    "evidence_notes": "Based on the WorkRequests and ServiceRequest sections in the ServiceChannel v3 Swagger reference plus the OAuth and environment requirements documented in the ServiceChannel basics pages."
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "vendor_slug": "servicechannel",
+  "vendor_name": "ServiceChannel",
+  "product_slug": "work-orders-api",
+  "product_name": "Work Orders API",
+  "product_family": "ServiceChannel Platform",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "spec_artifact_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The Work Orders API covers the in-flight repair order lifecycle in ServiceChannel, including search, creation, status and priority updates, scheduling, trade changes, resolution capture, caller and purchase-order updates, project approvals, and nearby or duplicate work-order discovery.",
+  "data_domains": [
+    "work-order-lifecycle",
+    "dispatch-and-scheduling",
+    "priority-and-category-management",
+    "resolution-and-completion",
+    "location-linked-operations"
+  ],
+  "asset_data_available": false,
+  "telemetry_data_available": false,
+  "writeback_supported": true,
+  "key_entities": [
+    "work orders",
+    "work order status",
+    "work order priority",
+    "trade assignments",
+    "scheduled dates",
+    "resolution records",
+    "location work order lists"
+  ],
+  "buyer_guidance": "Use this area when ServiceNow needs to push or synchronize actual repair execution records into ServiceChannel after triage has happened. It is strongest for operational orchestration, SLA progression, dispatch coordination, and closed-loop work-order updates rather than asset telemetry ingestion.",
+  "overview": "ServiceChannel exposes a broad WorkOrders surface for operational execution. The reference shows support for searching and creating work orders, updating status, priority, category, NTE values, description, caller, PO number, scheduled date, projected completion date, trade assignment, and project approvals, as well as posting resolutions and retrieving duplicate, recall, nearby, and check-in related work-order views. That makes this the primary integration area for ServiceNow-to-ServiceChannel repair order orchestration.",
+  "available_data": [
+    {
+      "category": "Core work order lifecycle",
+      "description": "Primary endpoints for creating and searching work orders and moving them through operational execution states.",
+      "data_points": [
+        "work order headers and identifiers",
+        "searchable work order lists",
+        "status values and lifecycle transitions",
+        "priority and category assignments",
+        "scheduled dates and projected completion dates"
+      ],
+      "relevant_operations": [
+        "GET /workorders",
+        "POST /workorders",
+        "PUT /workorders/{workorderId}/status",
+        "PUT /workorders/{workorderId}/priority",
+        "PUT /workorders/{workorderId}/category",
+        "PUT /workorders/{workorderId}/scheduledate",
+        "PUT /workorders/{workOrderId}/projectedCompletionDate"
+      ]
+    },
+    {
+      "category": "Operational dispatch and execution controls",
+      "description": "Mutation endpoints used to refine execution details and keep the work order aligned with service delivery realities.",
+      "data_points": [
+        "NTE values and approvals",
+        "trade changes",
+        "description changes",
+        "caller updates",
+        "purchase order references",
+        "resolution submissions"
+      ],
+      "relevant_operations": [
+        "PUT /workorders/{workorderId}/nte",
+        "PUT /workorders/{workOrderId}/projectApproval",
+        "POST /workorders/{workOrderId}/projectApproval",
+        "PUT /workorders/{workorderId}/description",
+        "PUT /workorders/{workorderId}/trade",
+        "POST /workorders/{workorderId}/resolution",
+        "PUT /workorders/{workorderId}/caller",
+        "PUT /workorders/{workorderId}/ponumber"
+      ]
+    },
+    {
+      "category": "Location and exception views",
+      "description": "Read-heavy endpoints for identifying edge cases and location-based work-order activity that may matter for ServiceNow workflows.",
+      "data_points": [
+        "check-in activity for technicians",
+        "location-specific work order lists",
+        "duplicate work order detection",
+        "recall discovery",
+        "nearby work orders for site context"
+      ],
+      "relevant_operations": [
+        "GET /odata/locations({locationId})/workorders",
+        "GET /odata/locations({locationId})/workorders/Service.GetDuplicates()",
+        "GET /odata/locations({locationId})/workorders/Service.GetRecalls()",
+        "GET /odata/workorders/Service.NearBy(latitude={latitude},longitude={longitude})",
+        "GET /workorders/Service.CheckInActivity(loadBlocked={loadBlocked})"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This is the write-heavy ServiceChannel domain, so approval logic, status mapping, and retry handling matter more than simple data extraction.",
+    "Work order mutation endpoints imply a ServiceNow integration can drive dispatch changes directly; those actions should be permission-gated carefully.",
+    "Location-based OData views can support site dashboards and duplicate avoidance logic inside operational workflows.",
+    "OAuth access tokens expire quickly, so long-running orchestration jobs should be designed around refresh-token handling."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+    "spec_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+    "reviewed_at": "2026-04-17",
+    "evidence_notes": "Based on the WorkOrders section in the ServiceChannel v3 Swagger reference plus the platform authentication and environment guidance from the ServiceChannel API basics pages."
+  }
+}

@@ -35,7 +35,7 @@
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/sigreen/my-tasks-api/api_specs/openapi-spec-v1.16.0.yaml",
     "spec_url": "https://developer.siemens.com/sigreen/my-tasks-api/api_specs/openapi-spec-v1.16.0.yaml",
-    "reviewed_at": "2026-04-17",
+    "reviewed_at": "2026-04-18",
     "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
   },
   "detail_path": "/integration-details/siemens/sigreen-my-tasks-api.json",

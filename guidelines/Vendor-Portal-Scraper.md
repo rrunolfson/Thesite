@@ -22,6 +22,9 @@
 
 ## Required Config Concepts
 - `catalog_url`: top-level page to crawl.
+- `catalog_seed_entries`: optional fixed list of entry URLs, titles, and summaries to scrape when the catalog page is too broad or unreliable.
+- `allow_seed_entry_fallback_on_fetch_error`: optional boolean that lets the scraper emit rows from seeded metadata when live page fetches time out or fail.
+- `seed_entries_skip_fetch`: optional boolean that skips live page fetches entirely and emits rows directly from seeded metadata.
 - `vendor_identity`: optional canonical vendor mapping when one portal represents a single OEM with many product lines.
 - `allowed_domains`: domains the scraper is allowed to follow.
 - `catalog_rules`: patterns that include or exclude product links.

@@ -35,7 +35,7 @@
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
     "spec_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
-    "reviewed_at": "2026-04-17",
+    "reviewed_at": "2026-04-18",
     "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
   },
   "detail_path": "/integration-details/siemens/point-value-ingest-api.json",

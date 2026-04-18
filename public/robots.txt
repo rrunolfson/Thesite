@@ -10,5 +10,8 @@ Allow: /
 # Sitemap location
 Sitemap: https://lastmileinc.ai/sitemap.xml
 
+# AI content usage preferences
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
 # Crawl delay (optional - helps prevent server overload)
 Crawl-delay: 0

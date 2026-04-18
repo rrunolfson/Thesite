@@ -8,6 +8,7 @@ export function ContactPage() {
         title="Contact Us"
         description="Get in touch with Last Mile. Schedule a demo, learn about our solutions, or discuss how we can help integrate your operational data with ServiceNow."
         canonicalPath="/contact"
+        markdownPath="/contact.md"
       />
       <div className="pt-20 relative min-h-screen">
       <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>

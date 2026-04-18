@@ -1,0 +1,98 @@
+{
+  "vendor_slug": "servicechannel",
+  "vendor_name": "ServiceChannel",
+  "product_slug": "providers-api",
+  "product_name": "Providers API",
+  "product_family": "ServiceChannel Platform",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "spec_artifact_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The Providers API covers service-provider network data used for dispatch decisions, including provider creation, provider information lookup, trade-based provider retrieval, dispatch-setting updates, ranking retrieval, recent-provider discovery, and provider feedback collection.",
+  "data_domains": [
+    "provider-master-data",
+    "trade-qualification",
+    "dispatch-preferences",
+    "provider-ranking",
+    "service-feedback"
+  ],
+  "asset_data_available": false,
+  "telemetry_data_available": false,
+  "writeback_supported": true,
+  "key_entities": [
+    "provider records",
+    "provider-subscriber links",
+    "trade-qualified providers",
+    "dispatch settings",
+    "ranking status",
+    "provider feedback",
+    "recent and last-used providers"
+  ],
+  "buyer_guidance": "Use this area when ServiceNow needs awareness of who can do the work, not just what work exists. It supports provider selection, dispatch governance, and service-quality workflows, making it useful for OT break-fix routing where field-service vendor choice matters.",
+  "overview": "The Providers section exposes the service-provider network that sits behind ServiceChannel dispatch. The reference shows endpoints for creating blank provider records, getting provider info, retrieving providers by trade, changing do-not-dispatch settings, submitting provider feedback, retrieving provider ranking status, and using OData to pull recent, detailed, or last-used provider information for a location. That makes this integration area valuable when ServiceNow must coordinate vendor selection, dispatch eligibility, or provider-quality intelligence.",
+  "available_data": [
+    {
+      "category": "Provider master and subscriber relationship data",
+      "description": "Core provider records and subscriber-link controls needed to manage which providers participate in service delivery.",
+      "data_points": [
+        "provider info records",
+        "provider-subscriber link removal",
+        "blank provider creation",
+        "subscriber-scoped provider availability"
+      ],
+      "relevant_operations": [
+        "GET /api/providers/info/{id}",
+        "POST /providers",
+        "POST /providers/RemoveProviderSubscriberLink"
+      ]
+    },
+    {
+      "category": "Dispatch eligibility and provider selection",
+      "description": "Endpoints for selecting appropriate providers based on trade fit, ranking, and dispatch preferences.",
+      "data_points": [
+        "providers by trade or trade ID",
+        "dispatch do-not-dispatch settings",
+        "provider ranking status",
+        "recent providers for a location",
+        "last-used provider feedback ratings"
+      ],
+      "relevant_operations": [
+        "GET /providers/getbytrade",
+        "GET /providers/getbytradeid",
+        "POST /providers/updateDispatchSetting",
+        "POST /providers/GetProvidersRankingStatus",
+        "GET /odata/locations({locationId})/providers/Service.GetRecent(days={days})",
+        "GET /odata/locations({locationId})/providers/Service.GetLast(days={days})"
+      ]
+    },
+    {
+      "category": "Provider quality and mobile capability signals",
+      "description": "Signals that help ServiceNow workflows reason about provider performance and mobile readiness.",
+      "data_points": [
+        "provider feedback submissions",
+        "detailed provider information",
+        "SDI mobile-enabled status"
+      ],
+      "relevant_operations": [
+        "POST /providers/{providerId}/feedback",
+        "GET /odata/detailedProviders/Service.Get(providerId={providerId})",
+        "GET /api/providers/IsSdiMobileEnabled"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Provider selection data is operationally sensitive because it influences dispatch routing and vendor performance governance.",
+    "Trade-based retrieval makes this API useful for automatically narrowing vendor options from ServiceNow incident, CMDB, or asset context.",
+    "Ranking and feedback endpoints can enrich supplier scorecards or dispatch decision support in ServiceNow.",
+    "Provider and subscriber relationship data should be modeled carefully to avoid cross-tenant routing mistakes."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.servicechannel.com/swagger/index.html#/Providers",
+    "spec_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+    "reviewed_at": "2026-04-17",
+    "evidence_notes": "Based on the Providers section in the ServiceChannel v3 Swagger reference and the OAuth-protected API access guidance in the ServiceChannel authentication and overview documentation."
+  },
+  "detail_path": "/integration-details/servicechannel/providers-api.json",
+  "vendor_domain": "servicechannel.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=servicechannel.com&sz=128"
+}

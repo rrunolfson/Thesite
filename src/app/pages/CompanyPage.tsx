@@ -12,6 +12,7 @@ export function CompanyPage() {
         description="Learn about Last Mile's mission to transform operational workflows with integrated data solutions. Discover our vision for bringing operational technology and enterprise systems together."
         keywords="about Last Mile, company mission, operational technology integration, enterprise solutions, company vision"
         canonicalPath="/company"
+        markdownPath="/company.md"
       />
       <div className="pt-20 relative min-h-screen">
       <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>

@@ -1,0 +1,28 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://lastmileinc.ai/integrations.json",
+      "service-desc": [
+        {
+          "href": "https://lastmileinc.ai/integrations.json",
+          "type": "application/json",
+          "title": "Last Mile Integrations Catalog"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://lastmileinc.ai/integrations",
+          "type": "text/html",
+          "title": "Our Integrations"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://lastmileinc.ai/.well-known/status.json",
+          "type": "application/json",
+          "title": "Public Site Status"
+        }
+      ]
+    }
+  ]
+}

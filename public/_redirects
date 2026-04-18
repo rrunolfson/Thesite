@@ -1,4 +1,15 @@
 # Serve static files first, then fallback to SPA
+/solutions /integrations 301
+/about /company 301
+/index.md /index.md 200
+/integrations.md /integrations.md 200
+/contact.md /contact.md 200
+/company.md /company.md 200
+/signal-2-action.md /signal-2-action.md 200
+/.well-known/api-catalog /.well-known/api-catalog 200
+/.well-known/status.json /.well-known/status.json 200
+/.well-known/mcp/server-card.json /.well-known/mcp/server-card.json 200
+/.well-known/agent-skills/* /.well-known/agent-skills/:splat 200
 /robots.txt  /robots.txt  200
 /sitemap.xml /sitemap.xml 200
 /logo.png    /logo.png    200

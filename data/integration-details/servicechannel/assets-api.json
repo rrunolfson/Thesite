@@ -1,0 +1,115 @@
+{
+  "vendor_slug": "servicechannel",
+  "vendor_name": "ServiceChannel",
+  "product_slug": "assets-api",
+  "product_name": "Assets API",
+  "product_family": "ServiceChannel Platform",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "spec_artifact_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The Assets API provides equipment and asset-management coverage, including location asset retrieval, asset creation and updates, asset-type updates, attachment to work orders and work requests, asset-location changes, asset work-order history, asset tags, validation flags, and meter-reading capture.",
+  "data_domains": [
+    "asset-master-data",
+    "asset-to-work-linkage",
+    "location-asset-hierarchy",
+    "asset-history",
+    "meter-readings",
+    "attachments-and-tags"
+  ],
+  "asset_data_available": true,
+  "telemetry_data_available": false,
+  "writeback_supported": true,
+  "key_entities": [
+    "assets",
+    "asset codes and tags",
+    "location asset trees",
+    "asset components",
+    "asset work-order history",
+    "asset meter readings",
+    "asset attachments"
+  ],
+  "buyer_guidance": "Use this area when ServiceNow needs to synchronize physical equipment context with repair workflows inside ServiceChannel. It is the strongest ServiceChannel surface for OT-adjacent break-fix integrations because it links equipment records to work orders, locations, history, and meter readings.",
+  "overview": "The Assets section is the most asset-centric part of the ServiceChannel API. The reference shows support for retrieving assets by ID or by location, searching filtered asset sets, traversing location asset trees, working with components and replacement candidates, updating asset records and asset types, attaching assets to work orders or work requests, moving assets between locations, retrieving work-order history, and managing meter readings in single or bulk mode. That makes it a practical integration surface for aligning ServiceNow equipment records and ServiceChannel repair execution around the same physical asset base.",
+  "available_data": [
+    {
+      "category": "Asset master and location inventory",
+      "description": "Endpoints for finding assets, loading site inventories, and maintaining core equipment records.",
+      "data_points": [
+        "asset records by asset ID",
+        "location-based asset lists",
+        "location asset trees",
+        "filtered asset searches",
+        "asset create and update operations",
+        "asset type updates"
+      ],
+      "relevant_operations": [
+        "GET /assets/{assetId}",
+        "GET /assets/locations/{locationId}",
+        "POST /assets/searchassets",
+        "POST /assets/getfilteredassets",
+        "POST /assets/locationAssetsTree",
+        "POST /assets",
+        "PUT /assets",
+        "PUT /assets/UpdateAssetTypeInAsset",
+        "POST /assets/AddUpdateAsset"
+      ]
+    },
+    {
+      "category": "Asset-to-work execution linkage",
+      "description": "Endpoints that tie equipment records directly to work orders and work requests for repair execution.",
+      "data_points": [
+        "asset attachment to work orders",
+        "asset setup and replacement during work",
+        "work-request asset attachment",
+        "asset work-order tracking and history",
+        "work-order asset tags"
+      ],
+      "relevant_operations": [
+        "PUT /assets/workorders/{workorderId}/attach",
+        "PUT /assets/workorders/attachassets",
+        "PUT /assets/workorders/setupassets",
+        "PUT /assets/workrequests/attachassets",
+        "POST /assets/getwoassettracking",
+        "POST /assets/getassetwohistory",
+        "GET /assets/WoAssetTags"
+      ]
+    },
+    {
+      "category": "Meter readings, tags, and validation controls",
+      "description": "Operational asset fields that matter for field updates and equipment traceability.",
+      "data_points": [
+        "asset activation status",
+        "asset location changes",
+        "validation-required flags for scans",
+        "primary attachments",
+        "asset type groups",
+        "meter readings and bulk meter-reading updates"
+      ],
+      "relevant_operations": [
+        "POST /assets/Activation",
+        "PUT /assets/updateAssetLocation",
+        "GET /assets/{trackingNumber}/IsValidationRequired",
+        "POST /assets/getPrimaryAttachmentsForAssetList",
+        "GET /assets/{tradeId}/getAssetTypeGroupsByTradeId",
+        "GET /assets/AssetMeterReadings/{assetId}",
+        "PUT /assets/AssetMeterReading",
+        "POST /assets/AssetMeterReading",
+        "POST /assets/CreateAssetMeterReadingsBulk",
+        "PUT /assets/UpdateAssetMeterReadingsBulk"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This is the closest ServiceChannel surface to CMMS or CMDB-style equipment coordination, so record identity and location matching are critical.",
+    "The API appears to support both record synchronization and operational mutation, including asset replacement and meter-reading updates during work execution.",
+    "Asset history and attachment endpoints can help ServiceNow present maintenance context without making ServiceChannel the sole system of record for equipment metadata.",
+    "No live telemetry feed is exposed here; this is structured asset and maintenance context rather than streaming machine data."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.servicechannel.com/swagger/index.html#/Assets",
+    "spec_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+    "reviewed_at": "2026-04-17",
+    "evidence_notes": "Based on the Assets section in the ServiceChannel v3 Swagger reference and the general ServiceChannel API guidance covering OAuth, environments, call structure, and sandbox testing."
+  }
+}
