@@ -107,6 +107,19 @@ async function fileExists(targetPath) {
   }
 }
 
+async function readJsonIfExists(targetPath) {
+  if (!(await fileExists(targetPath))) {
+    return null;
+  }
+
+  try {
+    const content = await readFile(targetPath, "utf8");
+    return JSON.parse(content);
+  } catch {
+    return null;
+  }
+}
+
 async function walkJsonFiles(targetDir) {
   if (!(await fileExists(targetDir))) {
     return [];
@@ -333,6 +346,84 @@ function createGeneratedDetailRecord(record) {
     },
     detail_path: detailPath,
   };
+}
+
+function normalizeCatalogForComparison(catalog) {
+  return {
+    ...catalog,
+    meta: {
+      ...catalog.meta,
+      generated_at: "",
+    },
+  };
+}
+
+function normalizeDetailForComparison(detailRecord) {
+  return {
+    ...detailRecord,
+    source_evidence: {
+      ...(detailRecord.source_evidence ?? {}),
+      reviewed_at: "",
+    },
+  };
+}
+
+function preserveCatalogTimestamp(catalog, existingCatalog) {
+  if (!existingCatalog?.meta?.generated_at) {
+    return catalog;
+  }
+
+  const nextCatalog = normalizeCatalogForComparison(catalog);
+  const previousCatalog = normalizeCatalogForComparison(existingCatalog);
+
+  if (JSON.stringify(nextCatalog) !== JSON.stringify(previousCatalog)) {
+    return catalog;
+  }
+
+  return {
+    ...catalog,
+    meta: {
+      ...catalog.meta,
+      generated_at: existingCatalog.meta.generated_at,
+    },
+  };
+}
+
+async function preserveGeneratedDetailTimestamps(detailRecords) {
+  const stabilizedRecords = new Map();
+
+  for (const [key, detailRecord] of detailRecords.entries()) {
+    if (detailRecord.detail_completeness !== "generated-summary") {
+      stabilizedRecords.set(key, detailRecord);
+      continue;
+    }
+
+    const outputPath = path.join(repoRoot, "public", detailRecord.detail_path.replace(/^\//, ""));
+    const existingDetail = await readJsonIfExists(outputPath);
+
+    if (!existingDetail?.source_evidence?.reviewed_at) {
+      stabilizedRecords.set(key, detailRecord);
+      continue;
+    }
+
+    const nextDetail = normalizeDetailForComparison(detailRecord);
+    const previousDetail = normalizeDetailForComparison(existingDetail);
+
+    if (JSON.stringify(nextDetail) !== JSON.stringify(previousDetail)) {
+      stabilizedRecords.set(key, detailRecord);
+      continue;
+    }
+
+    stabilizedRecords.set(key, {
+      ...detailRecord,
+      source_evidence: {
+        ...(detailRecord.source_evidence ?? {}),
+        reviewed_at: existingDetail.source_evidence.reviewed_at,
+      },
+    });
+  }
+
+  return stabilizedRecords;
 }
 
 function buildDetailRecords(records, manualDetailRecords) {
@@ -860,7 +951,8 @@ async function main() {
 
   const generatedAndManualDetailRecords = buildDetailRecords(records, manualDetailRecords);
   const vendorLookup = buildVendorLookup(records);
-  const detailRecords = enrichDetailRecords(generatedAndManualDetailRecords, vendorLookup);
+  const enrichedDetailRecords = enrichDetailRecords(generatedAndManualDetailRecords, vendorLookup);
+  const detailRecords = await preserveGeneratedDetailTimestamps(enrichedDetailRecords);
 
   const { errors, warnings } = await validateRecords(headerRow, dataRows, records, detailRecords);
 
@@ -884,7 +976,9 @@ async function main() {
     return;
   }
 
-  const catalog = buildCatalog(records, source, detailRecords);
+  const existingCatalog = await readJsonIfExists(outputJsonPath);
+  const nextCatalog = buildCatalog(records, source, detailRecords);
+  const catalog = preserveCatalogTimestamp(nextCatalog, existingCatalog);
 
   await mkdir(path.dirname(outputJsonPath), { recursive: true });
   await writeFile(outputJsonPath, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");
