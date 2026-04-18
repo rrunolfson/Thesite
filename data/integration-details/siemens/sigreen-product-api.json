@@ -1,0 +1,56 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "sigreen-product-api",
+  "product_name": "SiGREEN Product API",
+  "product_family": "SiGREEN",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/sigreen/product-api/api_specs/openapi-spec-v2-1.16.0.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/sigreen/product-api/api_specs/openapi-spec-v2-1.16.0.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN. Published API scope focuses on products, BOMs, factories, and related master data in SiGREEN.",
+  "data_domains": [
+    "product-master-data",
+    "bom-management",
+    "factory-records"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "products",
+    "BOM versions",
+    "factories",
+    "product identifiers"
+  ],
+  "buyer_guidance": "Use this API when the integration needs to synchronize product structures and related lifecycle records into SiGREEN.",
+  "overview": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN. The SiGREEN overview publishes GET/POST/PATCH/DELETE product and BOM-related methods, making this a master-data and lifecycle API rather than telemetry. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Product master data",
+      "description": "Published API scope focuses on products, BOMs, factories, and related master data in SiGREEN.",
+      "data_points": [
+        "products",
+        "BOM versions",
+        "factories",
+        "product identifiers"
+      ],
+      "relevant_operations": [
+        "PUT /api/v2/products/{id}/factoryEmissions/{factoryEmissionsId}",
+        "GET /api/v2/products/{id}/factoryEmissions",
+        "POST /api/v2/products/{id}/factoryEmissions",
+        "DELETE /api/v2/products/{id}/factoryEmissions"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/sigreen/product-api/api-product.html",
+    "spec_url": "https://developer.siemens.com/sigreen/product-api/api_specs/openapi-spec-v2-1.16.0.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for SiGREEN Product API."
+  }
+}

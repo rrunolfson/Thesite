@@ -1,0 +1,52 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "train-api",
+  "product_name": "Train API",
+  "product_family": "Railigent X",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.siemens.com/railigent-x/Train-API/train-api-v1.yml",
+  "spec_artifact_url": "https://developer.siemens.com/railigent-x/Train-API/train-api-v1.yml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "One key to advancing sustainable transportation is to digitally increase the capacity of rail systems - with less resources. Published API scope combines rail asset context with operational and analytical data for rail systems.",
+  "data_domains": [
+    "rail-assets",
+    "train-operations",
+    "rail-telemetry"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Un-Supported",
+  "key_entities": [
+    "trains",
+    "rail assets",
+    "operational data",
+    "analytical insights"
+  ],
+  "buyer_guidance": "Use this API when the integration needs rail asset and operational visibility rather than control over rolling stock behavior.",
+  "overview": "One key to advancing sustainable transportation is to digitally increase the capacity of rail systems - with less resources. Railigent X is described as combining asset data, insights, prediction models, and recommendations for rail systems. Asset data is Supported. Telemetry data is Supported. Writeback is Un-Supported.",
+  "available_data": [
+    {
+      "category": "Rail operations",
+      "description": "Published API scope combines rail asset context with operational and analytical data for rail systems.",
+      "data_points": [
+        "trains",
+        "rail assets",
+        "operational data",
+        "analytical insights"
+      ],
+      "relevant_operations": []
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface is read-oriented for the covered domain and should not be advertised as a command or writeback API.",
+    "The evidence for this record comes from the published Siemens overview and product summary; the public artifact did not expose a simple path list during generation."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/railigent-x/Train-API/index.html",
+    "spec_url": "https://developer.siemens.com/railigent-x/Train-API/train-api-v1.yml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Train API."
+  }
+}

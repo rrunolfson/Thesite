@@ -7,36 +7,87 @@
   "integration_type": "REST API",
   "integration_api_url": "https://developers.samsara.com/docs/routing-guide",
   "spec_artifact_url": "https://developers.samsara.com/docs/routing-guide",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "Integrate route creation, assignment, and progress tracking with your TMS.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Samsara Platform REST API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "Integrate route creation, assignment, and progress tracking with your TMS. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Samsara Routing supports route and stop creation, assignment, schedule updates, location references, and live route-progress monitoring, giving integrators both operational writeback and live execution-state reads for dispatched loads.",
+  "data_domains": [
+    "route-planning",
+    "stop-scheduling",
+    "dispatch-assignment",
+    "route-progress-monitoring",
+    "task-and-document-workflows"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "routes",
+    "route stops",
+    "address references",
+    "driver assignments",
+    "vehicle assignments",
+    "route settings",
+    "route audit log events"
+  ],
+  "buyer_guidance": "Use Routing when Last Mile needs to push planned work into Samsara and then read back live dispatch execution. This surface is appropriate for two-way route orchestration, not just passive monitoring, because the published guides cover both route mutation and route progress feeds.",
+  "overview": "The Routing guide and its subpages document full lifecycle operations for loads represented as routes. `POST /fleet/routes` creates and assigns routes, `PATCH /fleet/routes/<id_or_externalID>` updates names, assignments, stop schedules, and locations, and `GET /fleet/routes/audit-logs/feed` exposes live stop-state changes such as en route, arrival, and departure transitions. The guide also connects route stops to documents/tasks for driver workflows, which broadens the surface beyond simple scheduling.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Route and stop write workflows",
+      "description": "The create and update guides document direct mutation of planned dispatch objects.",
       "data_points": [
-        "Published summary: Integrate route creation, assignment, and progress tracking with your TMS.",
-        "Product family: Samsara Platform",
-        "Integration type: REST API",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "route names and notes",
+        "driver or vehicle assignment",
+        "ordered stop lists",
+        "scheduled arrival and departure times",
+        "route start and completion settings",
+        "external IDs for routes and stops"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "POST /fleet/routes",
+        "PATCH /fleet/routes/<id_or_externalID>",
+        "GET /fleet/routes/<id_or_externalID>"
+      ]
+    },
+    {
+      "category": "Location and instruction context",
+      "description": "Routes carry operational context needed for execution in the driver app.",
+      "data_points": [
+        "address IDs or single-use locations on stops",
+        "route-stop notes used for gate codes, contacts, and order context",
+        "route-stop task associations through Samsara Documents"
+      ],
+      "relevant_operations": [
+        "POST /fleet/routes",
+        "PATCH /fleet/routes/<id_or_externalID>"
+      ]
+    },
+    {
+      "category": "Live route telemetry",
+      "description": "The route-progress guide exposes incremental execution events for downstream operational systems.",
+      "data_points": [
+        "stop state transitions",
+        "en route timestamps",
+        "actual arrival and departure timestamps",
+        "route-tracking source and operation details",
+        "cursor-based audit feed pagination"
+      ],
+      "relevant_operations": [
+        "GET /fleet/routes/audit-logs/feed",
+        "GET /fleet/routes/audit-logs/feed?after=<cursor>"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "The PATCH guide is explicit that stop arrays are replace-in-full semantics, so partial stop updates must first read the existing route.",
+    "Actual tracking fields are system-managed and should be treated as read-only execution telemetry, not write targets.",
+    "Route progress events are sequential and cursor-based, so consumers should persist the end cursor for reliable sync.",
+    "Route tasks depend on Samsara Documents, so proof-of-delivery or stop workflows may span multiple Samsara product areas."
+  ],
   "source_evidence": {
     "documentation_url": "https://developers.samsara.com/docs/routing-guide",
-    "spec_url": "https://developers.samsara.com/docs/routing-guide",
+    "spec_url": "https://developers.samsara.com/docs/creating-routes-via-api",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Backed by the Routing overview plus the Creating Routes, Updating Routes, and Track Route Progress guides documenting POST /fleet/routes, PATCH /fleet/routes/<id_or_externalID>, and GET /fleet/routes/audit-logs/feed."
   },
   "detail_path": "/integration-details/samsara/routing.json",
   "vendor_domain": "samsara.com",

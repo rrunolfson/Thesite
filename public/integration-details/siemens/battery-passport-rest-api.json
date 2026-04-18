@@ -17,9 +17,9 @@
     "analytics",
     "schema-management"
   ],
-  "asset_data_available": true,
-  "telemetry_data_available": false,
-  "writeback_supported": true,
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
   "key_entities": [
     "battery passports",
     "passport attributes",

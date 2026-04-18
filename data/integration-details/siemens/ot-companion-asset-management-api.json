@@ -1,0 +1,52 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "ot-companion-asset-management-api",
+  "product_name": "OT Companion Asset Management API",
+  "product_family": "OT Companion",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.siemens.com/otc/asset-mgt-api/asset-management.yml",
+  "spec_artifact_url": "https://developer.siemens.com/otc/asset-mgt-api/asset-management.yml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals. Published API scope combines OT asset inventory, vulnerability context, and managed baseline records.",
+  "data_domains": [
+    "ot-asset-inventory",
+    "vulnerability-monitoring",
+    "baseline-management"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "OT assets",
+    "components",
+    "baselines",
+    "vulnerability records"
+  ],
+  "buyer_guidance": "Use this API when the integration needs OT asset inventory plus security/vulnerability monitoring context from substations and related environments.",
+  "overview": "OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals. OT Companion is explicitly described as continuous OT asset inventory monitoring with baseline and vulnerability context, and its APIs are positioned as open integration surfaces. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "OT asset inventory",
+      "description": "Published API scope combines OT asset inventory, vulnerability context, and managed baseline records.",
+      "data_points": [
+        "OT assets",
+        "components",
+        "baselines",
+        "vulnerability records"
+      ],
+      "relevant_operations": []
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "The evidence for this record comes from the published Siemens overview and product summary; the public artifact did not expose a simple path list during generation."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/otc/asset-mgt-api/overview.html",
+    "spec_url": "https://developer.siemens.com/otc/asset-mgt-api/asset-management.yml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for OT Companion Asset Management API."
+  }
+}

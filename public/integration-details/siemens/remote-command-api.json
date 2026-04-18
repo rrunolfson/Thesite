@@ -7,36 +7,48 @@
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/depotfinity/api_specs/RemoteCommandAPI-v2-0-0.yaml",
   "spec_artifact_url": "https://developer.siemens.com/depotfinity/api_specs/RemoteCommandAPI-v2-0-0.yaml",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published DepotFinity OpenAPI documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. Published API scope is centered on command and control workflows for depot charging assets.",
+  "data_domains": [
+    "charger-control",
+    "remote-commands",
+    "depot-execution"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "chargers",
+    "control commands",
+    "remote instructions",
+    "scheduled actions"
+  ],
+  "buyer_guidance": "Use these APIs when the integration needs to trigger charging behavior or issue remote execution commands instead of only reading status.",
+  "overview": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. These DepotFinity APIs are used to push operational control or command actions into the charging environment. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Operational control",
+      "description": "Published API scope is centered on command and control workflows for depot charging assets.",
       "data_points": [
-        "Published summary: DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
-        "Product family: DepotFinity",
-        "Integration type: OpenAPI",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "chargers",
+        "control commands",
+        "remote instructions",
+        "scheduled actions"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "POST /chargerControl/chargers/{chargerId}/remoteCommands/{remoteCommandType}"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
   "source_evidence": {
-    "documentation_url": "https://developer.siemens.com/depotfinity/api_specs/RemoteCommandAPI-v2-0-0.yaml",
+    "documentation_url": "https://developer.siemens.com/depotfinity/RemoteCommandAPI/remote_command_api.html",
     "spec_url": "https://developer.siemens.com/depotfinity/api_specs/RemoteCommandAPI-v2-0-0.yaml",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Remote Command API."
   },
   "detail_path": "/integration-details/siemens/remote-command-api.json",
   "vendor_domain": "siemens.com",

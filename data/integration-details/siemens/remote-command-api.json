@@ -1,0 +1,53 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "remote-command-api",
+  "product_name": "Remote Command API",
+  "product_family": "DepotFinity",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/depotfinity/api_specs/RemoteCommandAPI-v2-0-0.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/depotfinity/api_specs/RemoteCommandAPI-v2-0-0.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. Published API scope is centered on command and control workflows for depot charging assets.",
+  "data_domains": [
+    "charger-control",
+    "remote-commands",
+    "depot-execution"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "chargers",
+    "control commands",
+    "remote instructions",
+    "scheduled actions"
+  ],
+  "buyer_guidance": "Use these APIs when the integration needs to trigger charging behavior or issue remote execution commands instead of only reading status.",
+  "overview": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. These DepotFinity APIs are used to push operational control or command actions into the charging environment. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Operational control",
+      "description": "Published API scope is centered on command and control workflows for depot charging assets.",
+      "data_points": [
+        "chargers",
+        "control commands",
+        "remote instructions",
+        "scheduled actions"
+      ],
+      "relevant_operations": [
+        "POST /chargerControl/chargers/{chargerId}/remoteCommands/{remoteCommandType}"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/depotfinity/RemoteCommandAPI/remote_command_api.html",
+    "spec_url": "https://developer.siemens.com/depotfinity/api_specs/RemoteCommandAPI-v2-0-0.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Remote Command API."
+  }
+}

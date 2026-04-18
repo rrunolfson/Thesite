@@ -7,36 +7,49 @@
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/enlighted-apis/occupancy/occupancy.openapi.yaml",
   "spec_artifact_url": "https://developer.siemens.com/enlighted-apis/occupancy/occupancy.openapi.yaml",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Enlighted OpenAPI documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. Published API scope focuses on occupancy and utilization readings from Enlighted sensors.",
+  "data_domains": [
+    "occupancy-readings",
+    "space-utilization"
+  ],
+  "asset_data_available": "Un-Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Un-Supported",
+  "key_entities": [
+    "occupancy readings",
+    "space metrics",
+    "sensor outputs"
+  ],
+  "buyer_guidance": "Use this API for read-only occupancy and utilization analytics; it is not the place for operational record writes.",
+  "overview": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. The Enlighted occupancy surface is specifically about sensor-derived occupancy data and utilization analytics. Asset data is Un-Supported. Telemetry data is Supported. Writeback is Un-Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Occupancy telemetry",
+      "description": "Published API scope focuses on occupancy and utilization readings from Enlighted sensors.",
       "data_points": [
-        "Published summary: The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security.",
-        "Product family: Enlighted",
-        "Integration type: OpenAPI",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "occupancy readings",
+        "space metrics",
+        "sensor outputs"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "GET /area/v1/occ/{area_id}",
+        "GET /facility/v1/getOccupancyStateOfFloorAreas/{floor_id}",
+        "GET /sensor/v1/getDeskOccupancyState/list/floor/{floor_id}",
+        "GET /sensor/stats/floor/{floor_id}/{from_date}/{to_date}"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface is read-oriented for the covered domain and should not be advertised as a command or writeback API.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
   "source_evidence": {
-    "documentation_url": "https://developer.siemens.com/enlighted-apis/occupancy/occupancy.openapi.yaml",
+    "documentation_url": "https://developer.siemens.com/enlighted-apis/occupancy/overview.html",
     "spec_url": "https://developer.siemens.com/enlighted-apis/occupancy/occupancy.openapi.yaml",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Occupancy APIs."
   },
   "detail_path": "/integration-details/siemens/occupancy-apis.json",
   "vendor_domain": "siemens.com",

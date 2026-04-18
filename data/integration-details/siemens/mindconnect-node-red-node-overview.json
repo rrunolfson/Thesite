@@ -1,0 +1,52 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "mindconnect-node-red-node-overview",
+  "product_name": "MindConnect Node-RED Node Overview",
+  "product_family": "Industrial Iot Open Source",
+  "integration_type": "SDK",
+  "integration_api_url": "https://developer.siemens.com/agentconfig.json",
+  "spec_artifact_url": "https://developer.siemens.com/agentconfig.json",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Demo applications, libraries and SDKs as well as useful connectivity tools which are maintained and released as open source software. Published API scope is centered on SDK-driven ingestion and low-code data flow integration.",
+  "data_domains": [
+    "sdk-connectivity",
+    "data-ingestion",
+    "edge-flows"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "assets",
+    "time-series payloads",
+    "events",
+    "Node-RED flows"
+  ],
+  "buyer_guidance": "Use these SDK and flow-node surfaces when the integration needs developer-side ingestion or orchestration tooling rather than a turnkey business API.",
+  "overview": "Demo applications, libraries and SDKs as well as useful connectivity tools which are maintained and released as open source software. These open-source tools and libraries exist to push industrial data into Siemens IoT platforms and wire connectivity into Node.js or Node-RED flows. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Connectivity tooling",
+      "description": "Published API scope is centered on SDK-driven ingestion and low-code data flow integration.",
+      "data_points": [
+        "assets",
+        "time-series payloads",
+        "events",
+        "Node-RED flows"
+      ],
+      "relevant_operations": []
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "The evidence for this record comes from the published Siemens overview and product summary; the public artifact did not expose a simple path list during generation."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/industrial-iot-open-source/node-red-contrib-mindconnect/index.html",
+    "spec_url": "https://developer.siemens.com/agentconfig.json",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for MindConnect Node-RED Node Overview."
+  }
+}

@@ -7,36 +7,112 @@
   "integration_type": "REST API",
   "integration_api_url": "https://developers.samsara.com/docs/tms-integration-guide",
   "spec_artifact_url": "https://developers.samsara.com/docs/tms-integration-guide",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "How to integrate Samsara with a Transportation Management System.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Samsara Platform REST API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "How to integrate Samsara with a Transportation Management System. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Samsara TMS Integrations is the broadest transportation integration pattern in the catalog, covering two-way sync for addresses, drivers, assets, routes, messages, and forms, plus one-way GPS, telematics, and compliance data for execution visibility.",
+  "data_domains": [
+    "master-data-sync",
+    "dispatch-orchestration",
+    "location-and-telematics-sync",
+    "forms-and-messaging",
+    "compliance-integration"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "addresses",
+    "drivers",
+    "vehicles",
+    "trailers",
+    "routes",
+    "messages",
+    "forms",
+    "GPS and telematics streams",
+    "HOS clocks and logs"
+  ],
+  "buyer_guidance": "Use TMS Integrations when Last Mile wants a full Samsara transportation partner profile rather than a narrow product-specific feed. This is the best entry for two-way orchestration because the published table explicitly distinguishes which entities are two-way versus read-only.",
+  "overview": "The TMS integration guide publishes a concrete integration-point matrix. It documents two-way sync for addresses, drivers, vehicles, trailers, routes, messages, and forms through GET/POST/PATCH/DELETE style APIs, while also documenting one-way reads for GPS/telematics and compliance hours-of-service data. It further recommends combining polling, webhooks, and Kafka depending on entity type and update frequency, making this the most architecturally complete Samsara product record in the set.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Two-way operational master data",
+      "description": "The guide's sync matrix explicitly marks core dispatch entities as two-way.",
       "data_points": [
-        "Published summary: How to integrate Samsara with a Transportation Management System.",
-        "Product family: Samsara Platform",
-        "Integration type: REST API",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "address master records",
+        "driver records",
+        "vehicle and trailer records",
+        "route/load records",
+        "messages and form submissions"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "GET /addresses",
+        "POST /addresses",
+        "PATCH /addresses/:id",
+        "DELETE /addresses/:id",
+        "GET /fleet/drivers",
+        "POST /fleet/drivers",
+        "GET /assets",
+        "POST /assets",
+        "PATCH /assets/:id",
+        "GET /fleet/routes",
+        "POST /fleet/routes",
+        "PATCH /fleet/routes/:id",
+        "DELETE /fleet/routes/:id",
+        "GET /v1/fleet/messages",
+        "POST /v1/fleet/messages",
+        "GET /form-templates",
+        "GET /form-submissions",
+        "POST /form-submissions",
+        "PATCH /form-submissions/:id"
+      ]
+    },
+    {
+      "category": "One-way operational telemetry",
+      "description": "The matrix distinguishes live execution data that Samsara emits outward rather than accepts as writes.",
+      "data_points": [
+        "GPS and speed streams",
+        "vehicle stats telemetry",
+        "current HOS clocks",
+        "historical HOS logs",
+        "route stop arrival and departure events"
+      ],
+      "relevant_operations": [
+        "GET /assets/location-and-speed/stream",
+        "GET /fleet/vehicle/stats",
+        "GET /fleet/hos/clocks",
+        "GET /fleet/hos/logs"
+      ]
+    },
+    {
+      "category": "Event-driven synchronization support",
+      "description": "The guide documents when to pair APIs with webhooks or Kafka for better freshness.",
+      "data_points": [
+        "address change webhooks",
+        "driver change webhooks",
+        "route stop events",
+        "form-submission events",
+        "Kafka for high-frequency GPS and HOS updates"
+      ],
+      "relevant_operations": [
+        "Webhook events: AddressCreated, AddressUpdated, AddressDeleted",
+        "Webhook events: DriverCreated, DriverUpdated",
+        "Webhook events: RouteStopArrival, RouteStopDeparture",
+        "Webhook events: FormSubmitted",
+        "Kafka messages: GPS and Speed",
+        "Kafka messages: HOS Clocks"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "This guide is a pattern-level integration map, so production designs should still break scope down by entity family and token scope.",
+    "The published matrix already distinguishes one-way versus two-way sync, which should drive the Supported versus Un-Supported classification for downstream use cases.",
+    "Samsara recommends mixing polling, webhooks, and Kafka rather than forcing one transport model across all entities.",
+    "Because the breadth is high, this surface should be implemented incrementally, starting with the minimum entity set required for the customer workflow."
+  ],
   "source_evidence": {
     "documentation_url": "https://developers.samsara.com/docs/tms-integration-guide",
     "spec_url": "https://developers.samsara.com/docs/tms-integration-guide",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Backed by the TMS integration guide's Integration Points matrix listing two-way sync methods for addresses, drivers, assets, routes, messages, and forms, plus one-way GPS/telematics and HOS methods and associated webhook/Kafka patterns."
   },
   "detail_path": "/integration-details/samsara/tms-integrations.json",
   "vendor_domain": "samsara.com",

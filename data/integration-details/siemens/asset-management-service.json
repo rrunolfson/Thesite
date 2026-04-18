@@ -1,0 +1,60 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "asset-management-service",
+  "product_name": "Asset Management Service",
+  "product_family": "Insights Hub",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/assetmanagement-v3-18-4.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/assetmanagement-v3-18-4.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope focuses on asset models, types, aspects, and hierarchy administration.",
+  "data_domains": [
+    "asset-modeling",
+    "aspects",
+    "hierarchies"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "assets",
+    "asset types",
+    "aspects",
+    "hierarchies"
+  ],
+  "buyer_guidance": "Use this API when the integration needs to define or maintain the asset model that telemetry attaches to inside Insights Hub.",
+  "overview": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. This service is about digital twin and asset-model management, not telemetry itself. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Asset modeling",
+      "description": "Published API scope focuses on asset models, types, aspects, and hierarchy administration.",
+      "data_points": [
+        "assets",
+        "asset types",
+        "aspects",
+        "hierarchies"
+      ],
+      "relevant_operations": [
+        "GET /assettypes",
+        "PUT /assettypes",
+        "PATCH /assettypes",
+        "GET /assettypes",
+        "DELETE /assettypes",
+        "PUT /assettypes",
+        "DELETE /assettypes",
+        "PATCH /assettypes"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/insights-hub/docs/apis/advanced-assetmanagement/api-assetmanagement-overview.html",
+    "spec_url": "https://developer.siemens.com/insights-hub/api_specs/assetmanagement-v3-18-4.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Asset Management Service."
+  }
+}

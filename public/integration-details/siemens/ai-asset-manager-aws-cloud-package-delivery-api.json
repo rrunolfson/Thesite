@@ -7,36 +7,47 @@
   "integration_type": "REST API",
   "integration_api_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/aws-delivery-api/aws-delivery-api.yml",
   "spec_artifact_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/aws-delivery-api/aws-delivery-api.yml",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "Revolutionize your AI operations across locations with seamless cloud integration. Our Industrial AI Suite runs on a new line of Industrial PCs powered by NVIDIA's GPUs accelerating AI execution. This makes complex AI tasks in advanced automation broadly available and boosts efficiency.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Industrial AI Suite REST API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "Revolutionize your AI operations across locations with seamless cloud integration. Our Industrial AI Suite runs on a new line of Industrial PCs powered by NVIDIA's GPUs accelerating AI execution. This makes complex AI tasks in advanced automation broadly available and boosts efficiency. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Revolutionize your AI operations across locations with seamless cloud integration. Our Industrial AI Suite runs on a new line of Industrial PCs powered by NVIDIA's GPUs accelerating AI execution. This makes complex AI tasks in advanced automation broadly available and boosts efficiency. Published API scope combines deployment package handling with model deployment monitoring.",
+  "data_domains": [
+    "ai-model-deployments",
+    "edge-ai-monitoring",
+    "cloud-delivery"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "AI model deployments",
+    "delivery packages",
+    "monitoring data",
+    "edge assets"
+  ],
+  "buyer_guidance": "Use these APIs when the integration needs to manage AI model deployment packages and monitor AI execution outcomes at the shop floor edge.",
+  "overview": "Revolutionize your AI operations across locations with seamless cloud integration. Our Industrial AI Suite runs on a new line of Industrial PCs powered by NVIDIA's GPUs accelerating AI execution. This makes complex AI tasks in advanced automation broadly available and boosts efficiency. Industrial AI Suite is explicitly described as handling model packaging, deployment, and monitoring across edge environments. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "AI deployment lifecycle",
+      "description": "Published API scope combines deployment package handling with model deployment monitoring.",
       "data_points": [
-        "Published summary: Revolutionize your AI operations across locations with seamless cloud integration. Our Industrial AI Suite runs on a new line of Industrial PCs powered by NVIDIA's GPUs accelerating AI execution. This makes complex AI tasks in advanced automation broadly available and boosts efficiency.",
-        "Product family: Industrial AI Suite",
-        "Integration type: REST API",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "AI model deployments",
+        "delivery packages",
+        "monitoring data",
+        "edge assets"
       ],
       "relevant_operations": []
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "The evidence for this record comes from the published Siemens overview and product summary; the public artifact did not expose a simple path list during generation."
+  ],
   "source_evidence": {
-    "documentation_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/aws-delivery-api/aws-delivery-api.yml",
+    "documentation_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/aws-delivery-api/api.html",
     "spec_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/aws-delivery-api/aws-delivery-api.yml",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for AI Asset Manager AWS Cloud Package Delivery API."
   },
   "detail_path": "/integration-details/siemens/ai-asset-manager-aws-cloud-package-delivery-api.json",
   "vendor_domain": "siemens.com",

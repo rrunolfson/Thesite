@@ -1,0 +1,65 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "lifecycle-twin-api",
+  "product_name": "Lifecycle Twin API",
+  "product_family": "Building X",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/ecodomus-api-reference.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/ecodomus-api-reference.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "RESTful API for creating and managing various objects in the Lifecycle Twin. Published API scope focuses on twin objects, attached records, and lifecycle workflow artifacts.",
+  "data_domains": [
+    "digital-twin-records",
+    "documents",
+    "tasks",
+    "inspections"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "sites",
+    "buildings",
+    "assets",
+    "documents",
+    "tasks",
+    "surveys"
+  ],
+  "buyer_guidance": "Use this API when the integration needs digital twin records, documents, and lifecycle workflow objects in Building X.",
+  "overview": "RESTful API for creating and managing various objects in the Lifecycle Twin. Lifecycle Twin is positioned as a digital twin and lifecycle management surface rather than a live telemetry feed. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Lifecycle records",
+      "description": "Published API scope focuses on twin objects, attached records, and lifecycle workflow artifacts.",
+      "data_points": [
+        "sites",
+        "buildings",
+        "assets",
+        "documents",
+        "tasks",
+        "surveys"
+      ],
+      "relevant_operations": [
+        "GET /inspections/{inspectionId}/sections",
+        "GET /inspections",
+        "DELETE /inspections",
+        "PUT /inspections/{id}",
+        "GET /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files",
+        "POST /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files",
+        "DELETE /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files",
+        "GET /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files/{id}"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/overview.html",
+    "spec_url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/ecodomus-api-reference.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Lifecycle Twin API."
+  }
+}

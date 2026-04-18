@@ -1,0 +1,48 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "ot-companion-protection-settings-api",
+  "product_name": "OT Companion Protection Settings API",
+  "product_family": "OT Companion",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.siemens.com/otc/protection-setting-api/protection-settings.yml",
+  "spec_artifact_url": "https://developer.siemens.com/otc/protection-setting-api/protection-settings.yml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals. Published API scope is centered on protection-setting and related OT configuration records.",
+  "data_domains": [
+    "protection-settings",
+    "ot-configuration"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "protection settings",
+    "configuration records",
+    "OT assets"
+  ],
+  "buyer_guidance": "Use this API when the integration needs to synchronize or govern OT protection-setting records.",
+  "overview": "OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals. Protection settings are configuration-state records associated with OT assets rather than live telemetry feeds. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "OT configuration",
+      "description": "Published API scope is centered on protection-setting and related OT configuration records.",
+      "data_points": [
+        "protection settings",
+        "configuration records",
+        "OT assets"
+      ],
+      "relevant_operations": []
+    }
+  ],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "The evidence for this record comes from the published Siemens overview and product summary; the public artifact did not expose a simple path list during generation."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/otc/protection-setting-api/overview.html",
+    "spec_url": "https://developer.siemens.com/otc/protection-setting-api/protection-settings.yml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for OT Companion Protection Settings API."
+  }
+}

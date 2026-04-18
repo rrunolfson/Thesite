@@ -7,36 +7,87 @@
   "integration_type": "REST API",
   "integration_api_url": "https://developers.samsara.com/docs/telematics",
   "spec_artifact_url": "https://developers.samsara.com/docs/telematics",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "Get real-time or historical GPS and onboard diagnostic data.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Samsara Platform REST API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "Get real-time or historical GPS and onboard diagnostic data. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Samsara Telematics exposes per-vehicle snapshot, history, and feed access for GPS, engine state, odometer, fault-code, fuel, and auxiliary-input readings, making it the primary read surface for fleet location and onboard diagnostic telemetry.",
+  "data_domains": [
+    "vehicle-master-context",
+    "gps-location",
+    "diagnostic-telemetry",
+    "odometer-and-runtime",
+    "fault-monitoring"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Un-Supported",
+  "key_entities": [
+    "vehicles",
+    "vehicle stats feeds",
+    "GPS readings",
+    "engine states",
+    "odometer values",
+    "fault code readings",
+    "fuel and auxiliary input readings"
+  ],
+  "buyer_guidance": "Use Telematics when Last Mile needs authoritative location, movement, and vehicle-state reads from Samsara. It is strong for ingest, sync, alerting, and analytics, but the documented surface is read-oriented and does not provide operational writeback into vehicle state through this product area.",
+  "overview": "The Telematics guide documents three read surfaces over the same vehicle stats model: `GET /fleet/vehicles/stats` for current snapshots, `GET /fleet/vehicles/stats/history` for backfill or time-range queries, and `GET /fleet/vehicles/stats/feed` for cursor-based synchronization. The documented stat types include GPS, engine states, OBD and GPS odometer values, fault codes, fuel levels, engine runtime, and many other diagnostics, which makes this the deepest Samsara product for operational telemetry extraction.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Vehicle stats access patterns",
+      "description": "The same fleet telemetry model is exposed as snapshot, historical report, and incremental feed APIs.",
       "data_points": [
-        "Published summary: Get real-time or historical GPS and onboard diagnostic data.",
-        "Product family: Samsara Platform",
-        "Integration type: REST API",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "current last-known vehicle stat values",
+        "historical stat series for a requested time range",
+        "incremental feed synchronization using cursors",
+        "per-vehicle IDs and names alongside returned stat payloads"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "GET /fleet/vehicles/stats",
+        "GET /fleet/vehicles/stats/history",
+        "GET /fleet/vehicles/stats/feed"
+      ]
+    },
+    {
+      "category": "Core telematics and diagnostic entities",
+      "description": "The documented diagnostic types show the specific readings available through the vehicle stats APIs.",
+      "data_points": [
+        "GPS location, heading, speed, and reverse-geocoded address via `gps`",
+        "engine state changes via `engineStates`",
+        "OBD and GPS odometer readings via `obdOdometerMeters` and `gpsOdometerMeters`",
+        "fault-code events via `faultCodes`",
+        "fuel, voltage, RPM, temperature, and auxiliary input readings"
+      ],
+      "relevant_operations": [
+        "GET /fleet/vehicles/stats?types=gps,engineStates,obdOdometerMeters",
+        "GET /fleet/vehicles/stats/history?types=gps,engineStates,obdOdometerMeters",
+        "GET /fleet/vehicles/stats/feed?types=faultCodes"
+      ]
+    },
+    {
+      "category": "Synchronization and enrichment behavior",
+      "description": "The guide documents cursor-based polling and decoration semantics for building analytics or near-real-time integrations.",
+      "data_points": [
+        "feed polling with an `after` cursor",
+        "up to three primary stat types per query",
+        "decorations to join one stat to another at event time",
+        "vehicle-level pagination for large fleets"
+      ],
+      "relevant_operations": [
+        "GET /fleet/vehicles/stats/feed?after=<cursor>",
+        "GET /fleet/vehicles/stats/history?types=engineStates&decorations=gps"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "Use the feed endpoint for continuous sync; the guide explicitly positions history for backfill and ad hoc retrieval rather than ongoing replication.",
+    "Request only the stat types needed for the use case because the endpoints are timeseries-based and type-filtered.",
+    "OBD and GPS odometer coverage vary by vehicle, so integrations should request both when mileage matters.",
+    "This product area is read-only in the published guide, so any orchestration workflow requiring writeback should use another Samsara domain."
+  ],
   "source_evidence": {
     "documentation_url": "https://developers.samsara.com/docs/telematics",
     "spec_url": "https://developers.samsara.com/docs/telematics",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Backed by the Telematics guide sections documenting GET /fleet/vehicles/stats, GET /fleet/vehicles/stats/history, GET /fleet/vehicles/stats/feed, plus the published diagnostic types table for GPS, engine state, odometer, and fault-code reads."
   },
   "detail_path": "/integration-details/samsara/telematics.json",
   "vendor_domain": "samsara.com",

@@ -1,0 +1,64 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "building-geometry-api",
+  "product_name": "Building Geometry API",
+  "product_family": "Building X",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/building-x-openness/api/geometry-api/geometry.openapi.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/geometry-api/geometry.openapi.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "RESTful API for creating and interacting with 2D geometry of building floorplans. Published API scope is centered on building hierarchy, room structure, and 2D layout records.",
+  "data_domains": [
+    "building-structure",
+    "locations",
+    "spatial-modeling"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "campuses",
+    "buildings",
+    "floors",
+    "rooms",
+    "locations",
+    "geometry"
+  ],
+  "buyer_guidance": "Use these APIs to establish or synchronize structural and floorplan metadata in Building X. They are layout and topology services, not telemetry feeds.",
+  "overview": "RESTful API for creating and interacting with 2D geometry of building floorplans. These APIs are used to build and manage the spatial model of the site, not to expose live operational readings. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Building topology",
+      "description": "Published API scope is centered on building hierarchy, room structure, and 2D layout records.",
+      "data_points": [
+        "campuses",
+        "buildings",
+        "floors",
+        "rooms",
+        "locations",
+        "geometry"
+      ],
+      "relevant_operations": [
+        "GET /floorplans",
+        "GET /floorplans/{floorplanId}",
+        "GET /floorplans/{floorplanId}/floorplan-images",
+        "GET /floorplans/{floorplanId}/floorplan-images/{floorplanImageId}",
+        "GET /floorplans/{floorplanId}/geometry",
+        "GET /floorplans/{floorplanId}/geometry/center-point",
+        "GET /floorplans/{floorplanId}/geometry/{geometryId}",
+        "GET /palettes"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/building-x-openness/api/geometry-api/overview.html",
+    "spec_url": "https://developer.siemens.com/building-x-openness/api/geometry-api/geometry.openapi.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Building Geometry API."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "charger-status-api",
+  "product_name": "Charger Status API",
+  "product_family": "DepotFinity",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/depotfinity/api_specs/ChargerStatusAPI-v2-0-0.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/depotfinity/api_specs/ChargerStatusAPI-v2-0-0.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. Published API scope focuses on charger status and depot charging operation monitoring.",
+  "data_domains": [
+    "charger-status",
+    "charging-operations",
+    "depot-monitoring"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Un-Supported",
+  "key_entities": [
+    "chargers",
+    "status records",
+    "charging operations",
+    "depot metrics"
+  ],
+  "buyer_guidance": "Use this API for read-only charger and depot monitoring scenarios where status and operational metrics are required but control remains elsewhere.",
+  "overview": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. This API is positioned as the monitoring and reporting surface for depot charger operations. Asset data is Supported. Telemetry data is Supported. Writeback is Un-Supported.",
+  "available_data": [
+    {
+      "category": "Depot monitoring",
+      "description": "Published API scope focuses on charger status and depot charging operation monitoring.",
+      "data_points": [
+        "chargers",
+        "status records",
+        "charging operations",
+        "depot metrics"
+      ],
+      "relevant_operations": [
+        "GET /chargerStatus/chargers/{chargerId}/availabilityStatus",
+        "GET /chargerStatus/chargers/{chargerId}/connectors/{connectorId}/availabilityStatus",
+        "GET /chargerStatus/chargers/{chargerId}/connectivityStatus"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface is read-oriented for the covered domain and should not be advertised as a command or writeback API.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/depotfinity/ChargerStatusAPI/charger_status_api.html",
+    "spec_url": "https://developer.siemens.com/depotfinity/api_specs/ChargerStatusAPI-v2-0-0.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Charger Status API."
+  }
+}

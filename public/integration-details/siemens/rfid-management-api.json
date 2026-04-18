@@ -7,36 +7,49 @@
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/depotfinity/api_specs/RFIDAPI-v2-0-0.yaml",
   "spec_artifact_url": "https://developer.siemens.com/depotfinity/api_specs/RFIDAPI-v2-0-0.yaml",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published DepotFinity OpenAPI documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. Published API scope focuses on managing reservation and RFID-related records.",
+  "data_domains": [
+    "reservations",
+    "rfid-credentials",
+    "operational-records"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "reservations",
+    "RFID cards",
+    "RFID credentials",
+    "resource assignments"
+  ],
+  "buyer_guidance": "Use these APIs when the integration needs to manage reservations or RFID-linked operational records in DepotFinity.",
+  "overview": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. These surfaces manage scheduling and credential-like records that support charging operations rather than live telemetry feeds. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Operational records",
+      "description": "Published API scope focuses on managing reservation and RFID-related records.",
       "data_points": [
-        "Published summary: DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot.",
-        "Product family: DepotFinity",
-        "Integration type: OpenAPI",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "reservations",
+        "RFID cards",
+        "RFID credentials",
+        "resource assignments"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "POST /rfid",
+        "POST /rfid/{tag}/{status}"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
   "source_evidence": {
-    "documentation_url": "https://developer.siemens.com/depotfinity/api_specs/RFIDAPI-v2-0-0.yaml",
+    "documentation_url": "https://developer.siemens.com/depotfinity/RFIDManagementAPI/rfid_management_api.html",
     "spec_url": "https://developer.siemens.com/depotfinity/api_specs/RFIDAPI-v2-0-0.yaml",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for RFID Management API."
   },
   "detail_path": "/integration-details/siemens/rfid-management-api.json",
   "vendor_domain": "siemens.com",

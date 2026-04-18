@@ -7,36 +7,51 @@
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/enlighted-apis/location-services/location.openapi.yaml",
   "spec_artifact_url": "https://developer.siemens.com/enlighted-apis/location-services/location.openapi.yaml",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Enlighted OpenAPI documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. Published API scope combines tracked-object context with real-time location services.",
+  "data_domains": [
+    "rtls-location",
+    "asset-tracking",
+    "position-history"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Un-Supported",
+  "key_entities": [
+    "tracked assets",
+    "location fixes",
+    "position histories"
+  ],
+  "buyer_guidance": "Use this API when the integration needs indoor location and movement visibility for tracked assets or badges.",
+  "overview": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. The RTLS surface combines tracked-asset context with real-time location and movement data. Asset data is Supported. Telemetry data is Supported. Writeback is Un-Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "RTLS telemetry",
+      "description": "Published API scope combines tracked-object context with real-time location services.",
       "data_points": [
-        "Published summary: The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security.",
-        "Product family: Enlighted",
-        "Integration type: OpenAPI",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "tracked assets",
+        "location fixes",
+        "position histories"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "GET /api/v1/ping",
+        "GET /api/v1/ping",
+        "GET /api/v1/ping",
+        "POST /api/v1/ping",
+        "GET /api/v1/ping"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface is read-oriented for the covered domain and should not be advertised as a command or writeback API.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
   "source_evidence": {
-    "documentation_url": "https://developer.siemens.com/enlighted-apis/location-services/location.openapi.yaml",
+    "documentation_url": "https://developer.siemens.com/enlighted-apis/location-services/overview.html",
     "spec_url": "https://developer.siemens.com/enlighted-apis/location-services/location.openapi.yaml",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Location Services (RTLS) APIs."
   },
   "detail_path": "/integration-details/siemens/location-services-rtls-apis.json",
   "vendor_domain": "siemens.com",

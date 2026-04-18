@@ -1,0 +1,59 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "optimize-my-plant",
+  "product_name": "Optimize my plant",
+  "product_family": "Optimize My Plant",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/optimize-my-plant/Optimize%20my%20plant%20collection%20-%20SaaS.json",
+  "spec_artifact_url": "https://developer.siemens.com/optimize-my-plant/Optimize%20my%20plant%20collection%20-%20SaaS.json",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Optimize my plant is a Mendix app that can be deployed on Xcelerator as a Siemens operated SaaS offering, or customer can use the Optimize my plant Starter Kit to extend the Optimize my plant app and deploy and operate himself. Published API scope focuses on plant optimization metrics and recommendation-oriented outputs.",
+  "data_domains": [
+    "plant-optimization",
+    "analytics",
+    "recommendations"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Un-Supported",
+  "key_entities": [
+    "plant assets",
+    "optimization metrics",
+    "recommendations"
+  ],
+  "buyer_guidance": "Use this API when the integration needs optimization and recommendation outputs connected to plant context and analytics.",
+  "overview": "Optimize my plant is a Mendix app that can be deployed on Xcelerator as a Siemens operated SaaS offering, or customer can use the Optimize my plant Starter Kit to extend the Optimize my plant app and deploy and operate himself. The product is presented as an optimization application and collection for plant analysis and recommendations rather than control. Asset data is Supported. Telemetry data is Supported. Writeback is Un-Supported.",
+  "available_data": [
+    {
+      "category": "Optimization analytics",
+      "description": "Published API scope focuses on plant optimization metrics and recommendation-oriented outputs.",
+      "data_points": [
+        "plant assets",
+        "optimization metrics",
+        "recommendations"
+      ],
+      "relevant_operations": [
+        "POST /oauth/token",
+        "GET /projects/{projectid}/products",
+        "POST /projects/{projectid}/products",
+        "DELETE /projects/{projectid}/products",
+        "GET /projects/{projectid}/products/productfamilies",
+        "POST /projects/{projectid}/products/productfamilies",
+        "DELETE /projects/{projectid}/products/productfamilies",
+        "POST /projects/{projectid}/products/parameters_reset"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface is read-oriented for the covered domain and should not be advertised as a command or writeback API.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/optimize-my-plant/home.html",
+    "spec_url": "https://developer.siemens.com/optimize-my-plant/Optimize%20my%20plant%20collection%20-%20SaaS.json",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Optimize my plant."
+  }
+}

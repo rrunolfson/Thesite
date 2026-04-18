@@ -7,36 +7,54 @@
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/sitrans-hub-iq/api-specs/Hub_IQ_External_APIs_V2.2.0.yaml",
   "spec_artifact_url": "https://developer.siemens.com/sitrans-hub-iq/api-specs/Hub_IQ_External_APIs_V2.2.0.yaml",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "External APIs ¶",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published SITRANS hub IQ OpenAPI documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "External APIs ¶ This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "External APIs ¶ Published API scope combines hub-side device context with external data exchange workflows.",
+  "data_domains": [
+    "sensor-hub-data",
+    "external-integrations",
+    "device-context"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "devices",
+    "sensor data",
+    "external integration records"
+  ],
+  "buyer_guidance": "Use this API when the integration needs SITRANS hub IQ device context and data exchange with external systems.",
+  "overview": "External APIs ¶ The published surface is positioned as the external API layer for SITRANS hub IQ integrations, which combines hub context with operational data exchange. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Hub integrations",
+      "description": "Published API scope combines hub-side device context with external data exchange workflows.",
       "data_points": [
-        "Published summary: External APIs ¶",
-        "Product family: SITRANS hub IQ",
-        "Integration type: OpenAPI",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "devices",
+        "sensor data",
+        "external integration records"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "POST /company",
+        "GET /companies",
+        "DELETE /companies/{company_id}",
+        "PUT /companies/{company_id}",
+        "POST /companies/{company_id}/devices",
+        "POST /companies/{company_id}/devices/list",
+        "GET /companies/{company_id}/devices/{device_id}",
+        "DELETE /companies/{company_id}/devices/{device_id}"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
   "source_evidence": {
-    "documentation_url": "https://developer.siemens.com/sitrans-hub-iq/api-specs/Hub_IQ_External_APIs_V2.2.0.yaml",
+    "documentation_url": "https://developer.siemens.com/sitrans-hub-iq/external_api.html",
     "spec_url": "https://developer.siemens.com/sitrans-hub-iq/api-specs/Hub_IQ_External_APIs_V2.2.0.yaml",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for External APIs."
   },
   "detail_path": "/integration-details/siemens/external-apis.json",
   "vendor_domain": "siemens.com",

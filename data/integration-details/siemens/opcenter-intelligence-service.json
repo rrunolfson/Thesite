@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "opcenter-intelligence-service",
+  "product_name": "Opcenter Intelligence Service -",
+  "product_family": "Insights Hub",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/ocin-proxy-app-v1-0-0.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/ocin-proxy-app-v1-0-0.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope focuses on analytical and intelligence outputs derived from plant data.",
+  "data_domains": [
+    "manufacturing-analytics",
+    "plant-intelligence"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Un-Supported",
+  "key_entities": [
+    "plant records",
+    "KPI outputs",
+    "analytical results"
+  ],
+  "buyer_guidance": "Use this API when the integration needs manufacturing intelligence outputs rather than operational command workflows.",
+  "overview": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Opcenter Intelligence is an analytics and intelligence surface that consumes plant data to produce insights. Asset data is Supported. Telemetry data is Supported. Writeback is Un-Supported.",
+  "available_data": [
+    {
+      "category": "Manufacturing intelligence",
+      "description": "Published API scope focuses on analytical and intelligence outputs derived from plant data.",
+      "data_points": [
+        "plant records",
+        "KPI outputs",
+        "analytical results"
+      ],
+      "relevant_operations": [
+        "GET /api/ocproxy/v3/dwh/$metadata",
+        "GET /api/ocproxy/v3/dwh/bm20_equipment",
+        "GET /api/ocproxy/v3/dwh/bm20_materialdefinition",
+        "GET /api/ocproxy/v3/dwh/bm20_operationexecution",
+        "GET /api/ocproxy/v3/dwh/bm20_operationresponse",
+        "GET /api/ocproxy/v3/dwh/bm20_operationscheduling",
+        "GET /api/ocproxy/v3/dwh/bm20_operationrequest",
+        "GET /api/ocproxy/v3/kpi/configurations"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface is read-oriented for the covered domain and should not be advertised as a command or writeback API.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/insights-hub/docs/apis/advanced-opcenter-intelligence/api-opcenter-intelligence-overview.html",
+    "spec_url": "https://developer.siemens.com/insights-hub/api_specs/ocin-proxy-app-v1-0-0.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Opcenter Intelligence Service -."
+  }
+}

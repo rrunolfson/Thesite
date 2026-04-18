@@ -1,0 +1,57 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "sigreen-pcf-api",
+  "product_name": "SiGREEN PCF API",
+  "product_family": "SiGREEN",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/sigreen/pcf-api/api_specs/openapi-spec-v1.16.1.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/sigreen/pcf-api/api_specs/openapi-spec-v1.16.1.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN. Published API scope focuses on PCF records, credentials, and emissions-related product data.",
+  "data_domains": [
+    "product-carbon-footprints",
+    "credentials",
+    "emissions-records"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "PCF records",
+    "credentials",
+    "factory emissions",
+    "job status"
+  ],
+  "buyer_guidance": "Use this API when the integration needs PCF export, credential creation, or emissions record handling in SiGREEN.",
+  "overview": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN. The PCF APIs cover product carbon-footprint data and credential-generation workflows, which are structured business data rather than live telemetry. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Carbon footprint records",
+      "description": "Published API scope focuses on PCF records, credentials, and emissions-related product data.",
+      "data_points": [
+        "PCF records",
+        "credentials",
+        "factory emissions",
+        "job status"
+      ],
+      "relevant_operations": [
+        "POST /pcf/products/{id}/standard/tfs",
+        "POST /pcf/products/{id}/standard/pact",
+        "POST /pcf/products/{id}/standard/iso",
+        "POST /pcf/products/{id}/standard/catena-x",
+        "GET /pcf/jobs/{id}/status"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/sigreen/pcf-api/api-pcf.html",
+    "spec_url": "https://developer.siemens.com/sigreen/pcf-api/api_specs/openapi-spec-v1.16.1.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for SiGREEN PCF API."
+  }
+}

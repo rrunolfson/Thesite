@@ -1,0 +1,89 @@
+{
+  "vendor_slug": "samsara",
+  "vendor_name": "Samsara",
+  "product_slug": "driver-documents",
+  "product_name": "Driver Documents",
+  "product_family": "Samsara Platform",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developers.samsara.com/docs/documents-guide",
+  "spec_artifact_url": "https://developers.samsara.com/docs/documents-guide",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Samsara Driver Documents covers document templates, document retrieval, PDF generation, webhook-based submission handling, and API-based document creation or prefill flows for driver workflows and proof-of-work capture.",
+  "data_domains": [
+    "document-templates",
+    "document-submissions",
+    "driver-workflows",
+    "proof-of-delivery-artifacts",
+    "form-and-photo-capture"
+  ],
+  "asset_data_available": "N/A",
+  "telemetry_data_available": "N/A",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "document types",
+    "documents",
+    "document fields",
+    "dispatch job associations",
+    "document PDFs",
+    "submission webhooks"
+  ],
+  "buyer_guidance": "Use Driver Documents when Last Mile needs proof-of-delivery, stop-task, inspection, or workflow capture inside the Samsara Driver App. This is a workflow/document surface rather than an asset or telemetry API, but it does support concrete writeback for required or submitted documents.",
+  "overview": "The Documents guides document both read and write flows. The base Documents guide covers `GET /v1/fleet/drivers/document_types` plus document retrieval endpoints for document instances, while the Creating Documents guide documents `POST /fleet/documents` for creating required documents for drivers or submitting documents on a driver's behalf. The schema-level field documentation also makes clear which field types can be populated by API and which must be left for the driver to complete in-app.",
+  "available_data": [
+    {
+      "category": "Document templates and metadata",
+      "description": "Template discovery and document retrieval provide the structure and current contents of driver workflow artifacts.",
+      "data_points": [
+        "document type UUIDs and names",
+        "field definitions and value types",
+        "conditional field sections",
+        "document state, timestamps, and associated driver/vehicle context"
+      ],
+      "relevant_operations": [
+        "GET /v1/fleet/drivers/document_types",
+        "GET /documents",
+        "GET /document"
+      ]
+    },
+    {
+      "category": "Document write workflows",
+      "description": "The create-document flow supports both prefill and admin-side submission patterns.",
+      "data_points": [
+        "required documents for drivers to complete in the app",
+        "submitted documents created on behalf of a driver",
+        "dispatch-job linkage for route-stop tasks",
+        "prefilled string, number, multiple-choice, and datetime values"
+      ],
+      "relevant_operations": [
+        "POST /fleet/documents"
+      ]
+    },
+    {
+      "category": "Submission artifacts and limitations",
+      "description": "The guide documents which payload elements are API-populatable and which remain app-driven.",
+      "data_points": [
+        "photo URLs on retrieved documents",
+        "signature metadata and signature-image URLs on retrieved documents",
+        "PDF generation support",
+        "photo and signature submission constraints for API-created documents"
+      ],
+      "relevant_operations": [
+        "GET /documents",
+        "GET /document",
+        "POST /fleet/documents"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Photo and signature fields cannot be submitted via API, so writeback coverage is partial even though document creation itself is supported.",
+    "Document types should be read first so field order and allowed value types are known before creating or prefilling documents.",
+    "This product is workflow-centric and should not be interpreted as telemetry coverage just because documents may include timestamps or vehicle references.",
+    "Webhooks and PDFs are useful complements if downstream systems need event-driven completion handling or archival artifacts."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developers.samsara.com/docs/documents-guide",
+    "spec_url": "https://developers.samsara.com/docs/creating-documents",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Backed by the Documents guide for GET /v1/fleet/drivers/document_types and document retrieval endpoints, plus the Creating Documents guide for POST /fleet/documents and the documented API limitations around photo and signature fields."
+  }
+}

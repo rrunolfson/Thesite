@@ -7,36 +7,49 @@
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
   "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "RESTful API for setting values of a Point.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Building X OpenAPI documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "RESTful API for setting values of a Point. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "RESTful API for setting values of a Point. Published API scope is centered on writing point values and set values into Building X.",
+  "data_domains": [
+    "point-value-ingestion",
+    "set-points",
+    "external-measurements"
+  ],
+  "asset_data_available": "Un-Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "points",
+    "point values",
+    "set values",
+    "ingested measurements"
+  ],
+  "buyer_guidance": "Use this API when Last Mile needs to push external measured values or set-point updates into Building X rather than read point histories out of it.",
+  "overview": "RESTful API for setting values of a Point. This API is dedicated to setting values on points, so the payload domain is telemetry-like even though the main interaction is write-oriented. Asset data is Un-Supported. Telemetry data is Supported. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Telemetry ingest",
+      "description": "Published API scope is centered on writing point values and set values into Building X.",
       "data_points": [
-        "Published summary: RESTful API for setting values of a Point.",
-        "Product family: Building X",
-        "Integration type: OpenAPI",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "points",
+        "point values",
+        "set values",
+        "ingested measurements"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "POST /points/{pointId}/values"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
   "source_evidence": {
-    "documentation_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
+    "documentation_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/overview.html",
     "spec_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Point Value Ingest API."
   },
   "detail_path": "/integration-details/siemens/point-value-ingest-api.json",
   "vendor_domain": "siemens.com",

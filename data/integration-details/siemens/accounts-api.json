@@ -1,0 +1,54 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "accounts-api",
+  "product_name": "Accounts API",
+  "product_family": "Building X",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/building-x-openness/api/accounts-api/accounts.openapi.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/accounts-api/accounts.openapi.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "RESTful API for discovering customer, partition, role, and user group access. Published API scope is limited to customer, partition, role, and user-group access context.",
+  "data_domains": [
+    "tenant-access-discovery",
+    "partitions",
+    "roles"
+  ],
+  "asset_data_available": "Un-Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "N/A",
+  "key_entities": [
+    "customers",
+    "partitions",
+    "roles",
+    "user groups"
+  ],
+  "buyer_guidance": "Use this surface to discover tenant and partition access boundaries. It does not deliver operational asset or telemetry payloads.",
+  "overview": "RESTful API for discovering customer, partition, role, and user group access. The official overview positions this API as access-scope discovery for the calling machine user. Asset data is Un-Supported. Telemetry data is Un-Supported. Writeback is N/A.",
+  "available_data": [
+    {
+      "category": "Access discovery",
+      "description": "Published API scope is limited to customer, partition, role, and user-group access context.",
+      "data_points": [
+        "customers",
+        "partitions",
+        "roles",
+        "user groups"
+      ],
+      "relevant_operations": [
+        "GET /me/usergroups",
+        "GET /customers/{customerId}/partitions",
+        "GET /customers/{customerId}/roles"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/building-x-openness/api/accounts-api/overview.html",
+    "spec_url": "https://developer.siemens.com/building-x-openness/api/accounts-api/accounts.openapi.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Accounts API."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "integrated-data-lake-service",
+  "product_name": "Integrated Data Lake Service",
+  "product_family": "Insights Hub",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/integrated-data-lake-v3-11-0-eu1.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/integrated-data-lake-v3-11-0-eu1.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope combines analytical object storage with upload and retrieval workflows.",
+  "data_domains": [
+    "data-lake-storage",
+    "telemetry-export",
+    "analytics-files"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "objects",
+    "signed URLs",
+    "dataset records",
+    "telemetry exports"
+  ],
+  "buyer_guidance": "Use this API when the integration needs durable analytical storage beyond the core time-series service.",
+  "overview": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. The integrated data lake is positioned as analytics-grade storage for both telemetry and related artifacts, with upload and download workflows. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Analytical storage",
+      "description": "Published API scope combines analytical object storage with upload and retrieval workflows.",
+      "data_points": [
+        "objects",
+        "signed URLs",
+        "dataset records",
+        "telemetry exports"
+      ],
+      "relevant_operations": [
+        "GET /listObjects",
+        "POST /generateUploadObjectUrls",
+        "POST /generateDownloadObjectUrls",
+        "GET /generateDownloadObjectUrls",
+        "DELETE /generateDownloadObjectUrls",
+        "POST /generateDownloadObjectUrls",
+        "GET /generateDownloadObjectUrls",
+        "GET /deleteObjectsJobs/{id}"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/insights-hub/docs/apis/iot-integrated-data-lake/api-integrated-data-lake-overview.html",
+    "spec_url": "https://developer.siemens.com/insights-hub/api_specs/integrated-data-lake-v3-11-0-eu1.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Integrated Data Lake Service."
+  }
+}

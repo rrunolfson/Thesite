@@ -1,0 +1,64 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "iih-semantics-apis",
+  "product_name": "IIH Semantics APIs",
+  "product_family": "Industrial Information Hub",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/industrial-information-hub/api/iih-semantics/v2.4/iih-semantics-2.4.0.openapi.json",
+  "spec_artifact_url": "https://developer.siemens.com/industrial-information-hub/api/iih-semantics/v2.4/iih-semantics-2.4.0.openapi.json",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The Industrial Information Hub (IIH) is a collection of Industrial Edge apps for data integration. It captures data at the automation level and provides it to the IT level of a factory. Published API scope combines industrial models, historical data, alarms, and semantic access interfaces.",
+  "data_domains": [
+    "asset-models",
+    "time-series-data",
+    "alarms",
+    "semantic-access"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "asset models",
+    "time-series data",
+    "alarms",
+    "knowledge graph",
+    "OPC UA records"
+  ],
+  "buyer_guidance": "Use IIH when the integration needs structured industrial models and telemetry flowing from shop floor sources up to IT and cloud systems.",
+  "overview": "The Industrial Information Hub (IIH) is a collection of Industrial Edge apps for data integration. It captures data at the automation level and provides it to the IT level of a factory. The IIH overview explicitly states that Essentials exposes configuration, asset model, time-series data, and alarms, while Semantics offers GraphQL and OPC UA read/write access. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Industrial data integration",
+      "description": "Published API scope combines industrial models, historical data, alarms, and semantic access interfaces.",
+      "data_points": [
+        "asset models",
+        "time-series data",
+        "alarms",
+        "knowledge graph",
+        "OPC UA records"
+      ],
+      "relevant_operations": [
+        "POST /api/opcua/namespaces/nodeset",
+        "PUT /api/opcua/namespaces/nodeset",
+        "POST /api/opcua/namespaces/server",
+        "PUT /api/opcua/namespaces/nodes/mappings",
+        "DELETE /api/opcua/namespaces/nodes/mappings",
+        "POST /api/opcua/namespaces/nodes/mappings/query",
+        "POST /api/opcua/namespaces/graph",
+        "DELETE /api/opcua/namespaces/graph"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/industrial-information-hub/api/iih-semantics/overview.html",
+    "spec_url": "https://developer.siemens.com/industrial-information-hub/api/iih-semantics/v2.4/iih-semantics-2.4.0.openapi.json",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for IIH Semantics APIs."
+  }
+}

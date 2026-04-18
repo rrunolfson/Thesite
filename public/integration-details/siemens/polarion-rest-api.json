@@ -7,36 +7,58 @@
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/polarion/polarion-rest-apispec.json",
   "spec_artifact_url": "https://developer.siemens.com/polarion/polarion-rest-apispec.json",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "The Polarion REST API gives external applications an integration layer with Polarion that gives you greater control over the information you use in both Polarion and the applications you use daily.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Polarion OpenAPI documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "The Polarion REST API gives external applications an integration layer with Polarion that gives you greater control over the information you use in both Polarion and the applications you use daily. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The Polarion REST API gives external applications an integration layer with Polarion that gives you greater control over the information you use in both Polarion and the applications you use daily. Published API scope focuses on work-item, document, and project lifecycle records.",
+  "data_domains": [
+    "alm-records",
+    "work-items",
+    "documents",
+    "traceability"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "work items",
+    "documents",
+    "attachments",
+    "projects",
+    "links"
+  ],
+  "buyer_guidance": "Use this API when the integration needs application lifecycle and requirements records synchronized with external systems.",
+  "overview": "The Polarion REST API gives external applications an integration layer with Polarion that gives you greater control over the information you use in both Polarion and the applications you use daily. Polarion is an ALM integration layer for work items, documents, and related lifecycle records, not a telemetry API. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "ALM records",
+      "description": "Published API scope focuses on work-item, document, and project lifecycle records.",
       "data_points": [
-        "Published summary: The Polarion REST API gives external applications an integration layer with Polarion that gives you greater control over the information you use in both Polarion and the applications you use daily.",
-        "Product family: Polarion",
-        "Integration type: OpenAPI",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "work items",
+        "documents",
+        "attachments",
+        "projects",
+        "links"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "GET /actions/getFieldsMetadata",
+        "GET /all/documents",
+        "POST /all/documents/actions/branch",
+        "GET /all/pages",
+        "GET /all/workitems",
+        "PATCH /all/workitems",
+        "DELETE /all/workitems",
+        "POST /customfields"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
   "source_evidence": {
-    "documentation_url": "https://developer.siemens.com/polarion/polarion-rest-apispec.json",
+    "documentation_url": "https://developer.siemens.com/polarion/overview.html",
     "spec_url": "https://developer.siemens.com/polarion/polarion-rest-apispec.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Polarion REST API."
   },
   "detail_path": "/integration-details/siemens/polarion-rest-api.json",
   "vendor_domain": "siemens.com",

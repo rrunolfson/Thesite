@@ -16,9 +16,9 @@
     "resolution-and-completion",
     "location-linked-operations"
   ],
-  "asset_data_available": false,
-  "telemetry_data_available": false,
-  "writeback_supported": true,
+  "asset_data_available": "Un-Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
   "key_entities": [
     "work orders",
     "work order status",

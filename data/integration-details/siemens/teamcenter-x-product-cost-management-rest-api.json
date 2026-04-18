@@ -1,0 +1,60 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "teamcenter-x-product-cost-management-rest-api",
+  "product_name": "Teamcenter (X) Product Cost Management REST API",
+  "product_family": "Teamcenter (X) Product Cost Management",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/tcpcm/tcpcm-api-spec.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/tcpcm/tcpcm-api-spec.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Move organizations forward, from a best-guess calculation to a methodical and sound assessment Published API scope focuses on product cost-management records and lifecycle updates.",
+  "data_domains": [
+    "product-cost-records",
+    "bom-costing",
+    "plm-integration"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "cost models",
+    "products",
+    "BOM cost records",
+    "cost scenarios"
+  ],
+  "buyer_guidance": "Use this API when the integration needs cost-management records synchronized between PLM and downstream workflows.",
+  "overview": "Move organizations forward, from a best-guess calculation to a methodical and sound assessment This API is a product-cost and lifecycle business-data surface, not an operational telemetry feed. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Cost management",
+      "description": "Published API scope focuses on product cost-management records and lifecycle updates.",
+      "data_points": [
+        "cost models",
+        "products",
+        "BOM cost records",
+        "cost scenarios"
+      ],
+      "relevant_operations": [
+        "POST /token",
+        "GET /api/v1/administration/users/{userName}",
+        "PATCH /api/v1/administration/users/{userName}",
+        "GET /api/v1/administration/application-version",
+        "POST /api/v1/Calculations/Export",
+        "POST /api/v1/Calculations/Import",
+        "POST /api/v1/ToolCalculations/CostBreakDown/Export",
+        "GET /api/v1/profitability-calculation-report"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/tcpcm/overview.html",
+    "spec_url": "https://developer.siemens.com/tcpcm/tcpcm-api-spec.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Teamcenter (X) Product Cost Management REST API."
+  }
+}

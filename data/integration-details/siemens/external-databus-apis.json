@@ -1,0 +1,61 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "external-databus-apis",
+  "product_name": "External Databus APIs",
+  "product_family": "Industrial Edge",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/industrial-edge/api/external_databus/v1.0.0/external_databus_V1.0.0_openapi.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/industrial-edge/api/external_databus/v1.0.0/external_databus_V1.0.0_openapi.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. Published API scope is centered on subscribing to or publishing event and message streams.",
+  "data_domains": [
+    "databus-streams",
+    "event-messaging",
+    "edge-integration"
+  ],
+  "asset_data_available": "Un-Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "messages",
+    "topics",
+    "events",
+    "stream subscribers"
+  ],
+  "buyer_guidance": "Use this API when the integration needs message-based exchange with Industrial Edge applications through the external databus.",
+  "overview": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. The external databus surface is about event and message exchange on Industrial Edge rather than master data. Asset data is Un-Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Edge messaging",
+      "description": "Published API scope is centered on subscribing to or publishing event and message streams.",
+      "data_points": [
+        "messages",
+        "topics",
+        "events",
+        "stream subscribers"
+      ],
+      "relevant_operations": [
+        "GET /persistence",
+        "PUT /persistence",
+        "GET /users",
+        "POST /user",
+        "GET /user/{username}",
+        "GET /topics",
+        "POST /topics",
+        "GET /topic"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/industrial-edge/api/external_databus/overview.html",
+    "spec_url": "https://developer.siemens.com/industrial-edge/api/external_databus/v1.0.0/external_databus_V1.0.0_openapi.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for External Databus APIs."
+  }
+}

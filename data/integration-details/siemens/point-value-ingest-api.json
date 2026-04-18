@@ -1,0 +1,54 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "point-value-ingest-api",
+  "product_name": "Point Value Ingest API",
+  "product_family": "Building X",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "RESTful API for setting values of a Point. Published API scope is centered on writing point values and set values into Building X.",
+  "data_domains": [
+    "point-value-ingestion",
+    "set-points",
+    "external-measurements"
+  ],
+  "asset_data_available": "Un-Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "points",
+    "point values",
+    "set values",
+    "ingested measurements"
+  ],
+  "buyer_guidance": "Use this API when Last Mile needs to push external measured values or set-point updates into Building X rather than read point histories out of it.",
+  "overview": "RESTful API for setting values of a Point. This API is dedicated to setting values on points, so the payload domain is telemetry-like even though the main interaction is write-oriented. Asset data is Un-Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Telemetry ingest",
+      "description": "Published API scope is centered on writing point values and set values into Building X.",
+      "data_points": [
+        "points",
+        "point values",
+        "set values",
+        "ingested measurements"
+      ],
+      "relevant_operations": [
+        "POST /points/{pointId}/values"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/overview.html",
+    "spec_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Point Value Ingest API."
+  }
+}

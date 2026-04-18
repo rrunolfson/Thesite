@@ -7,36 +7,51 @@
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/nurse-call-system/nursecallsystem-api-spec.yaml",
   "spec_artifact_url": "https://developer.siemens.com/nurse-call-system/nursecallsystem-api-spec.yaml",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "The Nurse Call System API lets you integrate your Nurse Call System into Ward Manager so that advanced communication designed to enhance patient care and safety within healthcare facilities are reflected into Ward Manger.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Nurse Call System OpenAPI documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "The Nurse Call System API lets you integrate your Nurse Call System into Ward Manager so that advanced communication designed to enhance patient care and safety within healthcare facilities are reflected into Ward Manger. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The Nurse Call System API lets you integrate your Nurse Call System into Ward Manager so that advanced communication designed to enhance patient care and safety within healthcare facilities are reflected into Ward Manger. Published API scope focuses on healthcare communication events and their handling in Ward Manager.",
+  "data_domains": [
+    "nurse-call-events",
+    "patient-staff-communication",
+    "alert-management"
+  ],
+  "asset_data_available": "Un-Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "nurse calls",
+    "emergency alerts",
+    "restroom assistance calls",
+    "standard calls"
+  ],
+  "buyer_guidance": "Use this API when the customer needs healthcare call events and response workflows reflected into Ward Manager or connected care operations. It is not a device inventory API.",
+  "overview": "The Nurse Call System API lets you integrate your Nurse Call System into Ward Manager so that advanced communication designed to enhance patient care and safety within healthcare facilities are reflected into Ward Manger. The official overview is centered on call types and their visibility in Ward Manager, so the value is event and workflow exchange rather than equipment master data. Asset data is Un-Supported. Telemetry data is Supported. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Call workflows",
+      "description": "Published API scope focuses on healthcare communication events and their handling in Ward Manager.",
       "data_points": [
-        "Published summary: The Nurse Call System API lets you integrate your Nurse Call System into Ward Manager so that advanced communication designed to enhance patient care and safety within healthcare facilities are reflected into Ward Manger.",
-        "Product family: Nurse Call System",
-        "Integration type: OpenAPI",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "nurse calls",
+        "emergency alerts",
+        "restroom assistance calls",
+        "standard calls"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "POST /ncs/colorcode",
+        "POST /ncs/nursecall",
+        "POST /ncs/restroomcall"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
   "source_evidence": {
-    "documentation_url": "https://developer.siemens.com/nurse-call-system/nursecallsystem-api-spec.yaml",
+    "documentation_url": "https://developer.siemens.com/nurse-call-system/overview.html",
     "spec_url": "https://developer.siemens.com/nurse-call-system/nursecallsystem-api-spec.yaml",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Nurse Call System API."
   },
   "detail_path": "/integration-details/siemens/nurse-call-system-api.json",
   "vendor_domain": "siemens.com",

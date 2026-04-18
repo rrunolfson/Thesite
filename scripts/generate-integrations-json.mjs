@@ -155,12 +155,30 @@ function normalizeTextList(value) {
 }
 
 function normalizeCapabilityValue(value) {
+  if (value === null || value === undefined || String(value ?? "").trim() === "") {
+    return null;
+  }
+
   if (value === true || String(value ?? "").trim().toLowerCase() === "true") {
-    return true;
+    return "Supported";
   }
 
   if (value === false || String(value ?? "").trim().toLowerCase() === "false") {
-    return false;
+    return "Un-Supported";
+  }
+
+  const normalizedValue = String(value ?? "").trim().toLowerCase();
+
+  if (normalizedValue === "supported") {
+    return "Supported";
+  }
+
+  if (normalizedValue === "un-supported" || normalizedValue === "unsupported") {
+    return "Un-Supported";
+  }
+
+  if (normalizedValue === "n/a" || normalizedValue === "na") {
+    return "N/A";
   }
 
   return null;
@@ -805,11 +823,11 @@ function buildCatalog(records, source, detailRecords) {
       data_coverage_summary:
         detailRecords.get(detailKey(record.vendor_slug, record.product_slug))?.data_coverage_summary ?? "",
       asset_data_available:
-        detailRecords.get(detailKey(record.vendor_slug, record.product_slug))?.asset_data_available ?? false,
+        detailRecords.get(detailKey(record.vendor_slug, record.product_slug))?.asset_data_available ?? null,
       telemetry_data_available:
-        detailRecords.get(detailKey(record.vendor_slug, record.product_slug))?.telemetry_data_available ?? false,
+        detailRecords.get(detailKey(record.vendor_slug, record.product_slug))?.telemetry_data_available ?? null,
       writeback_supported:
-        detailRecords.get(detailKey(record.vendor_slug, record.product_slug))?.writeback_supported ?? false,
+        detailRecords.get(detailKey(record.vendor_slug, record.product_slug))?.writeback_supported ?? null,
       key_entities: detailRecords.get(detailKey(record.vendor_slug, record.product_slug))?.key_entities ?? [],
     });
   }

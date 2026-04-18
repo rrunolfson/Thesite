@@ -7,36 +7,86 @@
   "integration_type": "REST API",
   "integration_api_url": "https://developers.samsara.com/docs/compliance-guide",
   "spec_artifact_url": "https://developers.samsara.com/docs/compliance-guide",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "Manage hours of service and records of duty status.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Samsara Platform REST API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "Manage hours of service and records of duty status. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Samsara Compliance & ELD provides current HOS clocks, historical HOS logs, daily duty-status summaries, and driver-level compliance settings, allowing integrations to both ingest compliance records and update driver ELD/HOS configuration fields.",
+  "data_domains": [
+    "hos-clocks",
+    "duty-status-logs",
+    "daily-compliance-summaries",
+    "driver-compliance-settings",
+    "tachograph-and-ruleset-overrides"
+  ],
+  "asset_data_available": "N/A",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "drivers",
+    "HOS clocks",
+    "HOS logs",
+    "daily duty summaries",
+    "ELD exemptions",
+    "driver ruleset overrides",
+    "carrier settings"
+  ],
+  "buyer_guidance": "Use Compliance & ELD when Last Mile needs driver-hours visibility, audit support, or policy synchronization. This domain is not an asset-management surface, but it does expose time-based operational compliance telemetry and selective driver-setting writeback.",
+  "overview": "The Compliance & ELD guide documents read access to current HOS clocks, historical HOS logs, and summarized daily duty-status activity, while the Drivers guide documents create and patch workflows for driver records and compliance-related driver fields such as ELD exemptions, personal conveyance, yard moves, carrier settings, and state-specific ruleset overrides. That combination makes this domain both analytically useful and operationally writable for compliance administration.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Real-time and historical compliance reads",
+      "description": "The guide separates current HOS status from historical and summarized compliance retrieval.",
       "data_points": [
-        "Published summary: Manage hours of service and records of duty status.",
-        "Product family: Samsara Platform",
-        "Integration type: REST API",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "current duty status and remaining drive/break/cycle values",
+        "historical HOS log sequences with timestamps and associated vehicles",
+        "daily summaries with duty-status durations, distance, and certification state"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "GET /fleet/hos/clocks",
+        "GET /fleet/hos/logs",
+        "GET /fleet/hos/daily-logs"
+      ]
+    },
+    {
+      "category": "Driver compliance administration",
+      "description": "The Drivers guide documents create, retrieve, list, update, deactivate, and re-activate flows for drivers.",
+      "data_points": [
+        "driver account identity and activation status",
+        "external IDs for cross-system mapping",
+        "carrier settings and home terminal overrides",
+        "driver-level compliance configuration"
+      ],
+      "relevant_operations": [
+        "POST /fleet/drivers",
+        "GET /fleet/drivers",
+        "GET /fleet/drivers/{driverId}",
+        "PATCH /fleet/drivers/{driverId}"
+      ]
+    },
+    {
+      "category": "Writable ELD and HOS settings",
+      "description": "Samsara documents several compliance fields as patchable on the driver object.",
+      "data_points": [
+        "adverse weather and Big Day exemptions",
+        "ELD day-start hour",
+        "personal conveyance and yard-move enablement",
+        "state-specific US driver ruleset overrides",
+        "EU tachograph card number updates"
+      ],
+      "relevant_operations": [
+        "PATCH /fleet/drivers/{driverId}"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "HOS logs reflect the current edited state, so integrations should be prepared to re-pull logs after carrier or driver edits.",
+    "Driver deactivation is a PATCH operation rather than a hard delete, which is important for preserving compliance history.",
+    "This domain is not intended for asset telemetry; treat it as driver/compliance workflow data even when vehicle assignments appear in daily summaries.",
+    "Ruleset and exemption updates are sensitive operational writes and should be tightly permissioned."
+  ],
   "source_evidence": {
     "documentation_url": "https://developers.samsara.com/docs/compliance-guide",
-    "spec_url": "https://developers.samsara.com/docs/compliance-guide",
+    "spec_url": "https://developers.samsara.com/docs/drivers-guide",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Backed by the Compliance & ELD guide for GET /fleet/hos/clocks, GET /fleet/hos/logs, and GET /fleet/hos/daily-logs, plus the Drivers guide for POST /fleet/drivers and PATCH /fleet/drivers/{driverId} including HOS and ELD compliance fields."
   },
   "detail_path": "/integration-details/samsara/compliance-eld.json",
   "vendor_domain": "samsara.com",

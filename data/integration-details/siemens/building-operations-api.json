@@ -1,0 +1,68 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "building-operations-api",
+  "product_name": "Building Operations API",
+  "product_family": "Building X",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/building-x-openness/api/building-operations/operations.openapi.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/building-operations/operations.openapi.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "RESTful API for reading data from data points or issuing commands to actuator points. Published API scope combines device and point context, time-series point values, and operational maintenance workflows.",
+  "data_domains": [
+    "devices",
+    "points",
+    "point-values",
+    "faults",
+    "workorders",
+    "teams"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "devices",
+    "points",
+    "point values",
+    "faults",
+    "workorders",
+    "teams"
+  ],
+  "buyer_guidance": "Use this API when the integration needs both live building telemetry and operational writeback, including point commands and work execution context.",
+  "overview": "RESTful API for reading data from data points or issuing commands to actuator points. The Building Operations overview explicitly covers reading point data and issuing commands to actuator points, alongside faults, workorders, and team assignment workflows. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Building operations",
+      "description": "Published API scope combines device and point context, time-series point values, and operational maintenance workflows.",
+      "data_points": [
+        "devices",
+        "points",
+        "point values",
+        "faults",
+        "workorders",
+        "teams"
+      ],
+      "relevant_operations": [
+        "GET /devices",
+        "POST /devices",
+        "GET /devices/{deviceId}",
+        "PATCH /devices/{deviceId}",
+        "GET /devices/{deviceId}/devices",
+        "GET /devices/{deviceId}/points",
+        "GET /points/{pointId}",
+        "PATCH /points/{pointId}"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/building-x-openness/api/building-operations/overview.html",
+    "spec_url": "https://developer.siemens.com/building-x-openness/api/building-operations/operations.openapi.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Building Operations API."
+  }
+}

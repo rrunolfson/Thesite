@@ -1,0 +1,86 @@
+{
+  "vendor_slug": "samsara",
+  "vendor_name": "Samsara",
+  "product_slug": "payroll",
+  "product_name": "Payroll",
+  "product_family": "Samsara Platform",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developers.samsara.com/docs/payroll-guide",
+  "spec_artifact_url": "https://developers.samsara.com/docs/payroll-guide",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Samsara Payroll is a read-focused integration pattern built from HOS daily summaries, driver-vehicle assignments, and odometer reads so downstream payroll systems can calculate pay from on-duty time, driving time, or miles driven.",
+  "data_domains": [
+    "driver-time-reporting",
+    "mileage-calculation",
+    "driver-vehicle-assignment",
+    "odometer-readings",
+    "payroll-enrichment"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Un-Supported",
+  "key_entities": [
+    "drivers",
+    "vehicle assignments",
+    "vehicle IDs and external IDs",
+    "daily HOS summaries",
+    "OBD odometer readings",
+    "GPS odometer readings"
+  ],
+  "buyer_guidance": "Use Payroll when Last Mile needs to derive compensation metrics from Samsara operational records, not when it needs to push payroll results back into Samsara. The documented payroll flow is composed of read APIs that expose assignments, mileage, and HOS-derived time data.",
+  "overview": "The Payroll guide documents two core read patterns. For hours-based payroll, it points integrators to HOS daily summaries and the broader Compliance & ELD surface. For mileage-based payroll, it explicitly uses `GET /fleet/drivers/vehicle-assignments` to identify driving segments and `GET /fleet/vehicles/stats/history` or `GET /fleet/vehicles/stats` to compute distance from OBD or GPS odometer data. No write workflow is documented in the payroll-specific guide.",
+  "available_data": [
+    {
+      "category": "Hours-based payroll inputs",
+      "description": "The guide ties payroll calculations to duty-status and HOS reporting surfaces.",
+      "data_points": [
+        "daily on-duty and driving hours",
+        "driver-level compliance activity summaries",
+        "distance driven and certification context from daily logs"
+      ],
+      "relevant_operations": [
+        "GET /fleet/hos/daily-logs"
+      ]
+    },
+    {
+      "category": "Mileage calculation inputs",
+      "description": "Mileage payroll is derived by joining driver-to-vehicle segments with odometer histories.",
+      "data_points": [
+        "driver-to-vehicle driving segments",
+        "segment start and end timestamps",
+        "vehicle IDs and external IDs",
+        "OBD and GPS odometer values over the segment window"
+      ],
+      "relevant_operations": [
+        "GET /fleet/drivers/vehicle-assignments",
+        "GET /fleet/vehicles/stats/history",
+        "GET /fleet/vehicles/stats"
+      ]
+    },
+    {
+      "category": "Fallback and approximation behavior",
+      "description": "The guide explains how payroll calculations should handle uneven odometer coverage.",
+      "data_points": [
+        "OBD-first odometer strategy",
+        "GPS odometer fallback",
+        "snapshot-based approximation option when exact history boundaries are unavailable"
+      ],
+      "relevant_operations": [
+        "GET /fleet/vehicles/stats?types=obdOdometerMeters,gpsOdometerMeters",
+        "GET /fleet/vehicles/stats/history?types=obdOdometerMeters,gpsOdometerMeters"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The guide documents read patterns only, so downstream payroll posting or approval needs to happen in another system.",
+    "Mileage calculations are approximate because odometer events may not align exactly with assignment boundaries.",
+    "Both OBD and GPS odometer types should be requested because Samsara may only provide one per vehicle.",
+    "The vehicle-assignments endpoint is time-window constrained, so batch jobs should be sized to stay within supported query ranges."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developers.samsara.com/docs/payroll-guide",
+    "spec_url": "https://developers.samsara.com/docs/payroll-guide",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Backed by the Payroll guide sections documenting GET /fleet/drivers/vehicle-assignments, GET /fleet/vehicles/stats/history, GET /fleet/vehicles/stats, and the guide's use of HOS daily summaries for hours-based payroll calculations."
+  }
+}

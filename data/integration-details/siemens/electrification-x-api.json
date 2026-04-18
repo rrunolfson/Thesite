@@ -1,0 +1,61 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "electrification-x-api",
+  "product_name": "Electrification X API",
+  "product_family": "Electrification X",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/electrification-x/api_specs/openapi-v1_0_0.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/electrification-x/api_specs/openapi-v1_0_0.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Electrification X® combines the real and digital worlds in the Xcelerator IoT Software as a Service (SaaS) offering for Electrification & Automation to tackle the challenges of energy transition. Published API scope combines electrification asset context, operational measurements, and platform-side updates.",
+  "data_domains": [
+    "electrification-assets",
+    "energy-operations",
+    "control-actions"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "devices",
+    "energy measurements",
+    "configuration records",
+    "control actions"
+  ],
+  "buyer_guidance": "Use this API when the integration needs a broad electrification platform surface with asset context, measurement data, and actionable writes.",
+  "overview": "Electrification X® combines the real and digital worlds in the Xcelerator IoT Software as a Service (SaaS) offering for Electrification & Automation to tackle the challenges of energy transition. Electrification X is described as a combined electrification and automation SaaS platform, so the published API surface spans both monitoring and control use cases. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Electrification operations",
+      "description": "Published API scope combines electrification asset context, operational measurements, and platform-side updates.",
+      "data_points": [
+        "devices",
+        "energy measurements",
+        "configuration records",
+        "control actions"
+      ],
+      "relevant_operations": [
+        "GET /me",
+        "GET /me/customers",
+        "GET /me/customers/{customerId}",
+        "GET /me/customers/{customerId}/partitions",
+        "GET /partitions/{partitionId}",
+        "GET /partitions/{partitionId}/assets/{assetId}",
+        "GET /partitions/{partitionId}/locations",
+        "GET /partitions/{partitionId}/locations/{locationId}"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/electrification-x/api_specs/api_reference.html",
+    "spec_url": "https://developer.siemens.com/electrification-x/api_specs/openapi-v1_0_0.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Electrification X API."
+  }
+}

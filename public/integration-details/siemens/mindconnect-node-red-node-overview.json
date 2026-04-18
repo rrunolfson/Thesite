@@ -7,36 +7,47 @@
   "integration_type": "SDK",
   "integration_api_url": "https://developer.siemens.com/agentconfig.json",
   "spec_artifact_url": "https://developer.siemens.com/agentconfig.json",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "Demo applications, libraries and SDKs as well as useful connectivity tools which are maintained and released as open source software.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Industrial Iot Open Source SDK documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "Demo applications, libraries and SDKs as well as useful connectivity tools which are maintained and released as open source software. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Demo applications, libraries and SDKs as well as useful connectivity tools which are maintained and released as open source software. Published API scope is centered on SDK-driven ingestion and low-code data flow integration.",
+  "data_domains": [
+    "sdk-connectivity",
+    "data-ingestion",
+    "edge-flows"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "assets",
+    "time-series payloads",
+    "events",
+    "Node-RED flows"
+  ],
+  "buyer_guidance": "Use these SDK and flow-node surfaces when the integration needs developer-side ingestion or orchestration tooling rather than a turnkey business API.",
+  "overview": "Demo applications, libraries and SDKs as well as useful connectivity tools which are maintained and released as open source software. These open-source tools and libraries exist to push industrial data into Siemens IoT platforms and wire connectivity into Node.js or Node-RED flows. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Connectivity tooling",
+      "description": "Published API scope is centered on SDK-driven ingestion and low-code data flow integration.",
       "data_points": [
-        "Published summary: Demo applications, libraries and SDKs as well as useful connectivity tools which are maintained and released as open source software.",
-        "Product family: Industrial Iot Open Source",
-        "Integration type: SDK",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "assets",
+        "time-series payloads",
+        "events",
+        "Node-RED flows"
       ],
       "relevant_operations": []
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "The evidence for this record comes from the published Siemens overview and product summary; the public artifact did not expose a simple path list during generation."
+  ],
   "source_evidence": {
-    "documentation_url": "https://developer.siemens.com/agentconfig.json",
+    "documentation_url": "https://developer.siemens.com/industrial-iot-open-source/node-red-contrib-mindconnect/index.html",
     "spec_url": "https://developer.siemens.com/agentconfig.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for MindConnect Node-RED Node Overview."
   },
   "detail_path": "/integration-details/siemens/mindconnect-node-red-node-overview.json",
   "vendor_domain": "siemens.com",

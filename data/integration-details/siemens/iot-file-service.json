@@ -1,0 +1,57 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "iot-file-service",
+  "product_name": "IoT File Service",
+  "product_family": "Insights Hub",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/iotfile-v3-6-0-eu1.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/iotfile-v3-6-0-eu1.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope focuses on storing and retrieving asset-linked files and metadata.",
+  "data_domains": [
+    "file-storage",
+    "asset-linked-documents"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "files",
+    "file metadata",
+    "asset-linked artifacts"
+  ],
+  "buyer_guidance": "Use this API when the integration needs asset-adjacent files, uploads, or binary artifacts in Insights Hub.",
+  "overview": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. The IoT File Service is for file and artifact storage, not timeseries telemetry. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "File storage",
+      "description": "Published API scope focuses on storing and retrieving asset-linked files and metadata.",
+      "data_points": [
+        "files",
+        "file metadata",
+        "asset-linked artifacts"
+      ],
+      "relevant_operations": [
+        "PUT /files/{entityId}/{filepath}",
+        "GET /files/{entityId}/{filepath}",
+        "DELETE /files/{entityId}/{filepath}",
+        "GET /files/{entityId}",
+        "GET /fileslist/{entityId}/{filepath}",
+        "POST /files/deleteJobs",
+        "GET /files/deleteJobs",
+        "GET /files/deleteJobs/{id}"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/insights-hub/docs/apis/iot-iotfile/api-iotfile-overview.html",
+    "spec_url": "https://developer.siemens.com/insights-hub/api_specs/iotfile-v3-6-0-eu1.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for IoT File Service."
+  }
+}

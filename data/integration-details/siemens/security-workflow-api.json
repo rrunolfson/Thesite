@@ -1,0 +1,56 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "security-workflow-api",
+  "product_name": "Security Workflow API",
+  "product_family": "Building X",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-workflow-v1/security.workflow.openapi.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-workflow-v1/security.workflow.openapi.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "RESTful API for listing available workflows and creating new workflow instances. Published API scope centers on administrative records and workflow lifecycle operations.",
+  "data_domains": [
+    "identity-and-access",
+    "workflow-orchestration",
+    "visitor-management"
+  ],
+  "asset_data_available": "N/A",
+  "telemetry_data_available": "N/A",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "identities",
+    "privileges",
+    "workflow instances",
+    "visitors",
+    "visits"
+  ],
+  "buyer_guidance": "Use these APIs for access, visitor, or workflow administration in Building X. They are operational write surfaces rather than monitoring feeds.",
+  "overview": "RESTful API for listing available workflows and creating new workflow instances. These surfaces are administrative or workflow APIs rather than asset or telemetry feeds, but they do support authoritative record updates. Asset data is N/A. Telemetry data is N/A. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Administrative workflows",
+      "description": "Published API scope centers on administrative records and workflow lifecycle operations.",
+      "data_points": [
+        "identities",
+        "privileges",
+        "workflow instances",
+        "visitors",
+        "visits"
+      ],
+      "relevant_operations": [
+        "POST /workflow-instances",
+        "GET /workflows"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-workflow-v1/overview.html",
+    "spec_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-workflow-v1/security.workflow.openapi.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Security Workflow API."
+  }
+}

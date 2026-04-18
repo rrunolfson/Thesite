@@ -7,36 +7,55 @@
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/sigreen/my-tasks-api/api_specs/openapi-spec-v1.16.0.yaml",
   "spec_artifact_url": "https://developer.siemens.com/sigreen/my-tasks-api/api_specs/openapi-spec-v1.16.0.yaml",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published SiGREEN OpenAPI documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN. Published API scope centers on task, request, and comment workflows in SiGREEN.",
+  "data_domains": [
+    "task-workflows",
+    "pcf-requests",
+    "comments"
+  ],
+  "asset_data_available": "N/A",
+  "telemetry_data_available": "N/A",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "tasks",
+    "task comments",
+    "PCF requests",
+    "task-product links"
+  ],
+  "buyer_guidance": "Use this API when the integration needs to manage PCF request workflows and task collaboration inside SiGREEN.",
+  "overview": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN. The My Tasks APIs are workflow endpoints for inbound and outbound PCF request handling rather than asset or telemetry payloads. Asset data is N/A. Telemetry data is N/A. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Task workflows",
+      "description": "Published API scope centers on task, request, and comment workflows in SiGREEN.",
       "data_points": [
-        "Published summary: SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN.",
-        "Product family: SiGREEN",
-        "Integration type: OpenAPI",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "tasks",
+        "task comments",
+        "PCF requests",
+        "task-product links"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "PUT /tasks/{id}/sharePcf/{pcfId}",
+        "PUT /tasks/{id}/linkProduct/{productId}",
+        "DELETE /tasks/{id}/linkProduct/{productId}",
+        "PUT /tasks/{id}/comments/{commentId}",
+        "DELETE /tasks/{id}/comments/{commentId}",
+        "PATCH /tasks/{id}/pcf/reject",
+        "PATCH /tasks/{id}/pcf/accept",
+        "GET /tasks/outboundPcfRequests"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
   "source_evidence": {
-    "documentation_url": "https://developer.siemens.com/sigreen/my-tasks-api/api_specs/openapi-spec-v1.16.0.yaml",
+    "documentation_url": "https://developer.siemens.com/sigreen/my-tasks-api/api-my-tasks.html",
     "spec_url": "https://developer.siemens.com/sigreen/my-tasks-api/api_specs/openapi-spec-v1.16.0.yaml",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for SiGREEN My Tasks API."
   },
   "detail_path": "/integration-details/siemens/sigreen-my-tasks-api.json",
   "vendor_domain": "siemens.com",

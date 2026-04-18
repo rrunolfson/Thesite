@@ -26,9 +26,9 @@ interface IntegrationDetailRecord {
   detail_completeness: "researched" | "generated-summary";
   data_coverage_summary: string;
   data_domains: string[];
-  asset_data_available: boolean | null;
-  telemetry_data_available: boolean | null;
-  writeback_supported: boolean | null;
+  asset_data_available: "Supported" | "Un-Supported" | "N/A" | null;
+  telemetry_data_available: "Supported" | "Un-Supported" | "N/A" | null;
+  writeback_supported: "Supported" | "Un-Supported" | "N/A" | null;
   key_entities: string[];
   buyer_guidance: string;
   overview: string;
@@ -190,17 +190,17 @@ export function IntegrationDetailPage() {
                       <CapabilityCard
                         icon={Database}
                         label="Asset Data"
-                        value={formatCapabilityValue(detail.asset_data_available, "Available", "Not Exposed")}
+                        value={formatCapabilityValue(detail.asset_data_available)}
                       />
                       <CapabilityCard
                         icon={Radio}
                         label="Telemetry"
-                        value={formatCapabilityValue(detail.telemetry_data_available, "Available", "Not Exposed")}
+                        value={formatCapabilityValue(detail.telemetry_data_available)}
                       />
                       <CapabilityCard
                         icon={RefreshCcw}
                         label="Writeback"
-                        value={formatCapabilityValue(detail.writeback_supported, "Supported", "Read Heavy")}
+                        value={formatCapabilityValue(detail.writeback_supported)}
                       />
                     </div>
 
@@ -311,13 +311,9 @@ function CapabilityCard({
   );
 }
 
-function formatCapabilityValue(value: boolean | null, trueLabel: string, falseLabel: string) {
-  if (value === true) {
-    return trueLabel;
-  }
-
-  if (value === false) {
-    return falseLabel;
+function formatCapabilityValue(value: "Supported" | "Un-Supported" | "N/A" | null) {
+  if (value) {
+    return value;
   }
 
   return "Undetermined";

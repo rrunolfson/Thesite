@@ -7,36 +7,51 @@
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/iottsbulk-v3-8-1.yaml",
   "spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/iottsbulk-v3-8-1.yaml",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Insights Hub OpenAPI documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope combines timeseries ingest, retrieval, and bulk history handling.",
+  "data_domains": [
+    "time-series-data",
+    "bulk-ingest",
+    "historical-queries"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "timeseries records",
+    "aspects",
+    "variables",
+    "bulk payloads"
+  ],
+  "buyer_guidance": "Use these APIs when the integration needs authoritative telemetry storage or historical readback inside Insights Hub.",
+  "overview": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. These are the core Insights Hub services for telemetry persistence, query, and bulk ingest/backfill. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Telemetry storage",
+      "description": "Published API scope combines timeseries ingest, retrieval, and bulk history handling.",
       "data_points": [
-        "Published summary: Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes.",
-        "Product family: Insights Hub",
-        "Integration type: OpenAPI",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "timeseries records",
+        "aspects",
+        "variables",
+        "bulk payloads"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "POST /importJobs",
+        "GET /importJobs/{id}",
+        "GET /timeseries/{entity}/{propertySetName}"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
   "source_evidence": {
-    "documentation_url": "https://developer.siemens.com/insights-hub/api_specs/iottsbulk-v3-8-1.yaml",
+    "documentation_url": "https://developer.siemens.com/insights-hub/docs/apis/iot-iottsbulk/api-iottsbulk-overview.html",
     "spec_url": "https://developer.siemens.com/insights-hub/api_specs/iottsbulk-v3-8-1.yaml",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for IoT Time Series Bulk Service."
   },
   "detail_path": "/integration-details/siemens/iot-time-series-bulk-service.json",
   "vendor_domain": "siemens.com",

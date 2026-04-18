@@ -1,0 +1,61 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "comos-web-rest-api",
+  "product_name": "COMOS Web REST API",
+  "product_family": "COMOS",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/comos/comos-rest-apispec.json",
+  "spec_artifact_url": "https://developer.siemens.com/comos/comos-rest-apispec.json",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "REST-style, HTTP-based API used to interact with COMOS data and to access COMOS features. Published API scope centers on COMOS engineering objects, related documentation, and project-side updates.",
+  "data_domains": [
+    "plant-engineering-data",
+    "documents",
+    "specifications",
+    "project-objects"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "engineering objects",
+    "documents",
+    "specifications",
+    "project records"
+  ],
+  "buyer_guidance": "Use this area when the integration needs structured plant engineering records, controlled document access, and object lifecycle updates rather than streaming operational data.",
+  "overview": "REST-style, HTTP-based API used to interact with COMOS data and to access COMOS features. This surface is oriented around engineering and project records rather than live operational telemetry. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Engineering records",
+      "description": "Published API scope centers on COMOS engineering objects, related documentation, and project-side updates.",
+      "data_points": [
+        "engineering objects",
+        "documents",
+        "specifications",
+        "project records"
+      ],
+      "relevant_operations": [
+        "GET /public/api/discovery/v1/services",
+        "GET /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}",
+        "PATCH /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}",
+        "GET /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}/revisions",
+        "POST /public/api/projects/v1/dbs/{dbid}/projects/{projid}/revisions/{revisionid}/actions/accept_step",
+        "POST /public/api/projects/v1/dbs/{dbid}/projects/{projid}/objects/{objid}/documents",
+        "POST /public/api/dbs/{dbid}/documents/actions/estamp",
+        "POST /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}/actions/checkout"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/comos/overview.html",
+    "spec_url": "https://developer.siemens.com/comos/comos-rest-apispec.json",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for COMOS Web REST API."
+  }
+}

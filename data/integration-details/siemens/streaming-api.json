@@ -1,0 +1,57 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "streaming-api",
+  "product_name": "Streaming API",
+  "product_family": "Building X",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/building-x-openness/api/streaming-api/streaming.openapi.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/streaming-api/streaming.openapi.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "RESTful API for configuring real-time data streaming. Published API scope combines subscription management with real-time point-data delivery.",
+  "data_domains": [
+    "stream-subscriptions",
+    "real-time-point-data",
+    "webhook-delivery"
+  ],
+  "asset_data_available": "Un-Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "stream subscriptions",
+    "point events",
+    "delivery endpoints"
+  ],
+  "buyer_guidance": "Use this API when the integration needs low-latency point data delivery and can manage subscription configuration and webhook endpoints.",
+  "overview": "RESTful API for configuring real-time data streaming. The Streaming API is about configuring and consuming real-time data delivery from Building X points. Asset data is Un-Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Realtime streaming",
+      "description": "Published API scope combines subscription management with real-time point-data delivery.",
+      "data_points": [
+        "stream subscriptions",
+        "point events",
+        "delivery endpoints"
+      ],
+      "relevant_operations": [
+        "GET /streams",
+        "POST /streams",
+        "DELETE /streams/{streamId}",
+        "GET /streams/{streamId}/entities",
+        "PUT /streams/{streamId}/entities",
+        "DELETE /streams/{streamId}/entities"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/building-x-openness/api/streaming-api/overview.html",
+    "spec_url": "https://developer.siemens.com/building-x-openness/api/streaming-api/streaming.openapi.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Streaming API."
+  }
+}

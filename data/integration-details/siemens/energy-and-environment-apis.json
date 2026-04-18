@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "energy-and-environment-apis",
+  "product_name": "Energy and Environment APIs",
+  "product_family": "Enlighted",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/enlighted-apis/energy-environment/energy-environment.openapi.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/enlighted-apis/energy-environment/energy-environment.openapi.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. Published API scope is centered on energy and environmental measurements.",
+  "data_domains": [
+    "energy-metrics",
+    "environmental-readings"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Un-Supported",
+  "key_entities": [
+    "energy records",
+    "environmental readings",
+    "facility context"
+  ],
+  "buyer_guidance": "Use this API when the integration needs facility energy and environment telemetry from Enlighted for reporting or optimization.",
+  "overview": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. The API family is framed around read access to energy and environmental metrics rather than actuation. Asset data is Supported. Telemetry data is Supported. Writeback is Un-Supported.",
+  "available_data": [
+    {
+      "category": "Facility telemetry",
+      "description": "Published API scope is centered on energy and environmental measurements.",
+      "data_points": [
+        "energy records",
+        "environmental readings",
+        "facility context"
+      ],
+      "relevant_operations": [
+        "GET /area/v2/list/{floor_id}",
+        "GET /area/v1/energy/{area_id}",
+        "POST /area/v1/setEmergency/{area_id}?time=60",
+        "GET /fixture/blefixture/list/floor/{floor_id}",
+        "POST /fixture/op/assignblemode/{blemode}",
+        "POST /switch/v1/op/applyScene/{switch_id}/{scene_id}",
+        "GET /scene/v1/list/getSceneLevels/{scene_id}",
+        "GET /switchgroups/list/{facility}/{floor_id}"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface is read-oriented for the covered domain and should not be advertised as a command or writeback API.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/enlighted-apis/energy-environment/overview.html",
+    "spec_url": "https://developer.siemens.com/enlighted-apis/energy-environment/energy-environment.openapi.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Energy and Environment APIs."
+  }
+}

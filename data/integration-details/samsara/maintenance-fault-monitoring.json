@@ -1,0 +1,111 @@
+{
+  "vendor_slug": "samsara",
+  "vendor_name": "Samsara",
+  "product_slug": "maintenance-fault-monitoring",
+  "product_name": "Maintenance & Fault Monitoring",
+  "product_family": "Samsara Platform",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+  "spec_artifact_url": "https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Samsara Maintenance & Fault Monitoring combines fault-code and tell-tale reads with DVIR, defect, odometer, and engine-runtime APIs, and it also supports maintenance write workflows such as creating mechanic DVIRs and resolving DVIRs or defects.",
+  "data_domains": [
+    "fault-monitoring",
+    "tell-tale-monitoring",
+    "dvir-and-defects",
+    "maintenance-readiness",
+    "usage-based-service-triggers"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "vehicles",
+    "fault code readings",
+    "tell tale readings",
+    "DVIRs",
+    "defects",
+    "odometer values",
+    "engine runtime readings"
+  ],
+  "buyer_guidance": "Use this product when Last Mile needs to blend vehicle health telemetry with maintenance workflow execution. It is materially richer than a read-only telemetry feed because Samsara also documents DVIR creation and resolution operations that can close the loop on maintenance actions.",
+  "overview": "The Maintenance & Fault Monitoring umbrella links four operational areas: fault-code monitoring, tell-tale monitoring, DVIR/defect management, and planned/preventative maintenance. Faults and tell tales are exposed through the vehicle stats snapshot, history, and feed endpoints, while DVIRs and defects have dedicated listing and patch flows. The DVIR guide also documents `POST /fleet/dvirs`, `PATCH /fleet/dvirs/:id`, and `PATCH /fleet/defects/:id`, which confirms real writeback capability in addition to read-heavy maintenance telemetry.",
+  "available_data": [
+    {
+      "category": "Fault and tell-tale telemetry",
+      "description": "Vehicle health signals are exposed through the same telematics stats surfaces used elsewhere in the platform.",
+      "data_points": [
+        "current active fault codes",
+        "fault-code history over time",
+        "fault-code feed events with cursors",
+        "current and historical tell-tale warning indicators",
+        "tell-tale feed events for incremental monitoring"
+      ],
+      "relevant_operations": [
+        "GET /fleet/vehicles/stats?types=faultCodes",
+        "GET /fleet/vehicles/stats/history?types=faultCodes",
+        "GET /fleet/vehicles/stats/feed?types=faultCodes",
+        "GET /fleet/vehicles/stats?types=tellTales",
+        "GET /fleet/vehicles/stats/history?types=tellTales",
+        "GET /fleet/vehicles/stats/feed?types=tellTales"
+      ]
+    },
+    {
+      "category": "Inspection and defect workflow data",
+      "description": "DVIRs and defect history provide operational maintenance records tied to vehicles, mechanics, and resolution state.",
+      "data_points": [
+        "DVIR safety status and trip type",
+        "author, second, and third signatures",
+        "vehicle defects and resolution timestamps",
+        "mechanic notes and resolution state",
+        "vehicle IDs, names, location, and odometer at inspection time"
+      ],
+      "relevant_operations": [
+        "GET /fleet/dvirs/history",
+        "GET /fleet/defects/history"
+      ]
+    },
+    {
+      "category": "Maintenance write workflows",
+      "description": "The published guide documents concrete create and patch methods for maintenance lifecycle actions.",
+      "data_points": [
+        "mechanic-created DVIR records",
+        "DVIR resolution state",
+        "defect resolution actions",
+        "mechanic resolution notes"
+      ],
+      "relevant_operations": [
+        "POST /fleet/dvirs",
+        "PATCH /fleet/dvirs/:id",
+        "PATCH /fleet/defects/:id"
+      ]
+    },
+    {
+      "category": "Preventative maintenance triggers",
+      "description": "Usage-based maintenance planning relies on odometer and engine-runtime readings from the vehicle stats APIs.",
+      "data_points": [
+        "OBD and GPS odometer readings",
+        "OBD and synthetic engine runtime",
+        "latest or historical usage values for service-threshold calculations"
+      ],
+      "relevant_operations": [
+        "GET /fleet/vehicles/stats?types=obdOdometerMeters,gpsOdometerMeters",
+        "GET /fleet/vehicles/stats?types=obdEngineSeconds,syntheticEngineSeconds",
+        "GET /fleet/vehicles/stats/history",
+        "GET /fleet/vehicles/stats/feed"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The maintenance umbrella spans multiple API families, so integrations should separate health-signal ingestion from workflow mutations and permission them differently.",
+    "Fault and tell-tale monitoring are event-friendly, but DVIR and defect reads return current state for a time range and may need refresh polling.",
+    "Usage-based maintenance calculations should request both OBD and fallback synthetic/GPS variants to handle uneven vehicle coverage.",
+    "This domain has real writeback, so mechanic identity and auditability need to be preserved when resolving DVIRs or defects by API."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+    "spec_url": "https://developers.samsara.com/docs/digital-vehicle-inspection-reports",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Backed by the Maintenance & Fault Monitoring overview, Fault Monitoring guide, Tell Tale Statuses Monitoring guide, Planned & Preventative Maintenance guide, and the Driver Vehicle Inspection Reports guide documenting POST /fleet/dvirs and PATCH resolution endpoints."
+  }
+}

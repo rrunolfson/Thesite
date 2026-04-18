@@ -1,0 +1,60 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "walkinside",
+  "product_name": "Walkinside",
+  "product_family": "Walkinside",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/walkinside/walkinside-api/walkinside.webapi.json",
+  "spec_artifact_url": "https://developer.siemens.com/walkinside/walkinside-api/walkinside.webapi.json",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Walkinside Services offer a robust 3D visualization platform that transforms how enterprises interact with their digital twins. By enabling dynamic navigation through virtual asset models, Walkinside leverages immersive environments to enhance operational planning, training, and safety assessments. Published API scope focuses on 3D visualization and asset-linked spatial records.",
+  "data_domains": [
+    "3d-asset-visualization",
+    "digital-twin-navigation",
+    "spatial-records"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "3D models",
+    "spatial records",
+    "navigation artifacts",
+    "asset-linked visualization data"
+  ],
+  "buyer_guidance": "Use this API when the integration needs spatial or digital-twin visualization records tied to industrial assets.",
+  "overview": "Walkinside Services offer a robust 3D visualization platform that transforms how enterprises interact with their digital twins. By enabling dynamic navigation through virtual asset models, Walkinside leverages immersive environments to enhance operational planning, training, and safety assessments. Walkinside is presented as a 3D visualization and navigation platform for digital twin interaction, which is asset-context heavy rather than telemetry-driven. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "3D twin records",
+      "description": "Published API scope focuses on 3D visualization and asset-linked spatial records.",
+      "data_points": [
+        "3D models",
+        "spatial records",
+        "navigation artifacts",
+        "asset-linked visualization data"
+      ],
+      "relevant_operations": [
+        "GET /imports/{id}",
+        "GET /jobs",
+        "GET /jobs/{id}",
+        "POST /jobs/{id}/actions/cancel",
+        "GET /labels",
+        "POST /labels",
+        "GET /labels/{id}",
+        "PUT /labels/{id}"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/walkinside/walkinside-api/index.html",
+    "spec_url": "https://developer.siemens.com/walkinside/walkinside-api/walkinside.webapi.json",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Walkinside."
+  }
+}

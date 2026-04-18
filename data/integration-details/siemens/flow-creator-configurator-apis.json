@@ -1,0 +1,53 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "flow-creator-configurator-apis",
+  "product_name": "Flow Creator Configurator APIs",
+  "product_family": "Industrial Edge",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/industrial-edge/api/flowcreator_configurator/v2.0.0/iefc-2.0.0-openapi.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/industrial-edge/api/flowcreator_configurator/v2.0.0/iefc-2.0.0-openapi.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps.",
+  "data_domains": [
+    "edge-application-management",
+    "device-management",
+    "configuration"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Un-Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "edge devices",
+    "apps",
+    "deployments",
+    "configurations",
+    "flows"
+  ],
+  "buyer_guidance": "Use these APIs when the integration needs to provision, deploy, or configure Industrial Edge devices and apps rather than consume plant telemetry.",
+  "overview": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. These APIs are administrative and configuration-oriented surfaces for apps, devices, and low-code flow setup across Industrial Edge. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Edge management",
+      "description": "Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps.",
+      "data_points": [
+        "edge devices",
+        "apps",
+        "deployments",
+        "configurations",
+        "flows"
+      ],
+      "relevant_operations": []
+    }
+  ],
+  "ingest_considerations": [
+    "The published surface includes mutation or submission capabilities, so integrations should enforce explicit governance around which upstream systems are allowed to write.",
+    "The evidence for this record comes from the published Siemens overview and product summary; the public artifact did not expose a simple path list during generation."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/industrial-edge/api/flowcreator_configurator/overview.html",
+    "spec_url": "https://developer.siemens.com/industrial-edge/api/flowcreator_configurator/v2.0.0/iefc-2.0.0-openapi.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Flow Creator Configurator APIs."
+  }
+}

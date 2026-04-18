@@ -1,0 +1,56 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "sustainability-api",
+  "product_name": "Sustainability API",
+  "product_family": "Building X",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/building-x-openness/api/sustainability-api/sustainability.openapi.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/sustainability-api/sustainability.openapi.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "RESTful API for reading energy consumption and cost data for a customer. Published API scope focuses on retrieving energy, emissions, and cost metrics for reporting and analytics.",
+  "data_domains": [
+    "energy-consumption",
+    "emissions",
+    "cost-reporting"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Un-Supported",
+  "key_entities": [
+    "locations",
+    "meters",
+    "consumption records",
+    "emissions",
+    "cost records"
+  ],
+  "buyer_guidance": "Use these APIs for energy and ESG reporting use cases where the integration consumes aggregated readings and calculated metrics from Building X.",
+  "overview": "RESTful API for reading energy consumption and cost data for a customer. The official descriptions are read-focused and centered on energy, emissions, and cost retrieval by customer, location, or meter. Asset data is Supported. Telemetry data is Supported. Writeback is Un-Supported.",
+  "available_data": [
+    {
+      "category": "Energy analytics",
+      "description": "Published API scope focuses on retrieving energy, emissions, and cost metrics for reporting and analytics.",
+      "data_points": [
+        "locations",
+        "meters",
+        "consumption records",
+        "emissions",
+        "cost records"
+      ],
+      "relevant_operations": [
+        "GET /customers/{customerId}/assets/utility-data"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface is read-oriented for the covered domain and should not be advertised as a command or writeback API.",
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/building-x-openness/api/sustainability-api/overview.html",
+    "spec_url": "https://developer.siemens.com/building-x-openness/api/sustainability-api/sustainability.openapi.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Sustainability API."
+  }
+}

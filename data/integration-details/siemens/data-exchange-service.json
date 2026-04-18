@@ -1,0 +1,49 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "data-exchange-service",
+  "product_name": "Data Exchange Service",
+  "product_family": "Insights Hub",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/dataexchange-v3-0-1.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/dataexchange-v3-0-1.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope focuses on exporting and sharing analytical data sets.",
+  "data_domains": [
+    "analytics-exchange",
+    "dataset-sharing"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Un-Supported",
+  "key_entities": [
+    "datasets",
+    "exchange payloads",
+    "analytics outputs"
+  ],
+  "buyer_guidance": "Use this API when the integration needs packaged analytical data out of Insights Hub for downstream use.",
+  "overview": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Data Exchange is positioned as a way to distribute processed data for analytics and sharing, not as a system-of-record writeback API. Asset data is Supported. Telemetry data is Supported. Writeback is Un-Supported.",
+  "available_data": [
+    {
+      "category": "Analytics exchange",
+      "description": "Published API scope focuses on exporting and sharing analytical data sets.",
+      "data_points": [
+        "datasets",
+        "exchange payloads",
+        "analytics outputs"
+      ],
+      "relevant_operations": []
+    }
+  ],
+  "ingest_considerations": [
+    "This surface includes telemetry or event-oriented payloads that should be modeled for time-based ingestion or monitoring workflows.",
+    "The published surface is read-oriented for the covered domain and should not be advertised as a command or writeback API.",
+    "The evidence for this record comes from the published Siemens overview and product summary; the public artifact did not expose a simple path list during generation."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/insights-hub/docs/apis/analytics-dataexchange/api-dataexchange-overview.html",
+    "spec_url": "https://developer.siemens.com/insights-hub/api_specs/dataexchange-v3-0-1.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Data Exchange Service."
+  }
+}

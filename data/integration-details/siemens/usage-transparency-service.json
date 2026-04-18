@@ -1,0 +1,62 @@
+{
+  "vendor_slug": "siemens",
+  "vendor_name": "Siemens",
+  "product_slug": "usage-transparency-service",
+  "product_name": "Usage Transparency Service",
+  "product_family": "Insights Hub",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/usagetransparency-v3-2-0.yaml",
+  "spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/usagetransparency-v3-2-0.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
+  "data_domains": [
+    "platform-governance",
+    "identity",
+    "administration"
+  ],
+  "asset_data_available": "N/A",
+  "telemetry_data_available": "N/A",
+  "writeback_supported": "N/A",
+  "key_entities": [
+    "users",
+    "policies",
+    "tenants",
+    "tokens",
+    "jobs",
+    "models"
+  ],
+  "buyer_guidance": "Use these services for platform administration and governance. They are necessary platform plumbing in some solutions but not delivery surfaces for asset or telemetry data.",
+  "overview": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. These Insights Hub services are platform infrastructure or governance surfaces rather than product data, telemetry, or operational writeback APIs. Asset data is N/A. Telemetry data is N/A. Writeback is N/A.",
+  "available_data": [
+    {
+      "category": "Platform services",
+      "description": "Published API scope is focused on platform administration, identity, policy, and orchestration support.",
+      "data_points": [
+        "users",
+        "policies",
+        "tenants",
+        "tokens",
+        "jobs",
+        "models"
+      ],
+      "relevant_operations": [
+        "POST /usages",
+        "POST /usagesJobs",
+        "GET /usagesJobs",
+        "GET /usagesJobs/{id}",
+        "GET /usagesJobs/{id}/errors",
+        "GET /aggregatedMonthlyConsumerUsage",
+        "GET /aggregatedMonthlyProviderUsage"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Representative operations were pulled from the published spec artifact to keep the capability classification tied to the documented surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.siemens.com/insights-hub/docs/apis/core-usagetransparency/api-usagetransparency-overview.html",
+    "spec_url": "https://developer.siemens.com/insights-hub/api_specs/usagetransparency-v3-2-0.yaml",
+    "reviewed_at": "2026-04-18",
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Usage Transparency Service."
+  }
+}
