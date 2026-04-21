@@ -95,7 +95,7 @@ jobs:
           CPANEL_FTP_USERNAME: ${{ secrets.CPANEL_FTP_USERNAME }}
         run: |
           set -euo pipefail
-          CPANEL_DEPLOY_PATH="${CPANEL_DEPLOY_PATH:-public_html/}"
+          CPANEL_DEPLOY_PATH="${CPANEL_DEPLOY_PATH:-.}"
           CPANEL_FTP_HOST="${CPANEL_FTP_HOST:-lastmileinc.ai}"
           CPANEL_FTP_PORT="${CPANEL_FTP_PORT:-21}"
           CPANEL_FTP_USERNAME="${CPANEL_FTP_USERNAME:-rodney@lastmileinc.ai}"
@@ -163,7 +163,7 @@ jobs:
           CPANEL_FTP_USERNAME: ${{ secrets.CPANEL_FTP_USERNAME }}
         run: |
           set -euo pipefail
-          CPANEL_DEPLOY_PATH="${CPANEL_DEPLOY_PATH:-public_html/}"
+          CPANEL_DEPLOY_PATH="${CPANEL_DEPLOY_PATH:-.}"
           CPANEL_FTP_HOST="${CPANEL_FTP_HOST:-lastmileinc.ai}"
           CPANEL_FTP_PORT="${CPANEL_FTP_PORT:-21}"
           CPANEL_FTP_USERNAME="${CPANEL_FTP_USERNAME:-rodney@lastmileinc.ai}"

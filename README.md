@@ -23,6 +23,6 @@
 
   - `CPANEL_FTP_HOST` default `lastmileinc.ai`
   - `CPANEL_FTP_USERNAME` default `rodney@lastmileinc.ai`
-  - `CPANEL_DEPLOY_PATH` default `public_html/`
+  - `CPANEL_DEPLOY_PATH` default `.` when the FTP account is already rooted at `public_html`
   - `CPANEL_FTP_PORT` optional, defaults to `21`
   
