@@ -90,7 +90,7 @@ jobs:
         env:
           CPANEL_DEPLOY_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
           CPANEL_FTP_HOST: ${{ secrets.CPANEL_FTP_HOST }}
-          CPANEL_FTP_PASSWORD: ${{ secrets.CPANEL_FTP_PASSWORD }}
+          CPANEL_FTP_PASSWORD: ${{ secrets.CPANEL_FTP }}
           CPANEL_FTP_PORT: ${{ secrets.CPANEL_FTP_PORT }}
           CPANEL_FTP_USERNAME: ${{ secrets.CPANEL_FTP_USERNAME }}
         run: |
@@ -158,7 +158,7 @@ jobs:
         env:
           CPANEL_DEPLOY_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
           CPANEL_FTP_HOST: ${{ secrets.CPANEL_FTP_HOST }}
-          CPANEL_FTP_PASSWORD: ${{ secrets.CPANEL_FTP_PASSWORD }}
+          CPANEL_FTP_PASSWORD: ${{ secrets.CPANEL_FTP }}
           CPANEL_FTP_PORT: ${{ secrets.CPANEL_FTP_PORT }}
           CPANEL_FTP_USERNAME: ${{ secrets.CPANEL_FTP_USERNAME }}
         run: |

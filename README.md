@@ -17,7 +17,7 @@
 
   Required GitHub Actions secrets:
 
-  - `CPANEL_FTP_PASSWORD`
+  - `CPANEL_FTP`
 
   Optional GitHub Actions secrets for non-default cPanel environments:
 
