@@ -156,7 +156,11 @@ jobs:
           CPANEL_SSH_HOST="${CPANEL_SSH_HOST:-lastmileinc.ai}"
           CPANEL_SSH_PORT="${CPANEL_SSH_PORT:-22}"
           install -m 700 -d ~/.ssh
-          printf '%b' "$CPANEL_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_ed25519
+          if printf '%s' "$CPANEL_SSH_PRIVATE_KEY" | grep -q 'BEGIN OPENSSH PRIVATE KEY\|BEGIN RSA PRIVATE KEY'; then
+            printf '%b' "$CPANEL_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_ed25519
+          else
+            printf '%s' "$CPANEL_SSH_PRIVATE_KEY" | tr -d '\r\n ' | base64 -d > ~/.ssh/id_ed25519
+          fi
           chmod 600 ~/.ssh/id_ed25519
           ssh-keygen -y -f ~/.ssh/id_ed25519 >/dev/null
           ssh-keyscan -p "${CPANEL_SSH_PORT:-22}" "$CPANEL_SSH_HOST" >> ~/.ssh/known_hosts
