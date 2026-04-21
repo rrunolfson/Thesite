@@ -83,9 +83,20 @@ jobs:
           console.log(`- Deploy reason: ${{ steps.compare_live_catalog.outputs.reason }}`);
           EOF
 
+      - name: Determine whether production deploy should run
+        id: should_deploy
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ steps.compare_live_catalog.outputs.deploy_needed }}" = "true" ]; then
+            echo "value=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Check production deploy configuration
         id: deploy_config
-        if: steps.compare_live_catalog.outputs.deploy_needed == 'true'
+        if: steps.should_deploy.outputs.value == 'true'
         shell: bash
         env:
           CPANEL_DEPLOY_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
@@ -113,7 +124,7 @@ jobs:
           echo "missing=" >> "$GITHUB_OUTPUT"
 
       - name: Fail when production deploy is not configured
-        if: steps.compare_live_catalog.outputs.deploy_needed == 'true' && steps.deploy_config.outputs.configured == 'false'
+        if: steps.should_deploy.outputs.value == 'true' && steps.deploy_config.outputs.configured == 'false'
         run: |
           echo "Production catalog differs from the generated catalog, but required deploy secrets are missing: ${{ steps.deploy_config.outputs.missing }}"
           exit 1
@@ -145,7 +156,7 @@ jobs:
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Install FTPS deploy client
-        if: steps.compare_live_catalog.outputs.deploy_needed == 'true' && steps.deploy_config.outputs.configured == 'true'
+        if: steps.should_deploy.outputs.value == 'true' && steps.deploy_config.outputs.configured == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -153,7 +164,7 @@ jobs:
           sudo apt-get install --yes lftp
 
       - name: Deploy built site to production
-        if: steps.compare_live_catalog.outputs.deploy_needed == 'true' && steps.deploy_config.outputs.configured == 'true'
+        if: steps.should_deploy.outputs.value == 'true' && steps.deploy_config.outputs.configured == 'true'
         shell: bash
         env:
           CPANEL_DEPLOY_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
@@ -178,7 +189,7 @@ jobs:
           EOF
 
       - name: Verify live production catalog
-        if: steps.compare_live_catalog.outputs.deploy_needed == 'true' && steps.deploy_config.outputs.configured == 'true'
+        if: steps.should_deploy.outputs.value == 'true' && steps.deploy_config.outputs.configured == 'true'
         shell: bash
         run: |
           set -euo pipefail
