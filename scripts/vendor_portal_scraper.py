@@ -503,6 +503,8 @@ class VendorPortalScraper:
         path_parts = [part for part in urlparse(url).path.split("/") if part]
         if not path_parts:
             return slugify(self.config.get("name", "vendor"))
+        if path_parts[0].lower() in {"docs", "doc", "documentation"} and len(path_parts) > 1:
+            return slugify(path_parts[1])
         return slugify(path_parts[0])
 
     def infer_source_product_line_name(self, source_product_line_slug: str) -> str:

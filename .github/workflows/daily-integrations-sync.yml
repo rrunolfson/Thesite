@@ -15,6 +15,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repository
@@ -32,27 +33,51 @@ jobs:
         run: npm ci
 
       - name: Sync published integrations sheet
-        run: npm run integrations:sync-sheet
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            if npm run integrations:sync-sheet; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 3 ]; then
+              echo "Sync attempt $attempt failed. Retrying..."
+              sleep $((attempt * 5))
+            fi
+          done
+          echo "Integrations sheet sync failed after 3 attempts."
+          exit 1
 
       - name: Validate integrations data
         run: npm run integrations:validate
 
-      - name: Detect catalog source changes
-        id: detect_changes
-        run: |
-          if git diff --quiet -- data/integrations.csv; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Build site
-        if: steps.detect_changes.outputs.changed == 'true'
         run: npm run build
 
-      - name: Detect generated artifact changes
-        if: steps.detect_changes.outputs.changed == 'true'
-        id: detect_artifact_changes
+      - name: Summarize generated catalog
+        shell: bash
+        run: |
+          node --input-type=module <<'EOF' >> "$GITHUB_STEP_SUMMARY"
+          import fs from 'node:fs';
+          const catalog = JSON.parse(fs.readFileSync('public/integrations.json', 'utf8'));
+          const vendorSet = new Set();
+          for (const industry of catalog.industries) {
+            for (const vendor of industry.vendors) {
+              vendorSet.add(vendor.vendor_slug);
+            }
+          }
+          console.log('## Daily Integrations Sync');
+          console.log('');
+          console.log(`- Generated at: ${catalog.meta.generated_at}`);
+          console.log(`- Source mode: ${catalog.meta.source_mode}`);
+          console.log(`- Integrations available: ${catalog.meta.record_count}`);
+          console.log(`- Industries covered: ${catalog.meta.industry_count}`);
+          console.log(`- Vendors available: ${vendorSet.size}`);
+          EOF
+
+      - name: Detect generated catalog changes
+        id: detect_changes
+        shell: bash
         run: |
           if git diff --quiet -- data/integrations.csv public/integrations.json public/integration-details; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -61,14 +86,17 @@ jobs:
           fi
 
       - name: Commit updated catalog artifacts
-        if: steps.detect_changes.outputs.changed == 'true' && steps.detect_artifact_changes.outputs.changed == 'true'
+        if: steps.detect_changes.outputs.changed == 'true'
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
           git add data/integrations.csv public/integrations.json public/integration-details
           if git diff --cached --quiet; then
             echo "No generated catalog changes to commit."
             exit 0
           fi
           git commit -m "chore: sync integrations catalog"
-          git push
+          git push origin "HEAD:${GITHUB_REF_NAME}"

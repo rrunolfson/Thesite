@@ -1,0 +1,89 @@
+{
+  "name": "moxa",
+  "source_key": "moxa-docs-portal",
+  "catalog_url": "https://docs.moxa.online/",
+  "vendor_identity": {
+    "slug": "moxa",
+    "name": "Moxa",
+    "summary": "Moxa industrial networking, secure remote access, device management, and edge connectivity APIs for OT infrastructure operations.",
+    "sort_order": 40
+  },
+  "allowed_domains": [
+    "docs.moxa.online",
+    "thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com"
+  ],
+  "catalog_seed_entries": [
+    {
+      "url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
+      "title": "DLM On-Premises API",
+      "summary": "OpenAPI-based device lifecycle management APIs for user authentication, device inventory, project management, device logs, network state, basic device info, jobs, and reporting across distributed industrial assets."
+    }
+  ],
+  "timeout_seconds": 30,
+  "sleep_seconds": 0.0,
+  "allow_seed_entry_fallback_on_fetch_error": true,
+  "seed_entries_skip_fetch": true,
+  "catalog_rules": {
+    "entry_include_url_patterns": [
+      "openapi-spec",
+      "api-docs"
+    ],
+    "entry_exclude_url_patterns": [
+      "mailto:",
+      "/privacy",
+      "/contact"
+    ],
+    "entry_text_patterns": [
+      "OpenAPI",
+      "DLM",
+      "device management"
+    ]
+  },
+  "entry_rules": {
+    "product_name_cleanups": [],
+    "api_url_preference_patterns": [
+      "openapi",
+      "swagger",
+      ".yaml",
+      ".yml",
+      ".json"
+    ],
+    "api_url_reject_patterns": []
+  },
+  "purge_rules": {
+    "drop_without_spec": false,
+    "drop_unusable_spec_urls": false,
+    "unusable_spec_url_patterns": []
+  },
+  "field_mapping": {
+    "path_vendor_overrides": {
+      "openapi-spec": "DLM (On-Premises)"
+    },
+    "tag_to_industry": {},
+    "industry_definitions": {
+      "manufacturing": {
+        "slug": "manufacturing",
+        "name": "Manufacturing",
+        "description": "Industrial automation, asset telemetry, edge systems, and operational workflows.",
+        "sort_order": 10
+      }
+    },
+    "vendor_summary_template": "{vendor_name} {product_summary}"
+  },
+  "row_defaults": {
+    "industry_slug": "manufacturing",
+    "industry_name": "Manufacturing",
+    "industry_description": "Industrial automation, asset telemetry, edge systems, and operational workflows.",
+    "industry_sort_order": 10,
+    "integration_status": "built",
+    "integration_type": "OpenAPI",
+    "is_visible": true,
+    "product_sort_start": 10,
+    "product_sort_step": 10,
+    "vendor_logo_url": "",
+    "vendor_logo_asset": ""
+  },
+  "google_sheets": {
+    "worksheet_title": "Integrations"
+  }
+}

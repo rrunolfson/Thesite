@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated_at": "2026-04-21T11:28:24.874Z",
-    "source_csv": "data/integrations.csv",
-    "source_mode": "local-file",
+    "generated_at": "2026-04-21T14:25:25.619Z",
+    "source_csv": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSbdlVK2UNvNrARuo2P-DuXszszWYYsULC0HPsfz5I9jTpARxNpWKYfym5aV9OX6uInvNwDHw-xCrDe/pub?gid=1801512786&single=true&output=csv",
+    "source_mode": "remote-url",
     "public_json_path": "/integrations.json",
     "public_json_url": "https://lastmileinc.ai/integrations.json",
     "record_count": 109,

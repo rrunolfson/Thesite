@@ -1,0 +1,110 @@
+{
+  "name": "trimble",
+  "source_key": "trimble-developer-docs",
+  "catalog_url": "https://developer.trimble.com/docs/civil-site-management",
+  "vendor_identity": {
+    "slug": "trimble",
+    "name": "Trimble",
+    "summary": "Trimble developer docs exposing connected machine, device, maintenance, and fleet telemetry APIs for field asset and transportation workflows.",
+    "sort_order": 80
+  },
+  "allowed_domains": [
+    "developer.trimble.com"
+  ],
+  "catalog_seed_entries": [
+    {
+      "url": "https://developer.trimble.com/docs/civil-site-management/openapi/site-management/v0.yaml",
+      "title": "Civil Site Management API",
+      "summary": "OpenAPI specification for Trimble Site Management covering machines, devices, projects, and last reported geocoordinate positions for connected field assets."
+    },
+    {
+      "url": "https://developer.trimble.com/docs/tmt/openapi/v1.json",
+      "title": "TMT Integration Toolkit REST API",
+      "summary": "Public Trimble TMT API specification covering unit records, meter readings, positions, faults, DVIR workflows, and maintenance operations for fleet assets."
+    }
+  ],
+  "timeout_seconds": 30,
+  "sleep_seconds": 0.0,
+  "allow_seed_entry_fallback_on_fetch_error": true,
+  "seed_entries_skip_fetch": true,
+  "catalog_rules": {
+    "entry_include_url_patterns": [
+      "/civil-site-management/openapi/",
+      "/civil-site-management/tools/api/",
+      "/tmt/openapi/",
+      "/tmt/tools/api/"
+    ],
+    "entry_exclude_url_patterns": [
+      "mailto:",
+      "/news/",
+      "/marketplace"
+    ],
+    "entry_text_patterns": [
+      "Site Management",
+      "machines",
+      "devices",
+      "geocoordinate",
+      "TMT",
+      "unit",
+      "meter",
+      "DVIR"
+    ]
+  },
+  "entry_rules": {
+    "product_name_cleanups": [],
+    "api_url_preference_patterns": [
+      "openapi",
+      ".yaml",
+      ".yml",
+      ".json"
+    ],
+    "api_url_reject_patterns": []
+  },
+  "purge_rules": {
+    "drop_without_spec": false,
+    "drop_unusable_spec_urls": false,
+    "unusable_spec_url_patterns": []
+  },
+  "field_mapping": {
+    "path_vendor_overrides": {
+      "docs": "Civil Site Management",
+      "civil-site-management": "Civil Site Management",
+      "tmt": "TMT"
+    },
+    "tag_to_industry": {
+      "civil-site-management": "construction",
+      "tmt": "transportation"
+    },
+    "industry_definitions": {
+      "construction": {
+        "slug": "construction",
+        "name": "Construction",
+        "description": "Connected equipment, field assets, jobsite devices, and operational telemetry workflows.",
+        "sort_order": 50
+      },
+      "transportation": {
+        "slug": "transportation",
+        "name": "Transportation",
+        "description": "Fleet maintenance, vehicle asset records, telematics events, inspections, and operational transportation workflows.",
+        "sort_order": 30
+      }
+    },
+    "vendor_summary_template": "{vendor_name} {product_summary}"
+  },
+  "row_defaults": {
+    "industry_slug": "construction",
+    "industry_name": "Construction",
+    "industry_description": "Connected equipment, field assets, jobsite devices, and operational telemetry workflows.",
+    "industry_sort_order": 50,
+    "integration_status": "built",
+    "integration_type": "OpenAPI",
+    "is_visible": true,
+    "product_sort_start": 10,
+    "product_sort_step": 10,
+    "vendor_logo_url": "",
+    "vendor_logo_asset": ""
+  },
+  "google_sheets": {
+    "worksheet_title": "Integrations"
+  }
+}

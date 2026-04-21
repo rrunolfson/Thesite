@@ -1,0 +1,102 @@
+{
+  "name": "geotab",
+  "source_key": "geotab-developer-portal",
+  "catalog_url": "https://developers.geotab.com/",
+  "vendor_identity": {
+    "slug": "geotab",
+    "name": "Geotab",
+    "summary": "Geotab fleet telematics, compliance, driver operations, asset, and administrator APIs for connected transportation workflows.",
+    "sort_order": 60
+  },
+  "allowed_domains": [
+    "developers.geotab.com"
+  ],
+  "catalog_seed_entries": [
+    {
+      "url": "https://developers.geotab.com/myGeotab/apiReference/objects/",
+      "title": "MyGeotab API",
+      "summary": "API reference for vehicles, trips, diagnostics, DVIR, zones, rules, fuel, EV, tachograph, and driver operational data in MyGeotab."
+    },
+    {
+      "url": "https://developers.geotab.com/myAdmin/apiReference/objects/",
+      "title": "MyAdmin API",
+      "summary": "Administrative API reference for partner, account, database, and provisioning workflows that support Geotab deployment operations."
+    },
+    {
+      "url": "https://developers.geotab.com/drive/introduction/",
+      "title": "Geotab Drive Integration Reference",
+      "summary": "Developer reference for extending Geotab Drive with in-cab workflow and operational user experiences tied to fleet execution."
+    }
+  ],
+  "timeout_seconds": 30,
+  "sleep_seconds": 0.0,
+  "allow_seed_entry_fallback_on_fetch_error": true,
+  "seed_entries_skip_fetch": true,
+  "catalog_rules": {
+    "entry_include_url_patterns": [
+      "/apiReference/",
+      "/introduction/"
+    ],
+    "entry_exclude_url_patterns": [
+      "mailto:",
+      "/privacy",
+      "/terms"
+    ],
+    "entry_text_patterns": [
+      "MyGeotab",
+      "MyAdmin",
+      "Drive"
+    ]
+  },
+  "entry_rules": {
+    "product_name_cleanups": [],
+    "api_url_preference_patterns": [
+      "/apiReference/",
+      "jsonrpc",
+      "openapi",
+      "swagger",
+      ".yaml",
+      ".yml",
+      ".json"
+    ],
+    "api_url_reject_patterns": []
+  },
+  "purge_rules": {
+    "drop_without_spec": false,
+    "drop_unusable_spec_urls": false,
+    "unusable_spec_url_patterns": []
+  },
+  "field_mapping": {
+    "path_vendor_overrides": {
+      "mygeotab": "MyGeotab",
+      "myadmin": "MyAdmin",
+      "drive": "Geotab Drive"
+    },
+    "tag_to_industry": {},
+    "industry_definitions": {
+      "transportation": {
+        "slug": "transportation",
+        "name": "Transportation",
+        "description": "Fleet telematics, routing, compliance, maintenance, payroll, and logistics integration APIs.",
+        "sort_order": 30
+      }
+    },
+    "vendor_summary_template": "{vendor_name} {product_summary}"
+  },
+  "row_defaults": {
+    "industry_slug": "transportation",
+    "industry_name": "Transportation",
+    "industry_description": "Fleet telematics, routing, compliance, maintenance, payroll, and logistics integration APIs.",
+    "industry_sort_order": 30,
+    "integration_status": "built",
+    "integration_type": "REST API",
+    "is_visible": true,
+    "product_sort_start": 10,
+    "product_sort_step": 10,
+    "vendor_logo_url": "",
+    "vendor_logo_asset": ""
+  },
+  "google_sheets": {
+    "worksheet_title": "Integrations"
+  }
+}

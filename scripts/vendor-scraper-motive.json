@@ -1,0 +1,122 @@
+{
+  "name": "motive",
+  "source_key": "motive-developer-portal",
+  "catalog_url": "https://developer.gomotive.com/",
+  "vendor_identity": {
+    "slug": "motive",
+    "name": "Motive",
+    "summary": "Motive fleet operations, compliance, telematics, inspection, maintenance, and webhook APIs for transportation and logistics workflows.",
+    "sort_order": 50
+  },
+  "allowed_domains": [
+    "developer.gomotive.com"
+  ],
+  "catalog_seed_entries": [
+    {
+      "url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+      "title": "Users API",
+      "summary": "Open API access for user identities, driver-linked users, and user record synchronization into fleet and operational systems."
+    },
+    {
+      "url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+      "title": "Vehicles API",
+      "summary": "Open API access for vehicle master data, assignments, and fleet asset synchronization across logistics systems."
+    },
+    {
+      "url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+      "title": "Vehicle Gateway API",
+      "summary": "Vehicle gateway APIs for telematics device identity, status, and associated onboard fleet connectivity data."
+    },
+    {
+      "url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+      "title": "HOS Logs API",
+      "summary": "Hours-of-service APIs for ELD compliance, driver duty status logs, and regulatory workflow integration."
+    },
+    {
+      "url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+      "title": "Inspection Reports API",
+      "summary": "Inspection report APIs for DVIR-style safety workflows, operational inspections, and exception-driven maintenance processes."
+    },
+    {
+      "url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+      "title": "Fault Codes API",
+      "summary": "Vehicle fault code APIs for maintenance monitoring, service triage, and repair workflow integration."
+    },
+    {
+      "url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+      "title": "Webhooks API",
+      "summary": "Webhook delivery for near-real-time operational event streaming from Motive into external transportation systems."
+    }
+  ],
+  "timeout_seconds": 30,
+  "sleep_seconds": 0.0,
+  "allow_seed_entry_fallback_on_fetch_error": true,
+  "seed_entries_skip_fetch": true,
+  "catalog_rules": {
+    "entry_include_url_patterns": [
+      "/reference/"
+    ],
+    "entry_exclude_url_patterns": [
+      "mailto:",
+      "/privacy",
+      "/terms"
+    ],
+    "entry_text_patterns": [
+      "Users",
+      "Vehicles",
+      "Vehicle Gateway",
+      "HOS Logs",
+      "Inspection Reports",
+      "Fault Codes",
+      "Webhooks"
+    ]
+  },
+  "entry_rules": {
+    "product_name_cleanups": [],
+    "api_url_preference_patterns": [
+      "/reference/",
+      "openapi",
+      "swagger",
+      ".yaml",
+      ".yml",
+      ".json"
+    ],
+    "api_url_reject_patterns": []
+  },
+  "purge_rules": {
+    "drop_without_spec": false,
+    "drop_unusable_spec_urls": false,
+    "unusable_spec_url_patterns": []
+  },
+  "field_mapping": {
+    "path_vendor_overrides": {
+      "reference": "Motive Open API"
+    },
+    "tag_to_industry": {},
+    "industry_definitions": {
+      "transportation": {
+        "slug": "transportation",
+        "name": "Transportation",
+        "description": "Fleet telematics, routing, compliance, maintenance, payroll, and logistics integration APIs.",
+        "sort_order": 30
+      }
+    },
+    "vendor_summary_template": "{vendor_name} {product_summary}"
+  },
+  "row_defaults": {
+    "industry_slug": "transportation",
+    "industry_name": "Transportation",
+    "industry_description": "Fleet telematics, routing, compliance, maintenance, payroll, and logistics integration APIs.",
+    "industry_sort_order": 30,
+    "integration_status": "built",
+    "integration_type": "REST API",
+    "is_visible": true,
+    "product_sort_start": 10,
+    "product_sort_step": 10,
+    "vendor_logo_url": "",
+    "vendor_logo_asset": ""
+  },
+  "google_sheets": {
+    "worksheet_title": "Integrations"
+  }
+}

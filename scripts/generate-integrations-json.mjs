@@ -14,6 +14,8 @@ const defaultConfigPath = path.join(repoRoot, "data", "integrations-source.json"
 const publicSiteBaseUrl = "https://lastmileinc.ai";
 const logoDevCdnBaseUrl = "https://img.logo.dev";
 const googleFaviconBaseUrl = "https://www.google.com/s2/favicons";
+const remoteCsvFetchTimeoutMs = 30000;
+const remoteCsvFetchMaxAttempts = 3;
 const requiredHeaders = [
   "industry_slug",
   "industry_name",
@@ -479,6 +481,51 @@ async function readConfig(configPath) {
   return JSON.parse(content);
 }
 
+function delay(milliseconds) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, milliseconds);
+  });
+}
+
+async function fetchRemoteText(url) {
+  let lastError = null;
+
+  for (let attempt = 1; attempt <= remoteCsvFetchMaxAttempts; attempt += 1) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => {
+      controller.abort(new Error(`Timed out after ${remoteCsvFetchTimeoutMs}ms`));
+    }, remoteCsvFetchTimeoutMs);
+
+    try {
+      const response = await fetch(url, {
+        headers: {
+          "user-agent": "Last Mile Integrations Sync/1.0",
+          accept: "text/csv,text/plain;q=0.9,*/*;q=0.8",
+        },
+        redirect: "follow",
+        signal: controller.signal,
+      });
+
+      if (!response.ok) {
+        throw new Error(`Unable to fetch CSV source: ${response.status} ${response.statusText}`);
+      }
+
+      return await response.text();
+    } catch (error) {
+      lastError = error;
+
+      if (attempt < remoteCsvFetchMaxAttempts) {
+        console.warn(`Warning: remote CSV fetch attempt ${attempt} failed for ${url}. Retrying...`);
+        await delay(attempt * 2000);
+      }
+    } finally {
+      clearTimeout(timeoutId);
+    }
+  }
+
+  throw lastError instanceof Error ? lastError : new Error(String(lastError));
+}
+
 async function readSourceCsv(sourceIdentifier) {
   if (!sourceIdentifier) {
     return {
@@ -489,14 +536,8 @@ async function readSourceCsv(sourceIdentifier) {
   }
 
   if (sourceIdentifier.startsWith("http://") || sourceIdentifier.startsWith("https://")) {
-    const response = await fetch(sourceIdentifier);
-
-    if (!response.ok) {
-      throw new Error(`Unable to fetch CSV source: ${response.status} ${response.statusText}`);
-    }
-
     return {
-      csvContent: await response.text(),
+      csvContent: await fetchRemoteText(sourceIdentifier),
       sourceLabel: sourceIdentifier,
       sourceMode: "remote-url",
     };
