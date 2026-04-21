@@ -184,7 +184,8 @@ jobs:
           set ssl:verify-certificate no
           set net:max-retries 2
           set net:timeout 20
-          mirror --reverse --delete --verbose dist "$CPANEL_DEPLOY_PATH"
+          put -O "$CPANEL_DEPLOY_PATH" dist/.htaccess
+          mirror --reverse --delete --verbose --exclude-glob .htaccess dist "$CPANEL_DEPLOY_PATH"
           bye
           EOF
 
