@@ -54,6 +54,10 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Compare generated catalog with live production
+        id: compare_live_catalog
+        run: node scripts/compare-live-catalog.mjs
+
       - name: Summarize generated catalog
         shell: bash
         run: |
@@ -73,7 +77,46 @@ jobs:
           console.log(`- Integrations available: ${catalog.meta.record_count}`);
           console.log(`- Industries covered: ${catalog.meta.industry_count}`);
           console.log(`- Vendors available: ${vendorSet.size}`);
+          console.log(`- Live integrations available: ${{ steps.compare_live_catalog.outputs.live_record_count }}`);
+          console.log(`- Live vendors available: ${{ steps.compare_live_catalog.outputs.live_vendor_count }}`);
+          console.log(`- Deploy needed: ${{ steps.compare_live_catalog.outputs.deploy_needed }}`);
+          console.log(`- Deploy reason: ${{ steps.compare_live_catalog.outputs.reason }}`);
           EOF
+
+      - name: Check production deploy configuration
+        id: deploy_config
+        if: steps.compare_live_catalog.outputs.deploy_needed == 'true'
+        shell: bash
+        env:
+          CPANEL_DEPLOY_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
+          CPANEL_SSH_HOST: ${{ secrets.CPANEL_SSH_HOST }}
+          CPANEL_SSH_PORT: ${{ secrets.CPANEL_SSH_PORT }}
+          CPANEL_SSH_PRIVATE_KEY: ${{ secrets.CPANEL_SSH_PRIVATE_KEY }}
+          CPANEL_SSH_USERNAME: ${{ secrets.CPANEL_SSH_USERNAME }}
+        run: |
+          set -euo pipefail
+          CPANEL_DEPLOY_PATH="${CPANEL_DEPLOY_PATH:-/home/hh0h355mndjv/public_html/}"
+          CPANEL_SSH_HOST="${CPANEL_SSH_HOST:-lastmileinc.ai}"
+          CPANEL_SSH_PORT="${CPANEL_SSH_PORT:-22}"
+          CPANEL_SSH_USERNAME="${CPANEL_SSH_USERNAME:-hh0h355mndjv}"
+
+          missing=()
+          [[ -n "$CPANEL_SSH_PRIVATE_KEY" ]] || missing+=("CPANEL_SSH_PRIVATE_KEY")
+
+          if [ ${#missing[@]} -gt 0 ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            printf 'missing=%s\n' "${missing[*]}" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "configured=true" >> "$GITHUB_OUTPUT"
+          echo "missing=" >> "$GITHUB_OUTPUT"
+
+      - name: Fail when production deploy is not configured
+        if: steps.compare_live_catalog.outputs.deploy_needed == 'true' && steps.deploy_config.outputs.configured == 'false'
+        run: |
+          echo "Production catalog differs from the generated catalog, but required deploy secrets are missing: ${{ steps.deploy_config.outputs.missing }}"
+          exit 1
 
       - name: Detect generated catalog changes
         id: detect_changes
@@ -100,3 +143,53 @@ jobs:
           fi
           git commit -m "chore: sync integrations catalog"
           git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Configure SSH for cPanel deploy
+        if: steps.compare_live_catalog.outputs.deploy_needed == 'true' && steps.deploy_config.outputs.configured == 'true'
+        shell: bash
+        env:
+          CPANEL_SSH_HOST: ${{ secrets.CPANEL_SSH_HOST }}
+          CPANEL_SSH_PORT: ${{ secrets.CPANEL_SSH_PORT }}
+          CPANEL_SSH_PRIVATE_KEY: ${{ secrets.CPANEL_SSH_PRIVATE_KEY }}
+        run: |
+          set -euo pipefail
+          CPANEL_SSH_HOST="${CPANEL_SSH_HOST:-lastmileinc.ai}"
+          CPANEL_SSH_PORT="${CPANEL_SSH_PORT:-22}"
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$CPANEL_SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p "${CPANEL_SSH_PORT:-22}" "$CPANEL_SSH_HOST" >> ~/.ssh/known_hosts
+
+      - name: Deploy built site to production
+        if: steps.compare_live_catalog.outputs.deploy_needed == 'true' && steps.deploy_config.outputs.configured == 'true'
+        shell: bash
+        env:
+          CPANEL_DEPLOY_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
+          CPANEL_SSH_HOST: ${{ secrets.CPANEL_SSH_HOST }}
+          CPANEL_SSH_PORT: ${{ secrets.CPANEL_SSH_PORT }}
+          CPANEL_SSH_USERNAME: ${{ secrets.CPANEL_SSH_USERNAME }}
+        run: |
+          set -euo pipefail
+          CPANEL_DEPLOY_PATH="${CPANEL_DEPLOY_PATH:-/home/hh0h355mndjv/public_html/}"
+          CPANEL_SSH_HOST="${CPANEL_SSH_HOST:-lastmileinc.ai}"
+          CPANEL_SSH_PORT="${CPANEL_SSH_PORT:-22}"
+          CPANEL_SSH_USERNAME="${CPANEL_SSH_USERNAME:-hh0h355mndjv}"
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/id_ed25519 -p ${CPANEL_SSH_PORT:-22} -o StrictHostKeyChecking=yes" \
+            dist/ \
+            "${CPANEL_SSH_USERNAME}@${CPANEL_SSH_HOST}:${CPANEL_DEPLOY_PATH}"
+
+      - name: Verify live production catalog
+        if: steps.compare_live_catalog.outputs.deploy_needed == 'true' && steps.deploy_config.outputs.configured == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3 4 5; do
+            if node scripts/compare-live-catalog.mjs --require-match; then
+              exit 0
+            fi
+            echo "Production verification attempt $attempt failed. Retrying..."
+            sleep $((attempt * 5))
+          done
+          echo "Production verification failed after deployment."
+          exit 1

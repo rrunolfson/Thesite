@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/hh0h355mndjv/public_html/
-    - export NODEJS_VERSION=20
+    - export NODEJS_VERSION=24
     - source /opt/nvm/nvm.sh
     - nvm use $NODEJS_VERSION
     - npm install
