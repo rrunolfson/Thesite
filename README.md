@@ -21,7 +21,7 @@
 
   Optional GitHub Actions secrets for non-default cPanel environments:
 
-  - `CPANEL_FTP_HOST` default `ftp.lastmileinc.ai`
+  - `CPANEL_FTP_HOST` default `lastmileinc.ai`
   - `CPANEL_FTP_USERNAME` default `rodney@lastmileinc.ai`
   - `CPANEL_DEPLOY_PATH` default `public_html/`
   - `CPANEL_FTP_PORT` optional, defaults to `21`

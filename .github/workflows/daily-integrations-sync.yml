@@ -96,7 +96,7 @@ jobs:
         run: |
           set -euo pipefail
           CPANEL_DEPLOY_PATH="${CPANEL_DEPLOY_PATH:-public_html/}"
-          CPANEL_FTP_HOST="${CPANEL_FTP_HOST:-ftp.lastmileinc.ai}"
+          CPANEL_FTP_HOST="${CPANEL_FTP_HOST:-lastmileinc.ai}"
           CPANEL_FTP_PORT="${CPANEL_FTP_PORT:-21}"
           CPANEL_FTP_USERNAME="${CPANEL_FTP_USERNAME:-rodney@lastmileinc.ai}"
 
@@ -164,7 +164,7 @@ jobs:
         run: |
           set -euo pipefail
           CPANEL_DEPLOY_PATH="${CPANEL_DEPLOY_PATH:-public_html/}"
-          CPANEL_FTP_HOST="${CPANEL_FTP_HOST:-ftp.lastmileinc.ai}"
+          CPANEL_FTP_HOST="${CPANEL_FTP_HOST:-lastmileinc.ai}"
           CPANEL_FTP_PORT="${CPANEL_FTP_PORT:-21}"
           CPANEL_FTP_USERNAME="${CPANEL_FTP_USERNAME:-rodney@lastmileinc.ai}"
           lftp -u "$CPANEL_FTP_USERNAME","$CPANEL_FTP_PASSWORD" -p "$CPANEL_FTP_PORT" "$CPANEL_FTP_HOST" <<EOF
