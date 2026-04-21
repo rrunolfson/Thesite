@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react";
+import { useDeferredValue, useEffect, useState } from "react";
 import { Link } from "react-router";
 import { Helmet } from "react-helmet-async";
 import { AnimatePresence, motion } from "motion/react";
 import {
-  ArrowRight,
   ChevronDown,
   Factory,
   HeartPulse,
+  Search,
   ShoppingCart,
+  Sparkles,
   Truck,
   Users,
+  X,
   Zap,
 } from "lucide-react";
 import { SEO } from "@/app/components/SEO";
@@ -72,6 +74,13 @@ interface IntegrationCatalog {
   industries: IntegrationIndustry[];
 }
 
+interface SearchableVendor {
+  industry_slug: string;
+  industry_name: string;
+  vendor: IntegrationVendor;
+  match_products: IntegrationProduct[];
+}
+
 const integrationsDataUrl = "https://lastmileinc.ai/integrations.json";
 
 const industryIcons: Record<string, typeof Factory> = {
@@ -113,6 +122,8 @@ export function OurIntegrationsPage() {
   const [catalogState, setCatalogState] = useState<"loading" | "ready" | "error">("loading");
   const [selectedIndustryId, setSelectedIndustryId] = useState("");
   const [openVendorNames, setOpenVendorNames] = useState<string[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const deferredSearchQuery = useDeferredValue(searchQuery);
 
   useEffect(() => {
     let isMounted = true;
@@ -162,6 +173,62 @@ export function OurIntegrationsPage() {
     .sort((left, right) => left.industry_name.localeCompare(right.industry_name));
   const selectedIndustry =
     integrationGroups.find((group) => group.industry_slug === selectedIndustryId) ?? integrationGroups[0] ?? null;
+  const normalizedSearchQuery = deferredSearchQuery.trim().toLowerCase();
+  const searchableVendors: SearchableVendor[] = integrationGroups.flatMap((group) =>
+    group.vendors.map((vendor) => ({
+      industry_slug: group.industry_slug,
+      industry_name: group.industry_name,
+      vendor,
+      match_products: vendor.products,
+    })),
+  );
+  const vendorSearchResults = normalizedSearchQuery
+    ? searchableVendors
+        .map((entry) => {
+          const vendorName = entry.vendor.vendor_name.toLowerCase();
+          const vendorSummary = entry.vendor.vendor_summary.toLowerCase();
+          const matchingProducts = entry.vendor.products.filter((product) => {
+            const haystack = [
+              product.product_name,
+              product.product_family,
+              product.integration_type,
+              product.data_coverage_summary,
+            ]
+              .join(" ")
+              .toLowerCase();
+
+            return haystack.includes(normalizedSearchQuery);
+          });
+          const vendorMatches =
+            vendorName.includes(normalizedSearchQuery) ||
+            vendorSummary.includes(normalizedSearchQuery) ||
+            entry.industry_name.toLowerCase().includes(normalizedSearchQuery);
+
+          if (!vendorMatches && matchingProducts.length === 0) {
+            return null;
+          }
+
+          return {
+            ...entry,
+            match_products: matchingProducts,
+            primary_product: matchingProducts[0] ?? entry.vendor.products[0] ?? null,
+            relevanceScore: vendorMatches ? 2 : 1,
+          };
+        })
+        .filter((entry): entry is SearchableVendor & { relevanceScore: number; primary_product: IntegrationProduct | null } => Boolean(entry))
+        .sort((left, right) => {
+          if (right.relevanceScore !== left.relevanceScore) {
+            return right.relevanceScore - left.relevanceScore;
+          }
+
+          if (right.match_products.length !== left.match_products.length) {
+            return right.match_products.length - left.match_products.length;
+          }
+
+          return left.vendor.vendor_name.localeCompare(right.vendor.vendor_name);
+        })
+    : [];
+  const searchResultCount = vendorSearchResults.length;
 
   const vendorCount = selectedIndustry?.vendors.length ?? 0;
   const productCount = selectedIndustry?.vendors.reduce((total, vendor) => total + vendor.products.length, 0) ?? 0;
@@ -224,7 +291,7 @@ export function OurIntegrationsPage() {
         <div className="relative z-10">
           <section className="relative py-14 lg:py-16 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+              <div className="grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
                 <div>
                   <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
                     Our <span className="bg-gradient-to-r from-white via-[#75ADE6] to-[#217ED9] text-transparent bg-clip-text">Integrations</span>
@@ -255,6 +322,43 @@ export function OurIntegrationsPage() {
                   </div>
                 </motion.div>
               </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.08, ease: "easeOut" }}
+                className="mt-8 rounded-[1.75rem] border border-[#75ADE6]/35 bg-slate-950/55 p-2.5 shadow-[0_24px_90px_rgba(15,23,42,0.28)] backdrop-blur-xl"
+              >
+                <div className="flex flex-col gap-2 rounded-[1.25rem] border border-white/5 bg-[linear-gradient(135deg,rgba(33,126,217,0.14),rgba(15,23,42,0.12))] px-4 py-3 sm:px-5 sm:py-3.5">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-[#9cc6ef]">
+                      <Sparkles className="h-3.5 w-3.5" />
+                      Vendor Search
+                    </div>
+                    {searchQuery && (
+                      <button
+                        type="button"
+                        onClick={() => setSearchQuery("")}
+                        className="inline-flex items-center gap-1 rounded-full border border-slate-700/70 bg-slate-950/50 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-300 transition-colors hover:border-slate-500 hover:text-white"
+                      >
+                        <X className="h-3.5 w-3.5" />
+                        Clear
+                      </button>
+                    )}
+                  </div>
+
+                  <label className="group relative block">
+                    <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500 transition-colors group-focus-within:text-[#75ADE6]" />
+                    <input
+                      type="search"
+                      value={searchQuery}
+                      onChange={(event) => setSearchQuery(event.target.value)}
+                      placeholder="Search vendor name, industry, or product family"
+                      className="w-full rounded-2xl border border-slate-700/70 bg-slate-950/75 py-3 pl-12 pr-4 text-base text-white outline-none transition-all placeholder:text-slate-500 focus:border-[#75ADE6]/70 focus:bg-slate-950"
+                    />
+                  </label>
+                </div>
+              </motion.div>
             </div>
           </section>
 
@@ -338,6 +442,96 @@ export function OurIntegrationsPage() {
                       <p className="mt-3 max-w-2xl text-lg text-slate-200 leading-relaxed">
                         Regenerate `public/integrations.json` and reload the page. The public UI depends on that generated file.
                       </p>
+                    </div>
+                  )}
+
+                  {catalogState === "ready" && normalizedSearchQuery && (
+                    <div className="mb-8 rounded-[1.8rem] border border-[#75ADE6]/25 bg-[linear-gradient(180deg,rgba(15,23,42,0.76),rgba(2,6,23,0.88))] p-4 shadow-[0_24px_80px_rgba(2,6,23,0.3)] sm:p-5">
+                      <div className="border-b border-slate-800/80 pb-4">
+                        <div>
+                          <h2 className="text-2xl font-semibold text-white sm:text-3xl">Search Results</h2>
+                          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-400 sm:text-base">
+                            {searchResultCount > 0
+                              ? `Showing vendors and related products that match “${searchQuery.trim()}”.`
+                              : `No vendors or products matched “${searchQuery.trim()}”. Try a broader vendor name, industry, or product family.`}
+                          </p>
+                        </div>
+                      </div>
+
+                      {searchResultCount > 0 ? (
+                        <div className="mt-5 grid gap-4 xl:grid-cols-2">
+                          {vendorSearchResults.map((result, index) => {
+                            const accentClass = getVendorAccentClass(result.vendor.vendor_slug);
+                            const logoMonogram = getVendorMonogram(result.vendor.vendor_name);
+
+                            return (
+                              <motion.div
+                                key={`${result.industry_slug}-${result.vendor.vendor_slug}`}
+                                initial={{ opacity: 0, y: 16 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.24, delay: index * 0.04, ease: "easeOut" }}
+                                className="overflow-hidden rounded-[1.6rem] border border-slate-700/60 bg-slate-950/55"
+                              >
+                                <div className="border-b border-slate-800/80 px-5 py-5">
+                                  <div className="flex items-start gap-4">
+                                    <div className={`h-14 w-14 rounded-2xl bg-gradient-to-br ${accentClass} p-[1px] shadow-[0_10px_24px_rgba(15,23,42,0.22)]`}>
+                                      <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-[15px] bg-white">
+                                        {result.vendor.vendor_logo_src ? (
+                                          <img
+                                            src={result.vendor.vendor_logo_src}
+                                            alt={`${result.vendor.vendor_name} logo`}
+                                            className="h-full w-full object-contain p-2.5"
+                                            referrerPolicy="origin"
+                                          />
+                                        ) : (
+                                          <div className="text-sm font-bold tracking-[0.16em] text-slate-700">{logoMonogram}</div>
+                                        )}
+                                      </div>
+                                    </div>
+
+                                    <div className="min-w-0 flex-1">
+                                      <div className="flex flex-wrap items-center gap-2">
+                                        <h3 className="text-xl font-semibold text-white">{result.vendor.vendor_name}</h3>
+                                        <span className="rounded-full border border-[#217ED9]/30 bg-[#217ED9]/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#9cc6ef]">
+                                          {result.industry_name}
+                                        </span>
+                                      </div>
+                                      <p className="mt-2 text-sm leading-relaxed text-slate-400">{result.vendor.vendor_summary}</p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div className="px-5 py-4">
+                                  {result.primary_product && (
+                                    <div>
+                                      <div className="text-[11px] uppercase tracking-[0.18em] text-slate-500">View In Catalog</div>
+                                      <div className="mt-3 flex flex-wrap gap-2">
+                                        <Link
+                                          to={`/integrations/${result.vendor.vendor_slug}/${result.primary_product.product_slug}`}
+                                          className="rounded-full border border-slate-700/70 bg-slate-900/60 px-3 py-2 text-xs text-slate-200 transition-colors hover:border-[#75ADE6]/50 hover:text-white"
+                                        >
+                                          {result.primary_product.product_name}
+                                        </Link>
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              </motion.div>
+                            );
+                          })}
+                        </div>
+                      ) : (
+                        <div className="mt-5 rounded-[1.4rem] border border-dashed border-slate-700/70 bg-slate-950/40 px-5 py-8 text-center">
+                          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-700/60 bg-slate-900/60 text-slate-400">
+                            <Search className="h-6 w-6" />
+                          </div>
+                          <h3 className="mt-4 text-xl font-semibold text-white">No vendor matches yet</h3>
+                          <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-slate-400">
+                            Search by vendor name, industry, or product family. Example queries: Siemens, Zebra RFID, transportation, or fleet.
+                          </p>
+                        </div>
+                      )}
+
                     </div>
                   )}
 
