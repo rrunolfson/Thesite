@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated_at": "2026-04-18T23:04:02.226Z",
+    "generated_at": "2026-04-21T11:28:24.874Z",
     "source_csv": "data/integrations.csv",
     "source_mode": "local-file",
     "public_json_path": "/integrations.json",
     "public_json_url": "https://lastmileinc.ai/integrations.json",
-    "record_count": 92,
-    "industry_count": 5,
+    "record_count": 109,
+    "industry_count": 7,
     "discovery": {
       "html_meta_name": "lastmile:integrations-data",
       "html_meta_content": "https://lastmileinc.ai/integrations.json",
@@ -1827,6 +1827,36 @@
               ]
             }
           ]
+        },
+        {
+          "vendor_slug": "moxa",
+          "vendor_name": "Moxa",
+          "vendor_domain": "amazonaws.com",
+          "vendor_logo_url": "",
+          "vendor_logo_asset": "",
+          "vendor_logo_src": "https://www.google.com/s2/favicons?domain=amazonaws.com&sz=128",
+          "vendor_summary": "Moxa industrial networking, secure remote access, device management, and edge connectivity APIs for OT infrastructure operations.",
+          "products": [
+            {
+              "product_slug": "dlm-on-premises-api",
+              "product_name": "DLM On-Premises API",
+              "product_family": "DLM (On-Premises)",
+              "integration_status": "built",
+              "integration_type": "OpenAPI",
+              "integration_api_url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
+              "product_summary": "OpenAPI-based device lifecycle management APIs for user authentication, device inventory, project management, device logs, network state, basic device info, jobs, and reporting across distributed industrial assets.",
+              "product_sort_order": 10,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/moxa/dlm-on-premises-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "OpenAPI-based device lifecycle management APIs for user authentication, device inventory, project management, device logs, network state, basic device info, jobs, and reporting across distributed industrial assets.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            }
+          ]
         }
       ]
     },
@@ -2159,6 +2189,248 @@
                 "GPS and telematics streams",
                 "HOS clocks and logs"
               ]
+            }
+          ]
+        },
+        {
+          "vendor_slug": "motive",
+          "vendor_name": "Motive",
+          "vendor_domain": "gomotive.com",
+          "vendor_logo_url": "",
+          "vendor_logo_asset": "",
+          "vendor_logo_src": "https://www.google.com/s2/favicons?domain=gomotive.com&sz=128",
+          "vendor_summary": "Motive fleet operations, compliance, telematics, inspection, maintenance, and webhook APIs for transportation and logistics workflows.",
+          "products": [
+            {
+              "product_slug": "users-api",
+              "product_name": "Users API",
+              "product_family": "Motive Open API",
+              "integration_status": "built",
+              "integration_type": "REST API",
+              "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+              "product_summary": "Open API access for user identities, driver-linked users, and user record synchronization into fleet and operational systems.",
+              "product_sort_order": 10,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/motive/users-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Open API access for user identities, driver-linked users, and user record synchronization into fleet and operational systems.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            },
+            {
+              "product_slug": "vehicles-api",
+              "product_name": "Vehicles API",
+              "product_family": "Motive Open API",
+              "integration_status": "built",
+              "integration_type": "REST API",
+              "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+              "product_summary": "Open API access for vehicle master data, assignments, and fleet asset synchronization across logistics systems.",
+              "product_sort_order": 20,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/motive/vehicles-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Open API access for vehicle master data, assignments, and fleet asset synchronization across logistics systems.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            },
+            {
+              "product_slug": "vehicle-gateway-api",
+              "product_name": "Vehicle Gateway API",
+              "product_family": "Motive Open API",
+              "integration_status": "built",
+              "integration_type": "REST API",
+              "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+              "product_summary": "Vehicle gateway APIs for telematics device identity, status, and associated onboard fleet connectivity data.",
+              "product_sort_order": 30,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/motive/vehicle-gateway-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Vehicle gateway APIs for telematics device identity, status, and associated onboard fleet connectivity data.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            },
+            {
+              "product_slug": "hos-logs-api",
+              "product_name": "HOS Logs API",
+              "product_family": "Motive Open API",
+              "integration_status": "built",
+              "integration_type": "REST API",
+              "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+              "product_summary": "Hours-of-service APIs for ELD compliance, driver duty status logs, and regulatory workflow integration.",
+              "product_sort_order": 40,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/motive/hos-logs-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Hours-of-service APIs for ELD compliance, driver duty status logs, and regulatory workflow integration.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            },
+            {
+              "product_slug": "inspection-reports-api",
+              "product_name": "Inspection Reports API",
+              "product_family": "Motive Open API",
+              "integration_status": "built",
+              "integration_type": "REST API",
+              "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+              "product_summary": "Inspection report APIs for DVIR-style safety workflows, operational inspections, and exception-driven maintenance processes.",
+              "product_sort_order": 50,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/motive/inspection-reports-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Inspection report APIs for DVIR-style safety workflows, operational inspections, and exception-driven maintenance processes.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            },
+            {
+              "product_slug": "fault-codes-api",
+              "product_name": "Fault Codes API",
+              "product_family": "Motive Open API",
+              "integration_status": "built",
+              "integration_type": "REST API",
+              "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+              "product_summary": "Vehicle fault code APIs for maintenance monitoring, service triage, and repair workflow integration.",
+              "product_sort_order": 60,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/motive/fault-codes-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Vehicle fault code APIs for maintenance monitoring, service triage, and repair workflow integration.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            },
+            {
+              "product_slug": "webhooks-api",
+              "product_name": "Webhooks API",
+              "product_family": "Motive Open API",
+              "integration_status": "built",
+              "integration_type": "REST API",
+              "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+              "product_summary": "Webhook delivery for near-real-time operational event streaming from Motive into external transportation systems.",
+              "product_sort_order": 70,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/motive/webhooks-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Webhook delivery for near-real-time operational event streaming from Motive into external transportation systems.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            }
+          ]
+        },
+        {
+          "vendor_slug": "geotab",
+          "vendor_name": "Geotab",
+          "vendor_domain": "geotab.com",
+          "vendor_logo_url": "",
+          "vendor_logo_asset": "",
+          "vendor_logo_src": "https://www.google.com/s2/favicons?domain=geotab.com&sz=128",
+          "vendor_summary": "Geotab fleet telematics, compliance, driver operations, asset, and administrator APIs for connected transportation workflows.",
+          "products": [
+            {
+              "product_slug": "mygeotab-api",
+              "product_name": "MyGeotab API",
+              "product_family": "MyGeotab",
+              "integration_status": "built",
+              "integration_type": "REST API",
+              "integration_api_url": "https://developers.geotab.com/myGeotab/apiReference/objects/",
+              "product_summary": "API reference for vehicles, trips, diagnostics, DVIR, zones, rules, fuel, EV, tachograph, and driver operational data in MyGeotab.",
+              "product_sort_order": 10,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/geotab/mygeotab-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "API reference for vehicles, trips, diagnostics, DVIR, zones, rules, fuel, EV, tachograph, and driver operational data in MyGeotab.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            },
+            {
+              "product_slug": "myadmin-api",
+              "product_name": "MyAdmin API",
+              "product_family": "MyAdmin",
+              "integration_status": "built",
+              "integration_type": "REST API",
+              "integration_api_url": "https://developers.geotab.com/myAdmin/apiReference/objects/",
+              "product_summary": "Administrative API reference for partner, account, database, and provisioning workflows that support Geotab deployment operations.",
+              "product_sort_order": 20,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/geotab/myadmin-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Administrative API reference for partner, account, database, and provisioning workflows that support Geotab deployment operations.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            },
+            {
+              "product_slug": "geotab-drive-integration-reference",
+              "product_name": "Geotab Drive Integration Reference",
+              "product_family": "Geotab Drive",
+              "integration_status": "built",
+              "integration_type": "REST API",
+              "integration_api_url": "https://developers.geotab.com/drive/introduction/",
+              "product_summary": "Developer reference for extending Geotab Drive with in-cab workflow and operational user experiences tied to fleet execution.",
+              "product_sort_order": 30,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/geotab/geotab-drive-integration-reference.json",
+              "data_domains": [],
+              "data_coverage_summary": "Developer reference for extending Geotab Drive with in-cab workflow and operational user experiences tied to fleet execution.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            }
+          ]
+        },
+        {
+          "vendor_slug": "trimble",
+          "vendor_name": "Trimble",
+          "vendor_domain": "trimble.com",
+          "vendor_logo_url": "",
+          "vendor_logo_asset": "",
+          "vendor_logo_src": "https://www.google.com/s2/favicons?domain=trimble.com&sz=128",
+          "vendor_summary": "Trimble developer docs exposing connected machine, device, maintenance, and fleet telemetry APIs for field asset and transportation workflows.",
+          "products": [
+            {
+              "product_slug": "tmt-integration-toolkit-rest-api",
+              "product_name": "TMT Integration Toolkit REST API",
+              "product_family": "TMT",
+              "integration_status": "built",
+              "integration_type": "OpenAPI",
+              "integration_api_url": "https://developer.trimble.com/docs/tmt/openapi/v1.json",
+              "product_summary": "Public Trimble TMT API specification covering unit records, meter readings, positions, faults, DVIR workflows, and maintenance operations for fleet assets.",
+              "product_sort_order": 20,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/trimble/tmt-integration-toolkit-rest-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Public Trimble TMT API specification covering unit records, meter readings, positions, faults, DVIR workflows, and maintenance operations for fleet assets.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
             }
           ]
         }
@@ -2641,6 +2913,137 @@
                 "emissions",
                 "cost records"
               ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industry_slug": "logistics",
+      "industry_name": "Logistics",
+      "industry_description": "RFID asset tracking, edge device telemetry, reader events, and warehouse execution integrations.",
+      "vendors": [
+        {
+          "vendor_slug": "zebra",
+          "vendor_name": "Zebra Technologies",
+          "vendor_domain": "github.io",
+          "vendor_logo_url": "",
+          "vendor_logo_asset": "",
+          "vendor_logo_src": "https://www.google.com/s2/favicons?domain=github.io&sz=128",
+          "vendor_summary": "Zebra RFID and edge device integration docs exposing tag events, reader management events, local REST APIs, and MQTT payload schemas for asset tracking and telemetry workflows.",
+          "products": [
+            {
+              "product_slug": "zebra-rfid-reader-local-rest-api",
+              "product_name": "Zebra RFID Reader Local REST API",
+              "product_family": "Zebra RFID",
+              "integration_status": "built",
+              "integration_type": "REST API",
+              "integration_api_url": "https://zebradevs.github.io/rfid-ziotc-docs/api_ref/local_rest/index.html",
+              "product_summary": "Local REST APIs for reader configuration, service control, and access to Zebra RFID operational data delivery workflows.",
+              "product_sort_order": 10,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/zebra/zebra-rfid-reader-local-rest-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "Local REST APIs for reader configuration, service control, and access to Zebra RFID operational data delivery workflows.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            },
+            {
+              "product_slug": "zebra-rfid-tag-data-events",
+              "product_name": "Zebra RFID Tag Data Events",
+              "product_family": "Zebra RFID",
+              "integration_status": "built",
+              "integration_type": "REST API",
+              "integration_api_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/tag_data_events/index.html",
+              "product_summary": "Schema documentation for RFID tag read events including identifiers, timestamps, antenna context, and asset-tracking telemetry emitted by Zebra readers.",
+              "product_sort_order": 20,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/zebra/zebra-rfid-tag-data-events.json",
+              "data_domains": [],
+              "data_coverage_summary": "Schema documentation for RFID tag read events including identifiers, timestamps, antenna context, and asset-tracking telemetry emitted by Zebra readers.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            },
+            {
+              "product_slug": "zebra-rfid-management-events",
+              "product_name": "Zebra RFID Management Events",
+              "product_family": "Zebra RFID",
+              "integration_status": "built",
+              "integration_type": "REST API",
+              "integration_api_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/async_event_schema/index.html",
+              "product_summary": "Schema documentation for asynchronous management events covering reader status, health, configuration changes, and operational lifecycle telemetry.",
+              "product_sort_order": 30,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/zebra/zebra-rfid-management-events.json",
+              "data_domains": [],
+              "data_coverage_summary": "Schema documentation for asynchronous management events covering reader status, health, configuration changes, and operational lifecycle telemetry.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            },
+            {
+              "product_slug": "zebra-rfid-raw-mqtt-payloads",
+              "product_name": "Zebra RFID RAW MQTT Payloads",
+              "product_family": "Zebra RFID",
+              "integration_status": "built",
+              "integration_type": "MQTT API",
+              "integration_api_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/raw_mqtt_payloads/index.html",
+              "product_summary": "Schema documentation for raw MQTT payloads used to stream RFID observations, reader events, and telemetry into downstream platforms.",
+              "product_sort_order": 40,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/zebra/zebra-rfid-raw-mqtt-payloads.json",
+              "data_domains": [],
+              "data_coverage_summary": "Schema documentation for raw MQTT payloads used to stream RFID observations, reader events, and telemetry into downstream platforms.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industry_slug": "construction",
+      "industry_name": "Construction",
+      "industry_description": "Connected equipment, field assets, jobsite devices, and operational telemetry workflows.",
+      "vendors": [
+        {
+          "vendor_slug": "trimble",
+          "vendor_name": "Trimble",
+          "vendor_domain": "trimble.com",
+          "vendor_logo_url": "",
+          "vendor_logo_asset": "",
+          "vendor_logo_src": "https://www.google.com/s2/favicons?domain=trimble.com&sz=128",
+          "vendor_summary": "Trimble developer docs exposing connected machine, device, maintenance, and fleet telemetry APIs for field asset and transportation workflows.",
+          "products": [
+            {
+              "product_slug": "civil-site-management-api",
+              "product_name": "Civil Site Management API",
+              "product_family": "Civil Site Management",
+              "integration_status": "built",
+              "integration_type": "OpenAPI",
+              "integration_api_url": "https://developer.trimble.com/docs/civil-site-management/openapi/site-management/v0.yaml",
+              "product_summary": "OpenAPI specification for Trimble Site Management covering machines, devices, projects, and last reported geocoordinate positions for connected field assets.",
+              "product_sort_order": 10,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/trimble/civil-site-management-api.json",
+              "data_domains": [],
+              "data_coverage_summary": "OpenAPI specification for Trimble Site Management covering machines, devices, projects, and last reported geocoordinate positions for connected field assets.",
+              "asset_data_available": null,
+              "telemetry_data_available": null,
+              "writeback_supported": null,
+              "key_entities": []
             }
           ]
         }

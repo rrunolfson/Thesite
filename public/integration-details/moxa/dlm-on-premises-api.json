@@ -1,0 +1,44 @@
+{
+  "vendor_slug": "moxa",
+  "vendor_name": "Moxa",
+  "product_slug": "dlm-on-premises-api",
+  "product_name": "DLM On-Premises API",
+  "product_family": "DLM (On-Premises)",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
+  "spec_artifact_url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
+  "detail_completeness": "generated-summary",
+  "data_coverage_summary": "OpenAPI-based device lifecycle management APIs for user authentication, device inventory, project management, device logs, network state, basic device info, jobs, and reporting across distributed industrial assets.",
+  "data_domains": [],
+  "asset_data_available": null,
+  "telemetry_data_available": null,
+  "writeback_supported": null,
+  "key_entities": [],
+  "buyer_guidance": "Use the published DLM (On-Premises) OpenAPI documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
+  "overview": "OpenAPI-based device lifecycle management APIs for user authentication, device inventory, project management, device logs, network state, basic device info, jobs, and reporting across distributed industrial assets. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "available_data": [
+    {
+      "category": "Published API Scope",
+      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "data_points": [
+        "Published summary: OpenAPI-based device lifecycle management APIs for user authentication, device inventory, project management, device logs, network state, basic device info, jobs, and reporting across distributed industrial assets.",
+        "Product family: DLM (On-Premises)",
+        "Integration type: OpenAPI",
+        "Lifecycle status: Built",
+        "Published API documentation is available from the linked source documentation.",
+        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+      ],
+      "relevant_operations": []
+    }
+  ],
+  "ingest_considerations": [],
+  "source_evidence": {
+    "documentation_url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
+    "spec_url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
+    "reviewed_at": "2026-04-21",
+    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+  },
+  "detail_path": "/integration-details/moxa/dlm-on-premises-api.json",
+  "vendor_domain": "amazonaws.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=amazonaws.com&sz=128"
+}
