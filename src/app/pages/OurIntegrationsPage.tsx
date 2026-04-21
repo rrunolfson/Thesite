@@ -103,6 +103,11 @@ const vendorAccentClasses = [
   "from-yellow-300 to-amber-500",
 ];
 
+function buildNoStoreUrl(path: string) {
+  const separator = path.includes("?") ? "&" : "?";
+  return `${path}${separator}ts=${Date.now()}`;
+}
+
 export function OurIntegrationsPage() {
   const [catalog, setCatalog] = useState<IntegrationCatalog | null>(null);
   const [catalogState, setCatalogState] = useState<"loading" | "ready" | "error">("loading");
@@ -114,7 +119,13 @@ export function OurIntegrationsPage() {
 
     const loadCatalog = async () => {
       try {
-        const response = await fetch("/integrations.json");
+        const response = await fetch(buildNoStoreUrl("/integrations.json"), {
+          cache: "no-store",
+          headers: {
+            "Cache-Control": "no-cache",
+            Pragma: "no-cache",
+          },
+        });
 
         if (!response.ok) {
           throw new Error(`Unable to load integrations catalog: ${response.status}`);

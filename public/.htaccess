@@ -65,11 +65,16 @@
     Header set Expires "0"
   </Files>
 
-  <FilesMatch "^(integrations\.json|sitemap\.xml|robots\.txt)$">
+    <FilesMatch "^(.*\.json|sitemap\.xml|robots\.txt)$">
     Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
     Header set Pragma "no-cache"
     Header set Expires "0"
   </FilesMatch>
+
+    <FilesMatch "^.*\.json$">
+      Header unset ETag
+      Header set Last-Modified "Thu, 01 Jan 1970 00:00:00 GMT"
+    </FilesMatch>
 
   <FilesMatch "^(index|integrations|contact|company|signal-2-action)\.md$">
     Header set Content-Type "text/markdown; charset=UTF-8"
@@ -104,3 +109,5 @@
   ExpiresByType application/json "access plus 0 seconds"
   ExpiresByType application/xml "access plus 1 day"
 </IfModule>
+
+FileETag None
