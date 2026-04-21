@@ -13,16 +13,16 @@
 
   The nightly integrations sync now verifies whether the live production catalog matches the generated catalog.
 
-  If production is behind, GitHub Actions deploys `dist/` directly to cPanel over SSH.
+  If production is behind, GitHub Actions deploys `dist/` directly to cPanel over explicit FTPS.
 
   Required GitHub Actions secrets:
 
-  - `CPANEL_SSH_PRIVATE_KEY`
+  - `CPANEL_FTP_PASSWORD`
 
   Optional GitHub Actions secrets for non-default cPanel environments:
 
-  - `CPANEL_SSH_HOST` default `lastmileinc.ai`
-  - `CPANEL_SSH_USERNAME` default `hh0h355mndjv`
-  - `CPANEL_DEPLOY_PATH` default `/home/hh0h355mndjv/public_html/`
-  - `CPANEL_SSH_PORT` optional, defaults to `22`
+  - `CPANEL_FTP_HOST` default `ftp.lastmileinc.ai`
+  - `CPANEL_FTP_USERNAME` default `rodney@lastmileinc.ai`
+  - `CPANEL_DEPLOY_PATH` default `public_html/`
+  - `CPANEL_FTP_PORT` optional, defaults to `21`
   

@@ -89,19 +89,19 @@ jobs:
         shell: bash
         env:
           CPANEL_DEPLOY_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
-          CPANEL_SSH_HOST: ${{ secrets.CPANEL_SSH_HOST }}
-          CPANEL_SSH_PORT: ${{ secrets.CPANEL_SSH_PORT }}
-          CPANEL_SSH_PRIVATE_KEY: ${{ secrets.CPANEL_SSH_PRIVATE_KEY }}
-          CPANEL_SSH_USERNAME: ${{ secrets.CPANEL_SSH_USERNAME }}
+          CPANEL_FTP_HOST: ${{ secrets.CPANEL_FTP_HOST }}
+          CPANEL_FTP_PASSWORD: ${{ secrets.CPANEL_FTP_PASSWORD }}
+          CPANEL_FTP_PORT: ${{ secrets.CPANEL_FTP_PORT }}
+          CPANEL_FTP_USERNAME: ${{ secrets.CPANEL_FTP_USERNAME }}
         run: |
           set -euo pipefail
-          CPANEL_DEPLOY_PATH="${CPANEL_DEPLOY_PATH:-/home/hh0h355mndjv/public_html/}"
-          CPANEL_SSH_HOST="${CPANEL_SSH_HOST:-lastmileinc.ai}"
-          CPANEL_SSH_PORT="${CPANEL_SSH_PORT:-22}"
-          CPANEL_SSH_USERNAME="${CPANEL_SSH_USERNAME:-hh0h355mndjv}"
+          CPANEL_DEPLOY_PATH="${CPANEL_DEPLOY_PATH:-public_html/}"
+          CPANEL_FTP_HOST="${CPANEL_FTP_HOST:-ftp.lastmileinc.ai}"
+          CPANEL_FTP_PORT="${CPANEL_FTP_PORT:-21}"
+          CPANEL_FTP_USERNAME="${CPANEL_FTP_USERNAME:-rodney@lastmileinc.ai}"
 
           missing=()
-          [[ -n "$CPANEL_SSH_PRIVATE_KEY" ]] || missing+=("CPANEL_SSH_PRIVATE_KEY")
+          [[ -n "$CPANEL_FTP_PASSWORD" ]] || missing+=("CPANEL_FTP_PASSWORD")
 
           if [ ${#missing[@]} -gt 0 ]; then
             echo "configured=false" >> "$GITHUB_OUTPUT"
@@ -144,45 +144,38 @@ jobs:
           git commit -m "chore: sync integrations catalog"
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
-      - name: Configure SSH for cPanel deploy
+      - name: Install FTPS deploy client
         if: steps.compare_live_catalog.outputs.deploy_needed == 'true' && steps.deploy_config.outputs.configured == 'true'
         shell: bash
-        env:
-          CPANEL_SSH_HOST: ${{ secrets.CPANEL_SSH_HOST }}
-          CPANEL_SSH_PORT: ${{ secrets.CPANEL_SSH_PORT }}
-          CPANEL_SSH_PRIVATE_KEY: ${{ secrets.CPANEL_SSH_PRIVATE_KEY }}
         run: |
           set -euo pipefail
-          CPANEL_SSH_HOST="${CPANEL_SSH_HOST:-lastmileinc.ai}"
-          CPANEL_SSH_PORT="${CPANEL_SSH_PORT:-22}"
-          install -m 700 -d ~/.ssh
-          if printf '%s' "$CPANEL_SSH_PRIVATE_KEY" | grep -q 'BEGIN OPENSSH PRIVATE KEY\|BEGIN RSA PRIVATE KEY'; then
-            printf '%b' "$CPANEL_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_ed25519
-          else
-            printf '%s' "$CPANEL_SSH_PRIVATE_KEY" | tr -d '\r\n ' | base64 -d > ~/.ssh/id_ed25519
-          fi
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keygen -y -f ~/.ssh/id_ed25519 >/dev/null
-          ssh-keyscan -p "${CPANEL_SSH_PORT:-22}" "$CPANEL_SSH_HOST" >> ~/.ssh/known_hosts
+          sudo apt-get update
+          sudo apt-get install --yes lftp
 
       - name: Deploy built site to production
         if: steps.compare_live_catalog.outputs.deploy_needed == 'true' && steps.deploy_config.outputs.configured == 'true'
         shell: bash
         env:
           CPANEL_DEPLOY_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
-          CPANEL_SSH_HOST: ${{ secrets.CPANEL_SSH_HOST }}
-          CPANEL_SSH_PORT: ${{ secrets.CPANEL_SSH_PORT }}
-          CPANEL_SSH_USERNAME: ${{ secrets.CPANEL_SSH_USERNAME }}
+          CPANEL_FTP_HOST: ${{ secrets.CPANEL_FTP_HOST }}
+          CPANEL_FTP_PASSWORD: ${{ secrets.CPANEL_FTP_PASSWORD }}
+          CPANEL_FTP_PORT: ${{ secrets.CPANEL_FTP_PORT }}
+          CPANEL_FTP_USERNAME: ${{ secrets.CPANEL_FTP_USERNAME }}
         run: |
           set -euo pipefail
-          CPANEL_DEPLOY_PATH="${CPANEL_DEPLOY_PATH:-/home/hh0h355mndjv/public_html/}"
-          CPANEL_SSH_HOST="${CPANEL_SSH_HOST:-lastmileinc.ai}"
-          CPANEL_SSH_PORT="${CPANEL_SSH_PORT:-22}"
-          CPANEL_SSH_USERNAME="${CPANEL_SSH_USERNAME:-hh0h355mndjv}"
-          rsync -az --delete \
-            -e "ssh -i ~/.ssh/id_ed25519 -p ${CPANEL_SSH_PORT:-22} -o StrictHostKeyChecking=yes" \
-            dist/ \
-            "${CPANEL_SSH_USERNAME}@${CPANEL_SSH_HOST}:${CPANEL_DEPLOY_PATH}"
+          CPANEL_DEPLOY_PATH="${CPANEL_DEPLOY_PATH:-public_html/}"
+          CPANEL_FTP_HOST="${CPANEL_FTP_HOST:-ftp.lastmileinc.ai}"
+          CPANEL_FTP_PORT="${CPANEL_FTP_PORT:-21}"
+          CPANEL_FTP_USERNAME="${CPANEL_FTP_USERNAME:-rodney@lastmileinc.ai}"
+          lftp -u "$CPANEL_FTP_USERNAME","$CPANEL_FTP_PASSWORD" -p "$CPANEL_FTP_PORT" "$CPANEL_FTP_HOST" <<EOF
+          set ftp:ssl-force true
+          set ftp:ssl-protect-data true
+          set ssl:verify-certificate no
+          set net:max-retries 2
+          set net:timeout 20
+          mirror --reverse --delete --verbose dist "$CPANEL_DEPLOY_PATH"
+          bye
+          EOF
 
       - name: Verify live production catalog
         if: steps.compare_live_catalog.outputs.deploy_needed == 'true' && steps.deploy_config.outputs.configured == 'true'
