@@ -1,0 +1,56 @@
+{
+  "vendor_slug": "zebra",
+  "vendor_name": "Zebra Technologies",
+  "product_slug": "zebra-rfid-raw-mqtt-payloads",
+  "product_name": "Zebra RFID RAW MQTT Payloads",
+  "product_family": "Zebra RFID",
+  "integration_type": "REST API",
+  "integration_api_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/raw_mqtt_payloads/index.html",
+  "spec_artifact_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/raw_mqtt_payloads/index.html",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The raw MQTT payload schemas include RFID event data such as tag reads and signal details, alongside command and configuration payloads used to control reader behavior.",
+  "data_domains": [
+    "rfid-telemetry",
+    "mqtt-events",
+    "reader-commands"
+  ],
+  "asset_data_available": "Not Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "raw mqtt events",
+    "tag reads",
+    "RSSI and phase data",
+    "reader command payloads",
+    "configuration payloads"
+  ],
+  "buyer_guidance": "Use the raw MQTT payload model when the integration must consume low-level RFID event data and also issue command or configuration payloads back through the Zebra reader messaging channel.",
+  "overview": "The Zebra raw MQTT payload schemas combine low-level RFID event data with command and response payloads. That supports telemetry ingestion from reader activity and documented write-capable command or configuration patterns, but it does not provide a dedicated asset inventory surface. Asset data is Not Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Low-level reader messaging",
+      "description": "The payload schemas cover both event delivery and command-oriented interactions over MQTT.",
+      "data_points": [
+        "RFID event and tag-read payloads",
+        "Signal metadata such as RSSI and phase",
+        "Command payloads for reader operations",
+        "Configuration-oriented request and response payloads"
+      ],
+      "relevant_operations": [
+        "event ingestion",
+        "reader command dispatch",
+        "configuration messaging"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "MQTT payload integrations should account for topic design, ordering, and replay characteristics because this is a message-driven pattern rather than a request-response API.",
+    "Write-capable MQTT commands should be separated from passive telemetry subscribers to reduce operational risk."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/raw_mqtt_payloads/index.html",
+    "spec_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/raw_mqtt_payloads/index.html",
+    "reviewed_at": "2026-04-21",
+    "evidence_notes": "Classification is based on the published raw MQTT payload schemas, which include RFID event payloads plus command and configuration message shapes used to control or alter reader behavior."
+  }
+}

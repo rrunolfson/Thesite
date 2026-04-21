@@ -15,7 +15,7 @@
     "operational-records"
   ],
   "asset_data_available": "Supported",
-  "telemetry_data_available": "Un-Supported",
+  "telemetry_data_available": "Not Supported",
   "writeback_supported": "Supported",
   "key_entities": [
     "reservations",

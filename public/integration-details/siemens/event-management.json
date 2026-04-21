@@ -13,7 +13,7 @@
     "event-records",
     "incident-history"
   ],
-  "asset_data_available": "Un-Supported",
+  "asset_data_available": "Not Supported",
   "telemetry_data_available": "Supported",
   "writeback_supported": "Supported",
   "key_entities": [

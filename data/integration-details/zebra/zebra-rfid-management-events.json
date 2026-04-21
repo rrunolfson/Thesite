@@ -1,0 +1,55 @@
+{
+  "vendor_slug": "zebra",
+  "vendor_name": "Zebra Technologies",
+  "product_slug": "zebra-rfid-management-events",
+  "product_name": "Zebra RFID Management Events",
+  "product_family": "Zebra RFID",
+  "integration_type": "REST API",
+  "integration_api_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/async_event_schema/index.html",
+  "spec_artifact_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/async_event_schema/index.html",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Zebra RFID management events publish asynchronous reader and platform operational events such as heartbeat, GPI and GPO, warnings, errors, and firmware progress notifications.",
+  "data_domains": [
+    "reader-events",
+    "operational-telemetry",
+    "async-notifications"
+  ],
+  "asset_data_available": "Not Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Not Supported",
+  "key_entities": [
+    "heartbeat events",
+    "GPI and GPO events",
+    "warning events",
+    "error events",
+    "firmware progress events"
+  ],
+  "buyer_guidance": "Use management events when the integration needs asynchronous reader health and platform-operational signals, not reader inventory or configuration updates.",
+  "overview": "The Zebra RFID management-event schema is an event-delivery surface for asynchronous operational notifications. It provides telemetry about reader and platform state, but it is not an asset catalog and does not define writeback actions. Asset data is Not Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "available_data": [
+    {
+      "category": "Asynchronous management telemetry",
+      "description": "The schema focuses on platform and reader operational events delivered asynchronously.",
+      "data_points": [
+        "Heartbeat notifications",
+        "GPI and GPO event payloads",
+        "Warning and error notifications",
+        "Firmware update progress events"
+      ],
+      "relevant_operations": [
+        "health monitoring",
+        "event ingestion"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "These schemas are asynchronous event payloads, so downstream systems should treat them as telemetry notifications rather than full reader representations.",
+    "No mutation semantics are documented in the management-event schema itself."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/async_event_schema/index.html",
+    "spec_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/async_event_schema/index.html",
+    "reviewed_at": "2026-04-21",
+    "evidence_notes": "Classification is based on the published asynchronous event schema covering heartbeat, GPI, GPO, warning, error, and firmware-progress notifications with no asset CRUD or command semantics in the schema."
+  }
+}

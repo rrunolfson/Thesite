@@ -1,0 +1,52 @@
+{
+  "vendor_slug": "motive",
+  "vendor_name": "Motive",
+  "product_slug": "fault-codes-api",
+  "product_name": "Fault Codes API",
+  "product_family": "Motive Open API",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "spec_artifact_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The Fault Codes API is a diagnostic event surface for vehicle fault monitoring, service triage, and maintenance escalation workflows rather than a vehicle master-data API.",
+  "data_domains": [
+    "diagnostics",
+    "maintenance-events",
+    "fleet-alerting"
+  ],
+  "asset_data_available": "Not Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Not Supported",
+  "key_entities": [
+    "fault codes",
+    "diagnostic events",
+    "vehicle-linked faults"
+  ],
+  "buyer_guidance": "Use this API when the integration needs maintenance-triggering fault data, not when the primary requirement is syncing vehicle inventory or writing updates back into Motive.",
+  "overview": "Motive positions Fault Codes as a diagnostic and maintenance-monitoring API. The published scope is centered on vehicle-linked fault events and repair triage signals, which makes it a telemetry surface, not an asset master-data or mutation surface. Asset data is Not Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "available_data": [
+    {
+      "category": "Vehicle diagnostics",
+      "description": "The fault-code surface is designed for monitoring and downstream maintenance workflows.",
+      "data_points": [
+        "Vehicle-linked fault events",
+        "Diagnostic codes for service triage",
+        "Maintenance-triggering issue signals"
+      ],
+      "relevant_operations": [
+        "diagnostic monitoring",
+        "maintenance escalation"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Treat this API as an event and diagnostics feed rather than a system-of-record API for fleet inventory.",
+    "Because no writeback workflow is documented for this surface, remediation actions should be routed through external maintenance systems or another Motive API."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "spec_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "reviewed_at": "2026-04-21",
+    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing vehicle fault code retrieval for maintenance monitoring and repair workflows, with no documented asset CRUD or mutation endpoints for this surface."
+  }
+}

@@ -26,9 +26,9 @@ interface IntegrationDetailRecord {
   detail_completeness: "researched" | "generated-summary";
   data_coverage_summary: string;
   data_domains: string[];
-  asset_data_available: "Supported" | "Un-Supported" | "N/A" | null;
-  telemetry_data_available: "Supported" | "Un-Supported" | "N/A" | null;
-  writeback_supported: "Supported" | "Un-Supported" | "N/A" | null;
+  asset_data_available: "Supported" | "Not Supported" | "N/A" | null;
+  telemetry_data_available: "Supported" | "Not Supported" | "N/A" | null;
+  writeback_supported: "Supported" | "Not Supported" | "N/A" | null;
   key_entities: string[];
   buyer_guidance: string;
   overview: string;
@@ -311,7 +311,7 @@ function CapabilityCard({
   );
 }
 
-function formatCapabilityValue(value: "Supported" | "Un-Supported" | "N/A" | null) {
+function formatCapabilityValue(value: "Supported" | "Not Supported" | "N/A" | null) {
   if (value) {
     return value;
   }

@@ -1,0 +1,57 @@
+{
+  "vendor_slug": "geotab",
+  "vendor_name": "Geotab",
+  "product_slug": "myadmin-api",
+  "product_name": "MyAdmin API",
+  "product_family": "MyAdmin",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developers.geotab.com/myAdmin/apiReference/objects/",
+  "spec_artifact_url": "https://developers.geotab.com/myAdmin/apiReference/objects/",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "MyAdmin covers Geotab provisioning and administrative entities such as accounts, databases, devices, and partner operations, and it also documents ingestion objects for third-party GPS, acceleration, log, and status records.",
+  "data_domains": [
+    "administration",
+    "fleet-provisioning",
+    "third-party-telemetry-ingest"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Not Supported",
+  "key_entities": [
+    "accounts",
+    "databases",
+    "devices",
+    "orders",
+    "third-party gps records",
+    "status records"
+  ],
+  "buyer_guidance": "Use MyAdmin for partner provisioning and tenant-level operational administration, especially when onboarding databases or handling third-party telemetry ingest into Geotab-managed environments.",
+  "overview": "MyAdmin is Geotab's administrative surface for partner, account, database, and provisioning workflows. The object reference also includes third-party GPS, acceleration, log, and status record types, which confirms telemetry ingest coverage, but the API is not positioned as a command-and-control surface for remote operational writeback. Asset data is Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "available_data": [
+    {
+      "category": "Administrative and ingest objects",
+      "description": "The published object catalog is oriented around fleet deployment administration with supplemental third-party record ingestion models.",
+      "data_points": [
+        "Partner, account, and database administration objects",
+        "Provisioning and deployment workflow entities",
+        "Device and installation-related records",
+        "Third-party GPS, acceleration, log, and status records"
+      ],
+      "relevant_operations": [
+        "tenant provisioning",
+        "device administration",
+        "telemetry ingest"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface is best treated as an administrative and ingest API rather than a runtime operations API.",
+    "If telemetry ingest is used, validate upstream ownership and data quality because MyAdmin is accepting third-party record submission rather than exposing a native read stream."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developers.geotab.com/myAdmin/apiReference/objects/",
+    "spec_url": "https://developers.geotab.com/myAdmin/apiReference/objects/",
+    "reviewed_at": "2026-04-21",
+    "evidence_notes": "Classification is based on the MyAdmin object reference, which includes administrative entities plus ThirdPartyGpsRecord, ThirdPartyAccelerationRecord, ThirdPartyLogRecord, and ThirdPartyStatusRecord, but does not present the API as a remote control surface."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "vendor_slug": "zebra",
+  "vendor_name": "Zebra Technologies",
+  "product_slug": "zebra-rfid-tag-data-events",
+  "product_name": "Zebra RFID Tag Data Events",
+  "product_family": "Zebra RFID",
+  "integration_type": "REST API",
+  "integration_api_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/tag_data_events/index.html",
+  "spec_artifact_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/tag_data_events/index.html",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Tag Data Events publish RFID read telemetry including tag identifiers, antenna context, signal strength, phase, channel, and access-result metadata.",
+  "data_domains": [
+    "rfid-tag-events",
+    "signal-telemetry",
+    "reader-observations"
+  ],
+  "asset_data_available": "Not Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Not Supported",
+  "key_entities": [
+    "tag reads",
+    "EPC values",
+    "antenna identifiers",
+    "RSSI",
+    "phase",
+    "read counts"
+  ],
+  "buyer_guidance": "Use Tag Data Events when the integration needs high-fidelity RFID observation data for downstream automation, visibility, or correlation against an external asset model.",
+  "overview": "Tag Data Events are a pure telemetry surface for RFID observations. The schema includes detailed read metadata such as EPC, antenna, RSSI, phase, channel, and read count, but it does not define a reader asset catalog or any writeback mechanics. Asset data is Not Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "available_data": [
+    {
+      "category": "RFID observation telemetry",
+      "description": "The event model is centered on low-level RFID tag observations and their signal characteristics.",
+      "data_points": [
+        "Tag EPC and related identifiers",
+        "Antenna and channel context",
+        "RSSI and phase values",
+        "Read counts and access-result metadata"
+      ],
+      "relevant_operations": [
+        "telemetry ingestion",
+        "inventory observation",
+        "signal-quality analysis"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This schema describes observation events, so any physical asset modeling should be handled by correlating the tag data to an external asset registry.",
+    "Because the payloads are read-only event data, writeback should be modeled through a separate Zebra control surface if needed."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/tag_data_events/index.html",
+    "spec_url": "https://zebradevs.github.io/rfid-ziotc-docs/schemas/tag_data_events/index.html",
+    "reviewed_at": "2026-04-21",
+    "evidence_notes": "Classification is based on the published tag-data event schema covering EPC, antenna, RSSI, phase, channel, access-result, and read-count fields, with no documented asset CRUD or mutation semantics."
+  }
+}

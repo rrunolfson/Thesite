@@ -1,0 +1,52 @@
+{
+  "vendor_slug": "motive",
+  "vendor_name": "Motive",
+  "product_slug": "inspection-reports-api",
+  "product_name": "Inspection Reports API",
+  "product_family": "Motive Open API",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "spec_artifact_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Inspection Reports provides DVIR-style inspection records, defect findings, and related workflow state used in safety and maintenance processes.",
+  "data_domains": [
+    "inspections",
+    "safety-workflows",
+    "maintenance-events"
+  ],
+  "asset_data_available": "Not Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "inspection reports",
+    "defect findings",
+    "repair status"
+  ],
+  "buyer_guidance": "Use this API for safety and defect workflows where inspection evidence must be ingested and repair-state updates need to flow back to Motive.",
+  "overview": "Inspection Reports is a workflow-oriented operational record API. It exposes inspection outcomes and defect-state data, and the published reference includes update operations for repair or report status. That makes it a telemetry-plus-workflow-write surface rather than an asset master-data API. Asset data is Not Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Inspection workflow records",
+      "description": "The API is centered on inspection outcomes and follow-up workflow state.",
+      "data_points": [
+        "DVIR-style inspection reports",
+        "Detected defects and exception findings",
+        "Repair and resolution status updates"
+      ],
+      "relevant_operations": [
+        "inspection ingestion",
+        "repair-status updates"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Because this surface includes workflow mutation, integrations should separate report consumption from repair-status update permissions.",
+    "Inspection records are event and workflow artifacts, not a replacement for syncing the core fleet asset catalog."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "spec_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "reviewed_at": "2026-04-21",
+    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary for DVIR-style inspections, plus the documented ability to update inspection-report workflow state."
+  }
+}

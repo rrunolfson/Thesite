@@ -7,36 +7,53 @@
   "integration_type": "REST API",
   "integration_api_url": "https://zebradevs.github.io/rfid-ziotc-docs/api_ref/local_rest/index.html",
   "spec_artifact_url": "https://zebradevs.github.io/rfid-ziotc-docs/api_ref/local_rest/index.html",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "Local REST APIs for reader configuration, service control, and access to Zebra RFID operational data delivery workflows.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Zebra RFID REST API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "Local REST APIs for reader configuration, service control, and access to Zebra RFID operational data delivery workflows. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The local REST API exposes Zebra RFID reader identity, capabilities, operational status, statistics, and configuration endpoints, along with write-capable routes for network, certificates, apps, LEDs, and GPO state.",
+  "data_domains": [
+    "reader-assets",
+    "reader-telemetry",
+    "reader-configuration"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "reader metadata",
+    "reader statistics",
+    "network configuration",
+    "GPI and GPO state",
+    "certificates",
+    "apps"
+  ],
+  "buyer_guidance": "Use the local REST API when you need both reader inventory or health data and controlled local management actions on Zebra RFID infrastructure.",
+  "overview": "The Zebra RFID local REST API includes reader metadata and capabilities, operational statistics and status, and multiple write-capable configuration surfaces such as network settings, certificates, apps, logs, LEDs, and GPO state. That makes it a full asset, telemetry, and writeback API for local reader management. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Reader inventory, health, and control",
+      "description": "The local REST surface combines observability and local administration for RFID readers.",
       "data_points": [
-        "Published summary: Local REST APIs for reader configuration, service control, and access to Zebra RFID operational data delivery workflows.",
-        "Product family: Zebra RFID",
-        "Integration type: REST API",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "Reader identity and capabilities",
+        "Operational statistics, uptime, and status",
+        "Network, timezone, and certificate settings",
+        "LED, app, log, and GPO control endpoints"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "reader synchronization",
+        "status monitoring",
+        "configuration updates",
+        "local device control"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "Because the API is local and write-capable, network placement and credential handling are part of the integration design, not just the data model.",
+    "Administrative actions such as certificate, network, and app changes should be isolated behind privileged workflows."
+  ],
   "source_evidence": {
     "documentation_url": "https://zebradevs.github.io/rfid-ziotc-docs/api_ref/local_rest/index.html",
     "spec_url": "https://zebradevs.github.io/rfid-ziotc-docs/api_ref/local_rest/index.html",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the local REST API reference showing GET surfaces for reader metadata and statistics plus PUT-style configuration and control routes for network settings, certificates, apps, LEDs, logs, and GPO state."
   },
   "detail_path": "/integration-details/zebra/zebra-rfid-reader-local-rest-api.json",
   "vendor_domain": "github.io",

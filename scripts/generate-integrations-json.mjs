@@ -166,7 +166,7 @@ function normalizeCapabilityValue(value) {
   }
 
   if (value === false || String(value ?? "").trim().toLowerCase() === "false") {
-    return "Un-Supported";
+    return "Not Supported";
   }
 
   const normalizedValue = String(value ?? "").trim().toLowerCase();
@@ -175,8 +175,8 @@ function normalizeCapabilityValue(value) {
     return "Supported";
   }
 
-  if (normalizedValue === "un-supported" || normalizedValue === "unsupported") {
-    return "Un-Supported";
+  if (normalizedValue === "not supported" || normalizedValue === "un-supported" || normalizedValue === "unsupported") {
+    return "Not Supported";
   }
 
   if (normalizedValue === "n/a" || normalizedValue === "na") {

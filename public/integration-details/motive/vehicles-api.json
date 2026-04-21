@@ -7,36 +7,47 @@
   "integration_type": "REST API",
   "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
   "spec_artifact_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "Open API access for vehicle master data, assignments, and fleet asset synchronization across logistics systems.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Motive Open API REST API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "Open API access for vehicle master data, assignments, and fleet asset synchronization across logistics systems. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Vehicles API is the fleet master-data surface for vehicle records, assignments, and synchronized asset attributes in Motive.",
+  "data_domains": [
+    "fleet-assets",
+    "vehicle-master-data",
+    "asset-synchronization"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Not Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "vehicles",
+    "vehicle assignments",
+    "asset identifiers"
+  ],
+  "buyer_guidance": "Use Vehicles API as the Motive system-of-record surface for fleet asset synchronization, especially when other event feeds need to be anchored back to vehicle identity.",
+  "overview": "Vehicles API is the master-data surface for fleet vehicles in Motive. It is appropriate for syncing vehicle records and updating those records, but it is not the right surface for telemetry retrieval because the documented scope is configuration and assignment oriented. Asset data is Supported. Telemetry data is Not Supported. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Vehicle master records",
+      "description": "The API is focused on authoritative vehicle identity and assignment data.",
       "data_points": [
-        "Published summary: Open API access for vehicle master data, assignments, and fleet asset synchronization across logistics systems.",
-        "Product family: Motive Open API",
-        "Integration type: REST API",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "Vehicle records",
+        "Vehicle identifiers and assignments",
+        "Fleet asset synchronization fields"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "vehicle sync",
+        "vehicle create or update"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "Treat Vehicles API as the anchor for physical fleet identity and use other Motive APIs for operational events and diagnostics.",
+    "Because the API is write-capable, establish a clear source of truth before allowing external systems to modify vehicle records."
+  ],
   "source_evidence": {
     "documentation_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
     "spec_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing vehicle master data, assignments, and fleet asset synchronization, along with documented create and update operations."
   },
   "detail_path": "/integration-details/motive/vehicles-api.json",
   "vendor_domain": "gomotive.com",

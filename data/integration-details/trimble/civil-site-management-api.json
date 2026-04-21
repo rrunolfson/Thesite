@@ -1,0 +1,54 @@
+{
+  "vendor_slug": "trimble",
+  "vendor_name": "Trimble",
+  "product_slug": "civil-site-management-api",
+  "product_name": "Civil Site Management API",
+  "product_family": "Civil Site Management",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.trimble.com/docs/civil-site-management/openapi/site-management/v0.yaml",
+  "spec_artifact_url": "https://developer.trimble.com/docs/civil-site-management/openapi/site-management/v0.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Trimble Civil Site Management exposes machine, device, project, and coordinate resources for connected field assets, with current position retrieval but no documented mutation verbs in the published spec.",
+  "data_domains": [
+    "field-assets",
+    "site-equipment",
+    "location-telemetry"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Not Supported",
+  "key_entities": [
+    "machines",
+    "devices",
+    "projects",
+    "coordinates"
+  ],
+  "buyer_guidance": "Use Civil Site Management for connected jobsite asset inventory and last-known position context. If downstream control or writeback is needed, plan on a separate operational surface because the published spec is read-only.",
+  "overview": "The published Site Management OpenAPI specification includes machine, device, and project resources, plus a coordinates route for the current position of a machine. That confirms both asset and telemetry retrieval, while the published spec exposes only GET operations and no write verbs. Asset data is Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "available_data": [
+    {
+      "category": "Connected site assets and positions",
+      "description": "The API covers jobsite equipment identity and current-location context for connected field assets.",
+      "data_points": [
+        "Machine records",
+        "Primary reporting device details",
+        "Project resources",
+        "Current machine coordinates"
+      ],
+      "relevant_operations": [
+        "asset synchronization",
+        "position retrieval"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The published API is hypermedia-driven and read-oriented, so integrations should follow linked resources instead of assuming durable handcrafted routes.",
+    "Because no write verbs are present in the published spec, treat the API as a retrieval surface only."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.trimble.com/docs/civil-site-management/openapi/site-management/v0.yaml",
+    "spec_url": "https://developer.trimble.com/docs/civil-site-management/openapi/site-management/v0.yaml",
+    "reviewed_at": "2026-04-21",
+    "evidence_notes": "Classification is based on the published OpenAPI spec showing GET resources for machines, devices, projects, and /machines/{machineId}/coordinates, with no POST, PUT, or PATCH operations in the retrieved spec."
+  }
+}

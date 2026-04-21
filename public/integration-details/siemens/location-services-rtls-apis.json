@@ -16,7 +16,7 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Un-Supported",
+  "writeback_supported": "Not Supported",
   "key_entities": [
     "tracked assets",
     "location fixes",

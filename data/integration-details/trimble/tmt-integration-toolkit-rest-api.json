@@ -1,0 +1,56 @@
+{
+  "vendor_slug": "trimble",
+  "vendor_name": "Trimble",
+  "product_slug": "tmt-integration-toolkit-rest-api",
+  "product_name": "TMT Integration Toolkit REST API",
+  "product_family": "TMT",
+  "integration_type": "OpenAPI",
+  "integration_api_url": "https://developer.trimble.com/docs/tmt/openapi/v1.json",
+  "spec_artifact_url": "https://developer.trimble.com/docs/tmt/openapi/v1.json",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The TMT Integration Toolkit publishes fleet and maintenance-oriented records including unit-related business data, meter readings, positions, faults, DVIR workflows, and maintenance operations, but the published spec fragment is read-only.",
+  "data_domains": [
+    "fleet-assets",
+    "maintenance-telemetry",
+    "transportation-operations"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Not Supported",
+  "key_entities": [
+    "unit records",
+    "meter readings",
+    "positions",
+    "faults",
+    "DVIR workflows"
+  ],
+  "buyer_guidance": "Use TMT when the integration needs Trimble transportation business records and operational fleet signals in one feed, but do not assume the public toolkit spec supports writeback without a separate documented mutation surface.",
+  "overview": "The published TMT Integration Toolkit description and public spec cover fleet business records and operational transportation data such as unit-related records, meter readings, positions, faults, DVIR workflows, and maintenance operations. In the fetched public spec fragment, the routes are exposed as GET-only operations, so the current evidence supports retrieval but not writeback. Asset data is Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "available_data": [
+    {
+      "category": "Fleet business and operational records",
+      "description": "The toolkit spans transportation asset records and operating-state data used in maintenance and compliance workflows.",
+      "data_points": [
+        "Unit-related business records",
+        "Meter readings and vehicle positions",
+        "Fault and DVIR workflow data",
+        "Maintenance-related operational records"
+      ],
+      "relevant_operations": [
+        "fleet synchronization",
+        "maintenance ingestion",
+        "operational reporting"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public spec is broad and business-process heavy, so downstream consumers should map only the slices needed for the target workflow instead of copying the full surface.",
+    "No mutation verbs were confirmed in the retrieved public spec fragment, so writeback should be treated as unsupported unless Trimble publishes a separate documented write surface."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.trimble.com/docs/tmt/openapi/v1.json",
+    "spec_url": "https://developer.trimble.com/docs/tmt/openapi/v1.json",
+    "reviewed_at": "2026-04-21",
+    "evidence_notes": "Classification is based on the public TMT OpenAPI document plus the captured Trimble product summary describing unit records, meter readings, positions, faults, DVIR workflows, and maintenance operations. The retrieved spec fragment did not expose POST, PUT, or PATCH verbs."
+  }
+}

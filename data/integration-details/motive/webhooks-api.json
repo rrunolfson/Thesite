@@ -1,0 +1,52 @@
+{
+  "vendor_slug": "motive",
+  "vendor_name": "Motive",
+  "product_slug": "webhooks-api",
+  "product_name": "Webhooks API",
+  "product_family": "Motive Open API",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "spec_artifact_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Webhooks API is Motive's outbound event-delivery surface for near-real-time operational notifications into external systems.",
+  "data_domains": [
+    "event-streaming",
+    "operational-notifications",
+    "webhook-subscriptions"
+  ],
+  "asset_data_available": "Not Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Not Supported",
+  "key_entities": [
+    "webhook subscriptions",
+    "operational event payloads",
+    "outbound notifications"
+  ],
+  "buyer_guidance": "Use Webhooks API when the requirement is pushing Motive event payloads into downstream systems with low latency, not querying asset inventory or writing actions back to Motive.",
+  "overview": "Motive's Webhooks API is an outbound event-delivery mechanism. It can deliver operational event payloads into another platform, which makes telemetry delivery Supported, but it does not expose asset master data and it is not a writeback path into Motive. Asset data is Not Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "available_data": [
+    {
+      "category": "Outbound operational events",
+      "description": "The webhook surface is intended for near-real-time delivery of Motive operational signals into subscriber endpoints.",
+      "data_points": [
+        "Webhook subscription configuration",
+        "Operational event notifications",
+        "Near-real-time outbound payload delivery"
+      ],
+      "relevant_operations": [
+        "event subscription",
+        "low-latency telemetry delivery"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Webhook consumers should implement authentication, replay protection, and idempotency because the integration pattern is push-based.",
+    "Webhook delivery confirms telemetry flow, but it is not a substitute for an asset master-data API or a writeback channel."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "spec_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "reviewed_at": "2026-04-21",
+    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing webhook delivery for near-real-time operational event streaming. Outbound events count as telemetry delivery, but not as writeback into Motive."
+  }
+}

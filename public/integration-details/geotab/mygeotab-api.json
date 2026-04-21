@@ -7,36 +7,52 @@
   "integration_type": "REST API",
   "integration_api_url": "https://developers.geotab.com/myGeotab/apiReference/objects/",
   "spec_artifact_url": "https://developers.geotab.com/myGeotab/apiReference/objects/",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "API reference for vehicles, trips, diagnostics, DVIR, zones, rules, fuel, EV, tachograph, and driver operational data in MyGeotab.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published MyGeotab REST API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "API reference for vehicles, trips, diagnostics, DVIR, zones, rules, fuel, EV, tachograph, and driver operational data in MyGeotab. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "MyGeotab exposes the core Geotab fleet domain, including vehicles, trips, diagnostics, rules, inspections, faults, fuel, EV, tachograph, and driver operational records, along with message and output objects that enable downstream actions.",
+  "data_domains": [
+    "fleet-assets",
+    "operational-telemetry",
+    "fleet-writeback"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "vehicles",
+    "trips",
+    "diagnostics",
+    "fault data",
+    "DVIR logs",
+    "text messages"
+  ],
+  "buyer_guidance": "MyGeotab is the primary Geotab API for production integrations when you need a mix of fleet master data, live operational records, and selective downstream actions or messages.",
+  "overview": "The MyGeotab object reference covers the main fleet data model for Geotab, including asset records such as devices and vehicles, operational records such as trips, diagnostics, DVIR, exception, and status data, and command-capable objects such as text messages and IOX output content. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Fleet master and operational data",
+      "description": "MyGeotab combines fleet inventory entities with operational logs, diagnostics, and workflow state in a single API surface.",
       "data_points": [
-        "Published summary: API reference for vehicles, trips, diagnostics, DVIR, zones, rules, fuel, EV, tachograph, and driver operational data in MyGeotab.",
-        "Product family: MyGeotab",
-        "Integration type: REST API",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "Vehicle and device records",
+        "Trips, routes, zones, and driver-related entities",
+        "Diagnostics, fault data, status data, and DVIR logs",
+        "Text messaging and output-related command objects"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "fleet sync",
+        "telemetry retrieval",
+        "message and output actions"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "Because MyGeotab spans both read and write workflows, integrations should separate ingestion credentials from operator action credentials where possible.",
+    "Operational record volumes can be high for trips, status, and diagnostics, so downstream consumers should plan for incremental collection."
+  ],
   "source_evidence": {
     "documentation_url": "https://developers.geotab.com/myGeotab/apiReference/objects/",
     "spec_url": "https://developers.geotab.com/myGeotab/apiReference/objects/",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the MyGeotab object reference, which includes vehicle and device entities, trips and diagnostic records, DVIR and fault data, and action-capable objects such as TextMessage and IOX output content."
   },
   "detail_path": "/integration-details/geotab/mygeotab-api.json",
   "vendor_domain": "geotab.com",

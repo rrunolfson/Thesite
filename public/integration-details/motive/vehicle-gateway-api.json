@@ -7,36 +7,47 @@
   "integration_type": "REST API",
   "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
   "spec_artifact_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "Vehicle gateway APIs for telematics device identity, status, and associated onboard fleet connectivity data.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Motive Open API REST API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "Vehicle gateway APIs for telematics device identity, status, and associated onboard fleet connectivity data. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Vehicle Gateway API exposes telematics device identity and connectivity status for onboard gateways, making it useful for tracking gateway inventory and operational health.",
+  "data_domains": [
+    "gateway-assets",
+    "connectivity-status",
+    "telematics-devices"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Not Supported",
+  "key_entities": [
+    "vehicle gateways",
+    "gateway identity",
+    "connection status"
+  ],
+  "buyer_guidance": "Use Vehicle Gateway API when the integration needs the identity and operational status of Motive telematics hardware rather than vehicle master data or downstream commands.",
+  "overview": "Vehicle Gateway API is the Motive surface for onboard telematics device identity and gateway health state. It supports asset modeling for the gateway hardware and provides operational connectivity status, but it is not documented as a command or writeback interface. Asset data is Supported. Telemetry data is Supported. Writeback is Not Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Gateway inventory and status",
+      "description": "The API combines gateway identity with device health and connectivity context.",
       "data_points": [
-        "Published summary: Vehicle gateway APIs for telematics device identity, status, and associated onboard fleet connectivity data.",
-        "Product family: Motive Open API",
-        "Integration type: REST API",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "Gateway identity and associations",
+        "Onboard connectivity status",
+        "Device-level operational state"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "gateway inventory sync",
+        "connectivity monitoring"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "This API is useful for telematics-device observability but does not replace the core vehicle asset API.",
+    "Because no mutation operations are documented for this surface, remediation actions should be handled outside this API."
+  ],
   "source_evidence": {
     "documentation_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
     "spec_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing telematics device identity, status, and onboard fleet connectivity data for vehicle gateways."
   },
   "detail_path": "/integration-details/motive/vehicle-gateway-api.json",
   "vendor_domain": "gomotive.com",

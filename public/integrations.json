@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-21T16:42:16.796Z",
+    "generated_at": "2026-04-21T17:26:11.566Z",
     "source_csv": "data/integrations.csv",
     "source_mode": "local-file",
     "public_json_path": "/integrations.json",
@@ -58,7 +58,7 @@
               ],
               "data_coverage_summary": "REST-style, HTTP-based API used to interact with COMOS data and to access COMOS features. Published API scope centers on COMOS engineering objects, related documentation, and project-side updates.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "engineering objects",
@@ -89,7 +89,7 @@
               ],
               "data_coverage_summary": "The Battery Passport REST API provides standardized access to battery passport records and related organization, connector, analytics, and schema information used to manage battery passport data exchange across the ecosystem.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "battery passports",
@@ -120,7 +120,7 @@
               "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. Published API scope focuses on charger status and depot charging operation monitoring.",
               "asset_data_available": "Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "chargers",
                 "status records",
@@ -147,7 +147,7 @@
               ],
               "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. Published API scope is centered on command and control workflows for depot charging assets.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "chargers",
@@ -175,7 +175,7 @@
               ],
               "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. Published API scope is centered on command and control workflows for depot charging assets.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "chargers",
@@ -203,7 +203,7 @@
               ],
               "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. Published API scope focuses on managing reservation and RFID-related records.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "reservations",
@@ -231,7 +231,7 @@
               ],
               "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. Published API scope focuses on managing reservation and RFID-related records.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "reservations",
@@ -288,7 +288,7 @@
               "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. Published API scope focuses on standards-based exchange of transport and vehicle operation data.",
               "asset_data_available": "Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "vehicles",
                 "status exchanges",
@@ -341,9 +341,9 @@
                 "space-utilization"
               ],
               "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. Published API scope focuses on occupancy and utilization readings from Enlighted sensors.",
-              "asset_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "occupancy readings",
                 "space metrics",
@@ -370,7 +370,7 @@
               "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. Published API scope combines tracked-object context with real-time location services.",
               "asset_data_available": "Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "tracked assets",
                 "location fixes",
@@ -396,7 +396,7 @@
               "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. Published API scope is centered on energy and environmental measurements.",
               "asset_data_available": "Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "energy records",
                 "environmental readings",
@@ -506,7 +506,7 @@
               ],
               "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "edge devices",
@@ -563,7 +563,7 @@
               ],
               "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "edge devices",
@@ -592,7 +592,7 @@
               ],
               "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "edge devices",
@@ -621,7 +621,7 @@
               ],
               "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "edge devices",
@@ -649,7 +649,7 @@
                 "edge-integration"
               ],
               "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. Published API scope is centered on subscribing to or publishing event and message streams.",
-              "asset_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
               "telemetry_data_available": "Supported",
               "writeback_supported": "Supported",
               "key_entities": [
@@ -1029,7 +1029,7 @@
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope focuses on storing and retrieving asset-linked files and metadata.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "files",
@@ -1082,9 +1082,9 @@
                 "subscription-notifications"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is limited to event notifications about telemetry arrival.",
-              "asset_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "timeseries arrival events",
                 "subscriptions",
@@ -1254,7 +1254,7 @@
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope focuses on asset models, types, aspects, and hierarchy administration.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "assets",
@@ -1280,7 +1280,7 @@
                 "incident-history"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope combines event retrieval with event creation and lifecycle updates.",
-              "asset_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
               "telemetry_data_available": "Supported",
               "writeback_supported": "Supported",
               "key_entities": [
@@ -1337,8 +1337,8 @@
                 "attachments"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is centered on case records, assignments, and linked workflow artifacts.",
-              "asset_data_available": "Un-Supported",
-              "telemetry_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "cases",
@@ -1426,7 +1426,7 @@
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope focuses on exporting and sharing analytical data sets.",
               "asset_data_available": "Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "datasets",
                 "exchange payloads",
@@ -1512,7 +1512,7 @@
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope focuses on analytical and intelligence outputs derived from plant data.",
               "asset_data_available": "Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "plant records",
                 "KPI outputs",
@@ -1539,7 +1539,7 @@
               "data_coverage_summary": "Optimize my plant is a Mendix app that can be deployed on Xcelerator as a Siemens operated SaaS offering, or customer can use the Optimize my plant Starter Kit to extend the Optimize my plant app and deploy and operate himself. Published API scope focuses on plant optimization metrics and recommendation-oriented outputs.",
               "asset_data_available": "Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "plant assets",
                 "optimization metrics",
@@ -1592,7 +1592,7 @@
               ],
               "data_coverage_summary": "OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals. Published API scope is centered on protection-setting and related OT configuration records.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "protection settings",
@@ -1620,7 +1620,7 @@
               ],
               "data_coverage_summary": "The Polarion REST API gives external applications an integration layer with Polarion that gives you greater control over the information you use in both Polarion and the applications you use daily. Published API scope focuses on work-item, document, and project lifecycle records.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "work items",
@@ -1649,7 +1649,7 @@
               ],
               "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN. Published API scope focuses on supplier, component, and procurement-side master data plus request workflows.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "suppliers",
@@ -1678,7 +1678,7 @@
               ],
               "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN. Published API scope focuses on products, BOMs, factories, and related master data in SiGREEN.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "products",
@@ -1734,7 +1734,7 @@
               ],
               "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN. Published API scope focuses on PCF records, credentials, and emissions-related product data.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "PCF records",
@@ -1789,7 +1789,7 @@
               ],
               "data_coverage_summary": "Move organizations forward, from a best-guess calculation to a methodical and sound assessment Published API scope focuses on product cost-management records and lifecycle updates.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "cost models",
@@ -1817,7 +1817,7 @@
               ],
               "data_coverage_summary": "Walkinside Services offer a robust 3D visualization platform that transforms how enterprises interact with their digital twins. By enabling dynamic navigation through virtual asset models, Walkinside leverages immersive environments to enhance operational planning, training, and safety assessments. Published API scope focuses on 3D visualization and asset-linked spatial records.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "3D models",
@@ -1849,12 +1849,22 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/moxa/dlm-on-premises-api.json",
-              "data_domains": [],
-              "data_coverage_summary": "OpenAPI-based device lifecycle management APIs for user authentication, device inventory, project management, device logs, network state, basic device info, jobs, and reporting across distributed industrial assets.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "device-assets",
+                "device-telemetry",
+                "device-management"
+              ],
+              "data_coverage_summary": "Moxa DLM on-premises APIs expose managed device inventory, device and network status, logs, and job execution workflows including reboot, firmware, package, and script actions.",
+              "asset_data_available": "Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Supported",
+              "key_entities": [
+                "devices",
+                "network status",
+                "logs",
+                "jobs",
+                "configurations"
+              ]
             }
           ]
         }
@@ -1892,7 +1902,7 @@
                 "alert-management"
               ],
               "data_coverage_summary": "The Nurse Call System API lets you integrate your Nurse Call System into Ward Manager so that advanced communication designed to enhance patient care and safety within healthcare facilities are reflected into Ward Manger. Published API scope focuses on healthcare communication events and their handling in Ward Manager.",
-              "asset_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
               "telemetry_data_available": "Supported",
               "writeback_supported": "Supported",
               "key_entities": [
@@ -1940,7 +1950,7 @@
               "data_coverage_summary": "One key to advancing sustainable transportation is to digitally increase the capacity of rail systems - with less resources. Published API scope combines rail asset context with operational and analytical data for rail systems.",
               "asset_data_available": "Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "trains",
                 "rail assets",
@@ -1981,7 +1991,7 @@
               "data_coverage_summary": "Samsara Telematics exposes per-vehicle snapshot, history, and feed access for GPS, engine state, odometer, fault-code, fuel, and auxiliary-input readings, making it the primary read surface for fleet location and onboard diagnostic telemetry.",
               "asset_data_available": "Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "vehicles",
                 "vehicle stats feeds",
@@ -2145,7 +2155,7 @@
               "data_coverage_summary": "Samsara Payroll is a read-focused integration pattern built from HOS daily summaries, driver-vehicle assignments, and odometer reads so downstream payroll systems can calculate pay from on-duty time, driving time, or miles driven.",
               "asset_data_available": "Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "drivers",
                 "vehicle assignments",
@@ -2213,12 +2223,20 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/motive/users-api.json",
-              "data_domains": [],
-              "data_coverage_summary": "Open API access for user identities, driver-linked users, and user record synchronization into fleet and operational systems.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "identity",
+                "driver-users",
+                "account-administration"
+              ],
+              "data_coverage_summary": "Users API manages user and driver-linked identity records for Motive account synchronization, permissions, and operational identity workflows.",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Supported",
+              "key_entities": [
+                "users",
+                "driver-linked identities",
+                "permissions"
+              ]
             },
             {
               "product_slug": "vehicles-api",
@@ -2232,12 +2250,20 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/motive/vehicles-api.json",
-              "data_domains": [],
-              "data_coverage_summary": "Open API access for vehicle master data, assignments, and fleet asset synchronization across logistics systems.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "fleet-assets",
+                "vehicle-master-data",
+                "asset-synchronization"
+              ],
+              "data_coverage_summary": "Vehicles API is the fleet master-data surface for vehicle records, assignments, and synchronized asset attributes in Motive.",
+              "asset_data_available": "Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Supported",
+              "key_entities": [
+                "vehicles",
+                "vehicle assignments",
+                "asset identifiers"
+              ]
             },
             {
               "product_slug": "vehicle-gateway-api",
@@ -2251,12 +2277,20 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/motive/vehicle-gateway-api.json",
-              "data_domains": [],
-              "data_coverage_summary": "Vehicle gateway APIs for telematics device identity, status, and associated onboard fleet connectivity data.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "gateway-assets",
+                "connectivity-status",
+                "telematics-devices"
+              ],
+              "data_coverage_summary": "Vehicle Gateway API exposes telematics device identity and connectivity status for onboard gateways, making it useful for tracking gateway inventory and operational health.",
+              "asset_data_available": "Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Not Supported",
+              "key_entities": [
+                "vehicle gateways",
+                "gateway identity",
+                "connection status"
+              ]
             },
             {
               "product_slug": "hos-logs-api",
@@ -2270,12 +2304,20 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/motive/hos-logs-api.json",
-              "data_domains": [],
-              "data_coverage_summary": "Hours-of-service APIs for ELD compliance, driver duty status logs, and regulatory workflow integration.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "driver-compliance",
+                "hos-logs",
+                "regulatory-events"
+              ],
+              "data_coverage_summary": "The HOS Logs API is dedicated to driver duty-status and compliance log retrieval for regulatory and operational workflow integration.",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Not Supported",
+              "key_entities": [
+                "HOS logs",
+                "driver duty status",
+                "compliance records"
+              ]
             },
             {
               "product_slug": "inspection-reports-api",
@@ -2289,12 +2331,20 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/motive/inspection-reports-api.json",
-              "data_domains": [],
-              "data_coverage_summary": "Inspection report APIs for DVIR-style safety workflows, operational inspections, and exception-driven maintenance processes.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "inspections",
+                "safety-workflows",
+                "maintenance-events"
+              ],
+              "data_coverage_summary": "Inspection Reports provides DVIR-style inspection records, defect findings, and related workflow state used in safety and maintenance processes.",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Supported",
+              "key_entities": [
+                "inspection reports",
+                "defect findings",
+                "repair status"
+              ]
             },
             {
               "product_slug": "fault-codes-api",
@@ -2308,12 +2358,20 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/motive/fault-codes-api.json",
-              "data_domains": [],
-              "data_coverage_summary": "Vehicle fault code APIs for maintenance monitoring, service triage, and repair workflow integration.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "diagnostics",
+                "maintenance-events",
+                "fleet-alerting"
+              ],
+              "data_coverage_summary": "The Fault Codes API is a diagnostic event surface for vehicle fault monitoring, service triage, and maintenance escalation workflows rather than a vehicle master-data API.",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Not Supported",
+              "key_entities": [
+                "fault codes",
+                "diagnostic events",
+                "vehicle-linked faults"
+              ]
             },
             {
               "product_slug": "webhooks-api",
@@ -2327,12 +2385,20 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/motive/webhooks-api.json",
-              "data_domains": [],
-              "data_coverage_summary": "Webhook delivery for near-real-time operational event streaming from Motive into external transportation systems.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "event-streaming",
+                "operational-notifications",
+                "webhook-subscriptions"
+              ],
+              "data_coverage_summary": "Webhooks API is Motive's outbound event-delivery surface for near-real-time operational notifications into external systems.",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Not Supported",
+              "key_entities": [
+                "webhook subscriptions",
+                "operational event payloads",
+                "outbound notifications"
+              ]
             }
           ]
         },
@@ -2357,12 +2423,23 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/geotab/mygeotab-api.json",
-              "data_domains": [],
-              "data_coverage_summary": "API reference for vehicles, trips, diagnostics, DVIR, zones, rules, fuel, EV, tachograph, and driver operational data in MyGeotab.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "fleet-assets",
+                "operational-telemetry",
+                "fleet-writeback"
+              ],
+              "data_coverage_summary": "MyGeotab exposes the core Geotab fleet domain, including vehicles, trips, diagnostics, rules, inspections, faults, fuel, EV, tachograph, and driver operational records, along with message and output objects that enable downstream actions.",
+              "asset_data_available": "Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Supported",
+              "key_entities": [
+                "vehicles",
+                "trips",
+                "diagnostics",
+                "fault data",
+                "DVIR logs",
+                "text messages"
+              ]
             },
             {
               "product_slug": "myadmin-api",
@@ -2376,12 +2453,23 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/geotab/myadmin-api.json",
-              "data_domains": [],
-              "data_coverage_summary": "Administrative API reference for partner, account, database, and provisioning workflows that support Geotab deployment operations.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "administration",
+                "fleet-provisioning",
+                "third-party-telemetry-ingest"
+              ],
+              "data_coverage_summary": "MyAdmin covers Geotab provisioning and administrative entities such as accounts, databases, devices, and partner operations, and it also documents ingestion objects for third-party GPS, acceleration, log, and status records.",
+              "asset_data_available": "Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Not Supported",
+              "key_entities": [
+                "accounts",
+                "databases",
+                "devices",
+                "orders",
+                "third-party gps records",
+                "status records"
+              ]
             },
             {
               "product_slug": "geotab-drive-integration-reference",
@@ -2395,12 +2483,22 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/geotab/geotab-drive-integration-reference.json",
-              "data_domains": [],
-              "data_coverage_summary": "Developer reference for extending Geotab Drive with in-cab workflow and operational user experiences tied to fleet execution.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "driver-workflows",
+                "fleet-operations",
+                "in-cab-execution"
+              ],
+              "data_coverage_summary": "Geotab Drive exposes driver-facing workflow context tied to vehicles, trips, compliance state, and in-cab interactions, so it can deliver assigned asset context, operational events, and controlled in-cab actions.",
+              "asset_data_available": "Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Supported",
+              "key_entities": [
+                "vehicles",
+                "drivers",
+                "trip context",
+                "compliance state",
+                "in-cab actions"
+              ]
             }
           ]
         },
@@ -2425,12 +2523,22 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/trimble/tmt-integration-toolkit-rest-api.json",
-              "data_domains": [],
-              "data_coverage_summary": "Public Trimble TMT API specification covering unit records, meter readings, positions, faults, DVIR workflows, and maintenance operations for fleet assets.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "fleet-assets",
+                "maintenance-telemetry",
+                "transportation-operations"
+              ],
+              "data_coverage_summary": "The TMT Integration Toolkit publishes fleet and maintenance-oriented records including unit-related business data, meter readings, positions, faults, DVIR workflows, and maintenance operations, but the published spec fragment is read-only.",
+              "asset_data_available": "Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Not Supported",
+              "key_entities": [
+                "unit records",
+                "meter readings",
+                "positions",
+                "faults",
+                "DVIR workflows"
+              ]
             }
           ]
         }
@@ -2502,7 +2610,7 @@
               ],
               "data_coverage_summary": "RESTful API for creating and managing a structural representation of your buildings. Published API scope is centered on building hierarchy, room structure, and 2D layout records.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "campuses",
@@ -2531,8 +2639,8 @@
                 "roles"
               ],
               "data_coverage_summary": "RESTful API for discovering customer, partition, role, and user group access. Published API scope is limited to customer, partition, role, and user-group access context.",
-              "asset_data_available": "Un-Supported",
-              "telemetry_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "N/A",
               "key_entities": [
                 "customers",
@@ -2559,9 +2667,9 @@
                 "security-monitoring"
               ],
               "data_coverage_summary": "RESTful API for reading fire events of your site. Published API scope is focused on retrieving event, alarm, and activity records from connected systems.",
-              "asset_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "events",
                 "alarms",
@@ -2587,9 +2695,9 @@
                 "security-monitoring"
               ],
               "data_coverage_summary": "RESTful API for retrieving events, alarms, and user operations produced by access system and security manager services. Published API scope is focused on retrieving event, alarm, and activity records from connected systems.",
-              "asset_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "events",
                 "alarms",
@@ -2675,7 +2783,7 @@
               "data_coverage_summary": "RESTful API for information about all cloud-enabled Intrusion systems. Published API scope combines intrusion-system inventory context with monitoring-oriented retrieval.",
               "asset_data_available": "Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "intrusion systems",
                 "control panels",
@@ -2701,9 +2809,9 @@
                 "security-monitoring"
               ],
               "data_coverage_summary": "Retrieve security-related data of your connected devices. Published API scope is focused on retrieving event, alarm, and activity records from connected systems.",
-              "asset_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "events",
                 "alarms",
@@ -2729,7 +2837,7 @@
                 "external-measurements"
               ],
               "data_coverage_summary": "RESTful API for setting values of a Point. Published API scope is centered on writing point values and set values into Building X.",
-              "asset_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
               "telemetry_data_available": "Supported",
               "writeback_supported": "Supported",
               "key_entities": [
@@ -2758,7 +2866,7 @@
               ],
               "data_coverage_summary": "RESTful API for creating and interacting with 2D geometry of building floorplans. Published API scope is centered on building hierarchy, room structure, and 2D layout records.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "campuses",
@@ -2789,7 +2897,7 @@
               "data_coverage_summary": "RESTful API for reading energy consumption, emission, or cost data for a location or a meter in the granularity and for the period of interest. Published API scope focuses on retrieving energy, emissions, and cost metrics for reporting and analytics.",
               "asset_data_available": "Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "locations",
                 "meters",
@@ -2818,7 +2926,7 @@
               ],
               "data_coverage_summary": "RESTful API for creating and managing various objects in the Lifecycle Twin. Published API scope focuses on twin objects, attached records, and lifecycle workflow artifacts.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "sites",
@@ -2847,7 +2955,7 @@
                 "webhook-delivery"
               ],
               "data_coverage_summary": "RESTful API for configuring real-time data streaming. Published API scope combines subscription management with real-time point-data delivery.",
-              "asset_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
               "telemetry_data_available": "Supported",
               "writeback_supported": "Supported",
               "key_entities": [
@@ -2905,7 +3013,7 @@
               "data_coverage_summary": "RESTful API for reading energy consumption and cost data for a customer. Published API scope focuses on retrieving energy, emissions, and cost metrics for reporting and analytics.",
               "asset_data_available": "Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "Un-Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "locations",
                 "meters",
@@ -2944,12 +3052,23 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/zebra/zebra-rfid-reader-local-rest-api.json",
-              "data_domains": [],
-              "data_coverage_summary": "Local REST APIs for reader configuration, service control, and access to Zebra RFID operational data delivery workflows.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "reader-assets",
+                "reader-telemetry",
+                "reader-configuration"
+              ],
+              "data_coverage_summary": "The local REST API exposes Zebra RFID reader identity, capabilities, operational status, statistics, and configuration endpoints, along with write-capable routes for network, certificates, apps, LEDs, and GPO state.",
+              "asset_data_available": "Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Supported",
+              "key_entities": [
+                "reader metadata",
+                "reader statistics",
+                "network configuration",
+                "GPI and GPO state",
+                "certificates",
+                "apps"
+              ]
             },
             {
               "product_slug": "zebra-rfid-tag-data-events",
@@ -2963,12 +3082,23 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/zebra/zebra-rfid-tag-data-events.json",
-              "data_domains": [],
-              "data_coverage_summary": "Schema documentation for RFID tag read events including identifiers, timestamps, antenna context, and asset-tracking telemetry emitted by Zebra readers.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "rfid-tag-events",
+                "signal-telemetry",
+                "reader-observations"
+              ],
+              "data_coverage_summary": "Tag Data Events publish RFID read telemetry including tag identifiers, antenna context, signal strength, phase, channel, and access-result metadata.",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Not Supported",
+              "key_entities": [
+                "tag reads",
+                "EPC values",
+                "antenna identifiers",
+                "RSSI",
+                "phase",
+                "read counts"
+              ]
             },
             {
               "product_slug": "zebra-rfid-management-events",
@@ -2982,12 +3112,22 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/zebra/zebra-rfid-management-events.json",
-              "data_domains": [],
-              "data_coverage_summary": "Schema documentation for asynchronous management events covering reader status, health, configuration changes, and operational lifecycle telemetry.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "reader-events",
+                "operational-telemetry",
+                "async-notifications"
+              ],
+              "data_coverage_summary": "Zebra RFID management events publish asynchronous reader and platform operational events such as heartbeat, GPI and GPO, warnings, errors, and firmware progress notifications.",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Not Supported",
+              "key_entities": [
+                "heartbeat events",
+                "GPI and GPO events",
+                "warning events",
+                "error events",
+                "firmware progress events"
+              ]
             },
             {
               "product_slug": "zebra-rfid-raw-mqtt-payloads",
@@ -3001,12 +3141,22 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/zebra/zebra-rfid-raw-mqtt-payloads.json",
-              "data_domains": [],
-              "data_coverage_summary": "Schema documentation for raw MQTT payloads used to stream RFID observations, reader events, and telemetry into downstream platforms.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "rfid-telemetry",
+                "mqtt-events",
+                "reader-commands"
+              ],
+              "data_coverage_summary": "The raw MQTT payload schemas include RFID event data such as tag reads and signal details, alongside command and configuration payloads used to control reader behavior.",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Supported",
+              "key_entities": [
+                "raw mqtt events",
+                "tag reads",
+                "RSSI and phase data",
+                "reader command payloads",
+                "configuration payloads"
+              ]
             }
           ]
         }
@@ -3038,12 +3188,21 @@
               "is_visible": true,
               "has_detail": true,
               "detail_path": "/integration-details/trimble/civil-site-management-api.json",
-              "data_domains": [],
-              "data_coverage_summary": "OpenAPI specification for Trimble Site Management covering machines, devices, projects, and last reported geocoordinate positions for connected field assets.",
-              "asset_data_available": null,
-              "telemetry_data_available": null,
-              "writeback_supported": null,
-              "key_entities": []
+              "data_domains": [
+                "field-assets",
+                "site-equipment",
+                "location-telemetry"
+              ],
+              "data_coverage_summary": "Trimble Civil Site Management exposes machine, device, project, and coordinate resources for connected field assets, with current position retrieval but no documented mutation verbs in the published spec.",
+              "asset_data_available": "Supported",
+              "telemetry_data_available": "Supported",
+              "writeback_supported": "Not Supported",
+              "key_entities": [
+                "machines",
+                "devices",
+                "projects",
+                "coordinates"
+              ]
             }
           ]
         }
@@ -3083,8 +3242,8 @@
                 "location-linked-operations"
               ],
               "data_coverage_summary": "The Work Orders API covers the in-flight repair order lifecycle in ServiceChannel, including search, creation, status and priority updates, scheduling, trade changes, resolution capture, caller and purchase-order updates, project approvals, and nearby or duplicate work-order discovery.",
-              "asset_data_available": "Un-Supported",
-              "telemetry_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "work orders",
@@ -3116,8 +3275,8 @@
                 "subscriber-request-context"
               ],
               "data_coverage_summary": "The Service Requests area covers pre-work-order intake and triage, including request creation, retrieval, updates, status and priority changes, category and trade changes, reassignment options, duplicate detection, and request-info retrieval flows used before dispatch finalization.",
-              "asset_data_available": "Un-Supported",
-              "telemetry_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "work requests",
@@ -3148,8 +3307,8 @@
                 "service-feedback"
               ],
               "data_coverage_summary": "The Providers API covers service-provider network data used for dispatch decisions, including provider creation, provider information lookup, trade-based provider retrieval, dispatch-setting updates, ranking retrieval, recent-provider discovery, and provider feedback collection.",
-              "asset_data_available": "Un-Supported",
-              "telemetry_data_available": "Un-Supported",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "provider records",
@@ -3183,7 +3342,7 @@
               ],
               "data_coverage_summary": "The Assets API provides equipment and asset-management coverage, including location asset retrieval, asset creation and updates, asset-type updates, attachment to work orders and work requests, asset-location changes, asset work-order history, asset tags, validation flags, and meter-reading capture.",
               "asset_data_available": "Supported",
-              "telemetry_data_available": "Un-Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "assets",

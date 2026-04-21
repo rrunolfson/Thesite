@@ -1,0 +1,56 @@
+{
+  "vendor_slug": "moxa",
+  "vendor_name": "Moxa",
+  "product_slug": "dlm-on-premises-api",
+  "product_name": "DLM On-Premises API",
+  "product_family": "ThingsPro DLM",
+  "integration_type": "REST API",
+  "integration_api_url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
+  "spec_artifact_url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Moxa DLM on-premises APIs expose managed device inventory, device and network status, logs, and job execution workflows including reboot, firmware, package, and script actions.",
+  "data_domains": [
+    "device-assets",
+    "device-telemetry",
+    "device-management"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "devices",
+    "network status",
+    "logs",
+    "jobs",
+    "configurations"
+  ],
+  "buyer_guidance": "Use DLM when the integration must manage industrial edge assets end to end, including inventory, operational status, and controlled remote actions such as firmware or script jobs.",
+  "overview": "The published DLM API includes device inventory, status, network, and log surfaces plus job and configuration endpoints for remote operations such as reboot, firmware upgrade, package installation, and script execution. That makes it a full asset, telemetry, and writeback API. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Managed device operations",
+      "description": "DLM combines device observability with administrative control of managed field assets.",
+      "data_points": [
+        "Device inventory and metadata",
+        "Operational status and network information",
+        "Logs and job history",
+        "Reboot, firmware, package, and script job execution"
+      ],
+      "relevant_operations": [
+        "asset synchronization",
+        "status monitoring",
+        "remote management jobs"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Because DLM supports remote operational actions, integrations should separate monitoring use cases from privileged management workflows.",
+    "Job-oriented writeback actions should be audited because they can directly affect device runtime state."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
+    "spec_url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
+    "reviewed_at": "2026-04-21",
+    "evidence_notes": "Classification is based on the published Moxa DLM API docs describing device records, status and log retrieval, plus job and configuration endpoints for reboot, firmware upgrade, package install, and script execution."
+  }
+}

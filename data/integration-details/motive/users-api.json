@@ -1,0 +1,53 @@
+{
+  "vendor_slug": "motive",
+  "vendor_name": "Motive",
+  "product_slug": "users-api",
+  "product_name": "Users API",
+  "product_family": "Motive Open API",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "spec_artifact_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Users API manages user and driver-linked identity records for Motive account synchronization, permissions, and operational identity workflows.",
+  "data_domains": [
+    "identity",
+    "driver-users",
+    "account-administration"
+  ],
+  "asset_data_available": "Not Supported",
+  "telemetry_data_available": "Not Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "users",
+    "driver-linked identities",
+    "permissions"
+  ],
+  "buyer_guidance": "Use Users API for identity and driver-account synchronization; it is useful for provisioning and access alignment, not for equipment telemetry or physical asset modeling.",
+  "overview": "Users API is an identity-management surface for user and driver-linked records. It supports creation and updates to those records, but it is not a physical asset API and does not expose time-varying operational telemetry. Asset data is Not Supported. Telemetry data is Not Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Identity and account records",
+      "description": "The API is focused on user lifecycle and account-level identity synchronization.",
+      "data_points": [
+        "User records",
+        "Driver-linked user identities",
+        "Account and permission-related fields"
+      ],
+      "relevant_operations": [
+        "identity sync",
+        "user provisioning",
+        "account updates"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "This surface is best handled as identity administration, not as a fleet-asset or telemetry feed.",
+    "Because it is write-capable, downstream systems should enforce approval and source-of-truth rules for user updates."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "spec_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "reviewed_at": "2026-04-21",
+    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing user identities and driver-linked user synchronization, along with documented create and update operations."
+  }
+}

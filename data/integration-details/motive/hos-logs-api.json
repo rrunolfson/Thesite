@@ -1,0 +1,52 @@
+{
+  "vendor_slug": "motive",
+  "vendor_name": "Motive",
+  "product_slug": "hos-logs-api",
+  "product_name": "HOS Logs API",
+  "product_family": "Motive Open API",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "spec_artifact_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The HOS Logs API is dedicated to driver duty-status and compliance log retrieval for regulatory and operational workflow integration.",
+  "data_domains": [
+    "driver-compliance",
+    "hos-logs",
+    "regulatory-events"
+  ],
+  "asset_data_available": "Not Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Not Supported",
+  "key_entities": [
+    "HOS logs",
+    "driver duty status",
+    "compliance records"
+  ],
+  "buyer_guidance": "Use HOS Logs when the integration scope is regulatory compliance, dispatch context, or downstream exception handling tied to driver duty state.",
+  "overview": "The HOS Logs API is a telemetry surface for duty-status and compliance records. It does not expose vehicle or equipment inventory as the primary payload, and the documented use is read-focused rather than mutation-oriented. Asset data is Not Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "available_data": [
+    {
+      "category": "Compliance telemetry",
+      "description": "The API is centered on hours-of-service logs and related operational compliance state.",
+      "data_points": [
+        "Driver duty-status history",
+        "Hours-of-service compliance logs",
+        "Regulatory workflow context"
+      ],
+      "relevant_operations": [
+        "compliance ingestion",
+        "regulatory reporting"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "HOS data can be sensitive and regulated, so downstream consumers should align retention and access controls with transportation compliance requirements.",
+    "This surface is read-oriented and should not be treated as a writeback channel for correcting Motive compliance records."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "spec_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "reviewed_at": "2026-04-21",
+    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing HOS APIs for ELD compliance and driver duty-status logs, with no documented asset CRUD or writeback actions for this surface."
+  }
+}

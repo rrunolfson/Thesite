@@ -27,9 +27,9 @@ interface IntegrationProduct {
   detail_path: string;
   data_domains: string[];
   data_coverage_summary: string;
-  asset_data_available: "Supported" | "Un-Supported" | "N/A" | null;
-  telemetry_data_available: "Supported" | "Un-Supported" | "N/A" | null;
-  writeback_supported: "Supported" | "Un-Supported" | "N/A" | null;
+  asset_data_available: "Supported" | "Not Supported" | "N/A" | null;
+  telemetry_data_available: "Supported" | "Not Supported" | "N/A" | null;
+  writeback_supported: "Supported" | "Not Supported" | "N/A" | null;
   key_entities: string[];
 }
 

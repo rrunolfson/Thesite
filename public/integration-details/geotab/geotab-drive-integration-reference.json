@@ -7,36 +7,51 @@
   "integration_type": "REST API",
   "integration_api_url": "https://developers.geotab.com/drive/introduction/",
   "spec_artifact_url": "https://developers.geotab.com/drive/introduction/",
-  "detail_completeness": "generated-summary",
-  "data_coverage_summary": "Developer reference for extending Geotab Drive with in-cab workflow and operational user experiences tied to fleet execution.",
-  "data_domains": [],
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "key_entities": [],
-  "buyer_guidance": "Use the published Geotab Drive REST API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
-  "overview": "Developer reference for extending Geotab Drive with in-cab workflow and operational user experiences tied to fleet execution. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Geotab Drive exposes driver-facing workflow context tied to vehicles, trips, compliance state, and in-cab interactions, so it can deliver assigned asset context, operational events, and controlled in-cab actions.",
+  "data_domains": [
+    "driver-workflows",
+    "fleet-operations",
+    "in-cab-execution"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "vehicles",
+    "drivers",
+    "trip context",
+    "compliance state",
+    "in-cab actions"
+  ],
+  "buyer_guidance": "Use Geotab Drive when the integration needs driver-facing workflow context in addition to back-office fleet data, especially for in-cab user flows and controlled action prompts.",
+  "overview": "The Geotab Drive integration reference is centered on extending the in-cab application experience for fleet execution. It is tied to vehicles and drivers, surfaces operational trip and compliance context, and supports controlled in-app actions and notifications. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "category": "Driver and fleet execution context",
+      "description": "The Drive reference is aimed at extensions that operate inside the driver workflow and therefore has access to assigned vehicle context and active operational state.",
       "data_points": [
-        "Published summary: Developer reference for extending Geotab Drive with in-cab workflow and operational user experiences tied to fleet execution.",
-        "Product family: Geotab Drive",
-        "Integration type: REST API",
-        "Lifecycle status: Built",
-        "Published API documentation is available from the linked source documentation.",
-        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+        "Assigned vehicle and driver context",
+        "Trip and route execution context presented in-cab",
+        "Compliance and operational workflow state",
+        "In-cab prompts, notifications, and action surfaces"
       ],
-      "relevant_operations": []
+      "relevant_operations": [
+        "workflow extensions",
+        "driver prompts",
+        "in-cab actions"
+      ]
     }
   ],
-  "ingest_considerations": [],
+  "ingest_considerations": [
+    "Drive integrations are embedded in a driver-facing application flow, so identity, session scope, and device context matter more than for a purely server-side REST integration.",
+    "Write-enabled experiences should be governed so only approved workflows can trigger in-cab actions or prompts."
+  ],
   "source_evidence": {
     "documentation_url": "https://developers.geotab.com/drive/introduction/",
     "spec_url": "https://developers.geotab.com/drive/introduction/",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+    "evidence_notes": "Classification is based on the Geotab Drive introduction and integration reference, which describe vehicle-linked in-cab workflows, operational context, and extension points for controlled user actions."
   },
   "detail_path": "/integration-details/geotab/geotab-drive-integration-reference.json",
   "vendor_domain": "geotab.com",
