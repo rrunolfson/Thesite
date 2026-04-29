@@ -35,6 +35,7 @@ export const router = createBrowserRouter([
         lazy: lazyPage(() => import("./pages/IntegrationDetailPage"), "IntegrationDetailPage"),
       },
       { path: "company", lazy: lazyPage(() => import("./pages/CompanyPage"), "CompanyPage") },
+      { path: "careers", lazy: lazyPage(() => import("./pages/CareersPage"), "CareersPage") },
       { path: "about", loader: redirectTo("/company") },
       { path: "contact", lazy: lazyPage(() => import("./pages/ContactPage"), "ContactPage") },
       { path: "signal-2-action", lazy: lazyPage(() => import("./pages/Signal2ActionPage"), "Signal2ActionPage") },
