@@ -30,12 +30,18 @@ export function CompanyPage() {
                   Last Mile brings OT telemetry and asset data into enterprise execution workflows, turning real-world events into action, accountability, and measurable outcomes.
                 </p>
                 
-                <div className="mt-8 flex justify-center">
+                <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <Link
                     to="/careers"
                     className="inline-flex items-center gap-2 px-6 py-2.5 rounded-sm bg-[#0a1929]/80 border-2 border-[#217ED9] hover:bg-[#0a1929] text-white font-semibold text-base transition-all"
                   >
                     Careers @ Last Mile
+                  </Link>
+                  <Link
+                    to="/company/newsroom"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-sm border border-slate-600 bg-slate-900/60 text-white font-semibold text-base transition-all hover:border-[#217ED9] hover:bg-slate-900"
+                  >
+                    Visit Newsroom
                   </Link>
                 </div>
               </div>

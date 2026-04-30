@@ -50,6 +50,19 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href="https://store.servicenow.com/store/app/f36920a7975043d06878bd3de053af39"
+              target="_blank"
+              rel="noreferrer"
+              className="ml-2 flex-shrink-0"
+              aria-label="View Last Mile's ServiceNow partner build listing"
+            >
+              <img
+                src="/servicenow-partner-build-badge.png"
+                alt="ServiceNow Partner Build badge"
+                className="h-20 w-auto object-contain"
+              />
+            </a>
           </div>
 
           {/* Mobile Menu Button */}

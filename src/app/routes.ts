@@ -35,6 +35,11 @@ export const router = createBrowserRouter([
         lazy: lazyPage(() => import("./pages/IntegrationDetailPage"), "IntegrationDetailPage"),
       },
       { path: "company", lazy: lazyPage(() => import("./pages/CompanyPage"), "CompanyPage") },
+      { path: "company/newsroom", lazy: lazyPage(() => import("./pages/NewsroomPage"), "NewsroomPage") },
+      {
+        path: "company/newsroom/:slug",
+        lazy: lazyPage(() => import("./pages/PressReleaseDetailPage"), "PressReleaseDetailPage"),
+      },
       { path: "careers", lazy: lazyPage(() => import("./pages/CareersPage"), "CareersPage") },
       { path: "about", loader: redirectTo("/company") },
       { path: "contact", lazy: lazyPage(() => import("./pages/ContactPage"), "ContactPage") },

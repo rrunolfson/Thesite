@@ -7,8 +7,9 @@
     "integrations:validate": "node scripts/generate-integrations-json.mjs --validate-only",
     "integrations:generate": "node scripts/generate-integrations-json.mjs",
     "integrations:sync-sheet": "node scripts/generate-integrations-json.mjs --config data/integrations-source.json --save-source",
-    "build": "npm run integrations:generate && vite build",
-    "dev": "vite"
+    "build": "npm run integrations:generate && npm run newsroom:generate && vite build",
+    "dev": "vite",
+    "newsroom:generate": "node scripts/generate-newsroom-content.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -50,6 +51,7 @@
     "embla-carousel-react": "8.6.0",
     "input-otp": "1.4.2",
     "lucide-react": "0.487.0",
+    "mammoth": "^1.12.0",
     "motion": "12.23.24",
     "next-themes": "0.4.6",
     "react-day-picker": "8.10.1",

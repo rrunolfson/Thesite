@@ -269,8 +269,10 @@ export function CareersPage() {
         <section className="relative py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 reveal">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white from-30% to-[#217ED9] bg-clip-text text-transparent">
-                Careers
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
+                <span className="bg-gradient-to-r from-white via-[#217ED9]/60 to-[#217ED9] text-transparent bg-clip-text">
+                  Careers
+                </span>
               </h1>
               <div className="max-w-4xl mx-auto space-y-6">
                 <p className="text-xl text-slate-400 leading-relaxed">
