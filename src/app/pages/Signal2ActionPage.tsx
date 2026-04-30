@@ -1,37 +1,28 @@
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import { Headphones, Rss, Apple, Music2, Play, Pause } from "lucide-react";
+import { Rss, Apple, Music2, Play, Pause } from "lucide-react";
 import { SEO } from "@/app/components/SEO";
 
 const episodes = [
   {
-    episode: "001",
-    title: "Why ServiceNow Wins In Operations (And What It Means for OT Data)",
-    guest: "Our S-2-A Host Team",
-    description:
-      "How does the addition of operational data maximize the value of enterprise platforms like ServiceNow. We explore the implications and opportunities.",
-    duration: "19:34 mins",
-    date: "March 15, 2026",
-    audioUrl: "https://lastmileinc.ai/audio/why_sn_wins_in_ops.m4a",
-  },
-  {
     episode: "002",
     title: "ServiceNow Beyond IT: The Art of the Possible.",
-    guest: "Our S-2-A Host Team",
+    guest: "S-2-A Hosts\nAmy & Brian",
     description:
       "Take a tour of the broad application of an enterprise platform like ServiceNow, by listening to some amazing use cases across three very different industries.",
     duration: "11:26 mins",
     date: "March 23, 2026",
-    audioUrl: "https://lastmileinc.ai/audio/AI_the_art_of_the_possible.m4a",
+    audioUrl: "/audio/AI_the_art_of_the_possible.m4a",
   },
   {
-    episode: "003",
-    title: "The Partner Opportunity in Operational Intelligence",
-    guest: "Coming Soon",
+    episode: "001",
+    title: "Why ServiceNow Wins In Operations (And What It Means for OT Data)",
+    guest: "S-2-A Hosts\nAmy & Brian",
     description:
-      "SI and delivery partners are sitting on a wave of new NNACV potential. We break down the go-to-market opportunity and how to capture it.",
-    duration: "— mins",
-    date: "Coming Soon",
+      "How does the addition of operational data maximize the value of enterprise platforms like ServiceNow. We explore the implications and opportunities.",
+    duration: "19:34 mins",
+    date: "March 15, 2026",
+    audioUrl: "/audio/why_sn_wins_in_ops.m4a",
   },
 ];
 
@@ -56,45 +47,29 @@ export function Signal2ActionPage() {
 
       <div className="relative z-10">
         {/* Hero */}
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative overflow-hidden pt-16 pb-8 md:pt-20 md:pb-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeInOnScroll>
               <div className="text-center">
-                <div className="inline-flex items-center gap-2 bg-[#217ED9]/10 border border-[#217ED9]/30 rounded-full px-4 py-2 mb-6">
-                  <Headphones className="w-4 h-4 text-[#217ED9]" />
-                  <span className="text-sm text-[#217ED9] font-medium uppercase tracking-wider">Podcast</span>
-                </div>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
                   Signal 2 <span className="bg-gradient-to-r from-white via-[#75ADE6] to-[#217ED9] text-transparent bg-clip-text">Action</span>
                 </h1>
-                <p className="text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-10">
+                <p className="text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
                   Conversations at the intersection of operational technology, enterprise workflows, and the future of industrial intelligence.
                 </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                  {platforms.map((p) => (
-                    <a
-                      key={p.label}
-                      href={p.href}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded border border-slate-700 text-slate-300 hover:border-[#217ED9] hover:text-white transition-colors text-sm font-medium"
-                    >
-                      <p.icon className="w-4 h-4 text-[#217ED9]" />
-                      {p.label}
-                    </a>
-                  ))}
-                </div>
               </div>
             </FadeInOnScroll>
           </div>
         </section>
 
         {/* About the show */}
-        <section className="py-20 border-t border-slate-800">
+        <section className="border-t border-slate-800 pt-8 pb-20 md:pt-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeInOnScroll>
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <h2 className="text-4xl font-bold mb-6">
-                    About the <span className="text-[#217ED9]">Show</span>
+                    About the Show
                   </h2>
                   <p className="text-slate-400 text-lg leading-relaxed mb-6">
                     Signal 2 Action is the podcast for operations leaders, ServiceNow practitioners, and technology partners who are done waiting for their data to do something.
@@ -102,6 +77,18 @@ export function Signal2ActionPage() {
                   <p className="text-slate-400 text-lg leading-relaxed">
                     Each episode features candid conversations with industry experts, enterprise practitioners, and the people building the next generation of operational intelligence and exploring what it really takes to turn raw signals into business outcomes.
                   </p>
+                  <div className="mt-8 flex flex-wrap justify-center gap-4">
+                    {platforms.map((p) => (
+                      <a
+                        key={p.label}
+                        href={p.href}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded border border-slate-700 text-slate-300 hover:border-[#217ED9] hover:text-white transition-colors text-sm font-medium"
+                      >
+                        <p.icon className="w-4 h-4 text-[#217ED9]" />
+                        {p.label}
+                      </a>
+                    ))}
+                  </div>
                 </div>
                 <div className="glass-panel overflow-hidden p-3">
                   <img
@@ -120,25 +107,10 @@ export function Signal2ActionPage() {
         <section className="py-20 border-t border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeInOnScroll>
-              <div className="text-center mb-14">
-                <h2 className="text-4xl font-bold mb-4">
-                  Available <span className="text-[#217ED9]">Episodes</span>
+              <div className="text-center mb-10">
+                <h2 className="text-4xl font-bold text-white">
+                  Available Episodes
                 </h2>
-                <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-6">
-                  Get S-2-A on demand right here or from your favorite podcast platform.
-                </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                  {platforms.map((p) => (
-                    <a
-                      key={p.label}
-                      href={p.href}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded border border-slate-700 text-slate-300 hover:border-[#217ED9] hover:text-white transition-colors text-sm font-medium"
-                    >
-                      <p.icon className="w-4 h-4 text-[#217ED9]" />
-                      {p.label}
-                    </a>
-                  ))}
-                </div>
               </div>
             </FadeInOnScroll>
 
@@ -147,8 +119,8 @@ export function Signal2ActionPage() {
               <div className="hidden md:grid grid-cols-[80px_1fr_160px_100px] gap-6 px-6 pb-3 border-b border-slate-800 text-xs uppercase tracking-wider text-slate-500">
                 <span>Episode</span>
                 <span>Title &amp; Description</span>
-                <span>Guest</span>
-                <span className="text-right">Date</span>
+                <span className="text-center">Guest</span>
+                <span className="text-center">Date</span>
               </div>
             </FadeInOnScroll>
 
@@ -261,10 +233,10 @@ function EpisodeRow({ ep }: { ep: typeof episodes[number] }) {
           </div>
 
           {/* Guest */}
-          <div className="text-slate-400 text-sm">{ep.guest}</div>
+          <div className="text-slate-400 text-sm text-center whitespace-pre-line">{ep.guest}</div>
 
           {/* Date */}
-          <div className="text-slate-500 text-sm md:text-right">{ep.date}</div>
+          <div className="text-slate-500 text-sm text-center whitespace-nowrap">{ep.date}</div>
         </div>
 
         {/* Scrubber — visible after first play click */}
