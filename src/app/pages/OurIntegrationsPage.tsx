@@ -327,36 +327,59 @@ export function OurIntegrationsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.08, ease: "easeOut" }}
-                className="mt-8 rounded-[1.75rem] border border-[#75ADE6]/35 bg-slate-950/55 p-2.5 shadow-[0_24px_90px_rgba(15,23,42,0.28)] backdrop-blur-xl"
+                className="mt-8 grid gap-3 lg:grid-cols-2"
               >
-                <div className="flex flex-col gap-2 rounded-[1.25rem] border border-white/5 bg-[linear-gradient(135deg,rgba(33,126,217,0.14),rgba(15,23,42,0.12))] px-4 py-3 sm:px-5 sm:py-3.5">
-                  <div className="flex items-center justify-between gap-3">
+                <div className="rounded-[1.75rem] border border-[#75ADE6]/35 bg-slate-950/55 p-2.5 shadow-[0_24px_90px_rgba(15,23,42,0.28)] backdrop-blur-xl">
+                  <div className="flex h-full flex-col gap-2 rounded-[1.25rem] border border-white/5 bg-[linear-gradient(135deg,rgba(33,126,217,0.14),rgba(15,23,42,0.12))] px-4 py-3 sm:px-5 sm:py-3.5">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-[#9cc6ef]">
+                        <Sparkles className="h-3.5 w-3.5" />
+                        Vendor Search
+                      </div>
+                      {searchQuery && (
+                        <button
+                          type="button"
+                          onClick={() => setSearchQuery("")}
+                          className="inline-flex items-center gap-1 rounded-full border border-slate-700/70 bg-slate-950/50 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-300 transition-colors hover:border-slate-500 hover:text-white"
+                        >
+                          <X className="h-3.5 w-3.5" />
+                          Clear
+                        </button>
+                      )}
+                    </div>
+
+                    <label className="group relative block">
+                      <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500 transition-colors group-focus-within:text-[#75ADE6]" />
+                      <input
+                        type="search"
+                        value={searchQuery}
+                        onChange={(event) => setSearchQuery(event.target.value)}
+                        placeholder="Search vendor name, industry, or product family"
+                        className="w-full rounded-2xl border border-slate-700/70 bg-slate-950/75 py-3 pl-12 pr-4 text-base text-white outline-none transition-all placeholder:text-slate-500 focus:border-[#75ADE6]/70 focus:bg-slate-950"
+                      />
+                    </label>
+                  </div>
+                </div>
+
+                <div className="rounded-[1.75rem] border border-[#75ADE6]/35 bg-slate-950/55 p-2.5 shadow-[0_24px_90px_rgba(15,23,42,0.28)] backdrop-blur-xl">
+                  <div className="flex h-full flex-col gap-3 rounded-[1.25rem] border border-white/5 bg-[linear-gradient(135deg,rgba(33,126,217,0.14),rgba(15,23,42,0.12))] px-4 py-3 sm:px-5 sm:py-3.5">
                     <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-[#9cc6ef]">
                       <Sparkles className="h-3.5 w-3.5" />
-                      Vendor Search
+                      Request / Submit an Integration
                     </div>
-                    {searchQuery && (
+
+                    <div className="flex flex-1 flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                      <p className="max-w-xl text-sm leading-relaxed text-slate-400">
+                        If you can't find what you are looking for, please request it here. If you have an API doc already, you can share that as well and we will process it for you.
+                      </p>
                       <button
                         type="button"
-                        onClick={() => setSearchQuery("")}
-                        className="inline-flex items-center gap-1 rounded-full border border-slate-700/70 bg-slate-950/50 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-300 transition-colors hover:border-slate-500 hover:text-white"
+                        className="inline-flex items-center justify-center rounded-2xl border border-[#75ADE6]/40 bg-[#217ED9]/15 px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-[#75ADE6]/70 hover:bg-[#217ED9]/25"
                       >
-                        <X className="h-3.5 w-3.5" />
-                        Clear
+                        Submit Request
                       </button>
-                    )}
+                    </div>
                   </div>
-
-                  <label className="group relative block">
-                    <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500 transition-colors group-focus-within:text-[#75ADE6]" />
-                    <input
-                      type="search"
-                      value={searchQuery}
-                      onChange={(event) => setSearchQuery(event.target.value)}
-                      placeholder="Search vendor name, industry, or product family"
-                      className="w-full rounded-2xl border border-slate-700/70 bg-slate-950/75 py-3 pl-12 pr-4 text-base text-white outline-none transition-all placeholder:text-slate-500 focus:border-[#75ADE6]/70 focus:bg-slate-950"
-                    />
-                  </label>
                 </div>
               </motion.div>
             </div>
