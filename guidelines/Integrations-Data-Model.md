@@ -25,6 +25,10 @@
 - `industry_name`: visible label for the industry.
 - `industry_description`: optional short summary for the industry section.
 - `industry_sort_order`: numeric sort order for industries.
+- `industry_function_slug`: stable machine key for the operational function within an industry, for example `erp` or `fleet-iot`.
+- `industry_function_name`: visible label for the industry function, such as `ERP` or `Fleet & IoT`.
+- `industry_function_description`: optional short summary of the operational function.
+- `industry_function_sort_order`: numeric sort order for functions inside an industry.
 - `vendor_slug`: stable machine key for the OEM or vendor.
 - `vendor_name`: visible vendor label.
 - `vendor_domain`: optional canonical vendor domain used for scalable logo enrichment, for example `siemens.com`.
@@ -45,6 +49,18 @@
 - `product_sort_order`: numeric sort order inside the vendor.
 - `is_visible`: `TRUE` or `FALSE` flag for publishing control.
 - `internal_notes`: non-rendered editorial or implementation notes.
+
+## Function Classification Rules
+- The function layer classifies a product row into the buyer workflow or software domain it supports inside a broader industry.
+- Examples include `ERP`, `MES & Production`, `Telehealth`, `Payments & Rails`, and `Last Mile`.
+- Function classification does not replace product-level identity. `product_slug` and `product_name` still define the row grain.
+- The same vendor may legitimately appear in multiple functions within one industry when it supports different operational workflows.
+- Legacy rows that have not yet been classified may leave the function fields blank. The generator should treat those rows as `Unclassified` rather than guessing.
+
+Example:
+
+- Correct: `industry_slug=manufacturing`, `industry_function_name=PLM & Engineering`, `vendor_name=Siemens`, `product_name=Polarion REST API`
+- Incorrect: `industry_slug=manufacturing`, `industry_function_name=Manufacturing`, `vendor_name=Polarion`, `product_name=REST API`
 
 ## Identity Rules
 - `vendor_slug` and `vendor_name` represent the OEM or canonical vendor identity, not a product line, documentation section, or URL path segment.
@@ -89,6 +105,9 @@ The exported JSON should keep the API documentation field directly on each produ
             {
               "product_slug": "atlas-servo-suite",
               "product_name": "Atlas Servo Suite",
+              "industry_function_slug": "mes-production",
+              "industry_function_name": "MES & Production",
+              "industry_function_description": "Execution, production visibility, and plant-floor workflow systems tied to manufacturing throughput.",
               "product_family": "Motion Control",
               "integration_status": "planned",
               "integration_type": "OEM API",
@@ -106,6 +125,11 @@ The exported JSON should keep the API documentation field directly on each produ
   ]
 }
 ```
+
+### Function Summary Layer
+- Each industry in the generated JSON can expose a `functions` array for UI navigation and filtering.
+- Function summaries should list every configured function for that industry, even when current product counts are zero.
+- Rows without explicit function fields should roll into an `Unclassified` function bucket until the research pass assigns them properly.
 
 ## Product Detail Layer
 - Public product detail route shape: `/integrations/:vendorSlug/:productSlug`.
@@ -166,6 +190,7 @@ The exported JSON should keep the API documentation field directly on each produ
 ## AI Agent Requirement
 - AI agents should read `integration_api_url` from the JSON payload, not from visible UI text.
 - The field should always be present on product records, even if the value is blank.
+- Function metadata should also live directly on product records so AI clients and UI filters can reason over operational domains without scraping human-facing prose.
 - If the integration is only planned, `integration_status` can still be `planned` while `integration_api_url` points to the target system documentation.
 - Agents can also discover the JSON endpoint from the page head using the `lastmile:integrations-data` meta tag or the JSON `alternate` link.
 
@@ -229,6 +254,7 @@ If Google returns `401 Unauthorized`, the sheet is not publicly readable yet. A 
 - Public JSON endpoint: `https://lastmileinc.ai/integrations.json`
 - Relative JSON path: `/integrations.json`
 - Public product detail path pattern: `/integration-details/:vendorSlug/:productSlug.json`
+- Public integrations browsing should support industry-first navigation with expand/collapse access to represented functions inside each industry.
 - Static HTML discovery meta tag in `index.html`: `lastmile:integrations-data`
 - Static HTML discovery link in `index.html`: `<link rel="alternate" type="application/json" href="https://lastmileinc.ai/integrations.json">`
 - The React page also mirrors the same discovery values at runtime for consistency.

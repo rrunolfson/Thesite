@@ -53,6 +53,6 @@
     "evidence_notes": "Classification is based on the published asynchronous event schema covering heartbeat, GPI, GPO, warning, error, and firmware-progress notifications with no asset CRUD or command semantics in the schema."
   },
   "detail_path": "/integration-details/zebra/zebra-rfid-management-events.json",
-  "vendor_domain": "github.io",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=github.io&sz=128"
+  "vendor_domain": "zebra.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=zebra.com&sz=128"
 }

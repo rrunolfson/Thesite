@@ -11,9 +11,17 @@ const outputJsonPath = path.join(repoRoot, "public", "integrations.json");
 const detailSourceDir = path.join(repoRoot, "data", "integration-details");
 const detailOutputDir = path.join(repoRoot, "public", "integration-details");
 const defaultConfigPath = path.join(repoRoot, "data", "integrations-source.json");
+const functionTaxonomyPath = path.join(repoRoot, "data", "industry-function-taxonomy.json");
 const publicSiteBaseUrl = "https://lastmileinc.ai";
 const logoDevCdnBaseUrl = "https://img.logo.dev";
 const googleFaviconBaseUrl = "https://www.google.com/s2/favicons";
+const vendorDomainOverrides = new Map([
+  ["fiix", "fiixsoftware.com"],
+  ["nextech", "nextech.com"],
+  ["onshape", "onshape.com"],
+  ["ptc", "ptc.com"],
+  ["zebra", "zebra.com"],
+]);
 const remoteCsvFetchTimeoutMs = 30000;
 const remoteCsvFetchMaxAttempts = 3;
 const requiredHeaders = [
@@ -38,6 +46,12 @@ const requiredHeaders = [
   "is_visible",
   "internal_notes",
 ];
+const optionalFunctionHeaders = [
+  "industry_function_slug",
+  "industry_function_name",
+  "industry_function_description",
+  "industry_function_sort_order",
+];
 const allowedStatuses = new Set(["planned", "in-progress", "built", "deprecated"]);
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const detailRequiredFields = [
@@ -50,6 +64,13 @@ const detailRequiredFields = [
   "overview",
   "source_evidence",
 ];
+const unclassifiedFunction = {
+  industry_function_slug: "unclassified",
+  industry_function_name: "Unclassified",
+  industry_function_description:
+    "Legacy or newly added rows that have not yet been classified into a specific operational function.",
+  industry_function_sort_order: 9999,
+};
 
 function parseArguments(argv) {
   const args = {
@@ -120,6 +141,39 @@ async function readJsonIfExists(targetPath) {
   } catch {
     return null;
   }
+}
+
+async function loadFunctionTaxonomy() {
+  const rawTaxonomy = await readJsonIfExists(functionTaxonomyPath);
+
+  if (!rawTaxonomy || !Array.isArray(rawTaxonomy.industries)) {
+    return new Map();
+  }
+
+  const taxonomy = new Map();
+
+  for (const industry of rawTaxonomy.industries) {
+    const industrySlug = String(industry?.industry_slug ?? "").trim();
+
+    if (!industrySlug) {
+      continue;
+    }
+
+    const definitions = Array.isArray(industry.functions)
+      ? industry.functions
+          .map((definition) => ({
+            industry_function_slug: String(definition?.industry_function_slug ?? "").trim(),
+            industry_function_name: String(definition?.industry_function_name ?? "").trim(),
+            industry_function_description: String(definition?.industry_function_description ?? "").trim(),
+            industry_function_sort_order: toNumber(definition?.industry_function_sort_order ?? 0),
+          }))
+          .filter((definition) => definition.industry_function_slug && definition.industry_function_name)
+      : [];
+
+    taxonomy.set(industrySlug, definitions);
+  }
+
+  return taxonomy;
 }
 
 async function walkJsonFiles(targetDir) {
@@ -463,7 +517,24 @@ function buildDetailRecords(records, manualDetailRecords) {
 }
 
 async function writeIntegrationDetails(detailRecords) {
-  await rm(detailOutputDir, { recursive: true, force: true });
+  const existingFiles = await walkJsonFiles(detailOutputDir);
+  const nextOutputPaths = new Set(
+    Array.from(detailRecords.values()).map((detailRecord) =>
+      path.join(repoRoot, "public", detailRecord.detail_path.replace(/^\//, "")),
+    ),
+  );
+
+  for (const existingFile of existingFiles) {
+    if (nextOutputPaths.has(existingFile)) {
+      continue;
+    }
+
+    try {
+      await rm(existingFile, { force: true });
+    } catch (error) {
+      console.warn(`Warning: unable to remove stale integration detail file ${existingFile}: ${error}`);
+    }
+  }
 
   for (const detailRecord of detailRecords.values()) {
     const outputPath = path.join(repoRoot, "public", detailRecord.detail_path.replace(/^\//, ""));
@@ -635,6 +706,21 @@ function sortByOrder(left, right, leftOrder, rightOrder, leftName, rightName) {
   return String(left[leftName]).localeCompare(String(right[rightName]));
 }
 
+function normalizeFunctionMetadata(record, functionTaxonomy) {
+  const taxonomyMatch = (functionTaxonomy.get(record.industry_slug) ?? []).find(
+    (definition) => definition.industry_function_slug === record.industry_function_slug,
+  );
+
+  return {
+    industry_function_slug: record.industry_function_slug,
+    industry_function_name: record.industry_function_name || taxonomyMatch?.industry_function_name || "",
+    industry_function_description:
+      record.industry_function_description || taxonomyMatch?.industry_function_description || "",
+    industry_function_sort_order:
+      record.industry_function_sort_order || taxonomyMatch?.industry_function_sort_order || 0,
+  };
+}
+
 function normalizeAssetPath(assetPath) {
   const trimmedAssetPath = assetPath.trim().replace(/\\/g, "/").replace(/^\/+/, "");
   return trimmedAssetPath ? `/${trimmedAssetPath}` : "";
@@ -663,6 +749,16 @@ function extractHostname(value) {
   }
 }
 
+function hasPlaceholderUrlSegments(value) {
+  const normalizedValue = String(value ?? "").trim().toLowerCase();
+
+  if (!normalizedValue) {
+    return false;
+  }
+
+  return normalizedValue.includes("...");
+}
+
 function toRegistrableDomain(hostname) {
   const normalizedHostname = normalizeDomain(hostname);
 
@@ -684,6 +780,10 @@ function toRegistrableDomain(hostname) {
 }
 
 function inferVendorDomain(record) {
+  if (vendorDomainOverrides.has(record.vendor_slug)) {
+    return vendorDomainOverrides.get(record.vendor_slug);
+  }
+
   if (record.vendor_domain) {
     return normalizeDomain(record.vendor_domain);
   }
@@ -737,6 +837,13 @@ async function validateRecords(headerRow, dataRows, records, detailRecords) {
     errors.push(`Duplicate CSV columns detected: ${Array.from(new Set(duplicateHeaders)).join(", ")}`);
   }
 
+  const presentFunctionHeaders = optionalFunctionHeaders.filter((header) => headerRow.includes(header));
+  if (presentFunctionHeaders.length > 0 && presentFunctionHeaders.length !== optionalFunctionHeaders.length) {
+    warnings.push(
+      `Function classification columns are only partially present. Expected all of: ${optionalFunctionHeaders.join(", ")}.`,
+    );
+  }
+
   const seenProductKeys = new Set();
   const catalogKeys = new Set();
 
@@ -769,6 +876,18 @@ async function validateRecords(headerRow, dataRows, records, detailRecords) {
       }
     }
 
+    if (record.industry_function_slug && !slugPattern.test(record.industry_function_slug)) {
+      errors.push(
+        `Row ${lineNumber} has invalid industry_function_slug. Use lowercase letters, numbers, and hyphens only.`,
+      );
+    }
+
+    if (record.industry_function_name && !record.industry_function_slug) {
+      warnings.push(
+        `Row ${lineNumber} defines an industry function name without an industry_function_slug. The row will be treated as unclassified.`,
+      );
+    }
+
     if (record.integration_status && !allowedStatuses.has(record.integration_status)) {
       errors.push(`Row ${lineNumber} has unsupported integration_status '${record.integration_status}'.`);
     }
@@ -777,13 +896,17 @@ async function validateRecords(headerRow, dataRows, records, detailRecords) {
       errors.push(`Row ${lineNumber} has invalid vendor_logo_url '${record.vendor_logo_url}'.`);
     }
 
-    if (record.vendor_domain && record.vendor_domain.includes(" ")) {
+    if (record.vendor_domain && String(record.vendor_domain).includes(" ")) {
       errors.push(`Row ${lineNumber} has invalid vendor_domain '${record.vendor_domain}'.`);
     }
 
     if (record.integration_api_url) {
       if (!isHttpUrl(record.integration_api_url)) {
         errors.push(`Row ${lineNumber} has invalid integration_api_url '${record.integration_api_url}'.`);
+      } else if (hasPlaceholderUrlSegments(record.integration_api_url)) {
+        errors.push(
+          `Row ${lineNumber} has placeholder segments in integration_api_url '${record.integration_api_url}'. Replace it with a direct public documentation URL.`,
+        );
       }
     } else {
       warnings.push(`Row ${lineNumber} has a blank integration_api_url. AI agents will not know where to find API docs for ${record.product_name}.`);
@@ -817,22 +940,53 @@ async function validateRecords(headerRow, dataRows, records, detailRecords) {
   return { errors, warnings };
 }
 
-function buildCatalog(records, source, detailRecords) {
+function buildCatalog(records, source, detailRecords, functionTaxonomy) {
   const visibleRecords = records.filter((record) => record.is_visible);
   const industries = new Map();
 
   for (const record of visibleRecords) {
     if (!industries.has(record.industry_slug)) {
+      const functions = new Map();
+
+      for (const definition of functionTaxonomy.get(record.industry_slug) ?? []) {
+        functions.set(definition.industry_function_slug, {
+          ...definition,
+          vendor_slugs: new Set(),
+          product_count: 0,
+        });
+      }
+
       industries.set(record.industry_slug, {
         industry_slug: record.industry_slug,
         industry_name: record.industry_name,
         industry_description: record.industry_description,
         industry_sort_order: record.industry_sort_order,
+        functions,
         vendors: new Map(),
       });
     }
 
     const industry = industries.get(record.industry_slug);
+    const functionMetadata = record.industry_function_slug
+      ? {
+          industry_function_slug: record.industry_function_slug,
+          industry_function_name: record.industry_function_name,
+          industry_function_description: record.industry_function_description,
+          industry_function_sort_order: record.industry_function_sort_order,
+        }
+      : unclassifiedFunction;
+
+    if (!industry.functions.has(functionMetadata.industry_function_slug)) {
+      industry.functions.set(functionMetadata.industry_function_slug, {
+        ...functionMetadata,
+        vendor_slugs: new Set(),
+        product_count: 0,
+      });
+    }
+
+    const functionSummary = industry.functions.get(functionMetadata.industry_function_slug);
+    functionSummary.vendor_slugs.add(record.vendor_slug);
+    functionSummary.product_count += 1;
 
     if (!industry.vendors.has(record.vendor_slug)) {
       industry.vendors.set(record.vendor_slug, {
@@ -851,6 +1005,10 @@ function buildCatalog(records, source, detailRecords) {
     industry.vendors.get(record.vendor_slug).products.push({
       product_slug: record.product_slug,
       product_name: record.product_name,
+      industry_function_slug: record.industry_function_slug,
+      industry_function_name: record.industry_function_name,
+      industry_function_description: record.industry_function_description,
+      industry_function_sort_order: record.industry_function_sort_order,
       product_family: record.product_family,
       integration_status: record.integration_status,
       integration_type: record.integration_type,
@@ -879,6 +1037,22 @@ function buildCatalog(records, source, detailRecords) {
       industry_slug: industry.industry_slug,
       industry_name: industry.industry_name,
       industry_description: industry.industry_description,
+      functions: Array.from(industry.functions.values())
+        .sort((left, right) =>
+          sortByOrder(
+            left,
+            right,
+            left.industry_function_sort_order,
+            right.industry_function_sort_order,
+            "industry_function_name",
+            "industry_function_name",
+          ),
+        )
+        .map(({ vendor_slugs, ...definition }) => ({
+          ...definition,
+          vendor_count: vendor_slugs.size,
+          product_count: definition.product_count,
+        })),
       vendors: Array.from(industry.vendors.values())
         .sort((left, right) => sortByOrder(left, right, left.vendor_sort_order, right.vendor_sort_order, "vendor_name", "vendor_name"))
         .map((vendor) => ({
@@ -904,6 +1078,7 @@ function buildCatalog(records, source, detailRecords) {
       public_json_url: `${publicSiteBaseUrl}/integrations.json`,
       record_count: visibleRecords.length,
       industry_count: catalogIndustries.length,
+      function_count: catalogIndustries.reduce((total, industry) => total + industry.functions.length, 0),
       discovery: {
         html_meta_name: "lastmile:integrations-data",
         html_meta_content: `${publicSiteBaseUrl}/integrations.json`,
@@ -916,6 +1091,8 @@ function buildCatalog(records, source, detailRecords) {
         vendor_domain: "Resolved vendor domain used for scalable logo enrichment and vendor identity mapping.",
         vendor_logo_src: "Resolved public logo path or external image URL used by the UI when available.",
         detail_path: "Route-addressable JSON detail payload for a specific OEM product integration.",
+        industry_function_slug: "Stable machine key for the operational function inside an industry, used for filtering and navigation.",
+        industry_function_name: "Visible operational function label used by the UI and machine-readable clients.",
         data_domains: "Normalized capability tags describing the main data domains exposed by the integration.",
         data_coverage_summary: "Short buyer-facing summary of what data can be accessed via the integration.",
       },
@@ -979,6 +1156,7 @@ async function main() {
   const configuredSourceUrl = config?.csv_url && typeof config.csv_url === "string" ? config.csv_url.trim() : "";
   const shouldSaveSource = args.saveSource || config?.save_source_copy === true;
   const source = await readSourceCsv(args.sourceUrl || configuredSourceUrl);
+  const functionTaxonomy = await loadFunctionTaxonomy();
   const manualDetailRecords = await loadIntegrationDetails();
   const csvContent = source.csvContent;
   const rows = parseCsv(csvContent);
@@ -996,6 +1174,10 @@ async function main() {
     return {
       ...rawRecord,
       integration_status: rawRecord.integration_status.toLowerCase(),
+      industry_function_slug: String(rawRecord.industry_function_slug ?? "").trim(),
+      industry_function_name: String(rawRecord.industry_function_name ?? "").trim(),
+      industry_function_description: String(rawRecord.industry_function_description ?? "").trim(),
+      industry_function_sort_order: toNumber(rawRecord.industry_function_sort_order),
       vendor_domain: inferVendorDomain(rawRecord),
       vendor_logo_asset: normalizeAssetPath(rawRecord.vendor_logo_asset),
       industry_sort_order: toNumber(rawRecord.industry_sort_order),
@@ -1003,10 +1185,15 @@ async function main() {
       product_sort_order: toNumber(rawRecord.product_sort_order),
       is_visible: toBoolean(rawRecord.is_visible),
     };
-  }).map((record) => ({
-    ...record,
-    vendor_logo_src: resolveVendorLogoSrc(record, logoConfig),
-  }));
+  })
+    .map((record) => ({
+      ...record,
+      ...normalizeFunctionMetadata(record, functionTaxonomy),
+    }))
+    .map((record) => ({
+      ...record,
+      vendor_logo_src: resolveVendorLogoSrc(record, logoConfig),
+    }));
 
   const generatedAndManualDetailRecords = buildDetailRecords(records, manualDetailRecords);
   const vendorLookup = buildVendorLookup(records);
@@ -1036,7 +1223,7 @@ async function main() {
   }
 
   const existingCatalog = await readJsonIfExists(outputJsonPath);
-  const nextCatalog = buildCatalog(records, source, detailRecords);
+  const nextCatalog = buildCatalog(records, source, detailRecords, functionTaxonomy);
   const catalog = preserveCatalogTimestamp(nextCatalog, existingCatalog);
 
   await mkdir(path.dirname(outputJsonPath), { recursive: true });

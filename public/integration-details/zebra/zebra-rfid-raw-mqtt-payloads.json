@@ -54,6 +54,6 @@
     "evidence_notes": "Classification is based on the published raw MQTT payload schemas, which include RFID event payloads plus command and configuration message shapes used to control or alter reader behavior."
   },
   "detail_path": "/integration-details/zebra/zebra-rfid-raw-mqtt-payloads.json",
-  "vendor_domain": "github.io",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=github.io&sz=128"
+  "vendor_domain": "zebra.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=zebra.com&sz=128"
 }

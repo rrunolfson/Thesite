@@ -55,6 +55,6 @@
     "evidence_notes": "Classification is based on the published tag-data event schema covering EPC, antenna, RSSI, phase, channel, access-result, and read-count fields, with no documented asset CRUD or mutation semantics."
   },
   "detail_path": "/integration-details/zebra/zebra-rfid-tag-data-events.json",
-  "vendor_domain": "github.io",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=github.io&sz=128"
+  "vendor_domain": "zebra.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=zebra.com&sz=128"
 }

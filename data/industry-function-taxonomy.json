@@ -1,0 +1,468 @@
+{
+  "industries": [
+    {
+      "industry_slug": "manufacturing",
+      "functions": [
+        {
+          "industry_function_slug": "erp",
+          "industry_function_name": "ERP",
+          "industry_function_description": "Enterprise planning, order orchestration, and system-of-record workflows for manufacturing operations.",
+          "industry_function_sort_order": 10
+        },
+        {
+          "industry_function_slug": "mes-production",
+          "industry_function_name": "MES & Production",
+          "industry_function_description": "Execution, production visibility, and plant-floor workflow systems tied to manufacturing throughput.",
+          "industry_function_sort_order": 20
+        },
+        {
+          "industry_function_slug": "quality-qms",
+          "industry_function_name": "Quality",
+          "industry_function_description": "Quality management, compliance, and inspection workflows for manufactured products and process control.",
+          "industry_function_sort_order": 30
+        },
+        {
+          "industry_function_slug": "supply-chain",
+          "industry_function_name": "Supply Chain",
+          "industry_function_description": "Planning, sourcing, and supply coordination systems that keep materials and production aligned.",
+          "industry_function_sort_order": 40
+        },
+        {
+          "industry_function_slug": "inventory-wms",
+          "industry_function_name": "Inventory & WMS",
+          "industry_function_description": "Inventory accuracy, warehouse execution, and material movement systems.",
+          "industry_function_sort_order": 50
+        },
+        {
+          "industry_function_slug": "maintenance-cmms",
+          "industry_function_name": "Maintenance",
+          "industry_function_description": "Asset uptime, maintenance planning, and work-order execution systems.",
+          "industry_function_sort_order": 60
+        },
+        {
+          "industry_function_slug": "plm-engineering",
+          "industry_function_name": "PLM & Engineering",
+          "industry_function_description": "Engineering, digital thread, and lifecycle management systems for industrial products and assets.",
+          "industry_function_sort_order": 70
+        },
+        {
+          "industry_function_slug": "finance-accounting",
+          "industry_function_name": "Finance & Accounting",
+          "industry_function_description": "Financial close, accounting, and planning platforms used in manufacturing businesses.",
+          "industry_function_sort_order": 80
+        },
+        {
+          "industry_function_slug": "safety-ehs",
+          "industry_function_name": "Safety",
+          "industry_function_description": "Environment, health, and safety systems for incident, risk, and compliance workflows.",
+          "industry_function_sort_order": 90
+        },
+        {
+          "industry_function_slug": "workforce-training",
+          "industry_function_name": "Workforce & Training",
+          "industry_function_description": "Frontline training, digital work instructions, and workforce enablement systems.",
+          "industry_function_sort_order": 100
+        }
+      ]
+    },
+    {
+      "industry_slug": "healthcare",
+      "functions": [
+        {
+          "industry_function_slug": "ehr-clinical-data",
+          "industry_function_name": "EHR & Clinical Data",
+          "industry_function_description": "Electronic health record, clinical workflow, and patient data exchange platforms.",
+          "industry_function_sort_order": 10
+        },
+        {
+          "industry_function_slug": "practice-management",
+          "industry_function_name": "Practice Management",
+          "industry_function_description": "Scheduling, administration, and operational systems for ambulatory and specialty practices.",
+          "industry_function_sort_order": 20
+        },
+        {
+          "industry_function_slug": "telehealth",
+          "industry_function_name": "Telehealth",
+          "industry_function_description": "Virtual care, telemedicine, and remote patient engagement platforms.",
+          "industry_function_sort_order": 30
+        },
+        {
+          "industry_function_slug": "population-health",
+          "industry_function_name": "Population Health",
+          "industry_function_description": "Care management, analytics, and population-level coordination systems.",
+          "industry_function_sort_order": 40
+        },
+        {
+          "industry_function_slug": "revenue-cycle-rcm",
+          "industry_function_name": "Revenue Cycle",
+          "industry_function_description": "Claims, payments, and reimbursement systems used in healthcare finance workflows.",
+          "industry_function_sort_order": 50
+        },
+        {
+          "industry_function_slug": "pharmacy-systems",
+          "industry_function_name": "Pharmacy Systems",
+          "industry_function_description": "Medication dispensing, pharmacy operations, and inventory coordination platforms.",
+          "industry_function_sort_order": 60
+        },
+        {
+          "industry_function_slug": "imaging-pacs",
+          "industry_function_name": "Imaging",
+          "industry_function_description": "Imaging, PACS, and radiology workflow systems.",
+          "industry_function_sort_order": 70
+        },
+        {
+          "industry_function_slug": "patient-engagement",
+          "industry_function_name": "Patient Engagement",
+          "industry_function_description": "Patient communication, intake, and digital engagement systems.",
+          "industry_function_sort_order": 80
+        },
+        {
+          "industry_function_slug": "compliance-risk",
+          "industry_function_name": "Compliance & Risk",
+          "industry_function_description": "Compliance, credentialing, and risk-management platforms for healthcare operations.",
+          "industry_function_sort_order": 90
+        },
+        {
+          "industry_function_slug": "workforce-management",
+          "industry_function_name": "Workforce Mgmt",
+          "industry_function_description": "Staffing, scheduling, credentialing, and workforce readiness systems.",
+          "industry_function_sort_order": 100
+        }
+      ]
+    },
+    {
+      "industry_slug": "fintech",
+      "functions": [
+        {
+          "industry_function_slug": "core-banking",
+          "industry_function_name": "Core Banking",
+          "industry_function_description": "Core account, ledger, and banking operations platforms.",
+          "industry_function_sort_order": 10
+        },
+        {
+          "industry_function_slug": "payments-rails",
+          "industry_function_name": "Payments & Rails",
+          "industry_function_description": "Payment acceptance, issuing, and money movement infrastructure.",
+          "industry_function_sort_order": 20
+        },
+        {
+          "industry_function_slug": "fraud-kyc",
+          "industry_function_name": "Fraud & KYC",
+          "industry_function_description": "Fraud prevention, identity verification, and onboarding compliance systems.",
+          "industry_function_sort_order": 30
+        },
+        {
+          "industry_function_slug": "open-banking",
+          "industry_function_name": "Open Banking",
+          "industry_function_description": "Account connectivity and financial data access platforms.",
+          "industry_function_sort_order": 40
+        },
+        {
+          "industry_function_slug": "lending",
+          "industry_function_name": "Lending",
+          "industry_function_description": "Loan origination, underwriting, and servicing systems.",
+          "industry_function_sort_order": 50
+        },
+        {
+          "industry_function_slug": "wealth-management",
+          "industry_function_name": "Wealth Mgmt",
+          "industry_function_description": "Advisory, portfolio, and wealth operations platforms.",
+          "industry_function_sort_order": 60
+        },
+        {
+          "industry_function_slug": "insurtech",
+          "industry_function_name": "Insurtech",
+          "industry_function_description": "Insurance operations, policy systems, and digital insurance platforms.",
+          "industry_function_sort_order": 70
+        },
+        {
+          "industry_function_slug": "treasury-fx",
+          "industry_function_name": "Treasury & FX",
+          "industry_function_description": "Treasury, liquidity, and foreign exchange platforms.",
+          "industry_function_sort_order": 80
+        },
+        {
+          "industry_function_slug": "regtech",
+          "industry_function_name": "RegTech",
+          "industry_function_description": "Compliance operations, regulatory intelligence, and AML monitoring systems.",
+          "industry_function_sort_order": 90
+        },
+        {
+          "industry_function_slug": "digital-assets",
+          "industry_function_name": "Digital Assets",
+          "industry_function_description": "Digital asset custody, exchange, and blockchain infrastructure systems.",
+          "industry_function_sort_order": 100
+        }
+      ]
+    },
+    {
+      "industry_slug": "retail",
+      "functions": [
+        {
+          "industry_function_slug": "e-commerce",
+          "industry_function_name": "E-Commerce",
+          "industry_function_description": "Commerce platforms, storefronts, and order orchestration systems.",
+          "industry_function_sort_order": 10
+        },
+        {
+          "industry_function_slug": "pos-systems",
+          "industry_function_name": "POS Systems",
+          "industry_function_description": "Point-of-sale, in-store transaction, and checkout systems.",
+          "industry_function_sort_order": 20
+        },
+        {
+          "industry_function_slug": "crm-loyalty",
+          "industry_function_name": "CRM & Loyalty",
+          "industry_function_description": "Customer engagement, loyalty, and retail relationship platforms.",
+          "industry_function_sort_order": 30
+        },
+        {
+          "industry_function_slug": "inventory-oms",
+          "industry_function_name": "Inventory & OMS",
+          "industry_function_description": "Inventory, fulfillment, and order management systems.",
+          "industry_function_sort_order": 40
+        },
+        {
+          "industry_function_slug": "merchandising",
+          "industry_function_name": "Merchandising",
+          "industry_function_description": "Product discovery, search, and merchandising optimization platforms.",
+          "industry_function_sort_order": 50
+        },
+        {
+          "industry_function_slug": "supply-chain",
+          "industry_function_name": "Supply Chain",
+          "industry_function_description": "Retail logistics, replenishment, and delivery orchestration systems.",
+          "industry_function_sort_order": 60
+        },
+        {
+          "industry_function_slug": "marketing-tech",
+          "industry_function_name": "Marketing Tech",
+          "industry_function_description": "Campaign, lifecycle, and audience engagement platforms for retail brands.",
+          "industry_function_sort_order": 70
+        },
+        {
+          "industry_function_slug": "analytics",
+          "industry_function_name": "Analytics",
+          "industry_function_description": "Digital analytics and customer behavior instrumentation platforms.",
+          "industry_function_sort_order": 80
+        },
+        {
+          "industry_function_slug": "payments",
+          "industry_function_name": "Payments",
+          "industry_function_description": "Consumer payment, financing, and transaction settlement systems.",
+          "industry_function_sort_order": 90
+        },
+        {
+          "industry_function_slug": "loss-prevention",
+          "industry_function_name": "Loss Prevention",
+          "industry_function_description": "Retail risk, shrink, and in-store loss-prevention technologies.",
+          "industry_function_sort_order": 100
+        }
+      ]
+    },
+    {
+      "industry_slug": "logistics",
+      "functions": [
+        {
+          "industry_function_slug": "tms",
+          "industry_function_name": "TMS",
+          "industry_function_description": "Transportation management and load-planning systems.",
+          "industry_function_sort_order": 10
+        },
+        {
+          "industry_function_slug": "warehouse-wms",
+          "industry_function_name": "Warehouse",
+          "industry_function_description": "Warehouse execution and logistics inventory systems.",
+          "industry_function_sort_order": 20
+        },
+        {
+          "industry_function_slug": "fleet-iot",
+          "industry_function_name": "Fleet & IoT",
+          "industry_function_description": "Fleet telemetry, vehicle operations, and IoT-connected logistics platforms.",
+          "industry_function_sort_order": 30
+        },
+        {
+          "industry_function_slug": "visibility",
+          "industry_function_name": "Visibility",
+          "industry_function_description": "Shipment, movement, and supply-chain visibility systems.",
+          "industry_function_sort_order": 40
+        },
+        {
+          "industry_function_slug": "last-mile",
+          "industry_function_name": "Last Mile",
+          "industry_function_description": "Last-mile delivery execution and route operations systems.",
+          "industry_function_sort_order": 50
+        },
+        {
+          "industry_function_slug": "global-trade",
+          "industry_function_name": "Global Trade",
+          "industry_function_description": "Global trade, customs, and cross-border logistics systems.",
+          "industry_function_sort_order": 60
+        },
+        {
+          "industry_function_slug": "demand-planning",
+          "industry_function_name": "Demand Planning",
+          "industry_function_description": "Demand forecasting, planning, and supply balancing systems.",
+          "industry_function_sort_order": 70
+        },
+        {
+          "industry_function_slug": "yard-management",
+          "industry_function_name": "Yard Mgmt",
+          "industry_function_description": "Yard coordination, docking, and trailer movement systems.",
+          "industry_function_sort_order": 80
+        },
+        {
+          "industry_function_slug": "robotics",
+          "industry_function_name": "Robotics",
+          "industry_function_description": "Warehouse and logistics robotics platforms.",
+          "industry_function_sort_order": 90
+        },
+        {
+          "industry_function_slug": "freight-audit",
+          "industry_function_name": "Freight Audit",
+          "industry_function_description": "Freight payment, audit, and spend control systems.",
+          "industry_function_sort_order": 100
+        }
+      ]
+    },
+    {
+      "industry_slug": "transportation",
+      "functions": [
+        {
+          "industry_function_slug": "fleet-iot",
+          "industry_function_name": "Fleet & IoT",
+          "industry_function_description": "Fleet telemetry, vehicle operations, and connected transportation platforms.",
+          "industry_function_sort_order": 10
+        },
+        {
+          "industry_function_slug": "visibility",
+          "industry_function_name": "Visibility",
+          "industry_function_description": "Shipment and asset tracking systems used across transportation workflows.",
+          "industry_function_sort_order": 20
+        },
+        {
+          "industry_function_slug": "tms",
+          "industry_function_name": "TMS",
+          "industry_function_description": "Transportation management systems used to plan and execute freight movement.",
+          "industry_function_sort_order": 30
+        },
+        {
+          "industry_function_slug": "last-mile",
+          "industry_function_name": "Last Mile",
+          "industry_function_description": "Dispatch, route, and final-mile delivery platforms.",
+          "industry_function_sort_order": 40
+        }
+      ]
+    },
+    {
+      "industry_slug": "commercial-buildings",
+      "functions": [
+        {
+          "industry_function_slug": "building-operations",
+          "industry_function_name": "Building Operations",
+          "industry_function_description": "Connected building control, occupancy, and operations systems.",
+          "industry_function_sort_order": 10
+        },
+        {
+          "industry_function_slug": "energy-management",
+          "industry_function_name": "Energy Management",
+          "industry_function_description": "Energy, sustainability, and facility performance systems for commercial buildings.",
+          "industry_function_sort_order": 20
+        },
+        {
+          "industry_function_slug": "security-access",
+          "industry_function_name": "Security & Access",
+          "industry_function_description": "Security, access, and visitor management platforms.",
+          "industry_function_sort_order": 30
+        },
+        {
+          "industry_function_slug": "workplace-experience",
+          "industry_function_name": "Workplace Experience",
+          "industry_function_description": "Tenant, room, and workplace coordination systems.",
+          "industry_function_sort_order": 40
+        }
+      ]
+    },
+    {
+      "industry_slug": "service-providers",
+      "functions": [
+        {
+          "industry_function_slug": "field-service",
+          "industry_function_name": "Field Service",
+          "industry_function_description": "Field service dispatch, technician coordination, and customer work execution systems.",
+          "industry_function_sort_order": 10
+        },
+        {
+          "industry_function_slug": "work-order-management",
+          "industry_function_name": "Work Order Mgmt",
+          "industry_function_description": "Work-order lifecycle and service request coordination platforms.",
+          "industry_function_sort_order": 20
+        },
+        {
+          "industry_function_slug": "contractor-network",
+          "industry_function_name": "Contractor Network",
+          "industry_function_description": "Multi-vendor and contractor coordination systems.",
+          "industry_function_sort_order": 30
+        }
+      ]
+    },
+    {
+      "industry_slug": "construction",
+      "functions": [
+        {
+          "industry_function_slug": "project-controls",
+          "industry_function_name": "Project Controls",
+          "industry_function_description": "Construction planning, project, and cost control systems.",
+          "industry_function_sort_order": 10
+        },
+        {
+          "industry_function_slug": "field-operations",
+          "industry_function_name": "Field Operations",
+          "industry_function_description": "Field coordination, task execution, and site operations systems.",
+          "industry_function_sort_order": 20
+        },
+        {
+          "industry_function_slug": "equipment-telematics",
+          "industry_function_name": "Equipment Telematics",
+          "industry_function_description": "Equipment monitoring and utilization data platforms.",
+          "industry_function_sort_order": 30
+        },
+        {
+          "industry_function_slug": "safety-compliance",
+          "industry_function_name": "Safety & Compliance",
+          "industry_function_description": "Construction safety, risk, and compliance systems.",
+          "industry_function_sort_order": 40
+        }
+      ]
+    },
+    {
+      "industry_slug": "energy",
+      "functions": [
+        {
+          "industry_function_slug": "grid-operations",
+          "industry_function_name": "Grid Operations",
+          "industry_function_description": "Grid, infrastructure, and distributed energy control systems.",
+          "industry_function_sort_order": 10
+        },
+        {
+          "industry_function_slug": "asset-monitoring",
+          "industry_function_name": "Asset Monitoring",
+          "industry_function_description": "Operational asset monitoring and energy infrastructure performance systems.",
+          "industry_function_sort_order": 20
+        },
+        {
+          "industry_function_slug": "metering-data",
+          "industry_function_name": "Metering & Data",
+          "industry_function_description": "Metering, telemetry, and usage data systems.",
+          "industry_function_sort_order": 30
+        },
+        {
+          "industry_function_slug": "sustainability-reporting",
+          "industry_function_name": "Sustainability Reporting",
+          "industry_function_description": "Sustainability, emissions, and reporting platforms in energy operations.",
+          "industry_function_sort_order": 40
+        }
+      ]
+    }
+  ]
+}

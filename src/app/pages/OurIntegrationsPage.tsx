@@ -19,6 +19,10 @@ import { SEO } from "@/app/components/SEO";
 interface IntegrationProduct {
   product_slug: string;
   product_name: string;
+  industry_function_slug: string;
+  industry_function_name: string;
+  industry_function_description: string;
+  industry_function_sort_order: number;
   product_family: string;
   integration_status: string;
   integration_type: string;
@@ -50,7 +54,17 @@ interface IntegrationIndustry {
   industry_slug: string;
   industry_name: string;
   industry_description: string;
+  functions: IntegrationFunctionSummary[];
   vendors: IntegrationVendor[];
+}
+
+interface IntegrationFunctionSummary {
+  industry_function_slug: string;
+  industry_function_name: string;
+  industry_function_description: string;
+  industry_function_sort_order: number;
+  vendor_count: number;
+  product_count: number;
 }
 
 interface IntegrationCatalog {
@@ -62,6 +76,7 @@ interface IntegrationCatalog {
     public_json_url: string;
     record_count: number;
     industry_count: number;
+    function_count: number;
     discovery: {
       html_meta_name: string;
       html_meta_content: string;
@@ -78,6 +93,7 @@ interface SearchableVendor {
   industry_slug: string;
   industry_name: string;
   vendor: IntegrationVendor;
+  functions: string[];
   match_products: IntegrationProduct[];
 }
 
@@ -121,7 +137,8 @@ export function OurIntegrationsPage() {
   const [catalog, setCatalog] = useState<IntegrationCatalog | null>(null);
   const [catalogState, setCatalogState] = useState<"loading" | "ready" | "error">("loading");
   const [selectedIndustryId, setSelectedIndustryId] = useState("");
-  const [openVendorNames, setOpenVendorNames] = useState<string[]>([]);
+  const [selectedFunctionId, setSelectedFunctionId] = useState("");
+  const [openVendorSlugs, setOpenVendorSlugs] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const deferredSearchQuery = useDeferredValue(searchQuery);
 
@@ -169,16 +186,30 @@ export function OurIntegrationsPage() {
     .map((group) => ({
       ...group,
       vendors: [...group.vendors].sort((left, right) => left.vendor_name.localeCompare(right.vendor_name)),
-    }))
-    .sort((left, right) => left.industry_name.localeCompare(right.industry_name));
+    }));
   const selectedIndustry =
     integrationGroups.find((group) => group.industry_slug === selectedIndustryId) ?? integrationGroups[0] ?? null;
+  const selectedFunction =
+    selectedIndustry?.functions.find((entry) => entry.industry_function_slug === selectedFunctionId) ?? null;
+  const filteredIndustryVendors = selectedIndustry
+    ? selectedIndustry.vendors
+        .map((vendor) => ({
+          ...vendor,
+          products: selectedFunctionId
+            ? vendor.products.filter((product) => getProductFunctionSlug(product) === selectedFunctionId)
+            : vendor.products,
+        }))
+        .filter((vendor) => vendor.products.length > 0)
+    : [];
   const normalizedSearchQuery = deferredSearchQuery.trim().toLowerCase();
   const searchableVendors: SearchableVendor[] = integrationGroups.flatMap((group) =>
     group.vendors.map((vendor) => ({
       industry_slug: group.industry_slug,
       industry_name: group.industry_name,
       vendor,
+      functions: Array.from(
+        new Set(vendor.products.map((product) => getProductFunctionName(product)).filter(Boolean)),
+      ),
       match_products: vendor.products,
     })),
   );
@@ -191,6 +222,8 @@ export function OurIntegrationsPage() {
             const haystack = [
               product.product_name,
               product.product_family,
+              product.industry_function_name,
+              product.industry_function_description,
               product.integration_type,
               product.data_coverage_summary,
             ]
@@ -202,7 +235,8 @@ export function OurIntegrationsPage() {
           const vendorMatches =
             vendorName.includes(normalizedSearchQuery) ||
             vendorSummary.includes(normalizedSearchQuery) ||
-            entry.industry_name.toLowerCase().includes(normalizedSearchQuery);
+            entry.industry_name.toLowerCase().includes(normalizedSearchQuery) ||
+            entry.functions.some((functionName) => functionName.toLowerCase().includes(normalizedSearchQuery));
 
           if (!vendorMatches && matchingProducts.length === 0) {
             return null;
@@ -217,21 +251,24 @@ export function OurIntegrationsPage() {
         })
         .filter((entry): entry is SearchableVendor & { relevanceScore: number; primary_product: IntegrationProduct | null } => Boolean(entry))
         .sort((left, right) => {
-          if (right.relevanceScore !== left.relevanceScore) {
-            return right.relevanceScore - left.relevanceScore;
+          const vendorNameCompare = left.vendor.vendor_name.localeCompare(right.vendor.vendor_name, undefined, {
+            sensitivity: "base",
+          });
+
+          if (vendorNameCompare !== 0) {
+            return vendorNameCompare;
           }
 
-          if (right.match_products.length !== left.match_products.length) {
-            return right.match_products.length - left.match_products.length;
-          }
-
-          return left.vendor.vendor_name.localeCompare(right.vendor.vendor_name);
+          return (left.primary_product?.product_name ?? "").localeCompare(
+            right.primary_product?.product_name ?? "",
+            undefined,
+            { sensitivity: "base" },
+          );
         })
     : [];
   const searchResultCount = vendorSearchResults.length;
 
-  const vendorCount = selectedIndustry?.vendors.length ?? 0;
-  const productCount = selectedIndustry?.vendors.reduce((total, vendor) => total + vendor.products.length, 0) ?? 0;
+  const vendorCount = filteredIndustryVendors.length;
   const totalVendors = new Set(
     integrationGroups.flatMap((group) => group.vendors.map((vendor) => vendor.vendor_slug)),
   ).size;
@@ -248,23 +285,38 @@ export function OurIntegrationsPage() {
       ),
     0,
   );
+  const totalRepresentedFunctions = integrationGroups.reduce(
+    (total, group) => total + group.functions.filter((entry) => entry.product_count > 0).length,
+    0,
+  );
   const discoveredIntegrationsDataUrl = catalog?.meta.public_json_url ?? integrationsDataUrl;
   const lastUpdatedLabel = catalog ? formatLastUpdated(catalog.meta.generated_at) : "";
 
-  const toggleVendor = (vendorName: string) => {
-    setOpenVendorNames((currentOpenVendors) =>
-      currentOpenVendors.includes(vendorName)
-        ? currentOpenVendors.filter((name) => name !== vendorName)
-        : [...currentOpenVendors, vendorName],
+  const toggleVendor = (vendorSlug: string) => {
+    setOpenVendorSlugs((currentOpenVendors) =>
+      currentOpenVendors.includes(vendorSlug)
+        ? currentOpenVendors.filter((slug) => slug !== vendorSlug)
+        : [...currentOpenVendors, vendorSlug],
     );
   };
 
   const handleIndustryChange = (industryId: string) => {
     setSelectedIndustryId(industryId);
-    setOpenVendorNames([]);
+    setSelectedFunctionId("");
+    setOpenVendorSlugs([]);
+  };
+
+  const handleFunctionChange = (functionId: string) => {
+    setSelectedFunctionId(functionId);
+    setOpenVendorSlugs([]);
   };
 
   const currentIndustryLabel = selectedIndustry ? getIndustryLabel(selectedIndustry.industry_slug) : "OEM Vendors";
+  const currentHeading = selectedFunction?.industry_function_name || selectedIndustry?.industry_name || "Integrations";
+  const currentDescription = selectedFunction?.industry_function_description || selectedIndustry?.industry_description || "";
+  const currentContextLabel = selectedFunction
+    ? `${selectedIndustry?.industry_name ?? "Industry"} Function`
+    : currentIndustryLabel;
 
   return (
     <>
@@ -317,7 +369,7 @@ export function OurIntegrationsPage() {
                       <ScoreboardMetric value={String(totalProducts).padStart(2, "0")} label="Integrations Available" />
                       <ScoreboardMetric value={String(integrationGroups.length).padStart(2, "0")} label="Industries Covered" />
                       <ScoreboardMetric value={String(totalVendors).padStart(2, "0")} label="Vendors Available" />
-                      <ScoreboardMetric value={String(totalDetailedProducts).padStart(2, "0")} label="Detail Pages Available" />
+                      <ScoreboardMetric value={String(totalRepresentedFunctions).padStart(2, "0")} label="Functions Represented" />
                     </div>
                   </div>
                 </motion.div>
@@ -353,7 +405,7 @@ export function OurIntegrationsPage() {
                       type="search"
                       value={searchQuery}
                       onChange={(event) => setSearchQuery(event.target.value)}
-                      placeholder="Search vendor name, industry, or product family"
+                      placeholder="Search vendor name, industry, function, or product family"
                       className="w-full rounded-2xl border border-slate-700/70 bg-slate-950/75 py-3 pl-12 pr-4 text-base text-white outline-none transition-all placeholder:text-slate-500 focus:border-[#75ADE6]/70 focus:bg-slate-950"
                     />
                   </label>
@@ -393,31 +445,104 @@ export function OurIntegrationsPage() {
                         const isActive = group.industry_slug === selectedIndustryId;
 
                         return (
-                          <button
+                          <div
                             key={group.industry_slug}
-                            type="button"
-                            onClick={() => handleIndustryChange(group.industry_slug)}
-                            className={`w-full rounded-2xl border px-4 py-4 text-left transition-all ${
+                            className={`overflow-hidden rounded-2xl border transition-all ${
                               isActive
                                 ? "border-[#217ED9]/60 bg-[#217ED9]/12 shadow-[0_0_0_1px_rgba(33,126,217,0.15)]"
-                                : "border-slate-800 bg-slate-900/40 hover:border-slate-600 hover:bg-slate-900/60"
+                                : "border-slate-800 bg-slate-900/40"
                             }`}
                           >
-                            <div className="flex items-start gap-3">
-                              <div className="rounded-xl border border-slate-700/60 bg-slate-950/60 p-3">
-                                <Icon className={`w-5 h-5 ${isActive ? "text-[#75ADE6]" : "text-slate-400"}`} />
-                              </div>
-                              <div className="min-w-0 flex-1">
-                                <div className="flex items-center justify-between gap-3">
-                                  <h3 className="text-base font-semibold text-white">{group.industry_name}</h3>
-                                  <span className="text-lg font-semibold text-slate-300 leading-none">
-                                    {String(group.vendors.length).padStart(2, "0")}
-                                  </span>
+                            <button
+                              type="button"
+                              onClick={() => handleIndustryChange(group.industry_slug)}
+                              className="w-full px-4 py-4 text-left transition-colors hover:bg-slate-900/40"
+                            >
+                              <div className="flex items-start gap-3">
+                                <div className="rounded-xl border border-slate-700/60 bg-slate-950/60 p-3">
+                                  <Icon className={`w-5 h-5 ${isActive ? "text-[#75ADE6]" : "text-slate-400"}`} />
                                 </div>
-                                <p className="mt-2 text-sm text-slate-400 leading-relaxed">{group.industry_description}</p>
+                                <div className="min-w-0 flex-1">
+                                  <div className="flex items-center justify-between gap-3">
+                                    <h3 className="text-base font-semibold text-white">{group.industry_name}</h3>
+                                    <div className="flex items-center gap-3">
+                                      <span className="text-lg font-semibold text-slate-300 leading-none">
+                                        {String(group.vendors.length).padStart(2, "0")}
+                                      </span>
+                                      <motion.div
+                                        animate={{ rotate: isActive ? 180 : 0 }}
+                                        transition={{ duration: 0.2 }}
+                                        className="text-slate-400"
+                                      >
+                                        <ChevronDown className="h-4 w-4" />
+                                      </motion.div>
+                                    </div>
+                                  </div>
+                                  <p className="mt-2 text-sm text-slate-400 leading-relaxed">{group.industry_description}</p>
+                                </div>
                               </div>
-                            </div>
-                          </button>
+                            </button>
+
+                            <AnimatePresence initial={false}>
+                              {isActive && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.25, ease: "easeOut" }}
+                                  className="overflow-hidden border-t border-slate-800/80"
+                                >
+                                  <div className="space-y-2 px-3 py-3">
+                                    <button
+                                      type="button"
+                                      onClick={() => handleFunctionChange("")}
+                                      className={`w-full rounded-xl px-3 py-2 text-left text-sm transition-colors ${
+                                        !selectedFunctionId
+                                          ? "bg-slate-950/70 text-white"
+                                          : "bg-slate-950/30 text-slate-300 hover:bg-slate-950/50"
+                                      }`}
+                                    >
+                                      <div className="flex items-center justify-between gap-3">
+                                        <span className="font-medium">All {group.industry_name}</span>
+                                        <span className="text-xs uppercase tracking-[0.16em] text-slate-500">
+                                          {String(group.vendors.length).padStart(2, "0")}
+                                        </span>
+                                      </div>
+                                    </button>
+
+                                    {group.functions.map((functionEntry) => {
+                                      const isFunctionActive = functionEntry.industry_function_slug === selectedFunctionId;
+
+                                      return (
+                                        <button
+                                          key={`${group.industry_slug}-${functionEntry.industry_function_slug}`}
+                                          type="button"
+                                          onClick={() => handleFunctionChange(functionEntry.industry_function_slug)}
+                                          className={`w-full rounded-xl px-3 py-2 text-left text-sm transition-colors ${
+                                            isFunctionActive
+                                              ? "bg-slate-950/80 text-white"
+                                              : "bg-slate-950/30 text-slate-300 hover:bg-slate-950/50"
+                                          }`}
+                                        >
+                                          <div className="flex items-start justify-between gap-3">
+                                            <div>
+                                              <div className="font-medium">{functionEntry.industry_function_name}</div>
+                                              <div className="mt-1 text-xs leading-relaxed text-slate-500">
+                                                {functionEntry.industry_function_description}
+                                              </div>
+                                            </div>
+                                            <span className="rounded-full border border-slate-700/70 px-2 py-1 text-[10px] uppercase tracking-[0.16em] text-slate-400">
+                                              {String(functionEntry.vendor_count).padStart(2, "0")}
+                                            </span>
+                                          </div>
+                                        </button>
+                                      );
+                                    })}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
                         );
                       })}
                     </div>
@@ -453,7 +578,7 @@ export function OurIntegrationsPage() {
                           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-400 sm:text-base">
                             {searchResultCount > 0
                               ? `Showing vendors and related products that match “${searchQuery.trim()}”.`
-                              : `No vendors or products matched “${searchQuery.trim()}”. Try a broader vendor name, industry, or product family.`}
+                              : `No vendors or products matched “${searchQuery.trim()}”. Try a broader vendor name, industry, function, or product family.`}
                           </p>
                         </div>
                       </div>
@@ -495,6 +620,11 @@ export function OurIntegrationsPage() {
                                         <span className="rounded-full border border-[#217ED9]/30 bg-[#217ED9]/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#9cc6ef]">
                                           {result.industry_name}
                                         </span>
+                                        {result.functions[0] && (
+                                          <span className="rounded-full border border-slate-700/70 bg-slate-950/60 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-slate-300">
+                                            {result.functions[0]}
+                                          </span>
+                                        )}
                                       </div>
                                       <p className="mt-2 text-sm leading-relaxed text-slate-400">{result.vendor.vendor_summary}</p>
                                     </div>
@@ -527,7 +657,7 @@ export function OurIntegrationsPage() {
                           </div>
                           <h3 className="mt-4 text-xl font-semibold text-white">No vendor matches yet</h3>
                           <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-slate-400">
-                            Search by vendor name, industry, or product family. Example queries: Siemens, Zebra RFID, transportation, or fleet.
+                              Search by vendor name, industry, function, or product family. Example queries: Siemens, Zebra RFID, transportation, fleet, or telehealth.
                           </p>
                         </div>
                       )}
@@ -547,23 +677,31 @@ export function OurIntegrationsPage() {
                       <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                         <div>
                           <div className="text-xs uppercase tracking-[0.24em] text-slate-500 mb-3">
-                            {currentIndustryLabel}
+                            {currentContextLabel}
                           </div>
-                          <h2 className="text-4xl font-bold text-white">{selectedIndustry.industry_name}</h2>
+                          <h2 className="text-4xl font-bold text-white">{currentHeading}</h2>
                           <p className="mt-3 text-lg text-slate-400 max-w-3xl leading-relaxed">
-                            {selectedIndustry.industry_description}
+                            {currentDescription}
                           </p>
                         </div>
 
                         <MetricsPanel
                           vendorCount={String(vendorCount).padStart(2, "0")}
-                          productCount={String(productCount).padStart(2, "0")}
+                          vendorLabel="Vendors"
                         />
                       </div>
 
+                      {selectedFunction && filteredIndustryVendors.length === 0 ? (
+                        <div className="rounded-3xl border border-dashed border-slate-700/70 bg-slate-950/30 px-6 py-10 text-center">
+                          <h3 className="text-2xl font-semibold text-white">No integrations classified to this function yet</h3>
+                          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-400">
+                            The function taxonomy is now wired into the catalog and UI, but this function has not been populated with researched rows yet. Legacy rows remain available through the industry view or the Unclassified bucket until phase 4 research is complete.
+                          </p>
+                        </div>
+                      ) : (
                       <div className="space-y-4">
-                        {selectedIndustry.vendors.map((vendor, index) => {
-                          const isOpen = openVendorNames.includes(vendor.vendor_name);
+                        {filteredIndustryVendors.map((vendor, index) => {
+                          const isOpen = openVendorSlugs.includes(vendor.vendor_slug);
                           const accentClass = getVendorAccentClass(vendor.vendor_slug);
                           const logoMonogram = getVendorMonogram(vendor.vendor_name);
 
@@ -577,7 +715,7 @@ export function OurIntegrationsPage() {
                             >
                               <button
                                 type="button"
-                                onClick={() => toggleVendor(vendor.vendor_name)}
+                                onClick={() => toggleVendor(vendor.vendor_slug)}
                                 className="w-full px-6 py-6 text-left hover:bg-white/[0.02] transition-colors"
                               >
                                 <div className="flex items-center gap-4">
@@ -603,6 +741,18 @@ export function OurIntegrationsPage() {
                                       <div>
                                         <h3 className="text-2xl font-semibold text-white">{vendor.vendor_name}</h3>
                                         <p className="text-slate-400 mt-1 leading-relaxed">{vendor.vendor_summary}</p>
+                                        {!selectedFunctionId && (
+                                          <div className="mt-3 flex flex-wrap gap-2">
+                                            {Array.from(new Set(vendor.products.map((product) => getProductFunctionName(product)))).map((functionName) => (
+                                              <span
+                                                key={`${vendor.vendor_slug}-${functionName}`}
+                                                className="rounded-full border border-slate-700/70 bg-slate-950/50 px-2.5 py-1 text-[10px] uppercase tracking-[0.16em] text-slate-300"
+                                              >
+                                                {functionName}
+                                              </span>
+                                            ))}
+                                          </div>
+                                        )}
                                       </div>
 
                                       <div className="flex items-center gap-4">
@@ -654,6 +804,9 @@ export function OurIntegrationsPage() {
                                                 {product.product_family}
                                               </div>
                                             )}
+                                            <div className="mt-2 text-[11px] uppercase tracking-[0.16em] text-slate-500">
+                                              {getProductFunctionName(product)}
+                                            </div>
                                             {product.product_summary && !product.has_detail && (
                                               <p className="mt-3 text-sm leading-relaxed text-slate-400">
                                                 {product.product_summary}
@@ -685,6 +838,7 @@ export function OurIntegrationsPage() {
                           );
                         })}
                       </div>
+                      )}
                     </motion.div>
                     </AnimatePresence>
                   )}
@@ -754,23 +908,27 @@ function formatLastUpdated(isoTimestamp: string) {
 
 function MetricsPanel({
   vendorCount,
-  productCount,
+  vendorLabel,
 }: {
   vendorCount: string;
-  productCount: string;
+  vendorLabel: string;
 }) {
   return (
-    <div className="grid grid-cols-2 overflow-hidden rounded-2xl border border-slate-700/60 bg-slate-900/50 min-w-[280px]">
-      <div className="flex flex-col items-center justify-center px-5 py-4 text-center">
+    <div className="overflow-hidden rounded-2xl border border-slate-700/60 bg-slate-900/50 min-w-[160px]">
+      <div className="flex flex-col items-center justify-center px-6 py-5 text-center">
         <div className="text-3xl font-bold text-white">{vendorCount}</div>
-        <div className="mt-1 whitespace-nowrap text-xs uppercase tracking-[0.18em] text-slate-500">OEM Vendors</div>
-      </div>
-      <div className="border-l border-slate-800 flex flex-col items-center justify-center px-5 py-4 text-center">
-        <div className="text-3xl font-bold text-white">{productCount}</div>
-        <div className="mt-1 whitespace-nowrap text-xs uppercase tracking-[0.18em] text-slate-500">Products</div>
+        <div className="mt-1 whitespace-nowrap text-xs uppercase tracking-[0.18em] text-slate-500">{vendorLabel}</div>
       </div>
     </div>
   );
+}
+
+function getProductFunctionSlug(product: IntegrationProduct) {
+  return product.industry_function_slug || "unclassified";
+}
+
+function getProductFunctionName(product: IntegrationProduct) {
+  return product.industry_function_name || "Unclassified";
 }
 
 function ScoreboardMetric({ label, value }: { label: string; value: string }) {

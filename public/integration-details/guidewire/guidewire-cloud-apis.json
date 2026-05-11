@@ -1,0 +1,44 @@
+{
+  "vendor_slug": "guidewire",
+  "vendor_name": "Guidewire",
+  "product_slug": "guidewire-cloud-apis",
+  "product_name": "Guidewire Cloud APIs",
+  "product_family": "Guidewire Cloud",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.guidewire.com/",
+  "spec_artifact_url": "https://docs.guidewire.com/",
+  "detail_completeness": "generated-summary",
+  "data_coverage_summary": "Guidewire docs are public; some API references require account/context.",
+  "data_domains": [],
+  "asset_data_available": null,
+  "telemetry_data_available": null,
+  "writeback_supported": null,
+  "key_entities": [],
+  "buyer_guidance": "Use the published Guidewire Cloud REST API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
+  "overview": "Guidewire docs are public; some API references require account/context. This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.",
+  "available_data": [
+    {
+      "category": "Published API Scope",
+      "description": "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
+      "data_points": [
+        "Published summary: Guidewire docs are public; some API references require account/context.",
+        "Product family: Guidewire Cloud",
+        "Integration type: REST API",
+        "Lifecycle status: Built",
+        "Published API documentation is available from the linked source documentation.",
+        "Exact entities, payloads, and operations should be confirmed in the source documentation before implementation."
+      ],
+      "relevant_operations": []
+    }
+  ],
+  "ingest_considerations": [],
+  "source_evidence": {
+    "documentation_url": "https://docs.guidewire.com/",
+    "spec_url": "https://docs.guidewire.com/",
+    "reviewed_at": "2026-05-11",
+    "evidence_notes": "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product."
+  },
+  "detail_path": "/integration-details/guidewire/guidewire-cloud-apis.json",
+  "vendor_domain": "guidewire.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=guidewire.com&sz=128"
+}

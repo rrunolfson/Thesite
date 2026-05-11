@@ -56,6 +56,6 @@
     "evidence_notes": "Classification is based on the local REST API reference showing GET surfaces for reader metadata and statistics plus PUT-style configuration and control routes for network settings, certificates, apps, LEDs, logs, and GPO state."
   },
   "detail_path": "/integration-details/zebra/zebra-rfid-reader-local-rest-api.json",
-  "vendor_domain": "github.io",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=github.io&sz=128"
+  "vendor_domain": "zebra.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=zebra.com&sz=128"
 }
