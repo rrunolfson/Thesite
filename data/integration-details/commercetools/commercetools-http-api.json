@@ -1,0 +1,80 @@
+{
+  "vendor_slug": "commercetools",
+  "vendor_name": "commercetools",
+  "product_slug": "commercetools-http-api",
+  "product_name": "commercetools HTTP API",
+  "product_family": "commercetools",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.commercetools.com/api/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "commercetools publicly documents an HTTP API with resource representations, HTTP methods, project configuration, customization mechanisms, query features, and a companion GraphQL API for composable commerce.",
+  "data_domains": [
+    "commerce-resources",
+    "project-configuration",
+    "query-and-search",
+    "graphql-commerce"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "commerce resources",
+    "projects",
+    "resource representations",
+    "query and search responses",
+    "GraphQL resources",
+    "customized resources"
+  ],
+  "buyer_guidance": "Use commercetools HTTP and GraphQL APIs for composable commerce resources, project configuration, query-driven operations, and customized commerce workflows. This is a commerce platform, not an asset or telemetry platform.",
+  "overview": "commercetools publicly describes its HTTP API as the canonical surface for resource representations, HTTP methods, project configuration, resource customization, and common behaviors such as reference expansion, optimistic concurrency control, and query features. The same public API hub also links a companion GraphQL API for network-efficient queries and mutations. This is a write-capable composable commerce platform for application and data-layer integration, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Composable commerce resources",
+      "description": "The public HTTP API documentation focuses on managing commerce resources and project behavior.",
+      "data_points": [
+        "Resource representations and methods",
+        "Project configuration parameters",
+        "Customized resource behavior",
+        "Authorization and regional deployment context",
+        "Reference expansion and concurrency metadata"
+      ],
+      "relevant_operations": [
+        "HTTP methods for resources",
+        "Projects configuration",
+        "Authorization",
+        "Reference Expansion",
+        "Optimistic concurrency control",
+        "Query features"
+      ]
+    },
+    {
+      "category": "GraphQL and performance-oriented access",
+      "description": "commercetools also supports expressive query-driven access patterns through GraphQL and performance guidance.",
+      "data_points": [
+        "GraphQL queries and mutations",
+        "Search and query optimization",
+        "API contract and compatibility lifecycle",
+        "Region-aware API access",
+        "Composable application backends"
+      ],
+      "relevant_operations": [
+        "GraphQL API",
+        "Performance tips",
+        "API Contract",
+        "Regions"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The commercetools public landing page is platform-level rather than entity-specific, so downstream use should pair this row with resource-specific docs when exact data mappings matter.",
+    "The platform's emphasis on reference expansion, query features, and optimistic concurrency control makes versioning and conflict handling important integration concerns.",
+    "No exact public machine-readable spec artifact was confirmed for the aggregate commercetools row during this pass."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.commercetools.com/api/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "commercetools' public API hub states that the HTTP API contains data representations for each resource, HTTP methods, project configuration parameters, and customization behavior, and also links a GraphQL API plus general topics on authorization, reference expansion, concurrency control, and query capabilities."
+  }
+}

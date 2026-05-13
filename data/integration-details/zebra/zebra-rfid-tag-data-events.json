@@ -14,9 +14,9 @@
     "signal-telemetry",
     "reader-observations"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "tag reads",
     "EPC values",
@@ -26,7 +26,7 @@
     "read counts"
   ],
   "buyer_guidance": "Use Tag Data Events when the integration needs high-fidelity RFID observation data for downstream automation, visibility, or correlation against an external asset model.",
-  "overview": "Tag Data Events are a pure telemetry surface for RFID observations. The schema includes detailed read metadata such as EPC, antenna, RSSI, phase, channel, and read count, but it does not define a reader asset catalog or any writeback mechanics. Asset data is Not Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "overview": "Tag Data Events are a pure telemetry surface for RFID observations. The schema includes detailed read metadata such as EPC, antenna, RSSI, phase, channel, and read count, but it does not define a reader asset catalog or any writeback mechanics. Asset data is Unsupported. Telemetry data is Supported. Writeback is Unsupported.",
   "available_data": [
     {
       "category": "RFID observation telemetry",

@@ -1,0 +1,67 @@
+{
+  "vendor_slug": "infor",
+  "vendor_name": "Infor",
+  "product_slug": "infor-os-api-gateway-ion-apis",
+  "product_name": "Infor OS API Gateway / ION APIs",
+  "product_family": "Infor OS",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.infor.com/inforos/latest/en-us/useradminlib_cloud/apigatewayag_cloud/default.html",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/infor/infor-os-api-gateway-ion-apis.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Infor OS API Gateway / ION APIs has public documentation that indicates erp records and transaction workflows across customers, items, orders, invoices. Public platform documentation.",
+  "data_domains": [
+    "erp-master-data",
+    "orders-and-transactions",
+    "integration-writeback"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "customers",
+    "items",
+    "orders",
+    "invoices",
+    "financial records"
+  ],
+  "buyer_guidance": "Use this API family for ERP record synchronization and business transaction writeback rather than asset or telemetry ingestion. Infor should be treated as a rest api surface for erp records and transaction workflows.",
+  "overview": "Public documentation reviewed for Infor OS API Gateway / ION APIs indicates Public platform documentation. The documented surface aligns with erp records and transaction workflows and covers customers, items, orders, invoices. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "ERP records and transaction workflows",
+      "description": "The public documentation indicates access to ERP master data and transaction workflows used to synchronize business records across manufacturing systems.",
+      "data_points": [
+        "Customer, supplier, and account master records",
+        "Item, SKU, and catalog references",
+        "Order, invoice, and fulfillment-side transactions",
+        "Business workflow state and integration metadata"
+      ],
+      "relevant_operations": [
+        "list master records",
+        "read order and invoice records",
+        "create or update ERP transactions",
+        "synchronize item and account references"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Infor OS API Gateway / ION APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as erp records and transaction workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.infor.com/inforos/latest/en-us/useradminlib_cloud/apigatewayag_cloud/default.html",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/infor/infor-os-api-gateway-ion-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public platform documentation",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/infor/infor-os-api-gateway-ion-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/infor/infor-os-api-gateway-ion-apis.json",
+  "vendor_domain": "infor.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=infor.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/infor/infor-os-api-gateway-ion-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/infor/infor-os-api-gateway-ion-apis.openapi.json"
+}

@@ -16,7 +16,7 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "accounts",
     "databases",
@@ -26,7 +26,7 @@
     "status records"
   ],
   "buyer_guidance": "Use MyAdmin for partner provisioning and tenant-level operational administration, especially when onboarding databases or handling third-party telemetry ingest into Geotab-managed environments.",
-  "overview": "MyAdmin is Geotab's administrative surface for partner, account, database, and provisioning workflows. The object reference also includes third-party GPS, acceleration, log, and status record types, which confirms telemetry ingest coverage, but the API is not positioned as a command-and-control surface for remote operational writeback. Asset data is Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "overview": "MyAdmin is Geotab's administrative surface for partner, account, database, and provisioning workflows. The object reference also includes third-party GPS, acceleration, log, and status record types, which confirms telemetry ingest coverage, but the API is not positioned as a command-and-control surface for remote operational writeback. Asset data is Supported. Telemetry data is Supported. Writeback is Unsupported.",
   "available_data": [
     {
       "category": "Administrative and ingest objects",

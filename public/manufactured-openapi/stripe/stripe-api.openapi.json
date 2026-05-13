@@ -1,0 +1,1371 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Stripe API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Stripe publishes a REST API and public OpenAPI artifact for customers, payment intents, subscriptions, charges, invoices, payouts, connected accounts, webhook endpoints, and related billing or payment workflows.",
+    "description": "Manufactured OpenAPI artifact for Stripe API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Stripe documents a resource-oriented REST API at api.stripe.com and publicly publishes an OpenAPI 3 artifact in the stripe/openapi repository. The public docs show create, update, retrieve, list, search, confirm, capture, cancel, and reconcile flows across customers, payment intents, subscriptions, and webhook endpoints, with additional event delivery, pagination, metadata, search, and versioning controls. This is a strong write-capable financial workflow surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://docs.stripe.com/api"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Customer, payment, and billing records",
+      "description": "Manufactured operations grouped under Customer, payment, and billing records."
+    },
+    {
+      "name": "Webhook and platform orchestration",
+      "description": "Manufactured operations grouped under Webhook and platform orchestration."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "stripe_stripe-api_integrationProfile",
+        "summary": "Get manufactured profile for Stripe API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v1/customers": {
+      "post": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_post-v1-customers_post",
+        "summary": "POST /v1/customers",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/customers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/customers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_get-v1-customers_get",
+        "summary": "GET /v1/customers",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v1/customers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v1/customers/:id": {
+      "post": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_post-v1-customers-id_post",
+        "summary": "POST /v1/customers/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/customers/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/customers/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_get-v1-customers-id_get",
+        "summary": "GET /v1/customers/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v1/customers/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v1/customers/search": {
+      "get": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_get-v1-customers-search_get",
+        "summary": "GET /v1/customers/search",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v1/customers/search.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v1/payment_intents": {
+      "post": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_post-v1-payment-intents_post",
+        "summary": "POST /v1/payment_intents",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/payment_intents.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/payment_intents.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_get-v1-payment-intents_get",
+        "summary": "GET /v1/payment_intents",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v1/payment_intents.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v1/payment_intents/:id": {
+      "post": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_post-v1-payment-intents-id_post",
+        "summary": "POST /v1/payment_intents/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/payment_intents/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/payment_intents/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_get-v1-payment-intents-id_get",
+        "summary": "GET /v1/payment_intents/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v1/payment_intents/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v1/payment_intents/:id/confirm": {
+      "post": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_post-v1-payment-intents-id-confirm_post",
+        "summary": "POST /v1/payment_intents/:id/confirm",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/payment_intents/:id/confirm.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/payment_intents/:id/confirm.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/payment_intents/:id/capture": {
+      "post": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_post-v1-payment-intents-id-capture_post",
+        "summary": "POST /v1/payment_intents/:id/capture",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/payment_intents/:id/capture.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/payment_intents/:id/capture.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/payment_intents/:id/cancel": {
+      "post": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_post-v1-payment-intents-id-cancel_post",
+        "summary": "POST /v1/payment_intents/:id/cancel",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/payment_intents/:id/cancel.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/payment_intents/:id/cancel.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/subscriptions": {
+      "post": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_post-v1-subscriptions_post",
+        "summary": "POST /v1/subscriptions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/subscriptions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/subscriptions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_get-v1-subscriptions_get",
+        "summary": "GET /v1/subscriptions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v1/subscriptions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v1/subscriptions/:id": {
+      "post": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_post-v1-subscriptions-id_post",
+        "summary": "POST /v1/subscriptions/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/subscriptions/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/subscriptions/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_get-v1-subscriptions-id_get",
+        "summary": "GET /v1/subscriptions/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v1/subscriptions/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "delete": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_delete-v1-subscriptions-id_delete",
+        "summary": "DELETE /v1/subscriptions/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DELETE /v1/subscriptions/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for DELETE /v1/subscriptions/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/subscriptions/:id/resume": {
+      "post": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_post-v1-subscriptions-id-resume_post",
+        "summary": "POST /v1/subscriptions/:id/resume",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/subscriptions/:id/resume.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/subscriptions/:id/resume.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/subscriptions/search": {
+      "get": {
+        "tags": [
+          "Customer, payment, and billing records"
+        ],
+        "operationId": "stripe_stripe-api_get-v1-subscriptions-search_get",
+        "summary": "GET /v1/subscriptions/search",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v1/subscriptions/search.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v1/webhook_endpoints": {
+      "post": {
+        "tags": [
+          "Webhook and platform orchestration"
+        ],
+        "operationId": "stripe_stripe-api_post-v1-webhook-endpoints_post",
+        "summary": "POST /v1/webhook_endpoints",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe also provides operational event-delivery and multi-account coordination surfaces that are central to downstream automation. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/webhook_endpoints.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/webhook_endpoints.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Webhook and platform orchestration"
+        ],
+        "operationId": "stripe_stripe-api_get-v1-webhook-endpoints_get",
+        "summary": "GET /v1/webhook_endpoints",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe also provides operational event-delivery and multi-account coordination surfaces that are central to downstream automation. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v1/webhook_endpoints.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v1/webhook_endpoints/:id": {
+      "post": {
+        "tags": [
+          "Webhook and platform orchestration"
+        ],
+        "operationId": "stripe_stripe-api_post-v1-webhook-endpoints-id_post",
+        "summary": "POST /v1/webhook_endpoints/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe also provides operational event-delivery and multi-account coordination surfaces that are central to downstream automation. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/webhook_endpoints/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/webhook_endpoints/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Webhook and platform orchestration"
+        ],
+        "operationId": "stripe_stripe-api_get-v1-webhook-endpoints-id_get",
+        "summary": "GET /v1/webhook_endpoints/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe also provides operational event-delivery and multi-account coordination surfaces that are central to downstream automation. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v1/webhook_endpoints/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "delete": {
+        "tags": [
+          "Webhook and platform orchestration"
+        ],
+        "operationId": "stripe_stripe-api_delete-v1-webhook-endpoints-id_delete",
+        "summary": "DELETE /v1/webhook_endpoints/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe also provides operational event-delivery and multi-account coordination surfaces that are central to downstream automation. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DELETE /v1/webhook_endpoints/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for DELETE /v1/webhook_endpoints/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stripe-account-header-for-connected-accounts": {
+      "get": {
+        "tags": [
+          "Webhook and platform orchestration"
+        ],
+        "operationId": "stripe_stripe-api_stripe-account-header-for-connected-accounts_get",
+        "summary": "Stripe-Account header for connected accounts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe also provides operational event-delivery and multi-account coordination surfaces that are central to downstream automation. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Stripe-Account header for connected accounts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/idempotency-key-on-post-requests": {
+      "get": {
+        "tags": [
+          "Webhook and platform orchestration"
+        ],
+        "operationId": "stripe_stripe-api_idempotency-key-on-post-requests_get",
+        "summary": "Idempotency-Key on POST requests",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Stripe also provides operational event-delivery and multi-account coordination surfaces that are central to downstream automation. Vendor documentation: https://docs.stripe.com/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Idempotency-Key on POST requests.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/stripe/stripe-api.json",
+    "vendor_documentation_url": "https://docs.stripe.com/api",
+    "vendor_spec_artifact_url": "https://raw.githubusercontent.com/stripe/openapi/master/openapi/spec3.json",
+    "reviewed_at": "2026-05-13"
+  }
+}

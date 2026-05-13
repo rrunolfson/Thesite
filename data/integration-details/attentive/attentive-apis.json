@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "attentive",
+  "vendor_name": "Attentive",
+  "product_slug": "attentive-apis",
+  "product_name": "Attentive APIs",
+  "product_family": "Attentive",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.attentive.com/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Attentive APIs has public documentation that indicates customer engagement and loyalty workflows across profiles, segments, campaigns, reviews. Public API docs.",
+  "data_domains": [
+    "customer-profiles",
+    "campaign-and-loyalty-workflows",
+    "engagement-events"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "profiles",
+    "segments",
+    "campaigns",
+    "reviews",
+    "loyalty events"
+  ],
+  "buyer_guidance": "Use this API family for customer-engagement, loyalty, and review workflows rather than operational asset or telemetry integration. Attentive should be treated as a rest api surface for customer engagement and loyalty workflows.",
+  "overview": "Public documentation reviewed for Attentive APIs indicates Public API docs. The documented surface aligns with customer engagement and loyalty workflows and covers profiles, segments, campaigns, reviews. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Customer engagement and loyalty workflows",
+      "description": "The public documentation indicates customer-profile, engagement, review, and loyalty workflows used by retail growth teams.",
+      "data_points": [
+        "Customer profile and segment records",
+        "Campaign, review, or loyalty program data",
+        "Engagement events and audience state",
+        "Preference, consent, or subscription workflows"
+      ],
+      "relevant_operations": [
+        "list profiles and campaign records",
+        "read loyalty or review data",
+        "create or update engagement workflows",
+        "synchronize audience and consent changes"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Attentive APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as customer engagement and loyalty workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.attentive.com/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public API docs."
+  }
+}

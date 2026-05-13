@@ -1,0 +1,87 @@
+{
+  "vendor_slug": "lightspeed",
+  "vendor_name": "Lightspeed",
+  "product_slug": "lightspeed-retail-apis",
+  "product_name": "Lightspeed Retail APIs",
+  "product_family": "Lightspeed Retail",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developers.lightspeedhq.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/lightspeed/lightspeed-retail-apis.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Lightspeed publicly organizes developer access across retail, eCom, restaurant, and golf APIs, with retail-specific documentation for X-Series and R-Series commerce platforms.",
+  "data_domains": [
+    "retail-commerce",
+    "point-of-sale",
+    "multiseries-platform-integration",
+    "omnichannel-retail"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "retail stores",
+    "X-Series retail workflows",
+    "R-Series retail workflows",
+    "eCom connections",
+    "restaurant and golf platform links",
+    "commerce platform integrations"
+  ],
+  "buyer_guidance": "Use Lightspeed Retail APIs for retail and point-of-sale integrations across Lightspeed X-Series and R-Series environments, with adjacent connectivity into eCom and other Lightspeed product families. This is a commerce platform, not an asset or telemetry platform.",
+  "overview": "Lightspeed's public developer portal organizes the platform into eCom APIs, Retail APIs, Restaurant APIs, and Golf API, with Retail APIs specifically pointing developers to X-Series and R-Series documentation. This public structure confirms a multi-product commerce platform with write-capable retail integration surfaces for POS and retail workflows, plus adjacent commerce connectivity to eCom channels. The publicly visible portal is category-level rather than entity-level, so this row reflects platform-level retail integration capability rather than object-specific schema coverage. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Retail commerce platform access",
+      "description": "Lightspeed publicly exposes retail-specific APIs across major product series.",
+      "data_points": [
+        "Retail X-Series integrations",
+        "Retail R-Series integrations",
+        "Retail commerce workflows",
+        "POS-adjacent operations",
+        "Platform documentation by product line"
+      ],
+      "relevant_operations": [
+        "Retail APIs",
+        "X-Series",
+        "R-Series",
+        "Retail introduction docs"
+      ]
+    },
+    {
+      "category": "Cross-product commerce ecosystem",
+      "description": "The portal also shows how retail APIs sit within a larger Lightspeed commerce estate.",
+      "data_points": [
+        "eCom APIs for commerce connectivity",
+        "Restaurant and golf product family integrations",
+        "Unified developer portal across product lines",
+        "Omnichannel commerce expansion paths",
+        "Regional or series-specific documentation entry points"
+      ],
+      "relevant_operations": [
+        "eCom APIs",
+        "Retail APIs",
+        "Restaurant APIs",
+        "Golf API"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Lightspeed's public developer home page is a portal into several product-series docs, so exact retail objects and workflows should be refined against X-Series or R-Series references when one specific platform matters.",
+    "This row should remain scoped to retail APIs even though the public portal also shows restaurant, eCom, and golf APIs.",
+    "No exact public machine-readable spec artifact was confirmed for the aggregate Lightspeed Retail row during this pass."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developers.lightspeedhq.com/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/lightspeed/lightspeed-retail-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Lightspeed's public developer portal groups APIs into eCom, Retail, Restaurant, and Golf categories and explicitly points Retail APIs to X-Series and R-Series documentation, confirming public retail integration surfaces within the Lightspeed commerce platform.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/lightspeed/lightspeed-retail-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/lightspeed/lightspeed-retail-apis.json",
+  "vendor_domain": "lightspeedhq.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=lightspeedhq.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/lightspeed/lightspeed-retail-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/lightspeed/lightspeed-retail-apis.openapi.json"
+}

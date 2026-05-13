@@ -14,16 +14,16 @@
     "maintenance-events",
     "fleet-alerting"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "fault codes",
     "diagnostic events",
     "vehicle-linked faults"
   ],
   "buyer_guidance": "Use this API when the integration needs maintenance-triggering fault data, not when the primary requirement is syncing vehicle inventory or writing updates back into Motive.",
-  "overview": "Motive positions Fault Codes as a diagnostic and maintenance-monitoring API. The published scope is centered on vehicle-linked fault events and repair triage signals, which makes it a telemetry surface, not an asset master-data or mutation surface. Asset data is Not Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "overview": "Motive positions Fault Codes as a diagnostic and maintenance-monitoring API. The published scope is centered on vehicle-linked fault events and repair triage signals, which makes it a telemetry surface, not an asset master-data or mutation surface. Asset data is Unsupported. Telemetry data is Supported. Writeback is Unsupported.",
   "available_data": [
     {
       "category": "Vehicle diagnostics",

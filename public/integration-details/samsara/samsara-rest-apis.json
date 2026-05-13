@@ -1,0 +1,109 @@
+{
+  "vendor_slug": "samsara",
+  "vendor_name": "Samsara",
+  "product_slug": "samsara-rest-apis",
+  "product_name": "Samsara REST APIs",
+  "product_family": "Samsara Connected Operations Cloud",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developers.samsara.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/samsara/samsara-rest-apis.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Samsara exposes broad fleet, equipment, industrial, route, maintenance, safety, compliance, and sensor APIs, including snapshot, history, and feed-style endpoints for locations, stats, readings, and event subscriptions.",
+  "data_domains": [
+    "asset-master-data",
+    "telematics-and-location-history",
+    "sensor-readings",
+    "maintenance-and-dispatch"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "vehicles",
+    "assets and industrial assets",
+    "equipment",
+    "trailers",
+    "sensors and data inputs",
+    "work orders"
+  ],
+  "buyer_guidance": "Use Samsara when you need a telematics-heavy API that combines vehicle, equipment, trailer, industrial asset, maintenance, and route data with feed endpoints for operational telemetry and webhook-based event delivery.",
+  "overview": "Samsara's developer portal documents APIs for vehicles, equipment, trailers, gateways, routes, drivers, hours of service, maintenance work orders, safety events, industrial assets, and sensor-style data inputs. The public reference also lists snapshot, history, and feed endpoints for vehicle stats, vehicle locations, equipment stats, equipment locations, data inputs, route events, and webhook subscriptions, plus write-capable endpoints for assets, routes, work orders, and industrial asset data outputs. That makes Samsara a strong source for both asset master data and operational telemetry. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Fleet, equipment, and industrial asset records",
+      "description": "The documented surface covers core operational entities plus related maintenance and assignment records.",
+      "data_points": [
+        "Vehicle, trailer, equipment, gateway, and asset records",
+        "Industrial asset records and data outputs",
+        "Driver, driver-vehicle, and driver-trailer assignments",
+        "Route, hub, order, and plan entities",
+        "Maintenance work orders and DVIR defects"
+      ],
+      "relevant_operations": [
+        "List all vehicles",
+        "Retrieve a vehicle",
+        "List all equipment",
+        "Retrieve a unit of equipment",
+        "List all assets",
+        "Create a new asset",
+        "List all industrial assets",
+        "Create an asset",
+        "Update an asset",
+        "Creates a work order",
+        "Gets work orders",
+        "Create a route",
+        "Fetch all routes"
+      ]
+    },
+    {
+      "category": "Telemetry, readings, and event feeds",
+      "description": "Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry.",
+      "data_points": [
+        "Vehicle location history, feeds, and snapshots",
+        "Vehicle stats history, feeds, and snapshots",
+        "Equipment locations and stats history, feeds, and snapshots",
+        "Asset current and historical locations",
+        "Readings definitions, snapshots, history, and feed endpoints",
+        "Sensor door, humidity, temperature, cargo, and history data",
+        "Route events, alerts, safety events, faults, trips, and idling events"
+      ],
+      "relevant_operations": [
+        "Historical locations",
+        "Locations feed",
+        "Locations snapshot",
+        "Historical stats",
+        "Stats feed",
+        "Stats snapshot",
+        "Follow a feed of equipment stats",
+        "Follow feed of equipment locations",
+        "Get Readings History and Feed",
+        "Get Readings Snapshot",
+        "Get temperature",
+        "Get humidity",
+        "Get door status",
+        "Get route events stream",
+        "Create a webhook"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Samsara distinguishes between snapshot, history, and feed endpoints, so ingestion design should explicitly separate current-state syncs from streaming or incremental telemetry collection.",
+    "The surface is write-capable across assets, routes, work orders, webhooks, and industrial data outputs, so production integrations should isolate read-only and write-capable credentials where possible.",
+    "No exact public machine-readable API description was confirmed during this review, so the developer portal reference remains the evidence anchor until Samsara exposes a direct downloadable spec artifact."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developers.samsara.com/reference/overview",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/samsara/samsara-rest-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "The public Samsara developer portal lists fleet, equipment, industrial, route, safety, maintenance, webhook, and readings endpoints, including feed, history, and snapshot variants for locations, stats, and sensor-style data.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/samsara/samsara-rest-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/samsara/samsara-rest-apis.json",
+  "vendor_domain": "samsara.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=samsara.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/samsara/samsara-rest-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/samsara/samsara-rest-apis.openapi.json"
+}

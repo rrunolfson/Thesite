@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "afterpay",
+  "vendor_name": "Afterpay",
+  "product_slug": "afterpay-api",
+  "product_name": "Afterpay API",
+  "product_family": "Afterpay",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developers.afterpay.com/afterpay-online/reference",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Afterpay API has public documentation that indicates retail payments and financing workflows across orders, payments, refunds, customers. Public API reference.",
+  "data_domains": [
+    "orders-and-payments",
+    "authorizations-and-refunds",
+    "merchant-workflows"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "orders",
+    "payments",
+    "refunds",
+    "customers",
+    "merchants"
+  ],
+  "buyer_guidance": "Use this API family for consumer payments, financing, and settlement integration. It is a write-capable transaction surface, not an asset or telemetry feed. Afterpay should be treated as a rest api surface for retail payments and financing workflows.",
+  "overview": "Public documentation reviewed for Afterpay API indicates Public API reference. The documented surface aligns with retail payments and financing workflows and covers orders, payments, refunds, customers. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Retail payments and financing workflows",
+      "description": "The public documentation indicates payment, financing, settlement, and merchant-side workflow integration across checkout and post-purchase processes.",
+      "data_points": [
+        "Order and payment records",
+        "Authorization, capture, refund, or financing state",
+        "Customer and merchant-linked records",
+        "Webhook or callback workflow outputs"
+      ],
+      "relevant_operations": [
+        "list order and payment records",
+        "read settlement or financing state",
+        "create or update payment workflows",
+        "manage callbacks or webhook delivery"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Afterpay API is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as retail payments and financing workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developers.afterpay.com/afterpay-online/reference",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public API reference."
+  }
+}

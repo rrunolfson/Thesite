@@ -6,7 +6,8 @@
   "product_family": "DepotFinity",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/depotfinity/api_specs/ChargerControlAPI-v1-0-0.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/depotfinity/api_specs/ChargerControlAPI-v1-0-0.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/charger-control-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/depotfinity/api_specs/ChargerControlAPI-v1-0-0.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "DepotFinity is a cloud-based software service that is used to monitor, report, schedule and manage the charging operations of chargers within a depot. Published API scope is centered on command and control workflows for depot charging assets.",
   "data_domains": [
@@ -15,7 +16,7 @@
     "depot-execution"
   ],
   "asset_data_available": "Supported",
-  "telemetry_data_available": "Not Supported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "chargers",
@@ -44,11 +45,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/depotfinity/ChargerControlAPI/charger_control_api.html",
-    "spec_url": "https://developer.siemens.com/depotfinity/api_specs/ChargerControlAPI-v1-0-0.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/charger-control-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Charger Control API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Charger Control API.",
+    "vendor_spec_url": "https://developer.siemens.com/depotfinity/api_specs/ChargerControlAPI-v1-0-0.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/charger-control-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/charger-control-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/charger-control-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/charger-control-api.openapi.json"
 }

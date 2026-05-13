@@ -1,0 +1,96 @@
+{
+  "vendor_slug": "epic",
+  "vendor_name": "Epic",
+  "product_slug": "epic-on-fhir-open-epic-apis",
+  "product_name": "Epic on FHIR / open.epic APIs",
+  "product_family": "Epic on FHIR / open.epic",
+  "integration_type": "FHIR API",
+  "integration_api_url": "https://fhir.epic.com/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Epic publishes a large public FHIR catalog with sandbox access for patient, appointment, clinical document, device, observation, medication, procedure, and bulk-data workflows across Epic deployments.",
+  "data_domains": [
+    "patient-master-data",
+    "clinical-and-document-records",
+    "appointments-and-scheduling",
+    "population-health-exports"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "patients",
+    "appointments",
+    "document references and binary documents",
+    "devices",
+    "observations and diagnostic reports",
+    "bulk exports"
+  ],
+  "buyer_guidance": "Use Epic on FHIR for clinical interoperability, scheduling, patient access, document exchange, and bulk export workflows against Epic-backed organizations. This is an EHR interoperability surface, not an asset or telemetry platform.",
+  "overview": "Epic's public FHIR site documents a broad resource catalog with sandbox access and client registration for developers building against Epic customer systems. The public resource summary includes read, search, create, update, and operation workflows across Patient, Appointment, AllergyIntolerance, Communication, DocumentReference, Observation, Procedure, ServiceRequest, QuestionnaireResponse, Coverage, Device, DiagnosticReport, and many other clinical resources, along with R4 BulkData kickoff, status, file retrieval, and delete flows. This is a write-capable healthcare interoperability platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Patient, scheduling, and clinical resource exchange",
+      "description": "Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations.",
+      "data_points": [
+        "Patient demographics, matching, and summary retrieval",
+        "Appointments, appointment search, and scheduling helpers",
+        "Allergies, conditions, care plans, care teams, and coverage records",
+        "Practitioners, practitioner roles, organizations, locations, and related persons",
+        "Medication, procedure, service request, and questionnaire response records"
+      ],
+      "relevant_operations": [
+        "GET /Patient",
+        "CREATE Patient",
+        "$match Patient",
+        "GET Appointment",
+        "$book Appointment",
+        "$find Appointment",
+        "CREATE AllergyIntolerance",
+        "CREATE Communication",
+        "CREATE Condition",
+        "CREATE QuestionnaireResponse",
+        "UPDATE ServiceRequest",
+        "CREATE ServiceRequest",
+        "UPDATE Task"
+      ]
+    },
+    {
+      "category": "Documents, devices, observations, and bulk export",
+      "description": "Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export.",
+      "data_points": [
+        "Clinical notes, generated CDAs, radiology results, and other document references",
+        "Device, device use, and device request records",
+        "Vital signs, labs, assessments, social history, and other observations",
+        "Diagnostic reports, specimens, and imaging-related metadata",
+        "BulkData export status, file retrieval, and delete workflows"
+      ],
+      "relevant_operations": [
+        "READ DocumentReference",
+        "CREATE DocumentReference",
+        "UPDATE DocumentReference",
+        "READ Binary",
+        "READ Device",
+        "READ Observation",
+        "CREATE Observation",
+        "UPDATE Observation",
+        "READ DiagnosticReport",
+        "Kickoff BulkData",
+        "StatusRequest BulkData",
+        "FileRequest BulkData",
+        "DELETE BulkData"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Epic's public docs are broad, but live integrations remain customer- and app-registration-dependent, so production access is controlled by each Epic-connected organization.",
+    "The public site mixes multiple FHIR versions and customer-specific feature areas, so downstream mappings should pin the exact resource flavor and version actually enabled in the target Epic deployment.",
+    "Epic exposes strong public human-readable documentation and sandbox support, but no exact public machine-readable OpenAPI or raw CapabilityStatement artifact was confirmed for this aggregate row."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://fhir.epic.com/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Epic's public resource summary enumerates read, search, create, update, and operation workflows for Patient, Appointment, AllergyIntolerance, Communication, DocumentReference, Observation, Procedure, ServiceRequest, QuestionnaireResponse, Coverage, Device, DiagnosticReport, and R4 BulkData endpoints, with sandbox and client registration available from the public site."
+  }
+}

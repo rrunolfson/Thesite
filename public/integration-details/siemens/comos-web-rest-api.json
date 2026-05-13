@@ -6,7 +6,8 @@
   "product_family": "COMOS",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/comos/comos-rest-apispec.json",
-  "spec_artifact_url": "https://developer.siemens.com/comos/comos-rest-apispec.json",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/comos-web-rest-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/comos/comos-rest-apispec.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "REST-style, HTTP-based API used to interact with COMOS data and to access COMOS features. Published API scope centers on COMOS engineering objects, related documentation, and project-side updates.",
   "data_domains": [
@@ -16,7 +17,7 @@
     "project-objects"
   ],
   "asset_data_available": "Supported",
-  "telemetry_data_available": "Not Supported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "engineering objects",
@@ -54,11 +55,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/comos/overview.html",
-    "spec_url": "https://developer.siemens.com/comos/comos-rest-apispec.json",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/comos-web-rest-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for COMOS Web REST API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for COMOS Web REST API.",
+    "vendor_spec_url": "https://developer.siemens.com/comos/comos-rest-apispec.json",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/comos-web-rest-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/comos-web-rest-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/comos-web-rest-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/comos-web-rest-api.openapi.json"
 }

@@ -1,0 +1,105 @@
+{
+  "vendor_slug": "modmed",
+  "vendor_name": "ModMed",
+  "product_slug": "modmed-synapsys-ema-apis",
+  "product_name": "ModMed synapSYS / EMA APIs",
+  "product_family": "ModMed synapSYS / EMA",
+  "integration_type": "REST API",
+  "integration_api_url": "https://portal.api.modmed.com/reference",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/modmed/modmed-synapsys-ema-apis.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "ModMed publishes public proprietary and FHIR-oriented reference docs for patient, practitioner, encounter, coverage, document, medication, appointment, charge, task, and bulk-export workflows in synapSYS and EMA environments.",
+  "data_domains": [
+    "patient-master-data",
+    "clinical-and-document-records",
+    "appointments-and-scheduling",
+    "billing-and-payments"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "patients",
+    "practitioners and organizations",
+    "encounters and appointments",
+    "coverage and insurance plans",
+    "documents and medication statements",
+    "charge items and tasks"
+  ],
+  "buyer_guidance": "Use ModMed synapSYS and EMA APIs for specialty-practice interoperability, scheduling, clinical records, documents, and practice-management writeback. This is a healthcare transaction platform, not an asset or telemetry platform.",
+  "overview": "ModMed's public API portal describes both a proprietary EMA-focused API and Certified FHIR-oriented surfaces, with sandbox onboarding for vendors and partners. The public reference exposes write-capable workflows for Patient, Coverage, Appointment, ChargeItem, Composition, AllergyIntolerance, Condition, MedicationStatement, and document uploads, plus read and search support across Practitioner, Organization, Location, Encounter, DiagnosticReport, ServiceRequest, Task, Account, and related FHIR resources. Public reference pages also document CapabilityStatement retrieval and bulk export operations such as /Group/$export and /Patient/$export. This is a write-capable healthcare interoperability and practice-management surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Patient, scheduling, and practice-management records",
+      "description": "ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data.",
+      "data_points": [
+        "Patients, related persons, practitioners, and organizations",
+        "Encounters, appointments, slots, and locations",
+        "Coverage, insurance plans, and patient accounts",
+        "Charge items and inbound charges",
+        "Tasks and recall-style workflows"
+      ],
+      "relevant_operations": [
+        "GET Patient",
+        "POST Patient",
+        "PUT Patient",
+        "GET Encounter",
+        "GET Appointment",
+        "POST Appointment",
+        "PUT Appointment",
+        "GET Slot",
+        "GET Coverage",
+        "POST Coverage",
+        "PUT Coverage",
+        "POST ChargeItem",
+        "GET Task"
+      ]
+    },
+    {
+      "category": "Clinical documents, medications, and exports",
+      "description": "The public API portal also covers clinical chart content and export-oriented FHIR flows.",
+      "data_points": [
+        "Document references and uploads from S3 URLs",
+        "Medication statements, allergies, and conditions",
+        "Service requests and diagnostic reports",
+        "FHIR CapabilityStatement access",
+        "Group and patient bulk export operations"
+      ],
+      "relevant_operations": [
+        "GET CapabilityStatement",
+        "GET DocumentReference",
+        "POST DocumentReference",
+        "GET MedicationStatement",
+        "POST MedicationStatement",
+        "PUT MedicationStatement",
+        "GET AllergyIntolerance",
+        "POST AllergyIntolerance",
+        "PUT AllergyIntolerance",
+        "POST Condition",
+        "POST Composition",
+        "GET /Group/$export",
+        "GET /Patient/$export"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "ModMed splits functionality across a proprietary EMA API and certified FHIR-style references, so integrations should be explicit about which surface is authoritative for the workflow being implemented.",
+    "Sandbox access is vendor-application based and production use requires demonstrated proficiency for any writeback workflows the integrator intends to support.",
+    "No exact public machine-readable spec artifact was confirmed for the aggregate ModMed row even though the public portal exposes strong reference coverage."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://portal.api.modmed.com/reference",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/modmed/modmed-synapsys-ema-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "ModMed's public API portal documents proprietary and FHIR-oriented resources for Patient, Practitioner, Encounter, Coverage, Organization, InsurancePlan, Location, DocumentReference, MedicationStatement, AllergyIntolerance, Condition, DiagnosticReport, Appointment, ChargeItem, Account, Task, Composition, and bulk export operations, while explicitly describing GET, POST, and PUT expectations for written data.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/modmed/modmed-synapsys-ema-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/modmed/modmed-synapsys-ema-apis.json",
+  "vendor_domain": "modmed.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=modmed.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/modmed/modmed-synapsys-ema-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/modmed/modmed-synapsys-ema-apis.openapi.json"
+}

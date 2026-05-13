@@ -6,7 +6,8 @@
   "product_family": "Motive Open API",
   "integration_type": "REST API",
   "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-  "spec_artifact_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/motive/webhooks-api.openapi.json",
+  "vendor_spec_artifact_url": "",
   "detail_completeness": "researched",
   "data_coverage_summary": "Webhooks API is Motive's outbound event-delivery surface for near-real-time operational notifications into external systems.",
   "data_domains": [
@@ -14,16 +15,16 @@
     "operational-notifications",
     "webhook-subscriptions"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "webhook subscriptions",
     "operational event payloads",
     "outbound notifications"
   ],
   "buyer_guidance": "Use Webhooks API when the requirement is pushing Motive event payloads into downstream systems with low latency, not querying asset inventory or writing actions back to Motive.",
-  "overview": "Motive's Webhooks API is an outbound event-delivery mechanism. It can deliver operational event payloads into another platform, which makes telemetry delivery Supported, but it does not expose asset master data and it is not a writeback path into Motive. Asset data is Not Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "overview": "Motive's Webhooks API is an outbound event-delivery mechanism. It can deliver operational event payloads into another platform, which makes telemetry delivery Supported, but it does not expose asset master data and it is not a writeback path into Motive. Asset data is Unsupported. Telemetry data is Supported. Writeback is Unsupported.",
   "available_data": [
     {
       "category": "Outbound operational events",
@@ -45,11 +46,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-    "spec_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/motive/webhooks-api.openapi.json",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing webhook delivery for near-real-time operational event streaming. Outbound events count as telemetry delivery, but not as writeback into Motive."
+    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing webhook delivery for near-real-time operational event streaming. Outbound events count as telemetry delivery, but not as writeback into Motive.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/motive/webhooks-api.openapi.json"
   },
   "detail_path": "/integration-details/motive/webhooks-api.json",
   "vendor_domain": "gomotive.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=gomotive.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=gomotive.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/motive/webhooks-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/motive/webhooks-api.openapi.json"
 }

@@ -1,0 +1,563 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Maintenance & Fault Monitoring Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-18",
+    "summary": "Samsara Maintenance & Fault Monitoring combines fault-code and tell-tale reads with DVIR, defect, odometer, and engine-runtime APIs, and it also supports maintenance write workflows such as creating mechanic DVIRs and resolving DVIRs or defects.",
+    "description": "Manufactured OpenAPI artifact for Maintenance & Fault Monitoring. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. The Maintenance & Fault Monitoring umbrella links four operational areas: fault-code monitoring, tell-tale monitoring, DVIR/defect management, and planned/preventative maintenance. Faults and tell tales are exposed through the vehicle stats snapshot, history, and feed endpoints, while DVIRs and defects have dedicated listing and patch flows. The DVIR guide also documents `POST /fleet/dvirs`, `PATCH /fleet/dvirs/:id`, and `PATCH /fleet/defects/:id`, which confirms real writeback capability in addition to read-heavy maintenance telemetry.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developers.samsara.com/docs/maintenance-fault-monitoring-guide"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Fault and tell-tale telemetry",
+      "description": "Manufactured operations grouped under Fault and tell-tale telemetry."
+    },
+    {
+      "name": "Inspection and defect workflow data",
+      "description": "Manufactured operations grouped under Inspection and defect workflow data."
+    },
+    {
+      "name": "Maintenance write workflows",
+      "description": "Manufactured operations grouped under Maintenance write workflows."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "samsara_maintenance-fault-monitoring_integrationProfile",
+        "summary": "Get manufactured profile for Maintenance & Fault Monitoring",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/fleet/vehicles/stats": {
+      "get": {
+        "tags": [
+          "Fault and tell-tale telemetry"
+        ],
+        "operationId": "samsara_maintenance-fault-monitoring_get-fleet-vehicles-stats-types-faultcodes_get",
+        "summary": "GET /fleet/vehicles/stats?types=faultCodes",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Vehicle health signals are exposed through the same telematics stats surfaces used elsewhere in the platform. Vendor documentation: https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /fleet/vehicles/stats?types=faultCodes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/fleet/vehicles/stats/history": {
+      "get": {
+        "tags": [
+          "Fault and tell-tale telemetry"
+        ],
+        "operationId": "samsara_maintenance-fault-monitoring_get-fleet-vehicles-stats-history-types-faultcodes_get",
+        "summary": "GET /fleet/vehicles/stats/history?types=faultCodes",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Vehicle health signals are exposed through the same telematics stats surfaces used elsewhere in the platform. Vendor documentation: https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /fleet/vehicles/stats/history?types=faultCodes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/fleet/vehicles/stats/feed": {
+      "get": {
+        "tags": [
+          "Fault and tell-tale telemetry"
+        ],
+        "operationId": "samsara_maintenance-fault-monitoring_get-fleet-vehicles-stats-feed-types-faultcodes_get",
+        "summary": "GET /fleet/vehicles/stats/feed?types=faultCodes",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Vehicle health signals are exposed through the same telematics stats surfaces used elsewhere in the platform. Vendor documentation: https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /fleet/vehicles/stats/feed?types=faultCodes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/fleet/dvirs/history": {
+      "get": {
+        "tags": [
+          "Inspection and defect workflow data"
+        ],
+        "operationId": "samsara_maintenance-fault-monitoring_get-fleet-dvirs-history_get",
+        "summary": "GET /fleet/dvirs/history",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. DVIRs and defect history provide operational maintenance records tied to vehicles, mechanics, and resolution state. Vendor documentation: https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /fleet/dvirs/history.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/fleet/defects/history": {
+      "get": {
+        "tags": [
+          "Inspection and defect workflow data"
+        ],
+        "operationId": "samsara_maintenance-fault-monitoring_get-fleet-defects-history_get",
+        "summary": "GET /fleet/defects/history",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. DVIRs and defect history provide operational maintenance records tied to vehicles, mechanics, and resolution state. Vendor documentation: https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /fleet/defects/history.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/fleet/dvirs": {
+      "post": {
+        "tags": [
+          "Maintenance write workflows"
+        ],
+        "operationId": "samsara_maintenance-fault-monitoring_post-fleet-dvirs_post",
+        "summary": "POST /fleet/dvirs",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published guide documents concrete create and patch methods for maintenance lifecycle actions. Vendor documentation: https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /fleet/dvirs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /fleet/dvirs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fleet/dvirs/:id": {
+      "patch": {
+        "tags": [
+          "Maintenance write workflows"
+        ],
+        "operationId": "samsara_maintenance-fault-monitoring_patch-fleet-dvirs-id_patch",
+        "summary": "PATCH /fleet/dvirs/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published guide documents concrete create and patch methods for maintenance lifecycle actions. Vendor documentation: https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /fleet/dvirs/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /fleet/dvirs/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fleet/defects/:id": {
+      "patch": {
+        "tags": [
+          "Maintenance write workflows"
+        ],
+        "operationId": "samsara_maintenance-fault-monitoring_patch-fleet-defects-id_patch",
+        "summary": "PATCH /fleet/defects/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published guide documents concrete create and patch methods for maintenance lifecycle actions. Vendor documentation: https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /fleet/defects/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /fleet/defects/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/samsara/maintenance-fault-monitoring.json",
+    "vendor_documentation_url": "https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+    "vendor_spec_artifact_url": "https://developers.samsara.com/openapi/samsara-api.json",
+    "reviewed_at": "2026-04-18"
+  }
+}

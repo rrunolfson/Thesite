@@ -1,0 +1,80 @@
+{
+  "vendor_slug": "clover",
+  "vendor_name": "Clover",
+  "product_slug": "clover-apis",
+  "product_name": "Clover APIs",
+  "product_family": "Clover",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.clover.com/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Clover publicly documents an open POS platform with Clover REST API, Ecommerce API, Clover Android Payments API, point-of-sale integrations, and a published Clover data model for merchant business operations.",
+  "data_domains": [
+    "pos-and-payments",
+    "merchant-business-data",
+    "ecommerce",
+    "device-integrated-workflows"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "merchant business data",
+    "payments",
+    "ecommerce transactions",
+    "point-of-sale integrations",
+    "apps on Clover devices",
+    "Clover data model objects"
+  ],
+  "buyer_guidance": "Use Clover APIs for POS, merchant app, ecommerce, and payment integrations on Clover devices and merchant accounts. This is a retail and payments platform, not an asset or telemetry platform.",
+  "overview": "Clover's public developer documentation describes Clover as an open Android-based POS platform that lets third-party developers build apps and integrate external POS systems with Clover devices. Public getting-started guidance explicitly points developers to the Clover REST API for authorized merchant-business management, the Ecommerce API for ecommerce services, the Clover Android Payments API for device-side payments, POS integrations for PCI-compliant dip, swipe, and tap acceptance, and the published Clover data model. This is a write-capable retail and payments surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Merchant and POS operations",
+      "description": "Clover publicly documents APIs and integrations for merchant-facing retail operations.",
+      "data_points": [
+        "Merchant business data",
+        "POS and external point-of-sale integrations",
+        "Payment acceptance on Clover devices",
+        "Device-aware and device-agnostic payment flows",
+        "Published Clover data model objects"
+      ],
+      "relevant_operations": [
+        "Clover REST API",
+        "Clover Android Payments API",
+        "Integrate your point of sale (POS)",
+        "Clover data model",
+        "API Reference"
+      ]
+    },
+    {
+      "category": "Ecommerce and application platform workflows",
+      "description": "The platform also supports ecommerce and app-market integrations for merchant solutions.",
+      "data_points": [
+        "Ecommerce service integrations",
+        "App Market distribution",
+        "Android-based merchant applications",
+        "Platform and environment setup",
+        "Developer dashboard and release-driven integrations"
+      ],
+      "relevant_operations": [
+        "Ecommerce API",
+        "Build Android apps for Clover devices",
+        "Connect on the Clover App Market",
+        "Select an integration type",
+        "Get a sandbox account"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Clover's public documentation mixes REST APIs, Android payments surfaces, ecommerce, and app-platform guidance, so downstream use should distinguish merchant-server workflows from device-side app workflows.",
+    "The public docs clearly confirm write-capable payments and merchant operations, but no exact public machine-readable spec artifact was confirmed for the aggregate Clover row during this pass.",
+    "Because Clover also publishes SDK and device guidance, integrations should stay focused on the API surfaces relevant to this catalog row rather than folding in SDK-only capabilities."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.clover.com/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Clover's public developer home page explicitly references the Clover REST API, Ecommerce API, Clover Android Payments API, POS integrations, sandbox setup, and the Clover data model while describing Clover as an open platform for merchant and device integrations."
+  }
+}

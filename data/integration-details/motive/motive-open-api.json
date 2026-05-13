@@ -1,0 +1,85 @@
+{
+  "vendor_slug": "motive",
+  "vendor_name": "Motive",
+  "product_slug": "motive-open-api",
+  "product_name": "Motive Open API",
+  "product_family": "Motive Open API",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.gomotive.com/reference",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Motive's Open API spans users, vehicles, vehicle gateway devices, groups, HOS logs, locations, messages, inspection reports, IFTA reports, fault codes, driver performance events, and webhooks for connected fleet workflows.",
+  "data_domains": [
+    "fleet-assets",
+    "connected-fleet-telemetry",
+    "fleet-workflows"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "users",
+    "vehicles",
+    "vehicle gateway devices",
+    "locations",
+    "inspection reports",
+    "fault codes"
+  ],
+  "buyer_guidance": "Use Motive Open API when you need connected-fleet identity, compliance, diagnostics, and webhook-driven event flows from the same vendor surface, especially for mixed driver, vehicle, and gateway-device integrations.",
+  "overview": "Motive's public developer portal describes a single Open API surface covering users, vehicles, vehicle gateway devices, groups, HOS logs, locations, messaging, inspection reports, IFTA reports, fault codes, driver performance events, and webhooks. That category mix combines fleet asset master data with event-oriented operational and compliance data, while the published reference and marketplace language show that the API is intended for production integrations and app workflows rather than read-only exports. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Fleet master data and operational records",
+      "description": "The public categories cover the foundational entities needed to identify drivers, vehicles, devices, and organizational groupings inside Motive.",
+      "data_points": [
+        "User records and group relationships",
+        "Vehicle records",
+        "Vehicle gateway device records",
+        "Location records",
+        "Inspection reports and compliance-oriented logs",
+        "Fault codes and driver performance events"
+      ],
+      "relevant_operations": [
+        "Users API",
+        "Vehicles API",
+        "Vehicle Gateway API",
+        "Groups API",
+        "Locations API",
+        "Inspection Reports API",
+        "Fault Codes API",
+        "Driver Performance Events API"
+      ]
+    },
+    {
+      "category": "Telematics, compliance, and event delivery",
+      "description": "Motive's documented API families include the operational event surfaces needed for downstream monitoring and alert-driven integrations.",
+      "data_points": [
+        "HOS log data",
+        "Vehicle gateway and connected-device data",
+        "Driver messaging events",
+        "Inspection and fault event streams",
+        "Webhook-based downstream notifications",
+        "IFTA reporting data"
+      ],
+      "relevant_operations": [
+        "HOS Logs API",
+        "Messages API",
+        "Webhooks API",
+        "IFTA Reports API",
+        "Vehicle Gateway API",
+        "Fault Codes API"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Motive publishes its API by product category rather than as one confirmed downloadable machine-readable spec, so integrations should treat the category reference as authoritative until an exact public spec artifact is exposed.",
+    "Because the surface spans identity, compliance, telematics, and webhook workflows, downstream systems should separate credential use by use case instead of sharing one broadly privileged integration user.",
+    "The docs clearly support production build and publish workflows through the marketplace program, so writeback and event subscriptions should be assumed to be part of the supported integration model rather than exceptions."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.gomotive.com/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "The public Motive developer portal lists Users, Vehicles, Vehicle Gateway, Groups, HOS Logs, Locations, Messaging, Inspection Reports, IFTA Reports, Fault Codes, Driver Performance Events, and Webhooks as core Open API categories."
+  }
+}

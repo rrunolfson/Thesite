@@ -1,0 +1,67 @@
+{
+  "vendor_slug": "tive",
+  "vendor_name": "Tive",
+  "product_slug": "tive-apis",
+  "product_name": "Tive APIs",
+  "product_family": "Tive",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.tive.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/tive/tive-apis.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Tive APIs has public documentation that indicates shipment and asset visibility workflows across shipments, tracked assets, events, positions. Public developer docs/portal.",
+  "data_domains": [
+    "shipments-and-assets",
+    "events-and-positions",
+    "webhook-workflows"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "shipments",
+    "tracked assets",
+    "events",
+    "positions",
+    "subscriptions"
+  ],
+  "buyer_guidance": "Use this surface for shipment and asset visibility, especially when webhook-driven event delivery is part of the integration design. Tive should be treated as a rest api surface for shipment and asset visibility workflows.",
+  "overview": "Public documentation reviewed for Tive APIs indicates Public developer docs/portal. The documented surface aligns with shipment and asset visibility workflows and covers shipments, tracked assets, events, positions. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Shipment and asset visibility workflows",
+      "description": "The public documentation indicates logistics-visibility workflows for tracked assets, shipment events, positions, and webhook-driven status delivery.",
+      "data_points": [
+        "Tracked shipment and asset records",
+        "Event history and position updates",
+        "Subscription or webhook state",
+        "Operational exception and workflow metadata"
+      ],
+      "relevant_operations": [
+        "list shipment and tracked-asset records",
+        "read event and position history",
+        "create or update visibility workflows",
+        "manage webhook or subscription delivery"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Tive APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as shipment and asset visibility workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.tive.com/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/tive/tive-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public developer docs/portal.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/tive/tive-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/tive/tive-apis.json",
+  "vendor_domain": "tive.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=tive.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/tive/tive-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/tive/tive-apis.openapi.json"
+}

@@ -6,7 +6,8 @@
   "product_family": "Building X",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/point-value-ingest-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "RESTful API for setting values of a Point. Published API scope is centered on writing point values and set values into Building X.",
   "data_domains": [
@@ -14,7 +15,7 @@
     "set-points",
     "external-measurements"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
   "writeback_supported": "Supported",
   "key_entities": [
@@ -47,11 +48,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/overview.html",
-    "spec_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/point-value-ingest-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Point Value Ingest API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Point Value Ingest API.",
+    "vendor_spec_url": "https://developer.siemens.com/building-x-openness/api/point-value-ingest-api/ingestion.openapi.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/point-value-ingest-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/point-value-ingest-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/point-value-ingest-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/point-value-ingest-api.openapi.json"
 }

@@ -1,0 +1,601 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Shopify Admin APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Shopify publicly documents GraphQL Admin, legacy REST Admin, Storefront, Customer Account, Payments Apps, webhooks, and specialized APIs for products, customers, orders, inventory, checkout, and store operations.",
+    "description": "Manufactured OpenAPI artifact for Shopify Admin APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Shopify's public API hub organizes the platform around GraphQL Admin API, legacy REST Admin API, Storefront API, Customer Account API, Payments Apps API, webhooks, and app events. Public descriptions state that these APIs let integrators read and write products, customers, orders, inventory, checkouts, payments, and buyer-facing storefront data, while reacting to store changes in real time through webhook events. Shopify also exposes customer privacy, customer identity, partner, and storefront surfaces for headless and embedded commerce scenarios. This is a write-capable retail commerce platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://shopify.dev/docs/api"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Admin and store operations",
+      "description": "Manufactured operations grouped under Admin and store operations."
+    },
+    {
+      "name": "Storefront and customer experiences",
+      "description": "Manufactured operations grouped under Storefront and customer experiences."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "shopify_shopify-admin-apis_integrationProfile",
+        "summary": "Get manufactured profile for Shopify Admin APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/graphql-admin-api": {
+      "get": {
+        "tags": [
+          "Admin and store operations"
+        ],
+        "operationId": "shopify_shopify-admin-apis_graphql-admin-api_get",
+        "summary": "GraphQL Admin API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Shopify's public API hub emphasizes administrative store operations and core commerce data exchange. Vendor documentation: https://shopify.dev/docs/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GraphQL Admin API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/rest-admin-api": {
+      "get": {
+        "tags": [
+          "Admin and store operations"
+        ],
+        "operationId": "shopify_shopify-admin-apis_rest-admin-api_get",
+        "summary": "REST Admin API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Shopify's public API hub emphasizes administrative store operations and core commerce data exchange. Vendor documentation: https://shopify.dev/docs/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for REST Admin API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payments-apps-api": {
+      "get": {
+        "tags": [
+          "Admin and store operations"
+        ],
+        "operationId": "shopify_shopify-admin-apis_payments-apps-api_get",
+        "summary": "Payments Apps API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Shopify's public API hub emphasizes administrative store operations and core commerce data exchange. Vendor documentation: https://shopify.dev/docs/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payments Apps API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/webhooks": {
+      "get": {
+        "tags": [
+          "Admin and store operations"
+        ],
+        "operationId": "shopify_shopify-admin-apis_webhooks_get",
+        "summary": "Webhooks",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Shopify's public API hub emphasizes administrative store operations and core commerce data exchange. Vendor documentation: https://shopify.dev/docs/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Webhooks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/partner-api": {
+      "get": {
+        "tags": [
+          "Admin and store operations"
+        ],
+        "operationId": "shopify_shopify-admin-apis_partner-api_get",
+        "summary": "Partner API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Shopify's public API hub emphasizes administrative store operations and core commerce data exchange. Vendor documentation: https://shopify.dev/docs/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Partner API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/app-events-api": {
+      "get": {
+        "tags": [
+          "Admin and store operations"
+        ],
+        "operationId": "shopify_shopify-admin-apis_app-events-api_get",
+        "summary": "App Events API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Shopify's public API hub emphasizes administrative store operations and core commerce data exchange. Vendor documentation: https://shopify.dev/docs/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for App Events API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/storefront-api": {
+      "get": {
+        "tags": [
+          "Storefront and customer experiences"
+        ],
+        "operationId": "shopify_shopify-admin-apis_storefront-api_get",
+        "summary": "Storefront API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Shopify also provides buyer-facing APIs for custom storefront and account experiences. Vendor documentation: https://shopify.dev/docs/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Storefront API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/customer-account-api": {
+      "get": {
+        "tags": [
+          "Storefront and customer experiences"
+        ],
+        "operationId": "shopify_shopify-admin-apis_customer-account-api_get",
+        "summary": "Customer Account API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Shopify also provides buyer-facing APIs for custom storefront and account experiences. Vendor documentation: https://shopify.dev/docs/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Customer Account API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/ajax-api": {
+      "get": {
+        "tags": [
+          "Storefront and customer experiences"
+        ],
+        "operationId": "shopify_shopify-admin-apis_ajax-api_get",
+        "summary": "Ajax API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Shopify also provides buyer-facing APIs for custom storefront and account experiences. Vendor documentation: https://shopify.dev/docs/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Ajax API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/shop-pay-wallet-api": {
+      "get": {
+        "tags": [
+          "Storefront and customer experiences"
+        ],
+        "operationId": "shopify_shopify-admin-apis_shop-pay-wallet-api_get",
+        "summary": "Shop Pay Wallet API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Shopify also provides buyer-facing APIs for custom storefront and account experiences. Vendor documentation: https://shopify.dev/docs/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Shop Pay Wallet API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/customer-privacy-api": {
+      "get": {
+        "tags": [
+          "Storefront and customer experiences"
+        ],
+        "operationId": "shopify_shopify-admin-apis_customer-privacy-api_get",
+        "summary": "Customer Privacy API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Shopify also provides buyer-facing APIs for custom storefront and account experiences. Vendor documentation: https://shopify.dev/docs/api",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Customer Privacy API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/shopify/shopify-admin-apis.json",
+    "vendor_documentation_url": "https://shopify.dev/docs/api",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "vendor_slug": "intelex",
+  "vendor_name": "Intelex",
+  "product_slug": "intelex-apis-integrations",
+  "product_name": "Intelex APIs / integrations",
+  "product_family": "Intelex",
+  "integration_type": "REST API",
+  "integration_api_url": "https://www.intelex.com/products/applications/api?lai_sl=l",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/intelex/intelex-apis-integrations.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Intelex publicly describes a RESTful API for building mobile apps and integrating EHSQ platform data, covering incident, audit, document, training, occupational health, and connected-worker workflows across the Intelex platform.",
+  "data_domains": [
+    "safety-and-incident-management",
+    "audit-and-compliance",
+    "training-and-occupational-health",
+    "asset-and-exposure-workflows"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "incidents and illnesses",
+    "audits and corrective actions",
+    "training and qualifications",
+    "documents and communications",
+    "vehicle and occupational health records",
+    "industrial hygiene exposure data"
+  ],
+  "buyer_guidance": "Use Intelex APIs and platform integrations for EHSQ data exchange, incident and audit workflows, worker health and training records, and connected operational reporting. This is workflow-centric manufacturing software with supported writeback and some asset or telemetry-adjacent data capture.",
+  "overview": "Intelex's public API page states that its RESTful API allows customers to build home-grown mobile applications and integrations that take advantage of Intelex data and infrastructure. The public platform and solution pages describe API-based push and pull integration with third-party systems and list solution areas such as Document Control, Injury and Illness Management, Vehicle Incidents Management, OSHA Reports, Occupational Health Management, Industrial Hygiene exposure risk assessment, Root Cause Analysis, Meetings Management, Communications Management, and Business Intelligence. Based on the public platform description, this is a write-capable EHSQ integration surface with support for operational records and some asset or telemetry-adjacent workflows such as exposure and vehicle incident data. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Safety, quality, and compliance records",
+      "description": "Intelex publicly describes broad EHSQ application coverage that can be surfaced through its RESTful integration layer.",
+      "data_points": [
+        "Injury, illness, and vehicle incident records",
+        "Root cause analysis, meetings, and corrective communication workflows",
+        "Document control and audit-trail history",
+        "OSHA and regulatory reporting workflows",
+        "Business intelligence and analytics outputs"
+      ],
+      "relevant_operations": [
+        "REST API push and pull data",
+        "Build home-grown mobile apps",
+        "Integrate third-party business systems",
+        "Data Import Tool",
+        "Audit Trail"
+      ]
+    },
+    {
+      "category": "Training, occupational health, and exposure workflows",
+      "description": "The public solution catalog also exposes workforce and field-operational workflow areas that benefit from integration.",
+      "data_points": [
+        "Training and qualification-related data",
+        "Occupational health and case management records",
+        "Industrial hygiene and exposure risk assessment data",
+        "Mobile and offline field data capture",
+        "Communications and follow-up task tracking"
+      ],
+      "relevant_operations": [
+        "Mobile & Offline Capability",
+        "Occupational Health Management",
+        "Industrial Hygiene (Exposure Risk Assessment)",
+        "Communications Management",
+        "Electronic Signatures"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Intelex's public API messaging is capability-oriented rather than endpoint-oriented, so downstream field mapping should remain conservative until customer or partner reference material is available.",
+    "The strongest public evidence is for workflow and platform capabilities, not exact schemas or authentication details, so this row is researched but still weaker than rows backed by public spec files.",
+    "No exact public machine-readable spec artifact was confirmed for Intelex."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://www.intelex.com/products/applications/api?lai_sl=l",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/intelex/intelex-apis-integrations.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Intelex's public API page states that the Intelex RESTful API supports home-grown mobile apps and third-party integrations using Intelex data and infrastructure, while the surrounding platform and solution content lists document control, audit trail, injury and illness management, vehicle incidents, OSHA reports, occupational health, industrial hygiene exposure assessment, and analytics capabilities.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/intelex/intelex-apis-integrations.openapi.json"
+  },
+  "detail_path": "/integration-details/intelex/intelex-apis-integrations.json",
+  "vendor_domain": "intelex.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=intelex.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/intelex/intelex-apis-integrations.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/intelex/intelex-apis-integrations.openapi.json"
+}

@@ -1,0 +1,1135 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Service Requests API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-17",
+    "summary": "The Service Requests area covers pre-work-order intake and triage, including request creation, retrieval, updates, status and priority changes, category and trade changes, reassignment options, duplicate detection, and request-info retrieval flows used before dispatch finalization.",
+    "description": "Manufactured OpenAPI artifact for Service Requests API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. ServiceChannel separates request intake from active work-order execution. The WorkRequests and ServiceRequest sections show APIs for creating, retrieving, updating, deleting, reprioritizing, reclassifying, rescheduling, reassigning, and searching work requests, along with subscriber-context endpoints for service request info, address/context retrieval, overrides, and duplicate detection. This makes the Service Requests area the best fit for ServiceNow incident-to-service handoff and pre-dispatch repair intake automation.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.servicechannel.com/swagger/index.html#/WorkRequests"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Request lifecycle and triage",
+      "description": "Manufactured operations grouped under Request lifecycle and triage."
+    },
+    {
+      "name": "Reassignment and provider selection",
+      "description": "Manufactured operations grouped under Reassignment and provider selection."
+    },
+    {
+      "name": "Subscriber request context and duplicate controls",
+      "description": "Manufactured operations grouped under Subscriber request context and duplicate controls."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "servicechannel_service-requests-api_integrationProfile",
+        "summary": "Get manufactured profile for Service Requests API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/workrequests": {
+      "post": {
+        "tags": [
+          "Request lifecycle and triage"
+        ],
+        "operationId": "servicechannel_service-requests-api_post-workrequests_post",
+        "summary": "POST /workrequests",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core endpoints for creating, updating, searching, and deleting service requests before they are fully executed as work orders. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /workrequests.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /workrequests.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workrequests/{id}": {
+      "get": {
+        "tags": [
+          "Request lifecycle and triage"
+        ],
+        "operationId": "servicechannel_service-requests-api_get-workrequests-id_get",
+        "summary": "GET /workrequests/{id}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core endpoints for creating, updating, searching, and deleting service requests before they are fully executed as work orders. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /workrequests/{id}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "delete": {
+        "tags": [
+          "Request lifecycle and triage"
+        ],
+        "operationId": "servicechannel_service-requests-api_delete-workrequests-id_delete",
+        "summary": "DELETE /workrequests/{id}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core endpoints for creating, updating, searching, and deleting service requests before they are fully executed as work orders. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DELETE /workrequests/{id}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for DELETE /workrequests/{id}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workrequests/{workRequestId}": {
+      "put": {
+        "tags": [
+          "Request lifecycle and triage"
+        ],
+        "operationId": "servicechannel_service-requests-api_put-workrequests-workrequestid_put",
+        "summary": "PUT /workrequests/{workRequestId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core endpoints for creating, updating, searching, and deleting service requests before they are fully executed as work orders. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workrequests/{workRequestId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workrequests/{workRequestId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workrequests/{workRequestId}/status": {
+      "put": {
+        "tags": [
+          "Request lifecycle and triage"
+        ],
+        "operationId": "servicechannel_service-requests-api_put-workrequests-workrequestid-status_put",
+        "summary": "PUT /workrequests/{workRequestId}/status",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core endpoints for creating, updating, searching, and deleting service requests before they are fully executed as work orders. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workrequests/{workRequestId}/status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workrequests/{workRequestId}/status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workrequests/{workRequestId}/priority": {
+      "put": {
+        "tags": [
+          "Request lifecycle and triage"
+        ],
+        "operationId": "servicechannel_service-requests-api_put-workrequests-workrequestid-priority_put",
+        "summary": "PUT /workrequests/{workRequestId}/priority",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core endpoints for creating, updating, searching, and deleting service requests before they are fully executed as work orders. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workrequests/{workRequestId}/priority.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workrequests/{workRequestId}/priority.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workrequests/{workRequestId}/category": {
+      "put": {
+        "tags": [
+          "Request lifecycle and triage"
+        ],
+        "operationId": "servicechannel_service-requests-api_put-workrequests-workrequestid-category_put",
+        "summary": "PUT /workrequests/{workRequestId}/category",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core endpoints for creating, updating, searching, and deleting service requests before they are fully executed as work orders. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workrequests/{workRequestId}/category.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workrequests/{workRequestId}/category.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workrequests/{workRequestId}/trade": {
+      "put": {
+        "tags": [
+          "Request lifecycle and triage"
+        ],
+        "operationId": "servicechannel_service-requests-api_put-workrequests-workrequestid-trade_put",
+        "summary": "PUT /workrequests/{workRequestId}/trade",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core endpoints for creating, updating, searching, and deleting service requests before they are fully executed as work orders. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workrequests/{workRequestId}/trade.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workrequests/{workRequestId}/trade.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workrequests/search": {
+      "post": {
+        "tags": [
+          "Request lifecycle and triage"
+        ],
+        "operationId": "servicechannel_service-requests-api_post-workrequests-search_post",
+        "summary": "POST /workrequests/search",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core endpoints for creating, updating, searching, and deleting service requests before they are fully executed as work orders. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /workrequests/search.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /workrequests/search.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workrequests/{workRequestId}/reassign": {
+      "put": {
+        "tags": [
+          "Reassignment and provider selection"
+        ],
+        "operationId": "servicechannel_service-requests-api_put-workrequests-workrequestid-reassign_put",
+        "summary": "PUT /workrequests/{workRequestId}/reassign",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints that support choosing another provider or identifying who can take a request next. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workrequests/{workRequestId}/reassign.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workrequests/{workRequestId}/reassign.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workrequests/providersforreassignment": {
+      "get": {
+        "tags": [
+          "Reassignment and provider selection"
+        ],
+        "operationId": "servicechannel_service-requests-api_get-workrequests-providersforreassignment_get",
+        "summary": "GET /workrequests/providersforreassignment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints that support choosing another provider or identifying who can take a request next. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /workrequests/providersforreassignment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/servicerequest/providers": {
+      "get": {
+        "tags": [
+          "Reassignment and provider selection"
+        ],
+        "operationId": "servicechannel_service-requests-api_get-servicerequest-providers_get",
+        "summary": "GET /servicerequest/providers",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints that support choosing another provider or identifying who can take a request next. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /servicerequest/providers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/subscribers/current/servicerequest/info": {
+      "get": {
+        "tags": [
+          "Subscriber request context and duplicate controls"
+        ],
+        "operationId": "servicechannel_service-requests-api_get-subscribers-current-servicerequest-info_get",
+        "summary": "GET /subscribers/current/servicerequest/info",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Read and helper endpoints for dashboard context, properties overrides, addresses, and duplicate detection around request intake. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /subscribers/current/servicerequest/info.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/subscribers/current/servicerequest/info/nosettings": {
+      "get": {
+        "tags": [
+          "Subscriber request context and duplicate controls"
+        ],
+        "operationId": "servicechannel_service-requests-api_get-subscribers-current-servicerequest-info-nosettings_get",
+        "summary": "GET /subscribers/current/servicerequest/info/nosettings",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Read and helper endpoints for dashboard context, properties overrides, addresses, and duplicate detection around request intake. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /subscribers/current/servicerequest/info/nosettings.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/subscribers/current/servicerequest/addresses": {
+      "get": {
+        "tags": [
+          "Subscriber request context and duplicate controls"
+        ],
+        "operationId": "servicechannel_service-requests-api_get-subscribers-current-servicerequest-addresses_get",
+        "summary": "GET /subscribers/current/servicerequest/addresses",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Read and helper endpoints for dashboard context, properties overrides, addresses, and duplicate detection around request intake. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /subscribers/current/servicerequest/addresses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/subscribers/current/servicerequest/overrides/props": {
+      "post": {
+        "tags": [
+          "Subscriber request context and duplicate controls"
+        ],
+        "operationId": "servicechannel_service-requests-api_post-subscribers-current-servicerequest-overrides-props_post",
+        "summary": "POST /subscribers/current/servicerequest/overrides/props",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Read and helper endpoints for dashboard context, properties overrides, addresses, and duplicate detection around request intake. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /subscribers/current/servicerequest/overrides/props.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /subscribers/current/servicerequest/overrides/props.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/providers/current/subscribers/{subscriberId}/servicerequest/overrides/props": {
+      "post": {
+        "tags": [
+          "Subscriber request context and duplicate controls"
+        ],
+        "operationId": "servicechannel_service-requests-api_post-providers-current-subscribers-subscriberid-servicerequest-overrides-props_post",
+        "summary": "POST /providers/current/subscribers/{subscriberId}/servicerequest/overrides/props",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Read and helper endpoints for dashboard context, properties overrides, addresses, and duplicate detection around request intake. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /providers/current/subscribers/{subscriberId}/servicerequest/overrides/props.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /providers/current/subscribers/{subscriberId}/servicerequest/overrides/props.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscribers/current/servicerequest/duplicates/completed": {
+      "post": {
+        "tags": [
+          "Subscriber request context and duplicate controls"
+        ],
+        "operationId": "servicechannel_service-requests-api_post-subscribers-current-servicerequest-duplicates-completed_post",
+        "summary": "POST /subscribers/current/servicerequest/duplicates/completed",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Read and helper endpoints for dashboard context, properties overrides, addresses, and duplicate detection around request intake. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /subscribers/current/servicerequest/duplicates/completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /subscribers/current/servicerequest/duplicates/completed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscribers/current/servicerequest/duplicates/open": {
+      "post": {
+        "tags": [
+          "Subscriber request context and duplicate controls"
+        ],
+        "operationId": "servicechannel_service-requests-api_post-subscribers-current-servicerequest-duplicates-open_post",
+        "summary": "POST /subscribers/current/servicerequest/duplicates/open",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Read and helper endpoints for dashboard context, properties overrides, addresses, and duplicate detection around request intake. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /subscribers/current/servicerequest/duplicates/open.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /subscribers/current/servicerequest/duplicates/open.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/servicechannel/service-requests-api.json",
+    "vendor_documentation_url": "https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
+    "vendor_spec_artifact_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
+    "reviewed_at": "2026-04-17"
+  }
+}

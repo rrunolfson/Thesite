@@ -1,0 +1,92 @@
+{
+  "vendor_slug": "upkeep",
+  "vendor_name": "UpKeep",
+  "product_slug": "upkeep-public-api",
+  "product_name": "UpKeep Public API",
+  "product_family": "UpKeep",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developers.onupkeep.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/upkeep/upkeep-public-api.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The UpKeep Public API covers maintenance asset records, asset downtime states, associated parts, work orders, and meter readings, making it suitable for equipment synchronization and condition or usage-driven maintenance workflows.",
+  "data_domains": [
+    "asset-master-data",
+    "maintenance-work-orders",
+    "meter-readings",
+    "parts-and-inventory"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "assets",
+    "asset downtime statuses",
+    "parts",
+    "work orders",
+    "meters",
+    "meter readings"
+  ],
+  "buyer_guidance": "Use UpKeep when you need a maintenance-system API that combines equipment master data with work execution and meter-driven maintenance triggers. It is stronger for CMMS coordination than for high-frequency machine telemetry.",
+  "overview": "The public UpKeep API documentation exposes asset CRUD routes, asset downtime status management, part assignment to assets, work order creation and update flows, and full meter and meter-reading endpoints. That means the documented surface can provide equipment records and usage-style operational readings while also supporting writeback into maintenance workflows. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Asset and maintenance master data",
+      "description": "The published UpKeep docs center on equipment records and the maintenance context attached to them.",
+      "data_points": [
+        "Asset records and asset custom fields",
+        "Asset downtime status definitions",
+        "Asset assignments to users, teams, customers, and vendors",
+        "Parts linked to assets"
+      ],
+      "relevant_operations": [
+        "GET /assets",
+        "GET /assets/{assetId}",
+        "POST /assets",
+        "PATCH /assets/{assetId}",
+        "GET /asset-downtime-statuses",
+        "POST /assets/{assetId}/parts/{partId}"
+      ]
+    },
+    {
+      "category": "Work execution and meter-based operations",
+      "description": "The documented work-order and meter routes support maintenance execution plus usage or condition-style readings.",
+      "data_points": [
+        "Work order records and worker assignments",
+        "Recurring work-order schedules",
+        "Meter definitions",
+        "Meter readings and reading history",
+        "Meter notifications"
+      ],
+      "relevant_operations": [
+        "GET /work-orders",
+        "POST /work-orders",
+        "PATCH /work-orders/{workOrderId}",
+        "GET /meters",
+        "POST /meters",
+        "POST /meters/{meterId}/readings",
+        "GET /meters/{meterId}/readings",
+        "POST /meters/{meterId}/notifications"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The meter endpoints are the closest thing in the published docs to telemetry, so integrations should treat them as operational readings rather than a streaming historian feed.",
+    "Because the documented surface is write-capable across assets, work orders, and meters, read and write credentials should be separated where possible.",
+    "No exact public machine-readable spec artifact was confirmed during this review, so the documentation URL should remain the evidence anchor until UpKeep exposes a direct JSON or YAML artifact."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developers.onupkeep.com/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/upkeep/upkeep-public-api.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "The public UpKeep docs expose asset, part, work-order, and meter sections with concrete REST routes including asset CRUD, downtime statuses, work-order operations, meter reading creation, and meter notifications. No exact public JSON or YAML spec artifact was confirmed during review.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/upkeep/upkeep-public-api.openapi.json"
+  },
+  "detail_path": "/integration-details/upkeep/upkeep-public-api.json",
+  "vendor_domain": "onupkeep.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=onupkeep.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/upkeep/upkeep-public-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/upkeep/upkeep-public-api.openapi.json"
+}

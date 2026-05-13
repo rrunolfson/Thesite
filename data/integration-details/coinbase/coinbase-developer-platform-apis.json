@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "coinbase",
+  "vendor_name": "Coinbase",
+  "product_slug": "coinbase-developer-platform-apis",
+  "product_name": "Coinbase Developer Platform APIs",
+  "product_family": "Coinbase Developer Platform",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.cdp.coinbase.com/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Coinbase Developer Platform APIs has public documentation that indicates digital-asset and blockchain workflows across wallets, accounts, transactions, addresses. Public developer docs and API references.",
+  "data_domains": [
+    "wallets-and-accounts",
+    "transactions",
+    "blockchain-operations"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "wallets",
+    "accounts",
+    "transactions",
+    "addresses",
+    "policies"
+  ],
+  "buyer_guidance": "Use this surface for wallet, transfer, and digital-asset operations. It is a transactional financial API, not an asset or telemetry source. Coinbase should be treated as a rest api surface for digital-asset and blockchain workflows.",
+  "overview": "Public documentation reviewed for Coinbase Developer Platform APIs indicates Public developer docs and API references. The documented surface aligns with digital-asset and blockchain workflows and covers wallets, accounts, transactions, addresses. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Digital-asset and blockchain workflows",
+      "description": "The public documentation indicates digital-asset workflows for wallets, transfers, addresses, policies, and transaction-state handling.",
+      "data_points": [
+        "Wallet, vault, or account records",
+        "Blockchain transaction and transfer data",
+        "Address and network metadata",
+        "Policy, approval, or security workflow state"
+      ],
+      "relevant_operations": [
+        "list wallet and transaction records",
+        "read transfer and network state",
+        "create or update blockchain workflows",
+        "submit approval or policy changes"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Coinbase Developer Platform APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as digital-asset and blockchain workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.cdp.coinbase.com/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public developer docs and API references."
+  }
+}

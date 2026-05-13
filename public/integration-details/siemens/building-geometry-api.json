@@ -6,7 +6,8 @@
   "product_family": "Building X",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/building-x-openness/api/geometry-api/geometry.openapi.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/geometry-api/geometry.openapi.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/building-geometry-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/geometry-api/geometry.openapi.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "RESTful API for creating and interacting with 2D geometry of building floorplans. Published API scope is centered on building hierarchy, room structure, and 2D layout records.",
   "data_domains": [
@@ -15,7 +16,7 @@
     "spatial-modeling"
   ],
   "asset_data_available": "Supported",
-  "telemetry_data_available": "Not Supported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "campuses",
@@ -57,11 +58,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/building-x-openness/api/geometry-api/overview.html",
-    "spec_url": "https://developer.siemens.com/building-x-openness/api/geometry-api/geometry.openapi.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/building-geometry-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Building Geometry API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Building Geometry API.",
+    "vendor_spec_url": "https://developer.siemens.com/building-x-openness/api/geometry-api/geometry.openapi.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/building-geometry-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/building-geometry-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/building-geometry-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/building-geometry-api.openapi.json"
 }

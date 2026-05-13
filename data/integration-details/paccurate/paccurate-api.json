@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "paccurate",
+  "vendor_name": "Paccurate",
+  "product_slug": "paccurate-api",
+  "product_name": "Paccurate API",
+  "product_family": "Paccurate",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.paccurate.io/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Paccurate API has public documentation that indicates yard, dock, and shipment coordination workflows across trailers, appointments, docks, shipments. Public API docs.",
+  "data_domains": [
+    "dock-and-yard-records",
+    "appointments",
+    "carrier-workflows"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "trailers",
+    "appointments",
+    "docks",
+    "shipments",
+    "rates"
+  ],
+  "buyer_guidance": "Use this surface for dock, trailer, and yard-coordination workflows rather than telemetry ingestion. Paccurate should be treated as a rest api surface for yard, dock, and shipment coordination workflows.",
+  "overview": "Public documentation reviewed for Paccurate API indicates Public API docs. The documented surface aligns with yard, dock, and shipment coordination workflows and covers trailers, appointments, docks, shipments. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Yard, dock, and shipment coordination workflows",
+      "description": "The public documentation indicates yard and dock coordination workflows for shipments, trailers, appointments, and carrier-facing operations.",
+      "data_points": [
+        "Trailer, shipment, or container records",
+        "Dock and appointment scheduling state",
+        "Carrier or service metadata",
+        "Execution and coordination workflow updates"
+      ],
+      "relevant_operations": [
+        "list trailer and appointment records",
+        "read dock and execution state",
+        "create or update yard workflows",
+        "synchronize shipment or service changes"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Paccurate API is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as yard, dock, and shipment coordination workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.paccurate.io/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public API docs."
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "vendor_slug": "dynamic-yield",
+  "vendor_name": "Dynamic Yield",
+  "product_slug": "dynamic-yield-apis",
+  "product_name": "Dynamic Yield APIs",
+  "product_family": "Dynamic Yield",
+  "integration_type": "REST API",
+  "integration_api_url": "https://dy.dev/docs",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/dynamic-yield/dynamic-yield-apis.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Dynamic Yield APIs has public documentation that indicates search, discovery, and merchandising workflows across catalog items, search indexes, recommendations, events. Public developer documentation.",
+  "data_domains": [
+    "catalog-and-search",
+    "personalization",
+    "behavioral-events"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "catalog items",
+    "search indexes",
+    "recommendations",
+    "events",
+    "campaigns"
+  ],
+  "buyer_guidance": "Use this surface for product discovery, search, recommendation, and merchandising workflows rather than physical asset or telemetry use cases. Dynamic Yield should be treated as a rest api surface for search, discovery, and merchandising workflows.",
+  "overview": "Public documentation reviewed for Dynamic Yield APIs indicates Public developer documentation. The documented surface aligns with search, discovery, and merchandising workflows and covers catalog items, search indexes, recommendations, events. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Search, discovery, and merchandising workflows",
+      "description": "The public documentation indicates search, recommendation, personalization, and merchandising workflows that operate on catalog and behavioral data.",
+      "data_points": [
+        "Catalog and indexable product data",
+        "Recommendation or personalization rules",
+        "Behavioral events and session context",
+        "Campaign or merchandising configuration"
+      ],
+      "relevant_operations": [
+        "list catalog and index records",
+        "read recommendation or analytics data",
+        "create or update merchandising workflows",
+        "submit behavioral or personalization events"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Dynamic Yield APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as search, discovery, and merchandising workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://dy.dev/docs",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/dynamic-yield/dynamic-yield-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public developer documentation.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/dynamic-yield/dynamic-yield-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/dynamic-yield/dynamic-yield-apis.json",
+  "vendor_domain": "dy.dev",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=dy.dev&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/dynamic-yield/dynamic-yield-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/dynamic-yield/dynamic-yield-apis.openapi.json"
+}

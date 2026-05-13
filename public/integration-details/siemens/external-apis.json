@@ -6,7 +6,8 @@
   "product_family": "SITRANS hub IQ",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/sitrans-hub-iq/api-specs/Hub_IQ_External_APIs_V2.2.0.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/sitrans-hub-iq/api-specs/Hub_IQ_External_APIs_V2.2.0.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/external-apis.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/sitrans-hub-iq/api-specs/Hub_IQ_External_APIs_V2.2.0.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "External APIs ¶ Published API scope combines hub-side device context with external data exchange workflows.",
   "data_domains": [
@@ -52,11 +53,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/sitrans-hub-iq/external_api.html",
-    "spec_url": "https://developer.siemens.com/sitrans-hub-iq/api-specs/Hub_IQ_External_APIs_V2.2.0.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/external-apis.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for External APIs."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for External APIs.",
+    "vendor_spec_url": "https://developer.siemens.com/sitrans-hub-iq/api-specs/Hub_IQ_External_APIs_V2.2.0.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/external-apis.openapi.json"
   },
   "detail_path": "/integration-details/siemens/external-apis.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/external-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/external-apis.openapi.json"
 }

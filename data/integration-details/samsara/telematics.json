@@ -6,7 +6,7 @@
   "product_family": "Samsara Platform",
   "integration_type": "REST API",
   "integration_api_url": "https://developers.samsara.com/docs/telematics",
-  "spec_artifact_url": "https://developers.samsara.com/docs/telematics",
+  "spec_artifact_url": "https://developers.samsara.com/openapi/samsara-api.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "Samsara Telematics exposes per-vehicle snapshot, history, and feed access for GPS, engine state, odometer, fault-code, fuel, and auxiliary-input readings, making it the primary read surface for fleet location and onboard diagnostic telemetry.",
   "data_domains": [
@@ -18,7 +18,7 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Un-Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "vehicles",
     "vehicle stats feeds",
@@ -85,7 +85,7 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developers.samsara.com/docs/telematics",
-    "spec_url": "https://developers.samsara.com/docs/telematics",
+    "spec_url": "https://developers.samsara.com/openapi/samsara-api.json",
     "reviewed_at": "2026-04-18",
     "evidence_notes": "Backed by the Telematics guide sections documenting GET /fleet/vehicles/stats, GET /fleet/vehicles/stats/history, GET /fleet/vehicles/stats/feed, plus the published diagnostic types table for GPS, engine state, odometer, and fault-code reads."
   }

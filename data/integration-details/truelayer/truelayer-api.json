@@ -1,0 +1,87 @@
+{
+  "vendor_slug": "truelayer",
+  "vendor_name": "TrueLayer",
+  "product_slug": "truelayer-api",
+  "product_name": "TrueLayer API",
+  "product_family": "TrueLayer",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.truelayer.com/",
+  "spec_artifact_url": "https://docs.truelayer.com/openapi/payments-api-v3.json",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "TrueLayer publishes public documentation and raw OpenAPI artifacts for payments, payouts, VRP, merchant accounts, data API connections, verification, payment links, mandates, and related webhooks.",
+  "data_domains": [
+    "open-banking-account-data",
+    "payments-and-payouts",
+    "merchant-accounts",
+    "verification-and-vrp"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "payments",
+    "payouts",
+    "merchant accounts",
+    "connections and account data",
+    "verification",
+    "mandates"
+  ],
+  "buyer_guidance": "Use TrueLayer APIs for open-banking payments, payouts, merchant account operations, connection-based data access, verification, and variable recurring payment flows. This is an open-banking platform, not an asset or telemetry platform.",
+  "overview": "TrueLayer's public docs organize the platform into payments, payouts, Signup+, VRP, data, and verification products and expose raw machine-readable artifacts such as the Payments API v3 JSON spec. The public documentation covers payment creation, payout flows, merchant accounts, provider availability, connection creation, account and transaction data retrieval, verification, payment links, mandates, recurring-payment workflows, and webhooks, along with quickstarts and integration checklists. This is a strong write-capable open-banking platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Payments, payouts, and merchant-account workflows",
+      "description": "TrueLayer exposes end-to-end money movement workflows for merchants and open-banking payment experiences.",
+      "data_points": [
+        "Payments and payment status tracking",
+        "Payouts and refunds",
+        "Merchant account balances, transactions, and payment sources",
+        "Provider availability and payment links",
+        "Payment webhooks and payout webhooks"
+      ],
+      "relevant_operations": [
+        "Payments API v3",
+        "Payout creation",
+        "Refund a payment",
+        "Get data about your merchant accounts",
+        "Get your merchant account transactions or payment sources",
+        "Payment webhooks",
+        "Payout webhooks",
+        "Provider availability webhook"
+      ]
+    },
+    {
+      "category": "Data access, verification, and recurring authorization",
+      "description": "The platform also provides connection-based data retrieval and consented recurring payment or verification workflows.",
+      "data_points": [
+        "Data API connections and consent flows",
+        "Account and card data",
+        "Transaction and identity-related data retrieval",
+        "Verification and account-holder verification",
+        "Mandates and variable recurring payments"
+      ],
+      "relevant_operations": [
+        "Create a connection",
+        "Generate an auth link",
+        "Account data requests",
+        "Transaction data reference",
+        "Verify an account",
+        "Account holder verification",
+        "Create a mandate",
+        "Create a payment on a mandate",
+        "Revoke a payment mandate"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "TrueLayer's public platform spans multiple distinct product families and specs, so downstream use should pin the relevant product surface rather than assuming one uniform contract across payments, data, and verification.",
+    "Provider and country availability materially affect what can be used in production, so buyer enablement depends on geography and connected-bank support as well as API documentation.",
+    "This row has exact machine-readable spec evidence because TrueLayer publishes raw OpenAPI JSON artifacts under docs.truelayer.com/openapi."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.truelayer.com/",
+    "spec_url": "https://docs.truelayer.com/openapi/payments-api-v3.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "TrueLayer's public docs cover payments, payouts, merchant accounts, Data API connections, verification, payment links, mandates, and recurring-payment workflows, and the documentation host serves a raw Payments API v3 OpenAPI JSON artifact."
+  }
+}

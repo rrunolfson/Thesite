@@ -1,0 +1,1369 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ModMed synapSYS / EMA APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "ModMed publishes public proprietary and FHIR-oriented reference docs for patient, practitioner, encounter, coverage, document, medication, appointment, charge, task, and bulk-export workflows in synapSYS and EMA environments.",
+    "description": "Manufactured OpenAPI artifact for ModMed synapSYS / EMA APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. ModMed's public API portal describes both a proprietary EMA-focused API and Certified FHIR-oriented surfaces, with sandbox onboarding for vendors and partners. The public reference exposes write-capable workflows for Patient, Coverage, Appointment, ChargeItem, Composition, AllergyIntolerance, Condition, MedicationStatement, and document uploads, plus read and search support across Practitioner, Organization, Location, Encounter, DiagnosticReport, ServiceRequest, Task, Account, and related FHIR resources. Public reference pages also document CapabilityStatement retrieval and bulk export operations such as /Group/$export and /Patient/$export. This is a write-capable healthcare interoperability and practice-management surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://portal.api.modmed.com/reference"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Patient, scheduling, and practice-management records",
+      "description": "Manufactured operations grouped under Patient, scheduling, and practice-management records."
+    },
+    {
+      "name": "Clinical documents, medications, and exports",
+      "description": "Manufactured operations grouped under Clinical documents, medications, and exports."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_integrationProfile",
+        "summary": "Get manufactured profile for ModMed synapSYS / EMA APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/patient": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and practice-management records"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_get-patient_get",
+        "summary": "GET Patient",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Patient, scheduling, and practice-management records"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_post-patient_post",
+        "summary": "POST Patient",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Patient, scheduling, and practice-management records"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_put-patient_put",
+        "summary": "PUT Patient",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/encounter": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and practice-management records"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_get-encounter_get",
+        "summary": "GET Encounter",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET Encounter.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/appointment": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and practice-management records"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_get-appointment_get",
+        "summary": "GET Appointment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET Appointment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Patient, scheduling, and practice-management records"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_post-appointment_post",
+        "summary": "POST Appointment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST Appointment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST Appointment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Patient, scheduling, and practice-management records"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_put-appointment_put",
+        "summary": "PUT Appointment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT Appointment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT Appointment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/slot": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and practice-management records"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_get-slot_get",
+        "summary": "GET Slot",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET Slot.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/coverage": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and practice-management records"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_get-coverage_get",
+        "summary": "GET Coverage",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET Coverage.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Patient, scheduling, and practice-management records"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_post-coverage_post",
+        "summary": "POST Coverage",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST Coverage.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST Coverage.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Patient, scheduling, and practice-management records"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_put-coverage_put",
+        "summary": "PUT Coverage",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT Coverage.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT Coverage.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/chargeitem": {
+      "post": {
+        "tags": [
+          "Patient, scheduling, and practice-management records"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_post-chargeitem_post",
+        "summary": "POST ChargeItem",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST ChargeItem.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST ChargeItem.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/task": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and practice-management records"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_get-task_get",
+        "summary": "GET Task",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. ModMed's public reference covers the core practice objects needed to exchange and maintain specialty-practice data. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET Task.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/capabilitystatement": {
+      "get": {
+        "tags": [
+          "Clinical documents, medications, and exports"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_get-capabilitystatement_get",
+        "summary": "GET CapabilityStatement",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API portal also covers clinical chart content and export-oriented FHIR flows. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET CapabilityStatement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/documentreference": {
+      "get": {
+        "tags": [
+          "Clinical documents, medications, and exports"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_get-documentreference_get",
+        "summary": "GET DocumentReference",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API portal also covers clinical chart content and export-oriented FHIR flows. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET DocumentReference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Clinical documents, medications, and exports"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_post-documentreference_post",
+        "summary": "POST DocumentReference",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API portal also covers clinical chart content and export-oriented FHIR flows. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST DocumentReference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST DocumentReference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/medicationstatement": {
+      "get": {
+        "tags": [
+          "Clinical documents, medications, and exports"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_get-medicationstatement_get",
+        "summary": "GET MedicationStatement",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API portal also covers clinical chart content and export-oriented FHIR flows. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET MedicationStatement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Clinical documents, medications, and exports"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_post-medicationstatement_post",
+        "summary": "POST MedicationStatement",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API portal also covers clinical chart content and export-oriented FHIR flows. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST MedicationStatement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST MedicationStatement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Clinical documents, medications, and exports"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_put-medicationstatement_put",
+        "summary": "PUT MedicationStatement",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API portal also covers clinical chart content and export-oriented FHIR flows. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT MedicationStatement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT MedicationStatement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/allergyintolerance": {
+      "get": {
+        "tags": [
+          "Clinical documents, medications, and exports"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_get-allergyintolerance_get",
+        "summary": "GET AllergyIntolerance",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API portal also covers clinical chart content and export-oriented FHIR flows. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET AllergyIntolerance.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Clinical documents, medications, and exports"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_post-allergyintolerance_post",
+        "summary": "POST AllergyIntolerance",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API portal also covers clinical chart content and export-oriented FHIR flows. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST AllergyIntolerance.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST AllergyIntolerance.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Clinical documents, medications, and exports"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_put-allergyintolerance_put",
+        "summary": "PUT AllergyIntolerance",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API portal also covers clinical chart content and export-oriented FHIR flows. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT AllergyIntolerance.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT AllergyIntolerance.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/condition": {
+      "post": {
+        "tags": [
+          "Clinical documents, medications, and exports"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_post-condition_post",
+        "summary": "POST Condition",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API portal also covers clinical chart content and export-oriented FHIR flows. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST Condition.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST Condition.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/composition": {
+      "post": {
+        "tags": [
+          "Clinical documents, medications, and exports"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_post-composition_post",
+        "summary": "POST Composition",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API portal also covers clinical chart content and export-oriented FHIR flows. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST Composition.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST Composition.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Group/$export": {
+      "get": {
+        "tags": [
+          "Clinical documents, medications, and exports"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_get-group-export_get",
+        "summary": "GET /Group/$export",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API portal also covers clinical chart content and export-oriented FHIR flows. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Group/$export.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Patient/$export": {
+      "get": {
+        "tags": [
+          "Clinical documents, medications, and exports"
+        ],
+        "operationId": "modmed_modmed-synapsys-ema-apis_get-patient-export_get",
+        "summary": "GET /Patient/$export",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API portal also covers clinical chart content and export-oriented FHIR flows. Vendor documentation: https://portal.api.modmed.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Patient/$export.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/modmed/modmed-synapsys-ema-apis.json",
+    "vendor_documentation_url": "https://portal.api.modmed.com/reference",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

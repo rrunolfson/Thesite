@@ -6,7 +6,8 @@
   "product_family": "Optimize My Plant",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/optimize-my-plant/Optimize%20my%20plant%20collection%20-%20SaaS.json",
-  "spec_artifact_url": "https://developer.siemens.com/optimize-my-plant/Optimize%20my%20plant%20collection%20-%20SaaS.json",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/optimize-my-plant.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/optimize-my-plant/Optimize%20my%20plant%20collection%20-%20SaaS.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "Optimize my plant is a Mendix app that can be deployed on Xcelerator as a Siemens operated SaaS offering, or customer can use the Optimize my plant Starter Kit to extend the Optimize my plant app and deploy and operate himself. Published API scope focuses on plant optimization metrics and recommendation-oriented outputs.",
   "data_domains": [
@@ -16,7 +17,7 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "plant assets",
     "optimization metrics",
@@ -52,11 +53,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/optimize-my-plant/home.html",
-    "spec_url": "https://developer.siemens.com/optimize-my-plant/Optimize%20my%20plant%20collection%20-%20SaaS.json",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/optimize-my-plant.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Optimize my plant."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Optimize my plant.",
+    "vendor_spec_url": "https://developer.siemens.com/optimize-my-plant/Optimize%20my%20plant%20collection%20-%20SaaS.json",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/optimize-my-plant.openapi.json"
   },
   "detail_path": "/integration-details/siemens/optimize-my-plant.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/optimize-my-plant.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/optimize-my-plant.openapi.json"
 }

@@ -6,7 +6,8 @@
   "product_family": "ServiceChannel Platform",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
-  "spec_artifact_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/servicechannel/providers-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
   "detail_completeness": "researched",
   "data_coverage_summary": "The Providers API covers service-provider network data used for dispatch decisions, including provider creation, provider information lookup, trade-based provider retrieval, dispatch-setting updates, ranking retrieval, recent-provider discovery, and provider feedback collection.",
   "data_domains": [
@@ -16,8 +17,8 @@
     "provider-ranking",
     "service-feedback"
   ],
-  "asset_data_available": "Not Supported",
-  "telemetry_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "provider records",
@@ -88,11 +89,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.servicechannel.com/swagger/index.html#/Providers",
-    "spec_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/servicechannel/providers-api.openapi.json",
     "reviewed_at": "2026-04-17",
-    "evidence_notes": "Based on the Providers section in the ServiceChannel v3 Swagger reference and the OAuth-protected API access guidance in the ServiceChannel authentication and overview documentation."
+    "evidence_notes": "Based on the Providers section in the ServiceChannel v3 Swagger reference and the OAuth-protected API access guidance in the ServiceChannel authentication and overview documentation.",
+    "vendor_spec_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/servicechannel/providers-api.openapi.json"
   },
   "detail_path": "/integration-details/servicechannel/providers-api.json",
   "vendor_domain": "servicechannel.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=servicechannel.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=servicechannel.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/servicechannel/providers-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/servicechannel/providers-api.openapi.json"
 }

@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "tulip",
+  "vendor_name": "Tulip",
+  "product_slug": "tulip-api",
+  "product_name": "Tulip API",
+  "product_family": "Tulip Platform",
+  "integration_type": "REST API",
+  "integration_api_url": "https://support.tulip.co/api",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Tulip API has public documentation that indicates production operations and equipment context across machines, production jobs, events, measurements. Public Tulip API docs are available.",
+  "data_domains": [
+    "production-operations",
+    "asset-context",
+    "operational-readings"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "machines",
+    "production jobs",
+    "events",
+    "measurements",
+    "operators"
+  ],
+  "buyer_guidance": "Use this surface when the integration needs a mix of manufacturing asset context, operational readings, and downstream workflow updates. Tulip should be treated as a rest api surface for production operations and equipment context.",
+  "overview": "Public documentation reviewed for Tulip API indicates Public Tulip API docs are available. The documented surface aligns with production operations and equipment context and covers machines, production jobs, events, measurements. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Production operations and equipment context",
+      "description": "The public documentation positions this surface around plant-floor execution, equipment context, and production workflow data used by manufacturing operations teams.",
+      "data_points": [
+        "Machine and equipment context records",
+        "Production jobs, tasks, or execution states",
+        "Operational measurements, events, or status signals",
+        "Workflow actions and plant-floor updates"
+      ],
+      "relevant_operations": [
+        "list production resources",
+        "read execution and status records",
+        "retrieve operational measurements",
+        "submit workflow or job updates"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Tulip API is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as production operations and equipment context, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://support.tulip.co/api",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public Tulip API docs are available"
+  }
+}

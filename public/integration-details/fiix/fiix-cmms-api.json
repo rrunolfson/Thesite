@@ -1,0 +1,87 @@
+{
+  "vendor_slug": "fiix",
+  "vendor_name": "Fiix",
+  "product_slug": "fiix-cmms-api",
+  "product_name": "Fiix CMMS API",
+  "product_family": "Fiix CMMS",
+  "integration_type": "REST API",
+  "integration_api_url": "https://fiixlabs.github.io/api-documentation/guide.html",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/fiix/fiix-cmms-api.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "The Fiix CMMS API is oriented around CMMS instance data and functionality, with documented examples for assets, asset locations and categories, work orders, work-order tasks, and file attachments used in maintenance operations.",
+  "data_domains": [
+    "asset-master-data",
+    "maintenance-work-orders",
+    "task-execution",
+    "cmms-attachments"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "assets",
+    "asset categories",
+    "asset locations",
+    "work orders",
+    "work-order tasks",
+    "attachments"
+  ],
+  "buyer_guidance": "Use Fiix when the customer needs CMMS asset and maintenance workflow data from a Fiix tenant. The public evidence supports equipment and maintenance records, not a live machine telemetry stream.",
+  "overview": "Fiix describes its API as access to CMMS instance-specific data and functionality, and the public guide walks through listing assets, retrieving individual assets with location and category relationships, creating and updating assets, creating work orders, associating assets to work orders, creating work-order tasks, and uploading files tied to Asset and WorkOrder objects. That makes the confirmed public surface useful for asset synchronization and maintenance writeback rather than telemetry ingestion. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Asset records and related CMMS context",
+      "description": "The guide's examples focus first on retrieving and maintaining equipment records and their related classifications.",
+      "data_points": [
+        "Asset records",
+        "Asset location identifiers",
+        "Asset category identifiers",
+        "Asset descriptive fields such as model, make, serial number, and inventory code"
+      ],
+      "relevant_operations": [
+        "find Asset",
+        "findById Asset",
+        "add Asset",
+        "change Asset"
+      ]
+    },
+    {
+      "category": "Maintenance execution workflows",
+      "description": "The published examples cover creation of work orders, linking assets to those work orders, and assigning task-level execution steps.",
+      "data_points": [
+        "Work orders",
+        "Work order statuses",
+        "Asset-to-work-order associations",
+        "Work-order tasks",
+        "Files attached to assets and work orders"
+      ],
+      "relevant_operations": [
+        "add WorkOrder",
+        "add WorkOrderAsset",
+        "add WorkOrderTask",
+        "findById WorkOrder",
+        "uploadFile for Asset and WorkOrder"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public Fiix guide is SDK-heavy, but the documented operations confirm the underlying maintenance entities even when called without an SDK.",
+    "The confirmed public examples support create and update workflows, so Fiix should be treated as write-capable for CMMS records.",
+    "No exact public machine-readable JSON or YAML spec artifact was confirmed during this review, so visibility should remain gated until one is found."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://fiixlabs.github.io/api-documentation/guide.html",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/fiix/fiix-cmms-api.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "The public Fiix CMMS API guide explicitly describes CMMS instance data access and provides examples for listing and updating assets, creating work orders, linking assets to work orders, creating work-order tasks, and uploading files to Asset and WorkOrder objects. No exact public JSON or YAML spec artifact was confirmed during review.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/fiix/fiix-cmms-api.openapi.json"
+  },
+  "detail_path": "/integration-details/fiix/fiix-cmms-api.json",
+  "vendor_domain": "fiixsoftware.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=fiixsoftware.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/fiix/fiix-cmms-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/fiix/fiix-cmms-api.openapi.json"
+}

@@ -6,7 +6,8 @@
   "product_family": "Motive Open API",
   "integration_type": "REST API",
   "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-  "spec_artifact_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/motive/inspection-reports-api.openapi.json",
+  "vendor_spec_artifact_url": "",
   "detail_completeness": "researched",
   "data_coverage_summary": "Inspection Reports provides DVIR-style inspection records, defect findings, and related workflow state used in safety and maintenance processes.",
   "data_domains": [
@@ -14,7 +15,7 @@
     "safety-workflows",
     "maintenance-events"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
   "writeback_supported": "Supported",
   "key_entities": [
@@ -23,7 +24,7 @@
     "repair status"
   ],
   "buyer_guidance": "Use this API for safety and defect workflows where inspection evidence must be ingested and repair-state updates need to flow back to Motive.",
-  "overview": "Inspection Reports is a workflow-oriented operational record API. It exposes inspection outcomes and defect-state data, and the published reference includes update operations for repair or report status. That makes it a telemetry-plus-workflow-write surface rather than an asset master-data API. Asset data is Not Supported. Telemetry data is Supported. Writeback is Supported.",
+  "overview": "Inspection Reports is a workflow-oriented operational record API. It exposes inspection outcomes and defect-state data, and the published reference includes update operations for repair or report status. That makes it a telemetry-plus-workflow-write surface rather than an asset master-data API. Asset data is Unsupported. Telemetry data is Supported. Writeback is Supported.",
   "available_data": [
     {
       "category": "Inspection workflow records",
@@ -45,11 +46,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-    "spec_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/motive/inspection-reports-api.openapi.json",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary for DVIR-style inspections, plus the documented ability to update inspection-report workflow state."
+    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary for DVIR-style inspections, plus the documented ability to update inspection-report workflow state.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/motive/inspection-reports-api.openapi.json"
   },
   "detail_path": "/integration-details/motive/inspection-reports-api.json",
   "vendor_domain": "gomotive.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=gomotive.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=gomotive.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/motive/inspection-reports-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/motive/inspection-reports-api.openapi.json"
 }

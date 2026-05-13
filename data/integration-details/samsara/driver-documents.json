@@ -6,7 +6,7 @@
   "product_family": "Samsara Platform",
   "integration_type": "REST API",
   "integration_api_url": "https://developers.samsara.com/docs/documents-guide",
-  "spec_artifact_url": "https://developers.samsara.com/docs/documents-guide",
+  "spec_artifact_url": "https://developers.samsara.com/openapi/samsara-api.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "Samsara Driver Documents covers document templates, document retrieval, PDF generation, webhook-based submission handling, and API-based document creation or prefill flows for driver workflows and proof-of-work capture.",
   "data_domains": [
@@ -16,8 +16,8 @@
     "proof-of-delivery-artifacts",
     "form-and-photo-capture"
   ],
-  "asset_data_available": "N/A",
-  "telemetry_data_available": "N/A",
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "document types",
@@ -82,7 +82,7 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developers.samsara.com/docs/documents-guide",
-    "spec_url": "https://developers.samsara.com/docs/creating-documents",
+    "spec_url": "https://developers.samsara.com/openapi/samsara-api.json",
     "reviewed_at": "2026-04-18",
     "evidence_notes": "Backed by the Documents guide for GET /v1/fleet/drivers/document_types and document retrieval endpoints, plus the Creating Documents guide for POST /fleet/documents and the documented API limitations around photo and signature fields."
   }

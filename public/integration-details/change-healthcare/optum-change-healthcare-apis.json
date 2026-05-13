@@ -1,0 +1,67 @@
+{
+  "vendor_slug": "change-healthcare",
+  "vendor_name": "Change Healthcare",
+  "product_slug": "optum-change-healthcare-apis",
+  "product_name": "Optum/Change Healthcare APIs",
+  "product_family": "Optum/Change Healthcare",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.optum.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/change-healthcare/optum-change-healthcare-apis.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Optum/Change Healthcare APIs has public documentation that indicates revenue-cycle and payment workflows across claims, payments, eligibility checks, authorizations. Change Healthcare API assets now appear under Optum developer portal.",
+  "data_domains": [
+    "claims-and-payments",
+    "eligibility",
+    "revenue-cycle-workflows"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "claims",
+    "payments",
+    "eligibility checks",
+    "authorizations",
+    "billing records"
+  ],
+  "buyer_guidance": "Use this surface for healthcare claims, billing, and payment workflow integration rather than patient-device or telemetry use cases. Change Healthcare should be treated as a rest api surface for revenue-cycle and payment workflows.",
+  "overview": "Public documentation reviewed for Optum/Change Healthcare APIs indicates Change Healthcare API assets now appear under Optum developer portal. The documented surface aligns with revenue-cycle and payment workflows and covers claims, payments, eligibility checks, authorizations. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Revenue-cycle and payment workflows",
+      "description": "The public documentation indicates revenue-cycle workflows around claims, eligibility, authorizations, payments, and billing-state exchange.",
+      "data_points": [
+        "Claims and remittance records",
+        "Eligibility and benefits responses",
+        "Authorization or billing workflow state",
+        "Payment and reimbursement records"
+      ],
+      "relevant_operations": [
+        "list claims and payment records",
+        "read eligibility and authorization data",
+        "create or update revenue-cycle workflows",
+        "synchronize billing-state changes"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Optum/Change Healthcare APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as revenue-cycle and payment workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.optum.com/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/change-healthcare/optum-change-healthcare-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Change Healthcare API assets now appear under Optum developer portal.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/change-healthcare/optum-change-healthcare-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/change-healthcare/optum-change-healthcare-apis.json",
+  "vendor_domain": "optum.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=optum.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/change-healthcare/optum-change-healthcare-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/change-healthcare/optum-change-healthcare-apis.openapi.json"
+}

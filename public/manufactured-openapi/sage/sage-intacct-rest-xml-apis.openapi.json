@@ -1,0 +1,1103 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Sage Intacct REST/XML APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Sage Intacct publishes extensive XML API documentation and related REST guidance for accounting, inventory, purchasing, order entry, project, construction, platform services, and large-scale data-delivery workflows.",
+    "description": "Manufactured OpenAPI artifact for Sage Intacct REST/XML APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Sage Intacct's public developer docs describe a broad XML API with generic create, read, update, delete, lookup, and query functions alongside object-specific operations, and separately recommend REST API usage for new client applications. The public API reference covers company and console objects, general ledger, cash management, accounts payable, accounts receivable, purchasing, order entry, inventory control, projects, construction, contracts and revenue management, platform services, and Data Delivery Service extraction jobs. The docs also publish a Postman collection download and explicit platform extension surfaces for applications, objects, records, views, custom reports, and smart events. This is a strong write-capable ERP integration surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.intacct.com/api/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Financial, purchasing, and order-management transactions",
+      "description": "Manufactured operations grouped under Financial, purchasing, and order-management transactions."
+    },
+    {
+      "name": "Inventory, projects, extensions, and bulk extraction",
+      "description": "Manufactured operations grouped under Inventory, projects, extensions, and bulk extraction."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_integrationProfile",
+        "summary": "Get manufactured profile for Sage Intacct REST/XML APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create": {
+      "post": {
+        "tags": [
+          "Financial, purchasing, and order-management transactions"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_create_post",
+        "summary": "<create>",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Sage Intacct exposes transactional finance and operational business objects across core ERP modules. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for <create>.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for <create>.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/read": {
+      "get": {
+        "tags": [
+          "Financial, purchasing, and order-management transactions"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_read_get",
+        "summary": "<read>",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Sage Intacct exposes transactional finance and operational business objects across core ERP modules. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for <read>.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/update": {
+      "put": {
+        "tags": [
+          "Financial, purchasing, and order-management transactions"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_update_put",
+        "summary": "<update>",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Sage Intacct exposes transactional finance and operational business objects across core ERP modules. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for <update>.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for <update>.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete": {
+      "delete": {
+        "tags": [
+          "Financial, purchasing, and order-management transactions"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_delete_delete",
+        "summary": "<delete>",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Sage Intacct exposes transactional finance and operational business objects across core ERP modules. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for <delete>.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for <delete>.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lookup": {
+      "get": {
+        "tags": [
+          "Financial, purchasing, and order-management transactions"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_lookup_get",
+        "summary": "<lookup>",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Sage Intacct exposes transactional finance and operational business objects across core ERP modules. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for <lookup>.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/query": {
+      "get": {
+        "tags": [
+          "Financial, purchasing, and order-management transactions"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_query_get",
+        "summary": "<query>",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Sage Intacct exposes transactional finance and operational business objects across core ERP modules. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for <query>.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/journal-entries": {
+      "get": {
+        "tags": [
+          "Financial, purchasing, and order-management transactions"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_journal-entries_get",
+        "summary": "Journal Entries",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Sage Intacct exposes transactional finance and operational business objects across core ERP modules. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Journal Entries.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/bills": {
+      "get": {
+        "tags": [
+          "Financial, purchasing, and order-management transactions"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_bills_get",
+        "summary": "Bills",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Sage Intacct exposes transactional finance and operational business objects across core ERP modules. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Bills.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/invoices": {
+      "get": {
+        "tags": [
+          "Financial, purchasing, and order-management transactions"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_invoices_get",
+        "summary": "Invoices",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Sage Intacct exposes transactional finance and operational business objects across core ERP modules. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Invoices.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/purchasing-transactions": {
+      "get": {
+        "tags": [
+          "Financial, purchasing, and order-management transactions"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_purchasing-transactions_get",
+        "summary": "Purchasing Transactions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Sage Intacct exposes transactional finance and operational business objects across core ERP modules. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Purchasing Transactions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/order-entry-transactions": {
+      "get": {
+        "tags": [
+          "Financial, purchasing, and order-management transactions"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_order-entry-transactions_get",
+        "summary": "Order Entry Transactions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Sage Intacct exposes transactional finance and operational business objects across core ERP modules. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Order Entry Transactions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/fund-transfers": {
+      "get": {
+        "tags": [
+          "Financial, purchasing, and order-management transactions"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_fund-transfers_get",
+        "summary": "Fund Transfers",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Sage Intacct exposes transactional finance and operational business objects across core ERP modules. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Fund Transfers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/items": {
+      "get": {
+        "tags": [
+          "Inventory, projects, extensions, and bulk extraction"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_items_get",
+        "summary": "Items",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also cover inventory, project, platform extension, and off-platform data extraction workflows. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/warehouses": {
+      "get": {
+        "tags": [
+          "Inventory, projects, extensions, and bulk extraction"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_warehouses_get",
+        "summary": "Warehouses",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also cover inventory, project, platform extension, and off-platform data extraction workflows. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Warehouses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/warehouse-transfers": {
+      "get": {
+        "tags": [
+          "Inventory, projects, extensions, and bulk extraction"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_warehouse-transfers_get",
+        "summary": "Warehouse Transfers",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also cover inventory, project, platform extension, and off-platform data extraction workflows. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Warehouse Transfers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/inventory-transactions": {
+      "get": {
+        "tags": [
+          "Inventory, projects, extensions, and bulk extraction"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_inventory-transactions_get",
+        "summary": "Inventory Transactions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also cover inventory, project, platform extension, and off-platform data extraction workflows. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Inventory Transactions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/projects": {
+      "get": {
+        "tags": [
+          "Inventory, projects, extensions, and bulk extraction"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_projects_get",
+        "summary": "Projects",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also cover inventory, project, platform extension, and off-platform data extraction workflows. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Projects.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/tasks": {
+      "get": {
+        "tags": [
+          "Inventory, projects, extensions, and bulk extraction"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_tasks_get",
+        "summary": "Tasks",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also cover inventory, project, platform extension, and off-platform data extraction workflows. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Tasks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/timesheets": {
+      "get": {
+        "tags": [
+          "Inventory, projects, extensions, and bulk extraction"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_timesheets_get",
+        "summary": "Timesheets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also cover inventory, project, platform extension, and off-platform data extraction workflows. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Timesheets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/applications": {
+      "get": {
+        "tags": [
+          "Inventory, projects, extensions, and bulk extraction"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_applications_get",
+        "summary": "Applications",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also cover inventory, project, platform extension, and off-platform data extraction workflows. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Applications.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/objects": {
+      "get": {
+        "tags": [
+          "Inventory, projects, extensions, and bulk extraction"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_objects_get",
+        "summary": "Objects",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also cover inventory, project, platform extension, and off-platform data extraction workflows. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Objects.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/records": {
+      "get": {
+        "tags": [
+          "Inventory, projects, extensions, and bulk extraction"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_records_get",
+        "summary": "Records",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also cover inventory, project, platform extension, and off-platform data extraction workflows. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Records.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/dds-jobs": {
+      "get": {
+        "tags": [
+          "Inventory, projects, extensions, and bulk extraction"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_dds-jobs_get",
+        "summary": "DDS Jobs",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also cover inventory, project, platform extension, and off-platform data extraction workflows. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DDS Jobs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/dds-objects": {
+      "get": {
+        "tags": [
+          "Inventory, projects, extensions, and bulk extraction"
+        ],
+        "operationId": "sage_sage-intacct-rest-xml-apis_dds-objects_get",
+        "summary": "DDS Objects",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also cover inventory, project, platform extension, and off-platform data extraction workflows. Vendor documentation: https://developer.intacct.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DDS Objects.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/sage/sage-intacct-rest-xml-apis.json",
+    "vendor_documentation_url": "https://developer.intacct.com/api/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

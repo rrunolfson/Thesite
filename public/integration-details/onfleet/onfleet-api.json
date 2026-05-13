@@ -1,0 +1,105 @@
+{
+  "vendor_slug": "onfleet",
+  "vendor_name": "Onfleet",
+  "product_slug": "onfleet-api",
+  "product_name": "Onfleet API",
+  "product_family": "Onfleet",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.onfleet.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/onfleet/onfleet-api.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Onfleet exposes dispatch and last-mile delivery APIs for organizations, administrators, workers, teams, hubs, destinations, recipients, tasks, containers, orders, route plans, optimization runs, and delivery webhooks.",
+  "data_domains": [
+    "operational-master-data",
+    "delivery-tasks-and-orders",
+    "dispatch-and-workforce",
+    "delivery-events"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "workers",
+    "teams",
+    "hubs",
+    "destinations",
+    "recipients",
+    "tasks and orders"
+  ],
+  "buyer_guidance": "Use Onfleet when you need a dispatch and proof-of-delivery API for last-mile operations, including task creation, assignment, optimization, recipient communications, and webhook-driven delivery status updates.",
+  "overview": "Onfleet's API guide states that everything starts with a task, with tasks linked to destinations, recipients, administrators, and workers. The public reference also exposes CRUD and workflow operations for workers, teams, hubs, destinations, recipients, tasks, containers, orders, route plans, and route optimization, plus webhooks with more than 10 event triggers and proof-of-delivery retrieval. That makes it suitable for operational asset or order records and delivery-event telemetry, with documented writeback across the dispatch lifecycle. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Dispatch master data and delivery objects",
+      "description": "The public reference covers the core records needed to model delivery operations and maintain them over time.",
+      "data_points": [
+        "Organization and administrator records",
+        "Workers, worker schedules, and worker assigned tasks",
+        "Teams and hubs",
+        "Destinations and address warnings",
+        "Recipients and recipient contact data",
+        "Tasks, containers, orders, and route plans"
+      ],
+      "relevant_operations": [
+        "Get details",
+        "Create administrator",
+        "Create worker",
+        "List workers",
+        "Get worker's schedule",
+        "Create Hub",
+        "Create team",
+        "Create destination",
+        "Create recipient",
+        "Create task",
+        "List tasks",
+        "Create Order",
+        "Create Route Plan"
+      ]
+    },
+    {
+      "category": "Assignments, delivery progress, and event callbacks",
+      "description": "Onfleet documents workflow APIs for assigning work and returning delivery progress to downstream systems.",
+      "data_points": [
+        "Automatic and manual task assignment",
+        "Task completion requirements and proof-of-delivery artifacts",
+        "Task dependencies and recipient overrides",
+        "Batch task creation and asynchronous batch-job status",
+        "Webhook event triggers and webhook payload examples",
+        "Route optimization runs and optimization status"
+      ],
+      "relevant_operations": [
+        "Automatic Assignment",
+        "Manual Assignment",
+        "Complete task",
+        "Proof of Delivery Retrieval",
+        "Create tasks in batch - async",
+        "Batch Job Status",
+        "Create webhook",
+        "Webhook Payload Examples",
+        "Initialize Standard Route Optimization",
+        "Get Optimization Status",
+        "Apply Optimization Results"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Onfleet recommends validating addresses before task creation and supports metadata fields for storing external identifiers and structured custom data on supported objects.",
+    "Webhook delivery should be treated as the primary event signal for downstream updates, especially for order-management, customer-facing, and delivery-tracking applications.",
+    "No exact public machine-readable API description was confirmed during this review, so the ReadMe-based reference remains the evidence anchor until Onfleet exposes a downloadable JSON or YAML spec."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.onfleet.com/reference",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/onfleet/onfleet-api.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "The Onfleet quickstart and reference document workers, teams, hubs, destinations, recipients, tasks, orders, route plans, optimization, proof-of-delivery retrieval, metadata, and webhooks with more than 10 event triggers.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/onfleet/onfleet-api.openapi.json"
+  },
+  "detail_path": "/integration-details/onfleet/onfleet-api.json",
+  "vendor_domain": "onfleet.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=onfleet.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/onfleet/onfleet-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/onfleet/onfleet-api.openapi.json"
+}

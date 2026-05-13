@@ -1,0 +1,739 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Providers API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-17",
+    "summary": "The Providers API covers service-provider network data used for dispatch decisions, including provider creation, provider information lookup, trade-based provider retrieval, dispatch-setting updates, ranking retrieval, recent-provider discovery, and provider feedback collection.",
+    "description": "Manufactured OpenAPI artifact for Providers API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. The Providers section exposes the service-provider network that sits behind ServiceChannel dispatch. The reference shows endpoints for creating blank provider records, getting provider info, retrieving providers by trade, changing do-not-dispatch settings, submitting provider feedback, retrieving provider ranking status, and using OData to pull recent, detailed, or last-used provider information for a location. That makes this integration area valuable when ServiceNow must coordinate vendor selection, dispatch eligibility, or provider-quality intelligence.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.servicechannel.com/swagger/index.html#/Providers"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Provider master and subscriber relationship data",
+      "description": "Manufactured operations grouped under Provider master and subscriber relationship data."
+    },
+    {
+      "name": "Dispatch eligibility and provider selection",
+      "description": "Manufactured operations grouped under Dispatch eligibility and provider selection."
+    },
+    {
+      "name": "Provider quality and mobile capability signals",
+      "description": "Manufactured operations grouped under Provider quality and mobile capability signals."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "servicechannel_providers-api_integrationProfile",
+        "summary": "Get manufactured profile for Providers API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api/providers/info/{id}": {
+      "get": {
+        "tags": [
+          "Provider master and subscriber relationship data"
+        ],
+        "operationId": "servicechannel_providers-api_get-api-providers-info-id_get",
+        "summary": "GET /api/providers/info/{id}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core provider records and subscriber-link controls needed to manage which providers participate in service delivery. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Providers",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api/providers/info/{id}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/providers": {
+      "post": {
+        "tags": [
+          "Provider master and subscriber relationship data"
+        ],
+        "operationId": "servicechannel_providers-api_post-providers_post",
+        "summary": "POST /providers",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core provider records and subscriber-link controls needed to manage which providers participate in service delivery. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Providers",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /providers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /providers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/providers/RemoveProviderSubscriberLink": {
+      "post": {
+        "tags": [
+          "Provider master and subscriber relationship data"
+        ],
+        "operationId": "servicechannel_providers-api_post-providers-removeprovidersubscriberlink_post",
+        "summary": "POST /providers/RemoveProviderSubscriberLink",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core provider records and subscriber-link controls needed to manage which providers participate in service delivery. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Providers",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /providers/RemoveProviderSubscriberLink.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /providers/RemoveProviderSubscriberLink.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/providers/getbytrade": {
+      "get": {
+        "tags": [
+          "Dispatch eligibility and provider selection"
+        ],
+        "operationId": "servicechannel_providers-api_get-providers-getbytrade_get",
+        "summary": "GET /providers/getbytrade",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for selecting appropriate providers based on trade fit, ranking, and dispatch preferences. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Providers",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /providers/getbytrade.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/providers/getbytradeid": {
+      "get": {
+        "tags": [
+          "Dispatch eligibility and provider selection"
+        ],
+        "operationId": "servicechannel_providers-api_get-providers-getbytradeid_get",
+        "summary": "GET /providers/getbytradeid",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for selecting appropriate providers based on trade fit, ranking, and dispatch preferences. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Providers",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /providers/getbytradeid.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/providers/updateDispatchSetting": {
+      "post": {
+        "tags": [
+          "Dispatch eligibility and provider selection"
+        ],
+        "operationId": "servicechannel_providers-api_post-providers-updatedispatchsetting_post",
+        "summary": "POST /providers/updateDispatchSetting",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for selecting appropriate providers based on trade fit, ranking, and dispatch preferences. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Providers",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /providers/updateDispatchSetting.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /providers/updateDispatchSetting.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/providers/GetProvidersRankingStatus": {
+      "post": {
+        "tags": [
+          "Dispatch eligibility and provider selection"
+        ],
+        "operationId": "servicechannel_providers-api_post-providers-getprovidersrankingstatus_post",
+        "summary": "POST /providers/GetProvidersRankingStatus",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for selecting appropriate providers based on trade fit, ranking, and dispatch preferences. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Providers",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /providers/GetProvidersRankingStatus.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /providers/GetProvidersRankingStatus.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/odata/locations({locationId})/providers/Service.GetRecent(days={days})": {
+      "get": {
+        "tags": [
+          "Dispatch eligibility and provider selection"
+        ],
+        "operationId": "servicechannel_providers-api_get-odata-locations-locationid-providers-service-getrecent-days-days_get",
+        "summary": "GET /odata/locations({locationId})/providers/Service.GetRecent(days={days})",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for selecting appropriate providers based on trade fit, ranking, and dispatch preferences. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Providers",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /odata/locations({locationId})/providers/Service.GetRecent(days={days}).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/odata/locations({locationId})/providers/Service.GetLast(days={days})": {
+      "get": {
+        "tags": [
+          "Dispatch eligibility and provider selection"
+        ],
+        "operationId": "servicechannel_providers-api_get-odata-locations-locationid-providers-service-getlast-days-days_get",
+        "summary": "GET /odata/locations({locationId})/providers/Service.GetLast(days={days})",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for selecting appropriate providers based on trade fit, ranking, and dispatch preferences. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Providers",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /odata/locations({locationId})/providers/Service.GetLast(days={days}).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/providers/{providerId}/feedback": {
+      "post": {
+        "tags": [
+          "Provider quality and mobile capability signals"
+        ],
+        "operationId": "servicechannel_providers-api_post-providers-providerid-feedback_post",
+        "summary": "POST /providers/{providerId}/feedback",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Signals that help ServiceNow workflows reason about provider performance and mobile readiness. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Providers",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /providers/{providerId}/feedback.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /providers/{providerId}/feedback.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/odata/detailedProviders/Service.Get(providerId={providerId})": {
+      "get": {
+        "tags": [
+          "Provider quality and mobile capability signals"
+        ],
+        "operationId": "servicechannel_providers-api_get-odata-detailedproviders-service-get-providerid-providerid_get",
+        "summary": "GET /odata/detailedProviders/Service.Get(providerId={providerId})",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Signals that help ServiceNow workflows reason about provider performance and mobile readiness. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Providers",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /odata/detailedProviders/Service.Get(providerId={providerId}).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api/providers/IsSdiMobileEnabled": {
+      "get": {
+        "tags": [
+          "Provider quality and mobile capability signals"
+        ],
+        "operationId": "servicechannel_providers-api_get-api-providers-issdimobileenabled_get",
+        "summary": "GET /api/providers/IsSdiMobileEnabled",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Signals that help ServiceNow workflows reason about provider performance and mobile readiness. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Providers",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api/providers/IsSdiMobileEnabled.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/servicechannel/providers-api.json",
+    "vendor_documentation_url": "https://developer.servicechannel.com/swagger/index.html#/Providers",
+    "vendor_spec_artifact_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
+    "reviewed_at": "2026-04-17"
+  }
+}

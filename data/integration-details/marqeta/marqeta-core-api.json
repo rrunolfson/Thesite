@@ -1,0 +1,92 @@
+{
+  "vendor_slug": "marqeta",
+  "vendor_name": "Marqeta",
+  "product_slug": "marqeta-core-api",
+  "product_name": "Marqeta Core API",
+  "product_family": "Marqeta Core",
+  "integration_type": "REST API",
+  "integration_api_url": "https://www.marqeta.com/docs/core-api/introduction",
+  "spec_artifact_url": "https://www.marqeta.com/docs/openapi.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Marqeta publishes public Core API docs, a raw OpenAPI artifact, and a broad docs index covering users, cards, funding, balances, authorization controls, ACH, disputes, credit accounts, deposits, wallets, simulations, webhooks, and reporting views.",
+  "data_domains": [
+    "payments-and-issuing",
+    "cards-and-account-holders",
+    "funding-and-transfers",
+    "disputes-and-reporting"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "users and businesses",
+    "cards and card products",
+    "funding sources and GPA orders",
+    "balances and authorization controls",
+    "credit and deposit accounts",
+    "webhooks and reports"
+  ],
+  "buyer_guidance": "Use Marqeta Core API for card-program launch, user and account-holder management, funding and transfers, issuing controls, disputes, and program reporting. This is a payment-card platform, not an asset or telemetry platform.",
+  "overview": "Marqeta's public Core API introduction describes a RESTful platform for launching and managing payment card programs, and its public documentation index exposes both a raw OpenAPI artifact and a broad catalog of resource pages. The public docs cover objects such as users, cards, businesses, card products, GPA orders, funding sources, balances, authorization controls, ACH receiving, bulk card orders, direct deposits, disputes, deposit accounts, credit accounts, digital wallets, KYC verification, simulations, velocity controls, webhooks, and DiVA reporting views. This is a strong write-capable payments and issuing platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Card-program and account-holder operations",
+      "description": "Marqeta exposes the core resources required to create and operate a card and account-holder program.",
+      "data_points": [
+        "Users, businesses, and addresses",
+        "Cards, card products, and bulk card orders",
+        "Balances, GPA orders, and funding sources",
+        "Authorization controls, velocity controls, and merchant groups",
+        "KYC verification and digital wallet management"
+      ],
+      "relevant_operations": [
+        "POST /users",
+        "Cards",
+        "Card Products",
+        "Balances",
+        "GPA Orders",
+        "Funding Sources",
+        "Authorization Controls",
+        "Velocity Controls",
+        "KYC Verification",
+        "Digital Wallets Management"
+      ]
+    },
+    {
+      "category": "Funding, disputes, credit, and reporting",
+      "description": "The public docs extend into settlement, disputes, credit-account lifecycle, and analytics surfaces.",
+      "data_points": [
+        "ACH receiving, instant funding, and direct deposits",
+        "Disputes and evidence collection",
+        "Credit accounts, payments, payment schedules, and rewards",
+        "Deposit accounts and tokenization-as-a-service",
+        "Webhooks, simulations, and DiVA reporting views"
+      ],
+      "relevant_operations": [
+        "ACH Receiving",
+        "Instant Funding",
+        "Direct Deposit",
+        "Disputes",
+        "Disputes Evidence Collection",
+        "Credit Accounts",
+        "Credit Payments",
+        "Payment Schedules",
+        "Deposit Accounts",
+        "Webhooks",
+        "Simulating Transactions",
+        "DiVA API Views"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Marqeta distinguishes public and private sandbox environments and uses program-specific production URLs, so operational integration must account for environment-specific behavior and program entitlements.",
+    "The public documentation spans Core API, credit features, DiVA analytics, and simulation tools, so downstream consumers should pin the specific domain areas they actually need rather than assuming all products are enabled for a program.",
+    "This row has exact machine-readable spec evidence because Marqeta publishes a direct public OpenAPI YAML artifact at /docs/openapi.yaml."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://www.marqeta.com/docs/core-api/introduction",
+    "spec_url": "https://www.marqeta.com/docs/openapi.yaml",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Marqeta's public Core API docs describe RESTful objects such as users, cards, gpaorders, and fundingsources, the llms.txt documentation index exposes broad resource coverage including cards, balances, ACH, disputes, credit accounts, deposit accounts, wallets, webhooks, and reporting views, and the site serves a public raw OpenAPI YAML artifact."
+  }
+}

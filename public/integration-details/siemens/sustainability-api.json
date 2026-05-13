@@ -6,7 +6,8 @@
   "product_family": "Building X",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/building-x-openness/api/sustainability-api/sustainability.openapi.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/sustainability-api/sustainability.openapi.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/sustainability-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/sustainability-api/sustainability.openapi.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "RESTful API for reading energy consumption and cost data for a customer. Published API scope focuses on retrieving energy, emissions, and cost metrics for reporting and analytics.",
   "data_domains": [
@@ -16,7 +17,7 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "locations",
     "meters",
@@ -49,11 +50,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/building-x-openness/api/sustainability-api/overview.html",
-    "spec_url": "https://developer.siemens.com/building-x-openness/api/sustainability-api/sustainability.openapi.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/sustainability-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Sustainability API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Sustainability API.",
+    "vendor_spec_url": "https://developer.siemens.com/building-x-openness/api/sustainability-api/sustainability.openapi.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/sustainability-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/sustainability-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/sustainability-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/sustainability-api.openapi.json"
 }

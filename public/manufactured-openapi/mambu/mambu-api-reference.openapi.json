@@ -1,0 +1,763 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Mambu API Reference Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Mambu publishes public REST API documentation for core banking workflows across clients, accounts, transactions, general ledger, configuration, payments, and streaming event feeds, with downloadable OpenAPI specifications referenced from the docs.",
+    "description": "Manufactured OpenAPI artifact for Mambu API Reference. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Mambu's public developer docs describe API v2 as the main RESTful surface for core banking features such as client and account management, transactions, general ledger journal entries, tasks, and system configuration, while also documenting API v1, Payments API, and Streaming API families. The public user guide states that Mambu APIs support creating clients, loan accounts, and savings accounts, making transactions, managing system configuration, setting up branches, configuring interest rates, and managing API keys, user roles, and access permissions. Mambu also states that OpenAPI specifications can be downloaded for all endpoints. This is a write-capable financial platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://docs.mambu.com/api/pages/api-v2/welcome/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Core banking records and transactional workflows",
+      "description": "Manufactured operations grouped under Core banking records and transactional workflows."
+    },
+    {
+      "name": "Payments and event-driven integration",
+      "description": "Manufactured operations grouped under Payments and event-driven integration."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "mambu_mambu-api-reference_integrationProfile",
+        "summary": "Get manufactured profile for Mambu API Reference",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-clients": {
+      "post": {
+        "tags": [
+          "Core banking records and transactional workflows"
+        ],
+        "operationId": "mambu_mambu-api-reference_create-clients_post",
+        "summary": "Create clients",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu's core APIs cover the records and actions needed for day-to-day banking operations. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create clients.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create clients.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-loan-accounts": {
+      "post": {
+        "tags": [
+          "Core banking records and transactional workflows"
+        ],
+        "operationId": "mambu_mambu-api-reference_create-loan-accounts_post",
+        "summary": "Create loan accounts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu's core APIs cover the records and actions needed for day-to-day banking operations. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create loan accounts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create loan accounts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-savings-accounts": {
+      "post": {
+        "tags": [
+          "Core banking records and transactional workflows"
+        ],
+        "operationId": "mambu_mambu-api-reference_create-savings-accounts_post",
+        "summary": "Create savings accounts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu's core APIs cover the records and actions needed for day-to-day banking operations. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create savings accounts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create savings accounts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/make-transactions": {
+      "get": {
+        "tags": [
+          "Core banking records and transactional workflows"
+        ],
+        "operationId": "mambu_mambu-api-reference_make-transactions_get",
+        "summary": "Make transactions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu's core APIs cover the records and actions needed for day-to-day banking operations. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Make transactions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/general-ledger-journal-entries": {
+      "get": {
+        "tags": [
+          "Core banking records and transactional workflows"
+        ],
+        "operationId": "mambu_mambu-api-reference_general-ledger-journal-entries_get",
+        "summary": "General ledger journal entries",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu's core APIs cover the records and actions needed for day-to-day banking operations. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for General ledger journal entries.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/manage-system-configuration": {
+      "get": {
+        "tags": [
+          "Core banking records and transactional workflows"
+        ],
+        "operationId": "mambu_mambu-api-reference_manage-system-configuration_get",
+        "summary": "Manage system configuration",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu's core APIs cover the records and actions needed for day-to-day banking operations. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Manage system configuration.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/set-up-branches": {
+      "get": {
+        "tags": [
+          "Core banking records and transactional workflows"
+        ],
+        "operationId": "mambu_mambu-api-reference_set-up-branches_get",
+        "summary": "Set up branches",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu's core APIs cover the records and actions needed for day-to-day banking operations. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Set up branches.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/configure-interest-rates": {
+      "get": {
+        "tags": [
+          "Core banking records and transactional workflows"
+        ],
+        "operationId": "mambu_mambu-api-reference_configure-interest-rates_get",
+        "summary": "Configure interest rates",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu's core APIs cover the records and actions needed for day-to-day banking operations. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Configure interest rates.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payments-api": {
+      "get": {
+        "tags": [
+          "Payments and event-driven integration"
+        ],
+        "operationId": "mambu_mambu-api-reference_payments-api_get",
+        "summary": "Payments API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu also documents adjacent APIs for moving money and distributing operational events into downstream systems. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payments API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/receive-payments": {
+      "get": {
+        "tags": [
+          "Payments and event-driven integration"
+        ],
+        "operationId": "mambu_mambu-api-reference_receive-payments_get",
+        "summary": "Receive payments",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu also documents adjacent APIs for moving money and distributing operational events into downstream systems. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Receive payments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/make-payments": {
+      "get": {
+        "tags": [
+          "Payments and event-driven integration"
+        ],
+        "operationId": "mambu_mambu-api-reference_make-payments_get",
+        "summary": "Make payments",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu also documents adjacent APIs for moving money and distributing operational events into downstream systems. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Make payments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/streaming-api-event-feeds": {
+      "get": {
+        "tags": [
+          "Payments and event-driven integration"
+        ],
+        "operationId": "mambu_mambu-api-reference_streaming-api-event-feeds_get",
+        "summary": "Streaming API event feeds",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu also documents adjacent APIs for moving money and distributing operational events into downstream systems. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Streaming API event feeds.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/vnd.mambu.v2+json": {
+      "get": {
+        "tags": [
+          "Payments and event-driven integration"
+        ],
+        "operationId": "mambu_mambu-api-reference_accept-application-vnd-mambu-v2-json_get",
+        "summary": "Accept: application/vnd.mambu.v2+json",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu also documents adjacent APIs for moving money and distributing operational events into downstream systems. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Accept: application/vnd.mambu.v2+json.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/vnd.mambu.v2+yaml": {
+      "get": {
+        "tags": [
+          "Payments and event-driven integration"
+        ],
+        "operationId": "mambu_mambu-api-reference_accept-application-vnd-mambu-v2-yaml_get",
+        "summary": "Accept: application/vnd.mambu.v2+yaml",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mambu also documents adjacent APIs for moving money and distributing operational events into downstream systems. Vendor documentation: https://docs.mambu.com/api/pages/api-v2/welcome/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Accept: application/vnd.mambu.v2+yaml.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/mambu/mambu-api-reference.json",
+    "vendor_documentation_url": "https://docs.mambu.com/api/pages/api-v2/welcome/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

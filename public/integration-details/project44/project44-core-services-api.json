@@ -1,0 +1,94 @@
+{
+  "vendor_slug": "project44",
+  "vendor_name": "project44",
+  "product_slug": "project44-core-services-api",
+  "product_name": "project44 Core Services API",
+  "product_family": "project44",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developers.project44.com/api-reference",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/project44/project44-core-services-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developers.project44.com/_spec/api-reference/@v4/api-docs.json?download",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "project44's Core Services API covers shipment tracking, asset tracking, loads, order visibility, webhook payloads, and multi-modal logistics workflows with a downloadable OpenAPI description for the v4 surface.",
+  "data_domains": [
+    "asset-tracking",
+    "shipment-events-and-positions",
+    "order-and-load-visibility",
+    "logistics-webhooks"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "tracked assets",
+    "shipments",
+    "loads",
+    "inventory items and orders",
+    "webhooks",
+    "capacity provider accounts"
+  ],
+  "buyer_guidance": "Use project44 when you need a logistics visibility API focused on shipment and asset tracking, webhook-driven position updates, and connected-capacity workflows across multiple transportation modes.",
+  "overview": "project44 describes its Core Services API as the interface customers and partners use to connect carriers and capacity providers, dispatch and track shipments, and retrieve documents for invoicing and reconciliation. The published v4 OpenAPI reference includes shipment tracking, asset tracking, loads, order visibility, webhook payloads, and multi-modal booking surfaces, and the asset-tracking section explicitly documents enrollment and unenrollment of tracked assets using webhook delivery for location pushes. That makes the API a strong source for logistics asset and shipment visibility data with documented writeback. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Tracked assets and shipment visibility",
+      "description": "The v4 reference covers both direct tracked-asset enrollment and shipment position or event history retrieval.",
+      "data_points": [
+        "Tracked asset identifiers for containers, rail cars, and trailers",
+        "Shipment tracking state, event history, and position history",
+        "Tracking subscription expiration and webhook routing",
+        "Load records tied to tracked shipments"
+      ],
+      "relevant_operations": [
+        "POST /api/v4/assets/tracking",
+        "DELETE /api/v4/assets/tracking",
+        "GET /api/v4/shipments/{shipmentId}/eventhistory",
+        "GET /api/v4/shipments/{shipmentId}/positionhistory",
+        "GET /api/v4/shipments/{shipmentId}/tracking",
+        "PUT /api/v4/shipments/tracking",
+        "POST /api/v4/loads",
+        "GET /api/v4/loads/{loadId}"
+      ]
+    },
+    {
+      "category": "Orders, webhooks, and logistics workflow data",
+      "description": "project44 also exposes order, inventory, and webhook-oriented surfaces needed to operationalize tracking data downstream.",
+      "data_points": [
+        "Inventory items and inventory orders",
+        "Shipment and inventory-order webhook payload definitions",
+        "Webhook registrations and endpoint management",
+        "Capacity provider contacts, accounts, and account groups",
+        "Appointment, milestone, and slot data for yard workflows"
+      ],
+      "relevant_operations": [
+        "POST /api/v4/inventory/items",
+        "POST /api/v4/inventory/orders",
+        "GET /api/v4/webhooks",
+        "PUT /api/v4/webhooks",
+        "GET /api/v4/contacts",
+        "POST /api/v4/capacityprovideraccounts",
+        "POST /services/appointments/v1/appointments",
+        "PUT /services/appointments/v1/appointment/{appointmentId}/milestones"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Asset tracking requires a previously registered webhook endpoint because project44 pushes location updates to the enrollee rather than relying only on polling.",
+    "The Core Services API is versioned and the current public artifact is v4, which project44 notes is not backward compatible with older pre-2018 integrations.",
+    "Because the public site exposes a downloadable OpenAPI description distinct from the human-facing docs, this row has exact spec evidence and can be advanced further than rows still anchored only to narrative docs."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developers.project44.com/api-reference",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/project44/project44-core-services-api.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "The project44 API reference publishes a downloadable v4 OpenAPI description and documents shipment tracking, asset tracking, loads, order visibility, webhooks, and multi-modal workflow endpoints.",
+    "vendor_spec_url": "https://developers.project44.com/_spec/api-reference/@v4/api-docs.json?download",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/project44/project44-core-services-api.openapi.json"
+  },
+  "detail_path": "/integration-details/project44/project44-core-services-api.json",
+  "vendor_domain": "project44.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=project44.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/project44/project44-core-services-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/project44/project44-core-services-api.openapi.json"
+}

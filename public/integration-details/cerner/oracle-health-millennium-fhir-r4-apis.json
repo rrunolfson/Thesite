@@ -1,0 +1,113 @@
+{
+  "vendor_slug": "cerner",
+  "vendor_name": "Cerner",
+  "product_slug": "oracle-health-millennium-fhir-r4-apis",
+  "product_name": "Oracle Health Millennium FHIR R4 APIs",
+  "product_family": "Oracle Health Millennium R4",
+  "integration_type": "FHIR API",
+  "integration_api_url": "https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/cerner/oracle-health-millennium-fhir-r4-apis.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Oracle Health Millennium publishes broad FHIR R4 and EHR REST APIs for patient, appointment, device, observation, document, medication, coverage, communication, and bulk clinical-data workflows across the Millennium platform.",
+  "data_domains": [
+    "patient-master-data",
+    "clinical-and-document-records",
+    "appointments-and-scheduling",
+    "population-health-exports"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "patients",
+    "appointments and slots",
+    "devices",
+    "observations and diagnostic reports",
+    "document references",
+    "bulk exports"
+  ],
+  "buyer_guidance": "Use Oracle Health Millennium FHIR R4 APIs for EHR, scheduling, clinical, patient messaging, and bulk clinical-data workflows. This is a healthcare interoperability surface, not an asset or telemetry platform.",
+  "overview": "Oracle Health documents Millennium Platform APIs across FHIR R4, EHR REST, SMART authorization, and bulk data access. The public endpoint catalogs show create, read, update, patch, delete, and export operations for resources such as Patient, Appointment, Device, Observation, DiagnosticReport, DocumentReference, Encounter, Coverage, Communication, MedicationRequest, Practitioner, Schedule, Slot, and QuestionnaireResponse, plus EHR-specific allergies, patient messages, code values, locations, personnel, and recipient workflows. Oracle also documents asynchronous bulk exports for Group and Patient data in its FHIR R4 bulk-data surface. This is a broad write-capable clinical interoperability API, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "FHIR R4 patient, scheduling, and clinical resources",
+      "description": "The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records.",
+      "data_points": [
+        "Patient, person, practitioner, organization, and related person records",
+        "Appointments, schedules, and slots",
+        "Devices, observations, diagnostic reports, and document references",
+        "Conditions, encounters, procedures, immunizations, medication requests, and care plans",
+        "Coverage, insurance plans, charge items, and communications"
+      ],
+      "relevant_operations": [
+        "POST /Patient",
+        "GET /Patient",
+        "PATCH /Patient{ID}",
+        "POST /Appointment",
+        "GET /Appointment",
+        "PATCH /Appointment/{ID}",
+        "GET /Device",
+        "GET /Observation",
+        "POST /Observation",
+        "PUT /Observation/{ID}",
+        "GET /DiagnosticReport",
+        "POST /DiagnosticReport",
+        "GET /DocumentReference",
+        "POST /DocumentReference",
+        "PUT /DocumentReference/{ID}",
+        "GET /Schedule/",
+        "GET /Slot",
+        "PATCH /Slot/{ID}",
+        "GET /metadata",
+        "GET /.well-known/smart-configuration"
+      ]
+    },
+    {
+      "category": "EHR actions, messaging, and bulk data workflows",
+      "description": "Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction.",
+      "data_points": [
+        "Allergy creation, review, and no-known-allergy actions",
+        "Chief complaints and condition lists",
+        "Patient inbox and sent messages with recipient validation and status updates",
+        "Location, personnel, code value, nomenclature, and recipient directory data",
+        "FHIR R4 Group Export and Patient Export workflows returning NDJSON payloads"
+      ],
+      "relevant_operations": [
+        "POST /20240101/allergies",
+        "GET /20240101/allergies",
+        "POST /20240101/actions/markAllergiesReviewed",
+        "GET /20240101/chiefComplaints",
+        "GET /20240101/conditions",
+        "GET /20241001/patientMessages/inboxItems",
+        "GET /20241001/patientMessages/sentItems",
+        "POST /20241001/patientMessages/sentItems",
+        "POST /20241001/actions/updatePatientMessageStatus",
+        "GET /20240101/locations",
+        "GET /20240101/personnel",
+        "GET /20240101/codeValues",
+        "Group Export",
+        "Patient Export"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Oracle documents both FHIR R4 and separate EHR REST APIs, so integrations should not assume one uniform resource model across all Millennium workflows.",
+    "Bulk data access is asynchronous, OAuth-protected, and intended for large clinical-data exports such as warehouses, ML training data, and population-health workflows rather than interactive request-response usage.",
+    "A public sandbox metadata endpoint is reachable and returns a CapabilityStatement in FHIR JSON, but it does not satisfy the current exact-spec URL policy because the validator only accepts artifact URLs with explicit spec-style patterns or extensions."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/cerner/oracle-health-millennium-fhir-r4-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Oracle Health's public Millennium docs enumerate FHIR R4 REST endpoints for Patient, Appointment, Device, Observation, DiagnosticReport, DocumentReference, Encounter, Coverage, MedicationRequest, Schedule, Slot, and many others, plus separate EHR REST APIs for allergies, messages, conditions, code values, locations, and personnel. The public sandbox metadata endpoint also returns a FHIR CapabilityStatement.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/cerner/oracle-health-millennium-fhir-r4-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/cerner/oracle-health-millennium-fhir-r4-apis.json",
+  "vendor_domain": "oracle.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=oracle.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/cerner/oracle-health-millennium-fhir-r4-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/cerner/oracle-health-millennium-fhir-r4-apis.openapi.json"
+}

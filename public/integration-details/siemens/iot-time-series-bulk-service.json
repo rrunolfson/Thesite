@@ -6,7 +6,8 @@
   "product_family": "Insights Hub",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/iottsbulk-v3-8-1.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/iottsbulk-v3-8-1.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/iot-time-series-bulk-service.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/iottsbulk-v3-8-1.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope combines timeseries ingest, retrieval, and bulk history handling.",
   "data_domains": [
@@ -49,11 +50,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/insights-hub/docs/apis/iot-iottsbulk/api-iottsbulk-overview.html",
-    "spec_url": "https://developer.siemens.com/insights-hub/api_specs/iottsbulk-v3-8-1.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/iot-time-series-bulk-service.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for IoT Time Series Bulk Service."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for IoT Time Series Bulk Service.",
+    "vendor_spec_url": "https://developer.siemens.com/insights-hub/api_specs/iottsbulk-v3-8-1.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/iot-time-series-bulk-service.openapi.json"
   },
   "detail_path": "/integration-details/siemens/iot-time-series-bulk-service.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/iot-time-series-bulk-service.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/iot-time-series-bulk-service.openapi.json"
 }

@@ -1,0 +1,533 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Adobe Commerce REST / GraphQL APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Adobe publicly documents Adobe Commerce web APIs through dedicated Getting Started, REST, and GraphQL guides for third-party integrations and headless commerce applications.",
+    "description": "Manufactured OpenAPI artifact for Adobe Commerce REST / GraphQL APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Adobe's Commerce Web APIs documentation states that Adobe Commerce provides web services for integrating third-party software and building headless applications. The public documentation is organized into Getting Started, REST, and GraphQL sections, with REST covering available web services on the latest Adobe Commerce release and GraphQL covering query and mutation access patterns favored for frontend development. This positions Adobe Commerce as a write-capable commerce integration surface for catalog, customer, order, and frontend application workflows, but not for asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.adobe.com/commerce/webapi/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Commerce platform integration",
+      "description": "Manufactured operations grouped under Commerce platform integration."
+    },
+    {
+      "name": "Headless storefront and application development",
+      "description": "Manufactured operations grouped under Headless storefront and application development."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "adobe_adobe-commerce-rest-graphql-apis_integrationProfile",
+        "summary": "Get manufactured profile for Adobe Commerce REST / GraphQL APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/getting-started": {
+      "get": {
+        "tags": [
+          "Commerce platform integration"
+        ],
+        "operationId": "adobe_adobe-commerce-rest-graphql-apis_getting-started_get",
+        "summary": "Getting Started",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Adobe Commerce publicly documents integration paths for third-party software through its web API framework. Vendor documentation: https://developer.adobe.com/commerce/webapi/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Getting Started.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/rest": {
+      "get": {
+        "tags": [
+          "Commerce platform integration"
+        ],
+        "operationId": "adobe_adobe-commerce-rest-graphql-apis_rest_get",
+        "summary": "REST",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Adobe Commerce publicly documents integration paths for third-party software through its web API framework. Vendor documentation: https://developer.adobe.com/commerce/webapi/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for REST.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/graphql": {
+      "get": {
+        "tags": [
+          "Commerce platform integration"
+        ],
+        "operationId": "adobe_adobe-commerce-rest-graphql-apis_graphql_get",
+        "summary": "GraphQL",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Adobe Commerce publicly documents integration paths for third-party software through its web API framework. Vendor documentation: https://developer.adobe.com/commerce/webapi/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GraphQL.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/integrate-with-third-party-software": {
+      "get": {
+        "tags": [
+          "Commerce platform integration"
+        ],
+        "operationId": "adobe_adobe-commerce-rest-graphql-apis_integrate-with-third-party-software_get",
+        "summary": "Integrate with third-party software",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Adobe Commerce publicly documents integration paths for third-party software through its web API framework. Vendor documentation: https://developer.adobe.com/commerce/webapi/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Integrate with third-party software.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/build-headless-applications": {
+      "get": {
+        "tags": [
+          "Commerce platform integration"
+        ],
+        "operationId": "adobe_adobe-commerce-rest-graphql-apis_build-headless-applications_get",
+        "summary": "Build headless applications",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Adobe Commerce publicly documents integration paths for third-party software through its web API framework. Vendor documentation: https://developer.adobe.com/commerce/webapi/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Build headless applications.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/graphql-guide": {
+      "get": {
+        "tags": [
+          "Headless storefront and application development"
+        ],
+        "operationId": "adobe_adobe-commerce-rest-graphql-apis_graphql-guide_get",
+        "summary": "GraphQL guide",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also frame Adobe Commerce APIs as the backend for modern composable storefronts and applications. Vendor documentation: https://developer.adobe.com/commerce/webapi/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GraphQL guide.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/rest-guide": {
+      "get": {
+        "tags": [
+          "Headless storefront and application development"
+        ],
+        "operationId": "adobe_adobe-commerce-rest-graphql-apis_rest-guide_get",
+        "summary": "REST guide",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also frame Adobe Commerce APIs as the backend for modern composable storefronts and applications. Vendor documentation: https://developer.adobe.com/commerce/webapi/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for REST guide.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/headless-applications": {
+      "get": {
+        "tags": [
+          "Headless storefront and application development"
+        ],
+        "operationId": "adobe_adobe-commerce-rest-graphql-apis_headless-applications_get",
+        "summary": "Headless applications",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also frame Adobe Commerce APIs as the backend for modern composable storefronts and applications. Vendor documentation: https://developer.adobe.com/commerce/webapi/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Headless applications.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/web-api-framework": {
+      "get": {
+        "tags": [
+          "Headless storefront and application development"
+        ],
+        "operationId": "adobe_adobe-commerce-rest-graphql-apis_web-api-framework_get",
+        "summary": "Web API framework",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also frame Adobe Commerce APIs as the backend for modern composable storefronts and applications. Vendor documentation: https://developer.adobe.com/commerce/webapi/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Web API framework.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/adobe/adobe-commerce-rest-graphql-apis.json",
+    "vendor_documentation_url": "https://developer.adobe.com/commerce/webapi/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

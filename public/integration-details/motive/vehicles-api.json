@@ -6,7 +6,8 @@
   "product_family": "Motive Open API",
   "integration_type": "REST API",
   "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-  "spec_artifact_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/motive/vehicles-api.openapi.json",
+  "vendor_spec_artifact_url": "",
   "detail_completeness": "researched",
   "data_coverage_summary": "Vehicles API is the fleet master-data surface for vehicle records, assignments, and synchronized asset attributes in Motive.",
   "data_domains": [
@@ -15,7 +16,7 @@
     "asset-synchronization"
   ],
   "asset_data_available": "Supported",
-  "telemetry_data_available": "Not Supported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "vehicles",
@@ -23,7 +24,7 @@
     "asset identifiers"
   ],
   "buyer_guidance": "Use Vehicles API as the Motive system-of-record surface for fleet asset synchronization, especially when other event feeds need to be anchored back to vehicle identity.",
-  "overview": "Vehicles API is the master-data surface for fleet vehicles in Motive. It is appropriate for syncing vehicle records and updating those records, but it is not the right surface for telemetry retrieval because the documented scope is configuration and assignment oriented. Asset data is Supported. Telemetry data is Not Supported. Writeback is Supported.",
+  "overview": "Vehicles API is the master-data surface for fleet vehicles in Motive. It is appropriate for syncing vehicle records and updating those records, but it is not the right surface for telemetry retrieval because the documented scope is configuration and assignment oriented. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
   "available_data": [
     {
       "category": "Vehicle master records",
@@ -45,11 +46,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-    "spec_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/motive/vehicles-api.openapi.json",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing vehicle master data, assignments, and fleet asset synchronization, along with documented create and update operations."
+    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing vehicle master data, assignments, and fleet asset synchronization, along with documented create and update operations.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/motive/vehicles-api.openapi.json"
   },
   "detail_path": "/integration-details/motive/vehicles-api.json",
   "vendor_domain": "gomotive.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=gomotive.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=gomotive.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/motive/vehicles-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/motive/vehicles-api.openapi.json"
 }

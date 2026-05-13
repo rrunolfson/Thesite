@@ -1,0 +1,86 @@
+{
+  "vendor_slug": "paypal",
+  "vendor_name": "PayPal",
+  "product_slug": "paypal-rest-apis",
+  "product_name": "PayPal REST APIs",
+  "product_family": "PayPal",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.paypal.com/api/rest/",
+  "spec_artifact_url": "https://raw.githubusercontent.com/paypal/paypal-rest-api-specifications/main/openapi/checkout_orders_v2.json",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "PayPal publishes public REST documentation and raw OpenAPI artifacts for OAuth, orders, payments, subscriptions, payouts, invoicing, transaction search, and webhook management.",
+  "data_domains": [
+    "payments-and-settlement",
+    "orders-and-checkout",
+    "subscriptions-and-billing",
+    "event-webhooks"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "orders",
+    "payments",
+    "payout batches",
+    "subscriptions",
+    "invoices",
+    "webhooks"
+  ],
+  "buyer_guidance": "Use PayPal REST APIs for checkout, payment capture, subscriptions, payouts, invoicing, and webhook-driven payment automation. This is a payments platform, not an asset or telemetry platform.",
+  "overview": "PayPal's public developer portal documents REST APIs that authenticate with OAuth 2.0 and return JSON, with sandbox support for testing and a public multi-spec OpenAPI repository. The public docs cover token exchange, orders, payments, payment method tokens, tracking, payouts, subscriptions, invoicing, transaction search, and webhook management, and the raw specifications repository exposes machine-readable artifacts such as checkout_orders_v2.json. This is a strong write-capable financial workflow surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Checkout, payment, and billing workflows",
+      "description": "PayPal exposes the core APIs needed to create and settle customer payment flows.",
+      "data_points": [
+        "OAuth access tokens for API authentication",
+        "Order creation, retrieval, authorization, capture, and update",
+        "Payments and payment method tokens",
+        "Subscriptions and invoicing workflows",
+        "Transaction search and order tracking"
+      ],
+      "relevant_operations": [
+        "POST /v1/oauth2/token",
+        "Orders create",
+        "Orders retrieve",
+        "Orders authorize",
+        "Orders capture",
+        "Orders update",
+        "Payments v2",
+        "Payment Method Tokens v3",
+        "Subscriptions v1",
+        "Invoicing v2",
+        "Transaction Search v1"
+      ]
+    },
+    {
+      "category": "Payouts and event-driven operations",
+      "description": "PayPal also exposes outbound money movement and asynchronous event-management surfaces.",
+      "data_points": [
+        "Payout batch creation and referenced payouts",
+        "Webhook registration and event handling",
+        "Sandbox test accounts for buyer and seller scenarios",
+        "Partner program support for third-party operation",
+        "JSON and Postman-oriented development workflows"
+      ],
+      "relevant_operations": [
+        "Payouts batch v1",
+        "Referenced Payouts",
+        "Webhooks Management v1",
+        "Webhook event names",
+        "Sandbox Accounts"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "PayPal's public surface is fragmented across multiple resource families, so downstream integrations should pin the specific product APIs actually in use rather than treating the platform as one monolithic schema.",
+    "Go-live requirements and some capabilities vary by geography, partner status, and merchant account type, so sandbox behavior is not a complete proxy for production entitlement.",
+    "This row has exact machine-readable spec evidence because PayPal publishes raw OpenAPI documents in the public paypal-rest-api-specifications repository."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.paypal.com/api/rest/",
+    "spec_url": "https://raw.githubusercontent.com/paypal/paypal-rest-api-specifications/main/openapi/checkout_orders_v2.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "PayPal's public REST docs cover OAuth token exchange, Orders, Payments, Payment Method Tokens, Payouts, Subscriptions, Invoicing, Transaction Search, and Webhooks Management, and PayPal's public specification repository exposes raw OpenAPI artifacts such as checkout_orders_v2.json."
+  }
+}

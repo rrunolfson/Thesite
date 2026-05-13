@@ -1,0 +1,80 @@
+{
+  "vendor_slug": "poka",
+  "vendor_name": "Poka",
+  "product_slug": "poka-platform-integrations-api",
+  "product_name": "Poka platform integrations/API",
+  "product_family": "Poka",
+  "integration_type": "REST API",
+  "integration_api_url": "https://www.poka.io/en/integrations",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Poka publicly describes flexible integration tooling through REST APIs, Automate iPaaS workflows, Data Lake exports, and SCIM provisioning for connected-worker and digital manufacturing data exchange.",
+  "data_domains": [
+    "workforce-training-and-skills",
+    "forms-and-safety-reporting",
+    "asset-performance-workflows",
+    "identity-and-data-integration"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "users and user groups",
+    "training and personnel data",
+    "forms and safety reports",
+    "tasks and workflows",
+    "asset-performance workflows",
+    "data lake exports"
+  ],
+  "buyer_guidance": "Use Poka integrations and APIs for connected-worker, training, forms, identity, and operational workflow integrations across manufacturing environments. This is not a telemetry platform, but it does support asset-oriented workflow data and writeback.",
+  "overview": "Poka's public integrations page describes four public integration approaches: Poka Automate for iPaaS workflow automation, Poka API for RESTful third-party integrations, Poka Data Lake for analytics export, and Poka SCIM for user and user-group provisioning. The public use cases and customer stories show integrations for SAP-driven maintenance resolution, Tableau-backed safety reporting with forms, and Workday-connected personnel training data, while the site repeatedly positions Poka as a system for connecting people, data, processes, tasks, and systems in digital manufacturing. This is a write-capable connected-worker integration surface with supported asset-oriented workflows, but not a telemetry platform. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Workforce, identity, and connected-worker workflows",
+      "description": "Poka publicly describes integrations that synchronize workforce and operational data into its connected-worker platform.",
+      "data_points": [
+        "Users and user groups via SCIM",
+        "Personnel and training data integration",
+        "Tasks, processes, and workflow automation",
+        "Connected-worker operational data",
+        "Data-lake export to BI and analytics tools"
+      ],
+      "relevant_operations": [
+        "Poka API",
+        "Poka SCIM",
+        "Poka Data Lake",
+        "Poka Automate",
+        "Provision Users and User Groups"
+      ]
+    },
+    {
+      "category": "Safety, forms, and asset-performance use cases",
+      "description": "The public integration stories also show Poka being used for plant-floor workflow improvement and equipment-related operational support.",
+      "data_points": [
+        "Safety forms and reporting workflows",
+        "SAP-connected maintenance resolution",
+        "Asset-performance improvement workflows",
+        "Digital manufacturing process and task integration",
+        "Workday-connected onboarding and workforce enablement"
+      ],
+      "relevant_operations": [
+        "Poka Forms",
+        "SAP integration",
+        "Tableau integration",
+        "Workday integration",
+        "Boost Asset Performance"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Poka's public evidence is capability- and use-case-oriented rather than endpoint-oriented, so schema-level integration work will still require partner or customer technical detail beyond the public site.",
+    "The strongest public signals are around workflow, user provisioning, and analytics exchange rather than raw device telemetry, so telemetry support should remain Unsupported until public evidence shows otherwise.",
+    "No exact public machine-readable spec artifact was confirmed for Poka."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://www.poka.io/en/integrations",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Poka's public integrations page describes RESTful APIs, an Automate iPaaS platform, Data Lake exports, and SCIM provisioning, and customer stories explicitly reference SAP maintenance-resolution workflows, Tableau-backed safety forms, and Workday-connected personnel training data."
+  }
+}

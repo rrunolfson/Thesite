@@ -6,7 +6,7 @@
   "product_family": "Samsara Platform",
   "integration_type": "REST API",
   "integration_api_url": "https://developers.samsara.com/docs/tms-integration-guide",
-  "spec_artifact_url": "https://developers.samsara.com/docs/tms-integration-guide",
+  "spec_artifact_url": "https://developers.samsara.com/openapi/samsara-api.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "Samsara TMS Integrations is the broadest transportation integration pattern in the catalog, covering two-way sync for addresses, drivers, assets, routes, messages, and forms, plus one-way GPS, telematics, and compliance data for execution visibility.",
   "data_domains": [
@@ -110,7 +110,7 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developers.samsara.com/docs/tms-integration-guide",
-    "spec_url": "https://developers.samsara.com/docs/tms-integration-guide",
+    "spec_url": "https://developers.samsara.com/openapi/samsara-api.json",
     "reviewed_at": "2026-04-18",
     "evidence_notes": "Backed by the TMS integration guide's Integration Points matrix listing two-way sync methods for addresses, drivers, assets, routes, messages, and forms, plus one-way GPS/telematics and HOS methods and associated webhook/Kafka patterns."
   }

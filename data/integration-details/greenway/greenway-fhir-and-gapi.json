@@ -1,0 +1,80 @@
+{
+  "vendor_slug": "greenway",
+  "vendor_name": "Greenway",
+  "product_slug": "greenway-fhir-and-gapi",
+  "product_name": "Greenway FHIR and GAPI",
+  "product_family": "Greenway FHIR and GAPI",
+  "integration_type": "FHIR API",
+  "integration_api_url": "https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Greenway publishes public developer documentation for a standards-based FHIR R4 API and proprietary GAPI surface used with Greenway EHR products for clinical data access, app embedding, bulk export, and event-driven workflows.",
+  "data_domains": [
+    "patient-master-data",
+    "clinical-and-document-records",
+    "appointments-and-scheduling",
+    "population-health-exports"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "patients",
+    "clinical FHIR resources",
+    "bulk exports",
+    "GAPI clinical and financial data",
+    "SMART applications",
+    "event notifications"
+  ],
+  "buyer_guidance": "Use Greenway FHIR and GAPI for EHR-connected clinical interoperability, SMART app deployment, bulk export, and proprietary clinical or financial workflows in Greenway environments. This is not an asset or telemetry platform.",
+  "overview": "Greenway's developer platform describes two public API families: a standards-compliant FHIR R4 API serving Intergy and Prime Suite data, and a proprietary GAPI that supports reads and writes across clinical and financial data elements. The public docs describe SMART-on-FHIR OAuth flows, tenant-specific FHIR base URLs, bulk export support, event notification capabilities, and separate GAPI deployment and authentication documentation. Greenway also states that its current FHIR API is read-only while GAPI provides the write-capable proprietary surface. This is a healthcare application platform with both standards-based and proprietary integration models, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "FHIR R4 clinical interoperability",
+      "description": "Greenway's public FHIR platform is designed for SMART-on-FHIR applications and standardized patient-data access.",
+      "data_points": [
+        "Tenant-scoped FHIR base URLs for Greenway EHR products",
+        "FHIR patient and related clinical resources served from Intergy and Prime Suite",
+        "Patient and provider context for embedded SMART applications",
+        "Read-only FHIR R4 access for 21st Century Cures-aligned workflows",
+        "Bulk export support for backend-service and population workflows"
+      ],
+      "relevant_operations": [
+        "GET /fhir/R4/{TENANT_ID}/Patient/{id}",
+        "FHIR CapabilityStatement GET",
+        "Bulk Export",
+        "SMART-on-FHIR authorization",
+        "Backend services registration"
+      ]
+    },
+    {
+      "category": "Proprietary GAPI and event-driven workflows",
+      "description": "Greenway separately documents a proprietary API layer and related app lifecycle capabilities for broader operational integrations.",
+      "data_points": [
+        "Clinical and financial data elements accessible through GAPI",
+        "GAPI deployment and authentication workflows",
+        "Event notification system for app-driven automation",
+        "App gallery and embedded EHR application deployment",
+        "Identity-driven user and patient access control"
+      ],
+      "relevant_operations": [
+        "GAPI read workflows",
+        "GAPI write workflows",
+        "Event Notification System",
+        "Deploying a GAPI application",
+        "GAPI Authentication and Authorization"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Greenway explicitly distinguishes its read-only FHIR layer from its write-capable proprietary GAPI, so integration designs should choose the surface deliberately rather than assuming all workflows are available over FHIR.",
+    "FHIR access is tenant-scoped and identity-driven, while GAPI usage requires separate dashboard and authorization flows, so credentials, scopes, and deployment paths differ across the two surfaces.",
+    "No exact public machine-readable spec artifact was confirmed for this combined FHIR and GAPI row."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Greenway's public developer docs state that the platform offers a standards-compliant FHIR R4 API plus a proprietary GAPI, that the current FHIR API supports read operations only, that GAPI supports reads and writes across clinical and financial data elements, and that the developer platform includes bulk export, SMART-on-FHIR, backend services, and event notification documentation."
+  }
+}

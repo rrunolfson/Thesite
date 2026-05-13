@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "tink",
+  "vendor_name": "Tink",
+  "product_slug": "tink-api",
+  "product_name": "Tink API",
+  "product_family": "Tink",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.tink.com/api/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Tink API has public documentation that indicates open-banking data and consent workflows across accounts, balances, transactions, consents. Public API docs.",
+  "data_domains": [
+    "accounts-and-consent",
+    "transactions",
+    "payment-initiation"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "accounts",
+    "balances",
+    "transactions",
+    "consents",
+    "payments"
+  ],
+  "buyer_guidance": "Use this API family for financial-account connectivity, consent, and payment-initiation workflows rather than telemetry or operational asset use cases. Tink should be treated as a rest api surface for open-banking data and consent workflows.",
+  "overview": "Public documentation reviewed for Tink API indicates Public API docs. The documented surface aligns with open-banking data and consent workflows and covers accounts, balances, transactions, consents. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Open-banking data and consent workflows",
+      "description": "The public documentation indicates open-finance workflows for account access, balance and transaction retrieval, consent management, and payment initiation.",
+      "data_points": [
+        "Account, balance, and transaction records",
+        "Consent and authorization state",
+        "Institution or connector metadata",
+        "Payment-initiation workflows"
+      ],
+      "relevant_operations": [
+        "list account and transaction records",
+        "read balances and consent state",
+        "create or update payment-initiation workflows",
+        "manage institution or connector access"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Tink API is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as open-banking data and consent workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.tink.com/api/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public API docs."
+  }
+}

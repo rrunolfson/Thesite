@@ -6,7 +6,8 @@
   "product_family": "Building X",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/building-x-openness/api/activities-v1/activities.openapi.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/activities-v1/activities.openapi.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/activities-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/activities-v1/activities.openapi.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "RESTful API for retrieving events, alarms, and user operations produced by access system and security manager services. Published API scope is focused on retrieving event, alarm, and activity records from connected systems.",
   "data_domains": [
@@ -14,9 +15,9 @@
     "alarms",
     "security-monitoring"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "events",
     "alarms",
@@ -47,11 +48,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/building-x-openness/api/activities-v1/overview.html",
-    "spec_url": "https://developer.siemens.com/building-x-openness/api/activities-v1/activities.openapi.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/activities-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Activities API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Activities API.",
+    "vendor_spec_url": "https://developer.siemens.com/building-x-openness/api/activities-v1/activities.openapi.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/activities-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/activities-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/activities-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/activities-api.openapi.json"
 }

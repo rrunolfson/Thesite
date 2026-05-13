@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "mixpanel",
+  "vendor_name": "Mixpanel",
+  "product_slug": "mixpanel-apis",
+  "product_name": "Mixpanel APIs",
+  "product_family": "Mixpanel",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.mixpanel.com/docs/api-reference/overview",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Mixpanel APIs has public documentation that indicates analytics events and reporting workflows across events, users, sessions, audiences. Public API docs.",
+  "data_domains": [
+    "events-and-profiles",
+    "reporting",
+    "exports-and-audiences"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "events",
+    "users",
+    "sessions",
+    "audiences",
+    "reports"
+  ],
+  "buyer_guidance": "Use this surface for event ingestion, audience workflows, and analytics exports rather than physical asset or telemetry integration. Mixpanel should be treated as a rest api surface for analytics events and reporting workflows.",
+  "overview": "Public documentation reviewed for Mixpanel APIs indicates Public API docs. The documented surface aligns with analytics events and reporting workflows and covers events, users, sessions, audiences. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Analytics events and reporting workflows",
+      "description": "The public documentation indicates event, user-profile, export, and analytics-reporting workflows used for behavioral data pipelines.",
+      "data_points": [
+        "Event and session records",
+        "User or profile-linked state",
+        "Audience, cohort, or segmentation outputs",
+        "Reporting, export, or downstream analytics data"
+      ],
+      "relevant_operations": [
+        "list events and user records",
+        "read reporting and export outputs",
+        "create or update analytics workflows",
+        "submit event or audience changes"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Mixpanel APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as analytics events and reporting workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.mixpanel.com/docs/api-reference/overview",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public API docs."
+  }
+}

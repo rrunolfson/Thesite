@@ -6,7 +6,8 @@
   "product_family": "Insights Hub",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/messagebroker-v3-0-2.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/messagebroker-v3-0-2.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/message-broker-developer-documentation.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/messagebroker-v3-0-2.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
   "data_domains": [
@@ -14,9 +15,9 @@
     "identity",
     "administration"
   ],
-  "asset_data_available": "Not Supported",
-  "telemetry_data_available": "Not Supported",
-  "writeback_supported": "Not Supported",
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "users",
     "policies",
@@ -47,11 +48,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/insights-hub/docs/apis/core-messagebroker/api-messagebroker-overview.html",
-    "spec_url": "https://developer.siemens.com/insights-hub/api_specs/messagebroker-v3-0-2.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/message-broker-developer-documentation.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Message Broker - Developer Documentation."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Message Broker - Developer Documentation.",
+    "vendor_spec_url": "https://developer.siemens.com/insights-hub/api_specs/messagebroker-v3-0-2.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/message-broker-developer-documentation.openapi.json"
   },
   "detail_path": "/integration-details/siemens/message-broker-developer-documentation.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/message-broker-developer-documentation.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/message-broker-developer-documentation.openapi.json"
 }

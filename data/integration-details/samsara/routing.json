@@ -6,7 +6,7 @@
   "product_family": "Samsara Platform",
   "integration_type": "REST API",
   "integration_api_url": "https://developers.samsara.com/docs/routing-guide",
-  "spec_artifact_url": "https://developers.samsara.com/docs/routing-guide",
+  "spec_artifact_url": "https://developers.samsara.com/openapi/samsara-api.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "Samsara Routing supports route and stop creation, assignment, schedule updates, location references, and live route-progress monitoring, giving integrators both operational writeback and live execution-state reads for dispatched loads.",
   "data_domains": [
@@ -85,7 +85,7 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developers.samsara.com/docs/routing-guide",
-    "spec_url": "https://developers.samsara.com/docs/creating-routes-via-api",
+    "spec_url": "https://developers.samsara.com/openapi/samsara-api.json",
     "reviewed_at": "2026-04-18",
     "evidence_notes": "Backed by the Routing overview plus the Creating Routes, Updating Routes, and Track Route Progress guides documenting POST /fleet/routes, PATCH /fleet/routes/<id_or_externalID>, and GET /fleet/routes/audit-logs/feed."
   }

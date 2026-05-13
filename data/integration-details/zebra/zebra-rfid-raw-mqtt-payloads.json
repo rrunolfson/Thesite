@@ -14,7 +14,7 @@
     "mqtt-events",
     "reader-commands"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
   "writeback_supported": "Supported",
   "key_entities": [
@@ -25,7 +25,7 @@
     "configuration payloads"
   ],
   "buyer_guidance": "Use the raw MQTT payload model when the integration must consume low-level RFID event data and also issue command or configuration payloads back through the Zebra reader messaging channel.",
-  "overview": "The Zebra raw MQTT payload schemas combine low-level RFID event data with command and response payloads. That supports telemetry ingestion from reader activity and documented write-capable command or configuration patterns, but it does not provide a dedicated asset inventory surface. Asset data is Not Supported. Telemetry data is Supported. Writeback is Supported.",
+  "overview": "The Zebra raw MQTT payload schemas combine low-level RFID event data with command and response payloads. That supports telemetry ingestion from reader activity and documented write-capable command or configuration patterns, but it does not provide a dedicated asset inventory surface. Asset data is Unsupported. Telemetry data is Supported. Writeback is Supported.",
   "available_data": [
     {
       "category": "Low-level reader messaging",

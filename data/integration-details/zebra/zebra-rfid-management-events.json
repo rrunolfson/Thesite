@@ -14,9 +14,9 @@
     "operational-telemetry",
     "async-notifications"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "heartbeat events",
     "GPI and GPO events",
@@ -25,7 +25,7 @@
     "firmware progress events"
   ],
   "buyer_guidance": "Use management events when the integration needs asynchronous reader health and platform-operational signals, not reader inventory or configuration updates.",
-  "overview": "The Zebra RFID management-event schema is an event-delivery surface for asynchronous operational notifications. It provides telemetry about reader and platform state, but it is not an asset catalog and does not define writeback actions. Asset data is Not Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "overview": "The Zebra RFID management-event schema is an event-delivery surface for asynchronous operational notifications. It provides telemetry about reader and platform state, but it is not an asset catalog and does not define writeback actions. Asset data is Unsupported. Telemetry data is Supported. Writeback is Unsupported.",
   "available_data": [
     {
       "category": "Asynchronous management telemetry",

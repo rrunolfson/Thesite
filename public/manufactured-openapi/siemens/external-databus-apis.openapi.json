@@ -1,0 +1,551 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "External Databus APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-18",
+    "summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. Published API scope is centered on subscribing to or publishing event and message streams.",
+    "description": "Manufactured OpenAPI artifact for External Databus APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. The external databus surface is about event and message exchange on Industrial Edge rather than master data. Asset data is Un-Supported. Telemetry data is Supported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.siemens.com/industrial-edge/api/external_databus/overview.html"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Edge messaging",
+      "description": "Manufactured operations grouped under Edge messaging."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "siemens_external-databus-apis_integrationProfile",
+        "summary": "Get manufactured profile for External Databus APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/persistence": {
+      "get": {
+        "tags": [
+          "Edge messaging"
+        ],
+        "operationId": "siemens_external-databus-apis_get-persistence_get",
+        "summary": "GET /persistence",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope is centered on subscribing to or publishing event and message streams. Vendor documentation: https://developer.siemens.com/industrial-edge/api/external_databus/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /persistence.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "put": {
+        "tags": [
+          "Edge messaging"
+        ],
+        "operationId": "siemens_external-databus-apis_put-persistence_put",
+        "summary": "PUT /persistence",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope is centered on subscribing to or publishing event and message streams. Vendor documentation: https://developer.siemens.com/industrial-edge/api/external_databus/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /persistence.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /persistence.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "Edge messaging"
+        ],
+        "operationId": "siemens_external-databus-apis_get-users_get",
+        "summary": "GET /users",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope is centered on subscribing to or publishing event and message streams. Vendor documentation: https://developer.siemens.com/industrial-edge/api/external_databus/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /users.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/user": {
+      "post": {
+        "tags": [
+          "Edge messaging"
+        ],
+        "operationId": "siemens_external-databus-apis_post-user_post",
+        "summary": "POST /user",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope is centered on subscribing to or publishing event and message streams. Vendor documentation: https://developer.siemens.com/industrial-edge/api/external_databus/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /user.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /user.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/{username}": {
+      "get": {
+        "tags": [
+          "Edge messaging"
+        ],
+        "operationId": "siemens_external-databus-apis_get-user-username_get",
+        "summary": "GET /user/{username}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope is centered on subscribing to or publishing event and message streams. Vendor documentation: https://developer.siemens.com/industrial-edge/api/external_databus/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /user/{username}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/topics": {
+      "get": {
+        "tags": [
+          "Edge messaging"
+        ],
+        "operationId": "siemens_external-databus-apis_get-topics_get",
+        "summary": "GET /topics",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope is centered on subscribing to or publishing event and message streams. Vendor documentation: https://developer.siemens.com/industrial-edge/api/external_databus/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /topics.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Edge messaging"
+        ],
+        "operationId": "siemens_external-databus-apis_post-topics_post",
+        "summary": "POST /topics",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope is centered on subscribing to or publishing event and message streams. Vendor documentation: https://developer.siemens.com/industrial-edge/api/external_databus/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /topics.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /topics.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/topic": {
+      "get": {
+        "tags": [
+          "Edge messaging"
+        ],
+        "operationId": "siemens_external-databus-apis_get-topic_get",
+        "summary": "GET /topic",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope is centered on subscribing to or publishing event and message streams. Vendor documentation: https://developer.siemens.com/industrial-edge/api/external_databus/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /topic.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/siemens/external-databus-apis.json",
+    "vendor_documentation_url": "https://developer.siemens.com/industrial-edge/api/external_databus/overview.html",
+    "vendor_spec_artifact_url": "https://developer.siemens.com/industrial-edge/api/external_databus/v1.0.0/external_databus_V1.0.0_openapi.yaml",
+    "reviewed_at": "2026-04-18"
+  }
+}

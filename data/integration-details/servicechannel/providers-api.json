@@ -6,7 +6,7 @@
   "product_family": "ServiceChannel Platform",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
-  "spec_artifact_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "spec_artifact_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
   "detail_completeness": "researched",
   "data_coverage_summary": "The Providers API covers service-provider network data used for dispatch decisions, including provider creation, provider information lookup, trade-based provider retrieval, dispatch-setting updates, ranking retrieval, recent-provider discovery, and provider feedback collection.",
   "data_domains": [
@@ -16,9 +16,9 @@
     "provider-ranking",
     "service-feedback"
   ],
-  "asset_data_available": false,
-  "telemetry_data_available": false,
-  "writeback_supported": true,
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
   "key_entities": [
     "provider records",
     "provider-subscriber links",
@@ -88,7 +88,7 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.servicechannel.com/swagger/index.html#/Providers",
-    "spec_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+    "spec_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
     "reviewed_at": "2026-04-17",
     "evidence_notes": "Based on the Providers section in the ServiceChannel v3 Swagger reference and the OAuth-protected API access guidance in the ServiceChannel authentication and overview documentation."
   }

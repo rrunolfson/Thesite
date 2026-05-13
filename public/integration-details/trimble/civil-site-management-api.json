@@ -6,7 +6,8 @@
   "product_family": "Civil Site Management",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.trimble.com/docs/civil-site-management/openapi/site-management/v0.yaml",
-  "spec_artifact_url": "https://developer.trimble.com/docs/civil-site-management/openapi/site-management/v0.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/trimble/civil-site-management-api.openapi.json",
+  "vendor_spec_artifact_url": "",
   "detail_completeness": "researched",
   "data_coverage_summary": "Trimble Civil Site Management exposes machine, device, project, and coordinate resources for connected field assets, with current position retrieval but no documented mutation verbs in the published spec.",
   "data_domains": [
@@ -16,7 +17,7 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "machines",
     "devices",
@@ -47,11 +48,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.trimble.com/docs/civil-site-management/openapi/site-management/v0.yaml",
-    "spec_url": "https://developer.trimble.com/docs/civil-site-management/openapi/site-management/v0.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/trimble/civil-site-management-api.openapi.json",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "Classification is based on the published OpenAPI spec showing GET resources for machines, devices, projects, and /machines/{machineId}/coordinates, with no POST, PUT, or PATCH operations in the retrieved spec."
+    "evidence_notes": "Classification is based on the published OpenAPI spec showing GET resources for machines, devices, projects, and /machines/{machineId}/coordinates, with no POST, PUT, or PATCH operations in the retrieved spec.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/trimble/civil-site-management-api.openapi.json"
   },
   "detail_path": "/integration-details/trimble/civil-site-management-api.json",
   "vendor_domain": "trimble.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=trimble.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=trimble.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/trimble/civil-site-management-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/trimble/civil-site-management-api.openapi.json"
 }

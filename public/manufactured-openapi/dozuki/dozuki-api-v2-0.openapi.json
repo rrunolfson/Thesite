@@ -1,0 +1,1903 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Dozuki API v2.0 Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Dozuki API v2.0 exposes work-instruction, training, approval, user, team, skills, signoff, and work-log resources used to manage digital manufacturing documentation and operator workflows.",
+    "description": "Manufactured OpenAPI artifact for Dozuki API v2.0. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Dozuki's public API v2.0 docs describe a JSON-first REST surface for guides, wikis, courses, users, teams, approvals, periodic review, quizzes, skills, step forms, webhooks, and work-log execution. The documentation explicitly supports GET, POST, PATCH, PUT, and DELETE across guide, course, team, and work-log resources, including guide-step editing, course assignment, signoff workflows, skills ratings, and execution-state updates for in-progress work. That makes the API useful for structured asset or procedure content and manufacturing workflow writeback, but not for telemetry streams. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://apidocs.dozuki.com/api/2.0/doc/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Instructional content, approvals, and content hierarchy",
+      "description": "Manufactured operations grouped under Instructional content, approvals, and content hierarchy."
+    },
+    {
+      "name": "Training, teams, skills, and execution logs",
+      "description": "Manufactured operations grouped under Training, teams, skills, and execution logs."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_integrationProfile",
+        "summary": "Get manufactured profile for Dozuki API v2.0",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/guides": {
+      "get": {
+        "tags": [
+          "Instructional content, approvals, and content hierarchy"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_get-guides_get",
+        "summary": "GET /guides",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /guides.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Instructional content, approvals, and content hierarchy"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-guides_post",
+        "summary": "POST /guides",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /guides.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /guides.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/guides/{guideid}": {
+      "patch": {
+        "tags": [
+          "Instructional content, approvals, and content hierarchy"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_patch-guides-guideid_patch",
+        "summary": "PATCH /guides/{guideid}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /guides/{guideid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /guides/{guideid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/guides/{guideid}/steps": {
+      "post": {
+        "tags": [
+          "Instructional content, approvals, and content hierarchy"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-guides-guideid-steps_post",
+        "summary": "POST /guides/{guideid}/steps",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /guides/{guideid}/steps.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /guides/{guideid}/steps.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/guides/{guideid}/steps/{stepid}": {
+      "patch": {
+        "tags": [
+          "Instructional content, approvals, and content hierarchy"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_patch-guides-guideid-steps-stepid_patch",
+        "summary": "PATCH /guides/{guideid}/steps/{stepid}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /guides/{guideid}/steps/{stepid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /guides/{guideid}/steps/{stepid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/wikis/{namespace}/{title}": {
+      "get": {
+        "tags": [
+          "Instructional content, approvals, and content hierarchy"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_get-wikis-namespace-title_get",
+        "summary": "GET /wikis/{namespace}/{title}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /wikis/{namespace}/{title}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "patch": {
+        "tags": [
+          "Instructional content, approvals, and content hierarchy"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_patch-wikis-namespace-title_patch",
+        "summary": "PATCH /wikis/{namespace}/{title}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /wikis/{namespace}/{title}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /wikis/{namespace}/{title}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/wikis": {
+      "post": {
+        "tags": [
+          "Instructional content, approvals, and content hierarchy"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-wikis_post",
+        "summary": "POST /wikis",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /wikis.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /wikis.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/approvals/processes": {
+      "get": {
+        "tags": [
+          "Instructional content, approvals, and content hierarchy"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_get-approvals-processes_get",
+        "summary": "GET /approvals/processes",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /approvals/processes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/approvals/process": {
+      "post": {
+        "tags": [
+          "Instructional content, approvals, and content hierarchy"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-approvals-process_post",
+        "summary": "POST /approvals/process",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /approvals/process.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /approvals/process.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/approvals/process/{approval_processid}": {
+      "patch": {
+        "tags": [
+          "Instructional content, approvals, and content hierarchy"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_patch-approvals-process-approval-processid_patch",
+        "summary": "PATCH /approvals/process/{approval_processid}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /approvals/process/{approval_processid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /approvals/process/{approval_processid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/periodic_review": {
+      "post": {
+        "tags": [
+          "Instructional content, approvals, and content hierarchy"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-periodic-review_post",
+        "summary": "POST /periodic_review",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /periodic_review.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /periodic_review.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/media/uploads": {
+      "post": {
+        "tags": [
+          "Instructional content, approvals, and content hierarchy"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-user-media-uploads_post",
+        "summary": "POST /user/media/uploads",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /user/media/uploads.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /user/media/uploads.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/courses": {
+      "get": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_get-courses_get",
+        "summary": "GET /courses",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /courses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-courses_post",
+        "summary": "POST /courses",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /courses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /courses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/courses/{wikiid}": {
+      "patch": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_patch-courses-wikiid_patch",
+        "summary": "PATCH /courses/{wikiid}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /courses/{wikiid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /courses/{wikiid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/course_assignments": {
+      "post": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-course-assignments_post",
+        "summary": "POST /course_assignments",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /course_assignments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /course_assignments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/course_assignments/start/{doctype}/{docid}": {
+      "patch": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_patch-course-assignments-start-doctype-docid_patch",
+        "summary": "PATCH /course_assignments/start/{doctype}/{docid}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /course_assignments/start/{doctype}/{docid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /course_assignments/start/{doctype}/{docid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/course_assignments/complete/{doctype}/{docid}": {
+      "patch": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_patch-course-assignments-complete-doctype-docid_patch",
+        "summary": "PATCH /course_assignments/complete/{doctype}/{docid}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /course_assignments/complete/{doctype}/{docid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /course_assignments/complete/{doctype}/{docid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/courses/stage-sign-offs/requests": {
+      "post": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-courses-stage-sign-offs-requests_post",
+        "summary": "POST /courses/stage-sign-offs/requests",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /courses/stage-sign-offs/requests.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /courses/stage-sign-offs/requests.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/courses/stage-sign-offs/responses": {
+      "patch": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_patch-courses-stage-sign-offs-responses_patch",
+        "summary": "PATCH /courses/stage-sign-offs/responses",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /courses/stage-sign-offs/responses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /courses/stage-sign-offs/responses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/skills/matrix": {
+      "post": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-skills-matrix_post",
+        "summary": "POST /skills/matrix",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /skills/matrix.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /skills/matrix.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/skills/ratings/supervisor": {
+      "post": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-skills-ratings-supervisor_post",
+        "summary": "POST /skills/ratings/supervisor",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /skills/ratings/supervisor.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /skills/ratings/supervisor.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_get-users_get",
+        "summary": "GET /users",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /users.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/users/{userid}": {
+      "patch": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_patch-users-userid_patch",
+        "summary": "PATCH /users/{userid}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /users/{userid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /users/{userid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/teams": {
+      "post": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-teams_post",
+        "summary": "POST /teams",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /teams.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /teams.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/teams/{teamid}/users": {
+      "patch": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_patch-teams-teamid-users_patch",
+        "summary": "PATCH /teams/{teamid}/users",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /teams/{teamid}/users.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /teams/{teamid}/users.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/step_forms/{stepid}": {
+      "post": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-step-forms-stepid_post",
+        "summary": "POST /step_forms/{stepid}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /step_forms/{stepid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /step_forms/{stepid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/work_log": {
+      "post": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-work-log_post",
+        "summary": "POST /work_log",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /work_log.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /work_log.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/work_log/{entryid}/pause": {
+      "post": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-work-log-entryid-pause_post",
+        "summary": "POST /work_log/{entryid}/pause",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /work_log/{entryid}/pause.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /work_log/{entryid}/pause.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/work_log/{entryid}/resume": {
+      "post": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-work-log-entryid-resume_post",
+        "summary": "POST /work_log/{entryid}/resume",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /work_log/{entryid}/resume.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /work_log/{entryid}/resume.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/work_log/{entryid}/finish": {
+      "post": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_post-work-log-entryid-finish_post",
+        "summary": "POST /work_log/{entryid}/finish",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /work_log/{entryid}/finish.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /work_log/{entryid}/finish.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/work_log/{entryid}/stepData": {
+      "put": {
+        "tags": [
+          "Training, teams, skills, and execution logs"
+        ],
+        "operationId": "dozuki_dozuki-api-v2-0_put-work-log-entryid-stepdata_put",
+        "summary": "PUT /work_log/{entryid}/stepData",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The API also covers workforce enablement and actual guided-work execution data for assigned users and teams. Vendor documentation: https://apidocs.dozuki.com/api/2.0/doc/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /work_log/{entryid}/stepData.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /work_log/{entryid}/stepData.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/dozuki/dozuki-api-v2-0.json",
+    "vendor_documentation_url": "https://apidocs.dozuki.com/api/2.0/doc/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

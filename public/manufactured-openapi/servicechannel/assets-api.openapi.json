@@ -1,0 +1,1511 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Assets API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-17",
+    "summary": "The Assets API provides equipment and asset-management coverage, including location asset retrieval, asset creation and updates, asset-type updates, attachment to work orders and work requests, asset-location changes, asset work-order history, asset tags, validation flags, and meter-reading capture.",
+    "description": "Manufactured OpenAPI artifact for Assets API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. The Assets section is the most asset-centric part of the ServiceChannel API. The reference shows support for retrieving assets by ID or by location, searching filtered asset sets, traversing location asset trees, working with components and replacement candidates, updating asset records and asset types, attaching assets to work orders or work requests, moving assets between locations, retrieving work-order history, and managing meter readings in single or bulk mode. That makes it a practical integration surface for aligning ServiceNow equipment records and ServiceChannel repair execution around the same physical asset base.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.servicechannel.com/swagger/index.html#/Assets"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Asset master and location inventory",
+      "description": "Manufactured operations grouped under Asset master and location inventory."
+    },
+    {
+      "name": "Asset-to-work execution linkage",
+      "description": "Manufactured operations grouped under Asset-to-work execution linkage."
+    },
+    {
+      "name": "Meter readings, tags, and validation controls",
+      "description": "Manufactured operations grouped under Meter readings, tags, and validation controls."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "servicechannel_assets-api_integrationProfile",
+        "summary": "Get manufactured profile for Assets API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/assets/{assetId}": {
+      "get": {
+        "tags": [
+          "Asset master and location inventory"
+        ],
+        "operationId": "servicechannel_assets-api_get-assets-assetid_get",
+        "summary": "GET /assets/{assetId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for finding assets, loading site inventories, and maintaining core equipment records. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /assets/{assetId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/assets/locations/{locationId}": {
+      "get": {
+        "tags": [
+          "Asset master and location inventory"
+        ],
+        "operationId": "servicechannel_assets-api_get-assets-locations-locationid_get",
+        "summary": "GET /assets/locations/{locationId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for finding assets, loading site inventories, and maintaining core equipment records. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /assets/locations/{locationId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/assets/searchassets": {
+      "post": {
+        "tags": [
+          "Asset master and location inventory"
+        ],
+        "operationId": "servicechannel_assets-api_post-assets-searchassets_post",
+        "summary": "POST /assets/searchassets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for finding assets, loading site inventories, and maintaining core equipment records. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets/searchassets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets/searchassets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/getfilteredassets": {
+      "post": {
+        "tags": [
+          "Asset master and location inventory"
+        ],
+        "operationId": "servicechannel_assets-api_post-assets-getfilteredassets_post",
+        "summary": "POST /assets/getfilteredassets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for finding assets, loading site inventories, and maintaining core equipment records. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets/getfilteredassets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets/getfilteredassets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/locationAssetsTree": {
+      "post": {
+        "tags": [
+          "Asset master and location inventory"
+        ],
+        "operationId": "servicechannel_assets-api_post-assets-locationassetstree_post",
+        "summary": "POST /assets/locationAssetsTree",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for finding assets, loading site inventories, and maintaining core equipment records. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets/locationAssetsTree.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets/locationAssetsTree.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets": {
+      "post": {
+        "tags": [
+          "Asset master and location inventory"
+        ],
+        "operationId": "servicechannel_assets-api_post-assets_post",
+        "summary": "POST /assets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for finding assets, loading site inventories, and maintaining core equipment records. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Asset master and location inventory"
+        ],
+        "operationId": "servicechannel_assets-api_put-assets_put",
+        "summary": "PUT /assets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for finding assets, loading site inventories, and maintaining core equipment records. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/UpdateAssetTypeInAsset": {
+      "put": {
+        "tags": [
+          "Asset master and location inventory"
+        ],
+        "operationId": "servicechannel_assets-api_put-assets-updateassettypeinasset_put",
+        "summary": "PUT /assets/UpdateAssetTypeInAsset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for finding assets, loading site inventories, and maintaining core equipment records. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /assets/UpdateAssetTypeInAsset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /assets/UpdateAssetTypeInAsset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/AddUpdateAsset": {
+      "post": {
+        "tags": [
+          "Asset master and location inventory"
+        ],
+        "operationId": "servicechannel_assets-api_post-assets-addupdateasset_post",
+        "summary": "POST /assets/AddUpdateAsset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints for finding assets, loading site inventories, and maintaining core equipment records. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets/AddUpdateAsset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets/AddUpdateAsset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/workorders/{workorderId}/attach": {
+      "put": {
+        "tags": [
+          "Asset-to-work execution linkage"
+        ],
+        "operationId": "servicechannel_assets-api_put-assets-workorders-workorderid-attach_put",
+        "summary": "PUT /assets/workorders/{workorderId}/attach",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints that tie equipment records directly to work orders and work requests for repair execution. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /assets/workorders/{workorderId}/attach.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /assets/workorders/{workorderId}/attach.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/workorders/attachassets": {
+      "put": {
+        "tags": [
+          "Asset-to-work execution linkage"
+        ],
+        "operationId": "servicechannel_assets-api_put-assets-workorders-attachassets_put",
+        "summary": "PUT /assets/workorders/attachassets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints that tie equipment records directly to work orders and work requests for repair execution. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /assets/workorders/attachassets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /assets/workorders/attachassets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/workorders/setupassets": {
+      "put": {
+        "tags": [
+          "Asset-to-work execution linkage"
+        ],
+        "operationId": "servicechannel_assets-api_put-assets-workorders-setupassets_put",
+        "summary": "PUT /assets/workorders/setupassets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints that tie equipment records directly to work orders and work requests for repair execution. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /assets/workorders/setupassets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /assets/workorders/setupassets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/workrequests/attachassets": {
+      "put": {
+        "tags": [
+          "Asset-to-work execution linkage"
+        ],
+        "operationId": "servicechannel_assets-api_put-assets-workrequests-attachassets_put",
+        "summary": "PUT /assets/workrequests/attachassets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints that tie equipment records directly to work orders and work requests for repair execution. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /assets/workrequests/attachassets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /assets/workrequests/attachassets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/getwoassettracking": {
+      "post": {
+        "tags": [
+          "Asset-to-work execution linkage"
+        ],
+        "operationId": "servicechannel_assets-api_post-assets-getwoassettracking_post",
+        "summary": "POST /assets/getwoassettracking",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints that tie equipment records directly to work orders and work requests for repair execution. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets/getwoassettracking.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets/getwoassettracking.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/getassetwohistory": {
+      "post": {
+        "tags": [
+          "Asset-to-work execution linkage"
+        ],
+        "operationId": "servicechannel_assets-api_post-assets-getassetwohistory_post",
+        "summary": "POST /assets/getassetwohistory",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints that tie equipment records directly to work orders and work requests for repair execution. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets/getassetwohistory.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets/getassetwohistory.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/WoAssetTags": {
+      "get": {
+        "tags": [
+          "Asset-to-work execution linkage"
+        ],
+        "operationId": "servicechannel_assets-api_get-assets-woassettags_get",
+        "summary": "GET /assets/WoAssetTags",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Endpoints that tie equipment records directly to work orders and work requests for repair execution. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /assets/WoAssetTags.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/assets/Activation": {
+      "post": {
+        "tags": [
+          "Meter readings, tags, and validation controls"
+        ],
+        "operationId": "servicechannel_assets-api_post-assets-activation_post",
+        "summary": "POST /assets/Activation",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Operational asset fields that matter for field updates and equipment traceability. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets/Activation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets/Activation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/updateAssetLocation": {
+      "put": {
+        "tags": [
+          "Meter readings, tags, and validation controls"
+        ],
+        "operationId": "servicechannel_assets-api_put-assets-updateassetlocation_put",
+        "summary": "PUT /assets/updateAssetLocation",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Operational asset fields that matter for field updates and equipment traceability. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /assets/updateAssetLocation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /assets/updateAssetLocation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{trackingNumber}/IsValidationRequired": {
+      "get": {
+        "tags": [
+          "Meter readings, tags, and validation controls"
+        ],
+        "operationId": "servicechannel_assets-api_get-assets-trackingnumber-isvalidationrequired_get",
+        "summary": "GET /assets/{trackingNumber}/IsValidationRequired",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Operational asset fields that matter for field updates and equipment traceability. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /assets/{trackingNumber}/IsValidationRequired.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/assets/getPrimaryAttachmentsForAssetList": {
+      "post": {
+        "tags": [
+          "Meter readings, tags, and validation controls"
+        ],
+        "operationId": "servicechannel_assets-api_post-assets-getprimaryattachmentsforassetlist_post",
+        "summary": "POST /assets/getPrimaryAttachmentsForAssetList",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Operational asset fields that matter for field updates and equipment traceability. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets/getPrimaryAttachmentsForAssetList.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets/getPrimaryAttachmentsForAssetList.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{tradeId}/getAssetTypeGroupsByTradeId": {
+      "get": {
+        "tags": [
+          "Meter readings, tags, and validation controls"
+        ],
+        "operationId": "servicechannel_assets-api_get-assets-tradeid-getassettypegroupsbytradeid_get",
+        "summary": "GET /assets/{tradeId}/getAssetTypeGroupsByTradeId",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Operational asset fields that matter for field updates and equipment traceability. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /assets/{tradeId}/getAssetTypeGroupsByTradeId.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/assets/AssetMeterReadings/{assetId}": {
+      "get": {
+        "tags": [
+          "Meter readings, tags, and validation controls"
+        ],
+        "operationId": "servicechannel_assets-api_get-assets-assetmeterreadings-assetid_get",
+        "summary": "GET /assets/AssetMeterReadings/{assetId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Operational asset fields that matter for field updates and equipment traceability. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /assets/AssetMeterReadings/{assetId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/assets/AssetMeterReading": {
+      "put": {
+        "tags": [
+          "Meter readings, tags, and validation controls"
+        ],
+        "operationId": "servicechannel_assets-api_put-assets-assetmeterreading_put",
+        "summary": "PUT /assets/AssetMeterReading",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Operational asset fields that matter for field updates and equipment traceability. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /assets/AssetMeterReading.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /assets/AssetMeterReading.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Meter readings, tags, and validation controls"
+        ],
+        "operationId": "servicechannel_assets-api_post-assets-assetmeterreading_post",
+        "summary": "POST /assets/AssetMeterReading",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Operational asset fields that matter for field updates and equipment traceability. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets/AssetMeterReading.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets/AssetMeterReading.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/CreateAssetMeterReadingsBulk": {
+      "post": {
+        "tags": [
+          "Meter readings, tags, and validation controls"
+        ],
+        "operationId": "servicechannel_assets-api_post-assets-createassetmeterreadingsbulk_post",
+        "summary": "POST /assets/CreateAssetMeterReadingsBulk",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Operational asset fields that matter for field updates and equipment traceability. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets/CreateAssetMeterReadingsBulk.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets/CreateAssetMeterReadingsBulk.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/UpdateAssetMeterReadingsBulk": {
+      "put": {
+        "tags": [
+          "Meter readings, tags, and validation controls"
+        ],
+        "operationId": "servicechannel_assets-api_put-assets-updateassetmeterreadingsbulk_put",
+        "summary": "PUT /assets/UpdateAssetMeterReadingsBulk",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Operational asset fields that matter for field updates and equipment traceability. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/Assets",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /assets/UpdateAssetMeterReadingsBulk.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /assets/UpdateAssetMeterReadingsBulk.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/servicechannel/assets-api.json",
+    "vendor_documentation_url": "https://developer.servicechannel.com/swagger/index.html#/Assets",
+    "vendor_spec_artifact_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
+    "reviewed_at": "2026-04-17"
+  }
+}

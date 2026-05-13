@@ -6,7 +6,8 @@
   "product_family": "Building X",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/building-x-openness/api/building-operations/operations.openapi.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/building-operations/operations.openapi.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/building-operations-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/building-operations/operations.openapi.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "RESTful API for reading data from data points or issuing commands to actuator points. Published API scope combines device and point context, time-series point values, and operational maintenance workflows.",
   "data_domains": [
@@ -61,11 +62,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/building-x-openness/api/building-operations/overview.html",
-    "spec_url": "https://developer.siemens.com/building-x-openness/api/building-operations/operations.openapi.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/building-operations-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Building Operations API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Building Operations API.",
+    "vendor_spec_url": "https://developer.siemens.com/building-x-openness/api/building-operations/operations.openapi.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/building-operations-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/building-operations-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/building-operations-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/building-operations-api.openapi.json"
 }

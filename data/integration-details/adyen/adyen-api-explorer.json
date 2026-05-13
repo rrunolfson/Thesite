@@ -1,0 +1,83 @@
+{
+  "vendor_slug": "adyen",
+  "vendor_name": "Adyen",
+  "product_slug": "adyen-api-explorer",
+  "product_name": "Adyen API Explorer",
+  "product_family": "Adyen Explorer",
+  "integration_type": "API Explorer",
+  "integration_api_url": "https://docs.adyen.com/api-explorer/",
+  "spec_artifact_url": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/PaymentService-v50.json",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Adyen publishes a public API Explorer and OpenAPI artifacts for payment processing, recurring and token workflows, terminal management, payouts, transfers, and balance-platform operations.",
+  "data_domains": [
+    "payments-and-settlement",
+    "merchant-and-store-configuration",
+    "terminal-management",
+    "balance-and-transfer-operations"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "payments",
+    "payment methods and recurring tokens",
+    "stores and terminals",
+    "payouts",
+    "account holders and balance accounts",
+    "transfers"
+  ],
+  "buyer_guidance": "Use Adyen APIs for payment acceptance, payouts, terminal estate control, and balance-platform money movement. This is a payments infrastructure platform, not an asset or telemetry platform.",
+  "overview": "Adyen's public API Explorer and openapi repository document a broad payments platform covering online checkout, recurring and tokenized payments, payouts, terminal APIs, and balance-platform operations. Public docs and specs cover payment authorization and capture flows, webhooks, BIN lookups, stores, terminal orders and assignment, terminal settings, account holders, balance accounts, and transfers. This is a strong write-capable financial workflow surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Payment acceptance and merchant workflows",
+      "description": "Adyen exposes the core payment and merchant operations needed to accept, manage, and reconcile payments.",
+      "data_points": [
+        "Checkout payments and recurring tokenized payment flows",
+        "Payment authorizations, captures, cancels, and refunds",
+        "Payment webhooks and BIN lookups",
+        "Payout workflows",
+        "Store creation and merchant configuration"
+      ],
+      "relevant_operations": [
+        "PaymentService-v50",
+        "Checkout payments",
+        "Recurring token management",
+        "Payouts",
+        "BIN lookup",
+        "Stores creation"
+      ]
+    },
+    {
+      "category": "Terminal and balance-platform operations",
+      "description": "The public explorer also covers device-estate administration and multi-account fund movement workflows.",
+      "data_points": [
+        "Terminal orders and terminal reassignment",
+        "Terminal settings updates and scheduled terminal actions",
+        "Account holder and balance account management",
+        "Internal and external transfers",
+        "Balance platform configuration"
+      ],
+      "relevant_operations": [
+        "Terminal orders",
+        "Terminal reassignment",
+        "Terminal settings updates",
+        "Scheduled terminal actions",
+        "Account holders",
+        "Balance accounts",
+        "Transfers"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Adyen publishes many product-specific specs rather than one umbrella artifact, so downstream tooling should pin the exact product family being integrated instead of assuming one unified schema covers everything.",
+    "Feature availability varies by merchant configuration, geography, and enabled products, which means spec presence alone does not guarantee that a given live tenant supports every documented workflow.",
+    "This row has exact machine-readable spec evidence because Adyen publishes raw OpenAPI JSON artifacts in its public adyen-openapi repository."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.adyen.com/api-explorer/",
+    "spec_url": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/PaymentService-v50.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Adyen's public API Explorer documents checkout, recurring, payout, terminal, and balance-platform workflows, and the public adyen-openapi repository exposes raw machine-readable OpenAPI artifacts such as PaymentService-v50.json."
+  }
+}

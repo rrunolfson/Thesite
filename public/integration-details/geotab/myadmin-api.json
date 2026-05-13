@@ -6,7 +6,8 @@
   "product_family": "MyAdmin",
   "integration_type": "REST API",
   "integration_api_url": "https://developers.geotab.com/myAdmin/apiReference/objects/",
-  "spec_artifact_url": "https://developers.geotab.com/myAdmin/apiReference/objects/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/geotab/myadmin-api.openapi.json",
+  "vendor_spec_artifact_url": "",
   "detail_completeness": "researched",
   "data_coverage_summary": "MyAdmin covers Geotab provisioning and administrative entities such as accounts, databases, devices, and partner operations, and it also documents ingestion objects for third-party GPS, acceleration, log, and status records.",
   "data_domains": [
@@ -16,7 +17,7 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "accounts",
     "databases",
@@ -26,7 +27,7 @@
     "status records"
   ],
   "buyer_guidance": "Use MyAdmin for partner provisioning and tenant-level operational administration, especially when onboarding databases or handling third-party telemetry ingest into Geotab-managed environments.",
-  "overview": "MyAdmin is Geotab's administrative surface for partner, account, database, and provisioning workflows. The object reference also includes third-party GPS, acceleration, log, and status record types, which confirms telemetry ingest coverage, but the API is not positioned as a command-and-control surface for remote operational writeback. Asset data is Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "overview": "MyAdmin is Geotab's administrative surface for partner, account, database, and provisioning workflows. The object reference also includes third-party GPS, acceleration, log, and status record types, which confirms telemetry ingest coverage, but the API is not positioned as a command-and-control surface for remote operational writeback. Asset data is Supported. Telemetry data is Supported. Writeback is Unsupported.",
   "available_data": [
     {
       "category": "Administrative and ingest objects",
@@ -50,11 +51,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developers.geotab.com/myAdmin/apiReference/objects/",
-    "spec_url": "https://developers.geotab.com/myAdmin/apiReference/objects/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/geotab/myadmin-api.openapi.json",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "Classification is based on the MyAdmin object reference, which includes administrative entities plus ThirdPartyGpsRecord, ThirdPartyAccelerationRecord, ThirdPartyLogRecord, and ThirdPartyStatusRecord, but does not present the API as a remote control surface."
+    "evidence_notes": "Classification is based on the MyAdmin object reference, which includes administrative entities plus ThirdPartyGpsRecord, ThirdPartyAccelerationRecord, ThirdPartyLogRecord, and ThirdPartyStatusRecord, but does not present the API as a remote control surface.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/geotab/myadmin-api.openapi.json"
   },
   "detail_path": "/integration-details/geotab/myadmin-api.json",
   "vendor_domain": "geotab.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=geotab.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=geotab.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/geotab/myadmin-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/geotab/myadmin-api.openapi.json"
 }

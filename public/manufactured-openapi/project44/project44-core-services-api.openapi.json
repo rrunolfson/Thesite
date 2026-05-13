@@ -1,0 +1,967 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "project44 Core Services API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "project44's Core Services API covers shipment tracking, asset tracking, loads, order visibility, webhook payloads, and multi-modal logistics workflows with a downloadable OpenAPI description for the v4 surface.",
+    "description": "Manufactured OpenAPI artifact for project44 Core Services API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. project44 describes its Core Services API as the interface customers and partners use to connect carriers and capacity providers, dispatch and track shipments, and retrieve documents for invoicing and reconciliation. The published v4 OpenAPI reference includes shipment tracking, asset tracking, loads, order visibility, webhook payloads, and multi-modal booking surfaces, and the asset-tracking section explicitly documents enrollment and unenrollment of tracked assets using webhook delivery for location pushes. That makes the API a strong source for logistics asset and shipment visibility data with documented writeback. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developers.project44.com/api-reference"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Tracked assets and shipment visibility",
+      "description": "Manufactured operations grouped under Tracked assets and shipment visibility."
+    },
+    {
+      "name": "Orders, webhooks, and logistics workflow data",
+      "description": "Manufactured operations grouped under Orders, webhooks, and logistics workflow data."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "project44_project44-core-services-api_integrationProfile",
+        "summary": "Get manufactured profile for project44 Core Services API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api/v4/assets/tracking": {
+      "post": {
+        "tags": [
+          "Tracked assets and shipment visibility"
+        ],
+        "operationId": "project44_project44-core-services-api_post-api-v4-assets-tracking_post",
+        "summary": "POST /api/v4/assets/tracking",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The v4 reference covers both direct tracked-asset enrollment and shipment position or event history retrieval. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /api/v4/assets/tracking.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /api/v4/assets/tracking.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Tracked assets and shipment visibility"
+        ],
+        "operationId": "project44_project44-core-services-api_delete-api-v4-assets-tracking_delete",
+        "summary": "DELETE /api/v4/assets/tracking",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The v4 reference covers both direct tracked-asset enrollment and shipment position or event history retrieval. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DELETE /api/v4/assets/tracking.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for DELETE /api/v4/assets/tracking.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v4/shipments/{shipmentId}/eventhistory": {
+      "get": {
+        "tags": [
+          "Tracked assets and shipment visibility"
+        ],
+        "operationId": "project44_project44-core-services-api_get-api-v4-shipments-shipmentid-eventhistory_get",
+        "summary": "GET /api/v4/shipments/{shipmentId}/eventhistory",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The v4 reference covers both direct tracked-asset enrollment and shipment position or event history retrieval. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api/v4/shipments/{shipmentId}/eventhistory.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api/v4/shipments/{shipmentId}/positionhistory": {
+      "get": {
+        "tags": [
+          "Tracked assets and shipment visibility"
+        ],
+        "operationId": "project44_project44-core-services-api_get-api-v4-shipments-shipmentid-positionhistory_get",
+        "summary": "GET /api/v4/shipments/{shipmentId}/positionhistory",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The v4 reference covers both direct tracked-asset enrollment and shipment position or event history retrieval. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api/v4/shipments/{shipmentId}/positionhistory.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api/v4/shipments/{shipmentId}/tracking": {
+      "get": {
+        "tags": [
+          "Tracked assets and shipment visibility"
+        ],
+        "operationId": "project44_project44-core-services-api_get-api-v4-shipments-shipmentid-tracking_get",
+        "summary": "GET /api/v4/shipments/{shipmentId}/tracking",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The v4 reference covers both direct tracked-asset enrollment and shipment position or event history retrieval. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api/v4/shipments/{shipmentId}/tracking.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api/v4/shipments/tracking": {
+      "put": {
+        "tags": [
+          "Tracked assets and shipment visibility"
+        ],
+        "operationId": "project44_project44-core-services-api_put-api-v4-shipments-tracking_put",
+        "summary": "PUT /api/v4/shipments/tracking",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The v4 reference covers both direct tracked-asset enrollment and shipment position or event history retrieval. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /api/v4/shipments/tracking.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /api/v4/shipments/tracking.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v4/loads": {
+      "post": {
+        "tags": [
+          "Tracked assets and shipment visibility"
+        ],
+        "operationId": "project44_project44-core-services-api_post-api-v4-loads_post",
+        "summary": "POST /api/v4/loads",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The v4 reference covers both direct tracked-asset enrollment and shipment position or event history retrieval. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /api/v4/loads.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /api/v4/loads.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v4/loads/{loadId}": {
+      "get": {
+        "tags": [
+          "Tracked assets and shipment visibility"
+        ],
+        "operationId": "project44_project44-core-services-api_get-api-v4-loads-loadid_get",
+        "summary": "GET /api/v4/loads/{loadId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The v4 reference covers both direct tracked-asset enrollment and shipment position or event history retrieval. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api/v4/loads/{loadId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api/v4/inventory/items": {
+      "post": {
+        "tags": [
+          "Orders, webhooks, and logistics workflow data"
+        ],
+        "operationId": "project44_project44-core-services-api_post-api-v4-inventory-items_post",
+        "summary": "POST /api/v4/inventory/items",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. project44 also exposes order, inventory, and webhook-oriented surfaces needed to operationalize tracking data downstream. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /api/v4/inventory/items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /api/v4/inventory/items.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v4/inventory/orders": {
+      "post": {
+        "tags": [
+          "Orders, webhooks, and logistics workflow data"
+        ],
+        "operationId": "project44_project44-core-services-api_post-api-v4-inventory-orders_post",
+        "summary": "POST /api/v4/inventory/orders",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. project44 also exposes order, inventory, and webhook-oriented surfaces needed to operationalize tracking data downstream. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /api/v4/inventory/orders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /api/v4/inventory/orders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v4/webhooks": {
+      "get": {
+        "tags": [
+          "Orders, webhooks, and logistics workflow data"
+        ],
+        "operationId": "project44_project44-core-services-api_get-api-v4-webhooks_get",
+        "summary": "GET /api/v4/webhooks",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. project44 also exposes order, inventory, and webhook-oriented surfaces needed to operationalize tracking data downstream. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api/v4/webhooks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "put": {
+        "tags": [
+          "Orders, webhooks, and logistics workflow data"
+        ],
+        "operationId": "project44_project44-core-services-api_put-api-v4-webhooks_put",
+        "summary": "PUT /api/v4/webhooks",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. project44 also exposes order, inventory, and webhook-oriented surfaces needed to operationalize tracking data downstream. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /api/v4/webhooks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /api/v4/webhooks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v4/contacts": {
+      "get": {
+        "tags": [
+          "Orders, webhooks, and logistics workflow data"
+        ],
+        "operationId": "project44_project44-core-services-api_get-api-v4-contacts_get",
+        "summary": "GET /api/v4/contacts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. project44 also exposes order, inventory, and webhook-oriented surfaces needed to operationalize tracking data downstream. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api/v4/contacts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api/v4/capacityprovideraccounts": {
+      "post": {
+        "tags": [
+          "Orders, webhooks, and logistics workflow data"
+        ],
+        "operationId": "project44_project44-core-services-api_post-api-v4-capacityprovideraccounts_post",
+        "summary": "POST /api/v4/capacityprovideraccounts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. project44 also exposes order, inventory, and webhook-oriented surfaces needed to operationalize tracking data downstream. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /api/v4/capacityprovideraccounts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /api/v4/capacityprovideraccounts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/services/appointments/v1/appointments": {
+      "post": {
+        "tags": [
+          "Orders, webhooks, and logistics workflow data"
+        ],
+        "operationId": "project44_project44-core-services-api_post-services-appointments-v1-appointments_post",
+        "summary": "POST /services/appointments/v1/appointments",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. project44 also exposes order, inventory, and webhook-oriented surfaces needed to operationalize tracking data downstream. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /services/appointments/v1/appointments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /services/appointments/v1/appointments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/services/appointments/v1/appointment/{appointmentId}/milestones": {
+      "put": {
+        "tags": [
+          "Orders, webhooks, and logistics workflow data"
+        ],
+        "operationId": "project44_project44-core-services-api_put-services-appointments-v1-appointment-appointmentid-milestones_put",
+        "summary": "PUT /services/appointments/v1/appointment/{appointmentId}/milestones",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. project44 also exposes order, inventory, and webhook-oriented surfaces needed to operationalize tracking data downstream. Vendor documentation: https://developers.project44.com/api-reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /services/appointments/v1/appointment/{appointmentId}/milestones.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /services/appointments/v1/appointment/{appointmentId}/milestones.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/project44/project44-core-services-api.json",
+    "vendor_documentation_url": "https://developers.project44.com/api-reference",
+    "vendor_spec_artifact_url": "https://developers.project44.com/_spec/api-reference/@v4/api-docs.json?download",
+    "reviewed_at": "2026-05-13"
+  }
+}

@@ -33,9 +33,9 @@ interface IntegrationProduct {
   detail_path: string;
   data_domains: string[];
   data_coverage_summary: string;
-  asset_data_available: "Supported" | "Not Supported" | "N/A" | null;
-  telemetry_data_available: "Supported" | "Not Supported" | "N/A" | null;
-  writeback_supported: "Supported" | "Not Supported" | "N/A" | null;
+  asset_data_available: "Supported" | "Unsupported" | null;
+  telemetry_data_available: "Supported" | "Unsupported" | null;
+  writeback_supported: "Supported" | "Unsupported" | null;
   key_entities: string[];
 }
 

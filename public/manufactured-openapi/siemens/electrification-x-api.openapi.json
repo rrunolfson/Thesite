@@ -1,0 +1,495 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Electrification X API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-18",
+    "summary": "Electrification X® combines the real and digital worlds in the Xcelerator IoT Software as a Service (SaaS) offering for Electrification & Automation to tackle the challenges of energy transition. Published API scope combines electrification asset context, operational measurements, and platform-side updates.",
+    "description": "Manufactured OpenAPI artifact for Electrification X API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Electrification X® combines the real and digital worlds in the Xcelerator IoT Software as a Service (SaaS) offering for Electrification & Automation to tackle the challenges of energy transition. Electrification X is described as a combined electrification and automation SaaS platform, so the published API surface spans both monitoring and control use cases. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.siemens.com/electrification-x/api_specs/api_reference.html"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Electrification operations",
+      "description": "Manufactured operations grouped under Electrification operations."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "siemens_electrification-x-api_integrationProfile",
+        "summary": "Get manufactured profile for Electrification X API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/me": {
+      "get": {
+        "tags": [
+          "Electrification operations"
+        ],
+        "operationId": "siemens_electrification-x-api_get-me_get",
+        "summary": "GET /me",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope combines electrification asset context, operational measurements, and platform-side updates. Vendor documentation: https://developer.siemens.com/electrification-x/api_specs/api_reference.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /me.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/me/customers": {
+      "get": {
+        "tags": [
+          "Electrification operations"
+        ],
+        "operationId": "siemens_electrification-x-api_get-me-customers_get",
+        "summary": "GET /me/customers",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope combines electrification asset context, operational measurements, and platform-side updates. Vendor documentation: https://developer.siemens.com/electrification-x/api_specs/api_reference.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /me/customers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/me/customers/{customerId}": {
+      "get": {
+        "tags": [
+          "Electrification operations"
+        ],
+        "operationId": "siemens_electrification-x-api_get-me-customers-customerid_get",
+        "summary": "GET /me/customers/{customerId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope combines electrification asset context, operational measurements, and platform-side updates. Vendor documentation: https://developer.siemens.com/electrification-x/api_specs/api_reference.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /me/customers/{customerId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/me/customers/{customerId}/partitions": {
+      "get": {
+        "tags": [
+          "Electrification operations"
+        ],
+        "operationId": "siemens_electrification-x-api_get-me-customers-customerid-partitions_get",
+        "summary": "GET /me/customers/{customerId}/partitions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope combines electrification asset context, operational measurements, and platform-side updates. Vendor documentation: https://developer.siemens.com/electrification-x/api_specs/api_reference.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /me/customers/{customerId}/partitions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/partitions/{partitionId}": {
+      "get": {
+        "tags": [
+          "Electrification operations"
+        ],
+        "operationId": "siemens_electrification-x-api_get-partitions-partitionid_get",
+        "summary": "GET /partitions/{partitionId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope combines electrification asset context, operational measurements, and platform-side updates. Vendor documentation: https://developer.siemens.com/electrification-x/api_specs/api_reference.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /partitions/{partitionId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/partitions/{partitionId}/assets/{assetId}": {
+      "get": {
+        "tags": [
+          "Electrification operations"
+        ],
+        "operationId": "siemens_electrification-x-api_get-partitions-partitionid-assets-assetid_get",
+        "summary": "GET /partitions/{partitionId}/assets/{assetId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope combines electrification asset context, operational measurements, and platform-side updates. Vendor documentation: https://developer.siemens.com/electrification-x/api_specs/api_reference.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /partitions/{partitionId}/assets/{assetId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/partitions/{partitionId}/locations": {
+      "get": {
+        "tags": [
+          "Electrification operations"
+        ],
+        "operationId": "siemens_electrification-x-api_get-partitions-partitionid-locations_get",
+        "summary": "GET /partitions/{partitionId}/locations",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope combines electrification asset context, operational measurements, and platform-side updates. Vendor documentation: https://developer.siemens.com/electrification-x/api_specs/api_reference.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /partitions/{partitionId}/locations.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/partitions/{partitionId}/locations/{locationId}": {
+      "get": {
+        "tags": [
+          "Electrification operations"
+        ],
+        "operationId": "siemens_electrification-x-api_get-partitions-partitionid-locations-locationid_get",
+        "summary": "GET /partitions/{partitionId}/locations/{locationId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope combines electrification asset context, operational measurements, and platform-side updates. Vendor documentation: https://developer.siemens.com/electrification-x/api_specs/api_reference.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /partitions/{partitionId}/locations/{locationId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/siemens/electrification-x-api.json",
+    "vendor_documentation_url": "https://developer.siemens.com/electrification-x/api_specs/api_reference.html",
+    "vendor_spec_artifact_url": "https://developer.siemens.com/electrification-x/api_specs/openapi-v1_0_0.yaml",
+    "reviewed_at": "2026-04-18"
+  }
+}

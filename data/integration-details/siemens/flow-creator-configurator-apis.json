@@ -15,7 +15,7 @@
     "configuration"
   ],
   "asset_data_available": "Supported",
-  "telemetry_data_available": "Un-Supported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "edge devices",
@@ -25,7 +25,7 @@
     "flows"
   ],
   "buyer_guidance": "Use these APIs when the integration needs to provision, deploy, or configure Industrial Edge devices and apps rather than consume plant telemetry.",
-  "overview": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. These APIs are administrative and configuration-oriented surfaces for apps, devices, and low-code flow setup across Industrial Edge. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+  "overview": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. These APIs are administrative and configuration-oriented surfaces for apps, devices, and low-code flow setup across Industrial Edge. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
   "available_data": [
     {
       "category": "Edge management",

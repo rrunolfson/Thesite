@@ -6,7 +6,8 @@
   "product_family": "Insights Hub",
   "integration_type": "MQTT API",
   "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/mindconnect-mqtt-v3-0-0-rancher.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/mindconnect-mqtt-v3-0-0-rancher.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/mindconnect-mqtt-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/mindconnect-mqtt-v3-0-0-rancher.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope combines asset onboarding with telemetry, event, and file ingestion.",
   "data_domains": [
@@ -54,11 +55,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/insights-hub/docs/apis/connectivity-mindconnect-mqtt/api-mindconnect-mqtt-overview.html",
-    "spec_url": "https://developer.siemens.com/insights-hub/api_specs/mindconnect-mqtt-v3-0-0-rancher.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/mindconnect-mqtt-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for MindConnect MQTT API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for MindConnect MQTT API.",
+    "vendor_spec_url": "https://developer.siemens.com/insights-hub/api_specs/mindconnect-mqtt-v3-0-0-rancher.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/mindconnect-mqtt-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/mindconnect-mqtt-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/mindconnect-mqtt-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/mindconnect-mqtt-api.openapi.json"
 }

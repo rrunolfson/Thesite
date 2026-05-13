@@ -1,0 +1,67 @@
+{
+  "vendor_slug": "cin7",
+  "vendor_name": "Cin7",
+  "product_slug": "cin7-cin7-core-apis",
+  "product_name": "Cin7 / Cin7 Core APIs",
+  "product_family": "Cin7 Core",
+  "integration_type": "REST API",
+  "integration_api_url": "https://api-docs.cin7.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/cin7/cin7-cin7-core-apis.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Cin7 / Cin7 Core APIs has public documentation that indicates inventory and warehouse execution across inventory items, locations, pick tasks, shipments. Public API documentation is available for Cin7 APIs.",
+  "data_domains": [
+    "inventory-and-warehouse-records",
+    "fulfillment-workflows",
+    "stock-movements"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "inventory items",
+    "locations",
+    "pick tasks",
+    "shipments",
+    "stock levels"
+  ],
+  "buyer_guidance": "Use this API family for warehouse and inventory system integration where stock, location, and fulfillment state must be synchronized. Cin7 should be treated as a rest api surface for inventory and warehouse execution.",
+  "overview": "Public documentation reviewed for Cin7 / Cin7 Core APIs indicates Public API documentation is available for Cin7 APIs. The documented surface aligns with inventory and warehouse execution and covers inventory items, locations, pick tasks, shipments. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Inventory and warehouse execution",
+      "description": "The public documentation indicates inventory visibility and warehouse execution workflows spanning locations, stock records, and fulfillment tasks.",
+      "data_points": [
+        "Inventory and stock-level records",
+        "Warehouse locations and bins",
+        "Pick, pack, and shipment tasks",
+        "Receiving, transfer, or movement transactions"
+      ],
+      "relevant_operations": [
+        "list inventory records",
+        "read warehouse locations and stock state",
+        "create or update fulfillment tasks",
+        "submit stock or movement updates"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Cin7 / Cin7 Core APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as inventory and warehouse execution, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://api-docs.cin7.com/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/cin7/cin7-cin7-core-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public API documentation is available for Cin7 APIs.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/cin7/cin7-cin7-core-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/cin7/cin7-cin7-core-apis.json",
+  "vendor_domain": "cin7.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=cin7.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/cin7/cin7-cin7-core-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/cin7/cin7-cin7-core-apis.openapi.json"
+}

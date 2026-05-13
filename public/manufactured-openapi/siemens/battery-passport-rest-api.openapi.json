@@ -1,0 +1,1479 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Battery Passport REST API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-17",
+    "summary": "The Battery Passport REST API provides standardized access to battery passport records and related organization, connector, analytics, and schema information used to manage battery passport data exchange across the ecosystem.",
+    "description": "Manufactured OpenAPI artifact for Battery Passport REST API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. The Battery Passport API is a business-data API rather than a telemetry feed. Based on the Siemens API reference, it exposes CRUD and lookup access across passport records, passport hierarchy, schema definitions, attribute assignments, connector configuration, organization data, user roles, and export-oriented flows. That makes it suitable for onboarding structured passport and ecosystem data into ServiceNow CMDB-adjacent, supplier, compliance, or sustainability workflows.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.siemens.com/battery-passport/rest-api-spec.html"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Battery passport records",
+      "description": "Manufactured operations grouped under Battery passport records."
+    },
+    {
+      "name": "Attribute assignments and completion workflows",
+      "description": "Manufactured operations grouped under Attribute assignments and completion workflows."
+    },
+    {
+      "name": "Organization, user, and role data",
+      "description": "Manufactured operations grouped under Organization, user, and role data."
+    },
+    {
+      "name": "Connector and ecosystem exchange configuration",
+      "description": "Manufactured operations grouped under Connector and ecosystem exchange configuration."
+    },
+    {
+      "name": "Analytics, schema, and configuration metadata",
+      "description": "Manufactured operations grouped under Analytics, schema, and configuration metadata."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_integrationProfile",
+        "summary": "Get manufactured profile for Battery Passport REST API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/passport-management-service/passports": {
+      "get": {
+        "tags": [
+          "Battery passport records"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_get-passport-management-service-passports_get",
+        "summary": "GET /passport-management-service/passports",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core passport objects and their lifecycle state, including public and private retrieval patterns. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /passport-management-service/passports.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Battery passport records"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_post-passport-management-service-passports_post",
+        "summary": "POST /passport-management-service/passports",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core passport objects and their lifecycle state, including public and private retrieval patterns. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /passport-management-service/passports.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /passport-management-service/passports.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/passport-management-service/passports/public/{passportId}": {
+      "get": {
+        "tags": [
+          "Battery passport records"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_get-passport-management-service-passports-public-passportid_get",
+        "summary": "GET /passport-management-service/passports/public/{passportId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core passport objects and their lifecycle state, including public and private retrieval patterns. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /passport-management-service/passports/public/{passportId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/passport-management-service/passports/{passportId}": {
+      "get": {
+        "tags": [
+          "Battery passport records"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_get-passport-management-service-passports-passportid_get",
+        "summary": "GET /passport-management-service/passports/{passportId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core passport objects and their lifecycle state, including public and private retrieval patterns. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /passport-management-service/passports/{passportId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/passport-management-service/passports/{passportId}/status": {
+      "put": {
+        "tags": [
+          "Battery passport records"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_put-passport-management-service-passports-passportid-status_put",
+        "summary": "PUT /passport-management-service/passports/{passportId}/status",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core passport objects and their lifecycle state, including public and private retrieval patterns. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /passport-management-service/passports/{passportId}/status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /passport-management-service/passports/{passportId}/status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/passport-management-service/passports/{passportId}/export": {
+      "get": {
+        "tags": [
+          "Battery passport records"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_get-passport-management-service-passports-passportid-export_get",
+        "summary": "GET /passport-management-service/passports/{passportId}/export",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Core passport objects and their lifecycle state, including public and private retrieval patterns. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /passport-management-service/passports/{passportId}/export.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/assignment-management-service/attribute-assignments": {
+      "post": {
+        "tags": [
+          "Attribute assignments and completion workflows"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_post-assignment-management-service-attribute-assignments_post",
+        "summary": "POST /assignment-management-service/attribute-assignments",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Open assignment records used to request, update, remind, and close data obligations tied to passports or collaborating organizations. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assignment-management-service/attribute-assignments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assignment-management-service/attribute-assignments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Attribute assignments and completion workflows"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_get-assignment-management-service-attribute-assignments_get",
+        "summary": "GET /assignment-management-service/attribute-assignments",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Open assignment records used to request, update, remind, and close data obligations tied to passports or collaborating organizations. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /assignment-management-service/attribute-assignments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/assignment-management-service/attribute-assignments/api": {
+      "patch": {
+        "tags": [
+          "Attribute assignments and completion workflows"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_patch-assignment-management-service-attribute-assignments-api_patch",
+        "summary": "PATCH /assignment-management-service/attribute-assignments/api",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Open assignment records used to request, update, remind, and close data obligations tied to passports or collaborating organizations. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /assignment-management-service/attribute-assignments/api.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /assignment-management-service/attribute-assignments/api.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assignment-management-service/attribute-assignments/cx": {
+      "patch": {
+        "tags": [
+          "Attribute assignments and completion workflows"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_patch-assignment-management-service-attribute-assignments-cx_patch",
+        "summary": "PATCH /assignment-management-service/attribute-assignments/cx",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Open assignment records used to request, update, remind, and close data obligations tied to passports or collaborating organizations. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /assignment-management-service/attribute-assignments/cx.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /assignment-management-service/attribute-assignments/cx.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assignment-management-service/attribute-assignments/{assignmentId}/remind": {
+      "post": {
+        "tags": [
+          "Attribute assignments and completion workflows"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_post-assignment-management-service-attribute-assignments-assignmentid-remind_post",
+        "summary": "POST /assignment-management-service/attribute-assignments/{assignmentId}/remind",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Open assignment records used to request, update, remind, and close data obligations tied to passports or collaborating organizations. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assignment-management-service/attribute-assignments/{assignmentId}/remind.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assignment-management-service/attribute-assignments/{assignmentId}/remind.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/scopes": {
+      "get": {
+        "tags": [
+          "Organization, user, and role data"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_get-scopes_get",
+        "summary": "GET /scopes",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Identity and access context for the organizations participating in the battery passport ecosystem. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /scopes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/user-management-service/users/me": {
+      "get": {
+        "tags": [
+          "Organization, user, and role data"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_get-user-management-service-users-me_get",
+        "summary": "GET /user-management-service/users/me",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Identity and access context for the organizations participating in the battery passport ecosystem. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /user-management-service/users/me.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/user-management-service/organizations/{organizationId}": {
+      "get": {
+        "tags": [
+          "Organization, user, and role data"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_get-user-management-service-organizations-organizationid_get",
+        "summary": "GET /user-management-service/organizations/{organizationId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Identity and access context for the organizations participating in the battery passport ecosystem. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /user-management-service/organizations/{organizationId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/user-management-service/organizations/{organizationId}/roles": {
+      "get": {
+        "tags": [
+          "Organization, user, and role data"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_get-user-management-service-organizations-organizationid-roles_get",
+        "summary": "GET /user-management-service/organizations/{organizationId}/roles",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Identity and access context for the organizations participating in the battery passport ecosystem. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /user-management-service/organizations/{organizationId}/roles.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/user-management-service/organizations/{organizationId}/users": {
+      "get": {
+        "tags": [
+          "Organization, user, and role data"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_get-user-management-service-organizations-organizationid-users_get",
+        "summary": "GET /user-management-service/organizations/{organizationId}/users",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Identity and access context for the organizations participating in the battery passport ecosystem. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /user-management-service/organizations/{organizationId}/users.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/user-management-service/organizations/{organizationId}/users/{userId}/roles": {
+      "patch": {
+        "tags": [
+          "Organization, user, and role data"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_patch-user-management-service-organizations-organizationid-users-userid-roles_patch",
+        "summary": "PATCH /user-management-service/organizations/{organizationId}/users/{userId}/roles",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Identity and access context for the organizations participating in the battery passport ecosystem. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /user-management-service/organizations/{organizationId}/users/{userId}/roles.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /user-management-service/organizations/{organizationId}/users/{userId}/roles.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user-management-service/organizations/{organizationId}/connectors": {
+      "get": {
+        "tags": [
+          "Connector and ecosystem exchange configuration"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_get-user-management-service-organizations-organizationid-connectors_get",
+        "summary": "GET /user-management-service/organizations/{organizationId}/connectors",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Configuration of partner-facing connectors used to expose or exchange passport data with external ecosystems such as Catena-X. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /user-management-service/organizations/{organizationId}/connectors.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Connector and ecosystem exchange configuration"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_post-user-management-service-organizations-organizationid-connectors_post",
+        "summary": "POST /user-management-service/organizations/{organizationId}/connectors",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Configuration of partner-facing connectors used to expose or exchange passport data with external ecosystems such as Catena-X. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /user-management-service/organizations/{organizationId}/connectors.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /user-management-service/organizations/{organizationId}/connectors.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user-management-service/organizations/{organizationId}/connectors/{connectorId}": {
+      "patch": {
+        "tags": [
+          "Connector and ecosystem exchange configuration"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_patch-user-management-service-organizations-organizationid-connectors-connectorid_patch",
+        "summary": "PATCH /user-management-service/organizations/{organizationId}/connectors/{connectorId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Configuration of partner-facing connectors used to expose or exchange passport data with external ecosystems such as Catena-X. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /user-management-service/organizations/{organizationId}/connectors/{connectorId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /user-management-service/organizations/{organizationId}/connectors/{connectorId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Connector and ecosystem exchange configuration"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_delete-user-management-service-organizations-organizationid-connectors-connectorid_delete",
+        "summary": "DELETE /user-management-service/organizations/{organizationId}/connectors/{connectorId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Configuration of partner-facing connectors used to expose or exchange passport data with external ecosystems such as Catena-X. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DELETE /user-management-service/organizations/{organizationId}/connectors/{connectorId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for DELETE /user-management-service/organizations/{organizationId}/connectors/{connectorId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/connectors/cx/expose-passport": {
+      "post": {
+        "tags": [
+          "Connector and ecosystem exchange configuration"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_post-connectors-cx-expose-passport_post",
+        "summary": "POST /connectors/cx/expose-passport",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Configuration of partner-facing connectors used to expose or exchange passport data with external ecosystems such as Catena-X. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /connectors/cx/expose-passport.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /connectors/cx/expose-passport.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/passport-management-service/passports/analytics": {
+      "get": {
+        "tags": [
+          "Analytics, schema, and configuration metadata"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_get-passport-management-service-passports-analytics_get",
+        "summary": "GET /passport-management-service/passports/analytics",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Administrative structures that support reporting, feature enablement, and schema-driven validation of passport content. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /passport-management-service/passports/analytics.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/feature-config": {
+      "post": {
+        "tags": [
+          "Analytics, schema, and configuration metadata"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_post-feature-config_post",
+        "summary": "POST /feature-config",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Administrative structures that support reporting, feature enablement, and schema-driven validation of passport content. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /feature-config.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /feature-config.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Analytics, schema, and configuration metadata"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_put-feature-config_put",
+        "summary": "PUT /feature-config",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Administrative structures that support reporting, feature enablement, and schema-driven validation of passport content. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /feature-config.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /feature-config.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/passport-management-service/definitions/schema": {
+      "get": {
+        "tags": [
+          "Analytics, schema, and configuration metadata"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_get-passport-management-service-definitions-schema_get",
+        "summary": "GET /passport-management-service/definitions/schema",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Administrative structures that support reporting, feature enablement, and schema-driven validation of passport content. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /passport-management-service/definitions/schema.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Analytics, schema, and configuration metadata"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_post-passport-management-service-definitions-schema_post",
+        "summary": "POST /passport-management-service/definitions/schema",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Administrative structures that support reporting, feature enablement, and schema-driven validation of passport content. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /passport-management-service/definitions/schema.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /passport-management-service/definitions/schema.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user-management-service/users/feedback": {
+      "post": {
+        "tags": [
+          "Analytics, schema, and configuration metadata"
+        ],
+        "operationId": "siemens_battery-passport-rest-api_post-user-management-service-users-feedback_post",
+        "summary": "POST /user-management-service/users/feedback",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Administrative structures that support reporting, feature enablement, and schema-driven validation of passport content. Vendor documentation: https://developer.siemens.com/battery-passport/rest-api-spec.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /user-management-service/users/feedback.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /user-management-service/users/feedback.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/siemens/battery-passport-rest-api.json",
+    "vendor_documentation_url": "https://developer.siemens.com/battery-passport/rest-api-spec.html",
+    "vendor_spec_artifact_url": "https://developer.siemens.com/battery-passport/battery-passport-api-spec.yaml",
+    "reviewed_at": "2026-04-17"
+  }
+}

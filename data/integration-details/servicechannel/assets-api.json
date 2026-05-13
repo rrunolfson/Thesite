@@ -6,7 +6,7 @@
   "product_family": "ServiceChannel Platform",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
-  "spec_artifact_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "spec_artifact_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
   "detail_completeness": "researched",
   "data_coverage_summary": "The Assets API provides equipment and asset-management coverage, including location asset retrieval, asset creation and updates, asset-type updates, attachment to work orders and work requests, asset-location changes, asset work-order history, asset tags, validation flags, and meter-reading capture.",
   "data_domains": [
@@ -17,9 +17,9 @@
     "meter-readings",
     "attachments-and-tags"
   ],
-  "asset_data_available": true,
-  "telemetry_data_available": false,
-  "writeback_supported": true,
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
   "key_entities": [
     "assets",
     "asset codes and tags",
@@ -108,7 +108,7 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.servicechannel.com/swagger/index.html#/Assets",
-    "spec_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+    "spec_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
     "reviewed_at": "2026-04-17",
     "evidence_notes": "Based on the Assets section in the ServiceChannel v3 Swagger reference and the general ServiceChannel API guidance covering OAuth, environments, call structure, and sandbox testing."
   }

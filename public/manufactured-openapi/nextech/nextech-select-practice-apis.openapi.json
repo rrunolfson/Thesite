@@ -1,0 +1,1009 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Nextech Select Practice APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Nextech Select publishes FHIR-based patient, appointment, scheduling, financial, document, device, and recall APIs, with direct OpenAPI downloads for both STU3 and R4 variants.",
+    "description": "Manufactured OpenAPI artifact for Nextech Select Practice APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Nextech documents its Select APIs as a RESTful implementation based on the FHIR standard, with supported functionality for patient demographics, clinical information, patient creation and updates, payment posting, appointment information, appointment confirmation, appointment booking, slot information, non-clinical patient notes, and patient-document attachment. The public docs and downloadable R4 OpenAPI file also cover resources such as Encounter, Device, DiagnosticReport, DocumentReference, Claim, PaymentReconciliation, Location, Practitioner, Slot, and patient-recall. This is a robust write-capable healthcare integration surface, but it is not an asset or telemetry API. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://nextechsystems.github.io/selectapidocspub/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Patient, scheduling, and practice master data",
+      "description": "Manufactured operations grouped under Patient, scheduling, and practice master data."
+    },
+    {
+      "name": "Clinical documents and financial workflows",
+      "description": "Manufactured operations grouped under Clinical documents and financial workflows."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_integrationProfile",
+        "summary": "Get manufactured profile for Nextech Select Practice APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Patient": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and practice master data"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_get-patient_get",
+        "summary": "GET /Patient",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public R4 and narrative docs cover the operational data needed to identify patients, providers, locations, appointments, and scheduling opportunities. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Patient, scheduling, and practice master data"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_post-patient_post",
+        "summary": "POST /Patient",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public R4 and narrative docs cover the operational data needed to identify patients, providers, locations, appointments, and scheduling opportunities. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Patient/{identifier}": {
+      "put": {
+        "tags": [
+          "Patient, scheduling, and practice master data"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_put-patient-identifier_put",
+        "summary": "PUT /Patient/{identifier}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public R4 and narrative docs cover the operational data needed to identify patients, providers, locations, appointments, and scheduling opportunities. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /Patient/{identifier}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /Patient/{identifier}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Appointment": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and practice master data"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_get-appointment_get",
+        "summary": "GET /Appointment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public R4 and narrative docs cover the operational data needed to identify patients, providers, locations, appointments, and scheduling opportunities. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Appointment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Patient, scheduling, and practice master data"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_post-appointment_post",
+        "summary": "POST /Appointment/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public R4 and narrative docs cover the operational data needed to identify patients, providers, locations, appointments, and scheduling opportunities. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /Appointment/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /Appointment/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Appointment/{identifier}": {
+      "put": {
+        "tags": [
+          "Patient, scheduling, and practice master data"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_put-appointment-identifier_put",
+        "summary": "PUT /Appointment/{identifier}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public R4 and narrative docs cover the operational data needed to identify patients, providers, locations, appointments, and scheduling opportunities. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /Appointment/{identifier}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /Appointment/{identifier}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Slot": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and practice master data"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_get-slot_get",
+        "summary": "GET /Slot",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public R4 and narrative docs cover the operational data needed to identify patients, providers, locations, appointments, and scheduling opportunities. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Slot.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Location": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and practice master data"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_get-location_get",
+        "summary": "GET /Location",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public R4 and narrative docs cover the operational data needed to identify patients, providers, locations, appointments, and scheduling opportunities. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Location.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Practitioner": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and practice master data"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_get-practitioner_get",
+        "summary": "GET /Practitioner",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public R4 and narrative docs cover the operational data needed to identify patients, providers, locations, appointments, and scheduling opportunities. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Practitioner.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/patient-recall": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and practice master data"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_get-patient-recall_get",
+        "summary": "GET /patient-recall",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public R4 and narrative docs cover the operational data needed to identify patients, providers, locations, appointments, and scheduling opportunities. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /patient-recall.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Patient/{patientUid}/Device": {
+      "get": {
+        "tags": [
+          "Clinical documents and financial workflows"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_get-patient-patientuid-device_get",
+        "summary": "GET /Patient/{patientUid}/Device",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Nextech also exposes clinical resource retrieval and transactional write surfaces for documents, notes, claims, and payments. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Patient/{patientUid}/Device.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Patient/{patientUid}/Encounter": {
+      "get": {
+        "tags": [
+          "Clinical documents and financial workflows"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_get-patient-patientuid-encounter_get",
+        "summary": "GET /Patient/{patientUid}/Encounter",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Nextech also exposes clinical resource retrieval and transactional write surfaces for documents, notes, claims, and payments. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Patient/{patientUid}/Encounter.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Patient/{patientUid}/Observation": {
+      "get": {
+        "tags": [
+          "Clinical documents and financial workflows"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_get-patient-patientuid-observation_get",
+        "summary": "GET /Patient/{patientUid}/Observation",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Nextech also exposes clinical resource retrieval and transactional write surfaces for documents, notes, claims, and payments. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Patient/{patientUid}/Observation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Patient/{patientUid}/DocumentReference": {
+      "post": {
+        "tags": [
+          "Clinical documents and financial workflows"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_post-patient-patientuid-documentreference_post",
+        "summary": "POST /Patient/{patientUid}/DocumentReference",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Nextech also exposes clinical resource retrieval and transactional write surfaces for documents, notes, claims, and payments. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /Patient/{patientUid}/DocumentReference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /Patient/{patientUid}/DocumentReference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Patient/{patientUid}/Composition": {
+      "post": {
+        "tags": [
+          "Clinical documents and financial workflows"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_post-patient-patientuid-composition_post",
+        "summary": "POST /Patient/{patientUid}/Composition",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Nextech also exposes clinical resource retrieval and transactional write surfaces for documents, notes, claims, and payments. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /Patient/{patientUid}/Composition.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /Patient/{patientUid}/Composition.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Patient/{patientUid}/PaymentReconciliation": {
+      "post": {
+        "tags": [
+          "Clinical documents and financial workflows"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_post-patient-patientuid-paymentreconciliation_post",
+        "summary": "POST /Patient/{patientUid}/PaymentReconciliation",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Nextech also exposes clinical resource retrieval and transactional write surfaces for documents, notes, claims, and payments. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /Patient/{patientUid}/PaymentReconciliation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /Patient/{patientUid}/PaymentReconciliation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Claim": {
+      "get": {
+        "tags": [
+          "Clinical documents and financial workflows"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_get-claim_get",
+        "summary": "GET /Claim",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Nextech also exposes clinical resource retrieval and transactional write surfaces for documents, notes, claims, and payments. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Claim.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Coverage": {
+      "get": {
+        "tags": [
+          "Clinical documents and financial workflows"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_get-coverage_get",
+        "summary": "GET /Coverage",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Nextech also exposes clinical resource retrieval and transactional write surfaces for documents, notes, claims, and payments. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Coverage.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/$export": {
+      "get": {
+        "tags": [
+          "Clinical documents and financial workflows"
+        ],
+        "operationId": "nextech_nextech-select-practice-apis_get-export_get",
+        "summary": "GET /$export",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Nextech also exposes clinical resource retrieval and transactional write surfaces for documents, notes, claims, and payments. Vendor documentation: https://nextechsystems.github.io/selectapidocspub/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /$export.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/nextech/nextech-select-practice-apis.json",
+    "vendor_documentation_url": "https://nextechsystems.github.io/selectapidocspub/",
+    "vendor_spec_artifact_url": "https://nextechsystems.github.io/selectapidocspub/nextech-partner-api-r4.openapi.json",
+    "reviewed_at": "2026-05-13"
+  }
+}

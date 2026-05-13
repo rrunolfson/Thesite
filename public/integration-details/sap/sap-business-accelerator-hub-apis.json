@@ -1,0 +1,67 @@
+{
+  "vendor_slug": "sap",
+  "vendor_name": "SAP",
+  "product_slug": "sap-business-accelerator-hub-apis",
+  "product_name": "SAP Business Accelerator Hub APIs",
+  "product_family": "SAP Business Accelerator Hub",
+  "integration_type": "API Catalog",
+  "integration_api_url": "https://api.sap.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/sap/sap-business-accelerator-hub-apis.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "SAP Business Accelerator Hub APIs has public documentation that indicates erp records and transaction workflows across customers, items, orders, invoices. Public SAP API catalog.",
+  "data_domains": [
+    "erp-master-data",
+    "orders-and-transactions",
+    "integration-writeback"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "customers",
+    "items",
+    "orders",
+    "invoices",
+    "financial records"
+  ],
+  "buyer_guidance": "Use this API family for ERP record synchronization and business transaction writeback rather than asset or telemetry ingestion. Sap should be treated as a api catalog surface for erp records and transaction workflows.",
+  "overview": "Public documentation reviewed for SAP Business Accelerator Hub APIs indicates Public SAP API catalog. The documented surface aligns with erp records and transaction workflows and covers customers, items, orders, invoices. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "ERP records and transaction workflows",
+      "description": "The public documentation indicates access to ERP master data and transaction workflows used to synchronize business records across manufacturing systems.",
+      "data_points": [
+        "Customer, supplier, and account master records",
+        "Item, SKU, and catalog references",
+        "Order, invoice, and fulfillment-side transactions",
+        "Business workflow state and integration metadata"
+      ],
+      "relevant_operations": [
+        "list master records",
+        "read order and invoice records",
+        "create or update ERP transactions",
+        "synchronize item and account references"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for SAP Business Accelerator Hub APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as erp records and transaction workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://api.sap.com/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/sap/sap-business-accelerator-hub-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public SAP API catalog",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/sap/sap-business-accelerator-hub-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/sap/sap-business-accelerator-hub-apis.json",
+  "vendor_domain": "sap.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=sap.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/sap/sap-business-accelerator-hub-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/sap/sap-business-accelerator-hub-apis.openapi.json"
+}

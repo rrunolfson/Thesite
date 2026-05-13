@@ -14,7 +14,7 @@
     "safety-workflows",
     "maintenance-events"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
   "writeback_supported": "Supported",
   "key_entities": [
@@ -23,7 +23,7 @@
     "repair status"
   ],
   "buyer_guidance": "Use this API for safety and defect workflows where inspection evidence must be ingested and repair-state updates need to flow back to Motive.",
-  "overview": "Inspection Reports is a workflow-oriented operational record API. It exposes inspection outcomes and defect-state data, and the published reference includes update operations for repair or report status. That makes it a telemetry-plus-workflow-write surface rather than an asset master-data API. Asset data is Not Supported. Telemetry data is Supported. Writeback is Supported.",
+  "overview": "Inspection Reports is a workflow-oriented operational record API. It exposes inspection outcomes and defect-state data, and the published reference includes update operations for repair or report status. That makes it a telemetry-plus-workflow-write surface rather than an asset master-data API. Asset data is Unsupported. Telemetry data is Supported. Writeback is Supported.",
   "available_data": [
     {
       "category": "Inspection workflow records",

@@ -6,7 +6,7 @@
   "product_family": "ServiceChannel Platform",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
-  "spec_artifact_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "spec_artifact_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
   "detail_completeness": "researched",
   "data_coverage_summary": "The Work Orders API covers the in-flight repair order lifecycle in ServiceChannel, including search, creation, status and priority updates, scheduling, trade changes, resolution capture, caller and purchase-order updates, project approvals, and nearby or duplicate work-order discovery.",
   "data_domains": [
@@ -16,9 +16,9 @@
     "resolution-and-completion",
     "location-linked-operations"
   ],
-  "asset_data_available": false,
-  "telemetry_data_available": false,
-  "writeback_supported": true,
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
   "key_entities": [
     "work orders",
     "work order status",
@@ -100,7 +100,7 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
-    "spec_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+    "spec_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
     "reviewed_at": "2026-04-17",
     "evidence_notes": "Based on the WorkOrders section in the ServiceChannel v3 Swagger reference plus the platform authentication and environment guidance from the ServiceChannel API basics pages."
   }

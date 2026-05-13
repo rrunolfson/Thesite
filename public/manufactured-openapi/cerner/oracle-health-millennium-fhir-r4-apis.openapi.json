@@ -1,0 +1,1649 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Oracle Health Millennium FHIR R4 APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Oracle Health Millennium publishes broad FHIR R4 and EHR REST APIs for patient, appointment, device, observation, document, medication, coverage, communication, and bulk clinical-data workflows across the Millennium platform.",
+    "description": "Manufactured OpenAPI artifact for Oracle Health Millennium FHIR R4 APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Oracle Health documents Millennium Platform APIs across FHIR R4, EHR REST, SMART authorization, and bulk data access. The public endpoint catalogs show create, read, update, patch, delete, and export operations for resources such as Patient, Appointment, Device, Observation, DiagnosticReport, DocumentReference, Encounter, Coverage, Communication, MedicationRequest, Practitioner, Schedule, Slot, and QuestionnaireResponse, plus EHR-specific allergies, patient messages, code values, locations, personnel, and recipient workflows. Oracle also documents asynchronous bulk exports for Group and Patient data in its FHIR R4 bulk-data surface. This is a broad write-capable clinical interoperability API, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://docs.oracle.com/en/industries/health/millennium-platform-apis/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "FHIR R4 patient, scheduling, and clinical resources",
+      "description": "Manufactured operations grouped under FHIR R4 patient, scheduling, and clinical resources."
+    },
+    {
+      "name": "EHR actions, messaging, and bulk data workflows",
+      "description": "Manufactured operations grouped under EHR actions, messaging, and bulk data workflows."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_integrationProfile",
+        "summary": "Get manufactured profile for Oracle Health Millennium FHIR R4 APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Patient": {
+      "post": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_post-patient_post",
+        "summary": "POST /Patient",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-patient_get",
+        "summary": "GET /Patient",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Patient{ID}": {
+      "patch": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_patch-patient-id_patch",
+        "summary": "PATCH /Patient{ID}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /Patient{ID}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /Patient{ID}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Appointment": {
+      "post": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_post-appointment_post",
+        "summary": "POST /Appointment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /Appointment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /Appointment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-appointment_get",
+        "summary": "GET /Appointment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Appointment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Appointment/{ID}": {
+      "patch": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_patch-appointment-id_patch",
+        "summary": "PATCH /Appointment/{ID}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /Appointment/{ID}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /Appointment/{ID}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Device": {
+      "get": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-device_get",
+        "summary": "GET /Device",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Device.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Observation": {
+      "get": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-observation_get",
+        "summary": "GET /Observation",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Observation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_post-observation_post",
+        "summary": "POST /Observation",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /Observation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /Observation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Observation/{ID}": {
+      "put": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_put-observation-id_put",
+        "summary": "PUT /Observation/{ID}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /Observation/{ID}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /Observation/{ID}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/DiagnosticReport": {
+      "get": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-diagnosticreport_get",
+        "summary": "GET /DiagnosticReport",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /DiagnosticReport.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_post-diagnosticreport_post",
+        "summary": "POST /DiagnosticReport",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /DiagnosticReport.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /DiagnosticReport.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/DocumentReference": {
+      "get": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-documentreference_get",
+        "summary": "GET /DocumentReference",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /DocumentReference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_post-documentreference_post",
+        "summary": "POST /DocumentReference",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /DocumentReference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /DocumentReference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/DocumentReference/{ID}": {
+      "put": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_put-documentreference-id_put",
+        "summary": "PUT /DocumentReference/{ID}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /DocumentReference/{ID}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /DocumentReference/{ID}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Schedule": {
+      "get": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-schedule_get",
+        "summary": "GET /Schedule/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Schedule/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Slot": {
+      "get": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-slot_get",
+        "summary": "GET /Slot",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Slot.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Slot/{ID}": {
+      "patch": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_patch-slot-id_patch",
+        "summary": "PATCH /Slot/{ID}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /Slot/{ID}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /Slot/{ID}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/metadata": {
+      "get": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-metadata_get",
+        "summary": "GET /metadata",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/.well-known/smart-configuration": {
+      "get": {
+        "tags": [
+          "FHIR R4 patient, scheduling, and clinical resources"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-well-known-smart-configuration_get",
+        "summary": "GET /.well-known/smart-configuration",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public FHIR R4 endpoint catalog covers core clinical and scheduling resources as well as document and device records. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /.well-known/smart-configuration.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/20240101/allergies": {
+      "post": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_post-20240101-allergies_post",
+        "summary": "POST /20240101/allergies",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /20240101/allergies.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /20240101/allergies.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-20240101-allergies_get",
+        "summary": "GET /20240101/allergies",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /20240101/allergies.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/20240101/actions/markAllergiesReviewed": {
+      "post": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_post-20240101-actions-markallergiesreviewed_post",
+        "summary": "POST /20240101/actions/markAllergiesReviewed",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /20240101/actions/markAllergiesReviewed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /20240101/actions/markAllergiesReviewed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/20240101/chiefComplaints": {
+      "get": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-20240101-chiefcomplaints_get",
+        "summary": "GET /20240101/chiefComplaints",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /20240101/chiefComplaints.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/20240101/conditions": {
+      "get": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-20240101-conditions_get",
+        "summary": "GET /20240101/conditions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /20240101/conditions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/20241001/patientMessages/inboxItems": {
+      "get": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-20241001-patientmessages-inboxitems_get",
+        "summary": "GET /20241001/patientMessages/inboxItems",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /20241001/patientMessages/inboxItems.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/20241001/patientMessages/sentItems": {
+      "get": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-20241001-patientmessages-sentitems_get",
+        "summary": "GET /20241001/patientMessages/sentItems",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /20241001/patientMessages/sentItems.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_post-20241001-patientmessages-sentitems_post",
+        "summary": "POST /20241001/patientMessages/sentItems",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /20241001/patientMessages/sentItems.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /20241001/patientMessages/sentItems.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/20241001/actions/updatePatientMessageStatus": {
+      "post": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_post-20241001-actions-updatepatientmessagestatus_post",
+        "summary": "POST /20241001/actions/updatePatientMessageStatus",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /20241001/actions/updatePatientMessageStatus.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /20241001/actions/updatePatientMessageStatus.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/20240101/locations": {
+      "get": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-20240101-locations_get",
+        "summary": "GET /20240101/locations",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /20240101/locations.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/20240101/personnel": {
+      "get": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-20240101-personnel_get",
+        "summary": "GET /20240101/personnel",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /20240101/personnel.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/20240101/codeValues": {
+      "get": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_get-20240101-codevalues_get",
+        "summary": "GET /20240101/codeValues",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /20240101/codeValues.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/group-export": {
+      "get": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_group-export_get",
+        "summary": "Group Export",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Group Export.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/patient-export": {
+      "get": {
+        "tags": [
+          "EHR actions, messaging, and bulk data workflows"
+        ],
+        "operationId": "cerner_oracle-health-millennium-fhir-r4-apis_patient-export_get",
+        "summary": "Patient Export",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Oracle Health also exposes non-FHIR EHR APIs and bulk-export workflows for operational messaging and population-scale extraction. Vendor documentation: https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Patient Export.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/cerner/oracle-health-millennium-fhir-r4-apis.json",
+    "vendor_documentation_url": "https://docs.oracle.com/en/industries/health/millennium-platform-apis/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

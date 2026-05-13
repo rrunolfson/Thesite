@@ -1,0 +1,325 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Geotab Drive Integration Reference Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-21",
+    "summary": "Geotab Drive exposes driver-facing workflow context tied to vehicles, trips, compliance state, and in-cab interactions, so it can deliver assigned asset context, operational events, and controlled in-cab actions.",
+    "description": "Manufactured OpenAPI artifact for Geotab Drive Integration Reference. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. The Geotab Drive integration reference is centered on extending the in-cab application experience for fleet execution. It is tied to vehicles and drivers, surfaces operational trip and compliance context, and supports controlled in-app actions and notifications. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developers.geotab.com/drive/introduction/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Driver and fleet execution context",
+      "description": "Manufactured operations grouped under Driver and fleet execution context."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "geotab_geotab-drive-integration-reference_integrationProfile",
+        "summary": "Get manufactured profile for Geotab Drive Integration Reference",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/workflow-extensions": {
+      "get": {
+        "tags": [
+          "Driver and fleet execution context"
+        ],
+        "operationId": "geotab_geotab-drive-integration-reference_workflow-extensions_get",
+        "summary": "workflow extensions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The Drive reference is aimed at extensions that operate inside the driver workflow and therefore has access to assigned vehicle context and active operational state. Vendor documentation: https://developers.geotab.com/drive/introduction/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for workflow extensions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/driver-prompts": {
+      "get": {
+        "tags": [
+          "Driver and fleet execution context"
+        ],
+        "operationId": "geotab_geotab-drive-integration-reference_driver-prompts_get",
+        "summary": "driver prompts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The Drive reference is aimed at extensions that operate inside the driver workflow and therefore has access to assigned vehicle context and active operational state. Vendor documentation: https://developers.geotab.com/drive/introduction/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for driver prompts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/in-cab-actions": {
+      "get": {
+        "tags": [
+          "Driver and fleet execution context"
+        ],
+        "operationId": "geotab_geotab-drive-integration-reference_in-cab-actions_get",
+        "summary": "in-cab actions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The Drive reference is aimed at extensions that operate inside the driver workflow and therefore has access to assigned vehicle context and active operational state. Vendor documentation: https://developers.geotab.com/drive/introduction/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for in-cab actions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/geotab/geotab-drive-integration-reference.json",
+    "vendor_documentation_url": "https://developers.geotab.com/drive/introduction/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-04-21"
+  }
+}

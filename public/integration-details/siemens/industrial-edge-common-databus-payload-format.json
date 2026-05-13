@@ -6,16 +6,17 @@
   "product_family": "Industrial Edge",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/industrial-edge/api/databus/profinet_v1.2.0/asyncapi_profinet_io_conn.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/industrial-edge/api/databus/profinet_v1.2.0/asyncapi_profinet_io_conn.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/industrial-edge-common-databus-payload-format.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/industrial-edge/api/databus/profinet_v1.2.0/asyncapi_profinet_io_conn.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. Published specification defines the structure of telemetry payloads on the Industrial Edge databus.",
   "data_domains": [
     "message-schema",
     "telemetry-payload-format"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "payload schemas",
     "telemetry messages",
@@ -41,11 +42,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/industrial-edge/api/databus/overview.html",
-    "spec_url": "https://developer.siemens.com/industrial-edge/api/databus/profinet_v1.2.0/asyncapi_profinet_io_conn.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/industrial-edge-common-databus-payload-format.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Industrial Edge Common Databus Payload Format."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Industrial Edge Common Databus Payload Format.",
+    "vendor_spec_url": "https://developer.siemens.com/industrial-edge/api/databus/profinet_v1.2.0/asyncapi_profinet_io_conn.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/industrial-edge-common-databus-payload-format.openapi.json"
   },
   "detail_path": "/integration-details/siemens/industrial-edge-common-databus-payload-format.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/industrial-edge-common-databus-payload-format.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/industrial-edge-common-databus-payload-format.openapi.json"
 }

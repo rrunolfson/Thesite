@@ -6,7 +6,8 @@
   "product_family": "Motive Open API",
   "integration_type": "REST API",
   "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-  "spec_artifact_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/motive/users-api.openapi.json",
+  "vendor_spec_artifact_url": "",
   "detail_completeness": "researched",
   "data_coverage_summary": "Users API manages user and driver-linked identity records for Motive account synchronization, permissions, and operational identity workflows.",
   "data_domains": [
@@ -14,8 +15,8 @@
     "driver-users",
     "account-administration"
   ],
-  "asset_data_available": "Not Supported",
-  "telemetry_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "users",
@@ -23,7 +24,7 @@
     "permissions"
   ],
   "buyer_guidance": "Use Users API for identity and driver-account synchronization; it is useful for provisioning and access alignment, not for equipment telemetry or physical asset modeling.",
-  "overview": "Users API is an identity-management surface for user and driver-linked records. It supports creation and updates to those records, but it is not a physical asset API and does not expose time-varying operational telemetry. Asset data is Not Supported. Telemetry data is Not Supported. Writeback is Supported.",
+  "overview": "Users API is an identity-management surface for user and driver-linked records. It supports creation and updates to those records, but it is not a physical asset API and does not expose time-varying operational telemetry. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
   "available_data": [
     {
       "category": "Identity and account records",
@@ -46,11 +47,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-    "spec_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/motive/users-api.openapi.json",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing user identities and driver-linked user synchronization, along with documented create and update operations."
+    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing user identities and driver-linked user synchronization, along with documented create and update operations.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/motive/users-api.openapi.json"
   },
   "detail_path": "/integration-details/motive/users-api.json",
   "vendor_domain": "gomotive.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=gomotive.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=gomotive.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/motive/users-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/motive/users-api.openapi.json"
 }

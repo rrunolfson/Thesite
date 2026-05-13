@@ -6,7 +6,8 @@
   "product_family": "Enlighted",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/enlighted-apis/location-services/location.openapi.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/enlighted-apis/location-services/location.openapi.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/location-services-rtls-apis.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/enlighted-apis/location-services/location.openapi.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. Published API scope combines tracked-object context with real-time location services.",
   "data_domains": [
@@ -16,7 +17,7 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "tracked assets",
     "location fixes",
@@ -49,11 +50,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/enlighted-apis/location-services/overview.html",
-    "spec_url": "https://developer.siemens.com/enlighted-apis/location-services/location.openapi.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/location-services-rtls-apis.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Location Services (RTLS) APIs."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Location Services (RTLS) APIs.",
+    "vendor_spec_url": "https://developer.siemens.com/enlighted-apis/location-services/location.openapi.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/location-services-rtls-apis.openapi.json"
   },
   "detail_path": "/integration-details/siemens/location-services-rtls-apis.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/location-services-rtls-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/location-services-rtls-apis.openapi.json"
 }

@@ -1,0 +1,93 @@
+{
+  "vendor_slug": "plaid",
+  "vendor_name": "Plaid",
+  "product_slug": "plaid-api",
+  "product_name": "Plaid API",
+  "product_family": "Plaid",
+  "integration_type": "REST API",
+  "integration_api_url": "https://plaid.com/docs/api/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/plaid/plaid-api.openapi.json",
+  "vendor_spec_artifact_url": "https://raw.githubusercontent.com/plaid/plaid-openapi/master/2020-09-14.yml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Plaid publishes public API docs and a raw OpenAPI file for account connectivity, transactions, identity, auth, investments, transfers, payment initiation, asset reports, and webhooks.",
+  "data_domains": [
+    "open-banking-account-data",
+    "transactions-and-liabilities",
+    "identity-and-auth",
+    "transfers-and-payments"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "link tokens and items",
+    "accounts",
+    "transactions",
+    "identity and auth data",
+    "asset reports",
+    "transfers"
+  ],
+  "buyer_guidance": "Use Plaid API for account linking, transaction retrieval, identity and auth checks, asset reports, transfer workflows, and webhook-driven financial data synchronization. This is an open finance platform, not an asset or telemetry platform.",
+  "overview": "Plaid's public API reference documents JSON-over-HTTP endpoints served from sandbox and production environments, and its public plaid-openapi repository exposes a dated raw OpenAPI definition. The public docs cover Link token creation, accounts, transactions sync, identity, auth, liabilities, investment transactions, processor token creation, transfer flows, payment initiation, asset report creation and retrieval, and webhooks. This is a strong write-capable open finance platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Account connectivity and financial-data retrieval",
+      "description": "Plaid exposes the core account-linking and account-data workflows used by consumer-permissioned finance applications.",
+      "data_points": [
+        "Link token creation and item lifecycle",
+        "Accounts and balances",
+        "Transactions synchronization",
+        "Identity and auth data",
+        "Liabilities and investments data"
+      ],
+      "relevant_operations": [
+        "/link/token/create",
+        "/accounts/get",
+        "/transactions/sync",
+        "/identity/get",
+        "/auth/get",
+        "/liabilities/get",
+        "/investments/transactions/get"
+      ]
+    },
+    {
+      "category": "Reports, transfer, and partner-token workflows",
+      "description": "The public API also supports downstream operational and money-movement use cases beyond simple data read access.",
+      "data_points": [
+        "Asset report creation and retrieval",
+        "Processor token creation for downstream payment partners",
+        "Transfer flows",
+        "Payment initiation flows",
+        "Webhook-driven product updates"
+      ],
+      "relevant_operations": [
+        "/asset_report/create",
+        "/asset_report/get",
+        "/asset_report/pdf/get",
+        "/processor/token/create",
+        "Transfer flows",
+        "Payment initiation flows",
+        "Webhooks"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Plaid production access is gated through dashboard approval and institution or product enablement, so not every documented workflow is necessarily available to every account by default.",
+    "The published exact spec is a dated snapshot rather than a stable latest alias, so downstream tooling should pin and monitor the specific spec revision in use.",
+    "This row has exact machine-readable spec evidence because Plaid publishes a raw OpenAPI file in its public plaid-openapi repository."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://plaid.com/docs/api/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/plaid/plaid-api.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Plaid's public API docs cover Link token creation, accounts, transactions sync, identity, auth, liabilities, investments, processor token creation, transfers, payment initiation, asset reports, and webhooks, and Plaid publishes a raw OpenAPI file in the public plaid-openapi repository.",
+    "vendor_spec_url": "https://raw.githubusercontent.com/plaid/plaid-openapi/master/2020-09-14.yml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/plaid/plaid-api.openapi.json"
+  },
+  "detail_path": "/integration-details/plaid/plaid-api.json",
+  "vendor_domain": "plaid.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=plaid.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/plaid/plaid-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/plaid/plaid-api.openapi.json"
+}

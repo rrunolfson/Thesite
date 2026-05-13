@@ -1,0 +1,105 @@
+{
+  "vendor_slug": "stripe",
+  "vendor_name": "Stripe",
+  "product_slug": "stripe-api",
+  "product_name": "Stripe API",
+  "product_family": "Stripe",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.stripe.com/api",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/stripe/stripe-api.openapi.json",
+  "vendor_spec_artifact_url": "https://raw.githubusercontent.com/stripe/openapi/master/openapi/spec3.json",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Stripe publishes a REST API and public OpenAPI artifact for customers, payment intents, subscriptions, charges, invoices, payouts, connected accounts, webhook endpoints, and related billing or payment workflows.",
+  "data_domains": [
+    "customer-master-data",
+    "payments-and-settlement",
+    "subscriptions-and-billing",
+    "event-webhooks"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "customers",
+    "payment intents",
+    "subscriptions",
+    "charges and invoices",
+    "webhook endpoints",
+    "connected accounts"
+  ],
+  "buyer_guidance": "Use Stripe API for payment, subscription, billing, and event-notification integrations. It is a transactional fintech API with strong write support and webhook orchestration, not an asset or telemetry platform.",
+  "overview": "Stripe documents a resource-oriented REST API at api.stripe.com and publicly publishes an OpenAPI 3 artifact in the stripe/openapi repository. The public docs show create, update, retrieve, list, search, confirm, capture, cancel, and reconcile flows across customers, payment intents, subscriptions, and webhook endpoints, with additional event delivery, pagination, metadata, search, and versioning controls. This is a strong write-capable financial workflow surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Customer, payment, and billing records",
+      "description": "Stripe exposes customer and payment objects used to run transactional payment and billing workflows end to end.",
+      "data_points": [
+        "Customer profiles, contact details, tax data, and payment methods",
+        "Payment intents with status, amount, customer linkage, and next actions",
+        "Subscriptions, subscription items, invoice linkage, and billing state",
+        "Searchable payment and customer histories",
+        "Metadata fields for linking Stripe objects to upstream system identifiers"
+      ],
+      "relevant_operations": [
+        "POST /v1/customers",
+        "POST /v1/customers/:id",
+        "GET /v1/customers/:id",
+        "GET /v1/customers",
+        "GET /v1/customers/search",
+        "POST /v1/payment_intents",
+        "POST /v1/payment_intents/:id",
+        "GET /v1/payment_intents/:id",
+        "GET /v1/payment_intents",
+        "POST /v1/payment_intents/:id/confirm",
+        "POST /v1/payment_intents/:id/capture",
+        "POST /v1/payment_intents/:id/cancel",
+        "POST /v1/subscriptions",
+        "POST /v1/subscriptions/:id",
+        "GET /v1/subscriptions/:id",
+        "GET /v1/subscriptions",
+        "DELETE /v1/subscriptions/:id",
+        "POST /v1/subscriptions/:id/resume",
+        "GET /v1/subscriptions/search"
+      ]
+    },
+    {
+      "category": "Webhook and platform orchestration",
+      "description": "Stripe also provides operational event-delivery and multi-account coordination surfaces that are central to downstream automation.",
+      "data_points": [
+        "Webhook endpoint registrations and secrets",
+        "Enabled event subscriptions across hundreds of event types",
+        "Connected-account request scoping",
+        "Request IDs, idempotency keys, and pagination controls",
+        "Versioned API behavior and search interfaces"
+      ],
+      "relevant_operations": [
+        "POST /v1/webhook_endpoints",
+        "POST /v1/webhook_endpoints/:id",
+        "GET /v1/webhook_endpoints/:id",
+        "GET /v1/webhook_endpoints",
+        "DELETE /v1/webhook_endpoints/:id",
+        "Stripe-Account header for connected accounts",
+        "Idempotency-Key on POST requests"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Stripe uses cursor-based pagination and warns against relying on search for strict read-after-write consistency, so reporting and reconciliation flows should separate list retrieval from search-based lookups.",
+    "POST requests support idempotency keys and Stripe recommends using them for safe retries on create and update workflows.",
+    "This row has exact machine-readable spec evidence because Stripe publishes a raw OpenAPI 3 document distinct from the human docs, which should make downstream validation and tooling integration reliable."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.stripe.com/api",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/stripe/stripe-api.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Stripe's public docs cover customers, payment intents, subscriptions, webhook endpoints, pagination, metadata, idempotency, connected accounts, and versioning. Stripe also publishes a raw OpenAPI 3 artifact in the public stripe/openapi repository.",
+    "vendor_spec_url": "https://raw.githubusercontent.com/stripe/openapi/master/openapi/spec3.json",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/stripe/stripe-api.openapi.json"
+  },
+  "detail_path": "/integration-details/stripe/stripe-api.json",
+  "vendor_domain": "stripe.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=stripe.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/stripe/stripe-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/stripe/stripe-api.openapi.json"
+}

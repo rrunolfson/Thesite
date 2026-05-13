@@ -1,0 +1,1299 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Samsara REST APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Samsara exposes broad fleet, equipment, industrial, route, maintenance, safety, compliance, and sensor APIs, including snapshot, history, and feed-style endpoints for locations, stats, readings, and event subscriptions.",
+    "description": "Manufactured OpenAPI artifact for Samsara REST APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Samsara's developer portal documents APIs for vehicles, equipment, trailers, gateways, routes, drivers, hours of service, maintenance work orders, safety events, industrial assets, and sensor-style data inputs. The public reference also lists snapshot, history, and feed endpoints for vehicle stats, vehicle locations, equipment stats, equipment locations, data inputs, route events, and webhook subscriptions, plus write-capable endpoints for assets, routes, work orders, and industrial asset data outputs. That makes Samsara a strong source for both asset master data and operational telemetry. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developers.samsara.com/reference/overview"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Fleet, equipment, and industrial asset records",
+      "description": "Manufactured operations grouped under Fleet, equipment, and industrial asset records."
+    },
+    {
+      "name": "Telemetry, readings, and event feeds",
+      "description": "Manufactured operations grouped under Telemetry, readings, and event feeds."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "samsara_samsara-rest-apis_integrationProfile",
+        "summary": "Get manufactured profile for Samsara REST APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/list-all-vehicles": {
+      "get": {
+        "tags": [
+          "Fleet, equipment, and industrial asset records"
+        ],
+        "operationId": "samsara_samsara-rest-apis_list-all-vehicles_get",
+        "summary": "List all vehicles",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface covers core operational entities plus related maintenance and assignment records. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for List all vehicles.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/retrieve-a-vehicle": {
+      "get": {
+        "tags": [
+          "Fleet, equipment, and industrial asset records"
+        ],
+        "operationId": "samsara_samsara-rest-apis_retrieve-a-vehicle_get",
+        "summary": "Retrieve a vehicle",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface covers core operational entities plus related maintenance and assignment records. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Retrieve a vehicle.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/list-all-equipment": {
+      "get": {
+        "tags": [
+          "Fleet, equipment, and industrial asset records"
+        ],
+        "operationId": "samsara_samsara-rest-apis_list-all-equipment_get",
+        "summary": "List all equipment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface covers core operational entities plus related maintenance and assignment records. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for List all equipment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/retrieve-a-unit-of-equipment": {
+      "get": {
+        "tags": [
+          "Fleet, equipment, and industrial asset records"
+        ],
+        "operationId": "samsara_samsara-rest-apis_retrieve-a-unit-of-equipment_get",
+        "summary": "Retrieve a unit of equipment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface covers core operational entities plus related maintenance and assignment records. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Retrieve a unit of equipment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/list-all-assets": {
+      "get": {
+        "tags": [
+          "Fleet, equipment, and industrial asset records"
+        ],
+        "operationId": "samsara_samsara-rest-apis_list-all-assets_get",
+        "summary": "List all assets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface covers core operational entities plus related maintenance and assignment records. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for List all assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-a-new-asset": {
+      "post": {
+        "tags": [
+          "Fleet, equipment, and industrial asset records"
+        ],
+        "operationId": "samsara_samsara-rest-apis_create-a-new-asset_post",
+        "summary": "Create a new asset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface covers core operational entities plus related maintenance and assignment records. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create a new asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create a new asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/list-all-industrial-assets": {
+      "get": {
+        "tags": [
+          "Fleet, equipment, and industrial asset records"
+        ],
+        "operationId": "samsara_samsara-rest-apis_list-all-industrial-assets_get",
+        "summary": "List all industrial assets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface covers core operational entities plus related maintenance and assignment records. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for List all industrial assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-an-asset": {
+      "post": {
+        "tags": [
+          "Fleet, equipment, and industrial asset records"
+        ],
+        "operationId": "samsara_samsara-rest-apis_create-an-asset_post",
+        "summary": "Create an asset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface covers core operational entities plus related maintenance and assignment records. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create an asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create an asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-an-asset": {
+      "put": {
+        "tags": [
+          "Fleet, equipment, and industrial asset records"
+        ],
+        "operationId": "samsara_samsara-rest-apis_update-an-asset_put",
+        "summary": "Update an asset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface covers core operational entities plus related maintenance and assignment records. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Update an asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Update an asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/creates-a-work-order": {
+      "post": {
+        "tags": [
+          "Fleet, equipment, and industrial asset records"
+        ],
+        "operationId": "samsara_samsara-rest-apis_creates-a-work-order_post",
+        "summary": "Creates a work order",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface covers core operational entities plus related maintenance and assignment records. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Creates a work order.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Creates a work order.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gets-work-orders": {
+      "get": {
+        "tags": [
+          "Fleet, equipment, and industrial asset records"
+        ],
+        "operationId": "samsara_samsara-rest-apis_gets-work-orders_get",
+        "summary": "Gets work orders",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface covers core operational entities plus related maintenance and assignment records. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Gets work orders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-a-route": {
+      "post": {
+        "tags": [
+          "Fleet, equipment, and industrial asset records"
+        ],
+        "operationId": "samsara_samsara-rest-apis_create-a-route_post",
+        "summary": "Create a route",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface covers core operational entities plus related maintenance and assignment records. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create a route.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create a route.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fetch-all-routes": {
+      "get": {
+        "tags": [
+          "Fleet, equipment, and industrial asset records"
+        ],
+        "operationId": "samsara_samsara-rest-apis_fetch-all-routes_get",
+        "summary": "Fetch all routes",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface covers core operational entities plus related maintenance and assignment records. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Fetch all routes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/historical-locations": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_historical-locations_get",
+        "summary": "Historical locations",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Historical locations.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/locations-feed": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_locations-feed_get",
+        "summary": "Locations feed",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Locations feed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/locations-snapshot": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_locations-snapshot_get",
+        "summary": "Locations snapshot",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Locations snapshot.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/historical-stats": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_historical-stats_get",
+        "summary": "Historical stats",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Historical stats.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/stats-feed": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_stats-feed_get",
+        "summary": "Stats feed",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Stats feed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/stats-snapshot": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_stats-snapshot_get",
+        "summary": "Stats snapshot",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Stats snapshot.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/follow-a-feed-of-equipment-stats": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_follow-a-feed-of-equipment-stats_get",
+        "summary": "Follow a feed of equipment stats",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Follow a feed of equipment stats.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/follow-feed-of-equipment-locations": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_follow-feed-of-equipment-locations_get",
+        "summary": "Follow feed of equipment locations",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Follow feed of equipment locations.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/readings-history-and-feed": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_get-readings-history-and-feed_get",
+        "summary": "Get Readings History and Feed",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get Readings History and Feed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/readings-snapshot": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_get-readings-snapshot_get",
+        "summary": "Get Readings Snapshot",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get Readings Snapshot.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/temperature": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_get-temperature_get",
+        "summary": "Get temperature",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get temperature.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/humidity": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_get-humidity_get",
+        "summary": "Get humidity",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get humidity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/door-status": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_get-door-status_get",
+        "summary": "Get door status",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get door status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/route-events-stream": {
+      "get": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_get-route-events-stream_get",
+        "summary": "Get route events stream",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get route events stream.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-a-webhook": {
+      "post": {
+        "tags": [
+          "Telemetry, readings, and event feeds"
+        ],
+        "operationId": "samsara_samsara-rest-apis_create-a-webhook_post",
+        "summary": "Create a webhook",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Samsara publishes both current-state snapshots and continuous or incremental feeds for operational telemetry. Vendor documentation: https://developers.samsara.com/reference/overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create a webhook.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create a webhook.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/samsara/samsara-rest-apis.json",
+    "vendor_documentation_url": "https://developers.samsara.com/reference/overview",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

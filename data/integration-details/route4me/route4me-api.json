@@ -1,0 +1,89 @@
+{
+  "vendor_slug": "route4me",
+  "vendor_name": "Route4Me",
+  "product_slug": "route4me-api",
+  "product_name": "Route4Me API",
+  "product_family": "Route4Me",
+  "integration_type": "REST API",
+  "integration_api_url": "https://route4me.io/docs/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Route4Me exposes route optimization, route and order management, address-book, vehicle, tracking, geocoding, activity-feed, territory, and telematics-connection APIs for logistics and field-service operations.",
+  "data_domains": [
+    "asset-master-data",
+    "route-and-order-operations",
+    "gps-tracking",
+    "telematics-connections"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "routes",
+    "orders",
+    "addresses",
+    "vehicles",
+    "tracking history",
+    "telematics connections"
+  ],
+  "buyer_guidance": "Use Route4Me when you need route optimization plus delivery, order, vehicle, and GPS-tracking data from the same platform, with the option to connect external telematics vendors into operational workflows.",
+  "overview": "Route4Me's API reference covers optimization problems, routes, orders, addresses, vehicles, geocoding, tracking, activity feeds, territories, and telematics connections. The public docs show route and order CRUD, route path and tracking-history retrieval, asset-tracking lookups, GPS position submission, live user-location queries, vehicle APIs, and telematics-connection management through the Operational Assessment gateway. That makes the platform useful both for logistics master data and for operational telemetry derived from tracked devices and delivery activity. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Routes, orders, addresses, and vehicles",
+      "description": "The documented surface spans the entities required to plan, execute, and maintain delivery operations.",
+      "data_points": [
+        "Optimization problems and route definitions",
+        "Route addresses, directions, path points, and manifests",
+        "Orders with address, scheduling, and custom data",
+        "Address-book contacts and scheduled locations",
+        "Vehicle records and commercial-routing attributes",
+        "Territories and avoidance zones"
+      ],
+      "relevant_operations": [
+        "POST /api.v4/optimization_problem.php",
+        "GET /api.v4/route.php",
+        "PUT /api.v4/route.php",
+        "GET /api.v4/order.php",
+        "POST /api.v4/order.php",
+        "GET /api.v4/address_book.php",
+        "POST /api.v4/address_book.php",
+        "GET /modules/api/v5.0/vehicles",
+        "POST /modules/api/v5.0/vehicles",
+        "GET /api.v4/territory.php"
+      ]
+    },
+    {
+      "category": "Tracking, activity events, and telematics ingestion",
+      "description": "Route4Me combines route progress events with direct tracking and telematics-connection APIs.",
+      "data_points": [
+        "Asset tracking status by tracking number",
+        "Route device-tracking history and last known location",
+        "Inserted GPS points including speed, course, and coordinates",
+        "User location snapshots",
+        "Activity-feed events for route, destination, geofence, and driver milestones",
+        "Telematics-connection records for external telematics vendors"
+      ],
+      "relevant_operations": [
+        "GET /api.v4/status.php",
+        "GET /api/track/get_device_location.php",
+        "GET /track/set.php",
+        "GET /api/track/view_user_locations.php",
+        "GET /api/get_activities.php",
+        "GET /oa.route4me.com/api/v1/user/telematics-connections",
+        "POST /oa.route4me.com/api/v1/user/participants/{participant_user_id}/telematics-connection"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Route4Me's legacy and newer APIs use several different endpoint styles, so integrations should normalize entity keys and timestamps across route, order, tracking, and OA telematics surfaces.",
+    "Tracking data includes both pull-based history endpoints and direct GPS write endpoints, so downstream systems should separate observed telemetry from integration-generated telemetry submissions.",
+    "No exact public machine-readable OpenAPI artifact was confirmed during this review; the docs reference JSON schemas and sample payloads, but not a single downloadable API description for the full platform."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://route4me.io/docs/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "The Route4Me docs enumerate optimization, route, order, address, vehicle, tracking, activity-feed, territory, and telematics-connection APIs, including explicit examples for route tracking history, asset tracking, GPS point ingestion, and telematics gateway connections."
+  }
+}

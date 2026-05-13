@@ -1,0 +1,567 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Clover APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Clover publicly documents an open POS platform with Clover REST API, Ecommerce API, Clover Android Payments API, point-of-sale integrations, and a published Clover data model for merchant business operations.",
+    "description": "Manufactured OpenAPI artifact for Clover APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Clover's public developer documentation describes Clover as an open Android-based POS platform that lets third-party developers build apps and integrate external POS systems with Clover devices. Public getting-started guidance explicitly points developers to the Clover REST API for authorized merchant-business management, the Ecommerce API for ecommerce services, the Clover Android Payments API for device-side payments, POS integrations for PCI-compliant dip, swipe, and tap acceptance, and the published Clover data model. This is a write-capable retail and payments surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://docs.clover.com/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Merchant and POS operations",
+      "description": "Manufactured operations grouped under Merchant and POS operations."
+    },
+    {
+      "name": "Ecommerce and application platform workflows",
+      "description": "Manufactured operations grouped under Ecommerce and application platform workflows."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "clover_clover-apis_integrationProfile",
+        "summary": "Get manufactured profile for Clover APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/clover-rest-api": {
+      "get": {
+        "tags": [
+          "Merchant and POS operations"
+        ],
+        "operationId": "clover_clover-apis_clover-rest-api_get",
+        "summary": "Clover REST API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Clover publicly documents APIs and integrations for merchant-facing retail operations. Vendor documentation: https://docs.clover.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Clover REST API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/clover-android-payments-api": {
+      "get": {
+        "tags": [
+          "Merchant and POS operations"
+        ],
+        "operationId": "clover_clover-apis_clover-android-payments-api_get",
+        "summary": "Clover Android Payments API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Clover publicly documents APIs and integrations for merchant-facing retail operations. Vendor documentation: https://docs.clover.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Clover Android Payments API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/integrate-your-point-of-sale-pos": {
+      "get": {
+        "tags": [
+          "Merchant and POS operations"
+        ],
+        "operationId": "clover_clover-apis_integrate-your-point-of-sale-pos_get",
+        "summary": "Integrate your point of sale (POS)",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Clover publicly documents APIs and integrations for merchant-facing retail operations. Vendor documentation: https://docs.clover.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Integrate your point of sale (POS).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/clover-data-model": {
+      "get": {
+        "tags": [
+          "Merchant and POS operations"
+        ],
+        "operationId": "clover_clover-apis_clover-data-model_get",
+        "summary": "Clover data model",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Clover publicly documents APIs and integrations for merchant-facing retail operations. Vendor documentation: https://docs.clover.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Clover data model.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api-reference": {
+      "get": {
+        "tags": [
+          "Merchant and POS operations"
+        ],
+        "operationId": "clover_clover-apis_api-reference_get",
+        "summary": "API Reference",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Clover publicly documents APIs and integrations for merchant-facing retail operations. Vendor documentation: https://docs.clover.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for API Reference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/ecommerce-api": {
+      "get": {
+        "tags": [
+          "Ecommerce and application platform workflows"
+        ],
+        "operationId": "clover_clover-apis_ecommerce-api_get",
+        "summary": "Ecommerce API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also supports ecommerce and app-market integrations for merchant solutions. Vendor documentation: https://docs.clover.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Ecommerce API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/build-android-apps-for-clover-devices": {
+      "get": {
+        "tags": [
+          "Ecommerce and application platform workflows"
+        ],
+        "operationId": "clover_clover-apis_build-android-apps-for-clover-devices_get",
+        "summary": "Build Android apps for Clover devices",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also supports ecommerce and app-market integrations for merchant solutions. Vendor documentation: https://docs.clover.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Build Android apps for Clover devices.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/connect-on-the-clover-app-market": {
+      "get": {
+        "tags": [
+          "Ecommerce and application platform workflows"
+        ],
+        "operationId": "clover_clover-apis_connect-on-the-clover-app-market_get",
+        "summary": "Connect on the Clover App Market",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also supports ecommerce and app-market integrations for merchant solutions. Vendor documentation: https://docs.clover.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Connect on the Clover App Market.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/select-an-integration-type": {
+      "get": {
+        "tags": [
+          "Ecommerce and application platform workflows"
+        ],
+        "operationId": "clover_clover-apis_select-an-integration-type_get",
+        "summary": "Select an integration type",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also supports ecommerce and app-market integrations for merchant solutions. Vendor documentation: https://docs.clover.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Select an integration type.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/a-sandbox-account": {
+      "get": {
+        "tags": [
+          "Ecommerce and application platform workflows"
+        ],
+        "operationId": "clover_clover-apis_get-a-sandbox-account_get",
+        "summary": "Get a sandbox account",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also supports ecommerce and app-market integrations for merchant solutions. Vendor documentation: https://docs.clover.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get a sandbox account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/clover/clover-apis.json",
+    "vendor_documentation_url": "https://docs.clover.com/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

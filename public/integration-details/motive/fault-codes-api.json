@@ -6,7 +6,8 @@
   "product_family": "Motive Open API",
   "integration_type": "REST API",
   "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-  "spec_artifact_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/motive/fault-codes-api.openapi.json",
+  "vendor_spec_artifact_url": "",
   "detail_completeness": "researched",
   "data_coverage_summary": "The Fault Codes API is a diagnostic event surface for vehicle fault monitoring, service triage, and maintenance escalation workflows rather than a vehicle master-data API.",
   "data_domains": [
@@ -14,16 +15,16 @@
     "maintenance-events",
     "fleet-alerting"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "fault codes",
     "diagnostic events",
     "vehicle-linked faults"
   ],
   "buyer_guidance": "Use this API when the integration needs maintenance-triggering fault data, not when the primary requirement is syncing vehicle inventory or writing updates back into Motive.",
-  "overview": "Motive positions Fault Codes as a diagnostic and maintenance-monitoring API. The published scope is centered on vehicle-linked fault events and repair triage signals, which makes it a telemetry surface, not an asset master-data or mutation surface. Asset data is Not Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "overview": "Motive positions Fault Codes as a diagnostic and maintenance-monitoring API. The published scope is centered on vehicle-linked fault events and repair triage signals, which makes it a telemetry surface, not an asset master-data or mutation surface. Asset data is Unsupported. Telemetry data is Supported. Writeback is Unsupported.",
   "available_data": [
     {
       "category": "Vehicle diagnostics",
@@ -45,11 +46,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-    "spec_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/motive/fault-codes-api.openapi.json",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing vehicle fault code retrieval for maintenance monitoring and repair workflows, with no documented asset CRUD or mutation endpoints for this surface."
+    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing vehicle fault code retrieval for maintenance monitoring and repair workflows, with no documented asset CRUD or mutation endpoints for this surface.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/motive/fault-codes-api.openapi.json"
   },
   "detail_path": "/integration-details/motive/fault-codes-api.json",
   "vendor_domain": "gomotive.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=gomotive.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=gomotive.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/motive/fault-codes-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/motive/fault-codes-api.openapi.json"
 }

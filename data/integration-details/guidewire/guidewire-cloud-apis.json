@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "guidewire",
+  "vendor_name": "Guidewire",
+  "product_slug": "guidewire-cloud-apis",
+  "product_name": "Guidewire Cloud APIs",
+  "product_family": "Guidewire Cloud",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.guidewire.com/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Guidewire Cloud APIs has public documentation that indicates insurance policy and claims workflows across policies, claims, customers, billing records. Guidewire docs are public.",
+  "data_domains": [
+    "policies-and-claims",
+    "customers",
+    "insurance-workflows"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "policies",
+    "claims",
+    "customers",
+    "billing records",
+    "documents"
+  ],
+  "buyer_guidance": "Use this API family for digital insurance and claims-process integration rather than telemetry or asset workflows. Guidewire should be treated as a rest api surface for insurance policy and claims workflows.",
+  "overview": "Public documentation reviewed for Guidewire Cloud APIs indicates Guidewire docs are public. The documented surface aligns with insurance policy and claims workflows and covers policies, claims, customers, billing records. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Insurance policy and claims workflows",
+      "description": "The public documentation indicates insurance workflows for policies, claims, customers, billing, and related record exchange.",
+      "data_points": [
+        "Policy and coverage records",
+        "Claim and loss-event workflows",
+        "Customer, account, or billing state",
+        "Insurance document or attachment metadata"
+      ],
+      "relevant_operations": [
+        "list policy and claim records",
+        "read customer and billing data",
+        "create or update insurance workflows",
+        "synchronize document-linked state"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Guidewire Cloud APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as insurance policy and claims workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.guidewire.com/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Guidewire docs are public"
+  }
+}

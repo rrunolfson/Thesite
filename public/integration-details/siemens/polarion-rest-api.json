@@ -6,7 +6,8 @@
   "product_family": "Polarion",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/polarion/polarion-rest-apispec.json",
-  "spec_artifact_url": "https://developer.siemens.com/polarion/polarion-rest-apispec.json",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/polarion-rest-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/polarion/polarion-rest-apispec.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "The Polarion REST API gives external applications an integration layer with Polarion that gives you greater control over the information you use in both Polarion and the applications you use daily. Published API scope focuses on work-item, document, and project lifecycle records.",
   "data_domains": [
@@ -16,7 +17,7 @@
     "traceability"
   ],
   "asset_data_available": "Supported",
-  "telemetry_data_available": "Not Supported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "work items",
@@ -56,11 +57,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/polarion/overview.html",
-    "spec_url": "https://developer.siemens.com/polarion/polarion-rest-apispec.json",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/polarion-rest-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Polarion REST API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Polarion REST API.",
+    "vendor_spec_url": "https://developer.siemens.com/polarion/polarion-rest-apispec.json",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/polarion-rest-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/polarion-rest-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/polarion-rest-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/polarion-rest-api.openapi.json"
 }

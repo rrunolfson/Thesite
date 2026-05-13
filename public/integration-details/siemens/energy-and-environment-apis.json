@@ -6,7 +6,8 @@
   "product_family": "Enlighted",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/enlighted-apis/energy-environment/energy-environment.openapi.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/enlighted-apis/energy-environment/energy-environment.openapi.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/energy-and-environment-apis.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/enlighted-apis/energy-environment/energy-environment.openapi.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. Published API scope is centered on energy and environmental measurements.",
   "data_domains": [
@@ -15,14 +16,14 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "energy records",
     "environmental readings",
     "facility context"
   ],
   "buyer_guidance": "Use this API when the integration needs facility energy and environment telemetry from Enlighted for reporting or optimization.",
-  "overview": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. The API family is framed around read access to energy and environmental metrics rather than actuation. Asset data is Supported. Telemetry data is Supported. Writeback is Un-Supported.",
+  "overview": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. The API family is framed around read access to energy and environmental metrics rather than actuation. Asset data is Supported. Telemetry data is Supported. Writeback is Unsupported.",
   "available_data": [
     {
       "category": "Facility telemetry",
@@ -51,11 +52,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/enlighted-apis/energy-environment/overview.html",
-    "spec_url": "https://developer.siemens.com/enlighted-apis/energy-environment/energy-environment.openapi.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/energy-and-environment-apis.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Energy and Environment APIs."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Energy and Environment APIs.",
+    "vendor_spec_url": "https://developer.siemens.com/enlighted-apis/energy-environment/energy-environment.openapi.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/energy-and-environment-apis.openapi.json"
   },
   "detail_path": "/integration-details/siemens/energy-and-environment-apis.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/energy-and-environment-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/energy-and-environment-apis.openapi.json"
 }

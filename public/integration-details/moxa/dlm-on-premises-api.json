@@ -6,7 +6,8 @@
   "product_family": "ThingsPro DLM",
   "integration_type": "REST API",
   "integration_api_url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
-  "spec_artifact_url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/moxa/dlm-on-premises-api.openapi.json",
+  "vendor_spec_artifact_url": "",
   "detail_completeness": "researched",
   "data_coverage_summary": "Moxa DLM on-premises APIs expose managed device inventory, device and network status, logs, and job execution workflows including reboot, firmware, package, and script actions.",
   "data_domains": [
@@ -49,11 +50,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
-    "spec_url": "https://thingspro-cloud-dev-0-website-docs-content.s3.ap-northeast-1.amazonaws.com/openapi-spec/public/api-docs_v1.1.0.html",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/moxa/dlm-on-premises-api.openapi.json",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "Classification is based on the published Moxa DLM API docs describing device records, status and log retrieval, plus job and configuration endpoints for reboot, firmware upgrade, package install, and script execution."
+    "evidence_notes": "Classification is based on the published Moxa DLM API docs describing device records, status and log retrieval, plus job and configuration endpoints for reboot, firmware upgrade, package install, and script execution.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/moxa/dlm-on-premises-api.openapi.json"
   },
   "detail_path": "/integration-details/moxa/dlm-on-premises-api.json",
   "vendor_domain": "amazonaws.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=amazonaws.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=amazonaws.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/moxa/dlm-on-premises-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/moxa/dlm-on-premises-api.openapi.json"
 }

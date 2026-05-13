@@ -6,7 +6,8 @@
   "product_family": "Motive Open API",
   "integration_type": "REST API",
   "integration_api_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-  "spec_artifact_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/motive/hos-logs-api.openapi.json",
+  "vendor_spec_artifact_url": "",
   "detail_completeness": "researched",
   "data_coverage_summary": "The HOS Logs API is dedicated to driver duty-status and compliance log retrieval for regulatory and operational workflow integration.",
   "data_domains": [
@@ -14,16 +15,16 @@
     "hos-logs",
     "regulatory-events"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "HOS logs",
     "driver duty status",
     "compliance records"
   ],
   "buyer_guidance": "Use HOS Logs when the integration scope is regulatory compliance, dispatch context, or downstream exception handling tied to driver duty state.",
-  "overview": "The HOS Logs API is a telemetry surface for duty-status and compliance records. It does not expose vehicle or equipment inventory as the primary payload, and the documented use is read-focused rather than mutation-oriented. Asset data is Not Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "overview": "The HOS Logs API is a telemetry surface for duty-status and compliance records. It does not expose vehicle or equipment inventory as the primary payload, and the documented use is read-focused rather than mutation-oriented. Asset data is Unsupported. Telemetry data is Supported. Writeback is Unsupported.",
   "available_data": [
     {
       "category": "Compliance telemetry",
@@ -45,11 +46,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
-    "spec_url": "https://developer.gomotive.com/reference/getting-started-with-your-api",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/motive/hos-logs-api.openapi.json",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing HOS APIs for ELD compliance and driver duty-status logs, with no documented asset CRUD or writeback actions for this surface."
+    "evidence_notes": "Classification is based on the Motive Open API reference and the captured product summary describing HOS APIs for ELD compliance and driver duty-status logs, with no documented asset CRUD or writeback actions for this surface.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/motive/hos-logs-api.openapi.json"
   },
   "detail_path": "/integration-details/motive/hos-logs-api.json",
   "vendor_domain": "gomotive.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=gomotive.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=gomotive.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/motive/hos-logs-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/motive/hos-logs-api.openapi.json"
 }

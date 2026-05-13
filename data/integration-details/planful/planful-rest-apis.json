@@ -1,0 +1,80 @@
+{
+  "vendor_slug": "planful",
+  "vendor_name": "Planful",
+  "product_slug": "planful-rest-apis",
+  "product_name": "Planful REST APIs",
+  "product_family": "Planful",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developers.planful.com/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Planful publishes public REST API documentation for structured planning and data-load workflows, including data load rule retrieval, data transfer, file transfer, and callback-enabled execution tracking.",
+  "data_domains": [
+    "finance-and-accounting",
+    "planning-and-modeling",
+    "data-load-and-writeback",
+    "workforce-planning"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "data load rules",
+    "GL and transaction rules",
+    "segment and entity hierarchies",
+    "workforce planning loads",
+    "execution and task tracking",
+    "writeback DLRs"
+  ],
+  "buyer_guidance": "Use Planful REST APIs for planning-model data movement, rule discovery, and writeback-oriented structured planning integrations. This is a planning and finance API, not an asset or telemetry platform.",
+  "overview": "Planful's public API site documents REST APIs for structured planning, dynamic planning, platform integrations, and data-load workflows. The public Data Load API examples show authenticated retrieval of data load rules and list rule types such as Data, Segment Hierarchies, Entity Hierarchies, Workforce Planning, External Source Model, and Writeback DLR. The public examples and collection references also describe transfer flows, file-based transfer, execution tracking, and callback-based processing for loading data into Planful models. This is a write-capable planning integration surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Rule discovery and planning-model data movement",
+      "description": "Planful documents REST calls used to discover load rules and push planning data into the platform.",
+      "data_points": [
+        "Data load rules and identifiers",
+        "GL and transaction-oriented load rules",
+        "Segment and entity hierarchy loads",
+        "Project, product, customer, and trial balance data loads",
+        "Workforce planning and external source model rule types"
+      ],
+      "relevant_operations": [
+        "GET /financemodel/data/rules",
+        "GET /financemodel/data/rules/gl",
+        "GET /financemodel/data/rules/Transactions",
+        "POST /financemodel/data/transfer",
+        "POST /financemodel/data/transferfile"
+      ]
+    },
+    {
+      "category": "Execution tracking and writeback-oriented workflows",
+      "description": "The public examples expose operational metadata that supports monitored loading and writeback patterns.",
+      "data_points": [
+        "Execution IDs and task IDs for long-running transfers",
+        "Chunk and record counters for load monitoring",
+        "Callback options for asynchronous transfer handling",
+        "Writeback DLR presence in accessible rule catalogs",
+        "Basic-auth access key model for API automation"
+      ],
+      "relevant_operations": [
+        "ExecutionId tracking",
+        "TaskId tracking",
+        "ChunksReceived monitoring",
+        "RecordsReceived monitoring",
+        "callbackOptions on transfer requests"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Planful's public docs are centered on Postman-style REST usage and Access ID or Access Key authentication, so integrations should account for credential rotation and environment-specific variables rather than assuming OAuth.",
+    "The strongest public workflows are data-load and planning-model transfer patterns, so this row should be framed as a finance or planning data-movement surface rather than a general-purpose operational API.",
+    "Public collection pages are available, but no exact spec URL satisfying the current machine-readable validator was confirmed."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developers.planful.com/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Planful's public API site documents structured planning and data-load APIs, including GET /financemodel/data/rules and related rule-retrieval flows, and shows rule types such as Data, Segment Hierarchies, Entity Hierarchies, Workforce Planning, External Source Model, and Writeback DLR along with transfer and execution-tracking concepts."
+  }
+}

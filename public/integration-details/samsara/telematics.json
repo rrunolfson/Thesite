@@ -6,7 +6,8 @@
   "product_family": "Samsara Platform",
   "integration_type": "REST API",
   "integration_api_url": "https://developers.samsara.com/docs/telematics",
-  "spec_artifact_url": "https://developers.samsara.com/docs/telematics",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/samsara/telematics.openapi.json",
+  "vendor_spec_artifact_url": "https://developers.samsara.com/openapi/samsara-api.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "Samsara Telematics exposes per-vehicle snapshot, history, and feed access for GPS, engine state, odometer, fault-code, fuel, and auxiliary-input readings, making it the primary read surface for fleet location and onboard diagnostic telemetry.",
   "data_domains": [
@@ -18,7 +19,7 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "vehicles",
     "vehicle stats feeds",
@@ -85,11 +86,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developers.samsara.com/docs/telematics",
-    "spec_url": "https://developers.samsara.com/docs/telematics",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/samsara/telematics.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Backed by the Telematics guide sections documenting GET /fleet/vehicles/stats, GET /fleet/vehicles/stats/history, GET /fleet/vehicles/stats/feed, plus the published diagnostic types table for GPS, engine state, odometer, and fault-code reads."
+    "evidence_notes": "Backed by the Telematics guide sections documenting GET /fleet/vehicles/stats, GET /fleet/vehicles/stats/history, GET /fleet/vehicles/stats/feed, plus the published diagnostic types table for GPS, engine state, odometer, and fault-code reads.",
+    "vendor_spec_url": "https://developers.samsara.com/openapi/samsara-api.json",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/samsara/telematics.openapi.json"
   },
   "detail_path": "/integration-details/samsara/telematics.json",
   "vendor_domain": "samsara.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=samsara.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=samsara.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/samsara/telematics.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/samsara/telematics.openapi.json"
 }

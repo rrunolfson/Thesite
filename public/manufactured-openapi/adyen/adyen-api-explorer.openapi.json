@@ -1,0 +1,689 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Adyen API Explorer Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Adyen publishes a public API Explorer and OpenAPI artifacts for payment processing, recurring and token workflows, terminal management, payouts, transfers, and balance-platform operations.",
+    "description": "Manufactured OpenAPI artifact for Adyen API Explorer. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Adyen's public API Explorer and openapi repository document a broad payments platform covering online checkout, recurring and tokenized payments, payouts, terminal APIs, and balance-platform operations. Public docs and specs cover payment authorization and capture flows, webhooks, BIN lookups, stores, terminal orders and assignment, terminal settings, account holders, balance accounts, and transfers. This is a strong write-capable financial workflow surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://docs.adyen.com/api-explorer/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Payment acceptance and merchant workflows",
+      "description": "Manufactured operations grouped under Payment acceptance and merchant workflows."
+    },
+    {
+      "name": "Terminal and balance-platform operations",
+      "description": "Manufactured operations grouped under Terminal and balance-platform operations."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "adyen_adyen-api-explorer_integrationProfile",
+        "summary": "Get manufactured profile for Adyen API Explorer",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/paymentservice-v50": {
+      "get": {
+        "tags": [
+          "Payment acceptance and merchant workflows"
+        ],
+        "operationId": "adyen_adyen-api-explorer_paymentservice-v50_get",
+        "summary": "PaymentService-v50",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Adyen exposes the core payment and merchant operations needed to accept, manage, and reconcile payments. Vendor documentation: https://docs.adyen.com/api-explorer/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PaymentService-v50.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/checkout-payments": {
+      "get": {
+        "tags": [
+          "Payment acceptance and merchant workflows"
+        ],
+        "operationId": "adyen_adyen-api-explorer_checkout-payments_get",
+        "summary": "Checkout payments",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Adyen exposes the core payment and merchant operations needed to accept, manage, and reconcile payments. Vendor documentation: https://docs.adyen.com/api-explorer/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Checkout payments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/recurring-token-management": {
+      "get": {
+        "tags": [
+          "Payment acceptance and merchant workflows"
+        ],
+        "operationId": "adyen_adyen-api-explorer_recurring-token-management_get",
+        "summary": "Recurring token management",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Adyen exposes the core payment and merchant operations needed to accept, manage, and reconcile payments. Vendor documentation: https://docs.adyen.com/api-explorer/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Recurring token management.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payouts": {
+      "get": {
+        "tags": [
+          "Payment acceptance and merchant workflows"
+        ],
+        "operationId": "adyen_adyen-api-explorer_payouts_get",
+        "summary": "Payouts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Adyen exposes the core payment and merchant operations needed to accept, manage, and reconcile payments. Vendor documentation: https://docs.adyen.com/api-explorer/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payouts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/bin-lookup": {
+      "get": {
+        "tags": [
+          "Payment acceptance and merchant workflows"
+        ],
+        "operationId": "adyen_adyen-api-explorer_bin-lookup_get",
+        "summary": "BIN lookup",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Adyen exposes the core payment and merchant operations needed to accept, manage, and reconcile payments. Vendor documentation: https://docs.adyen.com/api-explorer/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for BIN lookup.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/stores-creation": {
+      "get": {
+        "tags": [
+          "Payment acceptance and merchant workflows"
+        ],
+        "operationId": "adyen_adyen-api-explorer_stores-creation_get",
+        "summary": "Stores creation",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Adyen exposes the core payment and merchant operations needed to accept, manage, and reconcile payments. Vendor documentation: https://docs.adyen.com/api-explorer/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Stores creation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/terminal-orders": {
+      "get": {
+        "tags": [
+          "Terminal and balance-platform operations"
+        ],
+        "operationId": "adyen_adyen-api-explorer_terminal-orders_get",
+        "summary": "Terminal orders",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public explorer also covers device-estate administration and multi-account fund movement workflows. Vendor documentation: https://docs.adyen.com/api-explorer/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Terminal orders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/terminal-reassignment": {
+      "get": {
+        "tags": [
+          "Terminal and balance-platform operations"
+        ],
+        "operationId": "adyen_adyen-api-explorer_terminal-reassignment_get",
+        "summary": "Terminal reassignment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public explorer also covers device-estate administration and multi-account fund movement workflows. Vendor documentation: https://docs.adyen.com/api-explorer/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Terminal reassignment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/terminal-settings-updates": {
+      "put": {
+        "tags": [
+          "Terminal and balance-platform operations"
+        ],
+        "operationId": "adyen_adyen-api-explorer_terminal-settings-updates_put",
+        "summary": "Terminal settings updates",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public explorer also covers device-estate administration and multi-account fund movement workflows. Vendor documentation: https://docs.adyen.com/api-explorer/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Terminal settings updates.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Terminal settings updates.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/scheduled-terminal-actions": {
+      "get": {
+        "tags": [
+          "Terminal and balance-platform operations"
+        ],
+        "operationId": "adyen_adyen-api-explorer_scheduled-terminal-actions_get",
+        "summary": "Scheduled terminal actions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public explorer also covers device-estate administration and multi-account fund movement workflows. Vendor documentation: https://docs.adyen.com/api-explorer/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Scheduled terminal actions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/account-holders": {
+      "get": {
+        "tags": [
+          "Terminal and balance-platform operations"
+        ],
+        "operationId": "adyen_adyen-api-explorer_account-holders_get",
+        "summary": "Account holders",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public explorer also covers device-estate administration and multi-account fund movement workflows. Vendor documentation: https://docs.adyen.com/api-explorer/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Account holders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/balance-accounts": {
+      "get": {
+        "tags": [
+          "Terminal and balance-platform operations"
+        ],
+        "operationId": "adyen_adyen-api-explorer_balance-accounts_get",
+        "summary": "Balance accounts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public explorer also covers device-estate administration and multi-account fund movement workflows. Vendor documentation: https://docs.adyen.com/api-explorer/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Balance accounts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/transfers": {
+      "get": {
+        "tags": [
+          "Terminal and balance-platform operations"
+        ],
+        "operationId": "adyen_adyen-api-explorer_transfers_get",
+        "summary": "Transfers",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public explorer also covers device-estate administration and multi-account fund movement workflows. Vendor documentation: https://docs.adyen.com/api-explorer/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Transfers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/adyen/adyen-api-explorer.json",
+    "vendor_documentation_url": "https://docs.adyen.com/api-explorer/",
+    "vendor_spec_artifact_url": "https://raw.githubusercontent.com/Adyen/adyen-openapi/main/json/PaymentService-v50.json",
+    "reviewed_at": "2026-05-13"
+  }
+}

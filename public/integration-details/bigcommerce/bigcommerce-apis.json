@@ -1,0 +1,88 @@
+{
+  "vendor_slug": "bigcommerce",
+  "vendor_name": "BigCommerce",
+  "product_slug": "bigcommerce-apis",
+  "product_name": "BigCommerce APIs",
+  "product_family": "BigCommerce",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.bigcommerce.com/developer/api-reference/about-our-apis",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/bigcommerce/bigcommerce-apis.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "BigCommerce publicly documents REST management and storefront APIs, GraphQL storefront and admin APIs, customer login and current-customer APIs, and payments APIs for store, checkout, and authentication workflows.",
+  "data_domains": [
+    "catalog-and-store-management",
+    "customers-and-authentication",
+    "carts-and-checkout",
+    "orders-and-payments"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "products and catalog",
+    "customers and sessions",
+    "carts and checkouts",
+    "orders",
+    "coupons",
+    "payments"
+  ],
+  "buyer_guidance": "Use BigCommerce APIs for store administration, headless storefronts, customer authentication, cart and checkout orchestration, and payment workflows. This is a commerce platform, not an asset or telemetry platform.",
+  "overview": "BigCommerce's public API overview describes several public API families: REST Store Management APIs, REST Storefront API, GraphQL Storefront API, Customer Login API, Current Customer API, GraphQL Admin API, GraphQL Account API, and Payments API. The public examples explicitly cover adding and updating products, changing order status, creating coupons, managing customer accounts, updating billing addresses at checkout, clearing carts, querying products and categories, authenticating storefront customers, and integrating with SSO providers. This is a write-capable ecommerce platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Store management and commerce operations",
+      "description": "BigCommerce's management APIs support common administrative commerce workflows.",
+      "data_points": [
+        "Products and store catalog data",
+        "Orders and order status changes",
+        "Coupons and promotions",
+        "Customer account administration",
+        "Server-side payment and app integrations"
+      ],
+      "relevant_operations": [
+        "REST Store Management APIs",
+        "GraphQL Admin API",
+        "Payments API",
+        "Create coupon",
+        "Update order status"
+      ]
+    },
+    {
+      "category": "Storefront, cart, and authentication flows",
+      "description": "The public storefront APIs cover buyer-facing cart, checkout, and login experiences.",
+      "data_points": [
+        "Client-side carts and checkout data",
+        "Frontend product, category, and brand queries",
+        "Customer login and current-customer identity",
+        "Headless storefront operations",
+        "SSO-linked customer sign-in"
+      ],
+      "relevant_operations": [
+        "REST Storefront API",
+        "GraphQL Storefront API",
+        "Customer Login API",
+        "Current Customer API"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "BigCommerce distinguishes server and storefront execution contexts across its APIs, so environment and auth expectations should be captured explicitly for each downstream workflow.",
+    "Public docs are strong on API families and use cases, but no exact machine-readable spec artifact was confirmed for the aggregate BigCommerce row during this pass.",
+    "Headless storefront, storefront-session, and store-admin workflows should be modeled separately because they expose different identity and permission boundaries."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.bigcommerce.com/developer/api-reference/about-our-apis",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/bigcommerce/bigcommerce-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "BigCommerce's public API overview lists REST Store Management APIs, REST Storefront API, GraphQL Storefront API, Customer Login API, Current Customer API, GraphQL Admin API, GraphQL Account API, and Payments API, with example workflows for products, orders, coupons, customer accounts, carts, checkout, and customer authentication.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/bigcommerce/bigcommerce-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/bigcommerce/bigcommerce-apis.json",
+  "vendor_domain": "bigcommerce.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=bigcommerce.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/bigcommerce/bigcommerce-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/bigcommerce/bigcommerce-apis.openapi.json"
+}

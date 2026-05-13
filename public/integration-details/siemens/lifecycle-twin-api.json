@@ -6,7 +6,8 @@
   "product_family": "Building X",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/ecodomus-api-reference.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/ecodomus-api-reference.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/lifecycle-twin-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/ecodomus-api-reference.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "RESTful API for creating and managing various objects in the Lifecycle Twin. Published API scope focuses on twin objects, attached records, and lifecycle workflow artifacts.",
   "data_domains": [
@@ -16,7 +17,7 @@
     "inspections"
   ],
   "asset_data_available": "Supported",
-  "telemetry_data_available": "Not Supported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "sites",
@@ -58,11 +59,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/overview.html",
-    "spec_url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/ecodomus-api-reference.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/lifecycle-twin-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Lifecycle Twin API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Lifecycle Twin API.",
+    "vendor_spec_url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/ecodomus-api-reference.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/lifecycle-twin-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/lifecycle-twin-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/lifecycle-twin-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/lifecycle-twin-api.openapi.json"
 }

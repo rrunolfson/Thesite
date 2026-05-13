@@ -1,0 +1,1501 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "TMS Integrations Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-18",
+    "summary": "Samsara TMS Integrations is the broadest transportation integration pattern in the catalog, covering two-way sync for addresses, drivers, assets, routes, messages, and forms, plus one-way GPS, telematics, and compliance data for execution visibility.",
+    "description": "Manufactured OpenAPI artifact for TMS Integrations. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. The TMS integration guide publishes a concrete integration-point matrix. It documents two-way sync for addresses, drivers, vehicles, trailers, routes, messages, and forms through GET/POST/PATCH/DELETE style APIs, while also documenting one-way reads for GPS/telematics and compliance hours-of-service data. It further recommends combining polling, webhooks, and Kafka depending on entity type and update frequency, making this the most architecturally complete Samsara product record in the set.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developers.samsara.com/docs/tms-integration-guide"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Two-way operational master data",
+      "description": "Manufactured operations grouped under Two-way operational master data."
+    },
+    {
+      "name": "One-way operational telemetry",
+      "description": "Manufactured operations grouped under One-way operational telemetry."
+    },
+    {
+      "name": "Event-driven synchronization support",
+      "description": "Manufactured operations grouped under Event-driven synchronization support."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "samsara_tms-integrations_integrationProfile",
+        "summary": "Get manufactured profile for TMS Integrations",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/addresses": {
+      "get": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_get-addresses_get",
+        "summary": "GET /addresses",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /addresses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_post-addresses_post",
+        "summary": "POST /addresses",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /addresses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /addresses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/:id": {
+      "patch": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_patch-addresses-id_patch",
+        "summary": "PATCH /addresses/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /addresses/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /addresses/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_delete-addresses-id_delete",
+        "summary": "DELETE /addresses/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DELETE /addresses/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for DELETE /addresses/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fleet/drivers": {
+      "get": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_get-fleet-drivers_get",
+        "summary": "GET /fleet/drivers",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /fleet/drivers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_post-fleet-drivers_post",
+        "summary": "POST /fleet/drivers",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /fleet/drivers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /fleet/drivers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets": {
+      "get": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_get-assets_get",
+        "summary": "GET /assets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_post-assets_post",
+        "summary": "POST /assets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/:id": {
+      "patch": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_patch-assets-id_patch",
+        "summary": "PATCH /assets/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /assets/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /assets/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fleet/routes": {
+      "get": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_get-fleet-routes_get",
+        "summary": "GET /fleet/routes",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /fleet/routes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_post-fleet-routes_post",
+        "summary": "POST /fleet/routes",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /fleet/routes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /fleet/routes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fleet/routes/:id": {
+      "patch": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_patch-fleet-routes-id_patch",
+        "summary": "PATCH /fleet/routes/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /fleet/routes/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /fleet/routes/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_delete-fleet-routes-id_delete",
+        "summary": "DELETE /fleet/routes/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DELETE /fleet/routes/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for DELETE /fleet/routes/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/fleet/messages": {
+      "get": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_get-v1-fleet-messages_get",
+        "summary": "GET /v1/fleet/messages",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v1/fleet/messages.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_post-v1-fleet-messages_post",
+        "summary": "POST /v1/fleet/messages",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/fleet/messages.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/fleet/messages.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/form-templates": {
+      "get": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_get-form-templates_get",
+        "summary": "GET /form-templates",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /form-templates.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/form-submissions": {
+      "get": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_get-form-submissions_get",
+        "summary": "GET /form-submissions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /form-submissions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_post-form-submissions_post",
+        "summary": "POST /form-submissions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /form-submissions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /form-submissions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/form-submissions/:id": {
+      "patch": {
+        "tags": [
+          "Two-way operational master data"
+        ],
+        "operationId": "samsara_tms-integrations_patch-form-submissions-id_patch",
+        "summary": "PATCH /form-submissions/:id",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's sync matrix explicitly marks core dispatch entities as two-way. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /form-submissions/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /form-submissions/:id.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/location-and-speed/stream": {
+      "get": {
+        "tags": [
+          "One-way operational telemetry"
+        ],
+        "operationId": "samsara_tms-integrations_get-assets-location-and-speed-stream_get",
+        "summary": "GET /assets/location-and-speed/stream",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The matrix distinguishes live execution data that Samsara emits outward rather than accepts as writes. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /assets/location-and-speed/stream.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/fleet/vehicle/stats": {
+      "get": {
+        "tags": [
+          "One-way operational telemetry"
+        ],
+        "operationId": "samsara_tms-integrations_get-fleet-vehicle-stats_get",
+        "summary": "GET /fleet/vehicle/stats",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The matrix distinguishes live execution data that Samsara emits outward rather than accepts as writes. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /fleet/vehicle/stats.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/fleet/hos/clocks": {
+      "get": {
+        "tags": [
+          "One-way operational telemetry"
+        ],
+        "operationId": "samsara_tms-integrations_get-fleet-hos-clocks_get",
+        "summary": "GET /fleet/hos/clocks",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The matrix distinguishes live execution data that Samsara emits outward rather than accepts as writes. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /fleet/hos/clocks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/fleet/hos/logs": {
+      "get": {
+        "tags": [
+          "One-way operational telemetry"
+        ],
+        "operationId": "samsara_tms-integrations_get-fleet-hos-logs_get",
+        "summary": "GET /fleet/hos/logs",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The matrix distinguishes live execution data that Samsara emits outward rather than accepts as writes. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /fleet/hos/logs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/webhook-events-addresscreated-addressupdated-addressdeleted": {
+      "post": {
+        "tags": [
+          "Event-driven synchronization support"
+        ],
+        "operationId": "samsara_tms-integrations_webhook-events-addresscreated-addressupdated-addressdeleted_post",
+        "summary": "Webhook events: AddressCreated, AddressUpdated, AddressDeleted",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide documents when to pair APIs with webhooks or Kafka for better freshness. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Webhook events: AddressCreated, AddressUpdated, AddressDeleted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Webhook events: AddressCreated, AddressUpdated, AddressDeleted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/webhook-events-drivercreated-driverupdated": {
+      "post": {
+        "tags": [
+          "Event-driven synchronization support"
+        ],
+        "operationId": "samsara_tms-integrations_webhook-events-drivercreated-driverupdated_post",
+        "summary": "Webhook events: DriverCreated, DriverUpdated",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide documents when to pair APIs with webhooks or Kafka for better freshness. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Webhook events: DriverCreated, DriverUpdated.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Webhook events: DriverCreated, DriverUpdated.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/webhook-events-routestoparrival-routestopdeparture": {
+      "get": {
+        "tags": [
+          "Event-driven synchronization support"
+        ],
+        "operationId": "samsara_tms-integrations_webhook-events-routestoparrival-routestopdeparture_get",
+        "summary": "Webhook events: RouteStopArrival, RouteStopDeparture",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide documents when to pair APIs with webhooks or Kafka for better freshness. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Webhook events: RouteStopArrival, RouteStopDeparture.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/webhook-events-formsubmitted": {
+      "post": {
+        "tags": [
+          "Event-driven synchronization support"
+        ],
+        "operationId": "samsara_tms-integrations_webhook-events-formsubmitted_post",
+        "summary": "Webhook events: FormSubmitted",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide documents when to pair APIs with webhooks or Kafka for better freshness. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Webhook events: FormSubmitted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Webhook events: FormSubmitted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/kafka-messages-gps-and-speed": {
+      "get": {
+        "tags": [
+          "Event-driven synchronization support"
+        ],
+        "operationId": "samsara_tms-integrations_kafka-messages-gps-and-speed_get",
+        "summary": "Kafka messages: GPS and Speed",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide documents when to pair APIs with webhooks or Kafka for better freshness. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Kafka messages: GPS and Speed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/kafka-messages-hos-clocks": {
+      "get": {
+        "tags": [
+          "Event-driven synchronization support"
+        ],
+        "operationId": "samsara_tms-integrations_kafka-messages-hos-clocks_get",
+        "summary": "Kafka messages: HOS Clocks",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide documents when to pair APIs with webhooks or Kafka for better freshness. Vendor documentation: https://developers.samsara.com/docs/tms-integration-guide",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Kafka messages: HOS Clocks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/samsara/tms-integrations.json",
+    "vendor_documentation_url": "https://developers.samsara.com/docs/tms-integration-guide",
+    "vendor_spec_artifact_url": "https://developers.samsara.com/openapi/samsara-api.json",
+    "reviewed_at": "2026-04-18"
+  }
+}

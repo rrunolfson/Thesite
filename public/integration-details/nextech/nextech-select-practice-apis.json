@@ -1,0 +1,98 @@
+{
+  "vendor_slug": "nextech",
+  "vendor_name": "Nextech",
+  "product_slug": "nextech-select-practice-apis",
+  "product_name": "Nextech Select Practice APIs",
+  "product_family": "Nextech Select",
+  "integration_type": "REST API",
+  "integration_api_url": "https://nextechsystems.github.io/selectapidocspub/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/nextech/nextech-select-practice-apis.openapi.json",
+  "vendor_spec_artifact_url": "https://nextechsystems.github.io/selectapidocspub/nextech-partner-api-r4.openapi.json",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Nextech Select publishes FHIR-based patient, appointment, scheduling, financial, document, device, and recall APIs, with direct OpenAPI downloads for both STU3 and R4 variants.",
+  "data_domains": [
+    "patient-master-data",
+    "appointments-and-scheduling",
+    "clinical-and-document-records",
+    "billing-and-payments"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "patients",
+    "appointments and slots",
+    "document references",
+    "devices",
+    "claims and payment reconciliations",
+    "patient recalls"
+  ],
+  "buyer_guidance": "Use Nextech Select Practice APIs for patient, appointment, document, and revenue-cycle integrations in healthcare workflows. This is a transactional clinical-practice API, not an asset or telemetry platform.",
+  "overview": "Nextech documents its Select APIs as a RESTful implementation based on the FHIR standard, with supported functionality for patient demographics, clinical information, patient creation and updates, payment posting, appointment information, appointment confirmation, appointment booking, slot information, non-clinical patient notes, and patient-document attachment. The public docs and downloadable R4 OpenAPI file also cover resources such as Encounter, Device, DiagnosticReport, DocumentReference, Claim, PaymentReconciliation, Location, Practitioner, Slot, and patient-recall. This is a robust write-capable healthcare integration surface, but it is not an asset or telemetry API. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Patient, scheduling, and practice master data",
+      "description": "The public R4 and narrative docs cover the operational data needed to identify patients, providers, locations, appointments, and scheduling opportunities.",
+      "data_points": [
+        "Patient demographics and contact details",
+        "Appointments, appointment status, appointment types, and appointment purposes",
+        "Available scheduling slots",
+        "Practitioner and location records",
+        "Patient recalls and recall status"
+      ],
+      "relevant_operations": [
+        "GET /Patient",
+        "POST /Patient",
+        "PUT /Patient/{identifier}",
+        "GET /Appointment",
+        "POST /Appointment/",
+        "PUT /Appointment/{identifier}",
+        "GET /Slot",
+        "GET /Location",
+        "GET /Practitioner",
+        "GET /patient-recall"
+      ]
+    },
+    {
+      "category": "Clinical documents and financial workflows",
+      "description": "Nextech also exposes clinical resource retrieval and transactional write surfaces for documents, notes, claims, and payments.",
+      "data_points": [
+        "FHIR clinical resources such as Encounter, Condition, Observation, Device, Goal, and Immunization",
+        "Attached clinical and non-clinical documents",
+        "Patient notes and composition records",
+        "Claims, account balances, coverage, and payment reconciliation data",
+        "Bulk export support in the R4 partner surface"
+      ],
+      "relevant_operations": [
+        "GET /Patient/{patientUid}/Device",
+        "GET /Patient/{patientUid}/Encounter",
+        "GET /Patient/{patientUid}/Observation",
+        "POST /Patient/{patientUid}/DocumentReference",
+        "POST /Patient/{patientUid}/Composition",
+        "POST /Patient/{patientUid}/PaymentReconciliation",
+        "GET /Claim",
+        "GET /Coverage",
+        "GET /$export"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Nextech explicitly recommends on-demand usage over broad synchronization and advises use of _lastUpdated filters plus off-hours sync patterns where bulk retrieval is necessary.",
+    "The platform enforces rate limits per user and endpoint and requires both OAuth bearer tokens and an nx-practice-id header, so multitenant ingest pipelines need tenant-scoped credential and header management.",
+    "This row has exact public spec evidence because Nextech publishes direct STU3 and R4 OpenAPI downloads, making it easier to validate payloads and import the API into downstream tooling than rows that only provide narrative docs."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://nextechsystems.github.io/selectapidocspub/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/nextech/nextech-select-practice-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Nextech's public docs describe supported functionality for patient demographics, clinical information, appointment booking and confirmation, payment posting, document attachment, and scheduling. The site also publishes direct STU3 and R4 OpenAPI downloads and documents specific Patient, Appointment, Slot, DocumentReference, Device, Claim, and PaymentReconciliation operations.",
+    "vendor_spec_url": "https://nextechsystems.github.io/selectapidocspub/nextech-partner-api-r4.openapi.json",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/nextech/nextech-select-practice-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/nextech/nextech-select-practice-apis.json",
+  "vendor_domain": "nextech.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=nextech.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/nextech/nextech-select-practice-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/nextech/nextech-select-practice-apis.openapi.json"
+}

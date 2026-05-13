@@ -6,7 +6,8 @@
   "product_family": "Electrification X",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/electrification-x/api_specs/openapi-v1_0_0.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/electrification-x/api_specs/openapi-v1_0_0.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/electrification-x-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/electrification-x/api_specs/openapi-v1_0_0.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "Electrification X® combines the real and digital worlds in the Xcelerator IoT Software as a Service (SaaS) offering for Electrification & Automation to tackle the challenges of energy transition. Published API scope combines electrification asset context, operational measurements, and platform-side updates.",
   "data_domains": [
@@ -54,11 +55,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/electrification-x/api_specs/api_reference.html",
-    "spec_url": "https://developer.siemens.com/electrification-x/api_specs/openapi-v1_0_0.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/electrification-x-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Electrification X API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Electrification X API.",
+    "vendor_spec_url": "https://developer.siemens.com/electrification-x/api_specs/openapi-v1_0_0.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/electrification-x-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/electrification-x-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/electrification-x-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/electrification-x-api.openapi.json"
 }

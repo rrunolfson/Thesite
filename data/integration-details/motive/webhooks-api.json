@@ -14,16 +14,16 @@
     "operational-notifications",
     "webhook-subscriptions"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "webhook subscriptions",
     "operational event payloads",
     "outbound notifications"
   ],
   "buyer_guidance": "Use Webhooks API when the requirement is pushing Motive event payloads into downstream systems with low latency, not querying asset inventory or writing actions back to Motive.",
-  "overview": "Motive's Webhooks API is an outbound event-delivery mechanism. It can deliver operational event payloads into another platform, which makes telemetry delivery Supported, but it does not expose asset master data and it is not a writeback path into Motive. Asset data is Not Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "overview": "Motive's Webhooks API is an outbound event-delivery mechanism. It can deliver operational event payloads into another platform, which makes telemetry delivery Supported, but it does not expose asset master data and it is not a writeback path into Motive. Asset data is Unsupported. Telemetry data is Supported. Writeback is Unsupported.",
   "available_data": [
     {
       "category": "Outbound operational events",

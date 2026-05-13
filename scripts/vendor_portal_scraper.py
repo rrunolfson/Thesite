@@ -50,6 +50,78 @@ SHEETS_SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive",
 ]
+DEFAULT_SPEC_ARTIFACT_POLICY = {
+    "exact_artifact_extensions": [".json", ".yaml", ".yml"],
+    "endpoint_hint_patterns": ["openapi", "swagger", "asyncapi", "api-docs", "api_docs", "schema", "spec"],
+    "query_hint_patterns": [
+        "format=json",
+        "format=yaml",
+        "format=yml",
+        "spec=json",
+        "spec=yaml",
+        "spec=yml",
+        "download=json",
+        "download=yaml",
+        "download=yml",
+    ],
+    "json_markers": ["openapi", "swagger", "asyncapi", "paths", "components", "channels", "info", "item", "servers", "eventNames"],
+    "yaml_markers": ["openapi", "swagger", "asyncapi", "paths", "components", "channels", "info"],
+    "yaml_text_markers": ["openapi:", "swagger:", "asyncapi:", "paths:", "channels:", "components:", "info:"],
+}
+SPEC_ARTIFACT_POLICY_PATH = Path(__file__).resolve().parents[1] / "data" / "spec-artifact-policy.json"
+FOLLOW_UP_URL_RE = re.compile(r"(?:https?://|/|\.\.?/)[^\s\"'<>]+", re.IGNORECASE)
+FOLLOW_UP_KEYWORD_RE = re.compile(
+    r"(developer|developers|devportal|docs|documentation|api|apis|swagger|openapi|reference|sdk|portal|integration|integrations|connected|iot|device|asset|fleet|monitor|telemetry|payment|pos|terminal|inventory|hardware|schema|spec)",
+    re.IGNORECASE,
+)
+EXTERNAL_DISCOVERY_DOMAINS = {
+    "documenter.getpostman.com",
+    "go.postman.co",
+    "postman.com",
+    "www.postman.com",
+}
+PLATFORM_SPEC_ATTRIBUTE_NAMES = [
+    "data-openapi-url",
+    "data-asyncapi-url",
+    "data-spec-url",
+    "data-schema-url",
+    "spec-url",
+    "schema-url",
+    "data-url",
+    "data-definition-url",
+    "data-config-url",
+    "data-swagger-url",
+    "data-oas-url",
+    "data-api-description-url",
+]
+PLATFORM_SPEC_REGEXES = [
+    r"Redoc\.init\(\s*['\"]([^'\"]+)['\"]",
+    r"(?:specUrl|spec-url|schemaUrl|schema-url|definitionUrl|configUrl|apiDescriptionUrl|swaggerUrl|openapiUrl|oasUrl)\s*[:=]\s*['\"]([^'\"]+)['\"]",
+    r"urls\s*:\s*\[(?:.|\n|\r){0,800}?url\s*:\s*['\"]([^'\"]+)['\"]",
+    r"['\"]((?:https?://|/|\.\.?/)[^'\"\s<>]*(?:openapi|swagger|asyncapi|api-docs|api/docs|schema|spec)[^'\"\s<>]*)['\"]",
+    r"['\"](https?://(?:www\.)?postman\.com/[^'\"\s<>]+)['\"]",
+    r"['\"](https?://documenter\.getpostman\.com/[^'\"\s<>]+)['\"]",
+]
+
+
+def load_spec_artifact_policy() -> dict[str, Any]:
+    if not SPEC_ARTIFACT_POLICY_PATH.exists():
+        return dict(DEFAULT_SPEC_ARTIFACT_POLICY)
+    try:
+        with SPEC_ARTIFACT_POLICY_PATH.open("r", encoding="utf-8") as handle:
+            raw_policy = json.load(handle)
+    except Exception:
+        return dict(DEFAULT_SPEC_ARTIFACT_POLICY)
+
+    policy = dict(DEFAULT_SPEC_ARTIFACT_POLICY)
+    for key in policy:
+        value = raw_policy.get(key)
+        if isinstance(value, list):
+            policy[key] = [str(item).strip() for item in value if str(item).strip()]
+    return policy
+
+
+SPEC_ARTIFACT_POLICY = load_spec_artifact_policy()
 
 
 @dataclass
@@ -104,7 +176,7 @@ def title_case_slug(value: str) -> str:
 
 def spec_extension(url: str) -> str:
     lowered_path = urlparse(url).path.lower()
-    for extension in [".yaml", ".yml", ".json"]:
+    for extension in SPEC_ARTIFACT_POLICY["exact_artifact_extensions"]:
         if lowered_path.endswith(extension):
             return extension
     return ""
@@ -121,9 +193,8 @@ def is_spec_artifact_url(url: str) -> bool:
 
 def looks_like_spec_endpoint_url(url: str) -> bool:
     lowered = url.lower()
-    return bool(
-        re.search(r"(?:openapi|swagger|asyncapi|api[-_/]?docs?|schema|spec)", lowered)
-        or re.search(r"[?&](?:format|spec|download)=(?:json|yaml|yml)", lowered)
+    return any(pattern in lowered for pattern in SPEC_ARTIFACT_POLICY["endpoint_hint_patterns"]) or any(
+        pattern in lowered for pattern in SPEC_ARTIFACT_POLICY["query_hint_patterns"]
     )
 
 
@@ -131,42 +202,39 @@ def looks_like_yaml_document(text: str) -> bool:
     stripped = text.lstrip("\ufeff \t\r\n")
     if not stripped:
         return False
-    markers = ["openapi:", "swagger:", "asyncapi:", "paths:", "channels:", "components:", "info:"]
+    markers = SPEC_ARTIFACT_POLICY["yaml_text_markers"]
     return any(marker in stripped[:2000] for marker in markers)
 
 
 def is_consumable_json_document(payload: Any) -> bool:
     if isinstance(payload, dict):
-        return bool(
-            set(payload.keys())
-            & {"openapi", "swagger", "asyncapi", "paths", "components", "channels", "info", "item"}
-        )
+        return bool(set(payload.keys()) & set(SPEC_ARTIFACT_POLICY["json_markers"]))
     return isinstance(payload, list)
 
 
 def is_consumable_yaml_document(payload: Any) -> bool:
     if not isinstance(payload, dict):
         return False
-    return bool(set(payload.keys()) & {"openapi", "swagger", "asyncapi", "paths", "components", "channels", "info"})
+    return bool(set(payload.keys()) & set(SPEC_ARTIFACT_POLICY["yaml_markers"]))
 
 
 def extract_configured_spec_urls(soup: BeautifulSoup, base_url: str) -> list[str]:
     candidates: list[str] = []
-    for attribute_name in ["data-openapi-url", "data-asyncapi-url"]:
+    for attribute_name in PLATFORM_SPEC_ATTRIBUTE_NAMES:
         for node in soup.select(f"[{attribute_name}]"):
             raw_value = normalize_space(node.get(attribute_name, ""))
             if not raw_value:
                 continue
-            candidates.append(urljoin(base_url, raw_value))
+            candidates.append(urlunparse(urlparse(urljoin(base_url, raw_value))._replace(fragment="")))
     return clean_text_list(candidates)
 
 
 def extract_text_spec_urls(text: str, base_url: str) -> list[str]:
     candidates: list[str] = []
     for match in re.finditer(r"\[[^\]]+\]\(([^)]+\.(?:json|ya?ml))\)", text, flags=re.IGNORECASE):
-        candidates.append(urljoin(base_url, match.group(1)))
+        candidates.append(urlunparse(urlparse(urljoin(base_url, match.group(1)))._replace(fragment="")))
     for match in re.finditer(r"((?:https?://|/|\.\.?/)[^\s'\"<>()]+\.(?:json|ya?ml))", text, flags=re.IGNORECASE):
-        candidates.append(urljoin(base_url, match.group(1)))
+        candidates.append(urlunparse(urlparse(urljoin(base_url, match.group(1)))._replace(fragment="")))
     return clean_text_list(candidates)
 
 
@@ -176,6 +244,45 @@ def derive_follow_up_spec_pages(selected_url: str) -> list[str]:
         candidates.append(selected_url[: -len("/overview.html")] + "/api-reference.html")
     if selected_url.endswith("-overview.html"):
         candidates.append(selected_url[: -len("-overview.html")] + "-api.html")
+    return clean_text_list(candidates)
+
+
+def derive_neighboring_spec_urls(selected_url: str) -> list[str]:
+    candidates: list[str] = []
+    parsed = urlparse(selected_url)
+    path = parsed.path or ""
+
+    if path.endswith(".html"):
+        for extension in SPEC_ARTIFACT_POLICY["exact_artifact_extensions"]:
+            candidates.append(urlunparse((parsed.scheme, parsed.netloc, path[: -len(".html")] + extension, parsed.params, parsed.query, "")))
+
+        basename = path.rsplit("/", 1)[-1]
+        dirname = path[: -len(basename)] if basename else path
+        for source_token in ["api-docs", "api_docs", "reference", "redoc"]:
+            if source_token not in basename.lower():
+                continue
+            for replacement_token in ["openapi", "swagger", "spec"]:
+                if replacement_token == source_token:
+                    continue
+                for extension in SPEC_ARTIFACT_POLICY["exact_artifact_extensions"]:
+                    replacement_name = re.sub(source_token, replacement_token, basename, flags=re.IGNORECASE)
+                    if replacement_name.lower().endswith(".html"):
+                        replacement_name = replacement_name[: -len(".html")] + extension
+                    candidates.append(urlunparse((parsed.scheme, parsed.netloc, dirname + replacement_name, parsed.params, parsed.query, "")))
+
+    base_paths = [
+        "/openapi.json",
+        "/openapi.yaml",
+        "/openapi.yml",
+        "/swagger.json",
+        "/swagger.yaml",
+        "/swagger.yml",
+        "/api-docs",
+        "/api/docs",
+    ]
+    for candidate_path in base_paths:
+        candidates.append(urlunparse((parsed.scheme, parsed.netloc, candidate_path, "", "", "")))
+
     return clean_text_list(candidates)
 
 
@@ -192,6 +299,66 @@ def clean_text_list(values: list[str]) -> list[str]:
         seen.add(key)
         cleaned.append(item)
     return cleaned
+
+
+def iter_string_values(payload: Any) -> list[str]:
+    values: list[str] = []
+    stack: list[Any] = [payload]
+    while stack:
+        current = stack.pop()
+        if isinstance(current, dict):
+            stack.extend(current.values())
+            continue
+        if isinstance(current, list):
+            stack.extend(current)
+            continue
+        if isinstance(current, str):
+            values.append(current)
+    return values
+
+
+def extract_platform_specific_spec_urls(soup: BeautifulSoup, text: str, base_url: str) -> list[str]:
+    candidates: list[str] = []
+    candidates.extend(extract_configured_spec_urls(soup, base_url))
+
+    for pattern in PLATFORM_SPEC_REGEXES:
+        for match in re.finditer(pattern, text, flags=re.IGNORECASE):
+            candidates.append(urlunparse(urlparse(urljoin(base_url, match.group(1)))._replace(fragment="")))
+
+    for script in soup.select("script[type='application/json'], script[type='application/ld+json']"):
+        script_text = script.string or script.get_text(" ", strip=True)
+        if not script_text:
+            continue
+        try:
+            payload = json.loads(script_text)
+        except Exception:
+            continue
+        for value in iter_string_values(payload):
+            normalized_value = normalize_space(value)
+            if not normalized_value:
+                continue
+            if re.search(r"(?:openapi|swagger|asyncapi|api-docs|api/docs|schema|spec|postman)", normalized_value, flags=re.IGNORECASE):
+                candidates.append(urlunparse(urlparse(urljoin(base_url, normalized_value))._replace(fragment="")))
+
+    return clean_text_list(candidates)
+
+
+def load_manual_postman_collection_candidate_urls(collection_paths: list[Path]) -> list[str]:
+    candidate_urls: list[str] = []
+    for path in collection_paths:
+        if not path.exists() or not path.is_file():
+            continue
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        for value in iter_string_values(payload):
+            normalized_value = normalize_space(value)
+            if not normalized_value.lower().startswith(("http://", "https://")):
+                continue
+            if re.search(r"(?:openapi|swagger|asyncapi|api-docs|api/docs|schema|spec|postman|collection)", normalized_value, flags=re.IGNORECASE):
+                candidate_urls.append(urlunparse(urlparse(normalized_value)._replace(fragment="")))
+    return clean_text_list(candidate_urls)
 
 
 def is_generic_product_text(value: str) -> bool:
@@ -269,6 +436,9 @@ class VendorPortalScraper:
         self.field_mapping = config.get("field_mapping", {})
         self.row_defaults = config.get("row_defaults", {})
         self.allowed_domains = set(config.get("allowed_domains", []))
+        self.discovery_domains = {domain.lower() for domain in self.allowed_domains}
+        self.discovery_domains.update(domain.lower() for domain in config.get("artifact_allowed_domains", []))
+        self.discovery_domains.update(EXTERNAL_DISCOVERY_DOMAINS)
         self.sleep_seconds = float(config.get("sleep_seconds", 0.0))
         self.timeout_seconds = int(config.get("timeout_seconds", 30))
         self.session = requests.Session()
@@ -283,8 +453,20 @@ class VendorPortalScraper:
         self.vendor_sort_order_cache: dict[str, int] = {}
         self.page_cache: dict[str, tuple[BeautifulSoup, str] | None] = {}
         self.valid_spec_cache: dict[str, bool] = {}
-        self.max_spec_search_depth = int(config.get("spec_search_depth", 2))
-        self.max_spec_search_pages = int(config.get("spec_search_pages", 12))
+        self.max_spec_search_depth = int(config.get("spec_search_depth", 5))
+        self.max_spec_search_pages = int(config.get("spec_search_pages", 60))
+        self.manual_postman_candidate_urls = load_manual_postman_collection_candidate_urls(self.manual_postman_collection_paths())
+
+    def manual_postman_collection_paths(self) -> list[Path]:
+        configured_paths = list(self.config.get("postman_collection_files", []))
+        env_paths = [item.strip() for item in os.getenv("POSTMAN_COLLECTION_FILES", "").split(",") if item.strip()]
+        collection_paths: list[Path] = []
+        for raw_value in configured_paths + env_paths:
+            path = Path(str(raw_value)).expanduser()
+            if not path.is_absolute():
+                path = (Path(__file__).resolve().parents[1] / path).resolve()
+            collection_paths.append(path)
+        return collection_paths
 
     def seeded_catalog_entries(self) -> list[CatalogEntry]:
         configured_entries = self.config.get("catalog_seed_entries", [])
@@ -321,6 +503,14 @@ class VendorPortalScraper:
         if not self.allowed_domains:
             return True
         return parsed.netloc.lower() in {domain.lower() for domain in self.allowed_domains}
+
+    def is_allowed_discovery_url(self, url: str) -> bool:
+        parsed = urlparse(url)
+        if parsed.scheme not in {"http", "https"}:
+            return False
+        if not self.discovery_domains:
+            return True
+        return parsed.netloc.lower() in self.discovery_domains
 
     def discover_catalog_entries(self, catalog_url: str) -> list[CatalogEntry]:
         soup = self.fetch_soup(catalog_url)
@@ -607,6 +797,9 @@ class VendorPortalScraper:
         return resolved_url
 
     def fetch_page(self, url: str) -> tuple[BeautifulSoup, str] | None:
+        url = self._strip_fragment(url)
+        if not self.is_allowed_discovery_url(url):
+            return None
         cached = self.page_cache.get(url)
         if cached is not None or url in self.page_cache:
             return cached
@@ -626,6 +819,7 @@ class VendorPortalScraper:
             return None
 
     def is_machine_readable_spec_url(self, candidate_url: str) -> bool:
+        candidate_url = self._strip_fragment(candidate_url)
         cached = self.valid_spec_cache.get(candidate_url)
         if cached is not None:
             return cached
@@ -667,21 +861,52 @@ class VendorPortalScraper:
             r"(?:url|spec|openapi|asyncapi)[^\n]{0,80}?((?:https?://|/|\.\.?/)[^\s'\"<>]+\.(?:json|ya?ml)(?:\?[^\s'\"<>]*)?)",
             r'"((?:https?://|/|\.\.?/)[^"\s<>]*(?:openapi|swagger|asyncapi|api/docs|schema|spec)[^"\s<>]*)"',
             r"'((?:https?://|/|\.\.?/)[^'\s<>]*(?:openapi|swagger|asyncapi|api/docs|schema|spec)[^'\s<>]*)'",
+            r"(?:href|src|url)\s*[:=]\s*[\"']((?:https?://|/|\.\.?/)[^\"'\s<>]+)[\"']",
+            r"(?:href|src|url)\s*[:=]\s*((?:https?://|/|\.\.?/)[^,\s<>]+)",
         ]
         for pattern in patterns:
             for match in re.finditer(pattern, text, flags=re.IGNORECASE):
-                candidates.append(urljoin(base_url, match.group(1)))
+                candidates.append(urlunparse(urlparse(urljoin(base_url, match.group(1)))._replace(fragment="")))
         return clean_text_list(candidates)
 
-    def collect_follow_up_pages(self, page_url: str, soup: BeautifulSoup) -> list[str]:
+    def extract_follow_up_urls_from_text(self, text: str, base_url: str) -> list[str]:
+        follow_up_pages: list[str] = []
+        for match in FOLLOW_UP_URL_RE.finditer(text):
+            raw_value = normalize_space(match.group(0).strip("'\"()[]{}"))
+            if not raw_value:
+                continue
+            if raw_value.startswith("/*") or raw_value.startswith("//"):
+                continue
+            try:
+                href = urlunparse(urlparse(urljoin(base_url, raw_value))._replace(fragment=""))
+            except ValueError:
+                continue
+            if not self.is_allowed_discovery_url(href):
+                continue
+            if href == base_url:
+                continue
+            lowered_href = href.lower()
+            if spec_extension(href):
+                continue
+            if lowered_href.endswith(("/title", "/style", "/script")):
+                continue
+            if FOLLOW_UP_KEYWORD_RE.search(lowered_href):
+                follow_up_pages.append(href)
+        return clean_text_list(follow_up_pages)
+
+    def collect_follow_up_pages(self, page_url: str, soup: BeautifulSoup, response_text: str) -> list[str]:
         follow_up_pages: list[str] = []
         for follow_up_page in derive_follow_up_spec_pages(page_url):
-            if self.is_allowed_url(follow_up_page):
+            if self.is_allowed_discovery_url(follow_up_page):
                 follow_up_pages.append(follow_up_page)
 
+        for neighboring_spec_url in derive_neighboring_spec_urls(page_url):
+            if self.is_allowed_discovery_url(neighboring_spec_url):
+                follow_up_pages.append(neighboring_spec_url)
+
         for node in soup.select("link[rel='next'][href], link[rel='alternate'][href], a[href]"):
-            href = urljoin(page_url, node.get("href", ""))
-            if not self.is_allowed_url(href):
+            href = self._strip_fragment(urljoin(page_url, node.get("href", "")))
+            if not self.is_allowed_discovery_url(href):
                 continue
             if href == page_url:
                 continue
@@ -698,7 +923,34 @@ class VendorPortalScraper:
                 continue
             if re.search(r"(openapi|swagger|asyncapi|postman|schema|spec)", lowered_href):
                 follow_up_pages.append(href)
+        for text_url in self.extract_follow_up_urls_from_text(response_text, page_url):
+            follow_up_pages.append(text_url)
         return clean_text_list(follow_up_pages)
+
+    def enqueue_follow_up_pages(
+        self,
+        queued: list[tuple[str, int]],
+        queued_urls: set[str],
+        visited: set[str],
+        current_url: str,
+        depth: int,
+        follow_up_pages: list[str],
+    ) -> None:
+        ranked_pages: list[tuple[int, str]] = []
+        for follow_up_page in follow_up_pages:
+            if follow_up_page in visited or follow_up_page in queued_urls:
+                continue
+            score = self.score_api_candidate(follow_up_page, current_url, "")
+            if FOLLOW_UP_KEYWORD_RE.search(follow_up_page):
+                score += 25
+            if looks_like_spec_endpoint_url(follow_up_page) or is_spec_artifact_url(follow_up_page):
+                score += 80
+            ranked_pages.append((score, follow_up_page))
+
+        ranked_pages.sort(key=lambda item: (item[0], len(item[1])), reverse=True)
+        for _, follow_up_page in ranked_pages:
+            queued.append((follow_up_page, depth + 1))
+            queued_urls.add(follow_up_page)
 
     def resolve_spec_artifact_url(self, selected_url: str) -> str:
         if self.is_machine_readable_spec_url(selected_url):
@@ -706,10 +958,21 @@ class VendorPortalScraper:
 
         artifact_candidates: dict[str, int] = {}
         queued: list[tuple[str, int]] = [(selected_url, 0)]
+        queued_urls: set[str] = {selected_url}
         visited: set[str] = set()
+
+        for candidate_url in self.manual_postman_candidate_urls:
+            if not self.is_allowed_discovery_url(candidate_url):
+                continue
+            if not (is_spec_artifact_url(candidate_url) or looks_like_spec_endpoint_url(candidate_url)):
+                continue
+            score = self.score_api_candidate(candidate_url, selected_url, "postman collection") + 160
+            if self.is_machine_readable_spec_url(candidate_url):
+                artifact_candidates[candidate_url] = max(score, artifact_candidates.get(candidate_url, -10_000))
 
         while queued and len(visited) < self.max_spec_search_pages:
             page_url, depth = queued.pop(0)
+            queued_urls.discard(page_url)
             if page_url in visited:
                 continue
             visited.add(page_url)
@@ -720,28 +983,34 @@ class VendorPortalScraper:
             soup, response_text = fetched_page
 
             candidate_urls: dict[str, int] = {}
-            for configured_url in extract_configured_spec_urls(soup, page_url):
-                if self.is_allowed_url(configured_url) and (
+            for configured_url in extract_platform_specific_spec_urls(soup, response_text, page_url):
+                if self.is_allowed_discovery_url(configured_url) and (
                     is_spec_artifact_url(configured_url) or looks_like_spec_endpoint_url(configured_url)
                 ):
                     candidate_urls[configured_url] = max(240 - depth * 5, candidate_urls.get(configured_url, -10_000))
 
             for text_url in extract_text_spec_urls(response_text, page_url):
-                if self.is_allowed_url(text_url) and (
+                if self.is_allowed_discovery_url(text_url) and (
                     is_spec_artifact_url(text_url) or looks_like_spec_endpoint_url(text_url)
                 ):
                     candidate_urls[text_url] = max(230 - depth * 5, candidate_urls.get(text_url, -10_000))
 
             for embedded_url in self.extract_embedded_spec_urls(response_text, page_url):
-                if self.is_allowed_url(embedded_url) and (
+                if self.is_allowed_discovery_url(embedded_url) and (
                     is_spec_artifact_url(embedded_url) or looks_like_spec_endpoint_url(embedded_url)
                 ):
                     candidate_urls[embedded_url] = max(220 - depth * 5, candidate_urls.get(embedded_url, -10_000))
 
+            for neighboring_spec_url in derive_neighboring_spec_urls(page_url):
+                if self.is_allowed_discovery_url(neighboring_spec_url) and (
+                    is_spec_artifact_url(neighboring_spec_url) or looks_like_spec_endpoint_url(neighboring_spec_url)
+                ):
+                    candidate_urls[neighboring_spec_url] = max(210 - depth * 5, candidate_urls.get(neighboring_spec_url, -10_000))
+
             for node in soup.select("a[href], script[src], link[href]"):
                 attr_name = "src" if node.has_attr("src") else "href"
-                href = urljoin(page_url, node.get(attr_name, ""))
-                if not self.is_allowed_url(href):
+                href = self._strip_fragment(urljoin(page_url, node.get(attr_name, "")))
+                if not self.is_allowed_discovery_url(href):
                     continue
                 if not (is_spec_artifact_url(href) or looks_like_spec_endpoint_url(href)):
                     continue
@@ -756,9 +1025,14 @@ class VendorPortalScraper:
             if depth >= self.max_spec_search_depth:
                 continue
 
-            for follow_up_page in self.collect_follow_up_pages(page_url, soup):
-                if follow_up_page not in visited:
-                    queued.append((follow_up_page, depth + 1))
+            self.enqueue_follow_up_pages(
+                queued,
+                queued_urls,
+                visited,
+                page_url,
+                depth,
+                self.collect_follow_up_pages(page_url, soup, response_text),
+            )
 
         if not artifact_candidates:
             return ""
@@ -946,28 +1220,36 @@ def google_client() -> gspread.Client:
     return gspread.authorize(credentials)
 
 
-def should_replace_existing_row(row: dict[str, str], rows: list[dict[str, str]]) -> bool:
-    vendor_slugs = {candidate["vendor_slug"] for candidate in rows}
-    if row.get("vendor_slug", "") in vendor_slugs:
-        return True
-
-    incoming_source_keys = {
+def build_replacement_criteria(rows: list[dict[str, str]]) -> dict[str, set[str]]:
+    source_keys = {
         extract_internal_note_value(candidate.get("internal_notes", ""), "source_key")
         for candidate in rows
         if extract_internal_note_value(candidate.get("internal_notes", ""), "source_key")
     }
-    existing_source_key = extract_internal_note_value(row.get("internal_notes", ""), "source_key")
-    if existing_source_key and existing_source_key in incoming_source_keys:
-        return True
-
-    incoming_domains = {
+    source_domains = {
         urlparse(extract_internal_note_value(candidate.get("internal_notes", ""), "scraped_source")).netloc.lower()
         for candidate in rows
         if extract_internal_note_value(candidate.get("internal_notes", ""), "scraped_source")
     }
+    vendor_slugs = {candidate["vendor_slug"] for candidate in rows if candidate.get("vendor_slug")}
+    return {
+        "vendor_slugs": vendor_slugs,
+        "source_keys": source_keys,
+        "source_domains": source_domains,
+    }
+
+
+def should_replace_existing_row(row: dict[str, str], replacement_criteria: dict[str, set[str]]) -> bool:
+    if row.get("vendor_slug", "") in replacement_criteria["vendor_slugs"]:
+        return True
+
+    existing_source_key = extract_internal_note_value(row.get("internal_notes", ""), "source_key")
+    if existing_source_key and existing_source_key in replacement_criteria["source_keys"]:
+        return True
+
     existing_source = extract_internal_note_value(row.get("internal_notes", ""), "scraped_source")
     existing_domain = urlparse(existing_source).netloc.lower() if existing_source else ""
-    return bool(existing_domain and existing_domain in incoming_domains)
+    return bool(existing_domain and existing_domain in replacement_criteria["source_domains"])
 
 
 def upsert_google_sheet(rows: list[dict[str, str]], spreadsheet_id: str, worksheet_title: str, replace_by_vendor: bool) -> None:
@@ -992,7 +1274,8 @@ def upsert_google_sheet(rows: list[dict[str, str]], spreadsheet_id: str, workshe
         existing_rows.append(normalize_row_for_template(source_row))
 
     if replace_by_vendor:
-        existing_rows = [row for row in existing_rows if not should_replace_existing_row(row, rows)]
+        replacement_criteria = build_replacement_criteria(rows)
+        existing_rows = [row for row in existing_rows if not should_replace_existing_row(row, replacement_criteria)]
 
     merged_rows = [normalize_row_for_template(row) for row in existing_rows + rows]
     values = [headers] + [[row.get(header, "") for header in headers] for row in merged_rows]
@@ -1011,6 +1294,12 @@ def build_argument_parser() -> argparse.ArgumentParser:
     parser.add_argument("--spreadsheet-id", help="Google Spreadsheet ID override.")
     parser.add_argument("--worksheet", help="Worksheet title override.")
     parser.add_argument("--replace-by-vendor", action="store_true", help="Replace existing rows whose vendor_slug matches scraped rows.")
+    parser.add_argument(
+        "--postman-collection-file",
+        action="append",
+        default=[],
+        help="Optional path to a manually exported Postman collection JSON file. Repeat for multiple files.",
+    )
     return parser
 
 
@@ -1022,6 +1311,10 @@ def main() -> int:
 
     config_path = Path(args.config)
     config = load_config(config_path)
+    if args.postman_collection_file:
+        configured_files = list(config.get("postman_collection_files", []))
+        configured_files.extend(args.postman_collection_file)
+        config["postman_collection_files"] = configured_files
     scraper = VendorPortalScraper(config)
     catalog_url = args.catalog_url or config["catalog_url"]
     product_sort_start = int(scraper.row_defaults.get("product_sort_start", 10))

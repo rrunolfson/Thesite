@@ -6,16 +6,17 @@
   "product_family": "Enlighted",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/enlighted-apis/occupancy/occupancy.openapi.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/enlighted-apis/occupancy/occupancy.openapi.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/occupancy-apis.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/enlighted-apis/occupancy/occupancy.openapi.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "The Enlighted lighting solution optimizes energy savings while enhancing occupant productivity, well-being, and security. Published API scope focuses on occupancy and utilization readings from Enlighted sensors.",
   "data_domains": [
     "occupancy-readings",
     "space-utilization"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "occupancy readings",
     "space metrics",
@@ -47,11 +48,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/enlighted-apis/occupancy/overview.html",
-    "spec_url": "https://developer.siemens.com/enlighted-apis/occupancy/occupancy.openapi.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/occupancy-apis.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Occupancy APIs."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Occupancy APIs.",
+    "vendor_spec_url": "https://developer.siemens.com/enlighted-apis/occupancy/occupancy.openapi.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/occupancy-apis.openapi.json"
   },
   "detail_path": "/integration-details/siemens/occupancy-apis.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/occupancy-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/occupancy-apis.openapi.json"
 }

@@ -1,0 +1,85 @@
+{
+  "vendor_slug": "salt-edge",
+  "vendor_name": "Salt Edge",
+  "product_slug": "salt-edge-api",
+  "product_name": "Salt Edge API",
+  "product_family": "Salt Edge",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.saltedge.com/v6/",
+  "spec_artifact_url": "https://docs.saltedge.com/assets/swagger-v6.json",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Salt Edge publishes public v6 API docs and a raw Swagger JSON artifact for account-information, payment-initiation, widget-based connection and payment flows, callbacks, and transaction enrichment services.",
+  "data_domains": [
+    "open-banking-account-data",
+    "payments-and-initiation",
+    "customer-and-connection-management",
+    "transaction-enrichment"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "customers",
+    "connections",
+    "accounts and transactions",
+    "payments",
+    "providers and payment templates",
+    "enrichment reports"
+  ],
+  "buyer_guidance": "Use Salt Edge API for PSD2-style account aggregation, payment initiation, widget-mediated consent journeys, callbacks, and transaction enrichment. This is an open-banking platform, not an asset or telemetry platform.",
+  "overview": "Salt Edge's public v6 documentation describes its Open Banking Gateway across Account Information, Payment Initiation, and Data Enrichment services, and the docs host publishes a downloadable Swagger JSON artifact. The public quick-start guides and reference material cover customer creation, connection initiation, account and transaction retrieval, provider and payment template selection, payment initiation, callback handling, request signing, widget flows, provider keys, dynamic registration, and enrichment services such as transaction categorization, merchant identification, and financial insights. This is a strong write-capable open-banking platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Account information and customer-connection workflows",
+      "description": "Salt Edge exposes the operational objects needed to register customers, create bank connections, and retrieve linked financial data.",
+      "data_points": [
+        "Customers and identifiers",
+        "Connections and connect URLs",
+        "Accounts and transactions",
+        "Holder information for KYC flows",
+        "Callbacks and pagination for sync"
+      ],
+      "relevant_operations": [
+        "Customers/Create",
+        "Connections/Connect",
+        "Connections/List",
+        "Accounts/List",
+        "Transactions/List",
+        "Transactions/Update",
+        "Callbacks",
+        "Providers/List"
+      ]
+    },
+    {
+      "category": "Payment initiation and enrichment",
+      "description": "The public docs also cover the payment side of the platform and downstream value-added transaction analysis.",
+      "data_points": [
+        "Providers and payment templates",
+        "Payment creation and payment URLs",
+        "PIS widget and callback journeys",
+        "Transaction categorization and merchant identification",
+        "Financial insights reports"
+      ],
+      "relevant_operations": [
+        "Payments/Create",
+        "Providers/Show",
+        "Payment templates",
+        "PIS callbacks",
+        "Listing categories",
+        "Standalone Categorization & Merchant Identification API",
+        "Financial Insights"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Salt Edge requires API keys, signatures, and eventually eIDAS or related certificate workflows for live use, so production readiness depends on operational security setup, not just endpoint integration.",
+    "The platform is highly asynchronous and Salt Edge explicitly recommends callbacks instead of heavy polling for synchronization, which should shape downstream ingestion design.",
+    "This row has exact machine-readable spec evidence because Salt Edge publishes a direct downloadable Swagger JSON artifact from its public docs host."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.saltedge.com/v6/",
+    "spec_url": "https://docs.saltedge.com/assets/swagger-v6.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Salt Edge's public v6 docs cover AIS customers, connections, accounts, transactions, PIS provider and payment-template selection, payment initiation, callbacks, signing, widget flows, and enrichment services, and the docs expose a downloadable raw Swagger JSON artifact."
+  }
+}

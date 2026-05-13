@@ -1,0 +1,1035 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Marqeta Core API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Marqeta publishes public Core API docs, a raw OpenAPI artifact, and a broad docs index covering users, cards, funding, balances, authorization controls, ACH, disputes, credit accounts, deposits, wallets, simulations, webhooks, and reporting views.",
+    "description": "Manufactured OpenAPI artifact for Marqeta Core API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Marqeta's public Core API introduction describes a RESTful platform for launching and managing payment card programs, and its public documentation index exposes both a raw OpenAPI artifact and a broad catalog of resource pages. The public docs cover objects such as users, cards, businesses, card products, GPA orders, funding sources, balances, authorization controls, ACH receiving, bulk card orders, direct deposits, disputes, deposit accounts, credit accounts, digital wallets, KYC verification, simulations, velocity controls, webhooks, and DiVA reporting views. This is a strong write-capable payments and issuing platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://www.marqeta.com/docs/core-api/introduction"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Card-program and account-holder operations",
+      "description": "Manufactured operations grouped under Card-program and account-holder operations."
+    },
+    {
+      "name": "Funding, disputes, credit, and reporting",
+      "description": "Manufactured operations grouped under Funding, disputes, credit, and reporting."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "marqeta_marqeta-core-api_integrationProfile",
+        "summary": "Get manufactured profile for Marqeta Core API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/users": {
+      "post": {
+        "tags": [
+          "Card-program and account-holder operations"
+        ],
+        "operationId": "marqeta_marqeta-core-api_post-users_post",
+        "summary": "POST /users",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Marqeta exposes the core resources required to create and operate a card and account-holder program. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /users.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /users.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cards": {
+      "get": {
+        "tags": [
+          "Card-program and account-holder operations"
+        ],
+        "operationId": "marqeta_marqeta-core-api_cards_get",
+        "summary": "Cards",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Marqeta exposes the core resources required to create and operate a card and account-holder program. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Cards.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/card-products": {
+      "get": {
+        "tags": [
+          "Card-program and account-holder operations"
+        ],
+        "operationId": "marqeta_marqeta-core-api_card-products_get",
+        "summary": "Card Products",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Marqeta exposes the core resources required to create and operate a card and account-holder program. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Card Products.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/balances": {
+      "get": {
+        "tags": [
+          "Card-program and account-holder operations"
+        ],
+        "operationId": "marqeta_marqeta-core-api_balances_get",
+        "summary": "Balances",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Marqeta exposes the core resources required to create and operate a card and account-holder program. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Balances.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/gpa-orders": {
+      "get": {
+        "tags": [
+          "Card-program and account-holder operations"
+        ],
+        "operationId": "marqeta_marqeta-core-api_gpa-orders_get",
+        "summary": "GPA Orders",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Marqeta exposes the core resources required to create and operate a card and account-holder program. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GPA Orders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/funding-sources": {
+      "get": {
+        "tags": [
+          "Card-program and account-holder operations"
+        ],
+        "operationId": "marqeta_marqeta-core-api_funding-sources_get",
+        "summary": "Funding Sources",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Marqeta exposes the core resources required to create and operate a card and account-holder program. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Funding Sources.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/authorization-controls": {
+      "get": {
+        "tags": [
+          "Card-program and account-holder operations"
+        ],
+        "operationId": "marqeta_marqeta-core-api_authorization-controls_get",
+        "summary": "Authorization Controls",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Marqeta exposes the core resources required to create and operate a card and account-holder program. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Authorization Controls.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/velocity-controls": {
+      "get": {
+        "tags": [
+          "Card-program and account-holder operations"
+        ],
+        "operationId": "marqeta_marqeta-core-api_velocity-controls_get",
+        "summary": "Velocity Controls",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Marqeta exposes the core resources required to create and operate a card and account-holder program. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Velocity Controls.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/kyc-verification": {
+      "get": {
+        "tags": [
+          "Card-program and account-holder operations"
+        ],
+        "operationId": "marqeta_marqeta-core-api_kyc-verification_get",
+        "summary": "KYC Verification",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Marqeta exposes the core resources required to create and operate a card and account-holder program. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for KYC Verification.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/digital-wallets-management": {
+      "get": {
+        "tags": [
+          "Card-program and account-holder operations"
+        ],
+        "operationId": "marqeta_marqeta-core-api_digital-wallets-management_get",
+        "summary": "Digital Wallets Management",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Marqeta exposes the core resources required to create and operate a card and account-holder program. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Digital Wallets Management.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/ach-receiving": {
+      "get": {
+        "tags": [
+          "Funding, disputes, credit, and reporting"
+        ],
+        "operationId": "marqeta_marqeta-core-api_ach-receiving_get",
+        "summary": "ACH Receiving",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs extend into settlement, disputes, credit-account lifecycle, and analytics surfaces. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for ACH Receiving.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/instant-funding": {
+      "get": {
+        "tags": [
+          "Funding, disputes, credit, and reporting"
+        ],
+        "operationId": "marqeta_marqeta-core-api_instant-funding_get",
+        "summary": "Instant Funding",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs extend into settlement, disputes, credit-account lifecycle, and analytics surfaces. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Instant Funding.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/direct-deposit": {
+      "get": {
+        "tags": [
+          "Funding, disputes, credit, and reporting"
+        ],
+        "operationId": "marqeta_marqeta-core-api_direct-deposit_get",
+        "summary": "Direct Deposit",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs extend into settlement, disputes, credit-account lifecycle, and analytics surfaces. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Direct Deposit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/disputes": {
+      "put": {
+        "tags": [
+          "Funding, disputes, credit, and reporting"
+        ],
+        "operationId": "marqeta_marqeta-core-api_disputes_put",
+        "summary": "Disputes",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs extend into settlement, disputes, credit-account lifecycle, and analytics surfaces. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Disputes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Disputes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/disputes-evidence-collection": {
+      "put": {
+        "tags": [
+          "Funding, disputes, credit, and reporting"
+        ],
+        "operationId": "marqeta_marqeta-core-api_disputes-evidence-collection_put",
+        "summary": "Disputes Evidence Collection",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs extend into settlement, disputes, credit-account lifecycle, and analytics surfaces. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Disputes Evidence Collection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Disputes Evidence Collection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/credit-accounts": {
+      "get": {
+        "tags": [
+          "Funding, disputes, credit, and reporting"
+        ],
+        "operationId": "marqeta_marqeta-core-api_credit-accounts_get",
+        "summary": "Credit Accounts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs extend into settlement, disputes, credit-account lifecycle, and analytics surfaces. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Credit Accounts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/credit-payments": {
+      "get": {
+        "tags": [
+          "Funding, disputes, credit, and reporting"
+        ],
+        "operationId": "marqeta_marqeta-core-api_credit-payments_get",
+        "summary": "Credit Payments",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs extend into settlement, disputes, credit-account lifecycle, and analytics surfaces. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Credit Payments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payment-schedules": {
+      "get": {
+        "tags": [
+          "Funding, disputes, credit, and reporting"
+        ],
+        "operationId": "marqeta_marqeta-core-api_payment-schedules_get",
+        "summary": "Payment Schedules",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs extend into settlement, disputes, credit-account lifecycle, and analytics surfaces. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payment Schedules.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/deposit-accounts": {
+      "get": {
+        "tags": [
+          "Funding, disputes, credit, and reporting"
+        ],
+        "operationId": "marqeta_marqeta-core-api_deposit-accounts_get",
+        "summary": "Deposit Accounts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs extend into settlement, disputes, credit-account lifecycle, and analytics surfaces. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Deposit Accounts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/webhooks": {
+      "get": {
+        "tags": [
+          "Funding, disputes, credit, and reporting"
+        ],
+        "operationId": "marqeta_marqeta-core-api_webhooks_get",
+        "summary": "Webhooks",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs extend into settlement, disputes, credit-account lifecycle, and analytics surfaces. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Webhooks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/simulating-transactions": {
+      "get": {
+        "tags": [
+          "Funding, disputes, credit, and reporting"
+        ],
+        "operationId": "marqeta_marqeta-core-api_simulating-transactions_get",
+        "summary": "Simulating Transactions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs extend into settlement, disputes, credit-account lifecycle, and analytics surfaces. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Simulating Transactions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/diva-api-views": {
+      "get": {
+        "tags": [
+          "Funding, disputes, credit, and reporting"
+        ],
+        "operationId": "marqeta_marqeta-core-api_diva-api-views_get",
+        "summary": "DiVA API Views",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs extend into settlement, disputes, credit-account lifecycle, and analytics surfaces. Vendor documentation: https://www.marqeta.com/docs/core-api/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DiVA API Views.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/marqeta/marqeta-core-api.json",
+    "vendor_documentation_url": "https://www.marqeta.com/docs/core-api/introduction",
+    "vendor_spec_artifact_url": "https://www.marqeta.com/docs/openapi.yaml",
+    "reviewed_at": "2026-05-13"
+  }
+}

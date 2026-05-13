@@ -1,0 +1,94 @@
+{
+  "vendor_slug": "athenahealth",
+  "vendor_name": "athenahealth",
+  "product_slug": "athenaone-apis",
+  "product_name": "athenaOne APIs",
+  "product_family": "athenaOne",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.athenahealth.com/api/resources/complete_list_athena_apis",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "athenahealth publishes a large public API inventory spanning athenaOne proprietary APIs, FHIR DSTU2 and R4 APIs, Certified APIs, subscriptions, and bulk export workflows across administrative, clinical, and financial functions.",
+  "data_domains": [
+    "patient-master-data",
+    "clinical-and-document-records",
+    "appointments-and-scheduling",
+    "billing-and-payments"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "patients",
+    "appointments",
+    "chart and encounter records",
+    "claims and insurance",
+    "providers and practice configuration",
+    "bulk exports"
+  ],
+  "buyer_guidance": "Use athenaOne APIs for ambulatory scheduling, charting, encounter, document, claims, provider, and patient-data integrations. This is a transactional healthcare API surface, not an asset or telemetry platform.",
+  "overview": "athenahealth's public developer documentation states that athenaOne offers over 700 proprietary endpoints across administrative, clinical, and financial functions, alongside FHIR DSTU2, FHIR R4, and Certified API surfaces. The public API inventory shows concrete read and write workflows for appointments, chart allergies and problems, encounter diagnoses and assessments, patient documents and forms, claims, insurance enrollment status, providers, employers, subscriptions, and CCDA export, plus FHIR R4 resources such as Patient, Coverage, Encounter, Observation, DocumentReference, DiagnosticReport, Device, Procedure, ServiceRequest, Provenance, and Group bulk export. This is a broad write-capable healthcare interoperability surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Appointments, patient, and practice workflows",
+      "description": "The athenaOne proprietary API catalog exposes broad practice-management and patient-chart workflows.",
+      "data_points": [
+        "Appointment retrieval, update, cancel, reschedule, reminders, and change subscriptions",
+        "Patient chart alerts, interface consents, pharmacies, and default lab settings",
+        "Provider records, provider change feeds, and billing-row management",
+        "Practice configuration, departments, employers, and communicator brands",
+        "Hospital visits, stays, and change subscription events"
+      ],
+      "relevant_operations": [
+        "PUT /v1/{practiceid}/appointments/{appointmentid}",
+        "PUT /v1/{practiceid}/appointments/{appointmentid}/cancel",
+        "PUT /v1/{practiceid}/appointments/{appointmentid}/reschedule",
+        "GET /v1/{practiceid}/appointments/changed",
+        "POST /v1/{practiceid}/appointments/changed/subscription",
+        "GET /v1/{practiceid}/chart/{patientid}/allergies",
+        "PUT /v1/{practiceid}/chart/{patientid}/allergies",
+        "POST /v1/{practiceid}/patients/{patientid}/chartalert",
+        "PUT /v1/{practiceid}/providers/{providerid}",
+        "GET /v1/{practiceid}/departments",
+        "GET /v1/{practiceid}/visits",
+        "GET /v1/{practiceid}/stays/active"
+      ]
+    },
+    {
+      "category": "FHIR, clinical, and financial interoperability",
+      "description": "athenahealth also exposes standards-based patient data, clinical search surfaces, and financial workflows.",
+      "data_points": [
+        "FHIR R4 patient, related person, practitioner, organization, and location resources",
+        "FHIR R4 allergy, care plan, care team, condition, encounter, observation, and document resources",
+        "Device, medication, specimen, procedure, service request, and provenance retrieval/search",
+        "Claims, appointment insurance, CCM enrollment status, and CCDA export",
+        "Group bulk export and export status polling"
+      ],
+      "relevant_operations": [
+        "GET /fhir/r4/Patient/{logicalId}",
+        "POST /fhir/r4/Patient/_search",
+        "GET /fhir/r4/Encounter/{logicalId}",
+        "POST /fhir/r4/Observation/_search",
+        "GET /fhir/r4/DocumentReference/{logicalId}",
+        "POST /fhir/r4/ServiceRequest/_search",
+        "GET /fhir/r4/Group/{logicalId}/$export",
+        "GET /fhir/r4/$export-poll-status/{jobId}",
+        "DELETE /fhir/r4/$export-poll-status/{jobId}",
+        "POST /v1/{practiceid}/claims",
+        "PUT /v1/{practiceid}/appointments/{appointmentid}/insurances",
+        "GET /v1/{practiceid}/ccda/{patientid}/ccdaexport"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "athenahealth exposes several API frameworks with different access and entitlement models, so integrations should be explicit about whether they target proprietary athenaOne APIs, FHIR APIs, or Certified APIs.",
+    "Many athenaOne endpoints are practice-scoped and change-feed oriented, which makes subscription handling and tenant scoping important for reliable downstream sync.",
+    "Public docs are detailed, but no exact public machine-readable OpenAPI or raw spec artifact was confirmed for the aggregate athenaOne row."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.athenahealth.com/api/resources/complete_list_athena_apis",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "athenahealth's public API inventory states that athenaOne offers over 700 proprietary endpoints and lists concrete FHIR R4, FHIR DSTU2, Certified, appointment, chart, encounter, insurance, provider, and bulk export operations, including write-capable appointment, chart, claims, and subscription workflows."
+  }
+}

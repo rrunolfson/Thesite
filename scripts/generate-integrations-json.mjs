@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { access, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { parse as parseCsvRows } from "csv-parse/sync";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -10,8 +11,10 @@ const sourceCsvPath = path.join(repoRoot, "data", "integrations.csv");
 const outputJsonPath = path.join(repoRoot, "public", "integrations.json");
 const detailSourceDir = path.join(repoRoot, "data", "integration-details");
 const detailOutputDir = path.join(repoRoot, "public", "integration-details");
+const manufacturedSpecOutputDir = path.join(repoRoot, "public", "manufactured-openapi");
 const defaultConfigPath = path.join(repoRoot, "data", "integrations-source.json");
 const functionTaxonomyPath = path.join(repoRoot, "data", "industry-function-taxonomy.json");
+const specArtifactPolicyPath = path.join(repoRoot, "data", "spec-artifact-policy.json");
 const publicSiteBaseUrl = "https://lastmileinc.ai";
 const logoDevCdnBaseUrl = "https://img.logo.dev";
 const googleFaviconBaseUrl = "https://www.google.com/s2/favicons";
@@ -64,6 +67,34 @@ const detailRequiredFields = [
   "overview",
   "source_evidence",
 ];
+const defaultSpecArtifactPolicy = {
+  exactArtifactExtensions: [".json", ".yaml", ".yml"],
+  endpointHintPatterns: ["openapi", "swagger", "asyncapi", "api-docs", "api_docs", "schema", "spec"],
+  queryHintPatterns: [
+    "format=json",
+    "format=yaml",
+    "format=yml",
+    "spec=json",
+    "spec=yaml",
+    "spec=yml",
+    "download=json",
+    "download=yaml",
+    "download=yml",
+  ],
+  jsonMarkers: ["openapi", "swagger", "asyncapi", "paths", "components", "channels", "info", "item", "servers", "eventNames"],
+  yamlMarkers: ["openapi", "swagger", "asyncapi", "paths", "components", "channels", "info"],
+  yamlTextMarkers: ["openapi:", "swagger:", "asyncapi:", "paths:", "channels:", "components:", "info:"],
+};
+let specArtifactPolicy = defaultSpecArtifactPolicy;
+const strictCapabilityValues = new Set(["Supported", "Unsupported"]);
+const blockedIntegrationTypes = new Set(["SDK", "Developer Portal"]);
+const genericDetailPhrases = [
+  "this baseline detail page was generated from the catalog metadata and linked documentation",
+  "this standardized detail view was generated from the catalog row and linked documentation",
+  "published api documentation is available from the linked source documentation",
+  "exact entities, payloads, and operations should be confirmed in the source documentation before implementation",
+  "manual data-element profiling has not yet been completed for this product",
+];
 const unclassifiedFunction = {
   industry_function_slug: "unclassified",
   industry_function_name: "Unclassified",
@@ -71,6 +102,8 @@ const unclassifiedFunction = {
     "Legacy or newly added rows that have not yet been classified into a specific operational function.",
   industry_function_sort_order: 9999,
 };
+
+const supportedOpenApiMethods = new Set(["get", "post", "put", "patch", "delete"]);
 
 function parseArguments(argv) {
   const args = {
@@ -176,6 +209,36 @@ async function loadFunctionTaxonomy() {
   return taxonomy;
 }
 
+async function loadSpecArtifactPolicy() {
+  const rawPolicy = await readJsonIfExists(specArtifactPolicyPath);
+
+  if (!rawPolicy || typeof rawPolicy !== "object") {
+    specArtifactPolicy = defaultSpecArtifactPolicy;
+    return;
+  }
+
+  specArtifactPolicy = {
+    exactArtifactExtensions: Array.isArray(rawPolicy.exact_artifact_extensions)
+      ? rawPolicy.exact_artifact_extensions.map((value) => String(value ?? "").trim().toLowerCase()).filter(Boolean)
+      : defaultSpecArtifactPolicy.exactArtifactExtensions,
+    endpointHintPatterns: Array.isArray(rawPolicy.endpoint_hint_patterns)
+      ? rawPolicy.endpoint_hint_patterns.map((value) => String(value ?? "").trim().toLowerCase()).filter(Boolean)
+      : defaultSpecArtifactPolicy.endpointHintPatterns,
+    queryHintPatterns: Array.isArray(rawPolicy.query_hint_patterns)
+      ? rawPolicy.query_hint_patterns.map((value) => String(value ?? "").trim().toLowerCase()).filter(Boolean)
+      : defaultSpecArtifactPolicy.queryHintPatterns,
+    jsonMarkers: Array.isArray(rawPolicy.json_markers)
+      ? rawPolicy.json_markers.map((value) => String(value ?? "").trim()).filter(Boolean)
+      : defaultSpecArtifactPolicy.jsonMarkers,
+    yamlMarkers: Array.isArray(rawPolicy.yaml_markers)
+      ? rawPolicy.yaml_markers.map((value) => String(value ?? "").trim()).filter(Boolean)
+      : defaultSpecArtifactPolicy.yamlMarkers,
+    yamlTextMarkers: Array.isArray(rawPolicy.yaml_text_markers)
+      ? rawPolicy.yaml_text_markers.map((value) => String(value ?? "").trim().toLowerCase()).filter(Boolean)
+      : defaultSpecArtifactPolicy.yamlTextMarkers,
+  };
+}
+
 async function walkJsonFiles(targetDir) {
   if (!(await fileExists(targetDir))) {
     return [];
@@ -220,7 +283,7 @@ function normalizeCapabilityValue(value) {
   }
 
   if (value === false || String(value ?? "").trim().toLowerCase() === "false") {
-    return "Not Supported";
+    return "Unsupported";
   }
 
   const normalizedValue = String(value ?? "").trim().toLowerCase();
@@ -230,14 +293,118 @@ function normalizeCapabilityValue(value) {
   }
 
   if (normalizedValue === "not supported" || normalizedValue === "un-supported" || normalizedValue === "unsupported") {
-    return "Not Supported";
+    return "Unsupported";
   }
 
   if (normalizedValue === "n/a" || normalizedValue === "na") {
-    return "Not Supported";
+    return "Unsupported";
   }
 
   return null;
+}
+
+function normalizeUrl(value) {
+  const normalizedValue = String(value ?? "").trim();
+
+  if (!normalizedValue || !isHttpUrl(normalizedValue)) {
+    return "";
+  }
+
+  return normalizedValue;
+}
+
+function normalizeUrlForComparison(value) {
+  if (!value) {
+    return "";
+  }
+
+  try {
+    const parsedUrl = new URL(value);
+    const normalizedPath = parsedUrl.pathname.replace(/\/+$/, "") || "/";
+    return `${parsedUrl.origin.toLowerCase()}${normalizedPath}${parsedUrl.search}`;
+  } catch {
+    return String(value).trim().replace(/\/+$/, "").toLowerCase();
+  }
+}
+
+function isExactSpecArtifactUrl(value) {
+  const normalizedValue = normalizeUrl(value);
+
+  if (!normalizedValue) {
+    return false;
+  }
+
+  try {
+    const parsedUrl = new URL(normalizedValue);
+    const lowerPath = parsedUrl.pathname.toLowerCase();
+    if (specArtifactPolicy.exactArtifactExtensions.some((extension) => lowerPath.endsWith(extension))) {
+      return true;
+    }
+
+    const lowerSearch = parsedUrl.search.toLowerCase();
+    const lowerPathAndQuery = `${lowerPath}${lowerSearch}`;
+    const hasPolicyHint = specArtifactPolicy.endpointHintPatterns.some((pattern) => lowerPathAndQuery.includes(pattern))
+      || specArtifactPolicy.queryHintPatterns.some((pattern) => lowerSearch.includes(pattern));
+
+    if (!hasPolicyHint) {
+      return false;
+    }
+
+    if (lowerPath.startsWith("/docs/") || lowerPath.endsWith(".html") || lowerPath.includes("/swagger/ui/") || lowerPath.includes("/swagger/index.html")) {
+      return false;
+    }
+
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function sanitizeSpecArtifactUrl(specUrl, documentationUrl) {
+  const normalizedSpecUrl = normalizeUrl(specUrl);
+
+  if (!normalizedSpecUrl || !isExactSpecArtifactUrl(normalizedSpecUrl)) {
+    return "";
+  }
+
+  const normalizedDocumentationUrl = normalizeUrl(documentationUrl);
+  if (normalizedDocumentationUrl && normalizeUrlForComparison(normalizedSpecUrl) === normalizeUrlForComparison(normalizedDocumentationUrl)) {
+    return "";
+  }
+
+  return normalizedSpecUrl;
+}
+
+function textContainsGenericDetailPhrase(value) {
+  const normalizedValue = String(value ?? "").trim().toLowerCase();
+  return genericDetailPhrases.some((phrase) => normalizedValue.includes(phrase));
+}
+
+function availableDataLooksSubstantive(availableData) {
+  if (!Array.isArray(availableData) || availableData.length === 0) {
+    return false;
+  }
+
+  return availableData.some((section) => {
+    const description = String(section?.description ?? "").trim();
+    const dataPoints = Array.isArray(section?.data_points)
+      ? section.data_points.map((item) => String(item ?? "").trim()).filter(Boolean)
+      : [];
+    const relevantOperations = Array.isArray(section?.relevant_operations)
+      ? section.relevant_operations.map((item) => String(item ?? "").trim()).filter(Boolean)
+      : [];
+
+    if (!description || textContainsGenericDetailPhrase(description)) {
+      return false;
+    }
+
+    if (dataPoints.length === 0) {
+      return false;
+    }
+
+    const substantiveDataPoints = dataPoints.filter((item) => !textContainsGenericDetailPhrase(item));
+    return substantiveDataPoints.length > 0 || relevantOperations.length > 0;
+  });
 }
 
 function detailKey(vendorSlug, productSlug) {
@@ -253,6 +420,402 @@ function toDetailFileName(productSlug) {
 
   const hashSuffix = createHash("sha1").update(normalizedSlug).digest("hex").slice(0, 12);
   return `${normalizedSlug.slice(0, 64)}-${hashSuffix}`;
+}
+
+function buildMissingDetailPath(record) {
+  return `/integration-details/${record.vendor_slug}/${toDetailFileName(record.product_slug)}.json`;
+}
+
+function buildManufacturedSpecPath(detailRecord) {
+  return `/manufactured-openapi/${detailRecord.vendor_slug}/${toDetailFileName(detailRecord.product_slug)}.openapi.json`;
+}
+
+function toAbsolutePublicUrl(relativePath) {
+  const normalizedPath = String(relativePath ?? "").trim();
+
+  if (!normalizedPath) {
+    return "";
+  }
+
+  if (normalizedPath.startsWith("http://") || normalizedPath.startsWith("https://")) {
+    return normalizedPath;
+  }
+
+  return `${publicSiteBaseUrl}${normalizedPath.startsWith("/") ? normalizedPath : `/${normalizedPath}`}`;
+}
+
+function slugifyText(value) {
+  return String(value ?? "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .replace(/-{2,}/g, "-");
+}
+
+function createOperationSlug(value, fallback) {
+  const slug = slugifyText(value);
+  return slug || fallback;
+}
+
+function toTitleCase(value) {
+  return String(value ?? "")
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+}
+
+function buildPlaceholderServerUrl() {
+  return "{protocol}://{host}{basePath}";
+}
+
+function inferOperationMethod(operationText) {
+  const explicitStart = String(operationText ?? "").match(/^\s*(GET|POST|PUT|PATCH|DELETE)\b/i);
+  if (explicitStart) {
+    return explicitStart[1].toLowerCase();
+  }
+
+  const explicitEnd = String(operationText ?? "").match(/\b(GET|POST|PUT|PATCH|DELETE)\s*$/i);
+  if (explicitEnd) {
+    return explicitEnd[1].toLowerCase();
+  }
+
+  const normalized = String(operationText ?? "").toLowerCase();
+  if (normalized.includes("create") || normalized.includes("submit") || normalized.includes("upload")) {
+    return "post";
+  }
+
+  if (normalized.includes("update") || normalized.includes("put")) {
+    return "put";
+  }
+
+  if (normalized.includes("delete") || normalized.includes("remove")) {
+    return "delete";
+  }
+
+  return "get";
+}
+
+function inferOperationPath(operationText, fallbackSlug) {
+  const normalizedText = String(operationText ?? "").trim();
+  const explicitPath = normalizedText.match(/\/(?:[A-Za-z0-9._~!$&'()*+,;=:@{}-]+|\$)+(?:\/[A-Za-z0-9._~!$&'()*+,;=:@{}-]+|\/\$[A-Za-z0-9._~!$&'()*+,;=:@{}-]+)*/);
+
+  if (explicitPath) {
+    return explicitPath[0];
+  }
+
+  const cleaned = normalizedText
+    .replace(/^\s*(GET|POST|PUT|PATCH|DELETE)\s+/i, "")
+    .replace(/\s+(GET|POST|PUT|PATCH|DELETE)\s*$/i, "")
+    .replace(/^(read-instance:|search-type:|server-capabilities:)/i, "")
+    .trim();
+
+  const slug = createOperationSlug(cleaned, fallbackSlug);
+  return `/${slug}`;
+}
+
+function buildOperationSchemaName(operationText, fallbackSlug) {
+  const slug = createOperationSlug(operationText, fallbackSlug);
+  return slug
+    .split("-")
+    .filter(Boolean)
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join("") || "GeneratedOperation";
+}
+
+function deduplicateOperations(detailRecord) {
+  const operations = [];
+  const seenKeys = new Set();
+
+  detailRecord.available_data.forEach((section, sectionIndex) => {
+    const relevantOperations = Array.isArray(section?.relevant_operations)
+      ? section.relevant_operations.map((value) => String(value ?? "").trim()).filter(Boolean)
+      : [];
+
+    relevantOperations.forEach((operationText, operationIndex) => {
+      const fallbackSlug = `operation-${sectionIndex + 1}-${operationIndex + 1}`;
+      const method = inferOperationMethod(operationText);
+      const pathName = inferOperationPath(operationText, fallbackSlug);
+      const key = `${method}:${pathName}`;
+
+      if (!supportedOpenApiMethods.has(method) || seenKeys.has(key)) {
+        return;
+      }
+
+      seenKeys.add(key);
+      operations.push({
+        category: String(section?.category ?? "Integration Operations").trim() || "Integration Operations",
+        description: String(section?.description ?? "").trim(),
+        method,
+        operationText,
+        pathName,
+        schemaName: buildOperationSchemaName(operationText, fallbackSlug),
+      });
+    });
+  });
+
+  if (operations.length > 0) {
+    return operations;
+  }
+
+  return detailRecord.key_entities.map((entity, index) => {
+    const entityLabel = String(entity ?? "").trim();
+    const fallbackSlug = `entity-${index + 1}`;
+    const slug = createOperationSlug(entityLabel, fallbackSlug);
+    return {
+      category: "Available Data",
+      description: detailRecord.data_coverage_summary,
+      method: "get",
+      operationText: `Get ${toTitleCase(entityLabel || fallbackSlug)}`,
+      pathName: `/${slug}`,
+      schemaName: buildOperationSchemaName(entityLabel, fallbackSlug),
+    };
+  });
+}
+
+function buildManufacturedSpec(detailRecord) {
+  const operations = deduplicateOperations(detailRecord);
+  const vendorSpecUrl = String(detailRecord.vendor_spec_artifact_url ?? "").trim();
+  const documentationUrl = String(detailRecord.source_evidence?.documentation_url || detailRecord.integration_api_url || "").trim();
+  const reviewedAt = String(detailRecord.source_evidence?.reviewed_at ?? "").trim() || new Date().toISOString().slice(0, 10);
+  const paths = {};
+  const schemas = {
+    IntegrationProfile: {
+      type: "object",
+      additionalProperties: false,
+      properties: {
+        vendor_slug: { type: "string", description: "Vendor slug from the Last Mile catalog." },
+        product_slug: { type: "string", description: "Product slug from the Last Mile catalog." },
+        product_name: { type: "string" },
+        data_coverage_summary: { type: "string" },
+        data_domains: { type: "array", items: { type: "string" } },
+        key_entities: { type: "array", items: { type: "string" } },
+        buyer_guidance: { type: "string" },
+        overview: { type: "string" },
+        asset_data_available: { type: "string", enum: ["Supported", "Unsupported"] },
+        telemetry_data_available: { type: "string", enum: ["Supported", "Unsupported"] },
+        writeback_supported: { type: "string", enum: ["Supported", "Unsupported"] },
+        documentation_url: { type: "string", format: "uri" },
+        vendor_spec_artifact_url: { type: "string", format: "uri" },
+      },
+      required: [
+        "vendor_slug",
+        "product_slug",
+        "product_name",
+        "data_coverage_summary",
+        "data_domains",
+        "key_entities",
+        "overview",
+        "asset_data_available",
+        "telemetry_data_available",
+        "writeback_supported",
+      ],
+    },
+    OperationEnvelope: {
+      type: "object",
+      additionalProperties: true,
+      properties: {
+        operation: { type: "string" },
+        source: { type: "string" },
+        notes: { type: "array", items: { type: "string" } },
+        records: {
+          type: "array",
+          items: {
+            type: "object",
+            additionalProperties: true,
+          },
+        },
+      },
+      required: ["operation", "source"],
+    },
+    MutationEnvelope: {
+      type: "object",
+      additionalProperties: true,
+      properties: {
+        operation: { type: "string" },
+        payload: {
+          type: "object",
+          additionalProperties: true,
+          description: "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation.",
+        },
+      },
+      required: ["operation"],
+    },
+    StandardError: {
+      type: "object",
+      properties: {
+        message: { type: "string" },
+        detail: { type: "string" },
+      },
+      required: ["message"],
+    },
+  };
+
+  paths["/integration-profile"] = {
+    get: {
+      tags: ["Integration Profile"],
+      operationId: `${detailRecord.vendor_slug}_${detailRecord.product_slug}_integrationProfile`,
+      summary: `Get manufactured profile for ${detailRecord.product_name}`,
+      description: "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+      responses: {
+        200: {
+          description: "Curated integration profile.",
+          content: {
+            "application/json": {
+              schema: { $ref: "#/components/schemas/IntegrationProfile" },
+            },
+          },
+        },
+      },
+      "x-lastmile-confidence": "researched",
+      "x-lastmile-manufactured": true,
+    },
+  };
+
+  for (const operation of operations) {
+    if (!paths[operation.pathName]) {
+      paths[operation.pathName] = {};
+    }
+
+    const operationIdBase = `${detailRecord.vendor_slug}_${detailRecord.product_slug}_${createOperationSlug(operation.operationText, operation.schemaName.toLowerCase())}`;
+    const nextOperation = {
+      tags: [operation.category],
+      operationId: `${operationIdBase}_${operation.method}`,
+      summary: operation.operationText,
+      description: [
+        "Manufactured OpenAPI operation synthesized from Last Mile curated research.",
+        operation.description,
+        `Vendor documentation: ${documentationUrl || "Not provided"}`,
+      ]
+        .filter(Boolean)
+        .join(" "),
+      responses: {
+        200: {
+          description: `Manufactured response envelope for ${operation.operationText}.`,
+          content: {
+            "application/json": {
+              schema: { $ref: "#/components/schemas/OperationEnvelope" },
+            },
+          },
+        },
+        default: {
+          description: "Error response.",
+          content: {
+            "application/json": {
+              schema: { $ref: "#/components/schemas/StandardError" },
+            },
+          },
+        },
+      },
+      "x-lastmile-confidence": "manufactured-from-curated-json",
+      "x-lastmile-manufactured": true,
+    };
+
+    if (operation.method !== "get") {
+      nextOperation.requestBody = {
+        required: operation.method === "post" || operation.method === "put" || operation.method === "patch",
+        content: {
+          "application/json": {
+            schema: { $ref: "#/components/schemas/MutationEnvelope" },
+          },
+        },
+      };
+      nextOperation.responses[201] = nextOperation.responses[200];
+    }
+
+    paths[operation.pathName][operation.method] = nextOperation;
+  }
+
+  return {
+    openapi: "3.1.0",
+    info: {
+      title: `${detailRecord.product_name} Manufactured OpenAPI`,
+      version: `0.1.0-manufactured-${reviewedAt}`,
+      summary: detailRecord.data_coverage_summary,
+      description: [
+        `Manufactured OpenAPI artifact for ${detailRecord.product_name}.`,
+        "This file was synthesized by Last Mile from curated research JSON and is not vendor-certified.",
+        "Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use.",
+        detailRecord.overview,
+      ]
+        .filter(Boolean)
+        .join(" "),
+      contact: {
+        name: "Last Mile Catalog Research",
+        url: publicSiteBaseUrl,
+      },
+    },
+    servers: [
+      {
+        url: buildPlaceholderServerUrl(),
+        description: "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+        variables: {
+          protocol: {
+            default: "https",
+            enum: ["https"],
+          },
+          host: {
+            default: "replace-with-vendor-host.invalid",
+          },
+          basePath: {
+            default: "/",
+          },
+        },
+      },
+    ],
+    externalDocs: documentationUrl
+      ? {
+          description: "Vendor documentation used as the primary public source for this manufactured contract.",
+          url: documentationUrl,
+        }
+      : undefined,
+    tags: [
+      { name: "Integration Profile", description: "Last Mile manufactured profile and research provenance." },
+      ...Array.from(new Set(operations.map((operation) => operation.category))).map((category) => ({
+        name: category,
+        description: `Manufactured operations grouped under ${category}.`,
+      })),
+    ],
+    paths,
+    components: {
+      schemas,
+    },
+    "x-lastmile": {
+      api_spec_origin: "manufactured",
+      manufactured_from_detail_path: detailRecord.detail_path,
+      vendor_documentation_url: documentationUrl,
+      vendor_spec_artifact_url: vendorSpecUrl,
+      reviewed_at: reviewedAt,
+    },
+  };
+}
+
+function applyManufacturedSpecMetadata(detailRecords) {
+  const enrichedDetails = new Map();
+
+  for (const [key, detailRecord] of detailRecords.entries()) {
+    const manufacturedSpecPath = buildManufacturedSpecPath(detailRecord);
+    const manufacturedSpecUrl = toAbsolutePublicUrl(manufacturedSpecPath);
+    const vendorSpecArtifactUrl = String(detailRecord.vendor_spec_artifact_url || detailRecord.spec_artifact_url || "").trim();
+
+    enrichedDetails.set(key, {
+      ...detailRecord,
+      api_spec_origin: "manufactured",
+      manufactured_spec_artifact_url: manufacturedSpecUrl,
+      vendor_spec_artifact_url: vendorSpecArtifactUrl,
+      spec_artifact_url: manufacturedSpecUrl,
+      source_evidence: {
+        ...(detailRecord.source_evidence ?? {}),
+        vendor_spec_url: vendorSpecArtifactUrl,
+        manufactured_spec_url: manufacturedSpecUrl,
+        spec_url: manufacturedSpecUrl,
+      },
+      manufactured_spec_path: manufacturedSpecPath,
+    });
+  }
+
+  return enrichedDetails;
 }
 
 async function loadIntegrationDetails() {
@@ -290,6 +853,12 @@ async function loadIntegrationDetails() {
       continue;
     }
 
+    const normalizedDocumentationUrl = normalizeUrl(rawDetail?.source_evidence?.documentation_url ?? rawDetail.integration_api_url);
+    const normalizedSpecUrl = sanitizeSpecArtifactUrl(
+      rawDetail?.source_evidence?.spec_url ?? rawDetail.spec_artifact_url,
+      normalizedDocumentationUrl,
+    );
+
     const normalizedDetail = {
       vendor_slug: vendorSlug,
       vendor_name: String(rawDetail.vendor_name ?? "").trim(),
@@ -297,9 +866,10 @@ async function loadIntegrationDetails() {
       product_name: String(rawDetail.product_name ?? "").trim(),
       product_family: String(rawDetail.product_family ?? "").trim(),
       integration_type: String(rawDetail.integration_type ?? "").trim(),
-      integration_api_url: String(rawDetail.integration_api_url ?? "").trim(),
-      spec_artifact_url: String(rawDetail.spec_artifact_url ?? "").trim(),
-      detail_completeness: String(rawDetail.detail_completeness ?? "researched").trim() || "researched",
+      integration_api_url: normalizeUrl(rawDetail.integration_api_url),
+      spec_artifact_url: normalizedSpecUrl,
+      vendor_spec_artifact_url: normalizedSpecUrl,
+      detail_completeness: "researched",
       data_coverage_summary: String(rawDetail.data_coverage_summary ?? "").trim(),
       data_domains: normalizeTextList(rawDetail.data_domains),
       asset_data_available: normalizeCapabilityValue(rawDetail.asset_data_available),
@@ -310,7 +880,11 @@ async function loadIntegrationDetails() {
       overview: String(rawDetail.overview ?? "").trim(),
       available_data: Array.isArray(rawDetail.available_data) ? rawDetail.available_data : [],
       ingest_considerations: normalizeTextList(rawDetail.ingest_considerations),
-      source_evidence: rawDetail.source_evidence ?? {},
+      source_evidence: {
+        ...(rawDetail.source_evidence ?? {}),
+        documentation_url: normalizedDocumentationUrl,
+        spec_url: normalizedSpecUrl,
+      },
       detail_path: detailPath,
     };
 
@@ -330,96 +904,6 @@ function toDisplayStatus(status) {
     .filter(Boolean)
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
-}
-
-function buildGeneratedBuyerGuidance(record) {
-  const integrationType = record.integration_type || "API";
-  const productFamilyText = record.product_family ? `${record.product_family} ` : "";
-
-  return `Use the published ${productFamilyText}${integrationType} documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.`;
-}
-
-function buildGeneratedOverview(record) {
-  const productSummary = String(record.product_summary ?? "").trim();
-
-  if (productSummary) {
-    return `${productSummary} This baseline detail page was generated from the catalog metadata and linked documentation so the product can be reviewed consistently alongside researched integrations.`;
-  }
-
-  return `This baseline detail page was generated from the catalog metadata and linked documentation so ${record.product_name} can be reviewed consistently alongside researched integrations.`;
-}
-
-function buildGeneratedAvailableData(record) {
-  const productSummary = String(record.product_summary ?? "").trim();
-  const dataPoints = [];
-
-  if (productSummary) {
-    dataPoints.push(`Published summary: ${productSummary}`);
-  }
-
-  if (record.product_family) {
-    dataPoints.push(`Product family: ${record.product_family}`);
-  }
-
-  if (record.integration_type) {
-    dataPoints.push(`Integration type: ${record.integration_type}`);
-  }
-
-  if (record.integration_status) {
-    dataPoints.push(`Lifecycle status: ${toDisplayStatus(record.integration_status)}`);
-  }
-
-  if (record.integration_api_url) {
-    dataPoints.push("Published API documentation is available from the linked source documentation.");
-  }
-
-  dataPoints.push("Exact entities, payloads, and operations should be confirmed in the source documentation before implementation.");
-
-  return [
-    {
-      category: "Published API Scope",
-      description:
-        "This standardized detail view was generated from the catalog row and linked documentation so every currently captured product has a consistent review surface.",
-      data_points: dataPoints,
-      relevant_operations: [],
-    },
-  ];
-}
-
-function createGeneratedDetailRecord(record) {
-  const detailPath = `/integration-details/${record.vendor_slug}/${toDetailFileName(record.product_slug)}.json`;
-  const productSummary = String(record.product_summary ?? "").trim();
-  const generatedSummary = productSummary || `${record.product_name} has published API documentation available for review.`;
-
-  return {
-    vendor_slug: record.vendor_slug,
-    vendor_name: record.vendor_name,
-    product_slug: record.product_slug,
-    product_name: record.product_name,
-    product_family: record.product_family,
-    integration_type: record.integration_type,
-    integration_api_url: record.integration_api_url,
-    spec_artifact_url: record.integration_api_url,
-    detail_completeness: "generated-summary",
-    data_coverage_summary: generatedSummary,
-    data_domains: [],
-    asset_data_available: null,
-    telemetry_data_available: null,
-    writeback_supported: null,
-    key_entities: [],
-    buyer_guidance: buildGeneratedBuyerGuidance(record),
-    overview: buildGeneratedOverview(record),
-    available_data: buildGeneratedAvailableData(record),
-    ingest_considerations: [],
-    source_evidence: {
-      documentation_url: record.integration_api_url,
-      spec_url: record.integration_api_url,
-      reviewed_at: new Date().toISOString().slice(0, 10),
-      evidence_notes:
-        "This detail payload was automatically generated from the catalog row and linked documentation URL. Manual data-element profiling has not yet been completed for this product.",
-    },
-    detail_path: detailPath,
-  };
 }
 
 function normalizeCatalogForComparison(catalog) {
@@ -463,57 +947,9 @@ function preserveCatalogTimestamp(catalog, existingCatalog) {
   };
 }
 
-async function preserveGeneratedDetailTimestamps(detailRecords) {
-  const stabilizedRecords = new Map();
-
-  for (const [key, detailRecord] of detailRecords.entries()) {
-    if (detailRecord.detail_completeness !== "generated-summary") {
-      stabilizedRecords.set(key, detailRecord);
-      continue;
-    }
-
-    const outputPath = path.join(repoRoot, "public", detailRecord.detail_path.replace(/^\//, ""));
-    const existingDetail = await readJsonIfExists(outputPath);
-
-    if (!existingDetail?.source_evidence?.reviewed_at) {
-      stabilizedRecords.set(key, detailRecord);
-      continue;
-    }
-
-    const nextDetail = normalizeDetailForComparison(detailRecord);
-    const previousDetail = normalizeDetailForComparison(existingDetail);
-
-    if (JSON.stringify(nextDetail) !== JSON.stringify(previousDetail)) {
-      stabilizedRecords.set(key, detailRecord);
-      continue;
-    }
-
-    stabilizedRecords.set(key, {
-      ...detailRecord,
-      source_evidence: {
-        ...(detailRecord.source_evidence ?? {}),
-        reviewed_at: existingDetail.source_evidence.reviewed_at,
-      },
-    });
-  }
-
-  return stabilizedRecords;
-}
-
 function buildDetailRecords(records, manualDetailRecords) {
-  const details = new Map(manualDetailRecords);
-
-  for (const record of records.filter((currentRecord) => currentRecord.is_visible)) {
-    const key = detailKey(record.vendor_slug, record.product_slug);
-
-    if (details.has(key)) {
-      continue;
-    }
-
-    details.set(key, createGeneratedDetailRecord(record));
-  }
-
-  return details;
+  void records;
+  return new Map(manualDetailRecords);
 }
 
 async function writeIntegrationDetails(detailRecords) {
@@ -538,8 +974,49 @@ async function writeIntegrationDetails(detailRecords) {
 
   for (const detailRecord of detailRecords.values()) {
     const outputPath = path.join(repoRoot, "public", detailRecord.detail_path.replace(/^\//, ""));
+    const nextContent = `${JSON.stringify(detailRecord, null, 2)}\n`;
+    const existingContent = await readFile(outputPath, "utf8").catch(() => "");
+
+    if (existingContent === nextContent) {
+      continue;
+    }
+
     await mkdir(path.dirname(outputPath), { recursive: true });
-    await writeFile(outputPath, `${JSON.stringify(detailRecord, null, 2)}\n`, "utf8");
+    await writeFile(outputPath, nextContent, "utf8");
+  }
+}
+
+async function writeManufacturedSpecs(detailRecords) {
+  const existingFiles = await walkJsonFiles(manufacturedSpecOutputDir);
+  const nextOutputPaths = new Set(
+    Array.from(detailRecords.values()).map((detailRecord) =>
+      path.join(repoRoot, "public", detailRecord.manufactured_spec_path.replace(/^\//, "")),
+    ),
+  );
+
+  for (const existingFile of existingFiles) {
+    if (nextOutputPaths.has(existingFile)) {
+      continue;
+    }
+
+    try {
+      await rm(existingFile, { force: true });
+    } catch (error) {
+      console.warn(`Warning: unable to remove stale manufactured spec file ${existingFile}: ${error}`);
+    }
+  }
+
+  for (const detailRecord of detailRecords.values()) {
+    const outputPath = path.join(repoRoot, "public", detailRecord.manufactured_spec_path.replace(/^\//, ""));
+    const nextContent = `${JSON.stringify(buildManufacturedSpec(detailRecord), null, 2)}\n`;
+    const existingContent = await readFile(outputPath, "utf8").catch(() => "");
+
+    if (existingContent === nextContent) {
+      continue;
+    }
+
+    await mkdir(path.dirname(outputPath), { recursive: true });
+    await writeFile(outputPath, nextContent, "utf8");
   }
 }
 
@@ -632,61 +1109,11 @@ async function readSourceCsv(sourceIdentifier) {
 }
 
 function parseCsv(content) {
-  const rows = [];
-  let currentField = "";
-  let currentRow = [];
-  let insideQuotes = false;
-
-  for (let index = 0; index < content.length; index += 1) {
-    const character = content[index];
-    const nextCharacter = content[index + 1];
-
-    if (character === '"') {
-      if (insideQuotes && nextCharacter === '"') {
-        currentField += '"';
-        index += 1;
-      } else {
-        insideQuotes = !insideQuotes;
-      }
-
-      continue;
-    }
-
-    if (character === "," && !insideQuotes) {
-      currentRow.push(currentField);
-      currentField = "";
-      continue;
-    }
-
-    if ((character === "\n" || character === "\r") && !insideQuotes) {
-      if (character === "\r" && nextCharacter === "\n") {
-        index += 1;
-      }
-
-      currentRow.push(currentField);
-      currentField = "";
-
-      const hasValues = currentRow.some((value) => value.trim() !== "");
-      if (hasValues) {
-        rows.push(currentRow);
-      }
-
-      currentRow = [];
-      continue;
-    }
-
-    currentField += character;
-  }
-
-  if (currentField.length > 0 || currentRow.length > 0) {
-    currentRow.push(currentField);
-    const hasValues = currentRow.some((value) => value.trim() !== "");
-    if (hasValues) {
-      rows.push(currentRow);
-    }
-  }
-
-  return rows;
+  return parseCsvRows(content, {
+    bom: true,
+    relax_column_count: true,
+    skip_empty_lines: true,
+  }).filter((row) => Array.isArray(row) && row.some((value) => String(value ?? "").trim() !== ""));
 }
 
 function toBoolean(value) {
@@ -892,6 +1319,10 @@ async function validateRecords(headerRow, dataRows, records, detailRecords) {
       errors.push(`Row ${lineNumber} has unsupported integration_status '${record.integration_status}'.`);
     }
 
+    if (blockedIntegrationTypes.has(record.integration_type)) {
+      errors.push(`Row ${lineNumber} uses unsupported integration_type '${record.integration_type}'. Remove SDKs and developer portals from the catalog.`);
+    }
+
     if (record.vendor_logo_url && !isHttpUrl(record.vendor_logo_url)) {
       errors.push(`Row ${lineNumber} has invalid vendor_logo_url '${record.vendor_logo_url}'.`);
     }
@@ -934,6 +1365,54 @@ async function validateRecords(headerRow, dataRows, records, detailRecords) {
 
     if (!catalogKeys.has(key)) {
       errors.push(`Detail metadata exists for ${key} but no matching visible integration row was found in the CSV.`);
+      continue;
+    }
+
+    if (detailRecord.detail_completeness !== "researched") {
+      errors.push(`Detail metadata for ${key} must use detail_completeness=researched.`);
+    }
+
+    for (const fieldName of ["asset_data_available", "telemetry_data_available", "writeback_supported"]) {
+      if (!strictCapabilityValues.has(detailRecord[fieldName])) {
+        errors.push(`Detail metadata for ${key} must set ${fieldName} to Supported or Unsupported.`);
+      }
+    }
+
+    if (textContainsGenericDetailPhrase(detailRecord.data_coverage_summary)) {
+      errors.push(`Detail metadata for ${key} uses generic data_coverage_summary text and must be replaced with source-backed copy.`);
+    }
+
+    if (textContainsGenericDetailPhrase(detailRecord.overview)) {
+      errors.push(`Detail metadata for ${key} uses generic overview text and must be replaced with source-backed copy.`);
+    }
+
+    if (!availableDataLooksSubstantive(detailRecord.available_data)) {
+      errors.push(`Detail metadata for ${key} must provide substantive available_data entries with real data elements or operations.`);
+    }
+
+    const documentationUrl = normalizeUrl(detailRecord.source_evidence?.documentation_url || detailRecord.integration_api_url);
+    const specUrl = normalizeUrl(detailRecord.source_evidence?.spec_url || detailRecord.spec_artifact_url);
+
+    if (specUrl && !isExactSpecArtifactUrl(specUrl)) {
+      errors.push(`Detail metadata for ${key} has spec evidence that is not an exact JSON/YAML artifact URL.`);
+    }
+
+    if (
+      documentationUrl &&
+      specUrl &&
+      normalizeUrlForComparison(documentationUrl) === normalizeUrlForComparison(specUrl)
+    ) {
+      errors.push(`Detail metadata for ${key} uses the same URL for documentation and spec artifact evidence.`);
+    }
+  }
+
+  for (const record of records.filter((currentRecord) => currentRecord.is_visible)) {
+    const key = detailKey(record.vendor_slug, record.product_slug);
+
+    if (!detailRecords.has(key)) {
+      errors.push(
+        `Visible integration ${key} is missing curated detail metadata. Add ${buildMissingDetailPath(record).replace(/^\//, "data/")} before publishing.`,
+      );
     }
   }
 
@@ -1013,6 +1492,8 @@ function buildCatalog(records, source, detailRecords, functionTaxonomy) {
       integration_status: record.integration_status,
       integration_type: record.integration_type,
       integration_api_url: record.integration_api_url,
+      spec_artifact_url: detailRecords.get(detailKey(record.vendor_slug, record.product_slug))?.spec_artifact_url ?? "",
+      api_spec_origin: detailRecords.get(detailKey(record.vendor_slug, record.product_slug))?.api_spec_origin ?? "vendor",
       product_summary: record.product_summary,
       product_sort_order: record.product_sort_order,
       is_visible: record.is_visible,
@@ -1091,6 +1572,8 @@ function buildCatalog(records, source, detailRecords, functionTaxonomy) {
         vendor_domain: "Resolved vendor domain used for scalable logo enrichment and vendor identity mapping.",
         vendor_logo_src: "Resolved public logo path or external image URL used by the UI when available.",
         detail_path: "Route-addressable JSON detail payload for a specific OEM product integration.",
+        spec_artifact_url: "Preferred spec artifact URL exposed to AI agents and the public integration detail page.",
+        api_spec_origin: "Indicates whether the exposed spec artifact was published by the vendor or manufactured by Last Mile.",
         industry_function_slug: "Stable machine key for the operational function inside an industry, used for filtering and navigation.",
         industry_function_name: "Visible operational function label used by the UI and machine-readable clients.",
         data_domains: "Normalized capability tags describing the main data domains exposed by the integration.",
@@ -1148,6 +1631,7 @@ function enrichDetailRecords(detailRecords, vendorLookup) {
 async function main() {
   const args = parseArguments(process.argv.slice(2));
   const config = args.configSpecified ? await readConfig(args.configPath) : null;
+  await loadSpecArtifactPolicy();
   const logoConfig = {
     logoDevPublishableKey:
       (typeof process.env.LOGO_DEV_PUBLISHABLE_KEY === "string" ? process.env.LOGO_DEV_PUBLISHABLE_KEY.trim() : "") ||
@@ -1197,8 +1681,9 @@ async function main() {
 
   const generatedAndManualDetailRecords = buildDetailRecords(records, manualDetailRecords);
   const vendorLookup = buildVendorLookup(records);
-  const enrichedDetailRecords = enrichDetailRecords(generatedAndManualDetailRecords, vendorLookup);
-  const detailRecords = await preserveGeneratedDetailTimestamps(enrichedDetailRecords);
+  const detailRecords = applyManufacturedSpecMetadata(
+    enrichDetailRecords(generatedAndManualDetailRecords, vendorLookup),
+  );
 
   const { errors, warnings } = await validateRecords(headerRow, dataRows, records, detailRecords);
 
@@ -1229,6 +1714,7 @@ async function main() {
   await mkdir(path.dirname(outputJsonPath), { recursive: true });
   await writeFile(outputJsonPath, `${JSON.stringify(catalog, null, 2)}\n`, "utf8");
   await writeIntegrationDetails(detailRecords);
+  await writeManufacturedSpecs(detailRecords);
 
   console.log(`Generated ${outputJsonPath}`);
 }

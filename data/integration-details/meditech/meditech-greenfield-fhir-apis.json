@@ -1,0 +1,90 @@
+{
+  "vendor_slug": "meditech",
+  "vendor_name": "MEDITECH",
+  "product_slug": "meditech-greenfield-fhir-apis",
+  "product_name": "MEDITECH Greenfield / FHIR APIs",
+  "product_family": "MEDITECH Greenfield",
+  "integration_type": "FHIR API",
+  "integration_api_url": "https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "MEDITECH Greenfield publicly documents US Core STU7 patient health APIs based on FHIR R4 for patient, appointment, clinical, document, medication, device, and group-export retrieval workflows.",
+  "data_domains": [
+    "patient-master-data",
+    "clinical-and-document-records",
+    "appointments-and-scheduling",
+    "population-health-exports"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Unsupported",
+  "key_entities": [
+    "patients",
+    "appointments",
+    "devices",
+    "document references",
+    "observations and diagnostic reports",
+    "groups"
+  ],
+  "buyer_guidance": "Use MEDITECH Greenfield patient data APIs for patient-mediated and provider-mediated FHIR read access across MEDITECH environments. This is a patient-data interoperability surface, not an asset or telemetry platform.",
+  "overview": "MEDITECH's public Greenfield documentation describes patient health data APIs designed to satisfy USCDI v3 requirements using HL7 FHIR US Core STU7 on top of FHIR R4. The public path listing shows resources such as AllergyIntolerance, Appointment, Binary, CarePlan, CareTeam, Communication, Condition, Coverage, Device, DiagnosticReport, DocumentReference, Encounter, Goal, Group, Immunization, Location, Medication, MedicationDispense, MedicationRequest, Observation, Organization, Patient, Practitioner, Procedure, QuestionnaireResponse, RelatedPerson, ServiceRequest, Specimen, and Task under the v2/uscore/STU7 namespace, plus group operations and patient-specific operations. The documentation emphasizes OAuth 2.0, OpenID Connect, institution-managed application configuration, and patient linking, but does not show public write-capable operations for this surface. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Unsupported.",
+  "available_data": [
+    {
+      "category": "Patient, scheduling, and core clinical records",
+      "description": "The published US Core STU7 path listing covers the main patient-data and scheduling resources required for certified interoperability use cases.",
+      "data_points": [
+        "Patient and related person records",
+        "Appointments, care plans, care teams, and communications",
+        "Conditions, encounters, goals, procedures, and service requests",
+        "Organizations, practitioners, practitioner roles, and locations",
+        "Coverage, questionnaires, questionnaire responses, and tasks"
+      ],
+      "relevant_operations": [
+        "GET /v2/uscore/STU7/Patient/",
+        "GET /v2/uscore/STU7/Patient/{id}/",
+        "GET /v2/uscore/STU7/Appointment/",
+        "GET /v2/uscore/STU7/Appointment/{id}/",
+        "GET /v2/uscore/STU7/CarePlan/",
+        "GET /v2/uscore/STU7/Condition/",
+        "GET /v2/uscore/STU7/Encounter/",
+        "GET /v2/uscore/STU7/Procedure/",
+        "GET /v2/uscore/STU7/ServiceRequest/",
+        "GET /v2/uscore/STU7/QuestionnaireResponse/"
+      ]
+    },
+    {
+      "category": "Documents, medications, devices, and export-oriented resources",
+      "description": "Greenfield also exposes retrieval paths for documents, devices, diagnostics, medications, and group-based exports.",
+      "data_points": [
+        "Binary documents and document references",
+        "Devices, diagnostic reports, media, observations, and specimens",
+        "Medication, medication dispense, and medication request resources",
+        "Group resources and group-specific operations",
+        "FHIR R4-aligned US Core data for downstream patient-data access"
+      ],
+      "relevant_operations": [
+        "GET /v2/uscore/STU7/Binary/{id}/",
+        "GET /v2/uscore/STU7/DocumentReference/",
+        "GET /v2/uscore/STU7/Device/",
+        "GET /v2/uscore/STU7/DiagnosticReport/",
+        "GET /v2/uscore/STU7/Observation/",
+        "GET /v2/uscore/STU7/Specimen/",
+        "GET /v2/uscore/STU7/Medication/",
+        "GET /v2/uscore/STU7/MedicationDispense/",
+        "GET /v2/uscore/STU7/MedicationRequest/",
+        "GET /v2/uscore/STU7/Group/{id}/{operation}/"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "MEDITECH documents institution-managed application setup and manual identity-to-patient linking, so production access depends on each hospital configuring the app and associated identity provider relationships.",
+    "The published public surface is conservative and centered on patient health data retrieval under US Core STU7, so this row should not imply broader proprietary writeback or operational API coverage than the docs support.",
+    "No exact public machine-readable OpenAPI or raw CapabilityStatement artifact was confirmed for the Greenfield aggregate row."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "MEDITECH's public Greenfield US Core STU7 docs list v2/uscore/STU7 resource paths for Patient, Appointment, Binary, CarePlan, CareTeam, Communication, Condition, Coverage, Device, DiagnosticReport, DocumentReference, Encounter, Group, Medication, Observation, Practitioner, Procedure, QuestionnaireResponse, ServiceRequest, Specimen, Task, and related resources, while describing OAuth 2.0, OpenID Connect, and institution-managed configuration."
+  }
+}

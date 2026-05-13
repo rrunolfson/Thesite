@@ -1,0 +1,831 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "PayPal REST APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "PayPal publishes public REST documentation and raw OpenAPI artifacts for OAuth, orders, payments, subscriptions, payouts, invoicing, transaction search, and webhook management.",
+    "description": "Manufactured OpenAPI artifact for PayPal REST APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. PayPal's public developer portal documents REST APIs that authenticate with OAuth 2.0 and return JSON, with sandbox support for testing and a public multi-spec OpenAPI repository. The public docs cover token exchange, orders, payments, payment method tokens, tracking, payouts, subscriptions, invoicing, transaction search, and webhook management, and the raw specifications repository exposes machine-readable artifacts such as checkout_orders_v2.json. This is a strong write-capable financial workflow surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.paypal.com/api/rest/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Checkout, payment, and billing workflows",
+      "description": "Manufactured operations grouped under Checkout, payment, and billing workflows."
+    },
+    {
+      "name": "Payouts and event-driven operations",
+      "description": "Manufactured operations grouped under Payouts and event-driven operations."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "paypal_paypal-rest-apis_integrationProfile",
+        "summary": "Get manufactured profile for PayPal REST APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v1/oauth2/token": {
+      "post": {
+        "tags": [
+          "Checkout, payment, and billing workflows"
+        ],
+        "operationId": "paypal_paypal-rest-apis_post-v1-oauth2-token_post",
+        "summary": "POST /v1/oauth2/token",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal exposes the core APIs needed to create and settle customer payment flows. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v1/oauth2/token.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v1/oauth2/token.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders-create": {
+      "post": {
+        "tags": [
+          "Checkout, payment, and billing workflows"
+        ],
+        "operationId": "paypal_paypal-rest-apis_orders-create_post",
+        "summary": "Orders create",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal exposes the core APIs needed to create and settle customer payment flows. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Orders create.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Orders create.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders-retrieve": {
+      "get": {
+        "tags": [
+          "Checkout, payment, and billing workflows"
+        ],
+        "operationId": "paypal_paypal-rest-apis_orders-retrieve_get",
+        "summary": "Orders retrieve",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal exposes the core APIs needed to create and settle customer payment flows. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Orders retrieve.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/orders-authorize": {
+      "get": {
+        "tags": [
+          "Checkout, payment, and billing workflows"
+        ],
+        "operationId": "paypal_paypal-rest-apis_orders-authorize_get",
+        "summary": "Orders authorize",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal exposes the core APIs needed to create and settle customer payment flows. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Orders authorize.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/orders-capture": {
+      "get": {
+        "tags": [
+          "Checkout, payment, and billing workflows"
+        ],
+        "operationId": "paypal_paypal-rest-apis_orders-capture_get",
+        "summary": "Orders capture",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal exposes the core APIs needed to create and settle customer payment flows. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Orders capture.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/orders-update": {
+      "put": {
+        "tags": [
+          "Checkout, payment, and billing workflows"
+        ],
+        "operationId": "paypal_paypal-rest-apis_orders-update_put",
+        "summary": "Orders update",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal exposes the core APIs needed to create and settle customer payment flows. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Orders update.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Orders update.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/payments-v2": {
+      "get": {
+        "tags": [
+          "Checkout, payment, and billing workflows"
+        ],
+        "operationId": "paypal_paypal-rest-apis_payments-v2_get",
+        "summary": "Payments v2",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal exposes the core APIs needed to create and settle customer payment flows. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payments v2.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payment-method-tokens-v3": {
+      "get": {
+        "tags": [
+          "Checkout, payment, and billing workflows"
+        ],
+        "operationId": "paypal_paypal-rest-apis_payment-method-tokens-v3_get",
+        "summary": "Payment Method Tokens v3",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal exposes the core APIs needed to create and settle customer payment flows. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payment Method Tokens v3.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/subscriptions-v1": {
+      "get": {
+        "tags": [
+          "Checkout, payment, and billing workflows"
+        ],
+        "operationId": "paypal_paypal-rest-apis_subscriptions-v1_get",
+        "summary": "Subscriptions v1",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal exposes the core APIs needed to create and settle customer payment flows. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Subscriptions v1.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/invoicing-v2": {
+      "get": {
+        "tags": [
+          "Checkout, payment, and billing workflows"
+        ],
+        "operationId": "paypal_paypal-rest-apis_invoicing-v2_get",
+        "summary": "Invoicing v2",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal exposes the core APIs needed to create and settle customer payment flows. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Invoicing v2.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/transaction-search-v1": {
+      "get": {
+        "tags": [
+          "Checkout, payment, and billing workflows"
+        ],
+        "operationId": "paypal_paypal-rest-apis_transaction-search-v1_get",
+        "summary": "Transaction Search v1",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal exposes the core APIs needed to create and settle customer payment flows. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Transaction Search v1.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payouts-batch-v1": {
+      "get": {
+        "tags": [
+          "Payouts and event-driven operations"
+        ],
+        "operationId": "paypal_paypal-rest-apis_payouts-batch-v1_get",
+        "summary": "Payouts batch v1",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal also exposes outbound money movement and asynchronous event-management surfaces. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payouts batch v1.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/referenced-payouts": {
+      "get": {
+        "tags": [
+          "Payouts and event-driven operations"
+        ],
+        "operationId": "paypal_paypal-rest-apis_referenced-payouts_get",
+        "summary": "Referenced Payouts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal also exposes outbound money movement and asynchronous event-management surfaces. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Referenced Payouts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/webhooks-management-v1": {
+      "get": {
+        "tags": [
+          "Payouts and event-driven operations"
+        ],
+        "operationId": "paypal_paypal-rest-apis_webhooks-management-v1_get",
+        "summary": "Webhooks Management v1",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal also exposes outbound money movement and asynchronous event-management surfaces. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Webhooks Management v1.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/webhook-event-names": {
+      "get": {
+        "tags": [
+          "Payouts and event-driven operations"
+        ],
+        "operationId": "paypal_paypal-rest-apis_webhook-event-names_get",
+        "summary": "Webhook event names",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal also exposes outbound money movement and asynchronous event-management surfaces. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Webhook event names.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/sandbox-accounts": {
+      "get": {
+        "tags": [
+          "Payouts and event-driven operations"
+        ],
+        "operationId": "paypal_paypal-rest-apis_sandbox-accounts_get",
+        "summary": "Sandbox Accounts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. PayPal also exposes outbound money movement and asynchronous event-management surfaces. Vendor documentation: https://developer.paypal.com/api/rest/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Sandbox Accounts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/paypal/paypal-rest-apis.json",
+    "vendor_documentation_url": "https://developer.paypal.com/api/rest/",
+    "vendor_spec_artifact_url": "https://raw.githubusercontent.com/paypal/paypal-rest-api-specifications/main/openapi/checkout_orders_v2.json",
+    "reviewed_at": "2026-05-13"
+  }
+}

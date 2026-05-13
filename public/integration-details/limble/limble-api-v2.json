@@ -1,0 +1,94 @@
+{
+  "vendor_slug": "limble",
+  "vendor_name": "Limble",
+  "product_slug": "limble-api-v2",
+  "product_name": "Limble API V2",
+  "product_family": "Limble CMMS",
+  "integration_type": "REST API",
+  "integration_api_url": "https://apidocs.limblecmms.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/limble/limble-api-v2.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Limble API V2 exposes maintenance-system assets, asset fields and logs, locations, parts with quantities and usage, work-order style tasks, purchase objects, and operational webhooks for assets, tasks, parts, and purchase-order events.",
+  "data_domains": [
+    "asset-master-data",
+    "maintenance-work-orders",
+    "parts-and-inventory",
+    "operational-events"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "assets",
+    "asset fields",
+    "asset logs",
+    "locations",
+    "parts",
+    "tasks"
+  ],
+  "buyer_guidance": "Use Limble when you need CMMS equipment, parts, and maintenance-task data from a Limble tenant, including webhook-driven operational change events. The public evidence supports maintenance events rather than device telemetry.",
+  "overview": "The Limble API V2 docs state that the API covers Assets, Locations, Parts with current quantities and usage, and Tasks including work orders, preventive maintenance, and work requests. The published Postman collection confirms concrete asset, asset-field, asset-log, location, part, and task routes, while the webhook documentation adds change events for assets, parts, and tasks. That makes it a strong asset and maintenance-workflow API with documented writeback, but not a machine-telemetry feed. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Assets, locations, and parts",
+      "description": "The confirmed public collection includes CRUD and related operations for physical maintenance records and inventory context.",
+      "data_points": [
+        "Asset records and images",
+        "Asset field values and field history",
+        "Asset logs",
+        "Locations",
+        "Part records, categories, and fields",
+        "Asset-to-part relationships"
+      ],
+      "relevant_operations": [
+        "GET /v2/assets",
+        "POST /v2/assets",
+        "PATCH /v2/assets/{assetId}",
+        "GET /v2/assets/fields/history",
+        "GET /v2/assets/{assetId}/logs",
+        "GET /v2/locations",
+        "GET /v2/parts",
+        "GET /v2/assets/parts"
+      ]
+    },
+    {
+      "category": "Maintenance tasks and change events",
+      "description": "The docs tie core maintenance workflows to both REST operations and webhook events.",
+      "data_points": [
+        "Tasks covering work orders, preventive maintenance, and work requests",
+        "Purchase orders and purchase-order items",
+        "Asset, part, and task webhook events",
+        "Task completion, reassignment, comment, and time-log events"
+      ],
+      "relevant_operations": [
+        "GET /v2/tasks",
+        "POST /v2/tasks",
+        "PATCH /v2/tasks/{taskId}",
+        "GET /v2/purchase-orders",
+        "Webhook category: asset",
+        "Webhook category: part",
+        "Webhook category: task"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The webhook payloads document operational changes for assets, parts, and tasks, but they are maintenance events rather than sensor telemetry or time-series equipment readings.",
+    "Limble supports writeback across assets, fields, logs, parts, and tasks, so integration credentials should be scoped carefully.",
+    "The confirmed Postman collection is machine-readable and distinct from the human-facing docs page, so it is suitable as exact spec artifact evidence."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://apidocs.limblecmms.com/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/limble/limble-api-v2.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "The Limble API V2 docs enumerate Assets, Locations, Parts, and Tasks as first-class API areas, and the public Postman collection confirms concrete v2 routes for assets, asset fields, asset logs, locations, parts, and related maintenance objects.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/limble/limble-api-v2.openapi.json"
+  },
+  "detail_path": "/integration-details/limble/limble-api-v2.json",
+  "vendor_domain": "limblecmms.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=limblecmms.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/limble/limble-api-v2.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/limble/limble-api-v2.openapi.json"
+}

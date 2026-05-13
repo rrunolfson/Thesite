@@ -1,0 +1,853 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "UpKeep Public API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "The UpKeep Public API covers maintenance asset records, asset downtime states, associated parts, work orders, and meter readings, making it suitable for equipment synchronization and condition or usage-driven maintenance workflows.",
+    "description": "Manufactured OpenAPI artifact for UpKeep Public API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. The public UpKeep API documentation exposes asset CRUD routes, asset downtime status management, part assignment to assets, work order creation and update flows, and full meter and meter-reading endpoints. That means the documented surface can provide equipment records and usage-style operational readings while also supporting writeback into maintenance workflows. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developers.onupkeep.com/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Asset and maintenance master data",
+      "description": "Manufactured operations grouped under Asset and maintenance master data."
+    },
+    {
+      "name": "Work execution and meter-based operations",
+      "description": "Manufactured operations grouped under Work execution and meter-based operations."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "upkeep_upkeep-public-api_integrationProfile",
+        "summary": "Get manufactured profile for UpKeep Public API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/assets": {
+      "get": {
+        "tags": [
+          "Asset and maintenance master data"
+        ],
+        "operationId": "upkeep_upkeep-public-api_get-assets_get",
+        "summary": "GET /assets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published UpKeep docs center on equipment records and the maintenance context attached to them. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Asset and maintenance master data"
+        ],
+        "operationId": "upkeep_upkeep-public-api_post-assets_post",
+        "summary": "POST /assets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published UpKeep docs center on equipment records and the maintenance context attached to them. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetId}": {
+      "get": {
+        "tags": [
+          "Asset and maintenance master data"
+        ],
+        "operationId": "upkeep_upkeep-public-api_get-assets-assetid_get",
+        "summary": "GET /assets/{assetId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published UpKeep docs center on equipment records and the maintenance context attached to them. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /assets/{assetId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "patch": {
+        "tags": [
+          "Asset and maintenance master data"
+        ],
+        "operationId": "upkeep_upkeep-public-api_patch-assets-assetid_patch",
+        "summary": "PATCH /assets/{assetId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published UpKeep docs center on equipment records and the maintenance context attached to them. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /assets/{assetId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /assets/{assetId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asset-downtime-statuses": {
+      "get": {
+        "tags": [
+          "Asset and maintenance master data"
+        ],
+        "operationId": "upkeep_upkeep-public-api_get-asset-downtime-statuses_get",
+        "summary": "GET /asset-downtime-statuses",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published UpKeep docs center on equipment records and the maintenance context attached to them. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /asset-downtime-statuses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/assets/{assetId}/parts/{partId}": {
+      "post": {
+        "tags": [
+          "Asset and maintenance master data"
+        ],
+        "operationId": "upkeep_upkeep-public-api_post-assets-assetid-parts-partid_post",
+        "summary": "POST /assets/{assetId}/parts/{partId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published UpKeep docs center on equipment records and the maintenance context attached to them. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assets/{assetId}/parts/{partId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assets/{assetId}/parts/{partId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/work-orders": {
+      "get": {
+        "tags": [
+          "Work execution and meter-based operations"
+        ],
+        "operationId": "upkeep_upkeep-public-api_get-work-orders_get",
+        "summary": "GET /work-orders",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented work-order and meter routes support maintenance execution plus usage or condition-style readings. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /work-orders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Work execution and meter-based operations"
+        ],
+        "operationId": "upkeep_upkeep-public-api_post-work-orders_post",
+        "summary": "POST /work-orders",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented work-order and meter routes support maintenance execution plus usage or condition-style readings. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /work-orders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /work-orders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/work-orders/{workOrderId}": {
+      "patch": {
+        "tags": [
+          "Work execution and meter-based operations"
+        ],
+        "operationId": "upkeep_upkeep-public-api_patch-work-orders-workorderid_patch",
+        "summary": "PATCH /work-orders/{workOrderId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented work-order and meter routes support maintenance execution plus usage or condition-style readings. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /work-orders/{workOrderId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /work-orders/{workOrderId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/meters": {
+      "get": {
+        "tags": [
+          "Work execution and meter-based operations"
+        ],
+        "operationId": "upkeep_upkeep-public-api_get-meters_get",
+        "summary": "GET /meters",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented work-order and meter routes support maintenance execution plus usage or condition-style readings. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /meters.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Work execution and meter-based operations"
+        ],
+        "operationId": "upkeep_upkeep-public-api_post-meters_post",
+        "summary": "POST /meters",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented work-order and meter routes support maintenance execution plus usage or condition-style readings. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /meters.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /meters.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/meters/{meterId}/readings": {
+      "post": {
+        "tags": [
+          "Work execution and meter-based operations"
+        ],
+        "operationId": "upkeep_upkeep-public-api_post-meters-meterid-readings_post",
+        "summary": "POST /meters/{meterId}/readings",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented work-order and meter routes support maintenance execution plus usage or condition-style readings. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /meters/{meterId}/readings.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /meters/{meterId}/readings.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Work execution and meter-based operations"
+        ],
+        "operationId": "upkeep_upkeep-public-api_get-meters-meterid-readings_get",
+        "summary": "GET /meters/{meterId}/readings",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented work-order and meter routes support maintenance execution plus usage or condition-style readings. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /meters/{meterId}/readings.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/meters/{meterId}/notifications": {
+      "post": {
+        "tags": [
+          "Work execution and meter-based operations"
+        ],
+        "operationId": "upkeep_upkeep-public-api_post-meters-meterid-notifications_post",
+        "summary": "POST /meters/{meterId}/notifications",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented work-order and meter routes support maintenance execution plus usage or condition-style readings. Vendor documentation: https://developers.onupkeep.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /meters/{meterId}/notifications.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /meters/{meterId}/notifications.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/upkeep/upkeep-public-api.json",
+    "vendor_documentation_url": "https://developers.onupkeep.com/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

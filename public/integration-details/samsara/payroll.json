@@ -6,7 +6,8 @@
   "product_family": "Samsara Platform",
   "integration_type": "REST API",
   "integration_api_url": "https://developers.samsara.com/docs/payroll-guide",
-  "spec_artifact_url": "https://developers.samsara.com/docs/payroll-guide",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/samsara/payroll.openapi.json",
+  "vendor_spec_artifact_url": "https://developers.samsara.com/openapi/samsara-api.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "Samsara Payroll is a read-focused integration pattern built from HOS daily summaries, driver-vehicle assignments, and odometer reads so downstream payroll systems can calculate pay from on-duty time, driving time, or miles driven.",
   "data_domains": [
@@ -18,7 +19,7 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "drivers",
     "vehicle assignments",
@@ -79,11 +80,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developers.samsara.com/docs/payroll-guide",
-    "spec_url": "https://developers.samsara.com/docs/payroll-guide",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/samsara/payroll.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Backed by the Payroll guide sections documenting GET /fleet/drivers/vehicle-assignments, GET /fleet/vehicles/stats/history, GET /fleet/vehicles/stats, and the guide's use of HOS daily summaries for hours-based payroll calculations."
+    "evidence_notes": "Backed by the Payroll guide sections documenting GET /fleet/drivers/vehicle-assignments, GET /fleet/vehicles/stats/history, GET /fleet/vehicles/stats, and the guide's use of HOS daily summaries for hours-based payroll calculations.",
+    "vendor_spec_url": "https://developers.samsara.com/openapi/samsara-api.json",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/samsara/payroll.openapi.json"
   },
   "detail_path": "/integration-details/samsara/payroll.json",
   "vendor_domain": "samsara.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=samsara.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=samsara.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/samsara/payroll.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/samsara/payroll.openapi.json"
 }

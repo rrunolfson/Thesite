@@ -6,7 +6,8 @@
   "product_family": "Battery Passport",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/battery-passport/rest-api-spec.html",
-  "spec_artifact_url": "https://developer.siemens.com/battery-passport/battery-passport-api-spec.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/battery-passport-rest-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/battery-passport/battery-passport-api-spec.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "The Battery Passport REST API provides standardized access to battery passport records and related organization, connector, analytics, and schema information used to manage battery passport data exchange across the ecosystem.",
   "data_domains": [
@@ -18,7 +19,7 @@
     "schema-management"
   ],
   "asset_data_available": "Supported",
-  "telemetry_data_available": "Not Supported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "battery passports",
@@ -133,11 +134,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/battery-passport/rest-api-spec.html",
-    "spec_url": "https://developer.siemens.com/battery-passport/battery-passport-api-spec.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/battery-passport-rest-api.openapi.json",
     "reviewed_at": "2026-04-17",
-    "evidence_notes": "This proof-of-concept summary is based on the Siemens API reference groupings visible on the Battery Passport documentation page, including Passport Management, Attribute Assignments, Organizations, Users, Connectors, Feature Config, Analytics, and Data Schema Management."
+    "evidence_notes": "This proof-of-concept summary is based on the Siemens API reference groupings visible on the Battery Passport documentation page, including Passport Management, Attribute Assignments, Organizations, Users, Connectors, Feature Config, Analytics, and Data Schema Management.",
+    "vendor_spec_url": "https://developer.siemens.com/battery-passport/battery-passport-api-spec.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/battery-passport-rest-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/battery-passport-rest-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/battery-passport-rest-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/battery-passport-rest-api.openapi.json"
 }

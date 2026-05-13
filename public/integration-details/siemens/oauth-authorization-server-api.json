@@ -6,7 +6,8 @@
   "product_family": "Insights Hub",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/insights-hub/api_specs/oauthauthorizationserver-v3-1.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/oauthauthorizationserver-v3-1.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/oauth-authorization-server-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/insights-hub/api_specs/oauthauthorizationserver-v3-1.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
   "data_domains": [
@@ -14,9 +15,9 @@
     "identity",
     "administration"
   ],
-  "asset_data_available": "Not Supported",
-  "telemetry_data_available": "Not Supported",
-  "writeback_supported": "Not Supported",
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "users",
     "policies",
@@ -50,11 +51,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/insights-hub/docs/apis/core-oauthauthorizationserver/api-oauthauthorizationserver-overview.html",
-    "spec_url": "https://developer.siemens.com/insights-hub/api_specs/oauthauthorizationserver-v3-1.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/oauth-authorization-server-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for OAuth Authorization Server (API)."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for OAuth Authorization Server (API).",
+    "vendor_spec_url": "https://developer.siemens.com/insights-hub/api_specs/oauthauthorizationserver-v3-1.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/oauth-authorization-server-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/oauth-authorization-server-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/oauth-authorization-server-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/oauth-authorization-server-api.openapi.json"
 }

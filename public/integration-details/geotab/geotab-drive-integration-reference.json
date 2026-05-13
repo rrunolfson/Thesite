@@ -6,7 +6,8 @@
   "product_family": "Geotab Drive",
   "integration_type": "REST API",
   "integration_api_url": "https://developers.geotab.com/drive/introduction/",
-  "spec_artifact_url": "https://developers.geotab.com/drive/introduction/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/geotab/geotab-drive-integration-reference.openapi.json",
+  "vendor_spec_artifact_url": "",
   "detail_completeness": "researched",
   "data_coverage_summary": "Geotab Drive exposes driver-facing workflow context tied to vehicles, trips, compliance state, and in-cab interactions, so it can deliver assigned asset context, operational events, and controlled in-cab actions.",
   "data_domains": [
@@ -49,11 +50,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developers.geotab.com/drive/introduction/",
-    "spec_url": "https://developers.geotab.com/drive/introduction/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/geotab/geotab-drive-integration-reference.openapi.json",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "Classification is based on the Geotab Drive introduction and integration reference, which describe vehicle-linked in-cab workflows, operational context, and extension points for controlled user actions."
+    "evidence_notes": "Classification is based on the Geotab Drive introduction and integration reference, which describe vehicle-linked in-cab workflows, operational context, and extension points for controlled user actions.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/geotab/geotab-drive-integration-reference.openapi.json"
   },
   "detail_path": "/integration-details/geotab/geotab-drive-integration-reference.json",
   "vendor_domain": "geotab.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=geotab.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=geotab.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/geotab/geotab-drive-integration-reference.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/geotab/geotab-drive-integration-reference.openapi.json"
 }

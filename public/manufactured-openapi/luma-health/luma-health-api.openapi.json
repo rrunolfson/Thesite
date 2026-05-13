@@ -1,0 +1,1093 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Luma Health API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Luma Health publishes a direct OpenAPI YAML for appointment access, patient records, referrals, availabilities, appointment types, broadcast messaging, and Lumabot workflow resources used in patient-engagement operations.",
+    "description": "Manufactured OpenAPI artifact for Luma Health API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Luma Health exposes a public OpenAPI YAML describing a REST v2 API hosted at api.lumahealth.io. The spec includes read and write operations for appointments, patients, referrals, broadcast flows, and Lumabot flows, plus availability lookup and appointment-type management. That makes it a practical write-capable surface for patient communication, scheduling orchestration, and referral workflows, but not a source of equipment, asset, or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://apidocs.lumahealth.io/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Patients, appointments, and referral workflows",
+      "description": "Manufactured operations grouped under Patients, appointments, and referral workflows."
+    },
+    {
+      "name": "Broadcast and conversational engagement",
+      "description": "Manufactured operations grouped under Broadcast and conversational engagement."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "luma-health_luma-health-api_integrationProfile",
+        "summary": "Get manufactured profile for Luma Health API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/patients": {
+      "get": {
+        "tags": [
+          "Patients, appointments, and referral workflows"
+        ],
+        "operationId": "luma-health_luma-health-api_get-patients_get",
+        "summary": "GET /patients",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public OpenAPI document exposes the core records needed for patient-engagement and scheduling integrations. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /patients.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Patients, appointments, and referral workflows"
+        ],
+        "operationId": "luma-health_luma-health-api_post-patients_post",
+        "summary": "POST /patients",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public OpenAPI document exposes the core records needed for patient-engagement and scheduling integrations. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /patients.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /patients.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/appointments": {
+      "get": {
+        "tags": [
+          "Patients, appointments, and referral workflows"
+        ],
+        "operationId": "luma-health_luma-health-api_get-appointments_get",
+        "summary": "GET /appointments",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public OpenAPI document exposes the core records needed for patient-engagement and scheduling integrations. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /appointments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Patients, appointments, and referral workflows"
+        ],
+        "operationId": "luma-health_luma-health-api_post-appointments_post",
+        "summary": "POST /appointments",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public OpenAPI document exposes the core records needed for patient-engagement and scheduling integrations. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /appointments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /appointments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/referrals": {
+      "get": {
+        "tags": [
+          "Patients, appointments, and referral workflows"
+        ],
+        "operationId": "luma-health_luma-health-api_get-referrals_get",
+        "summary": "GET /referrals",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public OpenAPI document exposes the core records needed for patient-engagement and scheduling integrations. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /referrals.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Patients, appointments, and referral workflows"
+        ],
+        "operationId": "luma-health_luma-health-api_post-referrals_post",
+        "summary": "POST /referrals",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public OpenAPI document exposes the core records needed for patient-engagement and scheduling integrations. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /referrals.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /referrals.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/availabilities": {
+      "get": {
+        "tags": [
+          "Patients, appointments, and referral workflows"
+        ],
+        "operationId": "luma-health_luma-health-api_get-availabilities_get",
+        "summary": "GET /availabilities",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public OpenAPI document exposes the core records needed for patient-engagement and scheduling integrations. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /availabilities.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/appointmentTypes/{appointmentTypeId}": {
+      "get": {
+        "tags": [
+          "Patients, appointments, and referral workflows"
+        ],
+        "operationId": "luma-health_luma-health-api_get-appointmenttypes-appointmenttypeid_get",
+        "summary": "GET /appointmentTypes/{appointmentTypeId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public OpenAPI document exposes the core records needed for patient-engagement and scheduling integrations. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /appointmentTypes/{appointmentTypeId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "put": {
+        "tags": [
+          "Patients, appointments, and referral workflows"
+        ],
+        "operationId": "luma-health_luma-health-api_put-appointmenttypes-appointmenttypeid_put",
+        "summary": "PUT /appointmentTypes/{appointmentTypeId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public OpenAPI document exposes the core records needed for patient-engagement and scheduling integrations. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /appointmentTypes/{appointmentTypeId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /appointmentTypes/{appointmentTypeId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Patients, appointments, and referral workflows"
+        ],
+        "operationId": "luma-health_luma-health-api_delete-appointmenttypes-appointmenttypeid_delete",
+        "summary": "DELETE /appointmentTypes/{appointmentTypeId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public OpenAPI document exposes the core records needed for patient-engagement and scheduling integrations. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DELETE /appointmentTypes/{appointmentTypeId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for DELETE /appointmentTypes/{appointmentTypeId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/broadcastEvents": {
+      "get": {
+        "tags": [
+          "Broadcast and conversational engagement"
+        ],
+        "operationId": "luma-health_luma-health-api_get-broadcastevents_get",
+        "summary": "GET /broadcastEvents",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Luma also exposes communication workflow resources for message campaigns and Lumabot automation flows. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /broadcastEvents.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/broadcastFlows": {
+      "get": {
+        "tags": [
+          "Broadcast and conversational engagement"
+        ],
+        "operationId": "luma-health_luma-health-api_get-broadcastflows_get",
+        "summary": "GET /broadcastFlows",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Luma also exposes communication workflow resources for message campaigns and Lumabot automation flows. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /broadcastFlows.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Broadcast and conversational engagement"
+        ],
+        "operationId": "luma-health_luma-health-api_post-broadcastflows_post",
+        "summary": "POST /broadcastFlows",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Luma also exposes communication workflow resources for message campaigns and Lumabot automation flows. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /broadcastFlows.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /broadcastFlows.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/broadcastFlows/{broadcastFlowId}/batches": {
+      "get": {
+        "tags": [
+          "Broadcast and conversational engagement"
+        ],
+        "operationId": "luma-health_luma-health-api_get-broadcastflows-broadcastflowid-batches_get",
+        "summary": "GET /broadcastFlows/{broadcastFlowId}/batches",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Luma also exposes communication workflow resources for message campaigns and Lumabot automation flows. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /broadcastFlows/{broadcastFlowId}/batches.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/broadcastFlows/{broadcastFlowId}/recipients": {
+      "get": {
+        "tags": [
+          "Broadcast and conversational engagement"
+        ],
+        "operationId": "luma-health_luma-health-api_get-broadcastflows-broadcastflowid-recipients_get",
+        "summary": "GET /broadcastFlows/{broadcastFlowId}/recipients",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Luma also exposes communication workflow resources for message campaigns and Lumabot automation flows. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /broadcastFlows/{broadcastFlowId}/recipients.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/broadcastFlows/{broadcastFlowId}/review/approve": {
+      "post": {
+        "tags": [
+          "Broadcast and conversational engagement"
+        ],
+        "operationId": "luma-health_luma-health-api_post-broadcastflows-broadcastflowid-review-approve_post",
+        "summary": "POST /broadcastFlows/{broadcastFlowId}/review/approve",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Luma also exposes communication workflow resources for message campaigns and Lumabot automation flows. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /broadcastFlows/{broadcastFlowId}/review/approve.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /broadcastFlows/{broadcastFlowId}/review/approve.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/broadcastFlows/{broadcastFlowId}/review/decline": {
+      "post": {
+        "tags": [
+          "Broadcast and conversational engagement"
+        ],
+        "operationId": "luma-health_luma-health-api_post-broadcastflows-broadcastflowid-review-decline_post",
+        "summary": "POST /broadcastFlows/{broadcastFlowId}/review/decline",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Luma also exposes communication workflow resources for message campaigns and Lumabot automation flows. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /broadcastFlows/{broadcastFlowId}/review/decline.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /broadcastFlows/{broadcastFlowId}/review/decline.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lumabotFlows": {
+      "get": {
+        "tags": [
+          "Broadcast and conversational engagement"
+        ],
+        "operationId": "luma-health_luma-health-api_get-lumabotflows_get",
+        "summary": "GET /lumabotFlows",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Luma also exposes communication workflow resources for message campaigns and Lumabot automation flows. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /lumabotFlows.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Broadcast and conversational engagement"
+        ],
+        "operationId": "luma-health_luma-health-api_post-lumabotflows_post",
+        "summary": "POST /lumabotFlows",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Luma also exposes communication workflow resources for message campaigns and Lumabot automation flows. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /lumabotFlows.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /lumabotFlows.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assistantTransferRules/bulk": {
+      "post": {
+        "tags": [
+          "Broadcast and conversational engagement"
+        ],
+        "operationId": "luma-health_luma-health-api_post-assistanttransferrules-bulk_post",
+        "summary": "POST /assistantTransferRules/bulk",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Luma also exposes communication workflow resources for message campaigns and Lumabot automation flows. Vendor documentation: https://apidocs.lumahealth.io/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /assistantTransferRules/bulk.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /assistantTransferRules/bulk.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/luma-health/luma-health-api.json",
+    "vendor_documentation_url": "https://apidocs.lumahealth.io/",
+    "vendor_spec_artifact_url": "https://apidocs.lumahealth.io/public.yaml",
+    "reviewed_at": "2026-05-13"
+  }
+}

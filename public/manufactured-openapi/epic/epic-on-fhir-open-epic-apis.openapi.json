@@ -1,0 +1,1371 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Epic on FHIR / open.epic APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Epic publishes a large public FHIR catalog with sandbox access for patient, appointment, clinical document, device, observation, medication, procedure, and bulk-data workflows across Epic deployments.",
+    "description": "Manufactured OpenAPI artifact for Epic on FHIR / open.epic APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Epic's public FHIR site documents a broad resource catalog with sandbox access and client registration for developers building against Epic customer systems. The public resource summary includes read, search, create, update, and operation workflows across Patient, Appointment, AllergyIntolerance, Communication, DocumentReference, Observation, Procedure, ServiceRequest, QuestionnaireResponse, Coverage, Device, DiagnosticReport, and many other clinical resources, along with R4 BulkData kickoff, status, file retrieval, and delete flows. This is a write-capable healthcare interoperability platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://fhir.epic.com/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Patient, scheduling, and clinical resource exchange",
+      "description": "Manufactured operations grouped under Patient, scheduling, and clinical resource exchange."
+    },
+    {
+      "name": "Documents, devices, observations, and bulk export",
+      "description": "Manufactured operations grouped under Documents, devices, observations, and bulk export."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_integrationProfile",
+        "summary": "Get manufactured profile for Epic on FHIR / open.epic APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/Patient": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and clinical resource exchange"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_get-patient_get",
+        "summary": "GET /Patient",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-patient": {
+      "post": {
+        "tags": [
+          "Patient, scheduling, and clinical resource exchange"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_create-patient_post",
+        "summary": "CREATE Patient",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for CREATE Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for CREATE Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/match-patient": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and clinical resource exchange"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_match-patient_get",
+        "summary": "$match Patient",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for $match Patient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/appointment": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and clinical resource exchange"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_get-appointment_get",
+        "summary": "GET Appointment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET Appointment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/book-appointment": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and clinical resource exchange"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_book-appointment_get",
+        "summary": "$book Appointment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for $book Appointment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/find-appointment": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and clinical resource exchange"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_find-appointment_get",
+        "summary": "$find Appointment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for $find Appointment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-allergyintolerance": {
+      "post": {
+        "tags": [
+          "Patient, scheduling, and clinical resource exchange"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_create-allergyintolerance_post",
+        "summary": "CREATE AllergyIntolerance",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for CREATE AllergyIntolerance.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for CREATE AllergyIntolerance.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-communication": {
+      "post": {
+        "tags": [
+          "Patient, scheduling, and clinical resource exchange"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_create-communication_post",
+        "summary": "CREATE Communication",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for CREATE Communication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for CREATE Communication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-condition": {
+      "post": {
+        "tags": [
+          "Patient, scheduling, and clinical resource exchange"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_create-condition_post",
+        "summary": "CREATE Condition",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for CREATE Condition.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for CREATE Condition.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-questionnaireresponse": {
+      "post": {
+        "tags": [
+          "Patient, scheduling, and clinical resource exchange"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_create-questionnaireresponse_post",
+        "summary": "CREATE QuestionnaireResponse",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for CREATE QuestionnaireResponse.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for CREATE QuestionnaireResponse.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-servicerequest": {
+      "put": {
+        "tags": [
+          "Patient, scheduling, and clinical resource exchange"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_update-servicerequest_put",
+        "summary": "UPDATE ServiceRequest",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for UPDATE ServiceRequest.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for UPDATE ServiceRequest.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-servicerequest": {
+      "post": {
+        "tags": [
+          "Patient, scheduling, and clinical resource exchange"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_create-servicerequest_post",
+        "summary": "CREATE ServiceRequest",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for CREATE ServiceRequest.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for CREATE ServiceRequest.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-task": {
+      "put": {
+        "tags": [
+          "Patient, scheduling, and clinical resource exchange"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_update-task_put",
+        "summary": "UPDATE Task",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic on FHIR exposes the clinical and operational resources needed for patient-facing and provider-facing integrations. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for UPDATE Task.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for UPDATE Task.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/read-documentreference": {
+      "get": {
+        "tags": [
+          "Documents, devices, observations, and bulk export"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_read-documentreference_get",
+        "summary": "READ DocumentReference",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for READ DocumentReference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-documentreference": {
+      "post": {
+        "tags": [
+          "Documents, devices, observations, and bulk export"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_create-documentreference_post",
+        "summary": "CREATE DocumentReference",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for CREATE DocumentReference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for CREATE DocumentReference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-documentreference": {
+      "put": {
+        "tags": [
+          "Documents, devices, observations, and bulk export"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_update-documentreference_put",
+        "summary": "UPDATE DocumentReference",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for UPDATE DocumentReference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for UPDATE DocumentReference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/read-binary": {
+      "get": {
+        "tags": [
+          "Documents, devices, observations, and bulk export"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_read-binary_get",
+        "summary": "READ Binary",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for READ Binary.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/read-device": {
+      "get": {
+        "tags": [
+          "Documents, devices, observations, and bulk export"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_read-device_get",
+        "summary": "READ Device",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for READ Device.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/read-observation": {
+      "get": {
+        "tags": [
+          "Documents, devices, observations, and bulk export"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_read-observation_get",
+        "summary": "READ Observation",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for READ Observation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-observation": {
+      "post": {
+        "tags": [
+          "Documents, devices, observations, and bulk export"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_create-observation_post",
+        "summary": "CREATE Observation",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for CREATE Observation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for CREATE Observation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-observation": {
+      "put": {
+        "tags": [
+          "Documents, devices, observations, and bulk export"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_update-observation_put",
+        "summary": "UPDATE Observation",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for UPDATE Observation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for UPDATE Observation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/read-diagnosticreport": {
+      "get": {
+        "tags": [
+          "Documents, devices, observations, and bulk export"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_read-diagnosticreport_get",
+        "summary": "READ DiagnosticReport",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for READ DiagnosticReport.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/kickoff-bulkdata": {
+      "get": {
+        "tags": [
+          "Documents, devices, observations, and bulk export"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_kickoff-bulkdata_get",
+        "summary": "Kickoff BulkData",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Kickoff BulkData.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/statusrequest-bulkdata": {
+      "get": {
+        "tags": [
+          "Documents, devices, observations, and bulk export"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_statusrequest-bulkdata_get",
+        "summary": "StatusRequest BulkData",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for StatusRequest BulkData.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/filerequest-bulkdata": {
+      "get": {
+        "tags": [
+          "Documents, devices, observations, and bulk export"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_filerequest-bulkdata_get",
+        "summary": "FileRequest BulkData",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for FileRequest BulkData.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/bulkdata": {
+      "delete": {
+        "tags": [
+          "Documents, devices, observations, and bulk export"
+        ],
+        "operationId": "epic_epic-on-fhir-open-epic-apis_delete-bulkdata_delete",
+        "summary": "DELETE BulkData",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Epic also documents strong support for document exchange, diagnostic data, and asynchronous population-scale data export. Vendor documentation: https://fhir.epic.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DELETE BulkData.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for DELETE BulkData.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/epic/epic-on-fhir-open-epic-apis.json",
+    "vendor_documentation_url": "https://fhir.epic.com/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

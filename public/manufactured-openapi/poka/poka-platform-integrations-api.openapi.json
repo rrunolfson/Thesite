@@ -1,0 +1,567 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Poka platform integrations/API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Poka publicly describes flexible integration tooling through REST APIs, Automate iPaaS workflows, Data Lake exports, and SCIM provisioning for connected-worker and digital manufacturing data exchange.",
+    "description": "Manufactured OpenAPI artifact for Poka platform integrations/API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Poka's public integrations page describes four public integration approaches: Poka Automate for iPaaS workflow automation, Poka API for RESTful third-party integrations, Poka Data Lake for analytics export, and Poka SCIM for user and user-group provisioning. The public use cases and customer stories show integrations for SAP-driven maintenance resolution, Tableau-backed safety reporting with forms, and Workday-connected personnel training data, while the site repeatedly positions Poka as a system for connecting people, data, processes, tasks, and systems in digital manufacturing. This is a write-capable connected-worker integration surface with supported asset-oriented workflows, but not a telemetry platform. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://www.poka.io/en/integrations"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Workforce, identity, and connected-worker workflows",
+      "description": "Manufactured operations grouped under Workforce, identity, and connected-worker workflows."
+    },
+    {
+      "name": "Safety, forms, and asset-performance use cases",
+      "description": "Manufactured operations grouped under Safety, forms, and asset-performance use cases."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "poka_poka-platform-integrations-api_integrationProfile",
+        "summary": "Get manufactured profile for Poka platform integrations/API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/poka-api": {
+      "get": {
+        "tags": [
+          "Workforce, identity, and connected-worker workflows"
+        ],
+        "operationId": "poka_poka-platform-integrations-api_poka-api_get",
+        "summary": "Poka API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Poka publicly describes integrations that synchronize workforce and operational data into its connected-worker platform. Vendor documentation: https://www.poka.io/en/integrations",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Poka API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/poka-scim": {
+      "get": {
+        "tags": [
+          "Workforce, identity, and connected-worker workflows"
+        ],
+        "operationId": "poka_poka-platform-integrations-api_poka-scim_get",
+        "summary": "Poka SCIM",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Poka publicly describes integrations that synchronize workforce and operational data into its connected-worker platform. Vendor documentation: https://www.poka.io/en/integrations",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Poka SCIM.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/poka-data-lake": {
+      "get": {
+        "tags": [
+          "Workforce, identity, and connected-worker workflows"
+        ],
+        "operationId": "poka_poka-platform-integrations-api_poka-data-lake_get",
+        "summary": "Poka Data Lake",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Poka publicly describes integrations that synchronize workforce and operational data into its connected-worker platform. Vendor documentation: https://www.poka.io/en/integrations",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Poka Data Lake.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/poka-automate": {
+      "get": {
+        "tags": [
+          "Workforce, identity, and connected-worker workflows"
+        ],
+        "operationId": "poka_poka-platform-integrations-api_poka-automate_get",
+        "summary": "Poka Automate",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Poka publicly describes integrations that synchronize workforce and operational data into its connected-worker platform. Vendor documentation: https://www.poka.io/en/integrations",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Poka Automate.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/provision-users-and-user-groups": {
+      "get": {
+        "tags": [
+          "Workforce, identity, and connected-worker workflows"
+        ],
+        "operationId": "poka_poka-platform-integrations-api_provision-users-and-user-groups_get",
+        "summary": "Provision Users and User Groups",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Poka publicly describes integrations that synchronize workforce and operational data into its connected-worker platform. Vendor documentation: https://www.poka.io/en/integrations",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Provision Users and User Groups.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/poka-forms": {
+      "get": {
+        "tags": [
+          "Safety, forms, and asset-performance use cases"
+        ],
+        "operationId": "poka_poka-platform-integrations-api_poka-forms_get",
+        "summary": "Poka Forms",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public integration stories also show Poka being used for plant-floor workflow improvement and equipment-related operational support. Vendor documentation: https://www.poka.io/en/integrations",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Poka Forms.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/sap-integration": {
+      "get": {
+        "tags": [
+          "Safety, forms, and asset-performance use cases"
+        ],
+        "operationId": "poka_poka-platform-integrations-api_sap-integration_get",
+        "summary": "SAP integration",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public integration stories also show Poka being used for plant-floor workflow improvement and equipment-related operational support. Vendor documentation: https://www.poka.io/en/integrations",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for SAP integration.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/tableau-integration": {
+      "get": {
+        "tags": [
+          "Safety, forms, and asset-performance use cases"
+        ],
+        "operationId": "poka_poka-platform-integrations-api_tableau-integration_get",
+        "summary": "Tableau integration",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public integration stories also show Poka being used for plant-floor workflow improvement and equipment-related operational support. Vendor documentation: https://www.poka.io/en/integrations",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Tableau integration.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/workday-integration": {
+      "get": {
+        "tags": [
+          "Safety, forms, and asset-performance use cases"
+        ],
+        "operationId": "poka_poka-platform-integrations-api_workday-integration_get",
+        "summary": "Workday integration",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public integration stories also show Poka being used for plant-floor workflow improvement and equipment-related operational support. Vendor documentation: https://www.poka.io/en/integrations",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Workday integration.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/boost-asset-performance": {
+      "get": {
+        "tags": [
+          "Safety, forms, and asset-performance use cases"
+        ],
+        "operationId": "poka_poka-platform-integrations-api_boost-asset-performance_get",
+        "summary": "Boost Asset Performance",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public integration stories also show Poka being used for plant-floor workflow improvement and equipment-related operational support. Vendor documentation: https://www.poka.io/en/integrations",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Boost Asset Performance.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/poka/poka-platform-integrations-api.json",
+    "vendor_documentation_url": "https://www.poka.io/en/integrations",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

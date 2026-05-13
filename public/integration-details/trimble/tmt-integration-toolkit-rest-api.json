@@ -6,7 +6,8 @@
   "product_family": "TMT",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.trimble.com/docs/tmt/openapi/v1.json",
-  "spec_artifact_url": "https://developer.trimble.com/docs/tmt/openapi/v1.json",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/trimble/tmt-integration-toolkit-rest-api.openapi.json",
+  "vendor_spec_artifact_url": "",
   "detail_completeness": "researched",
   "data_coverage_summary": "The TMT Integration Toolkit publishes fleet and maintenance-oriented records including unit-related business data, meter readings, positions, faults, DVIR workflows, and maintenance operations, but the published spec fragment is read-only.",
   "data_domains": [
@@ -16,7 +17,7 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "unit records",
     "meter readings",
@@ -49,11 +50,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.trimble.com/docs/tmt/openapi/v1.json",
-    "spec_url": "https://developer.trimble.com/docs/tmt/openapi/v1.json",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/trimble/tmt-integration-toolkit-rest-api.openapi.json",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "Classification is based on the public TMT OpenAPI document plus the captured Trimble product summary describing unit records, meter readings, positions, faults, DVIR workflows, and maintenance operations. The retrieved spec fragment did not expose POST, PUT, or PATCH verbs."
+    "evidence_notes": "Classification is based on the public TMT OpenAPI document plus the captured Trimble product summary describing unit records, meter readings, positions, faults, DVIR workflows, and maintenance operations. The retrieved spec fragment did not expose POST, PUT, or PATCH verbs.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/trimble/tmt-integration-toolkit-rest-api.openapi.json"
   },
   "detail_path": "/integration-details/trimble/tmt-integration-toolkit-rest-api.json",
   "vendor_domain": "trimble.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=trimble.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=trimble.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/trimble/tmt-integration-toolkit-rest-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/trimble/tmt-integration-toolkit-rest-api.openapi.json"
 }

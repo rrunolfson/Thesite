@@ -6,7 +6,7 @@
   "product_family": "Samsara Platform",
   "integration_type": "REST API",
   "integration_api_url": "https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
-  "spec_artifact_url": "https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
+  "spec_artifact_url": "https://developers.samsara.com/openapi/samsara-api.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "Samsara Maintenance & Fault Monitoring combines fault-code and tell-tale reads with DVIR, defect, odometer, and engine-runtime APIs, and it also supports maintenance write workflows such as creating mechanic DVIRs and resolving DVIRs or defects.",
   "data_domains": [
@@ -104,7 +104,7 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developers.samsara.com/docs/maintenance-fault-monitoring-guide",
-    "spec_url": "https://developers.samsara.com/docs/digital-vehicle-inspection-reports",
+    "spec_url": "https://developers.samsara.com/openapi/samsara-api.json",
     "reviewed_at": "2026-04-18",
     "evidence_notes": "Backed by the Maintenance & Fault Monitoring overview, Fault Monitoring guide, Tell Tale Statuses Monitoring guide, Planned & Preventative Maintenance guide, and the Driver Vehicle Inspection Reports guide documenting POST /fleet/dvirs and PATCH resolution endpoints."
   }

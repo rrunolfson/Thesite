@@ -1,0 +1,1187 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Work Orders API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-17",
+    "summary": "The Work Orders API covers the in-flight repair order lifecycle in ServiceChannel, including search, creation, status and priority updates, scheduling, trade changes, resolution capture, caller and purchase-order updates, project approvals, and nearby or duplicate work-order discovery.",
+    "description": "Manufactured OpenAPI artifact for Work Orders API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. ServiceChannel exposes a broad WorkOrders surface for operational execution. The reference shows support for searching and creating work orders, updating status, priority, category, NTE values, description, caller, PO number, scheduled date, projected completion date, trade assignment, and project approvals, as well as posting resolutions and retrieving duplicate, recall, nearby, and check-in related work-order views. That makes this the primary integration area for ServiceNow-to-ServiceChannel repair order orchestration.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.servicechannel.com/swagger/index.html#/WorkOrders"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Core work order lifecycle",
+      "description": "Manufactured operations grouped under Core work order lifecycle."
+    },
+    {
+      "name": "Operational dispatch and execution controls",
+      "description": "Manufactured operations grouped under Operational dispatch and execution controls."
+    },
+    {
+      "name": "Location and exception views",
+      "description": "Manufactured operations grouped under Location and exception views."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "servicechannel_work-orders-api_integrationProfile",
+        "summary": "Get manufactured profile for Work Orders API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/workorders": {
+      "get": {
+        "tags": [
+          "Core work order lifecycle"
+        ],
+        "operationId": "servicechannel_work-orders-api_get-workorders_get",
+        "summary": "GET /workorders",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Primary endpoints for creating and searching work orders and moving them through operational execution states. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /workorders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Core work order lifecycle"
+        ],
+        "operationId": "servicechannel_work-orders-api_post-workorders_post",
+        "summary": "POST /workorders",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Primary endpoints for creating and searching work orders and moving them through operational execution states. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /workorders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /workorders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workorders/{workorderId}/status": {
+      "put": {
+        "tags": [
+          "Core work order lifecycle"
+        ],
+        "operationId": "servicechannel_work-orders-api_put-workorders-workorderid-status_put",
+        "summary": "PUT /workorders/{workorderId}/status",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Primary endpoints for creating and searching work orders and moving them through operational execution states. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workorders/{workorderId}/priority": {
+      "put": {
+        "tags": [
+          "Core work order lifecycle"
+        ],
+        "operationId": "servicechannel_work-orders-api_put-workorders-workorderid-priority_put",
+        "summary": "PUT /workorders/{workorderId}/priority",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Primary endpoints for creating and searching work orders and moving them through operational execution states. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/priority.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/priority.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workorders/{workorderId}/category": {
+      "put": {
+        "tags": [
+          "Core work order lifecycle"
+        ],
+        "operationId": "servicechannel_work-orders-api_put-workorders-workorderid-category_put",
+        "summary": "PUT /workorders/{workorderId}/category",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Primary endpoints for creating and searching work orders and moving them through operational execution states. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/category.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/category.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workorders/{workorderId}/scheduledate": {
+      "put": {
+        "tags": [
+          "Core work order lifecycle"
+        ],
+        "operationId": "servicechannel_work-orders-api_put-workorders-workorderid-scheduledate_put",
+        "summary": "PUT /workorders/{workorderId}/scheduledate",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Primary endpoints for creating and searching work orders and moving them through operational execution states. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/scheduledate.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/scheduledate.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workorders/{workOrderId}/projectedCompletionDate": {
+      "put": {
+        "tags": [
+          "Core work order lifecycle"
+        ],
+        "operationId": "servicechannel_work-orders-api_put-workorders-workorderid-projectedcompletiondate_put",
+        "summary": "PUT /workorders/{workOrderId}/projectedCompletionDate",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Primary endpoints for creating and searching work orders and moving them through operational execution states. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workorders/{workOrderId}/projectedCompletionDate.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workorders/{workOrderId}/projectedCompletionDate.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workorders/{workorderId}/nte": {
+      "put": {
+        "tags": [
+          "Operational dispatch and execution controls"
+        ],
+        "operationId": "servicechannel_work-orders-api_put-workorders-workorderid-nte_put",
+        "summary": "PUT /workorders/{workorderId}/nte",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mutation endpoints used to refine execution details and keep the work order aligned with service delivery realities. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/nte.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/nte.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workorders/{workOrderId}/projectApproval": {
+      "put": {
+        "tags": [
+          "Operational dispatch and execution controls"
+        ],
+        "operationId": "servicechannel_work-orders-api_put-workorders-workorderid-projectapproval_put",
+        "summary": "PUT /workorders/{workOrderId}/projectApproval",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mutation endpoints used to refine execution details and keep the work order aligned with service delivery realities. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workorders/{workOrderId}/projectApproval.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workorders/{workOrderId}/projectApproval.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Operational dispatch and execution controls"
+        ],
+        "operationId": "servicechannel_work-orders-api_post-workorders-workorderid-projectapproval_post",
+        "summary": "POST /workorders/{workOrderId}/projectApproval",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mutation endpoints used to refine execution details and keep the work order aligned with service delivery realities. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /workorders/{workOrderId}/projectApproval.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /workorders/{workOrderId}/projectApproval.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workorders/{workorderId}/description": {
+      "put": {
+        "tags": [
+          "Operational dispatch and execution controls"
+        ],
+        "operationId": "servicechannel_work-orders-api_put-workorders-workorderid-description_put",
+        "summary": "PUT /workorders/{workorderId}/description",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mutation endpoints used to refine execution details and keep the work order aligned with service delivery realities. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/description.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/description.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workorders/{workorderId}/trade": {
+      "put": {
+        "tags": [
+          "Operational dispatch and execution controls"
+        ],
+        "operationId": "servicechannel_work-orders-api_put-workorders-workorderid-trade_put",
+        "summary": "PUT /workorders/{workorderId}/trade",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mutation endpoints used to refine execution details and keep the work order aligned with service delivery realities. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/trade.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/trade.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workorders/{workorderId}/resolution": {
+      "post": {
+        "tags": [
+          "Operational dispatch and execution controls"
+        ],
+        "operationId": "servicechannel_work-orders-api_post-workorders-workorderid-resolution_post",
+        "summary": "POST /workorders/{workorderId}/resolution",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mutation endpoints used to refine execution details and keep the work order aligned with service delivery realities. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /workorders/{workorderId}/resolution.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /workorders/{workorderId}/resolution.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workorders/{workorderId}/caller": {
+      "put": {
+        "tags": [
+          "Operational dispatch and execution controls"
+        ],
+        "operationId": "servicechannel_work-orders-api_put-workorders-workorderid-caller_put",
+        "summary": "PUT /workorders/{workorderId}/caller",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mutation endpoints used to refine execution details and keep the work order aligned with service delivery realities. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/caller.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/caller.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workorders/{workorderId}/ponumber": {
+      "put": {
+        "tags": [
+          "Operational dispatch and execution controls"
+        ],
+        "operationId": "servicechannel_work-orders-api_put-workorders-workorderid-ponumber_put",
+        "summary": "PUT /workorders/{workorderId}/ponumber",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Mutation endpoints used to refine execution details and keep the work order aligned with service delivery realities. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/ponumber.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /workorders/{workorderId}/ponumber.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/odata/locations({locationId})/workorders": {
+      "get": {
+        "tags": [
+          "Location and exception views"
+        ],
+        "operationId": "servicechannel_work-orders-api_get-odata-locations-locationid-workorders_get",
+        "summary": "GET /odata/locations({locationId})/workorders",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Read-heavy endpoints for identifying edge cases and location-based work-order activity that may matter for ServiceNow workflows. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /odata/locations({locationId})/workorders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/odata/locations({locationId})/workorders/Service.GetDuplicates()": {
+      "get": {
+        "tags": [
+          "Location and exception views"
+        ],
+        "operationId": "servicechannel_work-orders-api_get-odata-locations-locationid-workorders-service-getduplicates_get",
+        "summary": "GET /odata/locations({locationId})/workorders/Service.GetDuplicates()",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Read-heavy endpoints for identifying edge cases and location-based work-order activity that may matter for ServiceNow workflows. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /odata/locations({locationId})/workorders/Service.GetDuplicates().",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/odata/locations({locationId})/workorders/Service.GetRecalls()": {
+      "get": {
+        "tags": [
+          "Location and exception views"
+        ],
+        "operationId": "servicechannel_work-orders-api_get-odata-locations-locationid-workorders-service-getrecalls_get",
+        "summary": "GET /odata/locations({locationId})/workorders/Service.GetRecalls()",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Read-heavy endpoints for identifying edge cases and location-based work-order activity that may matter for ServiceNow workflows. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /odata/locations({locationId})/workorders/Service.GetRecalls().",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/odata/workorders/Service.NearBy(latitude={latitude},longitude={longitude})": {
+      "get": {
+        "tags": [
+          "Location and exception views"
+        ],
+        "operationId": "servicechannel_work-orders-api_get-odata-workorders-service-nearby-latitude-latitude-longitude-longitude_get",
+        "summary": "GET /odata/workorders/Service.NearBy(latitude={latitude},longitude={longitude})",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Read-heavy endpoints for identifying edge cases and location-based work-order activity that may matter for ServiceNow workflows. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /odata/workorders/Service.NearBy(latitude={latitude},longitude={longitude}).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/workorders/Service.CheckInActivity(loadBlocked={loadBlocked})": {
+      "get": {
+        "tags": [
+          "Location and exception views"
+        ],
+        "operationId": "servicechannel_work-orders-api_get-workorders-service-checkinactivity-loadblocked-loadblocked_get",
+        "summary": "GET /workorders/Service.CheckInActivity(loadBlocked={loadBlocked})",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Read-heavy endpoints for identifying edge cases and location-based work-order activity that may matter for ServiceNow workflows. Vendor documentation: https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /workorders/Service.CheckInActivity(loadBlocked={loadBlocked}).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/servicechannel/work-orders-api.json",
+    "vendor_documentation_url": "https://developer.servicechannel.com/swagger/index.html#/WorkOrders",
+    "vendor_spec_artifact_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
+    "reviewed_at": "2026-04-17"
+  }
+}

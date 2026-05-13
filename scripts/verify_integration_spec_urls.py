@@ -15,6 +15,33 @@ import yaml
 CONSUMABLE_EXTENSIONS = {".json", ".yaml", ".yml"}
 REQUEST_TIMEOUT = (15, 30)
 USER_AGENT = "Last-Mile-Integrations-Validator/1.0"
+DEFAULT_SPEC_ARTIFACT_POLICY = {
+    "exact_artifact_extensions": [".json", ".yaml", ".yml"],
+    "json_markers": ["openapi", "swagger", "asyncapi", "paths", "components", "channels", "info", "item", "servers", "eventNames"],
+    "yaml_markers": ["openapi", "swagger", "asyncapi", "paths", "components", "channels", "info"],
+    "yaml_text_markers": ["openapi:", "swagger:", "asyncapi:", "paths:", "info:"],
+}
+SPEC_ARTIFACT_POLICY_PATH = Path(__file__).resolve().parents[1] / "data" / "spec-artifact-policy.json"
+
+
+def load_spec_artifact_policy() -> dict[str, list[str]]:
+    if not SPEC_ARTIFACT_POLICY_PATH.exists():
+        return dict(DEFAULT_SPEC_ARTIFACT_POLICY)
+    try:
+        with SPEC_ARTIFACT_POLICY_PATH.open("r", encoding="utf-8") as handle:
+            raw_policy = json.load(handle)
+    except Exception:
+        return dict(DEFAULT_SPEC_ARTIFACT_POLICY)
+
+    policy = dict(DEFAULT_SPEC_ARTIFACT_POLICY)
+    for key in policy:
+        value = raw_policy.get(key)
+        if isinstance(value, list):
+            policy[key] = [str(item).strip() for item in value if str(item).strip()]
+    return policy
+
+
+SPEC_ARTIFACT_POLICY = load_spec_artifact_policy()
 
 
 @dataclass
@@ -45,13 +72,13 @@ def looks_like_yaml(text: str) -> bool:
     stripped = text.lstrip("\ufeff \t\r\n")
     if not stripped:
         return False
-    yaml_markers = ["openapi:", "swagger:", "asyncapi:", "paths:", "info:"]
+    yaml_markers = SPEC_ARTIFACT_POLICY["yaml_text_markers"]
     return any(marker in stripped[:2000] for marker in yaml_markers)
 
 
 def extension_from_url(value: str) -> str:
     path = urlparse(value).path.lower()
-    for extension in CONSUMABLE_EXTENSIONS:
+    for extension in SPEC_ARTIFACT_POLICY["exact_artifact_extensions"]:
         if path.endswith(extension):
             return extension
     return ""
@@ -60,19 +87,7 @@ def extension_from_url(value: str) -> str:
 def is_consumable_json(payload: Any) -> bool:
     if isinstance(payload, dict):
         top_level_keys = set(payload.keys())
-        api_markers = {
-            "openapi",
-            "swagger",
-            "asyncapi",
-            "paths",
-            "components",
-            "servers",
-            "info",
-            "item",
-            "eventNames",
-            "channels",
-        }
-        return bool(top_level_keys & api_markers)
+        return bool(top_level_keys & set(SPEC_ARTIFACT_POLICY["json_markers"]))
     return isinstance(payload, list)
 
 
@@ -80,8 +95,7 @@ def is_consumable_yaml(payload: Any) -> bool:
     if not isinstance(payload, dict):
         return False
     top_level_keys = set(payload.keys())
-    yaml_markers = {"openapi", "swagger", "asyncapi", "paths", "components", "channels", "info"}
-    return bool(top_level_keys & yaml_markers)
+    return bool(top_level_keys & set(SPEC_ARTIFACT_POLICY["yaml_markers"]))
 
 
 def fetch_and_validate(session: requests.Session, row: dict[str, str], line_number: int) -> ValidationResult:

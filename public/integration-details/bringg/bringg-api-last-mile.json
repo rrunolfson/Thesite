@@ -1,0 +1,67 @@
+{
+  "vendor_slug": "bringg",
+  "vendor_name": "Bringg",
+  "product_slug": "bringg-api-last-mile",
+  "product_name": "Bringg API",
+  "product_family": "Bringg",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developers.bringg.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/bringg/bringg-api-last-mile.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Bringg API has public documentation that indicates last-mile route and task workflows across drivers, routes, stops, tasks. Public developer docs.",
+  "data_domains": [
+    "delivery-tasks",
+    "routes-and-stops",
+    "driver-workflows"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "drivers",
+    "routes",
+    "stops",
+    "tasks",
+    "deliveries"
+  ],
+  "buyer_guidance": "Use this API family for route, stop, and task orchestration in delivery workflows rather than vehicle telemetry collection. Bringg should be treated as a rest api surface for last-mile route and task workflows.",
+  "overview": "Public documentation reviewed for Bringg API indicates Public developer docs. The documented surface aligns with last-mile route and task workflows and covers drivers, routes, stops, tasks. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Last-mile route and task workflows",
+      "description": "The public documentation indicates route, stop, task, and delivery execution workflows used by last-mile operations teams.",
+      "data_points": [
+        "Driver and courier records",
+        "Route, stop, and delivery-task data",
+        "Execution status and proof-of-completion context",
+        "Assignment and dispatch workflow state"
+      ],
+      "relevant_operations": [
+        "list driver, route, and task records",
+        "read stop and delivery status",
+        "create or update dispatch workflows",
+        "synchronize assignment or completion changes"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Bringg API is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as last-mile route and task workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developers.bringg.com/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/bringg/bringg-api-last-mile.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public developer docs.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/bringg/bringg-api-last-mile.openapi.json"
+  },
+  "detail_path": "/integration-details/bringg/bringg-api-last-mile.json",
+  "vendor_domain": "bringg.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=bringg.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/bringg/bringg-api-last-mile.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/bringg/bringg-api-last-mile.openapi.json"
+}

@@ -15,7 +15,7 @@
     "asset-synchronization"
   ],
   "asset_data_available": "Supported",
-  "telemetry_data_available": "Not Supported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "vehicles",
@@ -23,7 +23,7 @@
     "asset identifiers"
   ],
   "buyer_guidance": "Use Vehicles API as the Motive system-of-record surface for fleet asset synchronization, especially when other event feeds need to be anchored back to vehicle identity.",
-  "overview": "Vehicles API is the master-data surface for fleet vehicles in Motive. It is appropriate for syncing vehicle records and updating those records, but it is not the right surface for telemetry retrieval because the documented scope is configuration and assignment oriented. Asset data is Supported. Telemetry data is Not Supported. Writeback is Supported.",
+  "overview": "Vehicles API is the master-data surface for fleet vehicles in Motive. It is appropriate for syncing vehicle records and updating those records, but it is not the right surface for telemetry retrieval because the documented scope is configuration and assignment oriented. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
   "available_data": [
     {
       "category": "Vehicle master records",

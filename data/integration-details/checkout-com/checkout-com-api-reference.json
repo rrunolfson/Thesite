@@ -1,0 +1,93 @@
+{
+  "vendor_slug": "checkout-com",
+  "vendor_name": "Checkout.com",
+  "product_slug": "checkout-com-api-reference",
+  "product_name": "Checkout.com API Reference",
+  "product_family": "Checkout.com",
+  "integration_type": "REST API",
+  "integration_api_url": "https://api-reference.checkout.com/",
+  "spec_artifact_url": "https://api-reference.checkout.com/v1/swagger.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Checkout.com publishes a public API reference and downloadable OpenAPI YAML covering payments, disputes, balances, transfers, files, vault, reports, issuing, and OAuth or API-key authentication.",
+  "data_domains": [
+    "payments-and-settlement",
+    "disputes-and-reconciliation",
+    "vault-and-tokenization",
+    "issuing-and-transfers"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "payments",
+    "disputes",
+    "balances",
+    "transfers",
+    "vault customers and instruments",
+    "issuing controls and transactions"
+  ],
+  "buyer_guidance": "Use Checkout.com APIs for payment processing, payouts and transfers, vault and tokenization, disputes, reporting, and issuing operations. This is a fintech payments platform, not an asset or telemetry platform.",
+  "overview": "Checkout.com's public API reference includes a downloadable OpenAPI YAML artifact and documents both API key and OAuth 2.0 client-credentials authentication. The public scopes and resource pages cover payments, payment details, incremental authorizations, voids, captures, refunds, payment contexts, disputes and evidence, balances, transfers, files, reports, financial actions, vault customers and instruments, payment sessions, Flow workflows and events, and issuing controls or transactions. This is a strong write-capable payments and issuing platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Payments, payouts, and reconciliation",
+      "description": "Checkout.com exposes the payment and settlement flows needed for merchant payment processing and follow-on reconciliation.",
+      "data_points": [
+        "Payments, payment details, authorizations, captures, voids, and refunds",
+        "Balances and transfers",
+        "Disputes, evidence submission, and scheme files",
+        "Reports and financial actions",
+        "Files upload, retrieval, and download"
+      ],
+      "relevant_operations": [
+        "OAuth client credentials",
+        "gateway:payment",
+        "gateway:payment-details",
+        "gateway:payment-authorizations",
+        "gateway:payment-voids",
+        "gateway:payment-captures",
+        "gateway:payment-refunds",
+        "balances:view",
+        "transfers:create",
+        "disputes:provide-evidence",
+        "reports:view",
+        "files:upload"
+      ]
+    },
+    {
+      "category": "Vault, sessions, Flow, and issuing",
+      "description": "The reference also covers merchant-side orchestration for credentialed payment, tokenization, and card programs.",
+      "data_points": [
+        "Vault customers, instruments, network tokens, and tokenization",
+        "Payment contexts and payment sessions",
+        "Flow workflows, events, and reflow controls",
+        "Card-management, control, dispute, and transaction scopes for issuing",
+        "Identity verification and session secret support"
+      ],
+      "relevant_operations": [
+        "vault:customers",
+        "vault:instruments",
+        "vault:network-tokens",
+        "gateway:payment-contexts",
+        "payment-sessions",
+        "flow:workflows",
+        "flow:events",
+        "issuing:card-management-write",
+        "issuing:controls-write",
+        "issuing:transactions-write",
+        "issuing:disputes-write"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Checkout.com uses merchant-specific base URLs derived from each environment's client_id prefix, so operational integrations must manage tenant-specific endpoints instead of assuming one global base URL.",
+    "Many resource families are scope-gated, so credential provisioning must align with the exact workflows the downstream integration needs to call.",
+    "This row has exact machine-readable spec evidence because Checkout.com publishes a direct downloadable OpenAPI YAML artifact at api-reference.checkout.com/v1/swagger.yaml."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://api-reference.checkout.com/",
+    "spec_url": "https://api-reference.checkout.com/v1/swagger.yaml",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Checkout.com's public API reference exposes a downloadable OpenAPI YAML artifact and documents OAuth scopes and resource families for payments, disputes, balances, transfers, files, reports, vault, Flow, sessions, and issuing operations."
+  }
+}

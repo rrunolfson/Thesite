@@ -1,0 +1,1263 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Onfleet API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Onfleet exposes dispatch and last-mile delivery APIs for organizations, administrators, workers, teams, hubs, destinations, recipients, tasks, containers, orders, route plans, optimization runs, and delivery webhooks.",
+    "description": "Manufactured OpenAPI artifact for Onfleet API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Onfleet's API guide states that everything starts with a task, with tasks linked to destinations, recipients, administrators, and workers. The public reference also exposes CRUD and workflow operations for workers, teams, hubs, destinations, recipients, tasks, containers, orders, route plans, and route optimization, plus webhooks with more than 10 event triggers and proof-of-delivery retrieval. That makes it suitable for operational asset or order records and delivery-event telemetry, with documented writeback across the dispatch lifecycle. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://docs.onfleet.com/reference"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Dispatch master data and delivery objects",
+      "description": "Manufactured operations grouped under Dispatch master data and delivery objects."
+    },
+    {
+      "name": "Assignments, delivery progress, and event callbacks",
+      "description": "Manufactured operations grouped under Assignments, delivery progress, and event callbacks."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "onfleet_onfleet-api_integrationProfile",
+        "summary": "Get manufactured profile for Onfleet API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/details": {
+      "get": {
+        "tags": [
+          "Dispatch master data and delivery objects"
+        ],
+        "operationId": "onfleet_onfleet-api_get-details_get",
+        "summary": "Get details",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference covers the core records needed to model delivery operations and maintain them over time. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-administrator": {
+      "post": {
+        "tags": [
+          "Dispatch master data and delivery objects"
+        ],
+        "operationId": "onfleet_onfleet-api_create-administrator_post",
+        "summary": "Create administrator",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference covers the core records needed to model delivery operations and maintain them over time. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create administrator.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create administrator.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-worker": {
+      "post": {
+        "tags": [
+          "Dispatch master data and delivery objects"
+        ],
+        "operationId": "onfleet_onfleet-api_create-worker_post",
+        "summary": "Create worker",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference covers the core records needed to model delivery operations and maintain them over time. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create worker.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create worker.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/list-workers": {
+      "get": {
+        "tags": [
+          "Dispatch master data and delivery objects"
+        ],
+        "operationId": "onfleet_onfleet-api_list-workers_get",
+        "summary": "List workers",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference covers the core records needed to model delivery operations and maintain them over time. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for List workers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/worker-s-schedule": {
+      "get": {
+        "tags": [
+          "Dispatch master data and delivery objects"
+        ],
+        "operationId": "onfleet_onfleet-api_get-worker-s-schedule_get",
+        "summary": "Get worker's schedule",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference covers the core records needed to model delivery operations and maintain them over time. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get worker's schedule.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-hub": {
+      "post": {
+        "tags": [
+          "Dispatch master data and delivery objects"
+        ],
+        "operationId": "onfleet_onfleet-api_create-hub_post",
+        "summary": "Create Hub",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference covers the core records needed to model delivery operations and maintain them over time. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create Hub.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create Hub.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-team": {
+      "post": {
+        "tags": [
+          "Dispatch master data and delivery objects"
+        ],
+        "operationId": "onfleet_onfleet-api_create-team_post",
+        "summary": "Create team",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference covers the core records needed to model delivery operations and maintain them over time. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create team.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create team.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-destination": {
+      "post": {
+        "tags": [
+          "Dispatch master data and delivery objects"
+        ],
+        "operationId": "onfleet_onfleet-api_create-destination_post",
+        "summary": "Create destination",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference covers the core records needed to model delivery operations and maintain them over time. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create destination.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create destination.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-recipient": {
+      "post": {
+        "tags": [
+          "Dispatch master data and delivery objects"
+        ],
+        "operationId": "onfleet_onfleet-api_create-recipient_post",
+        "summary": "Create recipient",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference covers the core records needed to model delivery operations and maintain them over time. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create recipient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create recipient.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-task": {
+      "post": {
+        "tags": [
+          "Dispatch master data and delivery objects"
+        ],
+        "operationId": "onfleet_onfleet-api_create-task_post",
+        "summary": "Create task",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference covers the core records needed to model delivery operations and maintain them over time. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create task.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create task.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/list-tasks": {
+      "get": {
+        "tags": [
+          "Dispatch master data and delivery objects"
+        ],
+        "operationId": "onfleet_onfleet-api_list-tasks_get",
+        "summary": "List tasks",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference covers the core records needed to model delivery operations and maintain them over time. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for List tasks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-order": {
+      "post": {
+        "tags": [
+          "Dispatch master data and delivery objects"
+        ],
+        "operationId": "onfleet_onfleet-api_create-order_post",
+        "summary": "Create Order",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference covers the core records needed to model delivery operations and maintain them over time. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create Order.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create Order.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-route-plan": {
+      "post": {
+        "tags": [
+          "Dispatch master data and delivery objects"
+        ],
+        "operationId": "onfleet_onfleet-api_create-route-plan_post",
+        "summary": "Create Route Plan",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference covers the core records needed to model delivery operations and maintain them over time. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create Route Plan.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create Route Plan.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/automatic-assignment": {
+      "get": {
+        "tags": [
+          "Assignments, delivery progress, and event callbacks"
+        ],
+        "operationId": "onfleet_onfleet-api_automatic-assignment_get",
+        "summary": "Automatic Assignment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Onfleet documents workflow APIs for assigning work and returning delivery progress to downstream systems. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Automatic Assignment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/manual-assignment": {
+      "get": {
+        "tags": [
+          "Assignments, delivery progress, and event callbacks"
+        ],
+        "operationId": "onfleet_onfleet-api_manual-assignment_get",
+        "summary": "Manual Assignment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Onfleet documents workflow APIs for assigning work and returning delivery progress to downstream systems. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Manual Assignment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/complete-task": {
+      "get": {
+        "tags": [
+          "Assignments, delivery progress, and event callbacks"
+        ],
+        "operationId": "onfleet_onfleet-api_complete-task_get",
+        "summary": "Complete task",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Onfleet documents workflow APIs for assigning work and returning delivery progress to downstream systems. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Complete task.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/proof-of-delivery-retrieval": {
+      "get": {
+        "tags": [
+          "Assignments, delivery progress, and event callbacks"
+        ],
+        "operationId": "onfleet_onfleet-api_proof-of-delivery-retrieval_get",
+        "summary": "Proof of Delivery Retrieval",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Onfleet documents workflow APIs for assigning work and returning delivery progress to downstream systems. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Proof of Delivery Retrieval.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-tasks-in-batch-async": {
+      "post": {
+        "tags": [
+          "Assignments, delivery progress, and event callbacks"
+        ],
+        "operationId": "onfleet_onfleet-api_create-tasks-in-batch-async_post",
+        "summary": "Create tasks in batch - async",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Onfleet documents workflow APIs for assigning work and returning delivery progress to downstream systems. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create tasks in batch - async.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create tasks in batch - async.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/batch-job-status": {
+      "get": {
+        "tags": [
+          "Assignments, delivery progress, and event callbacks"
+        ],
+        "operationId": "onfleet_onfleet-api_batch-job-status_get",
+        "summary": "Batch Job Status",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Onfleet documents workflow APIs for assigning work and returning delivery progress to downstream systems. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Batch Job Status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-webhook": {
+      "post": {
+        "tags": [
+          "Assignments, delivery progress, and event callbacks"
+        ],
+        "operationId": "onfleet_onfleet-api_create-webhook_post",
+        "summary": "Create webhook",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Onfleet documents workflow APIs for assigning work and returning delivery progress to downstream systems. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create webhook.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create webhook.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/webhook-payload-examples": {
+      "get": {
+        "tags": [
+          "Assignments, delivery progress, and event callbacks"
+        ],
+        "operationId": "onfleet_onfleet-api_webhook-payload-examples_get",
+        "summary": "Webhook Payload Examples",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Onfleet documents workflow APIs for assigning work and returning delivery progress to downstream systems. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Webhook Payload Examples.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/initialize-standard-route-optimization": {
+      "get": {
+        "tags": [
+          "Assignments, delivery progress, and event callbacks"
+        ],
+        "operationId": "onfleet_onfleet-api_initialize-standard-route-optimization_get",
+        "summary": "Initialize Standard Route Optimization",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Onfleet documents workflow APIs for assigning work and returning delivery progress to downstream systems. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Initialize Standard Route Optimization.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/optimization-status": {
+      "get": {
+        "tags": [
+          "Assignments, delivery progress, and event callbacks"
+        ],
+        "operationId": "onfleet_onfleet-api_get-optimization-status_get",
+        "summary": "Get Optimization Status",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Onfleet documents workflow APIs for assigning work and returning delivery progress to downstream systems. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get Optimization Status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/apply-optimization-results": {
+      "get": {
+        "tags": [
+          "Assignments, delivery progress, and event callbacks"
+        ],
+        "operationId": "onfleet_onfleet-api_apply-optimization-results_get",
+        "summary": "Apply Optimization Results",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Onfleet documents workflow APIs for assigning work and returning delivery progress to downstream systems. Vendor documentation: https://docs.onfleet.com/reference",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Apply Optimization Results.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/onfleet/onfleet-api.json",
+    "vendor_documentation_url": "https://docs.onfleet.com/reference",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

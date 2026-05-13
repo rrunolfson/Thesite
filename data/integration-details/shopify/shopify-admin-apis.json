@@ -1,0 +1,81 @@
+{
+  "vendor_slug": "shopify",
+  "vendor_name": "Shopify",
+  "product_slug": "shopify-admin-apis",
+  "product_name": "Shopify Admin APIs",
+  "product_family": "Shopify",
+  "integration_type": "REST API",
+  "integration_api_url": "https://shopify.dev/docs/api",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Shopify publicly documents GraphQL Admin, legacy REST Admin, Storefront, Customer Account, Payments Apps, webhooks, and specialized APIs for products, customers, orders, inventory, checkout, and store operations.",
+  "data_domains": [
+    "catalog-and-product-data",
+    "customers-and-orders",
+    "inventory-and-fulfillment",
+    "payments-and-events"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "products and catalog data",
+    "customers and customer accounts",
+    "orders and checkouts",
+    "inventory",
+    "payments and refunds",
+    "webhooks and app events"
+  ],
+  "buyer_guidance": "Use Shopify Admin and related APIs for ecommerce catalog, order, customer, inventory, checkout, and event-driven integrations. This is a commerce platform, not an asset or telemetry platform.",
+  "overview": "Shopify's public API hub organizes the platform around GraphQL Admin API, legacy REST Admin API, Storefront API, Customer Account API, Payments Apps API, webhooks, and app events. Public descriptions state that these APIs let integrators read and write products, customers, orders, inventory, checkouts, payments, and buyer-facing storefront data, while reacting to store changes in real time through webhook events. Shopify also exposes customer privacy, customer identity, partner, and storefront surfaces for headless and embedded commerce scenarios. This is a write-capable retail commerce platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Admin and store operations",
+      "description": "Shopify's public API hub emphasizes administrative store operations and core commerce data exchange.",
+      "data_points": [
+        "Products, catalog content, and inventory",
+        "Customers, orders, and refunds",
+        "Payments apps and backend business logic",
+        "Real-time store change events",
+        "Partner and app operational data"
+      ],
+      "relevant_operations": [
+        "GraphQL Admin API",
+        "REST Admin API",
+        "Payments Apps API",
+        "Webhooks",
+        "Partner API",
+        "App Events API"
+      ]
+    },
+    {
+      "category": "Storefront and customer experiences",
+      "description": "Shopify also provides buyer-facing APIs for custom storefront and account experiences.",
+      "data_points": [
+        "Storefront product and cart data",
+        "Customer account and identity workflows",
+        "Checkout and Shop Pay integrations",
+        "Theme and Liquid-based storefront extensions",
+        "Privacy and consent data flows"
+      ],
+      "relevant_operations": [
+        "Storefront API",
+        "Customer Account API",
+        "Ajax API",
+        "Shop Pay Wallet API",
+        "Customer Privacy API"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Shopify's public platform spans many API families, so downstream data models should clearly distinguish admin, storefront, payments, and event-driven use cases.",
+    "The platform publicly recommends GraphQL Admin API for new integrations while still documenting the legacy REST Admin API, so consumers should avoid assuming both surfaces are equivalent long term.",
+    "No exact public machine-readable spec artifact was confirmed for the aggregate Shopify row."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://shopify.dev/docs/api",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Shopify's public API hub explicitly documents GraphQL Admin API, legacy REST Admin API, Storefront API, Customer Account API, Payments Apps API, Webhooks, Partner API, and App Events API, and describes coverage for products, customers, orders, inventory, payments, and buyer-facing commerce experiences."
+  }
+}

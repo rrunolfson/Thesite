@@ -1,0 +1,567 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Greenway FHIR and GAPI Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Greenway publishes public developer documentation for a standards-based FHIR R4 API and proprietary GAPI surface used with Greenway EHR products for clinical data access, app embedding, bulk export, and event-driven workflows.",
+    "description": "Manufactured OpenAPI artifact for Greenway FHIR and GAPI. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Greenway's developer platform describes two public API families: a standards-compliant FHIR R4 API serving Intergy and Prime Suite data, and a proprietary GAPI that supports reads and writes across clinical and financial data elements. The public docs describe SMART-on-FHIR OAuth flows, tenant-specific FHIR base URLs, bulk export support, event notification capabilities, and separate GAPI deployment and authentication documentation. Greenway also states that its current FHIR API is read-only while GAPI provides the write-capable proprietary surface. This is a healthcare application platform with both standards-based and proprietary integration models, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "FHIR R4 clinical interoperability",
+      "description": "Manufactured operations grouped under FHIR R4 clinical interoperability."
+    },
+    {
+      "name": "Proprietary GAPI and event-driven workflows",
+      "description": "Manufactured operations grouped under Proprietary GAPI and event-driven workflows."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "greenway_greenway-fhir-and-gapi_integrationProfile",
+        "summary": "Get manufactured profile for Greenway FHIR and GAPI",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/fhir/R4/{TENANT_ID}/Patient/{id}": {
+      "get": {
+        "tags": [
+          "FHIR R4 clinical interoperability"
+        ],
+        "operationId": "greenway_greenway-fhir-and-gapi_get-fhir-r4-tenant-id-patient-id_get",
+        "summary": "GET /fhir/R4/{TENANT_ID}/Patient/{id}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenway's public FHIR platform is designed for SMART-on-FHIR applications and standardized patient-data access. Vendor documentation: https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /fhir/R4/{TENANT_ID}/Patient/{id}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/fhir-capabilitystatement": {
+      "get": {
+        "tags": [
+          "FHIR R4 clinical interoperability"
+        ],
+        "operationId": "greenway_greenway-fhir-and-gapi_fhir-capabilitystatement-get_get",
+        "summary": "FHIR CapabilityStatement GET",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenway's public FHIR platform is designed for SMART-on-FHIR applications and standardized patient-data access. Vendor documentation: https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for FHIR CapabilityStatement GET.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/bulk-export": {
+      "get": {
+        "tags": [
+          "FHIR R4 clinical interoperability"
+        ],
+        "operationId": "greenway_greenway-fhir-and-gapi_bulk-export_get",
+        "summary": "Bulk Export",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenway's public FHIR platform is designed for SMART-on-FHIR applications and standardized patient-data access. Vendor documentation: https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Bulk Export.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/smart-on-fhir-authorization": {
+      "get": {
+        "tags": [
+          "FHIR R4 clinical interoperability"
+        ],
+        "operationId": "greenway_greenway-fhir-and-gapi_smart-on-fhir-authorization_get",
+        "summary": "SMART-on-FHIR authorization",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenway's public FHIR platform is designed for SMART-on-FHIR applications and standardized patient-data access. Vendor documentation: https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for SMART-on-FHIR authorization.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/backend-services-registration": {
+      "get": {
+        "tags": [
+          "FHIR R4 clinical interoperability"
+        ],
+        "operationId": "greenway_greenway-fhir-and-gapi_backend-services-registration_get",
+        "summary": "Backend services registration",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenway's public FHIR platform is designed for SMART-on-FHIR applications and standardized patient-data access. Vendor documentation: https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Backend services registration.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/gapi-read-workflows": {
+      "get": {
+        "tags": [
+          "Proprietary GAPI and event-driven workflows"
+        ],
+        "operationId": "greenway_greenway-fhir-and-gapi_gapi-read-workflows_get",
+        "summary": "GAPI read workflows",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenway separately documents a proprietary API layer and related app lifecycle capabilities for broader operational integrations. Vendor documentation: https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GAPI read workflows.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/gapi-write-workflows": {
+      "get": {
+        "tags": [
+          "Proprietary GAPI and event-driven workflows"
+        ],
+        "operationId": "greenway_greenway-fhir-and-gapi_gapi-write-workflows_get",
+        "summary": "GAPI write workflows",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenway separately documents a proprietary API layer and related app lifecycle capabilities for broader operational integrations. Vendor documentation: https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GAPI write workflows.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/event-notification-system": {
+      "get": {
+        "tags": [
+          "Proprietary GAPI and event-driven workflows"
+        ],
+        "operationId": "greenway_greenway-fhir-and-gapi_event-notification-system_get",
+        "summary": "Event Notification System",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenway separately documents a proprietary API layer and related app lifecycle capabilities for broader operational integrations. Vendor documentation: https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Event Notification System.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/deploying-a-gapi-application": {
+      "get": {
+        "tags": [
+          "Proprietary GAPI and event-driven workflows"
+        ],
+        "operationId": "greenway_greenway-fhir-and-gapi_deploying-a-gapi-application_get",
+        "summary": "Deploying a GAPI application",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenway separately documents a proprietary API layer and related app lifecycle capabilities for broader operational integrations. Vendor documentation: https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Deploying a GAPI application.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/gapi-authentication-and-authorization": {
+      "get": {
+        "tags": [
+          "Proprietary GAPI and event-driven workflows"
+        ],
+        "operationId": "greenway_greenway-fhir-and-gapi_gapi-authentication-and-authorization_get",
+        "summary": "GAPI Authentication and Authorization",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenway separately documents a proprietary API layer and related app lifecycle capabilities for broader operational integrations. Vendor documentation: https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GAPI Authentication and Authorization.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/greenway/greenway-fhir-and-gapi.json",
+    "vendor_documentation_url": "https://developers.greenwayhealth.com/developer-platform/docs/api-an-overview",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

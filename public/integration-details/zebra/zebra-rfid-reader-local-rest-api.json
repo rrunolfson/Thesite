@@ -6,7 +6,8 @@
   "product_family": "Zebra RFID",
   "integration_type": "REST API",
   "integration_api_url": "https://zebradevs.github.io/rfid-ziotc-docs/api_ref/local_rest/index.html",
-  "spec_artifact_url": "https://zebradevs.github.io/rfid-ziotc-docs/api_ref/local_rest/index.html",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/zebra/zebra-rfid-reader-local-rest-api.openapi.json",
+  "vendor_spec_artifact_url": "https://zebradevs.github.io/rfid-ziotc-docs/_downloads/54d6602e5cb52c79f910f98c9468054c/IoT%20Reader%20API%20Collection%20Local%20Rest.postman_collection.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "The local REST API exposes Zebra RFID reader identity, capabilities, operational status, statistics, and configuration endpoints, along with write-capable routes for network, certificates, apps, LEDs, and GPO state.",
   "data_domains": [
@@ -51,11 +52,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://zebradevs.github.io/rfid-ziotc-docs/api_ref/local_rest/index.html",
-    "spec_url": "https://zebradevs.github.io/rfid-ziotc-docs/api_ref/local_rest/index.html",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/zebra/zebra-rfid-reader-local-rest-api.openapi.json",
     "reviewed_at": "2026-04-21",
-    "evidence_notes": "Classification is based on the local REST API reference showing GET surfaces for reader metadata and statistics plus PUT-style configuration and control routes for network settings, certificates, apps, LEDs, logs, and GPO state."
+    "evidence_notes": "Classification is based on the Zebra local REST reference plus the downloadable IoT Reader API Collection Local Rest Postman artifact, which documents the reader metadata, statistics, configuration, and control routes surfaced by the page.",
+    "vendor_spec_url": "https://zebradevs.github.io/rfid-ziotc-docs/_downloads/54d6602e5cb52c79f910f98c9468054c/IoT%20Reader%20API%20Collection%20Local%20Rest.postman_collection.json",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/zebra/zebra-rfid-reader-local-rest-api.openapi.json"
   },
   "detail_path": "/integration-details/zebra/zebra-rfid-reader-local-rest-api.json",
   "vendor_domain": "zebra.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=zebra.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=zebra.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/zebra/zebra-rfid-reader-local-rest-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/zebra/zebra-rfid-reader-local-rest-api.openapi.json"
 }

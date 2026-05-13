@@ -1,0 +1,865 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "TrueLayer API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "TrueLayer publishes public documentation and raw OpenAPI artifacts for payments, payouts, VRP, merchant accounts, data API connections, verification, payment links, mandates, and related webhooks.",
+    "description": "Manufactured OpenAPI artifact for TrueLayer API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. TrueLayer's public docs organize the platform into payments, payouts, Signup+, VRP, data, and verification products and expose raw machine-readable artifacts such as the Payments API v3 JSON spec. The public documentation covers payment creation, payout flows, merchant accounts, provider availability, connection creation, account and transaction data retrieval, verification, payment links, mandates, recurring-payment workflows, and webhooks, along with quickstarts and integration checklists. This is a strong write-capable open-banking platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://docs.truelayer.com/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Payments, payouts, and merchant-account workflows",
+      "description": "Manufactured operations grouped under Payments, payouts, and merchant-account workflows."
+    },
+    {
+      "name": "Data access, verification, and recurring authorization",
+      "description": "Manufactured operations grouped under Data access, verification, and recurring authorization."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "truelayer_truelayer-api_integrationProfile",
+        "summary": "Get manufactured profile for TrueLayer API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payments-api-v3": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and merchant-account workflows"
+        ],
+        "operationId": "truelayer_truelayer-api_payments-api-v3_get",
+        "summary": "Payments API v3",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. TrueLayer exposes end-to-end money movement workflows for merchants and open-banking payment experiences. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payments API v3.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payout-creation": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and merchant-account workflows"
+        ],
+        "operationId": "truelayer_truelayer-api_payout-creation_get",
+        "summary": "Payout creation",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. TrueLayer exposes end-to-end money movement workflows for merchants and open-banking payment experiences. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payout creation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/refund-a-payment": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and merchant-account workflows"
+        ],
+        "operationId": "truelayer_truelayer-api_refund-a-payment_get",
+        "summary": "Refund a payment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. TrueLayer exposes end-to-end money movement workflows for merchants and open-banking payment experiences. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Refund a payment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/data-about-your-merchant-accounts": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and merchant-account workflows"
+        ],
+        "operationId": "truelayer_truelayer-api_get-data-about-your-merchant-accounts_get",
+        "summary": "Get data about your merchant accounts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. TrueLayer exposes end-to-end money movement workflows for merchants and open-banking payment experiences. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get data about your merchant accounts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/your-merchant-account-transactions-or-payment-sources": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and merchant-account workflows"
+        ],
+        "operationId": "truelayer_truelayer-api_get-your-merchant-account-transactions-or-payment-sources_get",
+        "summary": "Get your merchant account transactions or payment sources",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. TrueLayer exposes end-to-end money movement workflows for merchants and open-banking payment experiences. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get your merchant account transactions or payment sources.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payment-webhooks": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and merchant-account workflows"
+        ],
+        "operationId": "truelayer_truelayer-api_payment-webhooks_get",
+        "summary": "Payment webhooks",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. TrueLayer exposes end-to-end money movement workflows for merchants and open-banking payment experiences. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payment webhooks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payout-webhooks": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and merchant-account workflows"
+        ],
+        "operationId": "truelayer_truelayer-api_payout-webhooks_get",
+        "summary": "Payout webhooks",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. TrueLayer exposes end-to-end money movement workflows for merchants and open-banking payment experiences. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payout webhooks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/provider-availability-webhook": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and merchant-account workflows"
+        ],
+        "operationId": "truelayer_truelayer-api_provider-availability-webhook_get",
+        "summary": "Provider availability webhook",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. TrueLayer exposes end-to-end money movement workflows for merchants and open-banking payment experiences. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Provider availability webhook.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-a-connection": {
+      "post": {
+        "tags": [
+          "Data access, verification, and recurring authorization"
+        ],
+        "operationId": "truelayer_truelayer-api_create-a-connection_post",
+        "summary": "Create a connection",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also provides connection-based data retrieval and consented recurring payment or verification workflows. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create a connection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create a connection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/generate-an-auth-link": {
+      "get": {
+        "tags": [
+          "Data access, verification, and recurring authorization"
+        ],
+        "operationId": "truelayer_truelayer-api_generate-an-auth-link_get",
+        "summary": "Generate an auth link",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also provides connection-based data retrieval and consented recurring payment or verification workflows. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Generate an auth link.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/account-data-requests": {
+      "get": {
+        "tags": [
+          "Data access, verification, and recurring authorization"
+        ],
+        "operationId": "truelayer_truelayer-api_account-data-requests_get",
+        "summary": "Account data requests",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also provides connection-based data retrieval and consented recurring payment or verification workflows. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Account data requests.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/transaction-data-reference": {
+      "get": {
+        "tags": [
+          "Data access, verification, and recurring authorization"
+        ],
+        "operationId": "truelayer_truelayer-api_transaction-data-reference_get",
+        "summary": "Transaction data reference",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also provides connection-based data retrieval and consented recurring payment or verification workflows. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Transaction data reference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/verify-an-account": {
+      "get": {
+        "tags": [
+          "Data access, verification, and recurring authorization"
+        ],
+        "operationId": "truelayer_truelayer-api_verify-an-account_get",
+        "summary": "Verify an account",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also provides connection-based data retrieval and consented recurring payment or verification workflows. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Verify an account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/account-holder-verification": {
+      "get": {
+        "tags": [
+          "Data access, verification, and recurring authorization"
+        ],
+        "operationId": "truelayer_truelayer-api_account-holder-verification_get",
+        "summary": "Account holder verification",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also provides connection-based data retrieval and consented recurring payment or verification workflows. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Account holder verification.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-a-mandate": {
+      "post": {
+        "tags": [
+          "Data access, verification, and recurring authorization"
+        ],
+        "operationId": "truelayer_truelayer-api_create-a-mandate_post",
+        "summary": "Create a mandate",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also provides connection-based data retrieval and consented recurring payment or verification workflows. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create a mandate.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create a mandate.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-a-payment-on-a-mandate": {
+      "post": {
+        "tags": [
+          "Data access, verification, and recurring authorization"
+        ],
+        "operationId": "truelayer_truelayer-api_create-a-payment-on-a-mandate_post",
+        "summary": "Create a payment on a mandate",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also provides connection-based data retrieval and consented recurring payment or verification workflows. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create a payment on a mandate.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create a payment on a mandate.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/revoke-a-payment-mandate": {
+      "get": {
+        "tags": [
+          "Data access, verification, and recurring authorization"
+        ],
+        "operationId": "truelayer_truelayer-api_revoke-a-payment-mandate_get",
+        "summary": "Revoke a payment mandate",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The platform also provides connection-based data retrieval and consented recurring payment or verification workflows. Vendor documentation: https://docs.truelayer.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Revoke a payment mandate.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/truelayer/truelayer-api.json",
+    "vendor_documentation_url": "https://docs.truelayer.com/",
+    "vendor_spec_artifact_url": "https://docs.truelayer.com/openapi/payments-api-v3.json",
+    "reviewed_at": "2026-05-13"
+  }
+}

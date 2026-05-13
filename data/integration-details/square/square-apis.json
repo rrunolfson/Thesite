@@ -1,0 +1,82 @@
+{
+  "vendor_slug": "square",
+  "vendor_name": "Square",
+  "product_slug": "square-apis",
+  "product_name": "Square APIs",
+  "product_family": "Square",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.squareup.com/docs",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Square publicly documents API groups for payments, commerce, customers, and staff, plus API Explorer, GraphQL Explorer, developer console, and reference docs for orders, catalog, inventory, customers, loyalty, gift cards, team, and labor workflows.",
+  "data_domains": [
+    "payments-and-terminal",
+    "catalog-and-orders",
+    "customers-and-loyalty",
+    "staff-and-labor"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "payments",
+    "orders and catalog",
+    "inventory",
+    "customers and loyalty",
+    "gift cards",
+    "team and labor"
+  ],
+  "buyer_guidance": "Use Square APIs for payments, POS-adjacent commerce, orders, catalog, inventory, customer, loyalty, and staff workflows. This is a commerce and payments platform, not an asset or telemetry platform.",
+  "overview": "Square's public developer hub groups its platform into Payments, Commerce, Customers, and Staff APIs. Public navigation highlights Payment solutions, Terminal API, Orders API, Catalog API, Inventory API, Customers API, Loyalty API, Gift Cards API, Team API, and Labor API, along with API Explorer and GraphQL Explorer for testing and schema inspection. This is a write-capable retail and payments integration surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Payments and commerce workflows",
+      "description": "Square publicly describes APIs for transaction processing and seller commerce operations.",
+      "data_points": [
+        "Payments on Square hardware and online",
+        "Orders and order orchestration",
+        "Catalog data and inventory",
+        "Terminal-based payment experiences",
+        "Commerce application support"
+      ],
+      "relevant_operations": [
+        "Payments",
+        "Terminal API",
+        "Orders API",
+        "Catalog API",
+        "Inventory API",
+        "API Explorer"
+      ]
+    },
+    {
+      "category": "Customer and staff management",
+      "description": "The public hub also exposes APIs for customer engagement and employee operations.",
+      "data_points": [
+        "Customer records",
+        "Loyalty programs",
+        "Gift cards",
+        "Team management",
+        "Scheduling, timecards, and payroll support"
+      ],
+      "relevant_operations": [
+        "Customers API",
+        "Loyalty API",
+        "Gift Cards API",
+        "Team API",
+        "Labor API",
+        "GraphQL Explorer"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Square's public documentation spans multiple API groups and tooling surfaces, so downstream mapping should separate payment, commerce, customer, and staff domains rather than treating the platform as a single flat schema.",
+    "The public docs clearly support write-capable commerce operations, but no exact raw machine-readable spec artifact was confirmed for the aggregate Square row during this pass.",
+    "Square also emphasizes interactive exploration through API Explorer and GraphQL Explorer, which is useful for validation but not equivalent to a public spec artifact."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.squareup.com/docs",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Square's public developer hub groups APIs into Payments, Commerce, Customers, and Staff, and explicitly links Terminal API, Orders API, Catalog API, Inventory API, Customers API, Loyalty API, Gift Cards API, Team API, and Labor API, along with API Explorer and GraphQL Explorer."
+  }
+}

@@ -14,8 +14,8 @@
     "driver-users",
     "account-administration"
   ],
-  "asset_data_available": "Not Supported",
-  "telemetry_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "users",
@@ -23,7 +23,7 @@
     "permissions"
   ],
   "buyer_guidance": "Use Users API for identity and driver-account synchronization; it is useful for provisioning and access alignment, not for equipment telemetry or physical asset modeling.",
-  "overview": "Users API is an identity-management surface for user and driver-linked records. It supports creation and updates to those records, but it is not a physical asset API and does not expose time-varying operational telemetry. Asset data is Not Supported. Telemetry data is Not Supported. Writeback is Supported.",
+  "overview": "Users API is an identity-management surface for user and driver-linked records. It supports creation and updates to those records, but it is not a physical asset API and does not expose time-varying operational telemetry. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
   "available_data": [
     {
       "category": "Identity and account records",

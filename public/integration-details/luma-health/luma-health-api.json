@@ -1,0 +1,99 @@
+{
+  "vendor_slug": "luma-health",
+  "vendor_name": "Luma Health",
+  "product_slug": "luma-health-api",
+  "product_name": "Luma Health API",
+  "product_family": "Luma Health",
+  "integration_type": "REST API",
+  "integration_api_url": "https://apidocs.lumahealth.io/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/luma-health/luma-health-api.openapi.json",
+  "vendor_spec_artifact_url": "https://apidocs.lumahealth.io/public.yaml",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Luma Health publishes a direct OpenAPI YAML for appointment access, patient records, referrals, availabilities, appointment types, broadcast messaging, and Lumabot workflow resources used in patient-engagement operations.",
+  "data_domains": [
+    "patient-engagement",
+    "appointments-and-availability",
+    "patient-master-data",
+    "outreach-workflows"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "patients",
+    "appointments",
+    "referrals",
+    "availabilities",
+    "broadcast flows",
+    "Lumabot flows"
+  ],
+  "buyer_guidance": "Use Luma Health API for patient-engagement, scheduling, and outreach workflows in healthcare environments. It is a transactional engagement API, not an asset or telemetry platform.",
+  "overview": "Luma Health exposes a public OpenAPI YAML describing a REST v2 API hosted at api.lumahealth.io. The spec includes read and write operations for appointments, patients, referrals, broadcast flows, and Lumabot flows, plus availability lookup and appointment-type management. That makes it a practical write-capable surface for patient communication, scheduling orchestration, and referral workflows, but not a source of equipment, asset, or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Patients, appointments, and referral workflows",
+      "description": "The public OpenAPI document exposes the core records needed for patient-engagement and scheduling integrations.",
+      "data_points": [
+        "Patient records",
+        "Appointment records",
+        "Referral records",
+        "Appointment type definitions",
+        "Availability query results"
+      ],
+      "relevant_operations": [
+        "GET /patients",
+        "POST /patients",
+        "GET /appointments",
+        "POST /appointments",
+        "GET /referrals",
+        "POST /referrals",
+        "GET /availabilities",
+        "GET /appointmentTypes/{appointmentTypeId}",
+        "PUT /appointmentTypes/{appointmentTypeId}",
+        "DELETE /appointmentTypes/{appointmentTypeId}"
+      ]
+    },
+    {
+      "category": "Broadcast and conversational engagement",
+      "description": "Luma also exposes communication workflow resources for message campaigns and Lumabot automation flows.",
+      "data_points": [
+        "Broadcast event records",
+        "Broadcast flow definitions and recipients",
+        "Broadcast review and approval actions",
+        "Lumabot flow definitions",
+        "Assistant transfer rules"
+      ],
+      "relevant_operations": [
+        "GET /broadcastEvents",
+        "GET /broadcastFlows",
+        "POST /broadcastFlows",
+        "GET /broadcastFlows/{broadcastFlowId}/batches",
+        "GET /broadcastFlows/{broadcastFlowId}/recipients",
+        "POST /broadcastFlows/{broadcastFlowId}/review/approve",
+        "POST /broadcastFlows/{broadcastFlowId}/review/decline",
+        "GET /lumabotFlows",
+        "POST /lumabotFlows",
+        "POST /assistantTransferRules/bulk"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Luma publishes a direct machine-readable OpenAPI artifact, so payloads and operation coverage can be validated against the spec rather than inferred from prose docs alone.",
+    "The API is centered on patient-engagement workflows and operational scheduling records, so it should not be classified as an asset or telemetry integration even though it is highly write-capable.",
+    "Because the surface includes both outreach automation and patient or appointment writes, downstream systems should separate read-only analytics use from workflow-triggering credentials where possible."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://apidocs.lumahealth.io/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/luma-health/luma-health-api.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Luma Health publicly exposes an OpenAPI YAML with REST v2 server information and documented paths for patients, appointments, referrals, availabilities, appointment types, broadcast flows, broadcast events, assistant transfer rules, and Lumabot flows.",
+    "vendor_spec_url": "https://apidocs.lumahealth.io/public.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/luma-health/luma-health-api.openapi.json"
+  },
+  "detail_path": "/integration-details/luma-health/luma-health-api.json",
+  "vendor_domain": "lumahealth.io",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=lumahealth.io&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/luma-health/luma-health-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/luma-health/luma-health-api.openapi.json"
+}

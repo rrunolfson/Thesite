@@ -1,0 +1,573 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "BigCommerce APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "BigCommerce publicly documents REST management and storefront APIs, GraphQL storefront and admin APIs, customer login and current-customer APIs, and payments APIs for store, checkout, and authentication workflows.",
+    "description": "Manufactured OpenAPI artifact for BigCommerce APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. BigCommerce's public API overview describes several public API families: REST Store Management APIs, REST Storefront API, GraphQL Storefront API, Customer Login API, Current Customer API, GraphQL Admin API, GraphQL Account API, and Payments API. The public examples explicitly cover adding and updating products, changing order status, creating coupons, managing customer accounts, updating billing addresses at checkout, clearing carts, querying products and categories, authenticating storefront customers, and integrating with SSO providers. This is a write-capable ecommerce platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://docs.bigcommerce.com/developer/api-reference/about-our-apis"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Store management and commerce operations",
+      "description": "Manufactured operations grouped under Store management and commerce operations."
+    },
+    {
+      "name": "Storefront, cart, and authentication flows",
+      "description": "Manufactured operations grouped under Storefront, cart, and authentication flows."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "bigcommerce_bigcommerce-apis_integrationProfile",
+        "summary": "Get manufactured profile for BigCommerce APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/rest-store-management-apis": {
+      "get": {
+        "tags": [
+          "Store management and commerce operations"
+        ],
+        "operationId": "bigcommerce_bigcommerce-apis_rest-store-management-apis_get",
+        "summary": "REST Store Management APIs",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. BigCommerce's management APIs support common administrative commerce workflows. Vendor documentation: https://docs.bigcommerce.com/developer/api-reference/about-our-apis",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for REST Store Management APIs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/graphql-admin-api": {
+      "get": {
+        "tags": [
+          "Store management and commerce operations"
+        ],
+        "operationId": "bigcommerce_bigcommerce-apis_graphql-admin-api_get",
+        "summary": "GraphQL Admin API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. BigCommerce's management APIs support common administrative commerce workflows. Vendor documentation: https://docs.bigcommerce.com/developer/api-reference/about-our-apis",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GraphQL Admin API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payments-api": {
+      "get": {
+        "tags": [
+          "Store management and commerce operations"
+        ],
+        "operationId": "bigcommerce_bigcommerce-apis_payments-api_get",
+        "summary": "Payments API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. BigCommerce's management APIs support common administrative commerce workflows. Vendor documentation: https://docs.bigcommerce.com/developer/api-reference/about-our-apis",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payments API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-coupon": {
+      "post": {
+        "tags": [
+          "Store management and commerce operations"
+        ],
+        "operationId": "bigcommerce_bigcommerce-apis_create-coupon_post",
+        "summary": "Create coupon",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. BigCommerce's management APIs support common administrative commerce workflows. Vendor documentation: https://docs.bigcommerce.com/developer/api-reference/about-our-apis",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create coupon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create coupon.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-order-status": {
+      "put": {
+        "tags": [
+          "Store management and commerce operations"
+        ],
+        "operationId": "bigcommerce_bigcommerce-apis_update-order-status_put",
+        "summary": "Update order status",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. BigCommerce's management APIs support common administrative commerce workflows. Vendor documentation: https://docs.bigcommerce.com/developer/api-reference/about-our-apis",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Update order status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Update order status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest-storefront-api": {
+      "get": {
+        "tags": [
+          "Storefront, cart, and authentication flows"
+        ],
+        "operationId": "bigcommerce_bigcommerce-apis_rest-storefront-api_get",
+        "summary": "REST Storefront API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public storefront APIs cover buyer-facing cart, checkout, and login experiences. Vendor documentation: https://docs.bigcommerce.com/developer/api-reference/about-our-apis",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for REST Storefront API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/graphql-storefront-api": {
+      "get": {
+        "tags": [
+          "Storefront, cart, and authentication flows"
+        ],
+        "operationId": "bigcommerce_bigcommerce-apis_graphql-storefront-api_get",
+        "summary": "GraphQL Storefront API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public storefront APIs cover buyer-facing cart, checkout, and login experiences. Vendor documentation: https://docs.bigcommerce.com/developer/api-reference/about-our-apis",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GraphQL Storefront API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/customer-login-api": {
+      "get": {
+        "tags": [
+          "Storefront, cart, and authentication flows"
+        ],
+        "operationId": "bigcommerce_bigcommerce-apis_customer-login-api_get",
+        "summary": "Customer Login API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public storefront APIs cover buyer-facing cart, checkout, and login experiences. Vendor documentation: https://docs.bigcommerce.com/developer/api-reference/about-our-apis",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Customer Login API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/current-customer-api": {
+      "get": {
+        "tags": [
+          "Storefront, cart, and authentication flows"
+        ],
+        "operationId": "bigcommerce_bigcommerce-apis_current-customer-api_get",
+        "summary": "Current Customer API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public storefront APIs cover buyer-facing cart, checkout, and login experiences. Vendor documentation: https://docs.bigcommerce.com/developer/api-reference/about-our-apis",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Current Customer API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/bigcommerce/bigcommerce-apis.json",
+    "vendor_documentation_url": "https://docs.bigcommerce.com/developer/api-reference/about-our-apis",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

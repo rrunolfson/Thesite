@@ -1,0 +1,607 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Optimize my plant Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-18",
+    "summary": "Optimize my plant is a Mendix app that can be deployed on Xcelerator as a Siemens operated SaaS offering, or customer can use the Optimize my plant Starter Kit to extend the Optimize my plant app and deploy and operate himself. Published API scope focuses on plant optimization metrics and recommendation-oriented outputs.",
+    "description": "Manufactured OpenAPI artifact for Optimize my plant. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Optimize my plant is a Mendix app that can be deployed on Xcelerator as a Siemens operated SaaS offering, or customer can use the Optimize my plant Starter Kit to extend the Optimize my plant app and deploy and operate himself. The product is presented as an optimization application and collection for plant analysis and recommendations rather than control. Asset data is Supported. Telemetry data is Supported. Writeback is Un-Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.siemens.com/optimize-my-plant/home.html"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Optimization analytics",
+      "description": "Manufactured operations grouped under Optimization analytics."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "siemens_optimize-my-plant_integrationProfile",
+        "summary": "Get manufactured profile for Optimize my plant",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/oauth/token": {
+      "post": {
+        "tags": [
+          "Optimization analytics"
+        ],
+        "operationId": "siemens_optimize-my-plant_post-oauth-token_post",
+        "summary": "POST /oauth/token",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on plant optimization metrics and recommendation-oriented outputs. Vendor documentation: https://developer.siemens.com/optimize-my-plant/home.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /oauth/token.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /oauth/token.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/projects/{projectid}/products": {
+      "get": {
+        "tags": [
+          "Optimization analytics"
+        ],
+        "operationId": "siemens_optimize-my-plant_get-projects-projectid-products_get",
+        "summary": "GET /projects/{projectid}/products",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on plant optimization metrics and recommendation-oriented outputs. Vendor documentation: https://developer.siemens.com/optimize-my-plant/home.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /projects/{projectid}/products.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Optimization analytics"
+        ],
+        "operationId": "siemens_optimize-my-plant_post-projects-projectid-products_post",
+        "summary": "POST /projects/{projectid}/products",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on plant optimization metrics and recommendation-oriented outputs. Vendor documentation: https://developer.siemens.com/optimize-my-plant/home.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /projects/{projectid}/products.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /projects/{projectid}/products.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Optimization analytics"
+        ],
+        "operationId": "siemens_optimize-my-plant_delete-projects-projectid-products_delete",
+        "summary": "DELETE /projects/{projectid}/products",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on plant optimization metrics and recommendation-oriented outputs. Vendor documentation: https://developer.siemens.com/optimize-my-plant/home.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DELETE /projects/{projectid}/products.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for DELETE /projects/{projectid}/products.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/projects/{projectid}/products/productfamilies": {
+      "get": {
+        "tags": [
+          "Optimization analytics"
+        ],
+        "operationId": "siemens_optimize-my-plant_get-projects-projectid-products-productfamilies_get",
+        "summary": "GET /projects/{projectid}/products/productfamilies",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on plant optimization metrics and recommendation-oriented outputs. Vendor documentation: https://developer.siemens.com/optimize-my-plant/home.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /projects/{projectid}/products/productfamilies.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Optimization analytics"
+        ],
+        "operationId": "siemens_optimize-my-plant_post-projects-projectid-products-productfamilies_post",
+        "summary": "POST /projects/{projectid}/products/productfamilies",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on plant optimization metrics and recommendation-oriented outputs. Vendor documentation: https://developer.siemens.com/optimize-my-plant/home.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /projects/{projectid}/products/productfamilies.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /projects/{projectid}/products/productfamilies.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Optimization analytics"
+        ],
+        "operationId": "siemens_optimize-my-plant_delete-projects-projectid-products-productfamilies_delete",
+        "summary": "DELETE /projects/{projectid}/products/productfamilies",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on plant optimization metrics and recommendation-oriented outputs. Vendor documentation: https://developer.siemens.com/optimize-my-plant/home.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DELETE /projects/{projectid}/products/productfamilies.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for DELETE /projects/{projectid}/products/productfamilies.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/projects/{projectid}/products/parameters_reset": {
+      "post": {
+        "tags": [
+          "Optimization analytics"
+        ],
+        "operationId": "siemens_optimize-my-plant_post-projects-projectid-products-parameters-reset_post",
+        "summary": "POST /projects/{projectid}/products/parameters_reset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on plant optimization metrics and recommendation-oriented outputs. Vendor documentation: https://developer.siemens.com/optimize-my-plant/home.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /projects/{projectid}/products/parameters_reset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /projects/{projectid}/products/parameters_reset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/siemens/optimize-my-plant.json",
+    "vendor_documentation_url": "https://developer.siemens.com/optimize-my-plant/home.html",
+    "vendor_spec_artifact_url": "https://developer.siemens.com/optimize-my-plant/Optimize%20my%20plant%20collection%20-%20SaaS.json",
+    "reviewed_at": "2026-04-18"
+  }
+}

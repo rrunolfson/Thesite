@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "autodesk",
+  "vendor_name": "Autodesk",
+  "product_slug": "autodesk-platform-services-apis",
+  "product_name": "Autodesk Platform Services APIs",
+  "product_family": "Autodesk Platform Services",
+  "integration_type": "REST API",
+  "integration_api_url": "https://aps.autodesk.com/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Autodesk Platform Services APIs has public documentation that indicates engineering and product-lifecycle records across parts, assemblies, documents, changes. Public Autodesk Platform Services developer portal is available.",
+  "data_domains": [
+    "product-and-design-records",
+    "documents",
+    "change-workflows"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "parts",
+    "assemblies",
+    "documents",
+    "changes",
+    "BOM records"
+  ],
+  "buyer_guidance": "Use this API family for product, BOM, and engineering-document integration, not for streaming operational telemetry. Autodesk should be treated as a rest api surface for engineering and product-lifecycle records.",
+  "overview": "Public documentation reviewed for Autodesk Platform Services APIs indicates Public Autodesk Platform Services developer portal is available. The documented surface aligns with engineering and product-lifecycle records and covers parts, assemblies, documents, changes. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Engineering and product-lifecycle records",
+      "description": "The public documentation indicates engineering-record access for product structures, documents, and controlled change workflows rather than live machine telemetry.",
+      "data_points": [
+        "Part, product, and assembly records",
+        "Bills of material and engineering structures",
+        "Controlled documents and attachments",
+        "Change, release, or lifecycle workflow state"
+      ],
+      "relevant_operations": [
+        "list product and part records",
+        "read BOM and document data",
+        "create or update lifecycle records",
+        "submit engineering change actions"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Autodesk Platform Services APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as engineering and product-lifecycle records, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://aps.autodesk.com/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public Autodesk Platform Services developer portal is available."
+  }
+}

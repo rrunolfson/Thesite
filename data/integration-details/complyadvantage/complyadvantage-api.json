@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "complyadvantage",
+  "vendor_name": "ComplyAdvantage",
+  "product_slug": "complyadvantage-api",
+  "product_name": "ComplyAdvantage API",
+  "product_family": "ComplyAdvantage",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.complyadvantage.com/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "ComplyAdvantage API has public documentation that indicates regulatory screening and compliance workflows across watchlist matches, cases, alerts, entities. Public API docs for screening/monitoring.",
+  "data_domains": [
+    "screening-and-monitoring",
+    "case-workflows",
+    "compliance-events"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "watchlist matches",
+    "cases",
+    "alerts",
+    "entities",
+    "monitoring jobs"
+  ],
+  "buyer_guidance": "Use this API family for screening, monitoring, and compliance-review workflows rather than telemetry or physical asset integration. Complyadvantage should be treated as a rest api surface for regulatory screening and compliance workflows.",
+  "overview": "Public documentation reviewed for ComplyAdvantage API indicates Public API docs for screening/monitoring. The documented surface aligns with regulatory screening and compliance workflows and covers watchlist matches, cases, alerts, entities. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Regulatory screening and compliance workflows",
+      "description": "The public documentation indicates compliance screening and monitoring workflows for entities, alerts, cases, and ongoing review processes.",
+      "data_points": [
+        "Entity and subject records",
+        "Screening alerts or watchlist matches",
+        "Case-management and review state",
+        "Monitoring jobs and compliance workflow outputs"
+      ],
+      "relevant_operations": [
+        "list entities and screening cases",
+        "read alert and monitoring state",
+        "create or update compliance workflows",
+        "submit review or disposition actions"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for ComplyAdvantage API is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as regulatory screening and compliance workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.complyadvantage.com/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public API docs for screening/monitoring."
+  }
+}

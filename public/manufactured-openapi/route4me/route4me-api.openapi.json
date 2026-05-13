@@ -1,0 +1,917 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Route4Me API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Route4Me exposes route optimization, route and order management, address-book, vehicle, tracking, geocoding, activity-feed, territory, and telematics-connection APIs for logistics and field-service operations.",
+    "description": "Manufactured OpenAPI artifact for Route4Me API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Route4Me's API reference covers optimization problems, routes, orders, addresses, vehicles, geocoding, tracking, activity feeds, territories, and telematics connections. The public docs show route and order CRUD, route path and tracking-history retrieval, asset-tracking lookups, GPS position submission, live user-location queries, vehicle APIs, and telematics-connection management through the Operational Assessment gateway. That makes the platform useful both for logistics master data and for operational telemetry derived from tracked devices and delivery activity. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://route4me.io/docs/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Routes, orders, addresses, and vehicles",
+      "description": "Manufactured operations grouped under Routes, orders, addresses, and vehicles."
+    },
+    {
+      "name": "Tracking, activity events, and telematics ingestion",
+      "description": "Manufactured operations grouped under Tracking, activity events, and telematics ingestion."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "route4me_route4me-api_integrationProfile",
+        "summary": "Get manufactured profile for Route4Me API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api.v4/optimization_problem.php": {
+      "post": {
+        "tags": [
+          "Routes, orders, addresses, and vehicles"
+        ],
+        "operationId": "route4me_route4me-api_post-api-v4-optimization-problem-php_post",
+        "summary": "POST /api.v4/optimization_problem.php",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface spans the entities required to plan, execute, and maintain delivery operations. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /api.v4/optimization_problem.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /api.v4/optimization_problem.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api.v4/route.php": {
+      "get": {
+        "tags": [
+          "Routes, orders, addresses, and vehicles"
+        ],
+        "operationId": "route4me_route4me-api_get-api-v4-route-php_get",
+        "summary": "GET /api.v4/route.php",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface spans the entities required to plan, execute, and maintain delivery operations. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api.v4/route.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "put": {
+        "tags": [
+          "Routes, orders, addresses, and vehicles"
+        ],
+        "operationId": "route4me_route4me-api_put-api-v4-route-php_put",
+        "summary": "PUT /api.v4/route.php",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface spans the entities required to plan, execute, and maintain delivery operations. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /api.v4/route.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /api.v4/route.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api.v4/order.php": {
+      "get": {
+        "tags": [
+          "Routes, orders, addresses, and vehicles"
+        ],
+        "operationId": "route4me_route4me-api_get-api-v4-order-php_get",
+        "summary": "GET /api.v4/order.php",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface spans the entities required to plan, execute, and maintain delivery operations. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api.v4/order.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Routes, orders, addresses, and vehicles"
+        ],
+        "operationId": "route4me_route4me-api_post-api-v4-order-php_post",
+        "summary": "POST /api.v4/order.php",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface spans the entities required to plan, execute, and maintain delivery operations. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /api.v4/order.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /api.v4/order.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api.v4/address_book.php": {
+      "get": {
+        "tags": [
+          "Routes, orders, addresses, and vehicles"
+        ],
+        "operationId": "route4me_route4me-api_get-api-v4-address-book-php_get",
+        "summary": "GET /api.v4/address_book.php",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface spans the entities required to plan, execute, and maintain delivery operations. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api.v4/address_book.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Routes, orders, addresses, and vehicles"
+        ],
+        "operationId": "route4me_route4me-api_post-api-v4-address-book-php_post",
+        "summary": "POST /api.v4/address_book.php",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface spans the entities required to plan, execute, and maintain delivery operations. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /api.v4/address_book.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /api.v4/address_book.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/modules/api/v5.0/vehicles": {
+      "get": {
+        "tags": [
+          "Routes, orders, addresses, and vehicles"
+        ],
+        "operationId": "route4me_route4me-api_get-modules-api-v5-0-vehicles_get",
+        "summary": "GET /modules/api/v5.0/vehicles",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface spans the entities required to plan, execute, and maintain delivery operations. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /modules/api/v5.0/vehicles.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Routes, orders, addresses, and vehicles"
+        ],
+        "operationId": "route4me_route4me-api_post-modules-api-v5-0-vehicles_post",
+        "summary": "POST /modules/api/v5.0/vehicles",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface spans the entities required to plan, execute, and maintain delivery operations. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /modules/api/v5.0/vehicles.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /modules/api/v5.0/vehicles.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api.v4/territory.php": {
+      "get": {
+        "tags": [
+          "Routes, orders, addresses, and vehicles"
+        ],
+        "operationId": "route4me_route4me-api_get-api-v4-territory-php_get",
+        "summary": "GET /api.v4/territory.php",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The documented surface spans the entities required to plan, execute, and maintain delivery operations. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api.v4/territory.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api.v4/status.php": {
+      "get": {
+        "tags": [
+          "Tracking, activity events, and telematics ingestion"
+        ],
+        "operationId": "route4me_route4me-api_get-api-v4-status-php_get",
+        "summary": "GET /api.v4/status.php",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Route4Me combines route progress events with direct tracking and telematics-connection APIs. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api.v4/status.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api/track/get_device_location.php": {
+      "get": {
+        "tags": [
+          "Tracking, activity events, and telematics ingestion"
+        ],
+        "operationId": "route4me_route4me-api_get-api-track-get-device-location-php_get",
+        "summary": "GET /api/track/get_device_location.php",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Route4Me combines route progress events with direct tracking and telematics-connection APIs. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api/track/get_device_location.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/track/set.php": {
+      "get": {
+        "tags": [
+          "Tracking, activity events, and telematics ingestion"
+        ],
+        "operationId": "route4me_route4me-api_get-track-set-php_get",
+        "summary": "GET /track/set.php",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Route4Me combines route progress events with direct tracking and telematics-connection APIs. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /track/set.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api/track/view_user_locations.php": {
+      "get": {
+        "tags": [
+          "Tracking, activity events, and telematics ingestion"
+        ],
+        "operationId": "route4me_route4me-api_get-api-track-view-user-locations-php_get",
+        "summary": "GET /api/track/view_user_locations.php",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Route4Me combines route progress events with direct tracking and telematics-connection APIs. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api/track/view_user_locations.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api/get_activities.php": {
+      "get": {
+        "tags": [
+          "Tracking, activity events, and telematics ingestion"
+        ],
+        "operationId": "route4me_route4me-api_get-api-get-activities-php_get",
+        "summary": "GET /api/get_activities.php",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Route4Me combines route progress events with direct tracking and telematics-connection APIs. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /api/get_activities.php.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/oa.route4me.com/api/v1/user/telematics-connections": {
+      "get": {
+        "tags": [
+          "Tracking, activity events, and telematics ingestion"
+        ],
+        "operationId": "route4me_route4me-api_get-oa-route4me-com-api-v1-user-telematics-connections_get",
+        "summary": "GET /oa.route4me.com/api/v1/user/telematics-connections",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Route4Me combines route progress events with direct tracking and telematics-connection APIs. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /oa.route4me.com/api/v1/user/telematics-connections.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/oa.route4me.com/api/v1/user/participants/{participant_user_id}/telematics-connection": {
+      "post": {
+        "tags": [
+          "Tracking, activity events, and telematics ingestion"
+        ],
+        "operationId": "route4me_route4me-api_post-oa-route4me-com-api-v1-user-participants-participant-user-id-telematics-connection_post",
+        "summary": "POST /oa.route4me.com/api/v1/user/participants/{participant_user_id}/telematics-connection",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Route4Me combines route progress events with direct tracking and telematics-connection APIs. Vendor documentation: https://route4me.io/docs/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /oa.route4me.com/api/v1/user/participants/{participant_user_id}/telematics-connection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /oa.route4me.com/api/v1/user/participants/{participant_user_id}/telematics-connection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/route4me/route4me-api.json",
+    "vendor_documentation_url": "https://route4me.io/docs/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

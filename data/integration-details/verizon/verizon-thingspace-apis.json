@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "verizon",
+  "vendor_name": "Verizon",
+  "product_slug": "verizon-thingspace-apis",
+  "product_name": "Verizon ThingSpace APIs",
+  "product_family": "Verizon ThingSpace",
+  "integration_type": "REST API",
+  "integration_api_url": "https://thingspace.verizon.com/apis",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Verizon ThingSpace APIs has public documentation that indicates fleet assets and operational telemetry across vehicles, devices, drivers, positions. Public ThingSpace API catalog.",
+  "data_domains": [
+    "fleet-assets",
+    "positions-and-status",
+    "driver-workflows"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "vehicles",
+    "devices",
+    "drivers",
+    "positions",
+    "faults"
+  ],
+  "buyer_guidance": "Use this API family for connected-fleet integration where asset context and operational telemetry both matter. Verizon should be treated as a rest api surface for fleet assets and operational telemetry.",
+  "overview": "Public documentation reviewed for Verizon ThingSpace APIs indicates Public ThingSpace API catalog. The documented surface aligns with fleet assets and operational telemetry and covers vehicles, devices, drivers, positions. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Fleet assets and operational telemetry",
+      "description": "The public documentation indicates connected-fleet workflows for vehicles, devices, drivers, positions, diagnostics, and related operational actions.",
+      "data_points": [
+        "Vehicle, device, and driver records",
+        "Location, trip, or route-linked status data",
+        "Diagnostic, compliance, or fault records",
+        "Messaging, assignment, or action workflows"
+      ],
+      "relevant_operations": [
+        "list fleet asset and driver records",
+        "read positions, trips, or diagnostics",
+        "create or update operational workflows",
+        "submit messages or assignment changes"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Verizon ThingSpace APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as fleet assets and operational telemetry, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://thingspace.verizon.com/apis",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public ThingSpace API catalog"
+  }
+}

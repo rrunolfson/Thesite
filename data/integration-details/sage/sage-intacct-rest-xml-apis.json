@@ -1,0 +1,94 @@
+{
+  "vendor_slug": "sage",
+  "vendor_name": "Sage",
+  "product_slug": "sage-intacct-rest-xml-apis",
+  "product_name": "Sage Intacct REST/XML APIs",
+  "product_family": "Sage Intacct",
+  "integration_type": "REST/XML API",
+  "integration_api_url": "https://developer.intacct.com/api/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Sage Intacct publishes extensive XML API documentation and related REST guidance for accounting, inventory, purchasing, order entry, project, construction, platform services, and large-scale data-delivery workflows.",
+  "data_domains": [
+    "finance-and-accounting",
+    "inventory-and-warehouses",
+    "projects-and-resources",
+    "data-delivery"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "accounts and journal entries",
+    "vendors, customers, bills, and invoices",
+    "items and warehouses",
+    "purchasing and order entry transactions",
+    "projects and timesheets",
+    "custom objects and DDS jobs"
+  ],
+  "buyer_guidance": "Use Sage Intacct APIs for transactional finance, inventory, purchasing, order-entry, project, and data-delivery integrations. This is an ERP and accounting platform, not an asset or telemetry platform.",
+  "overview": "Sage Intacct's public developer docs describe a broad XML API with generic create, read, update, delete, lookup, and query functions alongside object-specific operations, and separately recommend REST API usage for new client applications. The public API reference covers company and console objects, general ledger, cash management, accounts payable, accounts receivable, purchasing, order entry, inventory control, projects, construction, contracts and revenue management, platform services, and Data Delivery Service extraction jobs. The docs also publish a Postman collection download and explicit platform extension surfaces for applications, objects, records, views, custom reports, and smart events. This is a strong write-capable ERP integration surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Financial, purchasing, and order-management transactions",
+      "description": "Sage Intacct exposes transactional finance and operational business objects across core ERP modules.",
+      "data_points": [
+        "Accounts, budgets, journal entries, trial balances, and exchange rates",
+        "Vendors, bills, AP payments, customers, invoices, and AR payments",
+        "Purchasing transactions, vendor compliance, and price lists",
+        "Order entry transaction definitions, recurring orders, and revenue recognition schedules",
+        "Cash accounts, deposits, fund transfers, and bank feeds"
+      ],
+      "relevant_operations": [
+        "<create>",
+        "<read>",
+        "<update>",
+        "<delete>",
+        "<lookup>",
+        "<query>",
+        "Journal Entries",
+        "Bills",
+        "Invoices",
+        "Purchasing Transactions",
+        "Order Entry Transactions",
+        "Fund Transfers"
+      ]
+    },
+    {
+      "category": "Inventory, projects, extensions, and bulk extraction",
+      "description": "The public docs also cover inventory, project, platform extension, and off-platform data extraction workflows.",
+      "data_points": [
+        "Items, warehouses, warehouse transfers, available inventory, and cycle counts",
+        "Projects, project resources, tasks, timesheets, and transaction rules",
+        "Construction contracts, estimates, change requests, and change orders",
+        "Platform applications, dimensions, objects, records, and views",
+        "DDS jobs and DDS objects for large-scale export to cloud storage"
+      ],
+      "relevant_operations": [
+        "Items",
+        "Warehouses",
+        "Warehouse Transfers",
+        "Inventory Transactions",
+        "Projects",
+        "Tasks",
+        "Timesheets",
+        "Applications",
+        "Objects",
+        "Records",
+        "DDS Jobs",
+        "DDS Objects"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Sage's public developer site spans XML API, REST guidance, platform services, and DDS extraction, so implementations should pin which surface is authoritative for the intended workflow rather than treating the product as a single uniform API.",
+    "The public Postman collection download is useful operational evidence, but it does not satisfy the current exact-spec validator because zip artifacts are not currently accepted as exact machine-readable spec URLs.",
+    "This row represents ERP and accounting workflows in manufacturing contexts rather than industrial asset or telemetry data."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.intacct.com/api/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Sage Intacct's public API reference documents generic XML API functions such as create, read, update, delete, lookup, and query, covers GL, AP, AR, purchasing, order entry, inventory, projects, construction, contracts, platform services, and DDS extraction, and publishes a downloadable Postman collection from the developer site."
+  }
+}

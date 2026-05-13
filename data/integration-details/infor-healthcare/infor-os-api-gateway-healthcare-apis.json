@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "infor-healthcare",
+  "vendor_name": "Infor Healthcare",
+  "product_slug": "infor-os-api-gateway-healthcare-apis",
+  "product_name": "Infor OS API Gateway / Healthcare APIs",
+  "product_family": "Infor OS API Gateway / Healthcare",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.infor.com/inforos/latest/en-us/useradminlib_cloud/apigatewayag_cloud/default.html",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Infor OS API Gateway / Healthcare APIs has public documentation that indicates workforce scheduling and operations across staff, schedules, credentials, requests. Public platform documentation.",
+  "data_domains": [
+    "staffing-and-scheduling",
+    "credentialing",
+    "workforce-operations"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "staff",
+    "schedules",
+    "credentials",
+    "requests",
+    "assignments"
+  ],
+  "buyer_guidance": "Use this surface for staffing and workforce-operations integration rather than clinical telemetry. Infor Healthcare should be treated as a rest api surface for workforce scheduling and operations.",
+  "overview": "Public documentation reviewed for Infor OS API Gateway / Healthcare APIs indicates Public platform documentation. The documented surface aligns with workforce scheduling and operations and covers staff, schedules, credentials, requests. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Workforce scheduling and operations",
+      "description": "The public documentation indicates workforce-management workflows for staff records, schedules, assignments, and related operations.",
+      "data_points": [
+        "Provider or staff records",
+        "Schedules, shifts, or assignments",
+        "Credentialing or readiness records",
+        "Operational request or approval workflows"
+      ],
+      "relevant_operations": [
+        "list staff and schedule records",
+        "read assignment and credential data",
+        "create or update workforce workflows",
+        "synchronize staffing changes"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Infor OS API Gateway / Healthcare APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as workforce scheduling and operations, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.infor.com/inforos/latest/en-us/useradminlib_cloud/apigatewayag_cloud/default.html",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public platform documentation"
+  }
+}

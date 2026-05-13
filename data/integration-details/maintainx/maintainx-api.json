@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "maintainx",
+  "vendor_name": "MaintainX",
+  "product_slug": "maintainx-api",
+  "product_name": "MaintainX API",
+  "product_family": "MaintainX",
+  "integration_type": "REST API",
+  "integration_api_url": "https://maintainx.dev/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "MaintainX API has public documentation that indicates maintenance assets and work execution across assets, work orders, meters, parts. Public API documentation is available for MaintainX entities.",
+  "data_domains": [
+    "asset-master-data",
+    "maintenance-work-orders",
+    "meter-readings"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "assets",
+    "work orders",
+    "meters",
+    "parts",
+    "service history"
+  ],
+  "buyer_guidance": "Use this surface when the integration needs equipment context plus maintenance workflow data, especially if meter-driven maintenance is in scope. Maintainx should be treated as a rest api surface for maintenance assets and work execution.",
+  "overview": "Public documentation reviewed for MaintainX API indicates Public API documentation is available for MaintainX entities. The documented surface aligns with maintenance assets and work execution and covers assets, work orders, meters, parts. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Maintenance assets and work execution",
+      "description": "The public documentation indicates maintenance-system records for assets, work orders, parts, and usage-oriented readings that support reliability workflows.",
+      "data_points": [
+        "Asset and equipment master records",
+        "Work orders and maintenance status",
+        "Meter readings or usage-linked measurements",
+        "Parts, service history, or assignment context"
+      ],
+      "relevant_operations": [
+        "list assets and work orders",
+        "read maintenance status and service history",
+        "create or update work orders",
+        "submit meter or usage readings"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for MaintainX API is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as maintenance assets and work execution, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://maintainx.dev/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public API documentation is available for MaintainX entities."
+  }
+}

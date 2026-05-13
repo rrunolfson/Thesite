@@ -6,7 +6,8 @@
   "product_family": "SiGREEN",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/sigreen/product-api/api_specs/openapi-spec-v2-1.16.0.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/sigreen/product-api/api_specs/openapi-spec-v2-1.16.0.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/sigreen-product-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/sigreen/product-api/api_specs/openapi-spec-v2-1.16.0.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN. Published API scope focuses on products, BOMs, factories, and related master data in SiGREEN.",
   "data_domains": [
@@ -15,7 +16,7 @@
     "factory-records"
   ],
   "asset_data_available": "Supported",
-  "telemetry_data_available": "Not Supported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "products",
@@ -49,11 +50,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/sigreen/product-api/api-product.html",
-    "spec_url": "https://developer.siemens.com/sigreen/product-api/api_specs/openapi-spec-v2-1.16.0.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/sigreen-product-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for SiGREEN Product API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for SiGREEN Product API.",
+    "vendor_spec_url": "https://developer.siemens.com/sigreen/product-api/api_specs/openapi-spec-v2-1.16.0.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/sigreen-product-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/sigreen-product-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/sigreen-product-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/sigreen-product-api.openapi.json"
 }

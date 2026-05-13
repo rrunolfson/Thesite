@@ -1,0 +1,113 @@
+{
+  "vendor_slug": "dozuki",
+  "vendor_name": "Dozuki",
+  "product_slug": "dozuki-api-v2-0",
+  "product_name": "Dozuki API v2.0",
+  "product_family": "Dozuki",
+  "integration_type": "REST API",
+  "integration_api_url": "https://apidocs.dozuki.com/api/2.0/doc/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/dozuki/dozuki-api-v2-0.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Dozuki API v2.0 exposes work-instruction, training, approval, user, team, skills, signoff, and work-log resources used to manage digital manufacturing documentation and operator workflows.",
+  "data_domains": [
+    "digital-work-instructions",
+    "training-and-skills",
+    "operator-execution",
+    "content-governance"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "guides",
+    "courses",
+    "users and teams",
+    "work log entries",
+    "approval processes",
+    "step forms"
+  ],
+  "buyer_guidance": "Use Dozuki when you need API access to digital work instructions, training completion, signoffs, reviews, and execution logs around operator-facing procedures. It supports equipment-adjacent content and work execution, but not machine telemetry.",
+  "overview": "Dozuki's public API v2.0 docs describe a JSON-first REST surface for guides, wikis, courses, users, teams, approvals, periodic review, quizzes, skills, step forms, webhooks, and work-log execution. The documentation explicitly supports GET, POST, PATCH, PUT, and DELETE across guide, course, team, and work-log resources, including guide-step editing, course assignment, signoff workflows, skills ratings, and execution-state updates for in-progress work. That makes the API useful for structured asset or procedure content and manufacturing workflow writeback, but not for telemetry streams. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Instructional content, approvals, and content hierarchy",
+      "description": "Dozuki exposes the content model and governance surfaces used to author and manage digital procedures and related knowledge objects.",
+      "data_points": [
+        "Guides and guide steps",
+        "Wikis and categories",
+        "Approval processes and approval requests",
+        "Tags, releases, and periodic review schedules",
+        "Media attachments and translation glossary entries"
+      ],
+      "relevant_operations": [
+        "GET /guides",
+        "POST /guides",
+        "PATCH /guides/{guideid}",
+        "POST /guides/{guideid}/steps",
+        "PATCH /guides/{guideid}/steps/{stepid}",
+        "GET /wikis/{namespace}/{title}",
+        "POST /wikis",
+        "PATCH /wikis/{namespace}/{title}",
+        "GET /approvals/processes",
+        "POST /approvals/process",
+        "PATCH /approvals/process/{approval_processid}",
+        "POST /periodic_review",
+        "POST /user/media/uploads"
+      ]
+    },
+    {
+      "category": "Training, teams, skills, and execution logs",
+      "description": "The API also covers workforce enablement and actual guided-work execution data for assigned users and teams.",
+      "data_points": [
+        "Course definitions and course assignments",
+        "Course completion summaries and signoffs",
+        "Skills matrices and ratings",
+        "User and team records",
+        "Step forms and quiz sessions",
+        "Work-log entries with start, pause, resume, finish, suspend, and step-data updates"
+      ],
+      "relevant_operations": [
+        "GET /courses",
+        "POST /courses",
+        "PATCH /courses/{wikiid}",
+        "POST /course_assignments",
+        "PATCH /course_assignments/start/{doctype}/{docid}",
+        "PATCH /course_assignments/complete/{doctype}/{docid}",
+        "POST /courses/stage-sign-offs/requests",
+        "PATCH /courses/stage-sign-offs/responses",
+        "POST /skills/matrix",
+        "POST /skills/ratings/supervisor",
+        "GET /users",
+        "PATCH /users/{userid}",
+        "POST /teams",
+        "PATCH /teams/{teamid}/users",
+        "POST /step_forms/{stepid}",
+        "POST /work_log",
+        "POST /work_log/{entryid}/pause",
+        "POST /work_log/{entryid}/resume",
+        "POST /work_log/{entryid}/finish",
+        "PUT /work_log/{entryid}/stepData"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Dozuki uses revision IDs on versioned content updates, so write flows that edit guides, wikis, or related resources need optimistic-concurrency handling rather than blind overwrites.",
+    "The API is strongly workflow-oriented around documentation, training, approvals, and work execution, so downstream systems should model it as an operational knowledge and execution platform rather than a sensor or machine-data source.",
+    "No exact downloadable OpenAPI or Swagger artifact was confirmed during this review; the public reference is comprehensive, but machine-readable spec evidence remains outstanding."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://apidocs.dozuki.com/api/2.0/doc/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/dozuki/dozuki-api-v2-0.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "The public Dozuki API v2.0 reference documents guides, courses, approvals, users, teams, skills, step forms, webhooks, periodic review, quizzes, wikis, and work-log execution endpoints with GET, POST, PATCH, PUT, and DELETE operations.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/dozuki/dozuki-api-v2-0.openapi.json"
+  },
+  "detail_path": "/integration-details/dozuki/dozuki-api-v2-0.json",
+  "vendor_domain": "dozuki.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=dozuki.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/dozuki/dozuki-api-v2-0.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/dozuki/dozuki-api-v2-0.openapi.json"
+}

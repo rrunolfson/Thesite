@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "shippo",
+  "vendor_name": "Shippo",
+  "product_slug": "shippo-api",
+  "product_name": "Shippo API",
+  "product_family": "Shippo",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.goshippo.com/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Shippo API has public documentation that indicates retail logistics and shipment workflows across shipments, orders, labels, rates. Public API docs.",
+  "data_domains": [
+    "shipments-and-fulfillment",
+    "orders",
+    "carrier-workflows"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "shipments",
+    "orders",
+    "labels",
+    "rates",
+    "carriers"
+  ],
+  "buyer_guidance": "Use this surface for shipment, labeling, and fulfillment workflow integration rather than telemetry or equipment monitoring. Shippo should be treated as a rest api surface for retail logistics and shipment workflows.",
+  "overview": "Public documentation reviewed for Shippo API indicates Public API docs. The documented surface aligns with retail logistics and shipment workflows and covers shipments, orders, labels, rates. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Retail logistics and shipment workflows",
+      "description": "The public documentation indicates shipment booking, label creation, rate retrieval, and downstream fulfillment coordination workflows.",
+      "data_points": [
+        "Shipment and parcel records",
+        "Order-linked fulfillment data",
+        "Rate, label, and carrier service metadata",
+        "Tracking and delivery workflow state"
+      ],
+      "relevant_operations": [
+        "list shipment and rate records",
+        "read tracking and fulfillment state",
+        "create or update shipment workflows",
+        "synchronize carrier or label changes"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Shippo API is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as retail logistics and shipment workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.goshippo.com/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public API docs."
+  }
+}

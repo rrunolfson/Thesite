@@ -1,0 +1,1101 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SafetyCulture REST API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "SafetyCulture exposes operational inspection, action, issue, asset, maintenance, site, user, and sensor APIs, plus data feeds and webhooks for keeping downstream systems synchronized with workplace activity.",
+    "description": "Manufactured OpenAPI artifact for SafetyCulture REST API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. SafetyCulture documents a REST API for inspections, templates, actions, issues, users, assets, maintenance programs, sites, and sensors, with data-feed endpoints for incremental sync and webhook support for near real-time automation. The public reference also shows asset creation and updates, maintenance program management, inspection updates, action workflows, and sensor-readings ingestion and retrieval. That makes the surface useful for both operational asset context and sensor-style readings, with documented writeback across assets, maintenance objects, inspections, actions, and sensors. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.safetyculture.com/reference/introduction"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Assets and maintenance context",
+      "description": "Manufactured operations grouped under Assets and maintenance context."
+    },
+    {
+      "name": "Inspections, actions, issues, and sensors",
+      "description": "Manufactured operations grouped under Inspections, actions, issues, and sensors."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_integrationProfile",
+        "summary": "Get manufactured profile for SafetyCulture REST API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-an-asset": {
+      "post": {
+        "tags": [
+          "Assets and maintenance context"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_create-an-asset_post",
+        "summary": "Create an asset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference includes asset CRUD, asset field and type management, maintenance programs, maintenance plans, and asset service history endpoints. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create an asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create an asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/list-assets": {
+      "get": {
+        "tags": [
+          "Assets and maintenance context"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_list-assets_get",
+        "summary": "List assets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference includes asset CRUD, asset field and type management, maintenance programs, maintenance plans, and asset service history endpoints. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for List assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/full-detail-information-of-an-asset": {
+      "get": {
+        "tags": [
+          "Assets and maintenance context"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_get-full-detail-information-of-an-asset_get",
+        "summary": "Get full detail information of an asset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference includes asset CRUD, asset field and type management, maintenance programs, maintenance plans, and asset service history endpoints. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get full detail information of an asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/update-an-asset": {
+      "put": {
+        "tags": [
+          "Assets and maintenance context"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_update-an-asset_put",
+        "summary": "Update an asset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference includes asset CRUD, asset field and type management, maintenance programs, maintenance plans, and asset service history endpoints. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Update an asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Update an asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-asset-location": {
+      "put": {
+        "tags": [
+          "Assets and maintenance context"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_update-asset-location_put",
+        "summary": "Update asset location",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference includes asset CRUD, asset field and type management, maintenance programs, maintenance plans, and asset service history endpoints. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Update asset location.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Update asset location.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-a-maintenance-program": {
+      "post": {
+        "tags": [
+          "Assets and maintenance context"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_create-a-maintenance-program_post",
+        "summary": "Create a maintenance program",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference includes asset CRUD, asset field and type management, maintenance programs, maintenance plans, and asset service history endpoints. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create a maintenance program.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create a maintenance program.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create-a-maintenance-plan": {
+      "post": {
+        "tags": [
+          "Assets and maintenance context"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_create-a-maintenance-plan_post",
+        "summary": "Create a maintenance plan",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference includes asset CRUD, asset field and type management, maintenance programs, maintenance plans, and asset service history endpoints. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create a maintenance plan.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create a maintenance plan.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/list-asset-service-history": {
+      "get": {
+        "tags": [
+          "Assets and maintenance context"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_list-asset-service-history_get",
+        "summary": "List asset service history",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public reference includes asset CRUD, asset field and type management, maintenance programs, maintenance plans, and asset service history endpoints. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for List asset service history.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/search-modified-inspections": {
+      "get": {
+        "tags": [
+          "Inspections, actions, issues, and sensors"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_search-modified-inspections_get",
+        "summary": "Search modified inspections",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Search modified inspections.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/an-inspection": {
+      "get": {
+        "tags": [
+          "Inspections, actions, issues, and sensors"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_get-an-inspection_get",
+        "summary": "Get an inspection",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get an inspection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/complete-inspection": {
+      "get": {
+        "tags": [
+          "Inspections, actions, issues, and sensors"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_complete-inspection_get",
+        "summary": "Complete inspection",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Complete inspection.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-an-action": {
+      "post": {
+        "tags": [
+          "Inspections, actions, issues, and sensors"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_create-an-action_post",
+        "summary": "Create an action",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create an action.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create an action.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/list-actions": {
+      "get": {
+        "tags": [
+          "Inspections, actions, issues, and sensors"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_list-actions_get",
+        "summary": "List actions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for List actions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-issue": {
+      "post": {
+        "tags": [
+          "Inspections, actions, issues, and sensors"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_create-issue_post",
+        "summary": "Create Issue",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create Issue.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create Issue.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/list-issues": {
+      "get": {
+        "tags": [
+          "Inspections, actions, issues, and sensors"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_list-issues_get",
+        "summary": "List Issues",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for List Issues.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/list-sensors": {
+      "get": {
+        "tags": [
+          "Inspections, actions, issues, and sensors"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_list-sensors_get",
+        "summary": "List sensors",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for List sensors.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/sensor-s-latest-readings": {
+      "get": {
+        "tags": [
+          "Inspections, actions, issues, and sensors"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_get-sensor-s-latest-readings_get",
+        "summary": "Get sensor's latest readings",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get sensor's latest readings.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/ingest-sensor-readings": {
+      "get": {
+        "tags": [
+          "Inspections, actions, issues, and sensors"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_ingest-sensor-readings_get",
+        "summary": "Ingest sensor readings",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Ingest sensor readings.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/create-a-webhook": {
+      "post": {
+        "tags": [
+          "Inspections, actions, issues, and sensors"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_create-a-webhook_post",
+        "summary": "Create a webhook",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Create a webhook.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for Create a webhook.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data-feed-for-assets": {
+      "get": {
+        "tags": [
+          "Inspections, actions, issues, and sensors"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_data-feed-for-assets_get",
+        "summary": "Data feed for assets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Data feed for assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/data-feed-for-inspections": {
+      "get": {
+        "tags": [
+          "Inspections, actions, issues, and sensors"
+        ],
+        "operationId": "safetyculture_safetyculture-rest-api_data-feed-for-inspections_get",
+        "summary": "Data feed for inspections",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation. Vendor documentation: https://developer.safetyculture.com/reference/introduction",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Data feed for inspections.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/safetyculture/safetyculture-rest-api.json",
+    "vendor_documentation_url": "https://developer.safetyculture.com/reference/introduction",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

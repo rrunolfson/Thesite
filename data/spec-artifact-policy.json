@@ -1,0 +1,54 @@
+{
+  "exact_artifact_extensions": [".json", ".yaml", ".yml"],
+  "endpoint_hint_patterns": [
+    "openapi",
+    "swagger",
+    "asyncapi",
+    "api-docs",
+    "api/docs",
+    "api_docs",
+    "schema",
+    "spec"
+  ],
+  "query_hint_patterns": [
+    "format=json",
+    "format=yaml",
+    "format=yml",
+    "spec=json",
+    "spec=yaml",
+    "spec=yml",
+    "download=json",
+    "download=yaml",
+    "download=yml"
+  ],
+  "json_markers": [
+    "openapi",
+    "swagger",
+    "asyncapi",
+    "paths",
+    "components",
+    "channels",
+    "info",
+    "item",
+    "servers",
+    "eventNames"
+  ],
+  "yaml_markers": [
+    "openapi",
+    "swagger",
+    "asyncapi",
+    "paths",
+    "components",
+    "channels",
+    "info"
+  ],
+  "yaml_text_markers": [
+    "openapi:",
+    "swagger:",
+    "asyncapi:",
+    "paths:",
+    "channels:",
+    "components:",
+    "info:"
+  ]
+}

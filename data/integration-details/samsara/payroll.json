@@ -6,7 +6,7 @@
   "product_family": "Samsara Platform",
   "integration_type": "REST API",
   "integration_api_url": "https://developers.samsara.com/docs/payroll-guide",
-  "spec_artifact_url": "https://developers.samsara.com/docs/payroll-guide",
+  "spec_artifact_url": "https://developers.samsara.com/openapi/samsara-api.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "Samsara Payroll is a read-focused integration pattern built from HOS daily summaries, driver-vehicle assignments, and odometer reads so downstream payroll systems can calculate pay from on-duty time, driving time, or miles driven.",
   "data_domains": [
@@ -18,7 +18,7 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Un-Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "drivers",
     "vehicle assignments",
@@ -79,7 +79,7 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developers.samsara.com/docs/payroll-guide",
-    "spec_url": "https://developers.samsara.com/docs/payroll-guide",
+    "spec_url": "https://developers.samsara.com/openapi/samsara-api.json",
     "reviewed_at": "2026-04-18",
     "evidence_notes": "Backed by the Payroll guide sections documenting GET /fleet/drivers/vehicle-assignments, GET /fleet/vehicles/stats/history, GET /fleet/vehicles/stats, and the guide's use of HOS daily summaries for hours-based payroll calculations."
   }

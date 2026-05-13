@@ -1,0 +1,813 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Limble API V2 Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Limble API V2 exposes maintenance-system assets, asset fields and logs, locations, parts with quantities and usage, work-order style tasks, purchase objects, and operational webhooks for assets, tasks, parts, and purchase-order events.",
+    "description": "Manufactured OpenAPI artifact for Limble API V2. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. The Limble API V2 docs state that the API covers Assets, Locations, Parts with current quantities and usage, and Tasks including work orders, preventive maintenance, and work requests. The published Postman collection confirms concrete asset, asset-field, asset-log, location, part, and task routes, while the webhook documentation adds change events for assets, parts, and tasks. That makes it a strong asset and maintenance-workflow API with documented writeback, but not a machine-telemetry feed. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://apidocs.limblecmms.com/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Assets, locations, and parts",
+      "description": "Manufactured operations grouped under Assets, locations, and parts."
+    },
+    {
+      "name": "Maintenance tasks and change events",
+      "description": "Manufactured operations grouped under Maintenance tasks and change events."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "limble_limble-api-v2_integrationProfile",
+        "summary": "Get manufactured profile for Limble API V2",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/assets": {
+      "get": {
+        "tags": [
+          "Assets, locations, and parts"
+        ],
+        "operationId": "limble_limble-api-v2_get-v2-assets_get",
+        "summary": "GET /v2/assets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The confirmed public collection includes CRUD and related operations for physical maintenance records and inventory context. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Assets, locations, and parts"
+        ],
+        "operationId": "limble_limble-api-v2_post-v2-assets_post",
+        "summary": "POST /v2/assets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The confirmed public collection includes CRUD and related operations for physical maintenance records and inventory context. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v2/assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v2/assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/assets/{assetId}": {
+      "patch": {
+        "tags": [
+          "Assets, locations, and parts"
+        ],
+        "operationId": "limble_limble-api-v2_patch-v2-assets-assetid_patch",
+        "summary": "PATCH /v2/assets/{assetId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The confirmed public collection includes CRUD and related operations for physical maintenance records and inventory context. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /v2/assets/{assetId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /v2/assets/{assetId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/assets/fields/history": {
+      "get": {
+        "tags": [
+          "Assets, locations, and parts"
+        ],
+        "operationId": "limble_limble-api-v2_get-v2-assets-fields-history_get",
+        "summary": "GET /v2/assets/fields/history",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The confirmed public collection includes CRUD and related operations for physical maintenance records and inventory context. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/assets/fields/history.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/assets/{assetId}/logs": {
+      "get": {
+        "tags": [
+          "Assets, locations, and parts"
+        ],
+        "operationId": "limble_limble-api-v2_get-v2-assets-assetid-logs_get",
+        "summary": "GET /v2/assets/{assetId}/logs",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The confirmed public collection includes CRUD and related operations for physical maintenance records and inventory context. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/assets/{assetId}/logs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/locations": {
+      "get": {
+        "tags": [
+          "Assets, locations, and parts"
+        ],
+        "operationId": "limble_limble-api-v2_get-v2-locations_get",
+        "summary": "GET /v2/locations",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The confirmed public collection includes CRUD and related operations for physical maintenance records and inventory context. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/locations.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/parts": {
+      "get": {
+        "tags": [
+          "Assets, locations, and parts"
+        ],
+        "operationId": "limble_limble-api-v2_get-v2-parts_get",
+        "summary": "GET /v2/parts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The confirmed public collection includes CRUD and related operations for physical maintenance records and inventory context. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/parts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/assets/parts": {
+      "get": {
+        "tags": [
+          "Assets, locations, and parts"
+        ],
+        "operationId": "limble_limble-api-v2_get-v2-assets-parts_get",
+        "summary": "GET /v2/assets/parts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The confirmed public collection includes CRUD and related operations for physical maintenance records and inventory context. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/assets/parts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/tasks": {
+      "get": {
+        "tags": [
+          "Maintenance tasks and change events"
+        ],
+        "operationId": "limble_limble-api-v2_get-v2-tasks_get",
+        "summary": "GET /v2/tasks",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The docs tie core maintenance workflows to both REST operations and webhook events. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/tasks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Maintenance tasks and change events"
+        ],
+        "operationId": "limble_limble-api-v2_post-v2-tasks_post",
+        "summary": "POST /v2/tasks",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The docs tie core maintenance workflows to both REST operations and webhook events. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /v2/tasks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /v2/tasks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/tasks/{taskId}": {
+      "patch": {
+        "tags": [
+          "Maintenance tasks and change events"
+        ],
+        "operationId": "limble_limble-api-v2_patch-v2-tasks-taskid_patch",
+        "summary": "PATCH /v2/tasks/{taskId}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The docs tie core maintenance workflows to both REST operations and webhook events. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /v2/tasks/{taskId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /v2/tasks/{taskId}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/purchase-orders": {
+      "get": {
+        "tags": [
+          "Maintenance tasks and change events"
+        ],
+        "operationId": "limble_limble-api-v2_get-v2-purchase-orders_get",
+        "summary": "GET /v2/purchase-orders",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The docs tie core maintenance workflows to both REST operations and webhook events. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/purchase-orders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/webhook-category-asset": {
+      "get": {
+        "tags": [
+          "Maintenance tasks and change events"
+        ],
+        "operationId": "limble_limble-api-v2_webhook-category-asset_get",
+        "summary": "Webhook category: asset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The docs tie core maintenance workflows to both REST operations and webhook events. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Webhook category: asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/webhook-category-part": {
+      "get": {
+        "tags": [
+          "Maintenance tasks and change events"
+        ],
+        "operationId": "limble_limble-api-v2_webhook-category-part_get",
+        "summary": "Webhook category: part",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The docs tie core maintenance workflows to both REST operations and webhook events. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Webhook category: part.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/webhook-category-task": {
+      "get": {
+        "tags": [
+          "Maintenance tasks and change events"
+        ],
+        "operationId": "limble_limble-api-v2_webhook-category-task_get",
+        "summary": "Webhook category: task",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The docs tie core maintenance workflows to both REST operations and webhook events. Vendor documentation: https://apidocs.limblecmms.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Webhook category: task.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/limble/limble-api-v2.json",
+    "vendor_documentation_url": "https://apidocs.limblecmms.com/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

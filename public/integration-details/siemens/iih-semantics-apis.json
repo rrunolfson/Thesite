@@ -6,7 +6,8 @@
   "product_family": "Industrial Information Hub",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/industrial-information-hub/api/iih-semantics/v2.4/iih-semantics-2.4.0.openapi.json",
-  "spec_artifact_url": "https://developer.siemens.com/industrial-information-hub/api/iih-semantics/v2.4/iih-semantics-2.4.0.openapi.json",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/iih-semantics-apis.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/industrial-information-hub/api/iih-semantics/v2.4/iih-semantics-2.4.0.openapi.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "The Industrial Information Hub (IIH) is a collection of Industrial Edge apps for data integration. It captures data at the automation level and provides it to the IT level of a factory. Published API scope combines industrial models, historical data, alarms, and semantic access interfaces.",
   "data_domains": [
@@ -57,11 +58,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/industrial-information-hub/api/iih-semantics/overview.html",
-    "spec_url": "https://developer.siemens.com/industrial-information-hub/api/iih-semantics/v2.4/iih-semantics-2.4.0.openapi.json",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/iih-semantics-apis.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for IIH Semantics APIs."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for IIH Semantics APIs.",
+    "vendor_spec_url": "https://developer.siemens.com/industrial-information-hub/api/iih-semantics/v2.4/iih-semantics-2.4.0.openapi.json",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/iih-semantics-apis.openapi.json"
   },
   "detail_path": "/integration-details/siemens/iih-semantics-apis.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/iih-semantics-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/iih-semantics-apis.openapi.json"
 }

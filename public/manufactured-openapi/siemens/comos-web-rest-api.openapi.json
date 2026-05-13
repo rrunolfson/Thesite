@@ -1,0 +1,593 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "COMOS Web REST API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-18",
+    "summary": "REST-style, HTTP-based API used to interact with COMOS data and to access COMOS features. Published API scope centers on COMOS engineering objects, related documentation, and project-side updates.",
+    "description": "Manufactured OpenAPI artifact for COMOS Web REST API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. REST-style, HTTP-based API used to interact with COMOS data and to access COMOS features. This surface is oriented around engineering and project records rather than live operational telemetry. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.siemens.com/comos/overview.html"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Engineering records",
+      "description": "Manufactured operations grouped under Engineering records."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "siemens_comos-web-rest-api_integrationProfile",
+        "summary": "Get manufactured profile for COMOS Web REST API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/public/api/discovery/v1/services": {
+      "get": {
+        "tags": [
+          "Engineering records"
+        ],
+        "operationId": "siemens_comos-web-rest-api_get-public-api-discovery-v1-services_get",
+        "summary": "GET /public/api/discovery/v1/services",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on COMOS engineering objects, related documentation, and project-side updates. Vendor documentation: https://developer.siemens.com/comos/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /public/api/discovery/v1/services.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}": {
+      "get": {
+        "tags": [
+          "Engineering records"
+        ],
+        "operationId": "siemens_comos-web-rest-api_get-public-api-projects-v1-dbs-dbid-projects-projid-documents-docid_get",
+        "summary": "GET /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on COMOS engineering objects, related documentation, and project-side updates. Vendor documentation: https://developer.siemens.com/comos/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "patch": {
+        "tags": [
+          "Engineering records"
+        ],
+        "operationId": "siemens_comos-web-rest-api_patch-public-api-projects-v1-dbs-dbid-projects-projid-documents-docid_patch",
+        "summary": "PATCH /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on COMOS engineering objects, related documentation, and project-side updates. Vendor documentation: https://developer.siemens.com/comos/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PATCH /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PATCH /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}/revisions": {
+      "get": {
+        "tags": [
+          "Engineering records"
+        ],
+        "operationId": "siemens_comos-web-rest-api_get-public-api-projects-v1-dbs-dbid-projects-projid-documents-docid-revisions_get",
+        "summary": "GET /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}/revisions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on COMOS engineering objects, related documentation, and project-side updates. Vendor documentation: https://developer.siemens.com/comos/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}/revisions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/public/api/projects/v1/dbs/{dbid}/projects/{projid}/revisions/{revisionid}/actions/accept_step": {
+      "post": {
+        "tags": [
+          "Engineering records"
+        ],
+        "operationId": "siemens_comos-web-rest-api_post-public-api-projects-v1-dbs-dbid-projects-projid-revisions-revisionid-actions-accept-step_post",
+        "summary": "POST /public/api/projects/v1/dbs/{dbid}/projects/{projid}/revisions/{revisionid}/actions/accept_step",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on COMOS engineering objects, related documentation, and project-side updates. Vendor documentation: https://developer.siemens.com/comos/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /public/api/projects/v1/dbs/{dbid}/projects/{projid}/revisions/{revisionid}/actions/accept_step.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /public/api/projects/v1/dbs/{dbid}/projects/{projid}/revisions/{revisionid}/actions/accept_step.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/public/api/projects/v1/dbs/{dbid}/projects/{projid}/objects/{objid}/documents": {
+      "post": {
+        "tags": [
+          "Engineering records"
+        ],
+        "operationId": "siemens_comos-web-rest-api_post-public-api-projects-v1-dbs-dbid-projects-projid-objects-objid-documents_post",
+        "summary": "POST /public/api/projects/v1/dbs/{dbid}/projects/{projid}/objects/{objid}/documents",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on COMOS engineering objects, related documentation, and project-side updates. Vendor documentation: https://developer.siemens.com/comos/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /public/api/projects/v1/dbs/{dbid}/projects/{projid}/objects/{objid}/documents.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /public/api/projects/v1/dbs/{dbid}/projects/{projid}/objects/{objid}/documents.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/public/api/dbs/{dbid}/documents/actions/estamp": {
+      "post": {
+        "tags": [
+          "Engineering records"
+        ],
+        "operationId": "siemens_comos-web-rest-api_post-public-api-dbs-dbid-documents-actions-estamp_post",
+        "summary": "POST /public/api/dbs/{dbid}/documents/actions/estamp",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on COMOS engineering objects, related documentation, and project-side updates. Vendor documentation: https://developer.siemens.com/comos/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /public/api/dbs/{dbid}/documents/actions/estamp.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /public/api/dbs/{dbid}/documents/actions/estamp.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}/actions/checkout": {
+      "post": {
+        "tags": [
+          "Engineering records"
+        ],
+        "operationId": "siemens_comos-web-rest-api_post-public-api-projects-v1-dbs-dbid-projects-projid-documents-docid-actions-checkout_post",
+        "summary": "POST /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}/actions/checkout",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on COMOS engineering objects, related documentation, and project-side updates. Vendor documentation: https://developer.siemens.com/comos/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}/actions/checkout.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /public/api/projects/v1/dbs/{dbid}/projects/{projid}/documents/{docid}/actions/checkout.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/siemens/comos-web-rest-api.json",
+    "vendor_documentation_url": "https://developer.siemens.com/comos/overview.html",
+    "vendor_spec_artifact_url": "https://developer.siemens.com/comos/comos-rest-apispec.json",
+    "reviewed_at": "2026-04-18"
+  }
+}

@@ -18,9 +18,13 @@ CAPABILITY_HEADERS = [
     "writeback_supported",
 ]
 
-SHEET_HEADERS = TEMPLATE_HEADERS + CAPABILITY_HEADERS
+DERIVED_HEADERS = ["api_spec_origin"]
+
+SHEET_HEADERS = TEMPLATE_HEADERS + CAPABILITY_HEADERS + DERIVED_HEADERS
 ALLOWED_DIRECT_SPEC_EXTENSIONS = {".json", ".yaml", ".yml", ".raml", ".wsdl", ".xml"}
-ALLOWED_CAPABILITY_VALUES = {"Supported", "Not Supported"}
+ALLOWED_CAPABILITY_VALUES = {"Supported", "Unsupported"}
+ALLOWED_API_SPEC_ORIGINS = {"vendor", "manufactured"}
+PUBLIC_SITE_BASE_URL = "https://lastmileinc.ai"
 
 
 def load_rows(csv_path: Path) -> list[dict[str, str]]:
@@ -55,8 +59,38 @@ def normalize_capability_value(value: object) -> str:
     if normalized in {"true", "supported"}:
         return "Supported"
     if normalized in {"false", "not supported", "unsupported", "un-supported", "n/a", "na"}:
-        return "Not Supported"
+        return "Unsupported"
     return ""
+
+
+def normalize_url_for_comparison(value: object) -> str:
+    raw_value = str(value or "").strip()
+    if not raw_value:
+        return ""
+    parsed = urlparse(raw_value)
+    return parsed._replace(fragment="").geturl().rstrip("/").lower()
+
+
+def detail_spec_url(detail_record: dict[str, object], row: dict[str, str]) -> str:
+    if str(detail_record.get("detail_completeness", "")).strip() == "researched":
+        vendor_slug = (row.get("vendor_slug") or "").strip()
+        product_slug = (row.get("product_slug") or "").strip()
+        if vendor_slug and product_slug:
+            return f"{PUBLIC_SITE_BASE_URL}/manufactured-openapi/{vendor_slug}/{product_slug}.openapi.json"
+
+    source_evidence = detail_record.get("source_evidence") if isinstance(detail_record.get("source_evidence"), dict) else {}
+    spec_url = str(source_evidence.get("spec_url") or detail_record.get("spec_artifact_url") or "").strip()
+    if spec_url:
+        return spec_url
+    return str(row.get("integration_api_url") or "").strip()
+
+
+def detail_documentation_url(detail_record: dict[str, object], row: dict[str, str]) -> str:
+    source_evidence = detail_record.get("source_evidence") if isinstance(detail_record.get("source_evidence"), dict) else {}
+    documentation_url = str(source_evidence.get("documentation_url") or detail_record.get("integration_api_url") or "").strip()
+    if documentation_url:
+        return documentation_url
+    return str(row.get("integration_api_url") or "").strip()
 
 
 def has_direct_spec_file_url(value: str) -> bool:
@@ -72,10 +106,22 @@ def normalize_sheet_row(repo_root: Path, row: dict[str, str]) -> dict[str, str]:
         normalized_row[header] = normalize_capability_value(detail_record.get(header))
 
     source_visible = str(row.get("is_visible", "")).strip().upper() == "TRUE"
-    has_direct_spec_url = has_direct_spec_file_url(row.get("integration_api_url", ""))
+    has_researched_detail = str(detail_record.get("detail_completeness", "")).strip() == "researched"
+    spec_url = detail_spec_url(detail_record, row)
+    documentation_url = detail_documentation_url(detail_record, row)
+    has_direct_spec_url = has_direct_spec_file_url(spec_url)
     has_allowed_capabilities = all(normalized_row.get(header, "") in ALLOWED_CAPABILITY_VALUES for header in CAPABILITY_HEADERS)
+    has_distinct_documentation_and_spec = normalize_url_for_comparison(documentation_url) != normalize_url_for_comparison(spec_url)
+    normalized_row["api_spec_origin"] = "manufactured" if has_researched_detail else "vendor"
 
-    normalized_row["is_visible"] = "TRUE" if source_visible and has_direct_spec_url and has_allowed_capabilities else "FALSE"
+    if normalized_row["api_spec_origin"] not in ALLOWED_API_SPEC_ORIGINS:
+        normalized_row["api_spec_origin"] = "vendor"
+
+    normalized_row["is_visible"] = (
+        "TRUE"
+        if source_visible and has_researched_detail and has_direct_spec_url and has_allowed_capabilities and has_distinct_documentation_and_spec
+        else "FALSE"
+    )
     return normalized_row
 
 

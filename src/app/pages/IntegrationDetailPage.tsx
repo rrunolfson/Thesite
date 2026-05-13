@@ -22,13 +22,14 @@ interface IntegrationDetailRecord {
   integration_type: string;
   integration_api_url: string;
   spec_artifact_url: string;
+  api_spec_origin?: "vendor" | "manufactured";
   detail_path: string;
-  detail_completeness: "researched" | "generated-summary";
+  detail_completeness: "researched";
   data_coverage_summary: string;
   data_domains: string[];
-  asset_data_available: "Supported" | "Not Supported" | "N/A" | null;
-  telemetry_data_available: "Supported" | "Not Supported" | "N/A" | null;
-  writeback_supported: "Supported" | "Not Supported" | "N/A" | null;
+  asset_data_available: "Supported" | "Unsupported" | null;
+  telemetry_data_available: "Supported" | "Unsupported" | null;
+  writeback_supported: "Supported" | "Unsupported" | null;
   key_entities: string[];
   buyer_guidance: string;
   overview: string;
@@ -37,6 +38,7 @@ interface IntegrationDetailRecord {
   source_evidence: {
     documentation_url?: string;
     spec_url?: string;
+      vendor_spec_url?: string;
     reviewed_at?: string;
     evidence_notes?: string;
   };
@@ -172,7 +174,7 @@ export function IntegrationDetailPage() {
                     <div className="inline-flex items-center gap-2 rounded-full border border-[#217ED9]/30 bg-[#217ED9]/10 px-4 py-2">
                       <BadgeCheck className="h-4 w-4 text-[#217ED9]" />
                       <span className="text-sm font-medium uppercase tracking-[0.2em] text-[#75ADE6]">
-                        {detail.detail_completeness === "researched" ? "Researched Detail" : "Catalog Detail"}
+                        Researched Detail
                       </span>
                     </div>
 
@@ -274,7 +276,15 @@ export function IntegrationDetailPage() {
                     <SidePanel title="Source Evidence">
                       <div className="space-y-3 text-sm text-slate-300">
                         <EvidenceLink label="Documentation" href={detail.source_evidence.documentation_url || detail.integration_api_url} />
-                        <EvidenceLink label="Spec Artifact" href={detail.source_evidence.spec_url || detail.spec_artifact_url} />
+                        <EvidenceLink
+                          label={
+                            <>
+                              <span>Spec Artifact</span>
+                              {detail.api_spec_origin === "manufactured" ? <span className="ml-1 text-rose-400">*</span> : null}
+                            </>
+                          }
+                          href={detail.source_evidence.spec_url || detail.spec_artifact_url}
+                        />
                         {detail.source_evidence.reviewed_at && (
                           <div className="rounded-2xl border border-slate-800 bg-slate-900/50 px-4 py-3">
                             <div className="text-xs uppercase tracking-[0.18em] text-slate-500">Reviewed</div>
@@ -328,12 +338,12 @@ function CapabilityCard({
   );
 }
 
-function formatCapabilityValue(value: "Supported" | "Not Supported" | "N/A" | null) {
+function formatCapabilityValue(value: "Supported" | "Unsupported" | null) {
   if (value) {
     return value;
   }
 
-  return "Undetermined";
+  return "Unsupported";
 }
 
 function SidePanel({
@@ -354,7 +364,7 @@ function SidePanel({
   );
 }
 
-function EvidenceLink({ label, href }: { label: string; href: string }) {
+function EvidenceLink({ label, href }: { label: React.ReactNode; href: string }) {
   if (!href) {
     return null;
   }

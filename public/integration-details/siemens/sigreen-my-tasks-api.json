@@ -6,7 +6,8 @@
   "product_family": "SiGREEN",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/sigreen/my-tasks-api/api_specs/openapi-spec-v1.16.0.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/sigreen/my-tasks-api/api_specs/openapi-spec-v1.16.0.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/sigreen-my-tasks-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/sigreen/my-tasks-api/api_specs/openapi-spec-v1.16.0.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN. Published API scope centers on task, request, and comment workflows in SiGREEN.",
   "data_domains": [
@@ -14,8 +15,8 @@
     "pcf-requests",
     "comments"
   ],
-  "asset_data_available": "Not Supported",
-  "telemetry_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "tasks",
@@ -53,11 +54,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/sigreen/my-tasks-api/api-my-tasks.html",
-    "spec_url": "https://developer.siemens.com/sigreen/my-tasks-api/api_specs/openapi-spec-v1.16.0.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/sigreen-my-tasks-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for SiGREEN My Tasks API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for SiGREEN My Tasks API.",
+    "vendor_spec_url": "https://developer.siemens.com/sigreen/my-tasks-api/api_specs/openapi-spec-v1.16.0.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/sigreen-my-tasks-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/sigreen-my-tasks-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/sigreen-my-tasks-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/sigreen-my-tasks-api.openapi.json"
 }

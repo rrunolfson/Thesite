@@ -1,0 +1,102 @@
+{
+  "vendor_slug": "safetyculture",
+  "vendor_name": "SafetyCulture",
+  "product_slug": "safetyculture-rest-api",
+  "product_name": "SafetyCulture REST API",
+  "product_family": "SafetyCulture",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.safetyculture.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/safetyculture/safetyculture-rest-api.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "SafetyCulture exposes operational inspection, action, issue, asset, maintenance, site, user, and sensor APIs, plus data feeds and webhooks for keeping downstream systems synchronized with workplace activity.",
+  "data_domains": [
+    "asset-master-data",
+    "inspection-and-issue-data",
+    "sensor-readings",
+    "maintenance-programs"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Supported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "assets",
+    "asset fields and types",
+    "maintenance programs",
+    "inspections",
+    "actions and issues",
+    "sensors"
+  ],
+  "buyer_guidance": "Use SafetyCulture when you need inspection and corrective-action workflows alongside asset registers, maintenance planning, and sensor readings from the same operations platform. It supports both scheduled sync and webhook-driven downstream updates.",
+  "overview": "SafetyCulture documents a REST API for inspections, templates, actions, issues, users, assets, maintenance programs, sites, and sensors, with data-feed endpoints for incremental sync and webhook support for near real-time automation. The public reference also shows asset creation and updates, maintenance program management, inspection updates, action workflows, and sensor-readings ingestion and retrieval. That makes the surface useful for both operational asset context and sensor-style readings, with documented writeback across assets, maintenance objects, inspections, actions, and sensors. Asset data is Supported. Telemetry data is Supported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Assets and maintenance context",
+      "description": "The public reference includes asset CRUD, asset field and type management, maintenance programs, maintenance plans, and asset service history endpoints.",
+      "data_points": [
+        "Asset records and asset codes",
+        "Asset fields and asset field values",
+        "Asset types and type-to-field associations",
+        "Asset locations",
+        "Maintenance programs and plans",
+        "Asset service history and maintenance status counts"
+      ],
+      "relevant_operations": [
+        "Create an asset",
+        "List assets",
+        "Get full detail information of an asset",
+        "Update an asset",
+        "Update asset location",
+        "Create a maintenance program",
+        "Create a maintenance plan",
+        "List asset service history"
+      ]
+    },
+    {
+      "category": "Inspections, actions, issues, and sensors",
+      "description": "SafetyCulture combines workflow records with sensor and event-oriented APIs for operations reporting and automation.",
+      "data_points": [
+        "Inspection payloads and attached media",
+        "Inspection answers, ownership, access, and site associations",
+        "Actions and issues with assignees, status, priority, site, and asset links",
+        "Sensor inventory and latest readings",
+        "Sensor-reading ingestion",
+        "Webhook and data-feed events for inspections, assets, issues, sites, and users"
+      ],
+      "relevant_operations": [
+        "Search modified inspections",
+        "Get an inspection",
+        "Complete inspection",
+        "Create an action",
+        "List actions",
+        "Create Issue",
+        "List Issues",
+        "List sensors",
+        "Get sensor's latest readings",
+        "Ingest sensor readings",
+        "Create a webhook",
+        "Data feed for assets",
+        "Data feed for inspections"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "SafetyCulture recommends incremental sync using modified-since filters and keeping webhooks as a near real-time signal plus scheduled-sync fallback.",
+    "The API runs with the permissions and content access of the token owner, so incomplete results can reflect folder, group, site, or sharing scope rather than missing data in the platform.",
+    "No exact public machine-readable API description was confirmed during this review, so the documentation reference remains the evidence anchor until SafetyCulture exposes a downloadable JSON or YAML spec."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.safetyculture.com/reference/introduction",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/safetyculture/safetyculture-rest-api.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "SafetyCulture's developer portal documents inspections, actions, issues, assets, maintenance programs, sensors, data feeds, and webhooks. The introduction explains scheduled-sync and webhook models, and the reference lists concrete asset, maintenance, inspection, action, issue, and sensor operations.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/safetyculture/safetyculture-rest-api.openapi.json"
+  },
+  "detail_path": "/integration-details/safetyculture/safetyculture-rest-api.json",
+  "vendor_domain": "safetyculture.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=safetyculture.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/safetyculture/safetyculture-rest-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/safetyculture/safetyculture-rest-api.openapi.json"
+}

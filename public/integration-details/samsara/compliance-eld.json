@@ -6,7 +6,8 @@
   "product_family": "Samsara Platform",
   "integration_type": "REST API",
   "integration_api_url": "https://developers.samsara.com/docs/compliance-guide",
-  "spec_artifact_url": "https://developers.samsara.com/docs/compliance-guide",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/samsara/compliance-eld.openapi.json",
+  "vendor_spec_artifact_url": "https://developers.samsara.com/openapi/samsara-api.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "Samsara Compliance & ELD provides current HOS clocks, historical HOS logs, daily duty-status summaries, and driver-level compliance settings, allowing integrations to both ingest compliance records and update driver ELD/HOS configuration fields.",
   "data_domains": [
@@ -16,7 +17,7 @@
     "driver-compliance-settings",
     "tachograph-and-ruleset-overrides"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
   "writeback_supported": "Supported",
   "key_entities": [
@@ -84,11 +85,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developers.samsara.com/docs/compliance-guide",
-    "spec_url": "https://developers.samsara.com/docs/drivers-guide",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/samsara/compliance-eld.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Backed by the Compliance & ELD guide for GET /fleet/hos/clocks, GET /fleet/hos/logs, and GET /fleet/hos/daily-logs, plus the Drivers guide for POST /fleet/drivers and PATCH /fleet/drivers/{driverId} including HOS and ELD compliance fields."
+    "evidence_notes": "Backed by the Compliance & ELD guide for GET /fleet/hos/clocks, GET /fleet/hos/logs, and GET /fleet/hos/daily-logs, plus the Drivers guide for POST /fleet/drivers and PATCH /fleet/drivers/{driverId} including HOS and ELD compliance fields.",
+    "vendor_spec_url": "https://developers.samsara.com/openapi/samsara-api.json",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/samsara/compliance-eld.openapi.json"
   },
   "detail_path": "/integration-details/samsara/compliance-eld.json",
   "vendor_domain": "samsara.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=samsara.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=samsara.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/samsara/compliance-eld.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/samsara/compliance-eld.openapi.json"
 }

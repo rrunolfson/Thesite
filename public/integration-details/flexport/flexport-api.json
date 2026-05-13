@@ -1,0 +1,67 @@
+{
+  "vendor_slug": "flexport",
+  "vendor_name": "Flexport",
+  "product_slug": "flexport-api",
+  "product_name": "Flexport API",
+  "product_family": "Flexport",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developers.flexport.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/flexport/flexport-api.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Flexport API has public documentation that indicates global trade and customs workflows across shipments, entries, documents, parties. Public developer docs.",
+  "data_domains": [
+    "trade-and-customs-records",
+    "shipments",
+    "compliance-workflows"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "shipments",
+    "entries",
+    "documents",
+    "parties",
+    "compliance records"
+  ],
+  "buyer_guidance": "Use this API family for customs, trade, and cross-border shipment workflows rather than asset or telemetry use cases. Flexport should be treated as a rest api surface for global trade and customs workflows.",
+  "overview": "Public documentation reviewed for Flexport API indicates Public developer docs. The documented surface aligns with global trade and customs workflows and covers shipments, entries, documents, parties. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Global trade and customs workflows",
+      "description": "The public documentation indicates customs, trade-compliance, and cross-border shipment workflows rather than equipment telemetry.",
+      "data_points": [
+        "Shipment and trade-entry records",
+        "Customs or compliance documentation",
+        "Trading-party and location metadata",
+        "Cross-border workflow state and exceptions"
+      ],
+      "relevant_operations": [
+        "list shipment and customs records",
+        "read document and compliance state",
+        "create or update trade workflows",
+        "synchronize cross-border transaction changes"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Flexport API is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as global trade and customs workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developers.flexport.com/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/flexport/flexport-api.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public developer docs.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/flexport/flexport-api.openapi.json"
+  },
+  "detail_path": "/integration-details/flexport/flexport-api.json",
+  "vendor_domain": "flexport.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=flexport.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/flexport/flexport-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/flexport/flexport-api.openapi.json"
+}

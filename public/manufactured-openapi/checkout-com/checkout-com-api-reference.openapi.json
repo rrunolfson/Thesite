@@ -1,0 +1,1089 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Checkout.com API Reference Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Checkout.com publishes a public API reference and downloadable OpenAPI YAML covering payments, disputes, balances, transfers, files, vault, reports, issuing, and OAuth or API-key authentication.",
+    "description": "Manufactured OpenAPI artifact for Checkout.com API Reference. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Checkout.com's public API reference includes a downloadable OpenAPI YAML artifact and documents both API key and OAuth 2.0 client-credentials authentication. The public scopes and resource pages cover payments, payment details, incremental authorizations, voids, captures, refunds, payment contexts, disputes and evidence, balances, transfers, files, reports, financial actions, vault customers and instruments, payment sessions, Flow workflows and events, and issuing controls or transactions. This is a strong write-capable payments and issuing platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://api-reference.checkout.com/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Payments, payouts, and reconciliation",
+      "description": "Manufactured operations grouped under Payments, payouts, and reconciliation."
+    },
+    {
+      "name": "Vault, sessions, Flow, and issuing",
+      "description": "Manufactured operations grouped under Vault, sessions, Flow, and issuing."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_integrationProfile",
+        "summary": "Get manufactured profile for Checkout.com API Reference",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/oauth-client-credentials": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and reconciliation"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_oauth-client-credentials_get",
+        "summary": "OAuth client credentials",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Checkout.com exposes the payment and settlement flows needed for merchant payment processing and follow-on reconciliation. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for OAuth client credentials.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/gateway-payment": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and reconciliation"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_gateway-payment_get",
+        "summary": "gateway:payment",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Checkout.com exposes the payment and settlement flows needed for merchant payment processing and follow-on reconciliation. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for gateway:payment.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/gateway-payment-details": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and reconciliation"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_gateway-payment-details_get",
+        "summary": "gateway:payment-details",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Checkout.com exposes the payment and settlement flows needed for merchant payment processing and follow-on reconciliation. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for gateway:payment-details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/gateway-payment-authorizations": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and reconciliation"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_gateway-payment-authorizations_get",
+        "summary": "gateway:payment-authorizations",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Checkout.com exposes the payment and settlement flows needed for merchant payment processing and follow-on reconciliation. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for gateway:payment-authorizations.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/gateway-payment-voids": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and reconciliation"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_gateway-payment-voids_get",
+        "summary": "gateway:payment-voids",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Checkout.com exposes the payment and settlement flows needed for merchant payment processing and follow-on reconciliation. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for gateway:payment-voids.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/gateway-payment-captures": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and reconciliation"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_gateway-payment-captures_get",
+        "summary": "gateway:payment-captures",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Checkout.com exposes the payment and settlement flows needed for merchant payment processing and follow-on reconciliation. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for gateway:payment-captures.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/gateway-payment-refunds": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and reconciliation"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_gateway-payment-refunds_get",
+        "summary": "gateway:payment-refunds",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Checkout.com exposes the payment and settlement flows needed for merchant payment processing and follow-on reconciliation. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for gateway:payment-refunds.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/balances-view": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and reconciliation"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_balances-view_get",
+        "summary": "balances:view",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Checkout.com exposes the payment and settlement flows needed for merchant payment processing and follow-on reconciliation. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for balances:view.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/transfers-create": {
+      "post": {
+        "tags": [
+          "Payments, payouts, and reconciliation"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_transfers-create_post",
+        "summary": "transfers:create",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Checkout.com exposes the payment and settlement flows needed for merchant payment processing and follow-on reconciliation. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for transfers:create.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for transfers:create.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/disputes-provide-evidence": {
+      "put": {
+        "tags": [
+          "Payments, payouts, and reconciliation"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_disputes-provide-evidence_put",
+        "summary": "disputes:provide-evidence",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Checkout.com exposes the payment and settlement flows needed for merchant payment processing and follow-on reconciliation. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for disputes:provide-evidence.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for disputes:provide-evidence.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports-view": {
+      "get": {
+        "tags": [
+          "Payments, payouts, and reconciliation"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_reports-view_get",
+        "summary": "reports:view",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Checkout.com exposes the payment and settlement flows needed for merchant payment processing and follow-on reconciliation. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for reports:view.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/files-upload": {
+      "post": {
+        "tags": [
+          "Payments, payouts, and reconciliation"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_files-upload_post",
+        "summary": "files:upload",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Checkout.com exposes the payment and settlement flows needed for merchant payment processing and follow-on reconciliation. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for files:upload.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for files:upload.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vault-customers": {
+      "get": {
+        "tags": [
+          "Vault, sessions, Flow, and issuing"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_vault-customers_get",
+        "summary": "vault:customers",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The reference also covers merchant-side orchestration for credentialed payment, tokenization, and card programs. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for vault:customers.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/vault-instruments": {
+      "get": {
+        "tags": [
+          "Vault, sessions, Flow, and issuing"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_vault-instruments_get",
+        "summary": "vault:instruments",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The reference also covers merchant-side orchestration for credentialed payment, tokenization, and card programs. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for vault:instruments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/vault-network-tokens": {
+      "get": {
+        "tags": [
+          "Vault, sessions, Flow, and issuing"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_vault-network-tokens_get",
+        "summary": "vault:network-tokens",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The reference also covers merchant-side orchestration for credentialed payment, tokenization, and card programs. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for vault:network-tokens.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/gateway-payment-contexts": {
+      "get": {
+        "tags": [
+          "Vault, sessions, Flow, and issuing"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_gateway-payment-contexts_get",
+        "summary": "gateway:payment-contexts",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The reference also covers merchant-side orchestration for credentialed payment, tokenization, and card programs. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for gateway:payment-contexts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payment-sessions": {
+      "get": {
+        "tags": [
+          "Vault, sessions, Flow, and issuing"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_payment-sessions_get",
+        "summary": "payment-sessions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The reference also covers merchant-side orchestration for credentialed payment, tokenization, and card programs. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for payment-sessions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/flow-workflows": {
+      "get": {
+        "tags": [
+          "Vault, sessions, Flow, and issuing"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_flow-workflows_get",
+        "summary": "flow:workflows",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The reference also covers merchant-side orchestration for credentialed payment, tokenization, and card programs. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for flow:workflows.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/flow-events": {
+      "get": {
+        "tags": [
+          "Vault, sessions, Flow, and issuing"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_flow-events_get",
+        "summary": "flow:events",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The reference also covers merchant-side orchestration for credentialed payment, tokenization, and card programs. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for flow:events.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/issuing-card-management-write": {
+      "get": {
+        "tags": [
+          "Vault, sessions, Flow, and issuing"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_issuing-card-management-write_get",
+        "summary": "issuing:card-management-write",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The reference also covers merchant-side orchestration for credentialed payment, tokenization, and card programs. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for issuing:card-management-write.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/issuing-controls-write": {
+      "get": {
+        "tags": [
+          "Vault, sessions, Flow, and issuing"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_issuing-controls-write_get",
+        "summary": "issuing:controls-write",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The reference also covers merchant-side orchestration for credentialed payment, tokenization, and card programs. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for issuing:controls-write.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/issuing-transactions-write": {
+      "get": {
+        "tags": [
+          "Vault, sessions, Flow, and issuing"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_issuing-transactions-write_get",
+        "summary": "issuing:transactions-write",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The reference also covers merchant-side orchestration for credentialed payment, tokenization, and card programs. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for issuing:transactions-write.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/issuing-disputes-write": {
+      "put": {
+        "tags": [
+          "Vault, sessions, Flow, and issuing"
+        ],
+        "operationId": "checkout-com_checkout-com-api-reference_issuing-disputes-write_put",
+        "summary": "issuing:disputes-write",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The reference also covers merchant-side orchestration for credentialed payment, tokenization, and card programs. Vendor documentation: https://api-reference.checkout.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for issuing:disputes-write.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for issuing:disputes-write.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/checkout-com/checkout-com-api-reference.json",
+    "vendor_documentation_url": "https://api-reference.checkout.com/",
+    "vendor_spec_artifact_url": "https://api-reference.checkout.com/v1/swagger.yaml",
+    "reviewed_at": "2026-05-13"
+  }
+}

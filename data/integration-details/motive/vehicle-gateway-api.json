@@ -16,14 +16,14 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "vehicle gateways",
     "gateway identity",
     "connection status"
   ],
   "buyer_guidance": "Use Vehicle Gateway API when the integration needs the identity and operational status of Motive telematics hardware rather than vehicle master data or downstream commands.",
-  "overview": "Vehicle Gateway API is the Motive surface for onboard telematics device identity and gateway health state. It supports asset modeling for the gateway hardware and provides operational connectivity status, but it is not documented as a command or writeback interface. Asset data is Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "overview": "Vehicle Gateway API is the Motive surface for onboard telematics device identity and gateway health state. It supports asset modeling for the gateway hardware and provides operational connectivity status, but it is not documented as a command or writeback interface. Asset data is Supported. Telemetry data is Supported. Writeback is Unsupported.",
   "available_data": [
     {
       "category": "Gateway inventory and status",

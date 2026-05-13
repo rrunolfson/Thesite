@@ -1,0 +1,325 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MyAdmin API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-21",
+    "summary": "MyAdmin covers Geotab provisioning and administrative entities such as accounts, databases, devices, and partner operations, and it also documents ingestion objects for third-party GPS, acceleration, log, and status records.",
+    "description": "Manufactured OpenAPI artifact for MyAdmin API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. MyAdmin is Geotab's administrative surface for partner, account, database, and provisioning workflows. The object reference also includes third-party GPS, acceleration, log, and status record types, which confirms telemetry ingest coverage, but the API is not positioned as a command-and-control surface for remote operational writeback. Asset data is Supported. Telemetry data is Supported. Writeback is Unsupported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developers.geotab.com/myAdmin/apiReference/objects/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Administrative and ingest objects",
+      "description": "Manufactured operations grouped under Administrative and ingest objects."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "geotab_myadmin-api_integrationProfile",
+        "summary": "Get manufactured profile for MyAdmin API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/tenant-provisioning": {
+      "get": {
+        "tags": [
+          "Administrative and ingest objects"
+        ],
+        "operationId": "geotab_myadmin-api_tenant-provisioning_get",
+        "summary": "tenant provisioning",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published object catalog is oriented around fleet deployment administration with supplemental third-party record ingestion models. Vendor documentation: https://developers.geotab.com/myAdmin/apiReference/objects/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for tenant provisioning.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/device-administration": {
+      "get": {
+        "tags": [
+          "Administrative and ingest objects"
+        ],
+        "operationId": "geotab_myadmin-api_device-administration_get",
+        "summary": "device administration",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published object catalog is oriented around fleet deployment administration with supplemental third-party record ingestion models. Vendor documentation: https://developers.geotab.com/myAdmin/apiReference/objects/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for device administration.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/telemetry-ingest": {
+      "get": {
+        "tags": [
+          "Administrative and ingest objects"
+        ],
+        "operationId": "geotab_myadmin-api_telemetry-ingest_get",
+        "summary": "telemetry ingest",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published object catalog is oriented around fleet deployment administration with supplemental third-party record ingestion models. Vendor documentation: https://developers.geotab.com/myAdmin/apiReference/objects/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for telemetry ingest.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/geotab/myadmin-api.json",
+    "vendor_documentation_url": "https://developers.geotab.com/myAdmin/apiReference/objects/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-04-21"
+  }
+}

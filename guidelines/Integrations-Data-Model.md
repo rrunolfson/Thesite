@@ -135,15 +135,11 @@ The exported JSON should keep the API documentation field directly on each produ
 - Public product detail route shape: `/integrations/:vendorSlug/:productSlug`.
 - Public detail payload shape: `/integration-details/<resolved-detail-file>.json`.
 - The page route slug and the generated detail JSON filename are intentionally decoupled. The route resolves the correct `detail_path` from `integrations.json` before fetching the detail payload.
-- The detail layer is generated from two sources:
-  - Manual researched detail authored under `data/integration-details/**/*.json`.
-  - Automatic baseline detail generated for visible products that do not yet have a manual detail file.
-- Manual researched detail always wins over the generated baseline for the same `vendor_slug` + `product_slug` pair.
+- The detail layer is generated from manually researched detail authored under `data/integration-details/**/*.json`.
+- Every visible integration must have a curated detail file before it can publish.
 
 ### Detail Completeness
 - `detail_completeness=researched` is used for manually authored product detail with curated data-element coverage.
-- `detail_completeness=generated-summary` is used for auto-generated baseline detail created from the catalog row and linked documentation.
-- Generated baseline detail is intended to provide a uniform review surface, not to invent undocumented entities or operations.
 
 ### Detail JSON Example
 
@@ -158,30 +154,31 @@ The exported JSON should keep the API documentation field directly on each produ
   "product_family": "Motion Control",
   "integration_type": "OEM API",
   "integration_api_url": "https://my.apidocs.com",
-  "spec_artifact_url": "https://my.apidocs.com",
+  "spec_artifact_url": "https://my.apidocs.com/openapi.yaml",
   "detail_path": "/integration-details/atlas-motion-systems/atlas-servo-suite.json",
-  "detail_completeness": "generated-summary",
+  "detail_completeness": "researched",
   "data_coverage_summary": "Servo and drive integration planned for production telemetry workflows.",
-  "asset_data_available": null,
-  "telemetry_data_available": null,
-  "writeback_supported": null,
-  "overview": "This baseline detail page was generated from the catalog metadata and linked documentation.",
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "overview": "The vendor documentation describes a structured motion-control API for servo and drive records, including configuration objects and command-oriented lifecycle operations.",
   "buyer_guidance": "Use the published OEM API documentation to confirm supported entities, access patterns, and implementation constraints before scoping a build.",
   "available_data": [
     {
-      "category": "Published API Scope",
-      "description": "This standardized detail view was generated from the catalog row and linked documentation.",
+      "category": "Drive configuration",
+      "description": "The published API exposes servo, drive, and controller configuration records used to manage the motion-control environment.",
       "data_points": [
-        "Published summary: Servo and drive integration planned for production telemetry workflows.",
-        "Product family: Motion Control",
-        "Integration type: OEM API",
-        "Lifecycle status: Planned"
+        "Drive definitions",
+        "Servo controller records",
+        "Parameter sets",
+        "Command-capable configuration objects"
       ],
-      "relevant_operations": []
+      "relevant_operations": ["list drives", "read configuration", "update parameters"]
     }
   ],
   "source_evidence": {
     "documentation_url": "https://my.apidocs.com",
+    "spec_url": "https://my.apidocs.com/openapi.yaml",
     "reviewed_at": "2026-04-17"
   }
 }
@@ -207,7 +204,7 @@ The exported JSON should keep the API documentation field directly on each produ
 - `npm run build` now regenerates the JSON automatically before the site build.
 - Run `npm run integrations:validate` to fail fast on missing columns, invalid slugs, duplicate products, missing logo assets, or malformed URLs.
 - If no logo provider key is configured, the generator falls back to domain-based favicon resolution so the UI still has visual vendor identifiers without manual image management.
-- If a visible product has no manual detail file, the generator emits a baseline detail payload automatically so the product still has a consistent detail page and route.
+- If a visible product has no curated detail file, validation fails and the product cannot publish until the detail metadata is authored.
 - If you publish the Google Sheet as CSV, create `data/integrations-source.json` from the example file and run `npm run integrations:sync-sheet`.
 
 ## Vendor Scraper To Sheet Flow

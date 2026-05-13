@@ -1,0 +1,67 @@
+{
+  "vendor_slug": "innovaccer",
+  "vendor_name": "Innovaccer",
+  "product_slug": "innovaccer-inapi-developer-platform",
+  "product_name": "Innovaccer InAPI / Developer Platform",
+  "product_family": "Innovaccer InAPI / Developer Platform",
+  "integration_type": "REST API",
+  "integration_api_url": "https://developer.innovaccer.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/innovaccer/innovaccer-inapi-developer-platform.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Innovaccer InAPI / Developer Platform has public documentation that indicates population-health and payer workflows across members, claims, eligibility, care gaps. Public developer platform and API overview.",
+  "data_domains": [
+    "claims-and-eligibility",
+    "care-management",
+    "analytics-workflows"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "members",
+    "claims",
+    "eligibility",
+    "care gaps",
+    "analytics outputs"
+  ],
+  "buyer_guidance": "Use this API family for healthcare payer, network, or population-health workflows rather than biomedical asset telemetry. Innovaccer should be treated as a rest api surface for population-health and payer workflows.",
+  "overview": "Public documentation reviewed for Innovaccer InAPI / Developer Platform indicates Public developer platform and API overview. The documented surface aligns with population-health and payer workflows and covers members, claims, eligibility, care gaps. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Population-health and payer workflows",
+      "description": "The public documentation indicates healthcare network and population-health workflows for eligibility, claims, analytics, and care-management processes.",
+      "data_points": [
+        "Member, eligibility, or payer-linked records",
+        "Claims, authorizations, or benefits data",
+        "Care-gap, outreach, or management workflows",
+        "Analytics and operational reporting outputs"
+      ],
+      "relevant_operations": [
+        "list member or eligibility records",
+        "read claims and network workflow data",
+        "create or update healthcare operations",
+        "synchronize care-management state"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Innovaccer InAPI / Developer Platform is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as population-health and payer workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.innovaccer.com/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/innovaccer/innovaccer-inapi-developer-platform.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public developer platform and API overview.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/innovaccer/innovaccer-inapi-developer-platform.openapi.json"
+  },
+  "detail_path": "/integration-details/innovaccer/innovaccer-inapi-developer-platform.json",
+  "vendor_domain": "innovaccer.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=innovaccer.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/innovaccer/innovaccer-inapi-developer-platform.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/innovaccer/innovaccer-inapi-developer-platform.openapi.json"
+}

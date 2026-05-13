@@ -6,7 +6,8 @@
   "product_family": "Walkinside",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/walkinside/walkinside-api/walkinside.webapi.json",
-  "spec_artifact_url": "https://developer.siemens.com/walkinside/walkinside-api/walkinside.webapi.json",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/walkinside.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/walkinside/walkinside-api/walkinside.webapi.json",
   "detail_completeness": "researched",
   "data_coverage_summary": "Walkinside Services offer a robust 3D visualization platform that transforms how enterprises interact with their digital twins. By enabling dynamic navigation through virtual asset models, Walkinside leverages immersive environments to enhance operational planning, training, and safety assessments. Published API scope focuses on 3D visualization and asset-linked spatial records.",
   "data_domains": [
@@ -15,7 +16,7 @@
     "spatial-records"
   ],
   "asset_data_available": "Supported",
-  "telemetry_data_available": "Not Supported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "3D models",
@@ -53,11 +54,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/walkinside/walkinside-api/index.html",
-    "spec_url": "https://developer.siemens.com/walkinside/walkinside-api/walkinside.webapi.json",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/walkinside.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Walkinside."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Walkinside.",
+    "vendor_spec_url": "https://developer.siemens.com/walkinside/walkinside-api/walkinside.webapi.json",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/walkinside.openapi.json"
   },
   "detail_path": "/integration-details/siemens/walkinside.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/walkinside.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/walkinside.openapi.json"
 }

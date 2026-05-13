@@ -1,0 +1,569 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Lifecycle Twin API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-18",
+    "summary": "RESTful API for creating and managing various objects in the Lifecycle Twin. Published API scope focuses on twin objects, attached records, and lifecycle workflow artifacts.",
+    "description": "Manufactured OpenAPI artifact for Lifecycle Twin API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. RESTful API for creating and managing various objects in the Lifecycle Twin. Lifecycle Twin is positioned as a digital twin and lifecycle management surface rather than a live telemetry feed. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/overview.html"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Lifecycle records",
+      "description": "Manufactured operations grouped under Lifecycle records."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "siemens_lifecycle-twin-api_integrationProfile",
+        "summary": "Get manufactured profile for Lifecycle Twin API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/inspections/{inspectionId}/sections": {
+      "get": {
+        "tags": [
+          "Lifecycle records"
+        ],
+        "operationId": "siemens_lifecycle-twin-api_get-inspections-inspectionid-sections_get",
+        "summary": "GET /inspections/{inspectionId}/sections",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on twin objects, attached records, and lifecycle workflow artifacts. Vendor documentation: https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /inspections/{inspectionId}/sections.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/inspections": {
+      "get": {
+        "tags": [
+          "Lifecycle records"
+        ],
+        "operationId": "siemens_lifecycle-twin-api_get-inspections_get",
+        "summary": "GET /inspections",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on twin objects, attached records, and lifecycle workflow artifacts. Vendor documentation: https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /inspections.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "delete": {
+        "tags": [
+          "Lifecycle records"
+        ],
+        "operationId": "siemens_lifecycle-twin-api_delete-inspections_delete",
+        "summary": "DELETE /inspections",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on twin objects, attached records, and lifecycle workflow artifacts. Vendor documentation: https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DELETE /inspections.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for DELETE /inspections.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inspections/{id}": {
+      "put": {
+        "tags": [
+          "Lifecycle records"
+        ],
+        "operationId": "siemens_lifecycle-twin-api_put-inspections-id_put",
+        "summary": "PUT /inspections/{id}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on twin objects, attached records, and lifecycle workflow artifacts. Vendor documentation: https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for PUT /inspections/{id}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for PUT /inspections/{id}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files": {
+      "get": {
+        "tags": [
+          "Lifecycle records"
+        ],
+        "operationId": "siemens_lifecycle-twin-api_get-inspections-inspectionid-entities-baseentityid-rolepassresults-rolepassresultid-files_get",
+        "summary": "GET /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on twin objects, attached records, and lifecycle workflow artifacts. Vendor documentation: https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Lifecycle records"
+        ],
+        "operationId": "siemens_lifecycle-twin-api_post-inspections-inspectionid-entities-baseentityid-rolepassresults-rolepassresultid-files_post",
+        "summary": "POST /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on twin objects, attached records, and lifecycle workflow artifacts. Vendor documentation: https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Lifecycle records"
+        ],
+        "operationId": "siemens_lifecycle-twin-api_delete-inspections-inspectionid-entities-baseentityid-rolepassresults-rolepassresultid-files_delete",
+        "summary": "DELETE /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on twin objects, attached records, and lifecycle workflow artifacts. Vendor documentation: https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for DELETE /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for DELETE /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files/{id}": {
+      "get": {
+        "tags": [
+          "Lifecycle records"
+        ],
+        "operationId": "siemens_lifecycle-twin-api_get-inspections-inspectionid-entities-baseentityid-rolepassresults-rolepassresultid-files-id_get",
+        "summary": "GET /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files/{id}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope focuses on twin objects, attached records, and lifecycle workflow artifacts. Vendor documentation: https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /inspections/{inspectionId}/entities/{baseEntityId}/rolepassresults/{rolePassResultId}/files/{id}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/siemens/lifecycle-twin-api.json",
+    "vendor_documentation_url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/overview.html",
+    "vendor_spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/lifecycletwin-api/ecodomus-api-reference.yaml",
+    "reviewed_at": "2026-04-18"
+  }
+}

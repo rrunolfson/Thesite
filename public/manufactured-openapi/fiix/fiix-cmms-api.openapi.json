@@ -1,0 +1,553 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Fiix CMMS API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "The Fiix CMMS API is oriented around CMMS instance data and functionality, with documented examples for assets, asset locations and categories, work orders, work-order tasks, and file attachments used in maintenance operations.",
+    "description": "Manufactured OpenAPI artifact for Fiix CMMS API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Fiix describes its API as access to CMMS instance-specific data and functionality, and the public guide walks through listing assets, retrieving individual assets with location and category relationships, creating and updating assets, creating work orders, associating assets to work orders, creating work-order tasks, and uploading files tied to Asset and WorkOrder objects. That makes the confirmed public surface useful for asset synchronization and maintenance writeback rather than telemetry ingestion. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://fiixlabs.github.io/api-documentation/guide.html"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Asset records and related CMMS context",
+      "description": "Manufactured operations grouped under Asset records and related CMMS context."
+    },
+    {
+      "name": "Maintenance execution workflows",
+      "description": "Manufactured operations grouped under Maintenance execution workflows."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "fiix_fiix-cmms-api_integrationProfile",
+        "summary": "Get manufactured profile for Fiix CMMS API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/find-asset": {
+      "get": {
+        "tags": [
+          "Asset records and related CMMS context"
+        ],
+        "operationId": "fiix_fiix-cmms-api_find-asset_get",
+        "summary": "find Asset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's examples focus first on retrieving and maintaining equipment records and their related classifications. Vendor documentation: https://fiixlabs.github.io/api-documentation/guide.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for find Asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/findbyid-asset": {
+      "get": {
+        "tags": [
+          "Asset records and related CMMS context"
+        ],
+        "operationId": "fiix_fiix-cmms-api_findbyid-asset_get",
+        "summary": "findById Asset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's examples focus first on retrieving and maintaining equipment records and their related classifications. Vendor documentation: https://fiixlabs.github.io/api-documentation/guide.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for findById Asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/add-asset": {
+      "get": {
+        "tags": [
+          "Asset records and related CMMS context"
+        ],
+        "operationId": "fiix_fiix-cmms-api_add-asset_get",
+        "summary": "add Asset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's examples focus first on retrieving and maintaining equipment records and their related classifications. Vendor documentation: https://fiixlabs.github.io/api-documentation/guide.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for add Asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/change-asset": {
+      "get": {
+        "tags": [
+          "Asset records and related CMMS context"
+        ],
+        "operationId": "fiix_fiix-cmms-api_change-asset_get",
+        "summary": "change Asset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The guide's examples focus first on retrieving and maintaining equipment records and their related classifications. Vendor documentation: https://fiixlabs.github.io/api-documentation/guide.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for change Asset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/add-workorder": {
+      "get": {
+        "tags": [
+          "Maintenance execution workflows"
+        ],
+        "operationId": "fiix_fiix-cmms-api_add-workorder_get",
+        "summary": "add WorkOrder",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published examples cover creation of work orders, linking assets to those work orders, and assigning task-level execution steps. Vendor documentation: https://fiixlabs.github.io/api-documentation/guide.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for add WorkOrder.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/add-workorderasset": {
+      "get": {
+        "tags": [
+          "Maintenance execution workflows"
+        ],
+        "operationId": "fiix_fiix-cmms-api_add-workorderasset_get",
+        "summary": "add WorkOrderAsset",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published examples cover creation of work orders, linking assets to those work orders, and assigning task-level execution steps. Vendor documentation: https://fiixlabs.github.io/api-documentation/guide.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for add WorkOrderAsset.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/add-workordertask": {
+      "get": {
+        "tags": [
+          "Maintenance execution workflows"
+        ],
+        "operationId": "fiix_fiix-cmms-api_add-workordertask_get",
+        "summary": "add WorkOrderTask",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published examples cover creation of work orders, linking assets to those work orders, and assigning task-level execution steps. Vendor documentation: https://fiixlabs.github.io/api-documentation/guide.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for add WorkOrderTask.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/findbyid-workorder": {
+      "get": {
+        "tags": [
+          "Maintenance execution workflows"
+        ],
+        "operationId": "fiix_fiix-cmms-api_findbyid-workorder_get",
+        "summary": "findById WorkOrder",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published examples cover creation of work orders, linking assets to those work orders, and assigning task-level execution steps. Vendor documentation: https://fiixlabs.github.io/api-documentation/guide.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for findById WorkOrder.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/uploadfile-for-asset-and-workorder": {
+      "post": {
+        "tags": [
+          "Maintenance execution workflows"
+        ],
+        "operationId": "fiix_fiix-cmms-api_uploadfile-for-asset-and-workorder_post",
+        "summary": "uploadFile for Asset and WorkOrder",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published examples cover creation of work orders, linking assets to those work orders, and assigning task-level execution steps. Vendor documentation: https://fiixlabs.github.io/api-documentation/guide.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for uploadFile for Asset and WorkOrder.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for uploadFile for Asset and WorkOrder.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/fiix/fiix-cmms-api.json",
+    "vendor_documentation_url": "https://fiixlabs.github.io/api-documentation/guide.html",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

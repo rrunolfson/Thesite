@@ -1,0 +1,79 @@
+{
+  "vendor_slug": "adobe",
+  "vendor_name": "Adobe",
+  "product_slug": "adobe-commerce-rest-graphql-apis",
+  "product_name": "Adobe Commerce REST / GraphQL APIs",
+  "product_family": "Adobe Commerce",
+  "integration_type": "GraphQL API",
+  "integration_api_url": "https://developer.adobe.com/commerce/webapi/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Adobe publicly documents Adobe Commerce web APIs through dedicated Getting Started, REST, and GraphQL guides for third-party integrations and headless commerce applications.",
+  "data_domains": [
+    "catalog-and-commerce-data",
+    "customers-and-orders",
+    "headless-commerce",
+    "third-party-integration"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "products and catalog data",
+    "customers",
+    "orders and commerce workflows",
+    "headless application data",
+    "REST services",
+    "GraphQL queries and mutations"
+  ],
+  "buyer_guidance": "Use Adobe Commerce web APIs for catalog, customer, order, and headless commerce integrations with third-party software. This is a commerce platform, not an asset or telemetry platform.",
+  "overview": "Adobe's Commerce Web APIs documentation states that Adobe Commerce provides web services for integrating third-party software and building headless applications. The public documentation is organized into Getting Started, REST, and GraphQL sections, with REST covering available web services on the latest Adobe Commerce release and GraphQL covering query and mutation access patterns favored for frontend development. This positions Adobe Commerce as a write-capable commerce integration surface for catalog, customer, order, and frontend application workflows, but not for asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Commerce platform integration",
+      "description": "Adobe Commerce publicly documents integration paths for third-party software through its web API framework.",
+      "data_points": [
+        "Commerce platform service operations",
+        "Catalog and transactional commerce data",
+        "Third-party integration workflows",
+        "Release-aligned REST services",
+        "Headless application backends"
+      ],
+      "relevant_operations": [
+        "Getting Started",
+        "REST",
+        "GraphQL",
+        "Integrate with third-party software",
+        "Build headless applications"
+      ]
+    },
+    {
+      "category": "Headless storefront and application development",
+      "description": "The public docs also frame Adobe Commerce APIs as the backend for modern composable storefronts and applications.",
+      "data_points": [
+        "GraphQL queries and mutations",
+        "REST-based service integrations",
+        "Frontend-to-backend commerce workflows",
+        "Application-building guidance",
+        "Cross-platform developer enablement"
+      ],
+      "relevant_operations": [
+        "GraphQL guide",
+        "REST guide",
+        "Headless applications",
+        "Web API framework"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Adobe Commerce public docs clearly confirm REST and GraphQL support, but the landing page is higher-level than a product-specific API reference and does not by itself enumerate exact resource families.",
+    "Downstream implementations should supplement this row with resource-specific Adobe Commerce docs when particular entities or modules matter.",
+    "No exact public machine-readable spec artifact was confirmed for the aggregate Adobe Commerce row during this pass."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://developer.adobe.com/commerce/webapi/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Adobe's public Commerce Web APIs landing page states that Adobe Commerce web APIs support integrating third-party software and building headless applications, and explicitly organizes the documentation into Getting Started, REST, and GraphQL guides."
+  }
+}

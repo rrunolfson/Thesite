@@ -1,0 +1,325 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OT Companion Protection Settings API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-18",
+    "summary": "OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals. Published API scope is centered on protection-setting and related OT configuration records.",
+    "description": "Manufactured OpenAPI artifact for OT Companion Protection Settings API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals. Protection settings are configuration-state records associated with OT assets rather than live telemetry feeds. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.siemens.com/otc/protection-setting-api/overview.html"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Available Data",
+      "description": "Manufactured operations grouped under Available Data."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "siemens_ot-companion-protection-settings-api_integrationProfile",
+        "summary": "Get manufactured profile for OT Companion Protection Settings API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/protection-settings": {
+      "get": {
+        "tags": [
+          "Available Data"
+        ],
+        "operationId": "siemens_ot-companion-protection-settings-api_get-protection-settings_get",
+        "summary": "Get Protection Settings",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals. Published API scope is centered on protection-setting and related OT configuration records. Vendor documentation: https://developer.siemens.com/otc/protection-setting-api/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get Protection Settings.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/configuration-records": {
+      "get": {
+        "tags": [
+          "Available Data"
+        ],
+        "operationId": "siemens_ot-companion-protection-settings-api_get-configuration-records_get",
+        "summary": "Get Configuration Records",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals. Published API scope is centered on protection-setting and related OT configuration records. Vendor documentation: https://developer.siemens.com/otc/protection-setting-api/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get Configuration Records.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/ot-assets": {
+      "get": {
+        "tags": [
+          "Available Data"
+        ],
+        "operationId": "siemens_ot-companion-protection-settings-api_get-ot-assets_get",
+        "summary": "Get OT Assets",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. OT Companion® enables continuous OT asset inventory monitoring and patch management for power system operators in utilities, industries and infrastructure verticals. Published API scope is centered on protection-setting and related OT configuration records. Vendor documentation: https://developer.siemens.com/otc/protection-setting-api/overview.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Get OT Assets.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/siemens/ot-companion-protection-settings-api.json",
+    "vendor_documentation_url": "https://developer.siemens.com/otc/protection-setting-api/overview.html",
+    "vendor_spec_artifact_url": "https://developer.siemens.com/otc/protection-setting-api/protection-settings.yml",
+    "reviewed_at": "2026-04-18"
+  }
+}

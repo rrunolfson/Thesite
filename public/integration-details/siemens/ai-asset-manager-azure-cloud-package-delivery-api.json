@@ -6,7 +6,8 @@
   "product_family": "Industrial AI Suite",
   "integration_type": "REST API",
   "integration_api_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/azure-delivery-api/azure-delivery-api.yml",
-  "spec_artifact_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/azure-delivery-api/azure-delivery-api.yml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/ai-asset-manager-azure-cloud-package-delivery-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/azure-delivery-api/azure-delivery-api.yml",
   "detail_completeness": "researched",
   "data_coverage_summary": "Revolutionize your AI operations across locations with seamless cloud integration. Our Industrial AI Suite runs on a new line of Industrial PCs powered by NVIDIA's GPUs accelerating AI execution. This makes complex AI tasks in advanced automation broadly available and boosts efficiency. Published API scope combines deployment package handling with model deployment monitoring.",
   "data_domains": [
@@ -45,11 +46,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/azure-delivery-api/api.html",
-    "spec_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/azure-delivery-api/azure-delivery-api.yml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/ai-asset-manager-azure-cloud-package-delivery-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for AI Asset Manager Azure Cloud Package Delivery API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for AI Asset Manager Azure Cloud Package Delivery API.",
+    "vendor_spec_url": "https://developer.siemens.com/industrial-ai-suite/asset-manager/async-apis/azure-delivery-api/azure-delivery-api.yml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/ai-asset-manager-azure-cloud-package-delivery-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/ai-asset-manager-azure-cloud-package-delivery-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/ai-asset-manager-azure-cloud-package-delivery-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/ai-asset-manager-azure-cloud-package-delivery-api.openapi.json"
 }

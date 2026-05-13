@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "coupa",
+  "vendor_name": "Coupa",
+  "product_slug": "coupa-core-rest-api",
+  "product_name": "Coupa Core REST API",
+  "product_family": "Coupa Core",
+  "integration_type": "REST API",
+  "integration_api_url": "https://docs.coupa.com/docs/get-started-with-the-api",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Coupa Core REST API has public documentation that indicates supply-chain records and fulfillment coordination across inventory items, orders, shipments, suppliers. Public Coupa Core API docs include resource-level references.",
+  "data_domains": [
+    "inventory-and-availability",
+    "orders-and-shipments",
+    "partner-coordination"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "inventory items",
+    "orders",
+    "shipments",
+    "suppliers",
+    "tasks"
+  ],
+  "buyer_guidance": "Use this surface for inventory, order, and fulfillment coordination workflows. Treat it as a business-system integration rather than a telemetry feed. Coupa should be treated as a rest api surface for supply-chain records and fulfillment coordination.",
+  "overview": "Public documentation reviewed for Coupa Core REST API indicates Public Coupa Core API docs include resource-level references. The documented surface aligns with supply-chain records and fulfillment coordination and covers inventory items, orders, shipments, suppliers. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Supply-chain records and fulfillment coordination",
+      "description": "The public documentation indicates supply-chain data flows for inventory, order, shipment, and partner-coordination workflows.",
+      "data_points": [
+        "Inventory and availability records",
+        "Order, shipment, and fulfillment objects",
+        "Supplier or trading-partner context",
+        "Task, exception, or coordination workflows"
+      ],
+      "relevant_operations": [
+        "list inventory and order records",
+        "read shipment and fulfillment state",
+        "create or update supply-chain transactions",
+        "manage partner-facing workflow actions"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Coupa Core REST API is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as supply-chain records and fulfillment coordination, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://docs.coupa.com/docs/get-started-with-the-api",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public Coupa Core API docs include resource-level references."
+  }
+}

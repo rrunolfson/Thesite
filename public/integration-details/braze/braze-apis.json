@@ -1,0 +1,67 @@
+{
+  "vendor_slug": "braze",
+  "vendor_name": "Braze",
+  "product_slug": "braze-apis",
+  "product_name": "Braze APIs",
+  "product_family": "Braze",
+  "integration_type": "REST API",
+  "integration_api_url": "https://www.braze.com/docs/api",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/braze/braze-apis.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Braze APIs has public documentation that indicates marketing automation and engagement workflows across profiles, audiences, campaigns, events. Public API docs.",
+  "data_domains": [
+    "contacts-and-audiences",
+    "campaigns",
+    "events-and-personalization"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "profiles",
+    "audiences",
+    "campaigns",
+    "events",
+    "templates"
+  ],
+  "buyer_guidance": "Use this API family for campaign, audience, and lifecycle-marketing integration rather than asset or telemetry workflows. Braze should be treated as a rest api surface for marketing automation and engagement workflows.",
+  "overview": "Public documentation reviewed for Braze APIs indicates Public API docs. The documented surface aligns with marketing automation and engagement workflows and covers profiles, audiences, campaigns, events. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Marketing automation and engagement workflows",
+      "description": "The public documentation indicates contact, audience, campaign, event, and personalization workflows used to automate customer engagement.",
+      "data_points": [
+        "Contact and profile records",
+        "Audience and segment definitions",
+        "Campaign, message, or template data",
+        "Behavioral events and personalization state"
+      ],
+      "relevant_operations": [
+        "list profiles and campaign records",
+        "read audience and event data",
+        "create or update marketing workflows",
+        "submit engagement or personalization events"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Braze APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as marketing automation and engagement workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://www.braze.com/docs/api",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/braze/braze-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public API docs.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/braze/braze-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/braze/braze-apis.json",
+  "vendor_domain": "braze.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=braze.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/braze/braze-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/braze/braze-apis.openapi.json"
+}

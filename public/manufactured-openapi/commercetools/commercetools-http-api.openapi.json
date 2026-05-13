@@ -1,0 +1,567 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "commercetools HTTP API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "commercetools publicly documents an HTTP API with resource representations, HTTP methods, project configuration, customization mechanisms, query features, and a companion GraphQL API for composable commerce.",
+    "description": "Manufactured OpenAPI artifact for commercetools HTTP API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. commercetools publicly describes its HTTP API as the canonical surface for resource representations, HTTP methods, project configuration, resource customization, and common behaviors such as reference expansion, optimistic concurrency control, and query features. The same public API hub also links a companion GraphQL API for network-efficient queries and mutations. This is a write-capable composable commerce platform for application and data-layer integration, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://docs.commercetools.com/api/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Composable commerce resources",
+      "description": "Manufactured operations grouped under Composable commerce resources."
+    },
+    {
+      "name": "GraphQL and performance-oriented access",
+      "description": "Manufactured operations grouped under GraphQL and performance-oriented access."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "commercetools_commercetools-http-api_integrationProfile",
+        "summary": "Get manufactured profile for commercetools HTTP API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/http-methods-for-resources": {
+      "get": {
+        "tags": [
+          "Composable commerce resources"
+        ],
+        "operationId": "commercetools_commercetools-http-api_http-methods-for-resources_get",
+        "summary": "HTTP methods for resources",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public HTTP API documentation focuses on managing commerce resources and project behavior. Vendor documentation: https://docs.commercetools.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for HTTP methods for resources.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/projects-configuration": {
+      "get": {
+        "tags": [
+          "Composable commerce resources"
+        ],
+        "operationId": "commercetools_commercetools-http-api_projects-configuration_get",
+        "summary": "Projects configuration",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public HTTP API documentation focuses on managing commerce resources and project behavior. Vendor documentation: https://docs.commercetools.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Projects configuration.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/authorization": {
+      "get": {
+        "tags": [
+          "Composable commerce resources"
+        ],
+        "operationId": "commercetools_commercetools-http-api_authorization_get",
+        "summary": "Authorization",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public HTTP API documentation focuses on managing commerce resources and project behavior. Vendor documentation: https://docs.commercetools.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Authorization.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/reference-expansion": {
+      "get": {
+        "tags": [
+          "Composable commerce resources"
+        ],
+        "operationId": "commercetools_commercetools-http-api_reference-expansion_get",
+        "summary": "Reference Expansion",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public HTTP API documentation focuses on managing commerce resources and project behavior. Vendor documentation: https://docs.commercetools.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Reference Expansion.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/optimistic-concurrency-control": {
+      "get": {
+        "tags": [
+          "Composable commerce resources"
+        ],
+        "operationId": "commercetools_commercetools-http-api_optimistic-concurrency-control_get",
+        "summary": "Optimistic concurrency control",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public HTTP API documentation focuses on managing commerce resources and project behavior. Vendor documentation: https://docs.commercetools.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Optimistic concurrency control.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/query-features": {
+      "get": {
+        "tags": [
+          "Composable commerce resources"
+        ],
+        "operationId": "commercetools_commercetools-http-api_query-features_get",
+        "summary": "Query features",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public HTTP API documentation focuses on managing commerce resources and project behavior. Vendor documentation: https://docs.commercetools.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Query features.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/graphql-api": {
+      "get": {
+        "tags": [
+          "GraphQL and performance-oriented access"
+        ],
+        "operationId": "commercetools_commercetools-http-api_graphql-api_get",
+        "summary": "GraphQL API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. commercetools also supports expressive query-driven access patterns through GraphQL and performance guidance. Vendor documentation: https://docs.commercetools.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GraphQL API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/performance-tips": {
+      "get": {
+        "tags": [
+          "GraphQL and performance-oriented access"
+        ],
+        "operationId": "commercetools_commercetools-http-api_performance-tips_get",
+        "summary": "Performance tips",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. commercetools also supports expressive query-driven access patterns through GraphQL and performance guidance. Vendor documentation: https://docs.commercetools.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Performance tips.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api-contract": {
+      "get": {
+        "tags": [
+          "GraphQL and performance-oriented access"
+        ],
+        "operationId": "commercetools_commercetools-http-api_api-contract_get",
+        "summary": "API Contract",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. commercetools also supports expressive query-driven access patterns through GraphQL and performance guidance. Vendor documentation: https://docs.commercetools.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for API Contract.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/regions": {
+      "get": {
+        "tags": [
+          "GraphQL and performance-oriented access"
+        ],
+        "operationId": "commercetools_commercetools-http-api_regions_get",
+        "summary": "Regions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. commercetools also supports expressive query-driven access patterns through GraphQL and performance guidance. Vendor documentation: https://docs.commercetools.com/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Regions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/commercetools/commercetools-http-api.json",
+    "vendor_documentation_url": "https://docs.commercetools.com/api/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

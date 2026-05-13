@@ -1,0 +1,533 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Portal API 1.9.0 Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-04-18",
+    "summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps.",
+    "description": "Manufactured OpenAPI artifact for Portal API 1.9.0. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. These APIs are administrative and configuration-oriented surfaces for apps, devices, and low-code flow setup across Industrial Edge. Asset data is Supported. Telemetry data is Un-Supported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/api-portal-1-9-0.html"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Edge management",
+      "description": "Manufactured operations grouped under Edge management."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "siemens_portal-api-1-9-0_integrationProfile",
+        "summary": "Get manufactured profile for Portal API 1.9.0",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/application-import-jobs": {
+      "post": {
+        "tags": [
+          "Edge management"
+        ],
+        "operationId": "siemens_portal-api-1-9-0_post-application-import-jobs_post",
+        "summary": "POST /application-import-jobs",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps. Vendor documentation: https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/api-portal-1-9-0.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /application-import-jobs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /application-import-jobs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/application-import-jobs/{id}": {
+      "get": {
+        "tags": [
+          "Edge management"
+        ],
+        "operationId": "siemens_portal-api-1-9-0_get-application-import-jobs-id_get",
+        "summary": "GET /application-import-jobs/{id}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps. Vendor documentation: https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/api-portal-1-9-0.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /application-import-jobs/{id}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/devices/{id}/statistics": {
+      "get": {
+        "tags": [
+          "Edge management"
+        ],
+        "operationId": "siemens_portal-api-1-9-0_get-devices-id-statistics_get",
+        "summary": "GET /devices/{id}/statistics",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps. Vendor documentation: https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/api-portal-1-9-0.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /devices/{id}/statistics.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/developer-applications": {
+      "get": {
+        "tags": [
+          "Edge management"
+        ],
+        "operationId": "siemens_portal-api-1-9-0_get-developer-applications_get",
+        "summary": "GET /developer-applications",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps. Vendor documentation: https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/api-portal-1-9-0.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /developer-applications.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/developer-applications/{id}": {
+      "get": {
+        "tags": [
+          "Edge management"
+        ],
+        "operationId": "siemens_portal-api-1-9-0_get-developer-applications-id_get",
+        "summary": "GET /developer-applications/{id}",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps. Vendor documentation: https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/api-portal-1-9-0.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /developer-applications/{id}.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/developer-applications/{appid}/versions": {
+      "get": {
+        "tags": [
+          "Edge management"
+        ],
+        "operationId": "siemens_portal-api-1-9-0_get-developer-applications-appid-versions_get",
+        "summary": "GET /developer-applications/{appid}/versions",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps. Vendor documentation: https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/api-portal-1-9-0.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /developer-applications/{appid}/versions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/devices": {
+      "get": {
+        "tags": [
+          "Edge management"
+        ],
+        "operationId": "siemens_portal-api-1-9-0_get-devices_get",
+        "summary": "GET /devices",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps. Vendor documentation: https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/api-portal-1-9-0.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /devices.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      },
+      "post": {
+        "tags": [
+          "Edge management"
+        ],
+        "operationId": "siemens_portal-api-1-9-0_post-devices_post",
+        "summary": "POST /devices",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps. Vendor documentation: https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/api-portal-1-9-0.html",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for POST /devices.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for POST /devices.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/siemens/portal-api-1-9-0.json",
+    "vendor_documentation_url": "https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/api-portal-1-9-0.html",
+    "vendor_spec_artifact_url": "https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/portal-1.9.0-openapi.yaml",
+    "reviewed_at": "2026-04-18"
+  }
+}

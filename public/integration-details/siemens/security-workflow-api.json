@@ -6,7 +6,8 @@
   "product_family": "Building X",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-workflow-v1/security.workflow.openapi.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-workflow-v1/security.workflow.openapi.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/security-workflow-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-workflow-v1/security.workflow.openapi.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "RESTful API for listing available workflows and creating new workflow instances. Published API scope centers on administrative records and workflow lifecycle operations.",
   "data_domains": [
@@ -14,8 +15,8 @@
     "workflow-orchestration",
     "visitor-management"
   ],
-  "asset_data_available": "Not Supported",
-  "telemetry_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "identities",
@@ -49,11 +50,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-workflow-v1/overview.html",
-    "spec_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-workflow-v1/security.workflow.openapi.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/security-workflow-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Security Workflow API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Security Workflow API.",
+    "vendor_spec_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-workflow-v1/security.workflow.openapi.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/security-workflow-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/security-workflow-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/security-workflow-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/security-workflow-api.openapi.json"
 }

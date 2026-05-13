@@ -1,0 +1,635 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Square APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Square publicly documents API groups for payments, commerce, customers, and staff, plus API Explorer, GraphQL Explorer, developer console, and reference docs for orders, catalog, inventory, customers, loyalty, gift cards, team, and labor workflows.",
+    "description": "Manufactured OpenAPI artifact for Square APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Square's public developer hub groups its platform into Payments, Commerce, Customers, and Staff APIs. Public navigation highlights Payment solutions, Terminal API, Orders API, Catalog API, Inventory API, Customers API, Loyalty API, Gift Cards API, Team API, and Labor API, along with API Explorer and GraphQL Explorer for testing and schema inspection. This is a write-capable retail and payments integration surface, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://developer.squareup.com/docs"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Payments and commerce workflows",
+      "description": "Manufactured operations grouped under Payments and commerce workflows."
+    },
+    {
+      "name": "Customer and staff management",
+      "description": "Manufactured operations grouped under Customer and staff management."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "square_square-apis_integrationProfile",
+        "summary": "Get manufactured profile for Square APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payments": {
+      "get": {
+        "tags": [
+          "Payments and commerce workflows"
+        ],
+        "operationId": "square_square-apis_payments_get",
+        "summary": "Payments",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Square publicly describes APIs for transaction processing and seller commerce operations. Vendor documentation: https://developer.squareup.com/docs",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payments.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/terminal-api": {
+      "get": {
+        "tags": [
+          "Payments and commerce workflows"
+        ],
+        "operationId": "square_square-apis_terminal-api_get",
+        "summary": "Terminal API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Square publicly describes APIs for transaction processing and seller commerce operations. Vendor documentation: https://developer.squareup.com/docs",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Terminal API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/orders-api": {
+      "get": {
+        "tags": [
+          "Payments and commerce workflows"
+        ],
+        "operationId": "square_square-apis_orders-api_get",
+        "summary": "Orders API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Square publicly describes APIs for transaction processing and seller commerce operations. Vendor documentation: https://developer.squareup.com/docs",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Orders API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/catalog-api": {
+      "get": {
+        "tags": [
+          "Payments and commerce workflows"
+        ],
+        "operationId": "square_square-apis_catalog-api_get",
+        "summary": "Catalog API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Square publicly describes APIs for transaction processing and seller commerce operations. Vendor documentation: https://developer.squareup.com/docs",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Catalog API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/inventory-api": {
+      "get": {
+        "tags": [
+          "Payments and commerce workflows"
+        ],
+        "operationId": "square_square-apis_inventory-api_get",
+        "summary": "Inventory API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Square publicly describes APIs for transaction processing and seller commerce operations. Vendor documentation: https://developer.squareup.com/docs",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Inventory API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api-explorer": {
+      "get": {
+        "tags": [
+          "Payments and commerce workflows"
+        ],
+        "operationId": "square_square-apis_api-explorer_get",
+        "summary": "API Explorer",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Square publicly describes APIs for transaction processing and seller commerce operations. Vendor documentation: https://developer.squareup.com/docs",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for API Explorer.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/customers-api": {
+      "get": {
+        "tags": [
+          "Customer and staff management"
+        ],
+        "operationId": "square_square-apis_customers-api_get",
+        "summary": "Customers API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public hub also exposes APIs for customer engagement and employee operations. Vendor documentation: https://developer.squareup.com/docs",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Customers API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/loyalty-api": {
+      "get": {
+        "tags": [
+          "Customer and staff management"
+        ],
+        "operationId": "square_square-apis_loyalty-api_get",
+        "summary": "Loyalty API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public hub also exposes APIs for customer engagement and employee operations. Vendor documentation: https://developer.squareup.com/docs",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Loyalty API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/gift-cards-api": {
+      "get": {
+        "tags": [
+          "Customer and staff management"
+        ],
+        "operationId": "square_square-apis_gift-cards-api_get",
+        "summary": "Gift Cards API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public hub also exposes APIs for customer engagement and employee operations. Vendor documentation: https://developer.squareup.com/docs",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Gift Cards API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/team-api": {
+      "get": {
+        "tags": [
+          "Customer and staff management"
+        ],
+        "operationId": "square_square-apis_team-api_get",
+        "summary": "Team API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public hub also exposes APIs for customer engagement and employee operations. Vendor documentation: https://developer.squareup.com/docs",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Team API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/labor-api": {
+      "get": {
+        "tags": [
+          "Customer and staff management"
+        ],
+        "operationId": "square_square-apis_labor-api_get",
+        "summary": "Labor API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public hub also exposes APIs for customer engagement and employee operations. Vendor documentation: https://developer.squareup.com/docs",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Labor API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/graphql-explorer": {
+      "get": {
+        "tags": [
+          "Customer and staff management"
+        ],
+        "operationId": "square_square-apis_graphql-explorer_get",
+        "summary": "GraphQL Explorer",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public hub also exposes APIs for customer engagement and employee operations. Vendor documentation: https://developer.squareup.com/docs",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GraphQL Explorer.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/square/square-apis.json",
+    "vendor_documentation_url": "https://developer.squareup.com/docs",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

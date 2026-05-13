@@ -6,7 +6,7 @@
   "product_family": "ServiceChannel Platform",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
-  "spec_artifact_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "spec_artifact_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
   "detail_completeness": "researched",
   "data_coverage_summary": "The Service Requests area covers pre-work-order intake and triage, including request creation, retrieval, updates, status and priority changes, category and trade changes, reassignment options, duplicate detection, and request-info retrieval flows used before dispatch finalization.",
   "data_domains": [
@@ -16,9 +16,9 @@
     "duplicate-detection",
     "subscriber-request-context"
   ],
-  "asset_data_available": false,
-  "telemetry_data_available": false,
-  "writeback_supported": true,
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
   "key_entities": [
     "work requests",
     "service request info",
@@ -95,7 +95,7 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
-    "spec_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+    "spec_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
     "reviewed_at": "2026-04-17",
     "evidence_notes": "Based on the WorkRequests and ServiceRequest sections in the ServiceChannel v3 Swagger reference plus the OAuth and environment requirements documented in the ServiceChannel basics pages."
   }

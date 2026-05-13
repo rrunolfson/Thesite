@@ -6,7 +6,8 @@
   "product_family": "ServiceChannel Platform",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
-  "spec_artifact_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/servicechannel/service-requests-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
   "detail_completeness": "researched",
   "data_coverage_summary": "The Service Requests area covers pre-work-order intake and triage, including request creation, retrieval, updates, status and priority changes, category and trade changes, reassignment options, duplicate detection, and request-info retrieval flows used before dispatch finalization.",
   "data_domains": [
@@ -16,8 +17,8 @@
     "duplicate-detection",
     "subscriber-request-context"
   ],
-  "asset_data_available": "Not Supported",
-  "telemetry_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "work requests",
@@ -95,11 +96,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.servicechannel.com/swagger/index.html#/WorkRequests",
-    "spec_url": "https://developer.servicechannel.com/swagger/ui/index?version=3",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/servicechannel/service-requests-api.openapi.json",
     "reviewed_at": "2026-04-17",
-    "evidence_notes": "Based on the WorkRequests and ServiceRequest sections in the ServiceChannel v3 Swagger reference plus the OAuth and environment requirements documented in the ServiceChannel basics pages."
+    "evidence_notes": "Based on the WorkRequests and ServiceRequest sections in the ServiceChannel v3 Swagger reference plus the OAuth and environment requirements documented in the ServiceChannel basics pages.",
+    "vendor_spec_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/servicechannel/service-requests-api.openapi.json"
   },
   "detail_path": "/integration-details/servicechannel/service-requests-api.json",
   "vendor_domain": "servicechannel.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=servicechannel.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=servicechannel.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/servicechannel/service-requests-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/servicechannel/service-requests-api.openapi.json"
 }

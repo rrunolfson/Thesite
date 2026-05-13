@@ -6,7 +6,8 @@
   "product_family": "Building X",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-intrusion-v1/security.intrusion.openapi.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-intrusion-v1/security.intrusion.openapi.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/security-intrusion-api.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-intrusion-v1/security.intrusion.openapi.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "RESTful API for information about all cloud-enabled Intrusion systems. Published API scope combines intrusion-system inventory context with monitoring-oriented retrieval.",
   "data_domains": [
@@ -16,7 +17,7 @@
   ],
   "asset_data_available": "Supported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "intrusion systems",
     "control panels",
@@ -48,11 +49,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-intrusion-v1/overview.html",
-    "spec_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-intrusion-v1/security.intrusion.openapi.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/security-intrusion-api.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Security Intrusion API."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Security Intrusion API.",
+    "vendor_spec_url": "https://developer.siemens.com/building-x-openness/api/security-api/security-intrusion-v1/security.intrusion.openapi.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/security-intrusion-api.openapi.json"
   },
   "detail_path": "/integration-details/siemens/security-intrusion-api.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/security-intrusion-api.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/security-intrusion-api.openapi.json"
 }

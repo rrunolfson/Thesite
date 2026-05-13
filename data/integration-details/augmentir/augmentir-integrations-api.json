@@ -1,0 +1,82 @@
+{
+  "vendor_slug": "augmentir",
+  "vendor_name": "Augmentir",
+  "product_slug": "augmentir-integrations-api",
+  "product_name": "Augmentir integrations/API",
+  "product_family": "Augmentir",
+  "integration_type": "REST API",
+  "integration_api_url": "https://www.augmentir.com/product#integration-extensibility-section",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Augmentir publicly describes rich APIs, oData support, standard connectors, asset hierarchy management, workflow building, forms, maintenance notifications, and enterprise integrations for connected-worker operations.",
+  "data_domains": [
+    "work-instructions-and-workflows",
+    "asset-and-maintenance-workflows",
+    "skills-and-training",
+    "enterprise-integration"
+  ],
+  "asset_data_available": "Supported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "skills and training records",
+    "digital work instructions",
+    "forms and workflow data",
+    "issues and maintenance notifications",
+    "asset hierarchies",
+    "connector-based integrations"
+  ],
+  "buyer_guidance": "Use Augmentir integrations for connected-worker instructions, forms, maintenance and asset workflows, training, and enterprise data exchange. This is not a telemetry platform, but it does support asset-oriented workflow data and writeback.",
+  "overview": "Augmentir's public product pages describe an AI-native connected worker platform with no-code workflow building, smart forms, issue management, asset hierarchy management, and extensibility through rich APIs, oData, pro-code extensibility, and standard enterprise connectors. The public integration content highlights bi-directional integration with ERP, CMMS, QMS, MES, CRM, HCM, and LMS systems, plus asset-centered work and maintenance procedures, skills requirements, collaboration, associated documentation, CIL or standard work schedules, and history of activities on each asset. This is a write-capable manufacturing workflow platform with supported asset-oriented data, but it does not present public telemetry APIs. Asset data is Supported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Connected-worker instructions, forms, and training",
+      "description": "Augmentir publicly documents the workflow and knowledge surfaces it integrates across industrial operations.",
+      "data_points": [
+        "Skills management and targeted training insights",
+        "Digital work instructions and step-by-step procedures",
+        "Smart forms with validation and workflow branching",
+        "Industrial collaboration and knowledge capture",
+        "Issue management and Kanban-based problem solving"
+      ],
+      "relevant_operations": [
+        "Rich APIs",
+        "oDATA",
+        "Workflow Builder",
+        "Smart Forms",
+        "Issue Management",
+        "AI Agent Studio"
+      ]
+    },
+    {
+      "category": "Asset and enterprise integration workflows",
+      "description": "The platform also exposes asset-centered operations and broad system integration paths into the manufacturing digital thread.",
+      "data_points": [
+        "Asset hierarchy import and management",
+        "Work and maintenance procedures by asset",
+        "Skills, documentation, and collaboration attached to assets",
+        "CIL and standard work scheduling",
+        "Bi-directional integration with ERP, CMMS, QMS, MES, CRM, HCM, and LMS systems"
+      ],
+      "relevant_operations": [
+        "Asset Management",
+        "Create or Import asset hierarchy",
+        "Maintenance notifications escalation",
+        "Standard Connectors",
+        "Managed Integration Services",
+        "Pro-code extensibility"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Augmentir's public evidence is strong on workflows and integration capabilities but does not expose endpoint-level schemas, so downstream mappings should remain conservative until richer technical docs are available.",
+    "The public site explicitly mentions APIs and oData but not raw telemetry or machine interfaces, so telemetry support should remain Unsupported unless vendor technical docs show otherwise.",
+    "No exact public machine-readable spec artifact was confirmed for Augmentir."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://www.augmentir.com/product#integration-extensibility-section",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Augmentir's public product pages describe rich APIs, oDATA, standard connectors, workflow builder, smart forms, issue management, asset hierarchy management, and bi-directional integration with ERP, CMMS, QMS, MES, CRM, HCM, and LMS systems, along with asset-specific procedures, schedules, and maintenance workflows."
+  }
+}

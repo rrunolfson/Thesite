@@ -1,0 +1,763 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Plaid API Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Plaid publishes public API docs and a raw OpenAPI file for account connectivity, transactions, identity, auth, investments, transfers, payment initiation, asset reports, and webhooks.",
+    "description": "Manufactured OpenAPI artifact for Plaid API. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Plaid's public API reference documents JSON-over-HTTP endpoints served from sandbox and production environments, and its public plaid-openapi repository exposes a dated raw OpenAPI definition. The public docs cover Link token creation, accounts, transactions sync, identity, auth, liabilities, investment transactions, processor token creation, transfer flows, payment initiation, asset report creation and retrieval, and webhooks. This is a strong write-capable open finance platform, but it does not represent asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://plaid.com/docs/api/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Account connectivity and financial-data retrieval",
+      "description": "Manufactured operations grouped under Account connectivity and financial-data retrieval."
+    },
+    {
+      "name": "Reports, transfer, and partner-token workflows",
+      "description": "Manufactured operations grouped under Reports, transfer, and partner-token workflows."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "plaid_plaid-api_integrationProfile",
+        "summary": "Get manufactured profile for Plaid API",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/link/token/create": {
+      "post": {
+        "tags": [
+          "Account connectivity and financial-data retrieval"
+        ],
+        "operationId": "plaid_plaid-api_link-token-create_post",
+        "summary": "/link/token/create",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Plaid exposes the core account-linking and account-data workflows used by consumer-permissioned finance applications. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for /link/token/create.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for /link/token/create.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/accounts/get": {
+      "get": {
+        "tags": [
+          "Account connectivity and financial-data retrieval"
+        ],
+        "operationId": "plaid_plaid-api_accounts-get_get",
+        "summary": "/accounts/get",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Plaid exposes the core account-linking and account-data workflows used by consumer-permissioned finance applications. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for /accounts/get.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/transactions/sync": {
+      "get": {
+        "tags": [
+          "Account connectivity and financial-data retrieval"
+        ],
+        "operationId": "plaid_plaid-api_transactions-sync_get",
+        "summary": "/transactions/sync",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Plaid exposes the core account-linking and account-data workflows used by consumer-permissioned finance applications. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for /transactions/sync.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/identity/get": {
+      "get": {
+        "tags": [
+          "Account connectivity and financial-data retrieval"
+        ],
+        "operationId": "plaid_plaid-api_identity-get_get",
+        "summary": "/identity/get",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Plaid exposes the core account-linking and account-data workflows used by consumer-permissioned finance applications. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for /identity/get.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/auth/get": {
+      "get": {
+        "tags": [
+          "Account connectivity and financial-data retrieval"
+        ],
+        "operationId": "plaid_plaid-api_auth-get_get",
+        "summary": "/auth/get",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Plaid exposes the core account-linking and account-data workflows used by consumer-permissioned finance applications. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for /auth/get.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/liabilities/get": {
+      "get": {
+        "tags": [
+          "Account connectivity and financial-data retrieval"
+        ],
+        "operationId": "plaid_plaid-api_liabilities-get_get",
+        "summary": "/liabilities/get",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Plaid exposes the core account-linking and account-data workflows used by consumer-permissioned finance applications. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for /liabilities/get.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/investments/transactions/get": {
+      "get": {
+        "tags": [
+          "Account connectivity and financial-data retrieval"
+        ],
+        "operationId": "plaid_plaid-api_investments-transactions-get_get",
+        "summary": "/investments/transactions/get",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Plaid exposes the core account-linking and account-data workflows used by consumer-permissioned finance applications. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for /investments/transactions/get.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/asset_report/create": {
+      "post": {
+        "tags": [
+          "Reports, transfer, and partner-token workflows"
+        ],
+        "operationId": "plaid_plaid-api_asset-report-create_post",
+        "summary": "/asset_report/create",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API also supports downstream operational and money-movement use cases beyond simple data read access. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for /asset_report/create.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for /asset_report/create.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asset_report/get": {
+      "get": {
+        "tags": [
+          "Reports, transfer, and partner-token workflows"
+        ],
+        "operationId": "plaid_plaid-api_asset-report-get_get",
+        "summary": "/asset_report/get",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API also supports downstream operational and money-movement use cases beyond simple data read access. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for /asset_report/get.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/asset_report/pdf/get": {
+      "get": {
+        "tags": [
+          "Reports, transfer, and partner-token workflows"
+        ],
+        "operationId": "plaid_plaid-api_asset-report-pdf-get_get",
+        "summary": "/asset_report/pdf/get",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API also supports downstream operational and money-movement use cases beyond simple data read access. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for /asset_report/pdf/get.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/processor/token/create": {
+      "post": {
+        "tags": [
+          "Reports, transfer, and partner-token workflows"
+        ],
+        "operationId": "plaid_plaid-api_processor-token-create_post",
+        "summary": "/processor/token/create",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API also supports downstream operational and money-movement use cases beyond simple data read access. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for /processor/token/create.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Manufactured response envelope for /processor/token/create.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MutationEnvelope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transfer-flows": {
+      "get": {
+        "tags": [
+          "Reports, transfer, and partner-token workflows"
+        ],
+        "operationId": "plaid_plaid-api_transfer-flows_get",
+        "summary": "Transfer flows",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API also supports downstream operational and money-movement use cases beyond simple data read access. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Transfer flows.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/payment-initiation-flows": {
+      "get": {
+        "tags": [
+          "Reports, transfer, and partner-token workflows"
+        ],
+        "operationId": "plaid_plaid-api_payment-initiation-flows_get",
+        "summary": "Payment initiation flows",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API also supports downstream operational and money-movement use cases beyond simple data read access. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Payment initiation flows.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/webhooks": {
+      "get": {
+        "tags": [
+          "Reports, transfer, and partner-token workflows"
+        ],
+        "operationId": "plaid_plaid-api_webhooks_get",
+        "summary": "Webhooks",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public API also supports downstream operational and money-movement use cases beyond simple data read access. Vendor documentation: https://plaid.com/docs/api/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Webhooks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/plaid/plaid-api.json",
+    "vendor_documentation_url": "https://plaid.com/docs/api/",
+    "vendor_spec_artifact_url": "https://raw.githubusercontent.com/plaid/plaid-openapi/master/2020-09-14.yml",
+    "reviewed_at": "2026-05-13"
+  }
+}

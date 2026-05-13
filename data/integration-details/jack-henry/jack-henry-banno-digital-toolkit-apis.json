@@ -1,0 +1,58 @@
+{
+  "vendor_slug": "jack-henry",
+  "vendor_name": "Jack Henry",
+  "product_slug": "jack-henry-banno-digital-toolkit-apis",
+  "product_name": "Jack Henry Banno Digital Toolkit / APIs",
+  "product_family": "Jack Henry Banno Digital",
+  "integration_type": "REST API",
+  "integration_api_url": "https://jackhenry.dev/",
+  "spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Jack Henry Banno Digital Toolkit / APIs has public documentation that indicates banking accounts and transaction workflows across accounts, customers, transactions, cards. Public developer docs for Jack Henry digital banking ecosystem.",
+  "data_domains": [
+    "accounts-and-ledgers",
+    "customer-records",
+    "banking-workflows"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "accounts",
+    "customers",
+    "transactions",
+    "cards",
+    "ledgers"
+  ],
+  "buyer_guidance": "Use this API family for customer, account, and transaction integration inside digital-banking or core-banking workflows. Jack Henry should be treated as a rest api surface for banking accounts and transaction workflows.",
+  "overview": "Public documentation reviewed for Jack Henry Banno Digital Toolkit / APIs indicates Public developer docs for Jack Henry digital banking ecosystem. The documented surface aligns with banking accounts and transaction workflows and covers accounts, customers, transactions, cards. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Banking accounts and transaction workflows",
+      "description": "The public documentation indicates banking workflows around accounts, customers, transactions, cards, and ledger-side operations.",
+      "data_points": [
+        "Customer and account records",
+        "Transaction and ledger-linked data",
+        "Card, payment, or transfer workflows",
+        "Operational banking metadata and events"
+      ],
+      "relevant_operations": [
+        "list account and customer records",
+        "read transaction and ledger data",
+        "create or update banking workflows",
+        "submit payment or account-state changes"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "The public source for Jack Henry Banno Digital Toolkit / APIs is documentation-oriented, so live access still depends on vendor-issued credentials, tenant configuration, or customer enablement.",
+    "This row is modeled as banking accounts and transaction workflows, so downstream integrations should scope data collection and writeback around those documented business workflows.",
+    "No exact public machine-readable JSON or YAML artifact was confirmed during this pass, so the documentation URL remains the primary evidence anchor."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://jackhenry.dev/",
+    "spec_url": "",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Public developer docs for Jack Henry digital banking ecosystem."
+  }
+}

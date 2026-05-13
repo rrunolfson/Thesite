@@ -14,16 +14,16 @@
     "hos-logs",
     "regulatory-events"
   ],
-  "asset_data_available": "Not Supported",
+  "asset_data_available": "Unsupported",
   "telemetry_data_available": "Supported",
-  "writeback_supported": "Not Supported",
+  "writeback_supported": "Unsupported",
   "key_entities": [
     "HOS logs",
     "driver duty status",
     "compliance records"
   ],
   "buyer_guidance": "Use HOS Logs when the integration scope is regulatory compliance, dispatch context, or downstream exception handling tied to driver duty state.",
-  "overview": "The HOS Logs API is a telemetry surface for duty-status and compliance records. It does not expose vehicle or equipment inventory as the primary payload, and the documented use is read-focused rather than mutation-oriented. Asset data is Not Supported. Telemetry data is Supported. Writeback is Not Supported.",
+  "overview": "The HOS Logs API is a telemetry surface for duty-status and compliance records. It does not expose vehicle or equipment inventory as the primary payload, and the documented use is read-focused rather than mutation-oriented. Asset data is Unsupported. Telemetry data is Supported. Writeback is Unsupported.",
   "available_data": [
     {
       "category": "Compliance telemetry",

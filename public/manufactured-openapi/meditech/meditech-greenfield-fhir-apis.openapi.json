@@ -1,0 +1,907 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MEDITECH Greenfield / FHIR APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "MEDITECH Greenfield publicly documents US Core STU7 patient health APIs based on FHIR R4 for patient, appointment, clinical, document, medication, device, and group-export retrieval workflows.",
+    "description": "Manufactured OpenAPI artifact for MEDITECH Greenfield / FHIR APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. MEDITECH's public Greenfield documentation describes patient health data APIs designed to satisfy USCDI v3 requirements using HL7 FHIR US Core STU7 on top of FHIR R4. The public path listing shows resources such as AllergyIntolerance, Appointment, Binary, CarePlan, CareTeam, Communication, Condition, Coverage, Device, DiagnosticReport, DocumentReference, Encounter, Goal, Group, Immunization, Location, Medication, MedicationDispense, MedicationRequest, Observation, Organization, Patient, Practitioner, Procedure, QuestionnaireResponse, RelatedPerson, ServiceRequest, Specimen, and Task under the v2/uscore/STU7 namespace, plus group operations and patient-specific operations. The documentation emphasizes OAuth 2.0, OpenID Connect, institution-managed application configuration, and patient linking, but does not show public write-capable operations for this surface. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Unsupported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://greenfield.meditech.com/explorer/topic/USCore-STU7"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Patient, scheduling, and core clinical records",
+      "description": "Manufactured operations grouped under Patient, scheduling, and core clinical records."
+    },
+    {
+      "name": "Documents, medications, devices, and export-oriented resources",
+      "description": "Manufactured operations grouped under Documents, medications, devices, and export-oriented resources."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_integrationProfile",
+        "summary": "Get manufactured profile for MEDITECH Greenfield / FHIR APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/Patient": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and core clinical records"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-patient_get",
+        "summary": "GET /v2/uscore/STU7/Patient/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published US Core STU7 path listing covers the main patient-data and scheduling resources required for certified interoperability use cases. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/Patient/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/Patient/{id}": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and core clinical records"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-patient-id_get",
+        "summary": "GET /v2/uscore/STU7/Patient/{id}/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published US Core STU7 path listing covers the main patient-data and scheduling resources required for certified interoperability use cases. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/Patient/{id}/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/Appointment": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and core clinical records"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-appointment_get",
+        "summary": "GET /v2/uscore/STU7/Appointment/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published US Core STU7 path listing covers the main patient-data and scheduling resources required for certified interoperability use cases. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/Appointment/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/Appointment/{id}": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and core clinical records"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-appointment-id_get",
+        "summary": "GET /v2/uscore/STU7/Appointment/{id}/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published US Core STU7 path listing covers the main patient-data and scheduling resources required for certified interoperability use cases. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/Appointment/{id}/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/CarePlan": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and core clinical records"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-careplan_get",
+        "summary": "GET /v2/uscore/STU7/CarePlan/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published US Core STU7 path listing covers the main patient-data and scheduling resources required for certified interoperability use cases. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/CarePlan/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/Condition": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and core clinical records"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-condition_get",
+        "summary": "GET /v2/uscore/STU7/Condition/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published US Core STU7 path listing covers the main patient-data and scheduling resources required for certified interoperability use cases. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/Condition/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/Encounter": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and core clinical records"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-encounter_get",
+        "summary": "GET /v2/uscore/STU7/Encounter/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published US Core STU7 path listing covers the main patient-data and scheduling resources required for certified interoperability use cases. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/Encounter/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/Procedure": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and core clinical records"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-procedure_get",
+        "summary": "GET /v2/uscore/STU7/Procedure/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published US Core STU7 path listing covers the main patient-data and scheduling resources required for certified interoperability use cases. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/Procedure/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/ServiceRequest": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and core clinical records"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-servicerequest_get",
+        "summary": "GET /v2/uscore/STU7/ServiceRequest/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published US Core STU7 path listing covers the main patient-data and scheduling resources required for certified interoperability use cases. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/ServiceRequest/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/QuestionnaireResponse": {
+      "get": {
+        "tags": [
+          "Patient, scheduling, and core clinical records"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-questionnaireresponse_get",
+        "summary": "GET /v2/uscore/STU7/QuestionnaireResponse/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The published US Core STU7 path listing covers the main patient-data and scheduling resources required for certified interoperability use cases. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/QuestionnaireResponse/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/Binary/{id}": {
+      "get": {
+        "tags": [
+          "Documents, medications, devices, and export-oriented resources"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-binary-id_get",
+        "summary": "GET /v2/uscore/STU7/Binary/{id}/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenfield also exposes retrieval paths for documents, devices, diagnostics, medications, and group-based exports. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/Binary/{id}/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/DocumentReference": {
+      "get": {
+        "tags": [
+          "Documents, medications, devices, and export-oriented resources"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-documentreference_get",
+        "summary": "GET /v2/uscore/STU7/DocumentReference/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenfield also exposes retrieval paths for documents, devices, diagnostics, medications, and group-based exports. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/DocumentReference/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/Device": {
+      "get": {
+        "tags": [
+          "Documents, medications, devices, and export-oriented resources"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-device_get",
+        "summary": "GET /v2/uscore/STU7/Device/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenfield also exposes retrieval paths for documents, devices, diagnostics, medications, and group-based exports. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/Device/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/DiagnosticReport": {
+      "get": {
+        "tags": [
+          "Documents, medications, devices, and export-oriented resources"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-diagnosticreport_get",
+        "summary": "GET /v2/uscore/STU7/DiagnosticReport/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenfield also exposes retrieval paths for documents, devices, diagnostics, medications, and group-based exports. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/DiagnosticReport/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/Observation": {
+      "get": {
+        "tags": [
+          "Documents, medications, devices, and export-oriented resources"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-observation_get",
+        "summary": "GET /v2/uscore/STU7/Observation/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenfield also exposes retrieval paths for documents, devices, diagnostics, medications, and group-based exports. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/Observation/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/Specimen": {
+      "get": {
+        "tags": [
+          "Documents, medications, devices, and export-oriented resources"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-specimen_get",
+        "summary": "GET /v2/uscore/STU7/Specimen/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenfield also exposes retrieval paths for documents, devices, diagnostics, medications, and group-based exports. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/Specimen/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/Medication": {
+      "get": {
+        "tags": [
+          "Documents, medications, devices, and export-oriented resources"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-medication_get",
+        "summary": "GET /v2/uscore/STU7/Medication/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenfield also exposes retrieval paths for documents, devices, diagnostics, medications, and group-based exports. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/Medication/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/MedicationDispense": {
+      "get": {
+        "tags": [
+          "Documents, medications, devices, and export-oriented resources"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-medicationdispense_get",
+        "summary": "GET /v2/uscore/STU7/MedicationDispense/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenfield also exposes retrieval paths for documents, devices, diagnostics, medications, and group-based exports. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/MedicationDispense/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/MedicationRequest": {
+      "get": {
+        "tags": [
+          "Documents, medications, devices, and export-oriented resources"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-medicationrequest_get",
+        "summary": "GET /v2/uscore/STU7/MedicationRequest/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenfield also exposes retrieval paths for documents, devices, diagnostics, medications, and group-based exports. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/MedicationRequest/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/v2/uscore/STU7/Group/{id}/{operation}": {
+      "get": {
+        "tags": [
+          "Documents, medications, devices, and export-oriented resources"
+        ],
+        "operationId": "meditech_meditech-greenfield-fhir-apis_get-v2-uscore-stu7-group-id-operation_get",
+        "summary": "GET /v2/uscore/STU7/Group/{id}/{operation}/",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Greenfield also exposes retrieval paths for documents, devices, diagnostics, medications, and group-based exports. Vendor documentation: https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for GET /v2/uscore/STU7/Group/{id}/{operation}/.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/meditech/meditech-greenfield-fhir-apis.json",
+    "vendor_documentation_url": "https://greenfield.meditech.com/explorer/topic/USCore-STU7",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "vendor_slug": "toast",
+  "vendor_name": "Toast",
+  "product_slug": "toast-apis",
+  "product_name": "Toast APIs",
+  "product_family": "Toast",
+  "integration_type": "REST API",
+  "integration_api_url": "https://doc.toasttab.com/",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/toast/toast-apis.openapi.json",
+  "vendor_spec_artifact_url": "",
+  "detail_completeness": "researched",
+  "data_coverage_summary": "Toast publicly exposes technical documentation organized around integration how-to guides, developer guides, a browsable API reference, platform guides, and standard versus analytics API access for restaurant operations.",
+  "data_domains": [
+    "restaurant-operations",
+    "api-integration-guides",
+    "analytics-and-reporting",
+    "platform-integration"
+  ],
+  "asset_data_available": "Unsupported",
+  "telemetry_data_available": "Unsupported",
+  "writeback_supported": "Supported",
+  "key_entities": [
+    "restaurant business operations",
+    "standard API integrations",
+    "analytics API data",
+    "platform products",
+    "endpoint reference definitions",
+    "partner integrations"
+  ],
+  "buyer_guidance": "Use Toast APIs for restaurant and hospitality platform integrations, including standard API, analytics, and partner workflows. This is a commerce and operations platform, not an asset or telemetry platform.",
+  "overview": "Toast's public technical documentation is organized around customers and partners building integrations with Toast technology. The public landing page explicitly offers paths for standard API access, analytics API access, custom integrations with dedicated Toast support, developer guides, integration how-to guides, a browsable API reference, and platform guides. This indicates a write-capable restaurant and hospitality integration platform with both operational and analytics-oriented APIs, but not one centered on asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+  "available_data": [
+    {
+      "category": "Operational restaurant integrations",
+      "description": "Toast publicly frames its API platform around integrations that support restaurant business operations.",
+      "data_points": [
+        "Standard API access for customer integrations",
+        "Developer guidance for building integrations",
+        "Endpoint and data-definition reference coverage",
+        "Platform-product integration documentation",
+        "Partner-oriented integration workflows"
+      ],
+      "relevant_operations": [
+        "Developer guide",
+        "API reference",
+        "Integration how-to",
+        "Platform guide",
+        "Standard API access"
+      ]
+    },
+    {
+      "category": "Analytics and supported partner paths",
+      "description": "The public docs also distinguish analytics access and supported custom integration paths.",
+      "data_points": [
+        "Analytics API integrations",
+        "Custom integrations with dedicated support",
+        "Restaurant platform release tracking",
+        "Partner application workflows",
+        "Technical reference browsing through openapi pages"
+      ],
+      "relevant_operations": [
+        "Analytics API",
+        "Custom integration",
+        "Release notes",
+        "Partners",
+        "OpenAPI reference"
+      ]
+    }
+  ],
+  "ingest_considerations": [
+    "Toast's public landing page is a navigation hub rather than a single resource-specific reference, so downstream mapping should use deeper Toast docs if a particular object family becomes important.",
+    "The documentation clearly signals both standard and analytics API access, which should be modeled separately because they imply different integration patterns and data latency characteristics.",
+    "No exact raw machine-readable spec artifact was confirmed for the aggregate Toast row during this pass, even though the docs link an OpenAPI-style reference section."
+  ],
+  "source_evidence": {
+    "documentation_url": "https://doc.toasttab.com/",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/toast/toast-apis.openapi.json",
+    "reviewed_at": "2026-05-13",
+    "evidence_notes": "Toast's public technical documentation landing page explicitly offers standard API access, analytics API access, custom integrations, integration how-to guides, a developer guide, a browsable API reference at /openapi/, platform guides, and release notes for Toast platform integrations.",
+    "vendor_spec_url": "",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/toast/toast-apis.openapi.json"
+  },
+  "detail_path": "/integration-details/toast/toast-apis.json",
+  "vendor_domain": "toasttab.com",
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=toasttab.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/toast/toast-apis.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/toast/toast-apis.openapi.json"
+}

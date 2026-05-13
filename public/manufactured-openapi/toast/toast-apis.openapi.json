@@ -1,0 +1,567 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Toast APIs Manufactured OpenAPI",
+    "version": "0.1.0-manufactured-2026-05-13",
+    "summary": "Toast publicly exposes technical documentation organized around integration how-to guides, developer guides, a browsable API reference, platform guides, and standard versus analytics API access for restaurant operations.",
+    "description": "Manufactured OpenAPI artifact for Toast APIs. This file was synthesized by Last Mile from curated research JSON and is not vendor-certified. Use it as an agent-consumable starting point, then validate paths, schemas, authentication, and server URLs with the vendor before production use. Toast's public technical documentation is organized around customers and partners building integrations with Toast technology. The public landing page explicitly offers paths for standard API access, analytics API access, custom integrations with dedicated Toast support, developer guides, integration how-to guides, a browsable API reference, and platform guides. This indicates a write-capable restaurant and hospitality integration platform with both operational and analytics-oriented APIs, but not one centered on asset or telemetry data. Asset data is Unsupported. Telemetry data is Unsupported. Writeback is Supported.",
+    "contact": {
+      "name": "Last Mile Catalog Research",
+      "url": "https://lastmileinc.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{host}{basePath}",
+      "description": "Placeholder server template. Replace with the vendor-confirmed API host and base path before generating production clients.",
+      "variables": {
+        "protocol": {
+          "default": "https",
+          "enum": [
+            "https"
+          ]
+        },
+        "host": {
+          "default": "replace-with-vendor-host.invalid"
+        },
+        "basePath": {
+          "default": "/"
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Vendor documentation used as the primary public source for this manufactured contract.",
+    "url": "https://doc.toasttab.com/"
+  },
+  "tags": [
+    {
+      "name": "Integration Profile",
+      "description": "Last Mile manufactured profile and research provenance."
+    },
+    {
+      "name": "Operational restaurant integrations",
+      "description": "Manufactured operations grouped under Operational restaurant integrations."
+    },
+    {
+      "name": "Analytics and supported partner paths",
+      "description": "Manufactured operations grouped under Analytics and supported partner paths."
+    }
+  ],
+  "paths": {
+    "/integration-profile": {
+      "get": {
+        "tags": [
+          "Integration Profile"
+        ],
+        "operationId": "toast_toast-apis_integrationProfile",
+        "summary": "Get manufactured profile for Toast APIs",
+        "description": "Returns the Last Mile curated integration profile used to synthesize this OpenAPI artifact.",
+        "responses": {
+          "200": {
+            "description": "Curated integration profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationProfile"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "researched",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/developer-guide": {
+      "get": {
+        "tags": [
+          "Operational restaurant integrations"
+        ],
+        "operationId": "toast_toast-apis_developer-guide_get",
+        "summary": "Developer guide",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Toast publicly frames its API platform around integrations that support restaurant business operations. Vendor documentation: https://doc.toasttab.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Developer guide.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/api-reference": {
+      "get": {
+        "tags": [
+          "Operational restaurant integrations"
+        ],
+        "operationId": "toast_toast-apis_api-reference_get",
+        "summary": "API reference",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Toast publicly frames its API platform around integrations that support restaurant business operations. Vendor documentation: https://doc.toasttab.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for API reference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/integration-how-to": {
+      "get": {
+        "tags": [
+          "Operational restaurant integrations"
+        ],
+        "operationId": "toast_toast-apis_integration-how-to_get",
+        "summary": "Integration how-to",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Toast publicly frames its API platform around integrations that support restaurant business operations. Vendor documentation: https://doc.toasttab.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Integration how-to.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/platform-guide": {
+      "get": {
+        "tags": [
+          "Operational restaurant integrations"
+        ],
+        "operationId": "toast_toast-apis_platform-guide_get",
+        "summary": "Platform guide",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Toast publicly frames its API platform around integrations that support restaurant business operations. Vendor documentation: https://doc.toasttab.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Platform guide.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/standard-api-access": {
+      "get": {
+        "tags": [
+          "Operational restaurant integrations"
+        ],
+        "operationId": "toast_toast-apis_standard-api-access_get",
+        "summary": "Standard API access",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. Toast publicly frames its API platform around integrations that support restaurant business operations. Vendor documentation: https://doc.toasttab.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Standard API access.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/analytics-api": {
+      "get": {
+        "tags": [
+          "Analytics and supported partner paths"
+        ],
+        "operationId": "toast_toast-apis_analytics-api_get",
+        "summary": "Analytics API",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also distinguish analytics access and supported custom integration paths. Vendor documentation: https://doc.toasttab.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Analytics API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/custom-integration": {
+      "get": {
+        "tags": [
+          "Analytics and supported partner paths"
+        ],
+        "operationId": "toast_toast-apis_custom-integration_get",
+        "summary": "Custom integration",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also distinguish analytics access and supported custom integration paths. Vendor documentation: https://doc.toasttab.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Custom integration.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/release-notes": {
+      "get": {
+        "tags": [
+          "Analytics and supported partner paths"
+        ],
+        "operationId": "toast_toast-apis_release-notes_get",
+        "summary": "Release notes",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also distinguish analytics access and supported custom integration paths. Vendor documentation: https://doc.toasttab.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Release notes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/partners": {
+      "get": {
+        "tags": [
+          "Analytics and supported partner paths"
+        ],
+        "operationId": "toast_toast-apis_partners_get",
+        "summary": "Partners",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also distinguish analytics access and supported custom integration paths. Vendor documentation: https://doc.toasttab.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for Partners.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    },
+    "/openapi-reference": {
+      "get": {
+        "tags": [
+          "Analytics and supported partner paths"
+        ],
+        "operationId": "toast_toast-apis_openapi-reference_get",
+        "summary": "OpenAPI reference",
+        "description": "Manufactured OpenAPI operation synthesized from Last Mile curated research. The public docs also distinguish analytics access and supported custom integration paths. Vendor documentation: https://doc.toasttab.com/",
+        "responses": {
+          "200": {
+            "description": "Manufactured response envelope for OpenAPI reference.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationEnvelope"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardError"
+                }
+              }
+            }
+          }
+        },
+        "x-lastmile-confidence": "manufactured-from-curated-json",
+        "x-lastmile-manufactured": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "vendor_slug": {
+            "type": "string",
+            "description": "Vendor slug from the Last Mile catalog."
+          },
+          "product_slug": {
+            "type": "string",
+            "description": "Product slug from the Last Mile catalog."
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "data_coverage_summary": {
+            "type": "string"
+          },
+          "data_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_entities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "buyer_guidance": {
+            "type": "string"
+          },
+          "overview": {
+            "type": "string"
+          },
+          "asset_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "telemetry_data_available": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "writeback_supported": {
+            "type": "string",
+            "enum": [
+              "Supported",
+              "Unsupported"
+            ]
+          },
+          "documentation_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vendor_spec_artifact_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "vendor_slug",
+          "product_slug",
+          "product_name",
+          "data_coverage_summary",
+          "data_domains",
+          "key_entities",
+          "overview",
+          "asset_data_available",
+          "telemetry_data_available",
+          "writeback_supported"
+        ]
+      },
+      "OperationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "operation",
+          "source"
+        ]
+      },
+      "MutationEnvelope": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Manufactured placeholder payload derived from curated research. Replace with vendor-confirmed fields during implementation."
+          }
+        },
+        "required": [
+          "operation"
+        ]
+      },
+      "StandardError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  },
+  "x-lastmile": {
+    "api_spec_origin": "manufactured",
+    "manufactured_from_detail_path": "/integration-details/toast/toast-apis.json",
+    "vendor_documentation_url": "https://doc.toasttab.com/",
+    "vendor_spec_artifact_url": "",
+    "reviewed_at": "2026-05-13"
+  }
+}

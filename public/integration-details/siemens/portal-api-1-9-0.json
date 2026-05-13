@@ -6,7 +6,8 @@
   "product_family": "Industrial Edge",
   "integration_type": "OpenAPI",
   "integration_api_url": "https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/portal-1.9.0-openapi.yaml",
-  "spec_artifact_url": "https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/portal-1.9.0-openapi.yaml",
+  "spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/portal-api-1-9-0.openapi.json",
+  "vendor_spec_artifact_url": "https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/portal-1.9.0-openapi.yaml",
   "detail_completeness": "researched",
   "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. Published API scope centers on provisioning, configuration, and lifecycle management for Industrial Edge assets and apps.",
   "data_domains": [
@@ -15,7 +16,7 @@
     "configuration"
   ],
   "asset_data_available": "Supported",
-  "telemetry_data_available": "Not Supported",
+  "telemetry_data_available": "Unsupported",
   "writeback_supported": "Supported",
   "key_entities": [
     "edge devices",
@@ -55,11 +56,16 @@
   ],
   "source_evidence": {
     "documentation_url": "https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/api-portal-1-9-0.html",
-    "spec_url": "https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/portal-1.9.0-openapi.yaml",
+    "spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/portal-api-1-9-0.openapi.json",
     "reviewed_at": "2026-04-18",
-    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Portal API 1.9.0."
+    "evidence_notes": "Classification is based on the official Siemens product overview and the published spec artifact for Portal API 1.9.0.",
+    "vendor_spec_url": "https://developer.siemens.com/industrial-edge/api/iem/api-portal/v1.9.0/portal-1.9.0-openapi.yaml",
+    "manufactured_spec_url": "https://lastmileinc.ai/manufactured-openapi/siemens/portal-api-1-9-0.openapi.json"
   },
   "detail_path": "/integration-details/siemens/portal-api-1-9-0.json",
   "vendor_domain": "siemens.com",
-  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128"
+  "vendor_logo_src": "https://www.google.com/s2/favicons?domain=siemens.com&sz=128",
+  "api_spec_origin": "manufactured",
+  "manufactured_spec_artifact_url": "https://lastmileinc.ai/manufactured-openapi/siemens/portal-api-1-9-0.openapi.json",
+  "manufactured_spec_path": "/manufactured-openapi/siemens/portal-api-1-9-0.openapi.json"
 }
