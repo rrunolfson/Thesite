@@ -16,7 +16,7 @@
     "driver-compliance-settings",
     "tachograph-and-ruleset-overrides"
   ],
-  "asset_data_available": "N/A",
+  "asset_data_available": "Not Supported",
   "telemetry_data_available": "Supported",
   "writeback_supported": "Supported",
   "key_entities": [

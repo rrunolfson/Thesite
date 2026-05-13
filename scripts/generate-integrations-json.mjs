@@ -234,7 +234,7 @@ function normalizeCapabilityValue(value) {
   }
 
   if (normalizedValue === "n/a" || normalizedValue === "na") {
-    return "N/A";
+    return "Not Supported";
   }
 
   return null;

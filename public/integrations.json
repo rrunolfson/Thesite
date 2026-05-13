@@ -1,13 +1,13 @@
 {
   "meta": {
-    "generated_at": "2026-05-12T11:40:03.340Z",
+    "generated_at": "2026-05-11T23:37:49.554Z",
     "source_csv": "data/integrations.csv",
     "source_mode": "local-file",
     "public_json_path": "/integrations.json",
     "public_json_url": "https://lastmileinc.ai/integrations.json",
-    "record_count": 78,
-    "industry_count": 5,
-    "function_count": 32,
+    "record_count": 83,
+    "industry_count": 6,
+    "function_count": 15,
     "discovery": {
       "html_meta_name": "lastmile:integrations-data",
       "html_meta_content": "https://lastmileinc.ai/integrations.json",
@@ -33,14 +33,6 @@
       "industry_description": "Industrial automation, asset telemetry, edge systems, and operational workflows.",
       "functions": [
         {
-          "industry_function_slug": "erp",
-          "industry_function_name": "ERP",
-          "industry_function_description": "Enterprise planning, order orchestration, and system-of-record workflows for manufacturing operations.",
-          "industry_function_sort_order": 10,
-          "product_count": 0,
-          "vendor_count": 0
-        },
-        {
           "industry_function_slug": "mes-production",
           "industry_function_name": "MES & Production",
           "industry_function_description": "Execution, production visibility, and plant-floor workflow systems tied to manufacturing throughput.",
@@ -49,28 +41,12 @@
           "vendor_count": 1
         },
         {
-          "industry_function_slug": "quality-qms",
-          "industry_function_name": "Quality",
-          "industry_function_description": "Quality management, compliance, and inspection workflows for manufactured products and process control.",
-          "industry_function_sort_order": 30,
-          "product_count": 0,
-          "vendor_count": 0
-        },
-        {
           "industry_function_slug": "supply-chain",
           "industry_function_name": "Supply Chain",
           "industry_function_description": "Planning, sourcing, and supply coordination systems that keep materials and production aligned.",
           "industry_function_sort_order": 40,
-          "product_count": 4,
+          "product_count": 5,
           "vendor_count": 1
-        },
-        {
-          "industry_function_slug": "inventory-wms",
-          "industry_function_name": "Inventory & WMS",
-          "industry_function_description": "Inventory accuracy, warehouse execution, and material movement systems.",
-          "industry_function_sort_order": 50,
-          "product_count": 0,
-          "vendor_count": 0
         },
         {
           "industry_function_slug": "maintenance-cmms",
@@ -87,14 +63,6 @@
           "industry_function_sort_order": 70,
           "product_count": 3,
           "vendor_count": 1
-        },
-        {
-          "industry_function_slug": "finance-accounting",
-          "industry_function_name": "Finance & Accounting",
-          "industry_function_description": "Financial close, accounting, and planning platforms used in manufacturing businesses.",
-          "industry_function_sort_order": 80,
-          "product_count": 0,
-          "vendor_count": 0
         },
         {
           "industry_function_slug": "safety-ehs",
@@ -154,6 +122,43 @@
                 "documents",
                 "specifications",
                 "project records"
+              ]
+            },
+            {
+              "product_slug": "battery-passport-rest-api",
+              "product_name": "Battery Passport REST API",
+              "industry_function_slug": "supply-chain",
+              "industry_function_name": "Supply Chain",
+              "industry_function_description": "Planning, sourcing, and supply coordination systems that keep materials and production aligned.",
+              "industry_function_sort_order": 40,
+              "product_family": "Battery Passport",
+              "integration_status": "built",
+              "integration_type": "OpenAPI",
+              "integration_api_url": "https://developer.siemens.com/battery-passport/postman-collection.json",
+              "product_summary": "The Battery Passport platform offers a rest API in order to provide data exchange in a standardized and self-described way.",
+              "product_sort_order": 50,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/siemens/battery-passport-rest-api.json",
+              "data_domains": [
+                "asset-master-data",
+                "identity-access",
+                "partner-connectors",
+                "documents-and-passports",
+                "analytics",
+                "schema-management"
+              ],
+              "data_coverage_summary": "The Battery Passport REST API provides standardized access to battery passport records and related organization, connector, analytics, and schema information used to manage battery passport data exchange across the ecosystem.",
+              "asset_data_available": "Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Supported",
+              "key_entities": [
+                "battery passports",
+                "passport attributes",
+                "organizations",
+                "organization users",
+                "Catena-X connectors",
+                "data schemas"
               ]
             },
             {
@@ -753,9 +758,9 @@
                 "telemetry-payload-format"
               ],
               "data_coverage_summary": "Industrial Edge is an open, ready-to-use edge computing platform, with edge devices, edge applications (apps) and connectivity through an integrated app and device management infrastructure. Published specification defines the structure of telemetry payloads on the Industrial Edge databus.",
-              "asset_data_available": "N/A",
+              "asset_data_available": "Not Supported",
               "telemetry_data_available": "Supported",
-              "writeback_supported": "N/A",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "payload schemas",
                 "telemetry messages",
@@ -852,9 +857,9 @@
                 "administration"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
-              "writeback_supported": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "users",
                 "policies",
@@ -886,9 +891,9 @@
                 "administration"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
-              "writeback_supported": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "users",
                 "policies",
@@ -920,9 +925,9 @@
                 "administration"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
-              "writeback_supported": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "users",
                 "policies",
@@ -954,9 +959,9 @@
                 "administration"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
-              "writeback_supported": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "users",
                 "policies",
@@ -988,9 +993,9 @@
                 "administration"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
-              "writeback_supported": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "users",
                 "policies",
@@ -1022,9 +1027,9 @@
                 "administration"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
-              "writeback_supported": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "users",
                 "policies",
@@ -1056,9 +1061,9 @@
                 "administration"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
-              "writeback_supported": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "users",
                 "policies",
@@ -1246,9 +1251,9 @@
                 "administration"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
-              "writeback_supported": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "users",
                 "policies",
@@ -1408,9 +1413,9 @@
                 "administration"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
-              "writeback_supported": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "users",
                 "policies",
@@ -1474,9 +1479,9 @@
                 "administration"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
-              "writeback_supported": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "users",
                 "policies",
@@ -1508,9 +1513,9 @@
                 "administration"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
-              "writeback_supported": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "users",
                 "policies",
@@ -1572,9 +1577,9 @@
                 "administration"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
-              "writeback_supported": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "users",
                 "policies",
@@ -1606,9 +1611,9 @@
                 "administration"
               ],
               "data_coverage_summary": "Insights Hub drives smart manufacturing through the industrial Internet of Things. Gain actionable insights with asset and operational data and improve your processes. Published API scope is focused on platform administration, identity, policy, and orchestration support.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
-              "writeback_supported": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "users",
                 "policies",
@@ -1862,8 +1867,8 @@
                 "comments"
               ],
               "data_coverage_summary": "SiGREEN offers a suite of powerful APIs designed to revolutionize your PCF management practices. With SiGREEN API, you can easily connect your Enterprise Resource Planning (ERP) and Product Lifecycle Management (PLM) systems to SiGREEN. Published API scope centers on task, request, and comment workflows in SiGREEN.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "tasks",
@@ -2009,84 +2014,12 @@
       "industry_description": "Clinical equipment, biomedical systems, and operational coordination APIs.",
       "functions": [
         {
-          "industry_function_slug": "ehr-clinical-data",
-          "industry_function_name": "EHR & Clinical Data",
-          "industry_function_description": "Electronic health record, clinical workflow, and patient data exchange platforms.",
-          "industry_function_sort_order": 10,
-          "product_count": 0,
-          "vendor_count": 0
-        },
-        {
-          "industry_function_slug": "practice-management",
-          "industry_function_name": "Practice Management",
-          "industry_function_description": "Scheduling, administration, and operational systems for ambulatory and specialty practices.",
-          "industry_function_sort_order": 20,
-          "product_count": 0,
-          "vendor_count": 0
-        },
-        {
-          "industry_function_slug": "telehealth",
-          "industry_function_name": "Telehealth",
-          "industry_function_description": "Virtual care, telemedicine, and remote patient engagement platforms.",
-          "industry_function_sort_order": 30,
-          "product_count": 0,
-          "vendor_count": 0
-        },
-        {
-          "industry_function_slug": "population-health",
-          "industry_function_name": "Population Health",
-          "industry_function_description": "Care management, analytics, and population-level coordination systems.",
-          "industry_function_sort_order": 40,
-          "product_count": 0,
-          "vendor_count": 0
-        },
-        {
-          "industry_function_slug": "revenue-cycle-rcm",
-          "industry_function_name": "Revenue Cycle",
-          "industry_function_description": "Claims, payments, and reimbursement systems used in healthcare finance workflows.",
-          "industry_function_sort_order": 50,
-          "product_count": 0,
-          "vendor_count": 0
-        },
-        {
-          "industry_function_slug": "pharmacy-systems",
-          "industry_function_name": "Pharmacy Systems",
-          "industry_function_description": "Medication dispensing, pharmacy operations, and inventory coordination platforms.",
-          "industry_function_sort_order": 60,
-          "product_count": 0,
-          "vendor_count": 0
-        },
-        {
-          "industry_function_slug": "imaging-pacs",
-          "industry_function_name": "Imaging",
-          "industry_function_description": "Imaging, PACS, and radiology workflow systems.",
-          "industry_function_sort_order": 70,
-          "product_count": 0,
-          "vendor_count": 0
-        },
-        {
           "industry_function_slug": "patient-engagement",
           "industry_function_name": "Patient Engagement",
           "industry_function_description": "Patient communication, intake, and digital engagement systems.",
           "industry_function_sort_order": 80,
           "product_count": 1,
           "vendor_count": 1
-        },
-        {
-          "industry_function_slug": "compliance-risk",
-          "industry_function_name": "Compliance & Risk",
-          "industry_function_description": "Compliance, credentialing, and risk-management platforms for healthcare operations.",
-          "industry_function_sort_order": 90,
-          "product_count": 0,
-          "vendor_count": 0
-        },
-        {
-          "industry_function_slug": "workforce-management",
-          "industry_function_name": "Workforce Mgmt",
-          "industry_function_description": "Staffing, scheduling, credentialing, and workforce readiness systems.",
-          "industry_function_sort_order": 100,
-          "product_count": 0,
-          "vendor_count": 0
         }
       ],
       "vendors": [
@@ -2141,14 +2074,6 @@
       "industry_description": "Fleet, rail, and charging infrastructure APIs for real-time asset operations.",
       "functions": [
         {
-          "industry_function_slug": "fleet-iot",
-          "industry_function_name": "Fleet & IoT",
-          "industry_function_description": "Fleet telemetry, vehicle operations, and connected transportation platforms.",
-          "industry_function_sort_order": 10,
-          "product_count": 0,
-          "vendor_count": 0
-        },
-        {
           "industry_function_slug": "visibility",
           "industry_function_name": "Visibility",
           "industry_function_description": "Shipment and asset tracking systems used across transportation workflows.",
@@ -2163,14 +2088,6 @@
           "industry_function_sort_order": 30,
           "product_count": 1,
           "vendor_count": 1
-        },
-        {
-          "industry_function_slug": "last-mile",
-          "industry_function_name": "Last Mile",
-          "industry_function_description": "Dispatch, route, and final-mile delivery platforms.",
-          "industry_function_sort_order": 40,
-          "product_count": 0,
-          "vendor_count": 0
         }
       ],
       "vendors": [
@@ -2291,14 +2208,6 @@
           "industry_function_sort_order": 30,
           "product_count": 8,
           "vendor_count": 1
-        },
-        {
-          "industry_function_slug": "workplace-experience",
-          "industry_function_name": "Workplace Experience",
-          "industry_function_description": "Tenant, room, and workplace coordination systems.",
-          "industry_function_sort_order": 40,
-          "product_count": 0,
-          "vendor_count": 0
         }
       ],
       "vendors": [
@@ -2406,7 +2315,7 @@
               "data_coverage_summary": "RESTful API for discovering customer, partition, role, and user group access. Published API scope is limited to customer, partition, role, and user-group access context.",
               "asset_data_available": "Not Supported",
               "telemetry_data_available": "Not Supported",
-              "writeback_supported": "N/A",
+              "writeback_supported": "Not Supported",
               "key_entities": [
                 "customers",
                 "partitions",
@@ -2500,8 +2409,8 @@
                 "visitor-management"
               ],
               "data_coverage_summary": "RESTful API for creating and managing Identities and assigning configured privileges to an identity. Published API scope centers on administrative records and workflow lifecycle operations.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "identities",
@@ -2533,8 +2442,8 @@
                 "visitor-management"
               ],
               "data_coverage_summary": "RESTful API for listing available workflows and creating new workflow instances. Published API scope centers on administrative records and workflow lifecycle operations.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "identities",
@@ -2795,8 +2704,8 @@
                 "visitor-management"
               ],
               "data_coverage_summary": "RESTful API for retrieving and managing visitor information. Published API scope centers on administrative records and workflow lifecycle operations.",
-              "asset_data_available": "N/A",
-              "telemetry_data_available": "N/A",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
               "writeback_supported": "Supported",
               "key_entities": [
                 "identities",
@@ -2855,30 +2764,6 @@
           "industry_function_sort_order": 10,
           "product_count": 1,
           "vendor_count": 1
-        },
-        {
-          "industry_function_slug": "field-operations",
-          "industry_function_name": "Field Operations",
-          "industry_function_description": "Field coordination, task execution, and site operations systems.",
-          "industry_function_sort_order": 20,
-          "product_count": 0,
-          "vendor_count": 0
-        },
-        {
-          "industry_function_slug": "equipment-telematics",
-          "industry_function_name": "Equipment Telematics",
-          "industry_function_description": "Equipment monitoring and utilization data platforms.",
-          "industry_function_sort_order": 30,
-          "product_count": 0,
-          "vendor_count": 0
-        },
-        {
-          "industry_function_slug": "safety-compliance",
-          "industry_function_name": "Safety & Compliance",
-          "industry_function_description": "Construction safety, risk, and compliance systems.",
-          "industry_function_sort_order": 40,
-          "product_count": 0,
-          "vendor_count": 0
         }
       ],
       "vendors": [
@@ -2921,6 +2806,190 @@
                 "devices",
                 "projects",
                 "coordinates"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industry_slug": "service-providers",
+      "industry_name": "Service Providers",
+      "industry_description": "Work order, dispatch, field service, contractor coordination, and repair management APIs for operational support workflows.",
+      "functions": [
+        {
+          "industry_function_slug": "work-order-management",
+          "industry_function_name": "Work Order Mgmt",
+          "industry_function_description": "Work-order lifecycle and service request coordination platforms.",
+          "industry_function_sort_order": 20,
+          "product_count": 3,
+          "vendor_count": 1
+        },
+        {
+          "industry_function_slug": "contractor-network",
+          "industry_function_name": "Contractor Network",
+          "industry_function_description": "Multi-vendor and contractor coordination systems.",
+          "industry_function_sort_order": 30,
+          "product_count": 1,
+          "vendor_count": 1
+        }
+      ],
+      "vendors": [
+        {
+          "vendor_slug": "servicechannel",
+          "vendor_name": "ServiceChannel",
+          "vendor_domain": "servicechannel.com",
+          "vendor_logo_url": "",
+          "vendor_logo_asset": "",
+          "vendor_logo_src": "https://www.google.com/s2/favicons?domain=servicechannel.com&sz=128",
+          "vendor_summary": "ServiceChannel work order, dispatch, provider, asset, invoice, and facilities service management APIs exposed through the ServiceChannel developer platform.",
+          "products": [
+            {
+              "product_slug": "work-orders-api",
+              "product_name": "Work Orders API",
+              "industry_function_slug": "work-order-management",
+              "industry_function_name": "Work Order Mgmt",
+              "industry_function_description": "Work-order lifecycle and service request coordination platforms.",
+              "industry_function_sort_order": 20,
+              "product_family": "ServiceChannel Platform",
+              "integration_status": "built",
+              "integration_type": "OpenAPI",
+              "integration_api_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
+              "product_summary": "Work order lifecycle APIs for searching, creating, scheduling, reprioritizing, dispatching, and resolving repair orders in ServiceChannel from ServiceNow operational workflows.",
+              "product_sort_order": 10,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/servicechannel/work-orders-api.json",
+              "data_domains": [
+                "work-order-lifecycle",
+                "dispatch-and-scheduling",
+                "priority-and-category-management",
+                "resolution-and-completion",
+                "location-linked-operations"
+              ],
+              "data_coverage_summary": "The Work Orders API covers the in-flight repair order lifecycle in ServiceChannel, including search, creation, status and priority updates, scheduling, trade changes, resolution capture, caller and purchase-order updates, project approvals, and nearby or duplicate work-order discovery.",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Supported",
+              "key_entities": [
+                "work orders",
+                "work order status",
+                "work order priority",
+                "trade assignments",
+                "scheduled dates",
+                "resolution records",
+                "location work order lists"
+              ]
+            },
+            {
+              "product_slug": "service-requests-api",
+              "product_name": "Service Requests API",
+              "industry_function_slug": "work-order-management",
+              "industry_function_name": "Work Order Mgmt",
+              "industry_function_description": "Work-order lifecycle and service request coordination platforms.",
+              "industry_function_sort_order": 20,
+              "product_family": "ServiceChannel Platform",
+              "integration_status": "built",
+              "integration_type": "OpenAPI",
+              "integration_api_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
+              "product_summary": "Service request intake and pre-dispatch APIs for creating, updating, categorizing, reassigning, and searching incoming repair requests before or alongside work order creation.",
+              "product_sort_order": 20,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/servicechannel/service-requests-api.json",
+              "data_domains": [
+                "service-request-intake",
+                "triage-and-classification",
+                "reassignment",
+                "duplicate-detection",
+                "subscriber-request-context"
+              ],
+              "data_coverage_summary": "The Service Requests area covers pre-work-order intake and triage, including request creation, retrieval, updates, status and priority changes, category and trade changes, reassignment options, duplicate detection, and request-info retrieval flows used before dispatch finalization.",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Supported",
+              "key_entities": [
+                "work requests",
+                "service request info",
+                "request status",
+                "priority and category values",
+                "reassignment candidates",
+                "duplicate request sets"
+              ]
+            },
+            {
+              "product_slug": "providers-api",
+              "product_name": "Providers API",
+              "industry_function_slug": "contractor-network",
+              "industry_function_name": "Contractor Network",
+              "industry_function_description": "Multi-vendor and contractor coordination systems.",
+              "industry_function_sort_order": 30,
+              "product_family": "ServiceChannel Platform",
+              "integration_status": "built",
+              "integration_type": "OpenAPI",
+              "integration_api_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
+              "product_summary": "Provider network APIs for creating provider records, retrieving provider details, ranking providers, managing dispatch settings, and collecting provider feedback tied to service execution.",
+              "product_sort_order": 30,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/servicechannel/providers-api.json",
+              "data_domains": [
+                "provider-master-data",
+                "trade-qualification",
+                "dispatch-preferences",
+                "provider-ranking",
+                "service-feedback"
+              ],
+              "data_coverage_summary": "The Providers API covers service-provider network data used for dispatch decisions, including provider creation, provider information lookup, trade-based provider retrieval, dispatch-setting updates, ranking retrieval, recent-provider discovery, and provider feedback collection.",
+              "asset_data_available": "Not Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Supported",
+              "key_entities": [
+                "provider records",
+                "provider-subscriber links",
+                "trade-qualified providers",
+                "dispatch settings",
+                "ranking status",
+                "provider feedback",
+                "recent and last-used providers"
+              ]
+            },
+            {
+              "product_slug": "assets-api",
+              "product_name": "Assets API",
+              "industry_function_slug": "work-order-management",
+              "industry_function_name": "Work Order Mgmt",
+              "industry_function_description": "Work-order lifecycle and service request coordination platforms.",
+              "industry_function_sort_order": 20,
+              "product_family": "ServiceChannel Platform",
+              "integration_status": "built",
+              "integration_type": "OpenAPI",
+              "integration_api_url": "https://developer.servicechannel.com/api/docs?name=ServiceAutomation",
+              "product_summary": "Asset and equipment APIs for retrieving location assets, attaching assets to work orders, updating asset master data, tracking asset history, and recording asset meter readings.",
+              "product_sort_order": 40,
+              "is_visible": true,
+              "has_detail": true,
+              "detail_path": "/integration-details/servicechannel/assets-api.json",
+              "data_domains": [
+                "asset-master-data",
+                "asset-to-work-linkage",
+                "location-asset-hierarchy",
+                "asset-history",
+                "meter-readings",
+                "attachments-and-tags"
+              ],
+              "data_coverage_summary": "The Assets API provides equipment and asset-management coverage, including location asset retrieval, asset creation and updates, asset-type updates, attachment to work orders and work requests, asset-location changes, asset work-order history, asset tags, validation flags, and meter-reading capture.",
+              "asset_data_available": "Supported",
+              "telemetry_data_available": "Not Supported",
+              "writeback_supported": "Supported",
+              "key_entities": [
+                "assets",
+                "asset codes and tags",
+                "location asset trees",
+                "asset components",
+                "asset work-order history",
+                "asset meter readings",
+                "asset attachments"
               ]
             }
           ]

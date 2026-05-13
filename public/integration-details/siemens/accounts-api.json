@@ -16,7 +16,7 @@
   ],
   "asset_data_available": "Not Supported",
   "telemetry_data_available": "Not Supported",
-  "writeback_supported": "N/A",
+  "writeback_supported": "Not Supported",
   "key_entities": [
     "customers",
     "partitions",

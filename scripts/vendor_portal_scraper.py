@@ -14,6 +14,7 @@ from urllib.parse import urljoin, urlparse, urlunparse
 
 import gspread
 import requests
+import yaml
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from google.oauth2.service_account import Credentials
@@ -101,14 +102,52 @@ def title_case_slug(value: str) -> str:
     return " ".join(part.capitalize() for part in value.split("-") if part)
 
 
+def spec_extension(url: str) -> str:
+    lowered_path = urlparse(url).path.lower()
+    for extension in [".yaml", ".yml", ".json"]:
+        if lowered_path.endswith(extension):
+            return extension
+    return ""
+
+
 def path_matches_any(value: str, patterns: list[str]) -> bool:
     lowered = value.lower()
     return any(pattern.lower() in lowered for pattern in patterns)
 
 
 def is_spec_artifact_url(url: str) -> bool:
-    lowered_url = url.lower()
-    return any(lowered_url.endswith(ext) for ext in [".yaml", ".yml", ".json"])
+    return bool(spec_extension(url))
+
+
+def looks_like_spec_endpoint_url(url: str) -> bool:
+    lowered = url.lower()
+    return bool(
+        re.search(r"(?:openapi|swagger|asyncapi|api[-_/]?docs?|schema|spec)", lowered)
+        or re.search(r"[?&](?:format|spec|download)=(?:json|yaml|yml)", lowered)
+    )
+
+
+def looks_like_yaml_document(text: str) -> bool:
+    stripped = text.lstrip("\ufeff \t\r\n")
+    if not stripped:
+        return False
+    markers = ["openapi:", "swagger:", "asyncapi:", "paths:", "channels:", "components:", "info:"]
+    return any(marker in stripped[:2000] for marker in markers)
+
+
+def is_consumable_json_document(payload: Any) -> bool:
+    if isinstance(payload, dict):
+        return bool(
+            set(payload.keys())
+            & {"openapi", "swagger", "asyncapi", "paths", "components", "channels", "info", "item"}
+        )
+    return isinstance(payload, list)
+
+
+def is_consumable_yaml_document(payload: Any) -> bool:
+    if not isinstance(payload, dict):
+        return False
+    return bool(set(payload.keys()) & {"openapi", "swagger", "asyncapi", "paths", "components", "channels", "info"})
 
 
 def extract_configured_spec_urls(soup: BeautifulSoup, base_url: str) -> list[str]:
@@ -242,6 +281,10 @@ class VendorPortalScraper:
             }
         )
         self.vendor_sort_order_cache: dict[str, int] = {}
+        self.page_cache: dict[str, tuple[BeautifulSoup, str] | None] = {}
+        self.valid_spec_cache: dict[str, bool] = {}
+        self.max_spec_search_depth = int(config.get("spec_search_depth", 2))
+        self.max_spec_search_pages = int(config.get("spec_search_pages", 12))
 
     def seeded_catalog_entries(self) -> list[CatalogEntry]:
         configured_entries = self.config.get("catalog_seed_entries", [])
@@ -352,6 +395,7 @@ class VendorPortalScraper:
         vendor_summary = self.infer_vendor_summary(vendor, source_product_line_name, product_summary)
         internal_notes = self.build_internal_notes(entry.url, integration_api_url, tag_slugs, source_product_line_slug, source_product_line_name)
         product_family = self.infer_product_family(page_title, integration_type, source_product_line_name)
+        is_visible = bool(integration_api_url) and bool(self.row_defaults.get("is_visible", True))
 
         row = {
             "industry_slug": industry["slug"],
@@ -376,7 +420,7 @@ class VendorPortalScraper:
             "integration_api_url": integration_api_url,
             "product_summary": product_summary,
             "product_sort_order": str(product_sort_order),
-            "is_visible": str(self.row_defaults.get("is_visible", True)).upper(),
+            "is_visible": str(is_visible).upper(),
             "internal_notes": internal_notes,
         }
         return row
@@ -388,7 +432,7 @@ class VendorPortalScraper:
         industry = self.infer_industry([], source_product_line_slug)
         product_name = self.clean_product_name(entry.title) or self.fallback_product_name(entry.title, source_product_line_name, self.row_defaults.get("integration_type", "REST API"))
         product_summary = entry.summary or product_name
-        integration_api_url = entry.url
+        integration_api_url = self.resolve_spec_artifact_url(entry.url)
         integration_type = infer_integration_type_from_sample(
             f"{product_name} {product_summary} {integration_api_url}",
             self.row_defaults.get("integration_type", "REST API"),
@@ -396,6 +440,7 @@ class VendorPortalScraper:
         vendor_summary = self.infer_vendor_summary(vendor, source_product_line_name, product_summary)
         internal_notes = self.build_internal_notes(entry.url, integration_api_url, [], source_product_line_slug, source_product_line_name)
         product_family = self.infer_product_family(product_name, integration_type, source_product_line_name)
+        is_visible = bool(integration_api_url) and bool(self.row_defaults.get("is_visible", True))
 
         return {
             "industry_slug": industry["slug"],
@@ -420,7 +465,7 @@ class VendorPortalScraper:
             "integration_api_url": integration_api_url,
             "product_summary": product_summary,
             "product_sort_order": str(product_sort_order),
-            "is_visible": str(self.row_defaults.get("is_visible", True)).upper(),
+            "is_visible": str(is_visible).upper(),
             "internal_notes": internal_notes,
         }
 
@@ -561,87 +606,159 @@ class VendorPortalScraper:
         resolved_url = self.resolve_spec_artifact_url(best_url)
         return resolved_url
 
+    def fetch_page(self, url: str) -> tuple[BeautifulSoup, str] | None:
+        cached = self.page_cache.get(url)
+        if cached is not None or url in self.page_cache:
+            return cached
+        try:
+            response = self.session.get(url, timeout=self.timeout_seconds)
+            response.raise_for_status()
+            if response.encoding:
+                response.encoding = response.apparent_encoding or response.encoding
+            response_text = response.text
+            if self.sleep_seconds > 0:
+                time.sleep(self.sleep_seconds)
+            result = (BeautifulSoup(response_text, "lxml"), response_text)
+            self.page_cache[url] = result
+            return result
+        except Exception:
+            self.page_cache[url] = None
+            return None
+
+    def is_machine_readable_spec_url(self, candidate_url: str) -> bool:
+        cached = self.valid_spec_cache.get(candidate_url)
+        if cached is not None:
+            return cached
+        try:
+            response = self.session.get(candidate_url, timeout=self.timeout_seconds, allow_redirects=True)
+            response.raise_for_status()
+        except Exception:
+            self.valid_spec_cache[candidate_url] = False
+            return False
+
+        try:
+            body = response.text if response.encoding else response.content.decode("utf-8", errors="replace")
+            content_type = response.headers.get("content-type", "").lower()
+            extension = spec_extension(response.url) or spec_extension(candidate_url)
+
+            if extension == ".json" or "json" in content_type or body.lstrip().startswith(("{", "[")):
+                payload = json.loads(body)
+                is_valid = is_consumable_json_document(payload)
+                self.valid_spec_cache[candidate_url] = is_valid
+                return is_valid
+
+            if extension in {".yaml", ".yml"} or "yaml" in content_type or "yml" in content_type or looks_like_yaml_document(body):
+                payload = yaml.safe_load(body)
+                is_valid = is_consumable_yaml_document(payload)
+                self.valid_spec_cache[candidate_url] = is_valid
+                return is_valid
+        except Exception:
+            self.valid_spec_cache[candidate_url] = False
+            return False
+
+        self.valid_spec_cache[candidate_url] = False
+        return False
+
+    def extract_embedded_spec_urls(self, text: str, base_url: str) -> list[str]:
+        candidates: list[str] = []
+        patterns = [
+            r'"((?:https?://|/|\.\.?/)[^"\s<>]+\.(?:json|ya?ml)(?:\?[^"\s<>]*)?)"',
+            r"'((?:https?://|/|\.\.?/)[^'\s<>]+\.(?:json|ya?ml)(?:\?[^'\s<>]*)?)'",
+            r"(?:url|spec|openapi|asyncapi)[^\n]{0,80}?((?:https?://|/|\.\.?/)[^\s'\"<>]+\.(?:json|ya?ml)(?:\?[^\s'\"<>]*)?)",
+            r'"((?:https?://|/|\.\.?/)[^"\s<>]*(?:openapi|swagger|asyncapi|api/docs|schema|spec)[^"\s<>]*)"',
+            r"'((?:https?://|/|\.\.?/)[^'\s<>]*(?:openapi|swagger|asyncapi|api/docs|schema|spec)[^'\s<>]*)'",
+        ]
+        for pattern in patterns:
+            for match in re.finditer(pattern, text, flags=re.IGNORECASE):
+                candidates.append(urljoin(base_url, match.group(1)))
+        return clean_text_list(candidates)
+
+    def collect_follow_up_pages(self, page_url: str, soup: BeautifulSoup) -> list[str]:
+        follow_up_pages: list[str] = []
+        for follow_up_page in derive_follow_up_spec_pages(page_url):
+            if self.is_allowed_url(follow_up_page):
+                follow_up_pages.append(follow_up_page)
+
+        for node in soup.select("link[rel='next'][href], link[rel='alternate'][href], a[href]"):
+            href = urljoin(page_url, node.get("href", ""))
+            if not self.is_allowed_url(href):
+                continue
+            if href == page_url:
+                continue
+            text = normalize_space(node.get_text(" ", strip=True))
+            lowered_href = href.lower()
+            lowered_text = text.lower()
+            if spec_extension(href):
+                continue
+            if self.score_api_candidate(href, page_url, text) >= 40:
+                follow_up_pages.append(href)
+                continue
+            if re.search(r"\b(api|reference|openapi|swagger|asyncapi|postman|schema|spec|developer)\b", lowered_text):
+                follow_up_pages.append(href)
+                continue
+            if re.search(r"(openapi|swagger|asyncapi|postman|schema|spec)", lowered_href):
+                follow_up_pages.append(href)
+        return clean_text_list(follow_up_pages)
+
     def resolve_spec_artifact_url(self, selected_url: str) -> str:
-        if is_spec_artifact_url(selected_url):
+        if self.is_machine_readable_spec_url(selected_url):
             return selected_url
 
-        def collect_artifact_candidates(page_url: str) -> dict[str, int]:
-            try:
-                response = self.session.get(page_url, timeout=self.timeout_seconds)
-                response.raise_for_status()
-                if response.encoding:
-                    response.encoding = response.apparent_encoding or response.encoding
-                response_text = response.text
-                if self.sleep_seconds > 0:
-                    time.sleep(self.sleep_seconds)
-                soup = BeautifulSoup(response_text, "lxml")
-            except Exception:
-                return {}
+        artifact_candidates: dict[str, int] = {}
+        queued: list[tuple[str, int]] = [(selected_url, 0)]
+        visited: set[str] = set()
 
-            candidates: dict[str, int] = {}
+        while queued and len(visited) < self.max_spec_search_pages:
+            page_url, depth = queued.pop(0)
+            if page_url in visited:
+                continue
+            visited.add(page_url)
+
+            fetched_page = self.fetch_page(page_url)
+            if fetched_page is None:
+                continue
+            soup, response_text = fetched_page
+
+            candidate_urls: dict[str, int] = {}
             for configured_url in extract_configured_spec_urls(soup, page_url):
-                if not self.is_allowed_url(configured_url):
-                    continue
-                if not is_spec_artifact_url(configured_url):
-                    continue
-                candidates[configured_url] = max(220, candidates.get(configured_url, -10_000))
+                if self.is_allowed_url(configured_url) and (
+                    is_spec_artifact_url(configured_url) or looks_like_spec_endpoint_url(configured_url)
+                ):
+                    candidate_urls[configured_url] = max(240 - depth * 5, candidate_urls.get(configured_url, -10_000))
 
             for text_url in extract_text_spec_urls(response_text, page_url):
-                if not self.is_allowed_url(text_url):
-                    continue
-                if not is_spec_artifact_url(text_url):
-                    continue
-                candidates[text_url] = max(210, candidates.get(text_url, -10_000))
+                if self.is_allowed_url(text_url) and (
+                    is_spec_artifact_url(text_url) or looks_like_spec_endpoint_url(text_url)
+                ):
+                    candidate_urls[text_url] = max(230 - depth * 5, candidate_urls.get(text_url, -10_000))
 
-            for anchor in soup.select("a[href]"):
-                href = urljoin(page_url, anchor.get("href", ""))
+            for embedded_url in self.extract_embedded_spec_urls(response_text, page_url):
+                if self.is_allowed_url(embedded_url) and (
+                    is_spec_artifact_url(embedded_url) or looks_like_spec_endpoint_url(embedded_url)
+                ):
+                    candidate_urls[embedded_url] = max(220 - depth * 5, candidate_urls.get(embedded_url, -10_000))
+
+            for node in soup.select("a[href], script[src], link[href]"):
+                attr_name = "src" if node.has_attr("src") else "href"
+                href = urljoin(page_url, node.get(attr_name, ""))
                 if not self.is_allowed_url(href):
                     continue
-                if not is_spec_artifact_url(href):
+                if not (is_spec_artifact_url(href) or looks_like_spec_endpoint_url(href)):
                     continue
-                text = normalize_space(anchor.get_text(" ", strip=True))
-                score = self.score_api_candidate(href, page_url, text) + 100
-                candidates[href] = max(score, candidates.get(href, -10_000))
-            return candidates
+                text = normalize_space(node.get_text(" ", strip=True))
+                score = self.score_api_candidate(href, page_url, text) + 100 - depth * 5
+                candidate_urls[href] = max(score, candidate_urls.get(href, -10_000))
 
-        artifact_candidates = collect_artifact_candidates(selected_url)
+            for candidate_url, score in candidate_urls.items():
+                if self.is_machine_readable_spec_url(candidate_url):
+                    artifact_candidates[candidate_url] = max(score, artifact_candidates.get(candidate_url, -10_000))
 
-        if not artifact_candidates:
-            try:
-                selected_soup = self.fetch_soup(selected_url)
-            except Exception:
-                selected_soup = None
+            if depth >= self.max_spec_search_depth:
+                continue
 
-            preferred_follow_up_pages = derive_follow_up_spec_pages(selected_url)
-            if selected_soup is not None:
-                for node in selected_soup.select("link[rel='next'][href]"):
-                    preferred_follow_up_pages.append(urljoin(selected_url, node.get("href", "")))
-
-            for follow_up_page in clean_text_list(preferred_follow_up_pages):
-                if not self.is_allowed_url(follow_up_page):
-                    continue
-                if follow_up_page == selected_url:
-                    continue
-                artifact_candidates = collect_artifact_candidates(follow_up_page)
-                if artifact_candidates:
-                    break
-
-            if not artifact_candidates and selected_soup is not None:
-                anchor_follow_up_pages: list[str] = []
-                for anchor in selected_soup.select("a[href]"):
-                    href = urljoin(selected_url, anchor.get("href", ""))
-                    text = normalize_space(anchor.get_text(" ", strip=True))
-                    if self.score_api_candidate(href, selected_url, text) >= 60:
-                        anchor_follow_up_pages.append(href)
-
-                for follow_up_page in clean_text_list(anchor_follow_up_pages):
-                    if not self.is_allowed_url(follow_up_page):
-                        continue
-                    if follow_up_page == selected_url:
-                        continue
-                    artifact_candidates = collect_artifact_candidates(follow_up_page)
-                    if artifact_candidates:
-                        break
+            for follow_up_page in self.collect_follow_up_pages(page_url, soup):
+                if follow_up_page not in visited:
+                    queued.append((follow_up_page, depth + 1))
 
         if not artifact_candidates:
             return ""

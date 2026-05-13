@@ -2,12 +2,25 @@ from __future__ import annotations
 
 import argparse
 import csv
+import json
 import os
 from pathlib import Path
+from urllib.parse import urlparse
 
 from dotenv import load_dotenv
 
 from vendor_portal_scraper import TEMPLATE_HEADERS, google_client, normalize_row_for_template
+
+
+CAPABILITY_HEADERS = [
+    "asset_data_available",
+    "telemetry_data_available",
+    "writeback_supported",
+]
+
+SHEET_HEADERS = TEMPLATE_HEADERS + CAPABILITY_HEADERS
+ALLOWED_DIRECT_SPEC_EXTENSIONS = {".json", ".yaml", ".yml", ".raml", ".wsdl", ".xml"}
+ALLOWED_CAPABILITY_VALUES = {"Supported", "Not Supported"}
 
 
 def load_rows(csv_path: Path) -> list[dict[str, str]]:
@@ -22,6 +35,50 @@ def load_rows(csv_path: Path) -> list[dict[str, str]]:
         return [normalize_row_for_template(row) for row in reader]
 
 
+def detail_path_for_row(repo_root: Path, row: dict[str, str]) -> Path:
+    vendor_slug = (row.get("vendor_slug") or "").strip()
+    product_slug = (row.get("product_slug") or "").strip()
+    return repo_root / "data" / "integration-details" / vendor_slug / f"{product_slug}.json"
+
+
+def load_detail_record(repo_root: Path, row: dict[str, str]) -> dict[str, object]:
+    detail_path = detail_path_for_row(repo_root, row)
+    if not detail_path.exists():
+        return {}
+    with detail_path.open("r", encoding="utf-8") as handle:
+        payload = json.load(handle)
+    return payload if isinstance(payload, dict) else {}
+
+
+def normalize_capability_value(value: object) -> str:
+    normalized = str(value or "").strip().lower()
+    if normalized in {"true", "supported"}:
+        return "Supported"
+    if normalized in {"false", "not supported", "unsupported", "un-supported", "n/a", "na"}:
+        return "Not Supported"
+    return ""
+
+
+def has_direct_spec_file_url(value: str) -> bool:
+    path = urlparse((value or "").strip()).path.lower()
+    return any(path.endswith(extension) for extension in ALLOWED_DIRECT_SPEC_EXTENSIONS)
+
+
+def normalize_sheet_row(repo_root: Path, row: dict[str, str]) -> dict[str, str]:
+    normalized_row = dict(row)
+    detail_record = load_detail_record(repo_root, row)
+
+    for header in CAPABILITY_HEADERS:
+        normalized_row[header] = normalize_capability_value(detail_record.get(header))
+
+    source_visible = str(row.get("is_visible", "")).strip().upper() == "TRUE"
+    has_direct_spec_url = has_direct_spec_file_url(row.get("integration_api_url", ""))
+    has_allowed_capabilities = all(normalized_row.get(header, "") in ALLOWED_CAPABILITY_VALUES for header in CAPABILITY_HEADERS)
+
+    normalized_row["is_visible"] = "TRUE" if source_visible and has_direct_spec_url and has_allowed_capabilities else "FALSE"
+    return normalized_row
+
+
 def publish_rows(rows: list[dict[str, str]], spreadsheet_id: str, worksheet_title: str) -> None:
     client = google_client()
     spreadsheet = client.open_by_key(spreadsheet_id)
@@ -30,7 +87,7 @@ def publish_rows(rows: list[dict[str, str]], spreadsheet_id: str, worksheet_titl
     except Exception as exc:
         raise RuntimeError(f"Unable to open worksheet '{worksheet_title}': {exc}") from exc
 
-    values = [TEMPLATE_HEADERS] + [[row.get(header, "") for header in TEMPLATE_HEADERS] for row in rows]
+    values = [SHEET_HEADERS] + [[row.get(header, "") for header in SHEET_HEADERS] for row in rows]
     worksheet.clear()
     worksheet.update(values)
 
@@ -77,6 +134,8 @@ def main() -> int:
     rows = load_rows(csv_path)
     if not rows:
         raise RuntimeError("The integrations CSV does not contain any data rows to publish.")
+
+    rows = [normalize_sheet_row(repo_root, row) for row in rows]
 
     publish_rows(rows, spreadsheet_id, worksheet_title)
     print(f"Published {len(rows)} rows from {csv_path} to worksheet '{worksheet_title}'.")

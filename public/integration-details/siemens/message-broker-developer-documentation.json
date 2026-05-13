@@ -14,9 +14,9 @@
     "identity",
     "administration"
   ],
-  "asset_data_available": "N/A",
-  "telemetry_data_available": "N/A",
-  "writeback_supported": "N/A",
+  "asset_data_available": "Not Supported",
+  "telemetry_data_available": "Not Supported",
+  "writeback_supported": "Not Supported",
   "key_entities": [
     "users",
     "policies",
