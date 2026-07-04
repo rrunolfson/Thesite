@@ -3,16 +3,16 @@ import { ProductPageLayout } from "@/app/components/ProductPageLayout";
 import { createBreadcrumbSchema, createProductSchema } from "@/app/lib/structuredData";
 
 export function SSOMPage() {
-  const description = "Singularity is Last Mile's operational memory product, built on SSOM. It connects assets, signals, issues, work, decisions, and outcomes so operations can improve over time.";
+  const description = "Singularity is the shared operational-memory foundation within the Last Mile Platform. Built on SSOM, it connects assets, signals, issues, workflows, decisions, evidence, and outcomes over time.";
 
   return (
     <>
       <SEO
-        title="Singularity | Operational Memory for Better Operational Action"
+        title="Singularity | Operational Memory Within the Last Mile Platform | Last Mile"
         description={description}
         canonicalPath="/singularity"
         jsonLd={[
-          createProductSchema("Singularity", "/singularity", `${description} Singularity is built on the SSOM semantic model.`),
+          createProductSchema("Singularity", "/singularity", `${description} Built on the SSOM semantic model.`),
           createBreadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Singularity", path: "/singularity" },
@@ -20,19 +20,27 @@ export function SSOMPage() {
         ]}
       />
       <ProductPageLayout
-        eyebrow="SINGULARITY"
-        title="Operational memory that improves every response."
-        intro="Singularity connects the history of your assets, signals, issues, work, decisions, and outcomes so teams can understand what happened before and improve what happens next."
-        primaryCta={{ label: "Talk through your operating environment", to: "/contact" }}
-        secondaryCta={{ label: "Explore Infinit-Signal", to: "/infinit-signal" }}
+        eyebrow="PLATFORM FOUNDATION"
+        title="Singularity gives your operation a memory."
+        intro="Singularity is the shared operational-memory foundation inside the Last Mile Platform. It keeps the history of your assets, signals, issues, work, workflow decisions, evidence, timing, quality, and outcomes connected over time."
+        primaryCta={{ label: "Explore the Last Mile Platform", to: "/platform" }}
+        secondaryCta={{ label: "See how Infinit-Signal builds the record", to: "/infinit-signal" }}
         overview={{
-          heading: "More than a historian. The memory behind better action.",
+          heading: "The operating record behind every product.",
           copy: [
-            "Historians preserve valuable operational data. Singularity builds on that value by connecting information across systems and keeping the operational story intact: what happened, what it meant, what was affected, what action was taken, and what outcome followed.",
-            "The longer that history grows, the more useful it becomes for maintenance, response, automation, and AI-assisted optimization.",
+            "Infinit-Signal injects operational information into Singularity. Infinit-Control uses Singularity to surface a customer-defined view of the operating estate. Infinit-Flow uses Singularity to trigger, guide, and improve workflows.",
+            "As the record grows, teams can identify patterns, tune maintenance, improve workflows, strengthen automation, and give AI a more complete understanding of the specific operating environment.",
           ],
           children: <MemoryVisual />,
         }}
+        benefits={[
+          { title: "Preserve operational history across shifts, teams, and systems" },
+          { title: "Tune preventive-maintenance rules" },
+          { title: "Identify recurring issues and failure patterns" },
+          { title: "Improve workflow and escalation playbooks" },
+          { title: "Give AI recommendations evidence-backed operating context" },
+          { title: "Compare outcomes from similar operational responses" },
+        ]}
         features={[
           { title: "Organization-specific operational memory" },
           { title: "Asset, relationship, and topology context" },
@@ -44,23 +52,24 @@ export function SSOMPage() {
           { title: "AI-ready, evidence-backed context" },
           {
             title: "Built on SSOM",
-            copy: "SSOM is the semantic model inside Singularity. It gives Singularity a consistent way to understand assets, relationships, events, issues, quality, timing, evidence, and outcomes across the systems that make up your operating environment.",
+            copy: "SSOM is the semantic model inside Singularity. It gives the platform a consistent way to understand assets, relationships, events, alerts, issues, workflow context, source quality, timing, evidence, actions, and outcomes.",
           },
         ]}
         useCases={[
-          "Tune preventive-maintenance thresholds.",
-          "Identify recurring equipment or process issues.",
-          "Compare outcomes from similar response paths.",
-          "Improve escalation and workflow playbooks.",
-          "Give AI recommendations grounded in the actual operating environment.",
-          "Preserve operational knowledge across shifts, teams, and site changes.",
+          "Preserve operational history across shifts, teams, and systems.",
+          "Tune preventive-maintenance rules.",
+          "Identify recurring issues and failure patterns.",
+          "Improve workflow and escalation playbooks.",
+          "Give AI recommendations evidence-backed operating context.",
+          "Compare outcomes from similar operational responses.",
         ]}
         relatedProducts={[
           { label: "Infinit-Signal", to: "/infinit-signal" },
-          { label: "Infinit-Flow", to: "/infinit-flow" },
           { label: "Infinit-Control", to: "/infinit-control" },
+          { label: "Infinit-Flow", to: "/infinit-flow" },
           { label: "Last Mile Platform", to: "/platform" },
         ]}
+        relatedHeading="Related Products and Platform"
         faqs={[
           {
             question: "Is Singularity a historian replacement?",
@@ -86,10 +95,10 @@ export function SSOMPage() {
           { label: "News and Updates", to: "/company/newsroom" },
         ]}
         finalCta={{
-          heading: "Talk through your operating environment.",
-          copy: ["Tell us about the assets, signals, work, decisions, and outcomes your team needs to understand over time."],
-          label: "Contact Last Mile",
-          to: "/contact",
+          heading: "Explore the Last Mile Platform.",
+          copy: ["See how the platform turns operating information into shared memory, workflow, visibility, automation, and accountable action."],
+          label: "Explore the Last Mile Platform",
+          to: "/platform",
         }}
       />
     </>

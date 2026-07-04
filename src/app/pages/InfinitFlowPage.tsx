@@ -8,7 +8,7 @@ export function InfinitFlowPage() {
   return (
     <>
       <SEO
-        title="Infinit-Flow | Organized Operational Response"
+        title="Infinit-Flow | Drag-and-Drop Operational Workflow Automation | Last Mile"
         description={description}
         canonicalPath="/infinit-flow"
         jsonLd={[
@@ -21,27 +21,40 @@ export function InfinitFlowPage() {
       />
       <ProductPageLayout
         eyebrow="INFINIT-FLOW"
-        title="Turn known problems into organized response."
-        intro="Infinit-Flow helps teams design the workflows they need around the signals, assets, and issues that matter to their operation. It coordinates people, work, approvals, escalation, and authorized automation from one connected response path."
+        title="Build workflows that mirror how your operation actually works."
+        intro="Infinit-Flow gives customers a modern, intuitive drag-and-drop experience for building workflows around the signals, assets, alerts, and issues that matter to their operation. It combines human work, automation, approvals, escalation, and authorized remediation in one response path."
         primaryCta={{ label: "Talk through your workflow", to: "/contact" }}
-        secondaryCta={{ label: "Explore Infinit-Signal", to: "/infinit-signal" }}
+        secondaryCta={{ label: "Explore Singularity", to: "/singularity" }}
         overview={{
           heading: "Let software handle the scramble.",
           copy: [
             "When an issue is confirmed, operations teams should not have to hunt through dashboards, build a ticket by hand, find the right owner, chase approvals, and reconstruct what happened later.",
-            "Infinit-Flow helps the organization move from issue to action with a response path your team designs.",
+            "Infinit-Flow lets customers create workflows that match their own operating processes and use the shared context already available in Singularity.",
           ],
         }}
+        benefits={[
+          { title: "Mirror real operational processes" },
+          { title: "Reduce manual handoffs" },
+          { title: "Create consistent response paths" },
+          { title: "Keep people involved when judgment matters" },
+          { title: "Automate repetitive coordination" },
+          { title: "Retain workflow outcomes for future improvement" },
+        ]}
         features={[
-          { title: "Visual workflow design" },
-          { title: "Asset-aware triggers" },
-          { title: "Condition-based response paths" },
+          { title: "Modern drag-and-drop workflow canvas" },
+          { title: "Customer-defined workflow building blocks" },
+          { title: "Signal and issue triggers from Singularity" },
           { title: "Human tasks and assignment" },
           { title: "Timers, escalations, and service-level rules" },
           { title: "Approval steps" },
-          { title: "Authorized outbound actions" },
-          { title: "Simulation, versioning, and rollback" },
-          { title: "Full evidence trail" },
+          { title: "Notifications and communication actions" },
+          { title: "Authorized enterprise-system actions" },
+          { title: "Automation and remediation steps" },
+          { title: "Versioning and rollback" },
+          { title: "Workflow simulation or testing where already supported" },
+          { title: "Full workflow evidence trail" },
+          { title: "Outcome and decision write-back into Singularity" },
+          { title: "Every workflow makes the operation smarter", copy: "Infinit-Flow uses the operational history in Singularity to guide response. It also writes workflow actions, decisions, evidence, and outcomes back into Singularity. Over time, that record helps teams improve workflows, tune escalation paths, and automate more safely." },
         ]}
         useCases={[
           "Cooling response workflow.",
@@ -50,11 +63,12 @@ export function InfinitFlowPage() {
           "Energy anomaly investigation.",
           "Facilities incident coordination.",
           "Cross-system maintenance response.",
+          "Shift escalation workflow.",
         ]}
         relatedProducts={[
           { label: "Infinit-Signal", to: "/infinit-signal" },
-          { label: "Singularity", to: "/singularity" },
           { label: "Infinit-Control", to: "/infinit-control" },
+          { label: "Operational Memory: Singularity", to: "/singularity" },
         ]}
         faqs={[
           {
@@ -79,7 +93,7 @@ export function InfinitFlowPage() {
         finalCta={{
           heading: "Talk through your workflow.",
           copy: ["Tell us about the issue, handoff, approval, escalation, or response path your team wants to make clearer and faster."],
-          label: "Contact Last Mile",
+          label: "Talk through your workflow",
           to: "/contact",
         }}
       />

@@ -12,22 +12,16 @@ const productCards = [
     copy: "Turns source data into operational facts and confirmed issues worth acting on.",
   },
   {
-    title: "Singularity",
-    to: "/singularity",
-    lead: "Give your operation a long memory.",
-    copy: "Connects assets, events, issues, quality, time, actions, and outcomes so every response can improve the next one.",
+    title: "Infinit-Control",
+    to: "/infinit-control",
+    lead: "See the work, the problem, and the response in one place.",
+    copy: "Gives teams a live operational view of issues, assets, work, system health, quality, and evidence.",
   },
   {
     title: "Infinit-Flow",
     to: "/infinit-flow",
     lead: "Turn confirmed problems into organized response.",
     copy: "Coordinates people, workflow, approvals, tasks, escalations, and authorized automation.",
-  },
-  {
-    title: "Infinit-Control",
-    to: "/infinit-control",
-    lead: "See the work, the problem, and the response in one place.",
-    copy: "Gives teams a live operational view of issues, assets, work, system health, quality, and evidence.",
   },
 ];
 
@@ -59,7 +53,7 @@ export function HomePage() {
                 Last Mile turns the signals coming from your operation into coordinated work, authorized automation, and a clear view of what happens next. It helps teams understand the issue, move the right response, and improve how operations run over time.
               </p>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <TrackedLink to="/contact" eventName="cta_design_partner_click" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 text-base font-semibold text-white hover:bg-[#0a1929]">
+                <TrackedLink to="/contact" eventName="cta_contact_click" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 text-base font-semibold text-white hover:bg-[#0a1929]">
                   Contact Last Mile <ArrowRight className="h-5 w-5" />
                 </TrackedLink>
                 <a href="#platform-path" className="inline-flex min-h-11 items-center justify-center rounded-sm border border-slate-600 bg-slate-900/60 px-7 py-3 text-base font-semibold text-white hover:border-[#217ED9]">
@@ -68,16 +62,17 @@ export function HomePage() {
               </div>
             </div>
 
-            <figure className="relative overflow-hidden rounded-2xl border border-slate-700 bg-slate-950/80 p-6 shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1d7cd8]/20 via-transparent to-[#3a8f98]/20"></div>
-              <div className="relative grid min-h-[320px] content-center gap-4">
-                {["See the problem", "Understand what it affects", "Get the right work moving", "Know what happened next"].map((item) => (
-                  <div key={item} className="rounded-lg border border-slate-700 bg-slate-900/75 p-4 text-lg font-semibold text-white">
-                    {item}
-                  </div>
-                ))}
+            <figure className="relative overflow-hidden rounded-2xl border border-slate-700 bg-slate-950/80 shadow-2xl">
+              <div className="absolute inset-0 z-10 bg-gradient-to-br from-[#1d7cd8]/25 via-transparent to-[#3a8f98]/25"></div>
+              <div className="absolute inset-x-0 bottom-0 z-10 h-1/2 bg-gradient-to-t from-[#020617] via-[#020617]/75 to-transparent"></div>
+              <div className="relative min-h-[320px]">
+                <img
+                  src="/images/Chuck1.png"
+                  alt="Operations professional representing the people who keep enterprise operations moving"
+                  className="h-full min-h-[320px] w-full object-cover"
+                />
               </div>
-              <figcaption className="relative mt-5 border-t border-slate-700 pt-4 text-sm font-semibold text-slate-200">
+              <figcaption className="relative z-20 border-t border-slate-700 bg-slate-950/85 px-6 py-4 text-sm font-semibold text-slate-200">
                 Built for the people who keep operations moving.
               </figcaption>
             </figure>
@@ -118,8 +113,8 @@ export function HomePage() {
           </p>
         </HomeSection>
 
-        <HomeSection id="platform-path" title="One platform for what happens after detection.">
-          <p>Last Mile works above the systems your organization already uses. It does not replace SCADA, BMS, historians, brokers, fleet platforms, quality systems, or enterprise workflow tools. It helps them work together when an issue crosses systems, teams, sites, and workflows.</p>
+        <HomeSection id="platform-path" title="One platform. One operational record. Multiple ways to act.">
+          <p>The Last Mile Platform gives Infinit-Signal, Infinit-Control, and Infinit-Flow a shared foundation. Infinit-Signal brings operating information in. Singularity preserves the context and history. Infinit-Control helps teams see what is happening. Infinit-Flow helps them build and automate the response.</p>
           <PlatformPath />
         </HomeSection>
 
@@ -159,7 +154,7 @@ export function HomePage() {
         </HomeSection>
 
         <HomeSection title="The products that make operational intelligence real.">
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-5 md:grid-cols-3">
             {productCards.map((product) => (
               <TrackedLink key={product.to} to={product.to} eventName="cta_product_click" eventData={{ product: product.title }} className="glass-panel flex h-full flex-col rounded-lg p-6 hover:border-[#217ED9]">
                 <h3 className="text-2xl font-semibold text-white">{product.title}</h3>
@@ -175,7 +170,7 @@ export function HomePage() {
           <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold leading-tight text-white md:text-5xl">Improve how your operation responds.</h2>
             <p className="mt-6 text-lg leading-8 text-slate-300">Talk with Last Mile about the systems, operational challenges, workflow bottlenecks, and automation opportunities that matter to your organization.</p>
-            <TrackedLink to="/contact" eventName="cta_design_partner_click" className="mt-10 inline-flex min-h-11 items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-8 py-3 text-base font-semibold text-white hover:bg-[#0a1929]">
+            <TrackedLink to="/contact" eventName="cta_contact_click" className="mt-10 inline-flex min-h-11 items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-8 py-3 text-base font-semibold text-white hover:bg-[#0a1929]">
               Contact Last Mile <ArrowRight className="h-5 w-5" />
             </TrackedLink>
           </div>
@@ -217,11 +212,9 @@ function SmallCard({ title, copy }: { title: string; copy: string }) {
 
 function PlatformPath() {
   const blocks = [
-    ["Your Operational Systems", "SCADA | BMS | Historians | Brokers | Fleet | Quality | Enterprise Applications", false],
-    ["Infinit-Signal", "Operational facts, evidence, quality, and issues worth acting on", true],
-    ["Singularity", "Operational memory, built on SSOM", true],
-    ["Infinit-Flow + Infinit-Control", "Organized response + a live view of what is happening", true],
-    ["Your Enterprise Systems", "CMMS | EAM | ERP | ITSM | Collaboration | Other authorized destinations", false],
+    ["Your Operational Source Systems", "SCADA | BMS | Historians | MES | Fleet | Quality | Enterprise Systems", false],
+    ["Infinit-Signal", "Ingests, normalizes, and contextualizes operating information", true],
+    ["Singularity", "Shared operational memory, built on SSOM semantic structure", true],
   ] as const;
 
   return (
@@ -235,6 +228,29 @@ function PlatformPath() {
           {index < blocks.length - 1 ? <div className="py-2 text-center text-xl text-[#75ADE6]">↓</div> : null}
         </div>
       ))}
+      <div className="grid gap-4 lg:grid-cols-2">
+        <div className="rounded-lg border border-[#217ED9]/50 bg-[#0a1929]/75 p-5">
+          <h3 className="text-lg font-semibold text-white">Infinit-Control</h3>
+          <p className="mt-2 text-base leading-7 text-slate-300">Customer-defined views: alerts, widgets, trends, work, assets, evidence, state, and health.</p>
+          <div className="py-2 text-center text-xl text-[#75ADE6]">↓</div>
+          <p className="text-base font-semibold text-white">Operations users</p>
+        </div>
+        <div className="rounded-lg border border-[#217ED9]/50 bg-[#0a1929]/75 p-5">
+          <h3 className="text-lg font-semibold text-white">Infinit-Flow</h3>
+          <p className="mt-2 text-base leading-7 text-slate-300">Customer-defined workflows: drag-and-drop automation, tasks, escalation, approvals, and authorized remediation.</p>
+          <div className="py-2 text-center text-xl text-[#75ADE6]">↓</div>
+          <p className="text-base font-semibold text-white">Enterprise destinations</p>
+        </div>
+      </div>
+      <div className="py-2 text-center text-xl text-[#75ADE6]">↓</div>
+      <div className="rounded-lg border border-slate-700 bg-slate-950/70 p-5">
+        <h3 className="text-lg font-semibold text-white">Actions, decisions, evidence, and outcomes</h3>
+        <p className="mt-2 text-base leading-7 text-slate-300">Work gets assigned, approved when needed, completed, and recorded so the operating record improves.</p>
+      </div>
+      <div className="py-2 text-center text-xl text-[#75ADE6]">returns to</div>
+      <div className="rounded-lg border border-[#217ED9]/50 bg-[#0a1929]/75 p-5">
+        <h3 className="text-lg font-semibold text-white">Singularity retains the resulting operational history</h3>
+      </div>
       <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-slate-300">
         <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#75ADE6]" /> Machine-speed coordination.</span>
         <span className="inline-flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[#75ADE6]" /> Human judgment where it matters.</span>

@@ -30,11 +30,19 @@ export function PlatformOverviewPage() {
           ],
           children: <PlatformArchitecture />,
         }}
+        benefits={[
+          { title: "Coordinate response faster", copy: "Move from detection to assigned work, approvals, automation, and evidence without rebuilding every handoff by hand." },
+          { title: "Keep existing systems in place", copy: "Work above SCADA, BMS, historians, MES, fleet, quality, and enterprise workflow systems." },
+          { title: "Improve with operational history", copy: "Use Singularity to retain the context, actions, evidence, and outcomes that make each response more useful than the last." },
+          { title: "Give teams a clear operating view", copy: "Help operations, maintenance, reliability, and leaders see what is happening and what is being done." },
+          { title: "Use automation with control", copy: "Keep automation visible, policy-bound, reversible, and connected to human judgment where it matters." },
+        ]}
         features={[
+          { title: "Shared platform services", copy: "Cloud-native stack, secure tenancy, identity and access, APIs, observability, policy controls, workflow runtime, shared data services, auditability, and destination connectivity." },
           { title: "Infinit-Signal", copy: "Turn operational data into facts and issues worth acting on." },
-          { title: "Singularity", copy: "Preserve the operational memory needed to improve every response." },
-          { title: "Infinit-Flow", copy: "Coordinate people, workflows, escalations, approvals, and automation." },
           { title: "Infinit-Control", copy: "Give teams a live view of the issue, work, system health, and evidence." },
+          { title: "Infinit-Flow", copy: "Coordinate people, workflows, escalations, approvals, and automation." },
+          { title: "Singularity", copy: "Shared operational memory and data foundation used across the product family." },
           { title: "Authorized response", copy: "Trigger actions through existing enterprise systems." },
           { title: "AI-assisted optimization", copy: "Identify patterns and recommend stronger responses over time." },
         ]}
@@ -48,9 +56,8 @@ export function PlatformOverviewPage() {
         ]}
         relatedProducts={[
           { label: "Infinit-Signal", to: "/infinit-signal" },
-          { label: "Singularity", to: "/singularity" },
-          { label: "Infinit-Flow", to: "/infinit-flow" },
           { label: "Infinit-Control", to: "/infinit-control" },
+          { label: "Infinit-Flow", to: "/infinit-flow" },
         ]}
         faqs={[
           {
@@ -84,45 +91,40 @@ export function PlatformOverviewPage() {
 }
 
 function PlatformArchitecture() {
-  const blocks = [
-    {
-      title: "Your Operational Systems",
-      copy: "SCADA | BMS | Historians | Brokers | Fleet Systems | Quality Systems | Enterprise Applications",
-    },
-    {
-      title: "Infinit-Signal",
-      copy: "Operational facts, evidence, quality, and issues worth acting on",
-      accent: true,
-    },
-    {
-      title: "Singularity",
-      copy: "Operational memory, built on SSOM",
-      accent: true,
-    },
-    {
-      title: "Infinit-Flow and Infinit-Control",
-      copy: "Infinit-Flow: Workflow, human work, approvals, assignments, escalations, and authorized action. Infinit-Control: A live view of issues, affected assets, work progress, system health, quality, and evidence",
-      accent: true,
-    },
-    {
-      title: "Your Enterprise Systems",
-      copy: "CMMS | EAM | ERP | ITSM | collaboration tools | other authorized destinations",
-    },
-  ];
-
   return (
-    <div role="img" aria-label="Last Mile platform architecture from operational systems through Infinit-Signal, Singularity, Infinit-Flow, Infinit-Control, and enterprise systems." className="mt-10 rounded-2xl border border-slate-700 bg-slate-900/60 p-5">
+    <div role="img" aria-label="Last Mile platform architecture from operational source systems through Infinit-Signal into Singularity, where Infinit-Control and Infinit-Flow operate in parallel before actions, outcomes, and evidence return to Singularity." className="mt-10 rounded-2xl border border-slate-700 bg-slate-900/60 p-5">
       <div className="grid gap-4">
-        {blocks.map((block, index) => (
-          <div key={block.title}>
-            <div className={`rounded-lg border p-5 ${block.accent ? "border-[#217ED9]/50 bg-[#0a1929]/75" : "border-slate-700 bg-slate-950/70"}`}>
-              <h3 className="text-lg font-semibold text-white">{block.title}</h3>
-              <p className="mt-2 text-base leading-7 text-slate-300">{block.copy}</p>
-            </div>
-            {index < blocks.length - 1 ? <div className="py-2 text-center text-xl text-[#75ADE6]">↓</div> : null}
-          </div>
-        ))}
+        <FlowBlock title="Your Operational Source Systems" copy="SCADA | BMS | Historians | MES | Fleet | Quality | Enterprise Systems" />
+        <FlowArrow />
+        <FlowBlock title="Infinit-Signal" copy="Ingests, normalizes, and contextualizes operating information" accent />
+        <FlowArrow />
+        <FlowBlock title="Singularity" copy="Shared operational memory, built on SSOM semantic structure" accent />
+        <div className="grid gap-4 lg:grid-cols-2">
+          <FlowBlock title="Infinit-Control" copy="Customer-defined views: alerts, widgets, trends, work, assets, evidence, state, and health" accent />
+          <FlowBlock title="Infinit-Flow" copy="Customer-defined workflows: drag-and-drop automation, tasks, escalation, approvals, and authorized remediation" accent />
+        </div>
+        <div className="grid gap-4 lg:grid-cols-2">
+          <FlowBlock title="Operations users" copy="Teams see current state, issues, evidence, and response progress" />
+          <FlowBlock title="Enterprise destinations" copy="Enterprise systems, operational users, actions, workflow outcomes, and evidence" />
+        </div>
+        <FlowArrow />
+        <FlowBlock title="Actions, decisions, evidence, and outcomes" copy="Work is assigned, approved when needed, completed, and recorded" />
+        <div className="py-2 text-center text-xl text-[#75ADE6]">returns to</div>
+        <FlowBlock title="Singularity retains the resulting operational history" copy="Every response can improve the next one" accent />
       </div>
     </div>
   );
+}
+
+function FlowBlock({ title, copy, accent = false }: { title: string; copy: string; accent?: boolean }) {
+  return (
+    <div className={`rounded-lg border p-5 ${accent ? "border-[#217ED9]/50 bg-[#0a1929]/75" : "border-slate-700 bg-slate-950/70"}`}>
+      <h3 className="text-lg font-semibold text-white">{title}</h3>
+      <p className="mt-2 text-base leading-7 text-slate-300">{copy}</p>
+    </div>
+  );
+}
+
+function FlowArrow() {
+  return <div className="py-2 text-center text-xl text-[#75ADE6]">↓</div>;
 }

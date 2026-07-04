@@ -43,7 +43,7 @@ function buildMessage(data: FormData) {
   ].join("\n");
 }
 
-export function DesignPartnerForm() {
+export function ContactLastMileForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -64,7 +64,7 @@ export function DesignPartnerForm() {
   const markStarted = () => {
     if (hasStarted) return;
     setHasStarted(true);
-    trackEvent("form_design_partner_start", { form_name: "contact_last_mile" });
+    trackEvent("form_contact_start", { form_name: "contact_last_mile" });
   };
 
   const onSubmit = async (data: FormData) => {
@@ -98,7 +98,7 @@ export function DesignPartnerForm() {
         throw new Error(`HubSpot submission failed with ${response.status}`);
       }
 
-      trackEvent("form_design_partner_submit", {
+      trackEvent("form_contact_submit", {
         form_name: "contact_last_mile",
         operational_environment: data.operationalEnvironment,
       });

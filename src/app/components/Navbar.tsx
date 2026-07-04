@@ -10,9 +10,8 @@ interface NavItem {
 
 const productItems: NavItem[] = [
   { to: "/infinit-signal", label: "Infinit-Signal" },
-  { to: "/singularity", label: "Singularity" },
-  { to: "/infinit-flow", label: "Infinit-Flow" },
   { to: "/infinit-control", label: "Infinit-Control" },
+  { to: "/infinit-flow", label: "Infinit-Flow" },
 ];
 
 const resourceItems: NavItem[] = [
@@ -54,7 +53,7 @@ export function Navbar() {
             </Link>
             <TrackedLink
               to="/contact"
-              eventName="cta_design_partner_click"
+              eventName="cta_contact_click"
               className="ml-2 inline-flex min-h-11 items-center rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-[#0a1929]"
             >
               Contact Last Mile
@@ -83,7 +82,7 @@ export function Navbar() {
             <MobileLink to="/about" label="About" onClick={() => setMobileMenuOpen(false)} />
             <TrackedLink
               to="/contact"
-              eventName="cta_design_partner_click"
+              eventName="cta_contact_click"
               onClick={() => setMobileMenuOpen(false)}
               className="mt-3 flex min-h-11 items-center rounded-sm border border-[#217ED9] px-3 py-2 text-base font-semibold text-white"
             >

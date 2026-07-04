@@ -9,9 +9,11 @@ export interface ProductPageLayoutProps {
   primaryCta: { label: string; to: string };
   secondaryCta: { label: string; to: string };
   overview: { heading: string; copy: string[]; children?: ReactNode };
+  benefits: Array<{ title: string; copy?: string }>;
   features: Array<{ title: string; copy?: string }>;
   useCases: string[];
   relatedProducts: Array<{ label: string; to: string }>;
+  relatedHeading?: string;
   faqs: Array<{ question: string; answer: string }>;
   resources: Array<{ label: string; to?: string }>;
   finalCta?: { heading: string; copy: string[]; label: string; to: string };
@@ -19,7 +21,8 @@ export interface ProductPageLayoutProps {
 
 const localNav = [
   { id: "overview", label: "Overview" },
-  { id: "features-benefits", label: "Features & Benefits" },
+  { id: "benefits", label: "Benefits" },
+  { id: "features", label: "Features" },
   { id: "use-cases", label: "Use Cases" },
   { id: "related-products", label: "Related Products" },
   { id: "faqs", label: "FAQs" },
@@ -33,9 +36,11 @@ export function ProductPageLayout({
   primaryCta,
   secondaryCta,
   overview,
+  benefits,
   features,
   useCases,
   relatedProducts,
+  relatedHeading = "Related Products",
   faqs,
   resources,
   finalCta = {
@@ -61,7 +66,7 @@ export function ProductPageLayout({
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <TrackedLink
                 to={primaryCta.to}
-                eventName="cta_design_partner_click"
+                eventName="cta_contact_click"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 text-base font-semibold text-white hover:bg-[#0a1929] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#75bda7]"
               >
                 {primaryCta.label} <ArrowRight className="h-5 w-5" />
@@ -100,7 +105,15 @@ export function ProductPageLayout({
           {overview.children}
         </PageSection>
 
-        <PageSection id="features-benefits" title="Features & Benefits">
+        <PageSection id="benefits" title="Benefits">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {benefits.map((benefit) => (
+              <ArticleCard key={benefit.title} title={benefit.title} copy={benefit.copy} />
+            ))}
+          </div>
+        </PageSection>
+
+        <PageSection id="features" title="Features">
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {features.map((feature) => (
               <ArticleCard key={feature.title} title={feature.title} copy={feature.copy} />
@@ -118,7 +131,7 @@ export function ProductPageLayout({
           </div>
         </PageSection>
 
-        <PageSection id="related-products" title="Related Products">
+        <PageSection id="related-products" title={relatedHeading}>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {relatedProducts.map((product) => (
               <TrackedLink
@@ -178,7 +191,7 @@ export function ProductPageLayout({
             ))}
             <TrackedLink
               to={finalCta.to}
-              eventName="cta_design_partner_click"
+              eventName="cta_contact_click"
               className="mt-10 inline-flex min-h-11 items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-8 py-3 text-base font-semibold text-white hover:bg-[#0a1929] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#75bda7]"
             >
               {finalCta.label} <ArrowRight className="h-5 w-5" />

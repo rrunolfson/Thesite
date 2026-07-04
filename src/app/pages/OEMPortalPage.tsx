@@ -1,5 +1,5 @@
-import { DesignPartnerPage } from "./DesignPartnerPage";
+import { ContactPage } from "./ContactPage";
 
 export function OEMPortalPage() {
-  return <DesignPartnerPage />;
+  return <ContactPage />;
 }

@@ -1,6 +1,8 @@
 # Last Mile Integrations
 
-Last Mile publishes a public integrations catalog organized by industry, vendor, and product.
+This library contains Last Mile integrations developed for ServiceNow environments. These integrations remain available for organizations that need to connect operational systems with ServiceNow workflows.
+
+The Last Mile Platform extends beyond integration work. It is designed to turn operational signals into shared understanding, workflow, automation, and accountable action across the systems your organization already uses.
 
 ## Primary URLs
 

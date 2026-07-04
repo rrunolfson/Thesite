@@ -1,5 +1,5 @@
 import { SEO } from "@/app/components/SEO";
-import { DesignPartnerForm } from "@/app/components/DesignPartnerForm";
+import { ContactLastMileForm } from "@/app/components/ContactLastMileForm";
 import { TrackedLink } from "@/app/components/TrackedLink";
 import { createBreadcrumbSchema } from "@/app/lib/structuredData";
 
@@ -62,7 +62,7 @@ export function ContactPage() {
               </div>
 
               <div className="glass-panel rounded-lg p-6 md:p-8">
-                <DesignPartnerForm />
+                <ContactLastMileForm />
               </div>
             </div>
           </section>

@@ -45,8 +45,6 @@ export function Root() {
       link.href = '/favicon.png';
       document.head.appendChild(link);
 
-      // Also set the document title
-      document.title = 'Last Mile';
     };
 
     setFavicon();

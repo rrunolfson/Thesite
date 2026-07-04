@@ -1,6 +1,6 @@
 # Signal 2 Action
 
-Signal 2 Action is the Last Mile podcast about operational intelligence, semantic context, trustworthy automation, and the path from signal to accountable action.
+Signal 2 Action is the Last Mile podcast about operational intelligence, workflow, automation, real operators, and accountable action.
 
 ## Primary URLs
 
@@ -13,5 +13,5 @@ Signal 2 Action is the Last Mile podcast about operational intelligence, semanti
 - The operational action gap
 - Industrial and enterprise operational intelligence
 - OT, IT, and workflow convergence
-- Semantic context, source authority, quality, and trust
+- Operational context, source quality, and accountable action
 - The practical work between detection and accountable response

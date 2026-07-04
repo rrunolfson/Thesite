@@ -4,14 +4,14 @@ import { Linkedin } from "lucide-react";
 const platformLinks = [
   { to: "/platform", label: "Platform Overview", eventName: "cta_explore_platform_click" as const },
   { to: "/infinit-signal", label: "Infinit-Signal", eventName: "cta_product_click" as const },
-  { to: "/singularity", label: "Singularity", eventName: "cta_product_click" as const },
-  { to: "/infinit-flow", label: "Infinit-Flow", eventName: "cta_product_click" as const },
   { to: "/infinit-control", label: "Infinit-Control", eventName: "cta_product_click" as const },
+  { to: "/infinit-flow", label: "Infinit-Flow", eventName: "cta_product_click" as const },
+  { to: "/singularity", label: "Operational Memory: Singularity", eventName: "cta_product_click" as const },
 ];
 
 const companyLinks = [
   { to: "/about", label: "About Last Mile", eventName: "cta_explore_platform_click" as const },
-  { to: "/contact", label: "Contact Last Mile", eventName: "cta_design_partner_click" as const },
+  { to: "/contact", label: "Contact Last Mile", eventName: "cta_contact_click" as const },
 ];
 
 const referenceLinks = [

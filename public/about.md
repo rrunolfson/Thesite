@@ -10,7 +10,7 @@ Last Mile is building the operational intelligence layer between detection and a
 
 - Focuses on the operational action gap between a detected issue and a coordinated response
 - Works from authorized source data rather than a replacement agenda
-- Uses Singularity, Infinit-Flow, and Infinit-Control to preserve operating history, organize response, and show what is happening
+- Uses Singularity as the shared operational-memory foundation inside the Last Mile Platform
 
 ## Operating principles
 

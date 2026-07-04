@@ -8,7 +8,7 @@ export function InfinitControlPage() {
   return (
     <>
       <SEO
-        title="Infinit-Control | Live Operational Context"
+        title="Infinit-Control | Customer-Defined Operational Views | Last Mile"
         description={description}
         canonicalPath="/infinit-control"
         jsonLd={[
@@ -21,51 +21,63 @@ export function InfinitControlPage() {
       />
       <ProductPageLayout
         eyebrow="INFINIT-CONTROL"
-        title="See what is happening, what is moving, and what still needs attention."
-        intro="Infinit-Control gives operations teams a live view of issues, affected assets, active work, system health, data quality, and evidence. It is built for the people who need to understand the operation and move the response forward."
+        title="Build the operational view your team needs."
+        intro="Infinit-Control gives customers a flexible, user-defined single pane of glass for their operating estate. It brings together the widgets, alerts, assets, trends, active work, system health, evidence, and operational context that matter to each team."
         primaryCta={{ label: "Talk through your operational view", to: "/contact" }}
-        secondaryCta={{ label: "Explore the platform", to: "/platform" }}
+        secondaryCta={{ label: "Explore Singularity", to: "/singularity" }}
         overview={{
-          heading: "Stop hunting for the right dashboard.",
+          heading: "See the operation without hunting through systems.",
           copy: [
-            "An alarm may be visible in one system, work in another, source health in a third, and the evidence somewhere else entirely. Infinit-Control brings the current operational picture together without pretending to replace the systems that own it.",
+            "Operational information is usually spread across dashboards, historians, SCADA screens, ticket systems, email, spreadsheets, and tribal knowledge. Infinit-Control helps customers create their own view of operations using the shared record in Singularity.",
+            "Infinit-Control does not replace HMI, SCADA, historian, BI, or operations-management systems. It works above them to help teams manage cross-system operational response.",
           ],
         }}
+        benefits={[
+          { title: "Let each team see what matters" },
+          { title: "Bring alerts, work, asset context, and evidence together" },
+          { title: "Reduce time spent hunting for information" },
+          { title: "Surface active work and unresolved issues" },
+          { title: "Support faster operational decisions" },
+        ]}
         features={[
-          { title: "User-configured operational views" },
-          { title: "Active issue and Condition tracking" },
-          { title: "Asset and location context" },
-          { title: "Workflow and work-queue visibility" },
-          { title: "Source-health and quality indicators" },
-          { title: "Evidence timelines" },
-          { title: "Historical trends where needed" },
-          { title: "Role-based views", copy: "Operators, supervisors, reliability teams, and leaders can see the context they need." },
+          { title: "Customer-defined views and layouts" },
+          { title: "Configurable widgets" },
+          { title: "Alert and issue visibility" },
+          { title: "Asset and location views" },
+          { title: "Active work and workflow status" },
+          { title: "Source-system health" },
+          { title: "Data-quality indicators" },
+          { title: "Evidence and timeline views" },
+          { title: "Historical trends from Singularity" },
+          { title: "Role-based experiences", copy: "Operators, supervisors, reliability leaders, and executives can see the context they need." },
+          { title: "Built from the operational record in Singularity", copy: "Infinit-Control does not create a separate version of operational truth. It draws from the shared history and context in Singularity so customers can build views around the assets, alerts, work, evidence, and operational conditions that matter to them." },
         ]}
         useCases={[
-          "Site operations command center.",
+          "Operations command view.",
           "Maintenance supervisor workboard.",
-          "Shift handoff.",
-          "Asset-health and reliability view.",
-          "Cooling-response room.",
-          "Source-health and data-quality monitoring.",
+          "Shift handoff view.",
+          "Asset-health visibility.",
+          "Cooling-response coordination.",
+          "Data-quality and source-health monitoring.",
+          "Multi-site operations overview.",
         ]}
         relatedProducts={[
           { label: "Infinit-Signal", to: "/infinit-signal" },
-          { label: "Singularity", to: "/singularity" },
           { label: "Infinit-Flow", to: "/infinit-flow" },
+          { label: "Operational Memory: Singularity", to: "/singularity" },
         ]}
         faqs={[
           {
             question: "Is Infinit-Control a generic dashboard product?",
-            answer: "No. It is designed around live operational context: issues, assets, work, source health, quality, evidence, and response progress.",
+            answer: "No. Infinit-Control is designed around live operational context. It brings together issues, assets, work, source health, quality, evidence, and response progress so customers can build views that reflect how their operation actually runs.",
           },
           {
             question: "Does it replace an HMI or SCADA screen?",
             answer: "No. It works above those tools to help teams manage the cross-system operational response.",
           },
           {
-            question: "Can different teams create different views?",
-            answer: "Yes. Authorized users can build role-specific views around the assets, workflows, and operational situations they need to manage.",
+            question: "Can different teams create different operational views?",
+            answer: "Yes. Customers can create role-specific views around the assets, workflows, alerts, and operational situations each team needs to manage.",
           },
         ]}
         resources={[
@@ -77,7 +89,7 @@ export function InfinitControlPage() {
         finalCta={{
           heading: "Talk through your operational view.",
           copy: ["Tell us what your team needs to see across issues, assets, active work, health, quality, evidence, and response progress."],
-          label: "Contact Last Mile",
+          label: "Talk through your operational view",
           to: "/contact",
         }}
       />

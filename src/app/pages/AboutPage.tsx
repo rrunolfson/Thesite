@@ -29,7 +29,7 @@ export function AboutPage() {
                 <p className="mt-6 text-xl leading-8 text-slate-300">
                   Last Mile exists because operational teams should not have to reconstruct context, ownership, and response every time a system detects something important. We are building an operations-native platform that helps organizations turn the signals their teams care about into faster decisions, automated workflows, and accountable action.
                 </p>
-                <TrackedLink to="/contact" eventName="cta_design_partner_click" className="mt-10 inline-flex min-h-11 items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 font-semibold text-white hover:bg-[#0a1929]">
+                <TrackedLink to="/contact" eventName="cta_contact_click" className="mt-10 inline-flex min-h-11 items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 font-semibold text-white hover:bg-[#0a1929]">
                   Contact Last Mile <ArrowRight className="h-5 w-5" />
                 </TrackedLink>
               </div>
@@ -64,7 +64,7 @@ export function AboutPage() {
 
           <Section title="The next version of operational intelligence must be built with real operators.">
             <p>Last Mile is built with the realities of real operations in mind: source systems already in place, teams that need clarity, work that must move, and outcomes that need to improve over time.</p>
-            <TrackedLink to="/contact" eventName="cta_design_partner_click" className="mt-8 inline-flex min-h-11 items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 font-semibold text-white hover:bg-[#0a1929]">
+            <TrackedLink to="/contact" eventName="cta_contact_click" className="mt-8 inline-flex min-h-11 items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 font-semibold text-white hover:bg-[#0a1929]">
               Talk to Last Mile <ArrowRight className="h-5 w-5" />
             </TrackedLink>
           </Section>

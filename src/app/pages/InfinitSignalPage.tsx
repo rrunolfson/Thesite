@@ -8,7 +8,7 @@ export function InfinitSignalPage() {
   return (
     <>
       <SEO
-        title="Infinit-Signal | Operational Signals to Actionable Facts"
+        title="Infinit-Signal | Operational Data Ingestion and Context | Last Mile"
         description={description}
         canonicalPath="/infinit-signal"
         jsonLd={[
@@ -24,7 +24,7 @@ export function InfinitSignalPage() {
         title="Turn operational signals into facts your team can act on."
         intro="Infinit-Signal brings together the data, source history, quality, and asset context around an event so your team can tell the difference between a raw alert and a real issue worth acting on."
         primaryCta={{ label: "Talk through your source environment", to: "/contact" }}
-        secondaryCta={{ label: "Explore Singularity", to: "/singularity" }}
+        secondaryCta={{ label: "Explore the platform architecture", to: "/platform" }}
         overview={{
           heading: "A signal is not automatically a problem.",
           copy: [
@@ -32,6 +32,13 @@ export function InfinitSignalPage() {
             "Infinit-Signal helps determine what happened, what it affects, whether the information is reliable, and whether the issue should trigger a response.",
           ],
         }}
+        benefits={[
+          { title: "Separate noise from issues", copy: "Help teams understand which signals are real, current, complete, and worth acting on." },
+          { title: "Preserve source context", copy: "Keep where information came from, how fresh it is, and what evidence supports it connected to the issue." },
+          { title: "Connect signals to assets", copy: "Link source events to the equipment, location, operating history, and urgency needed for response." },
+          { title: "Improve downstream workflow", copy: "Inject normalized, contextualized operational information into Singularity so Control and Flow can use it." },
+          { title: "Support trusted automation", copy: "Give workflows better inputs before tasks, approvals, escalations, or authorized actions begin." },
+        ]}
         features={[
           { title: "Source profiles", copy: "Repeatable integrations." },
           { title: "Source and event history" },
@@ -50,9 +57,10 @@ export function InfinitSignalPage() {
           "Route important source-health issues.",
         ]}
         relatedProducts={[
-          { label: "Singularity", to: "/singularity" },
-          { label: "Infinit-Flow", to: "/infinit-flow" },
           { label: "Infinit-Control", to: "/infinit-control" },
+          { label: "Infinit-Flow", to: "/infinit-flow" },
+          { label: "Operational Memory: Singularity", to: "/singularity" },
+          { label: "Last Mile Platform", to: "/platform" },
         ]}
         faqs={[
           {
@@ -77,7 +85,7 @@ export function InfinitSignalPage() {
         finalCta={{
           heading: "Talk through your source environment.",
           copy: ["Tell us about the signals, events, source systems, and response gaps your team is working to improve."],
-          label: "Contact Last Mile",
+          label: "Talk through your source environment",
           to: "/contact",
         }}
       />
