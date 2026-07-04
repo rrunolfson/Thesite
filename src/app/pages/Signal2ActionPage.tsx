@@ -178,7 +178,7 @@ export function Signal2ActionPage() {
               <p className="mt-6 text-lg leading-8 text-slate-300">
                 Signal 2 Action is interested in operators, system builders, researchers, and practitioners with a grounded point of view on how operational signals become real work.
               </p>
-              <TrackedLink to="/design-partner?conversation_type=podcast" eventName="cta_design_partner_click" eventData={{ conversation_type: "podcast" }} className="mt-10 inline-flex items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-8 py-3 font-semibold text-white hover:bg-[#0a1929]">
+              <TrackedLink to="/contact" eventName="cta_design_partner_click" eventData={{ conversation_type: "podcast" }} className="mt-10 inline-flex min-h-11 items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-8 py-3 font-semibold text-white hover:bg-[#0a1929]">
                 Propose a conversation <ArrowRight className="h-5 w-5" />
               </TrackedLink>
             </div>

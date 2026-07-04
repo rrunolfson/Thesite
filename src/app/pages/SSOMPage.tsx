@@ -1,27 +1,30 @@
 import { SEO } from "@/app/components/SEO";
 import { ProductPageLayout } from "@/app/components/ProductPageLayout";
-import { createBreadcrumbSchema } from "@/app/lib/structuredData";
+import { createBreadcrumbSchema, createProductSchema } from "@/app/lib/structuredData";
 
 export function SSOMPage() {
-  const description = "Singularity is Last Mile's organization-specific operational memory, built on SSOM, connecting assets, signals, issues, work, decisions, and outcomes.";
+  const description = "Singularity is Last Mile's operational memory product, built on SSOM. It connects assets, signals, issues, work, decisions, and outcomes so operations can improve over time.";
 
   return (
     <>
       <SEO
-        title="Singularity / SSOM | Operational Memory"
+        title="Singularity | Operational Memory for Better Operational Action"
         description={description}
-        canonicalPath="/ssom"
-        jsonLd={createBreadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Singularity, built on SSOM", path: "/ssom" },
-        ])}
+        canonicalPath="/singularity"
+        jsonLd={[
+          createProductSchema("Singularity", "/singularity", `${description} Singularity is built on the SSOM semantic model.`),
+          createBreadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Singularity", path: "/singularity" },
+          ]),
+        ]}
       />
       <ProductPageLayout
-        eyebrow="SINGULARITY, BUILT ON SSOM"
-        title="Your operation gets smarter when it can remember."
-        intro="Singularity is Last Mile's operational memory. It connects the history of your assets, signals, issues, work, decisions, and outcomes so teams can understand what happened before and improve what happens next."
-        primaryCta={{ label: "Explore your operational memory", to: "/design-partner?conversation_type=ssom-discussion" }}
-        secondaryCta={{ label: "See how Infinit-Signal creates the record", to: "/infinit-signal" }}
+        eyebrow="SINGULARITY"
+        title="Operational memory that improves every response."
+        intro="Singularity connects the history of your assets, signals, issues, work, decisions, and outcomes so teams can understand what happened before and improve what happens next."
+        primaryCta={{ label: "Talk through your operating environment", to: "/contact" }}
+        secondaryCta={{ label: "Explore Infinit-Signal", to: "/infinit-signal" }}
         overview={{
           heading: "More than a historian. The memory behind better action.",
           copy: [
@@ -39,6 +42,10 @@ export function SSOMPage() {
           { title: "Recurrence and trend analysis" },
           { title: "Maintenance and response tuning" },
           { title: "AI-ready, evidence-backed context" },
+          {
+            title: "Built on SSOM",
+            copy: "SSOM is the semantic model inside Singularity. It gives Singularity a consistent way to understand assets, relationships, events, issues, quality, timing, evidence, and outcomes across the systems that make up your operating environment.",
+          },
         ]}
         useCases={[
           "Tune preventive-maintenance thresholds.",
@@ -60,20 +67,30 @@ export function SSOMPage() {
             answer: "No. Singularity works above and across existing historians and source systems. It preserves the context, decisions, work, and outcomes that help teams make better operational decisions.",
           },
           {
-            question: "Is our operational history shared with other customers?",
+            question: "What is SSOM?",
+            answer: "SSOM is the semantic model inside Singularity. It gives the platform a common way to retain meaning across assets, events, issues, quality, timing, evidence, and outcomes.",
+          },
+          {
+            question: "Is our operating history shared with other customers?",
             answer: "No. Each organization's operational memory remains separate. Any future contribution or shared-learning capability would be optional, governed, and separate from day-to-day customer operations.",
           },
           {
-            question: "Does Singularity automatically change our maintenance plans?",
+            question: "Does Singularity automatically change maintenance plans?",
             answer: "No. It helps teams identify patterns and improve recommendations, thresholds, and response playbooks. Changes remain under the operating rules and approvals your organization sets.",
           },
         ]}
         resources={[
-          { label: "SSOM overview" },
           { label: "Singularity architecture" },
-          { label: "Signal 2 Action episode: operational memory", to: "/signal-to-action" },
-          { label: "Explore a design-partner use case", to: "/design-partner?conversation_type=ssom-discussion" },
+          { label: "Platform overview", to: "/platform" },
+          { label: "Signal 2 Action", to: "/signal-to-action" },
+          { label: "News and Updates", to: "/company/newsroom" },
         ]}
+        finalCta={{
+          heading: "Talk through your operating environment.",
+          copy: ["Tell us about the assets, signals, work, decisions, and outcomes your team needs to understand over time."],
+          label: "Contact Last Mile",
+          to: "/contact",
+        }}
       />
     </>
   );

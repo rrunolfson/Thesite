@@ -23,8 +23,8 @@ export function InfinitControlPage() {
         eyebrow="INFINIT-CONTROL"
         title="See what is happening, what is moving, and what still needs attention."
         intro="Infinit-Control gives operations teams a live view of issues, affected assets, active work, system health, data quality, and evidence. It is built for the people who need to understand the operation and move the response forward."
-        primaryCta={{ label: "Design an operational view", to: "/design-partner?conversation_type=technical-collaboration" }}
-        secondaryCta={{ label: "See the platform overview", to: "/platform" }}
+        primaryCta={{ label: "Talk through your operational view", to: "/contact" }}
+        secondaryCta={{ label: "Explore the platform", to: "/platform" }}
         overview={{
           heading: "Stop hunting for the right dashboard.",
           copy: [
@@ -51,7 +51,7 @@ export function InfinitControlPage() {
         ]}
         relatedProducts={[
           { label: "Infinit-Signal", to: "/infinit-signal" },
-          { label: "Singularity", to: "/ssom" },
+          { label: "Singularity", to: "/singularity" },
           { label: "Infinit-Flow", to: "/infinit-flow" },
         ]}
         faqs={[
@@ -69,11 +69,17 @@ export function InfinitControlPage() {
           },
         ]}
         resources={[
-          { label: "Control-view overview" },
-          { label: "Operational response pattern" },
-          { label: "Signal 2 Action episode: beyond dashboards", to: "/signal-to-action" },
-          { label: "Design an operational view", to: "/design-partner?conversation_type=technical-collaboration" },
+          { label: "Infinit-Control architecture" },
+          { label: "Platform overview", to: "/platform" },
+          { label: "Signal 2 Action", to: "/signal-to-action" },
+          { label: "News and Updates", to: "/company/newsroom" },
         ]}
+        finalCta={{
+          heading: "Talk through your operational view.",
+          copy: ["Tell us what your team needs to see across issues, assets, active work, health, quality, evidence, and response progress."],
+          label: "Contact Last Mile",
+          to: "/contact",
+        }}
       />
     </>
   );

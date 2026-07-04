@@ -11,7 +11,7 @@ export function createOrganizationSchema() {
     logo: `${siteUrl}/logo.png`,
     sameAs: ["https://www.linkedin.com/company/lastmile-inc/"],
     description:
-      "Last Mile helps operations teams turn the signals they already have into faster decisions, automated workflows, and accountable action.",
+      "Last Mile turns operational signals into coordinated work, authorized automation, and visible operational outcomes.",
   };
 }
 
@@ -22,7 +22,7 @@ export function createWebsiteSchema() {
     name: "Last Mile",
     url: siteUrl,
     description:
-      "Last Mile helps operations teams turn the signals they already have into faster decisions, automated workflows, and accountable action.",
+      "Last Mile turns operational signals into coordinated work, authorized automation, and visible operational outcomes.",
   };
 }
 

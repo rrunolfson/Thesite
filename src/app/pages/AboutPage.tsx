@@ -9,7 +9,7 @@ export function AboutPage() {
     <>
       <SEO
         title="About Last Mile | Building Operational Intelligence That Reaches Action"
-        description="Learn why Last Mile is building an operational intelligence platform that turns trusted signals into governed, accountable action across existing operational systems."
+        description="Learn why Last Mile is building an operational intelligence platform that turns operational signals into coordinated work, authorized automation, and visible outcomes."
         canonicalPath="/about"
         markdownPath="/about.md"
         jsonLd={createBreadcrumbSchema([
@@ -29,8 +29,8 @@ export function AboutPage() {
                 <p className="mt-6 text-xl leading-8 text-slate-300">
                   Last Mile exists because operational teams should not have to reconstruct context, ownership, and response every time a system detects something important. We are building an operations-native platform that helps organizations turn the signals their teams care about into faster decisions, automated workflows, and accountable action.
                 </p>
-                <TrackedLink to="/design-partner" eventName="cta_design_partner_click" className="mt-10 inline-flex items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 font-semibold text-white hover:bg-[#0a1929]">
-                  Request a design-partner conversation <ArrowRight className="h-5 w-5" />
+                <TrackedLink to="/contact" eventName="cta_design_partner_click" className="mt-10 inline-flex min-h-11 items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 font-semibold text-white hover:bg-[#0a1929]">
+                  Contact Last Mile <ArrowRight className="h-5 w-5" />
                 </TrackedLink>
               </div>
             </div>
@@ -45,13 +45,13 @@ export function AboutPage() {
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
               <PrincipleCard title="Respect the systems already operating the environment" copy="We work from authorized source data and do not begin with a replacement agenda." />
               <PrincipleCard title="Preserve trust, context, and uncertainty" copy="Source authority, evidence, quality, timing, and provenance matter when operational decisions carry consequences." />
-              <PrincipleCard title="Separate operational meaning from application behavior" copy="SSOM provides shared semantics; the Last Mile Platform provides workflow, control, tenant, security, and SaaS capabilities." />
+              <PrincipleCard title="Separate operational meaning from application behavior" copy="Singularity uses SSOM to preserve meaning; the Last Mile Platform provides workflow, visibility, tenant, security, and SaaS capabilities." />
               <PrincipleCard title="Keep humans and policy in the loop where they belong" copy="Automation should be governed, observable, and appropriate to the operational context." />
               <PrincipleCard title="Start narrow and prove value" copy="A credible platform begins with a real operational use case, measurable outcome, and repeatable source-to-response path." />
             </div>
           </Section>
 
-          <Section title="A platform built around useful facts, organized work, and visible operational state.">
+          <Section title="A platform built around useful facts, organized work, and a live operational view.">
             <div className="grid gap-6 md:grid-cols-3">
               <PrincipleCard title="Infinit-Signal" copy="Records, evidence, and confirmed issues worth acting on." />
               <PrincipleCard title="Infinit-Flow" copy="Operational work, approvals, escalation, and authorized automation." />
@@ -63,9 +63,9 @@ export function AboutPage() {
           </Section>
 
           <Section title="The next version of operational intelligence must be built with real operators.">
-            <p>Last Mile is engaging design partners that can bring a meaningful operational challenge, a realistic source environment, and a clear owner for the response outcome. The objective is not a broad transformation program. It is a focused, evidence-based partnership around one operational gap worth solving.</p>
-            <TrackedLink to="/design-partner" eventName="cta_design_partner_click" className="mt-8 inline-flex items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 font-semibold text-white hover:bg-[#0a1929]">
-              Become a design partner <ArrowRight className="h-5 w-5" />
+            <p>Last Mile is built with the realities of real operations in mind: source systems already in place, teams that need clarity, work that must move, and outcomes that need to improve over time.</p>
+            <TrackedLink to="/contact" eventName="cta_design_partner_click" className="mt-8 inline-flex min-h-11 items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 font-semibold text-white hover:bg-[#0a1929]">
+              Talk to Last Mile <ArrowRight className="h-5 w-5" />
             </TrackedLink>
           </Section>
         </div>

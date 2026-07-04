@@ -80,15 +80,15 @@ export function Root() {
         },
       },
       {
-        name: "open_design_partner_page",
-        description: "Open the design-partner page for operational and technical collaboration outreach.",
+        name: "open_contact_page",
+        description: "Open the Contact Last Mile page for operational and technical outreach.",
         inputSchema: {
           type: "object",
           additionalProperties: false,
           properties: {},
         },
         execute: async () => {
-          const url = `${baseUrl}/design-partner`;
+          const url = `${baseUrl}/contact`;
           window.location.assign(url);
 
           return {

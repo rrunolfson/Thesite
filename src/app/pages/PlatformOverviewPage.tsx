@@ -3,12 +3,12 @@ import { ProductPageLayout } from "@/app/components/ProductPageLayout";
 import { createBreadcrumbSchema } from "@/app/lib/structuredData";
 
 export function PlatformOverviewPage() {
-  const description = "Last Mile connects operational signals to the people, workflow, automation, and evidence needed to respond from signal to action.";
+  const description = "Last Mile connects operational signals to coordinated work, authorized automation, and visible operational outcomes.";
 
   return (
     <>
       <SEO
-        title="Last Mile Platform | Raise Operational Intelligence from Signal to Action"
+        title="Last Mile Platform | Operational Intelligence for Enterprise Operations"
         description={description}
         canonicalPath="/platform"
         jsonLd={createBreadcrumbSchema([
@@ -20,7 +20,7 @@ export function PlatformOverviewPage() {
         eyebrow="LAST MILE PLATFORM"
         title="Raise your operational intelligence from signal to action."
         intro="Last Mile connects the signals already coming from your operation to the people, workflow, automation, and evidence needed to respond. It works above the systems you already use, helping them move from detection to action together."
-        primaryCta={{ label: "Explore a design-partner use case", to: "/design-partner" }}
+        primaryCta={{ label: "Talk through your operation", to: "/contact" }}
         secondaryCta={{ label: "See the platform architecture", to: "#overview" }}
         overview={{
           heading: "One platform for what happens after a system detects a problem.",
@@ -32,10 +32,10 @@ export function PlatformOverviewPage() {
         }}
         features={[
           { title: "Infinit-Signal", copy: "Turn operational data into facts and issues worth acting on." },
-          { title: "Singularity / SSOM", copy: "Preserve the operational memory needed to improve every response." },
+          { title: "Singularity", copy: "Preserve the operational memory needed to improve every response." },
           { title: "Infinit-Flow", copy: "Coordinate people, workflows, escalations, approvals, and automation." },
           { title: "Infinit-Control", copy: "Give teams a live view of the issue, work, system health, and evidence." },
-          { title: "Authorized response", copy: "Trigger approved actions through existing enterprise systems." },
+          { title: "Authorized response", copy: "Trigger actions through existing enterprise systems." },
           { title: "AI-assisted optimization", copy: "Identify patterns and recommend stronger responses over time." },
         ]}
         useCases={[
@@ -48,7 +48,7 @@ export function PlatformOverviewPage() {
         ]}
         relatedProducts={[
           { label: "Infinit-Signal", to: "/infinit-signal" },
-          { label: "Singularity", to: "/ssom" },
+          { label: "Singularity", to: "/singularity" },
           { label: "Infinit-Flow", to: "/infinit-flow" },
           { label: "Infinit-Control", to: "/infinit-control" },
         ]}
@@ -62,16 +62,22 @@ export function PlatformOverviewPage() {
             answer: "Not in the baseline platform. Last Mile coordinates authorized operational workflows and enterprise actions above the device and process-control layers.",
           },
           {
-            question: "Can we start with one use case?",
-            answer: "Yes. The recommended approach is to begin with one operational gap, one source environment, and one measurable response outcome.",
+            question: "Can Last Mile begin with a narrow operational use case?",
+            answer: "Yes. Last Mile can start with one operational challenge, one source environment, and one response outcome that matters.",
           },
         ]}
         resources={[
-          { label: "Platform architecture overview" },
+          { label: "Platform architecture" },
           { label: "Signal 2 Action", to: "/signal-to-action" },
-          { label: "Design-partner briefing", to: "/design-partner" },
           { label: "ServiceNow Integration Library", to: "/integrations" },
+          { label: "News and Updates", to: "/company/newsroom" },
         ]}
+        finalCta={{
+          heading: "Talk through your operation.",
+          copy: ["Tell us what you are trying to improve across operational response, workflow, automation, visibility, and operating history."],
+          label: "Contact Last Mile",
+          to: "/contact",
+        }}
       />
     </>
   );
@@ -85,17 +91,17 @@ function PlatformArchitecture() {
     },
     {
       title: "Infinit-Signal",
-      copy: "Trusted operational facts, source history, evidence, and confirmed issues worth acting on",
+      copy: "Operational facts, evidence, quality, and issues worth acting on",
       accent: true,
     },
     {
-      title: "Singularity, built on SSOM",
-      copy: "Operational memory and shared context",
+      title: "Singularity",
+      copy: "Operational memory, built on SSOM",
       accent: true,
     },
     {
       title: "Infinit-Flow and Infinit-Control",
-      copy: "Infinit-Flow: Workflow, human work, approvals, assignments, escalations, and authorized action. Infinit-Control: Current operational state, issues, affected assets, work progress, system health, quality, and evidence",
+      copy: "Infinit-Flow: Workflow, human work, approvals, assignments, escalations, and authorized action. Infinit-Control: A live view of issues, affected assets, work progress, system health, quality, and evidence",
       accent: true,
     },
     {

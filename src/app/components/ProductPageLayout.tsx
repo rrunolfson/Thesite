@@ -39,12 +39,12 @@ export function ProductPageLayout({
   faqs,
   resources,
   finalCta = {
-    heading: "Bring one operational gap. Leave with a path to action.",
+    heading: "Tell us what you are working to improve.",
     copy: [
-      "Start with one real problem, one source environment, and one response outcome worth improving.",
+      "Talk with Last Mile about the systems, operational challenges, workflow bottlenecks, and automation opportunities that matter to your organization.",
     ],
-    label: "Request a design-partner conversation",
-    to: "/design-partner",
+    label: "Contact Last Mile",
+    to: "/contact",
   },
 }: ProductPageLayoutProps) {
   return (
@@ -68,7 +68,7 @@ export function ProductPageLayout({
               </TrackedLink>
               <TrackedLink
                 to={secondaryCta.to}
-                eventName={secondaryCta.to === "/ssom" ? "cta_ssom_click" : "cta_product_click"}
+                eventName={secondaryCta.to === "/singularity" ? "cta_product_click" : "cta_product_click"}
                 className="inline-flex min-h-11 items-center justify-center rounded-sm border border-slate-600 bg-slate-900/60 px-7 py-3 text-base font-semibold text-white hover:border-[#217ED9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#75bda7]"
               >
                 {secondaryCta.label}
@@ -124,7 +124,7 @@ export function ProductPageLayout({
               <TrackedLink
                 key={product.to}
                 to={product.to}
-                eventName={product.to === "/ssom" ? "cta_ssom_click" : "cta_product_click"}
+                eventName="cta_product_click"
                 eventData={{ product: product.label }}
                 className="rounded-lg border border-slate-700 bg-slate-900/60 p-5 text-lg font-semibold text-white transition-colors hover:border-[#217ED9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#75bda7]"
               >

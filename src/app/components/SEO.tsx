@@ -22,7 +22,7 @@ export function SEO({
   jsonLd,
 }: SEOProps) {
   const baseUrl = 'https://lastmileinc.ai';
-  const fullTitle = title.includes('Last Mile') ? title : `${title} | Last Mile Inc.`;
+  const fullTitle = title.includes('Last Mile') ? title : `${title} | Last Mile`;
   const canonicalUrl = `${baseUrl}${canonicalPath}`;
   const jsonLdEntries = Array.isArray(jsonLd)
     ? jsonLd

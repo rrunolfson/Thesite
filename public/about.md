@@ -9,12 +9,12 @@ Last Mile is building the operational intelligence layer between detection and a
 ## Company narrative
 
 - Focuses on the operational action gap between a detected issue and a coordinated response
-- Works from customer-approved source data rather than a replacement agenda
-- Uses SSOM, qualified Conditions, governed workflows, and visible operational state to support accountable action
+- Works from authorized source data rather than a replacement agenda
+- Uses Singularity, Infinit-Flow, and Infinit-Control to preserve operating history, organize response, and show what is happening
 
 ## Operating principles
 
 - Respect the systems already operating the environment
-- Preserve trust, context, quality, timing, provenance, and evidence
+- Preserve quality, timing, evidence, and where information came from
 - Keep humans and policy in the loop where they belong
 - Start narrow and prove value with a measurable operational use case

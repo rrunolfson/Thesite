@@ -23,8 +23,8 @@ export function InfinitFlowPage() {
         eyebrow="INFINIT-FLOW"
         title="Turn known problems into organized response."
         intro="Infinit-Flow helps teams design the workflows they need around the signals, assets, and issues that matter to their operation. It coordinates people, work, approvals, escalation, and authorized automation from one connected response path."
-        primaryCta={{ label: "Map a response path", to: "/design-partner?conversation_type=technical-collaboration" }}
-        secondaryCta={{ label: "See how Infinit-Signal identifies the issue", to: "/infinit-signal" }}
+        primaryCta={{ label: "Talk through your workflow", to: "/contact" }}
+        secondaryCta={{ label: "Explore Infinit-Signal", to: "/infinit-signal" }}
         overview={{
           heading: "Let software handle the scramble.",
           copy: [
@@ -53,7 +53,7 @@ export function InfinitFlowPage() {
         ]}
         relatedProducts={[
           { label: "Infinit-Signal", to: "/infinit-signal" },
-          { label: "Singularity", to: "/ssom" },
+          { label: "Singularity", to: "/singularity" },
           { label: "Infinit-Control", to: "/infinit-control" },
         ]}
         faqs={[
@@ -66,16 +66,22 @@ export function InfinitFlowPage() {
             answer: "It can coordinate authorized response steps through the systems your organization already uses. Direct device and process control are outside the baseline platform.",
           },
           {
-            question: "Can a person stay in the loop?",
+            question: "Can people remain in the loop?",
             answer: "Yes. Human review, approval, assignment, exception handling, and escalation are core parts of the product.",
           },
         ]}
         resources={[
-          { label: "Workflow design overview" },
+          { label: "Workflow architecture" },
           { label: "Cooling-response pattern" },
-          { label: "Signal 2 Action episode: machine-speed coordination", to: "/signal-to-action" },
-          { label: "Map a response path", to: "/design-partner?conversation_type=technical-collaboration" },
+          { label: "Signal 2 Action", to: "/signal-to-action" },
+          { label: "Platform overview", to: "/platform" },
         ]}
+        finalCta={{
+          heading: "Talk through your workflow.",
+          copy: ["Tell us about the issue, handoff, approval, escalation, or response path your team wants to make clearer and faster."],
+          label: "Contact Last Mile",
+          to: "/contact",
+        }}
       />
     </>
   );

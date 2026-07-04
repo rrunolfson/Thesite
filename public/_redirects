@@ -1,16 +1,17 @@
 # Serve static files first, then fallback to SPA
 /solutions /platform 301
 /company /about 301
-/contact /design-partner 301
+/design-partner /contact 301
+/ssom /singularity 301
 /signal-2-action /signal-to-action 301
 /careers /about 301
 /index.md /index.md 200
 /integrations.md /integrations.md 200
-/contact.md /design-partner.md 301
+/design-partner.md /contact.md 301
 /company.md /about.md 301
 /signal-2-action.md /signal-to-action.md 301
 /about.md /about.md 200
-/design-partner.md /design-partner.md 200
+/contact.md /contact.md 200
 /signal-to-action.md /signal-to-action.md 200
 /.well-known/api-catalog /.well-known/api-catalog 200
 /.well-known/status.json /.well-known/status.json 200

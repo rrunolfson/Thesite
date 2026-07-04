@@ -9,13 +9,13 @@ const productCards = [
     title: "Infinit-Signal",
     to: "/infinit-signal",
     lead: "Understand what happened, where it happened, and whether it matters.",
-    copy: "Turns source data into trusted operational facts and confirmed issues worth acting on.",
+    copy: "Turns source data into operational facts and confirmed issues worth acting on.",
   },
   {
     title: "Singularity",
-    to: "/ssom",
-    lead: "Give operational data a shared language and a long memory.",
-    copy: "Keeps assets, events, issues, quality, time, actions, and outcomes understandable over time.",
+    to: "/singularity",
+    lead: "Give your operation a long memory.",
+    copy: "Connects assets, events, issues, quality, time, actions, and outcomes so every response can improve the next one.",
   },
   {
     title: "Infinit-Flow",
@@ -35,8 +35,8 @@ export function HomePage() {
   return (
     <>
       <SEO
-        title="Last Mile | Raise Your Operational Intelligence"
-        description="Last Mile helps operations teams turn the signals they already have into faster decisions, automated workflows, and accountable action."
+        title="Last Mile | Operational Intelligence for Enterprise Operations"
+        description="Last Mile turns operational signals into coordinated work, authorized automation, and visible operational outcomes."
         canonicalPath="/"
         markdownPath="/index.md"
         jsonLd={[createOrganizationSchema(), createWebsiteSchema()]}
@@ -50,23 +50,20 @@ export function HomePage() {
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-center lg:px-8">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#75ADE6]">
-                BUILDING THE GLOBAL LEADER IN OPERATIONAL INTELLIGENCE
+                OPERATIONAL INTELLIGENCE FOR ENTERPRISE OPERATIONS
               </p>
               <h1 className="hero-title-gradient mt-6 max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
                 Raise your operational intelligence.
               </h1>
               <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
-                Last Mile helps the people who run real operations turn the signals they already have into faster decisions, automated workflows, and action that actually gets done. See the problem. Understand what it affects. Get the right work moving. Know what happened next.
-              </p>
-              <p className="mt-5 text-base font-semibold text-slate-200">
-                From data and alarms to workflow, automated response, and visible operational outcomes.
+                Last Mile turns the signals coming from your operation into coordinated work, authorized automation, and a clear view of what happens next. It helps teams understand the issue, move the right response, and improve how operations run over time.
               </p>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <TrackedLink to="/design-partner" eventName="cta_design_partner_click" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 text-base font-semibold text-white hover:bg-[#0a1929]">
-                  Request a design-partner conversation <ArrowRight className="h-5 w-5" />
+                <TrackedLink to="/contact" eventName="cta_design_partner_click" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 text-base font-semibold text-white hover:bg-[#0a1929]">
+                  Contact Last Mile <ArrowRight className="h-5 w-5" />
                 </TrackedLink>
                 <a href="#platform-path" className="inline-flex min-h-11 items-center justify-center rounded-sm border border-slate-600 bg-slate-900/60 px-7 py-3 text-base font-semibold text-white hover:border-[#217ED9]">
-                  See operational intelligence in action
+                  Explore the platform
                 </a>
               </div>
             </div>
@@ -88,11 +85,11 @@ export function HomePage() {
         </header>
 
         <HomeSection title="Action is the new operational intelligence." centered>
-          <p>For years, industrial systems have become better at detecting alarms, events, anomalies, and equipment problems. But seeing a problem is not the same as solving it.</p>
-          <p>The real work begins after detection: understanding what happened, what it affects, who owns the response, what action is allowed, and whether the work actually moved forward.</p>
-          <p>Last Mile closes that gap.</p>
-          <div className="mt-10 grid gap-4 md:grid-cols-4">
-            {["System detects a problem", "Last Mile establishes what matters", "People, workflow, automation, and evidence come together", "The organization responds"].map((item) => (
+          <p>Operations already have data, alarms, dashboards, and alerts. The problem is what happens next.</p>
+          <p>When an issue appears, someone still has to understand what it affects, decide whether it matters, find the right owner, start the right work, manage approvals, follow the response, and prove it was resolved.</p>
+          <p>Last Mile brings that work together.</p>
+          <div className="mt-10 grid gap-4 md:grid-cols-5">
+            {["Signal detected", "Understand the issue", "Coordinate people, systems, and workflow", "Automate the repeatable response", "Improve the next response"].map((item) => (
               <div key={item} className="rounded-lg border border-slate-700 bg-slate-900/60 p-5 text-base font-semibold leading-7 text-white">
                 {item}
               </div>
@@ -100,36 +97,37 @@ export function HomePage() {
           </div>
         </HomeSection>
 
-        <HomeSection title="Raise your operational intelligence where work actually happens.">
+        <HomeSection title="See more. Coordinate faster. Improve every response.">
           <div className="grid gap-5 md:grid-cols-3">
-            <OutcomeCard title="Know what matters" copy="Bring together the equipment, location, history, urgency, quality, and source information needed to understand the problem before work begins." icon={<Layers3 />} />
-            <OutcomeCard title="Move work faster" copy="Turn confirmed issues into assigned work, workflow, escalations, notifications, and authorized actions without relying on manual handoffs." icon={<Workflow />} />
-            <OutcomeCard title="Improve every response" copy="Make the status, evidence, decisions, and outcome visible so teams can learn from what happened and improve the next response." icon={<Repeat2 />} />
+            <OutcomeCard title="Understand what matters" copy="Connect the signal to the equipment, location, operating history, urgency, data quality, and evidence needed to understand the issue." icon={<Layers3 />} />
+            <OutcomeCard title="Move work faster" copy="Turn confirmed issues into coordinated work, automated handoffs, escalations, approvals, and authorized actions across the systems your organization already uses." icon={<Workflow />} />
+            <OutcomeCard title="Learn from every outcome" copy="Build an operating history that helps teams tune maintenance, improve response playbooks, identify recurring issues, and automate safely over time." icon={<Repeat2 />} />
           </div>
         </HomeSection>
 
-        <HomeSection title="Let software handle the scramble.">
-          <p>When a problem is confirmed, Last Mile can automate the repeatable steps that slow operations down: gather context, identify affected assets, create work, route approvals, notify the right people, follow response playbooks, and keep a complete record of what happened.</p>
+        <HomeSection title="Machine-speed coordination. Human judgment where it matters.">
+          <p>Last Mile automates the repetitive scramble that slows operations down: gathering context, identifying affected assets, creating work, routing approvals, notifying the right people, applying response playbooks, and keeping a complete record of what happened.</p>
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            <SmallCard title="Automated workflow" copy="Turn confirmed issues into assigned, tracked work." />
-            <SmallCard title="Smart escalation" copy="Get the right people involved based on urgency, asset, location, and the operating rules you set." />
-            <SmallCard title="Authorized remediation" copy="Trigger authorized response steps through the enterprise systems your organization already uses." />
-            <SmallCard title="AI-assisted optimization" copy="Find patterns, prioritize issues, and recommend better response paths over time." />
+            <SmallCard title="Automated workflow" copy="Turn confirmed issues into assigned, visible, trackable work." />
+            <SmallCard title="Smart escalation" copy="Route the issue based on asset, location, urgency, team, and operating rules." />
+            <SmallCard title="Authorized remediation" copy="Trigger authorized response steps through the enterprise systems already in place." />
+            <SmallCard title="AI-assisted optimization" copy="Find patterns, prioritize attention, and recommend stronger response paths over time." />
           </div>
           <p className="mt-8 rounded-lg border border-slate-700 bg-slate-900/60 p-5 text-base font-semibold text-slate-200">
-            Automation is policy-bound, visible, and reversible. People remain in control where judgment or approval is required.
+            Automation is visible, policy-bound, and reversible. People remain in control when judgment, approval, or operating authority is required.
           </p>
         </HomeSection>
 
-        <HomeSection id="platform-path" title="One operational intelligence platform. One path from detection to action.">
-          <p>Last Mile sits above the systems your organization already uses. It does not replace them. It helps them work together when an operational issue crosses systems, teams, sites, and workflows.</p>
+        <HomeSection id="platform-path" title="One platform for what happens after detection.">
+          <p>Last Mile works above the systems your organization already uses. It does not replace SCADA, BMS, historians, brokers, fleet platforms, quality systems, or enterprise workflow tools. It helps them work together when an issue crosses systems, teams, sites, and workflows.</p>
           <PlatformPath />
         </HomeSection>
 
         <HomeSection title="Your operation gets smarter when it can remember.">
-          <p>Singularity gives Last Mile a clear, organization-specific record of what happens across your operating environment: the asset, event, issue, quality, timing, action, and outcome.</p>
-          <p>As that history grows, teams can spot patterns, tune maintenance, improve response playbooks, and automate more safely.</p>
+          <p>Singularity records the operational story of your environment: assets, signals, issues, work, decisions, outcomes, quality, timing, and evidence.</p>
+          <p>The longer that history grows, the more useful it becomes. Teams can tune maintenance, strengthen response playbooks, identify recurring problems, improve automation, and give AI better operational context.</p>
           <p className="font-semibold text-white">Last Mile becomes more useful because it remembers your operation, not because it collects more random data.</p>
+          <p>SSOM gives Singularity a consistent way to retain operational meaning across the systems your team already uses.</p>
           <div className="mt-10 rounded-2xl border border-slate-700 bg-slate-900/60 p-5">
             <div className="grid gap-3 md:grid-cols-3">
               {["Your Assets", "Your Signals", "Your Issues", "Your Workflows", "Your Decisions", "Your Outcomes"].map((item) => (
@@ -146,11 +144,11 @@ export function HomePage() {
           <ol className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {[
               "Detect a cooling-performance issue",
-              "Confirm the affected equipment and operating context",
+              "Identify affected equipment and operating context",
               "Confirm the issue is worth acting on",
               "Create or update the right work",
               "Escalate, automate, or route authorized response steps",
-              "Show progress, evidence, and outcome",
+              "See progress, evidence, and outcome",
             ].map((step, index) => (
               <li key={step} className="rounded-lg border border-slate-700 bg-slate-900/60 p-5 text-base leading-7 text-slate-200">
                 <span className="block text-sm font-semibold uppercase tracking-[0.18em] text-[#75ADE6]">Step {index + 1}</span>
@@ -163,7 +161,7 @@ export function HomePage() {
         <HomeSection title="The products that make operational intelligence real.">
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {productCards.map((product) => (
-              <TrackedLink key={product.to} to={product.to} eventName={product.to === "/ssom" ? "cta_ssom_click" : "cta_product_click"} eventData={{ product: product.title }} className="glass-panel flex h-full flex-col rounded-lg p-6 hover:border-[#217ED9]">
+              <TrackedLink key={product.to} to={product.to} eventName="cta_product_click" eventData={{ product: product.title }} className="glass-panel flex h-full flex-col rounded-lg p-6 hover:border-[#217ED9]">
                 <h3 className="text-2xl font-semibold text-white">{product.title}</h3>
                 <p className="mt-4 text-base font-semibold leading-7 text-slate-200">{product.lead}</p>
                 <p className="mt-3 flex-1 text-base leading-7 text-slate-300">{product.copy}</p>
@@ -175,11 +173,10 @@ export function HomePage() {
 
         <section className="relative z-10 border-t border-slate-800 py-16 md:py-20">
           <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold leading-tight text-white md:text-5xl">Bring one operational gap. Leave with a path to action.</h2>
-            <p className="mt-6 text-lg leading-8 text-slate-300">Start with one real problem: an alarm nobody owns, work that depends on manual coordination, a response that crosses systems, or an issue that takes too long to understand and resolve.</p>
-            <p className="mt-4 text-lg leading-8 text-slate-300">Last Mile works with design partners to prove a better operational response using the systems they already have.</p>
-            <TrackedLink to="/design-partner" eventName="cta_design_partner_click" className="mt-10 inline-flex min-h-11 items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-8 py-3 text-base font-semibold text-white hover:bg-[#0a1929]">
-              Request a design-partner conversation <ArrowRight className="h-5 w-5" />
+            <h2 className="text-3xl font-bold leading-tight text-white md:text-5xl">Improve how your operation responds.</h2>
+            <p className="mt-6 text-lg leading-8 text-slate-300">Talk with Last Mile about the systems, operational challenges, workflow bottlenecks, and automation opportunities that matter to your organization.</p>
+            <TrackedLink to="/contact" eventName="cta_design_partner_click" className="mt-10 inline-flex min-h-11 items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-8 py-3 text-base font-semibold text-white hover:bg-[#0a1929]">
+              Contact Last Mile <ArrowRight className="h-5 w-5" />
             </TrackedLink>
           </div>
         </section>
@@ -220,11 +217,11 @@ function SmallCard({ title, copy }: { title: string; copy: string }) {
 
 function PlatformPath() {
   const blocks = [
-    ["Your Operational Systems", "SCADA | BMS | Historians | Brokers | Fleet Systems | Quality Systems | Enterprise Applications", false],
-    ["Infinit-Signal", "Trusted operational facts, source history, evidence, and confirmed issues worth acting on", true],
-    ["Singularity, built on SSOM", "Operational memory and shared context", true],
-    ["Infinit-Flow and Infinit-Control", "Infinit-Flow: Workflow, human work, approvals, assignments, escalations, and authorized action. Infinit-Control: Current operational state, issues, affected assets, work progress, system health, quality, and evidence", true],
-    ["Your Enterprise Systems", "CMMS | EAM | ERP | ITSM | collaboration tools | other authorized destinations", false],
+    ["Your Operational Systems", "SCADA | BMS | Historians | Brokers | Fleet | Quality | Enterprise Applications", false],
+    ["Infinit-Signal", "Operational facts, evidence, quality, and issues worth acting on", true],
+    ["Singularity", "Operational memory, built on SSOM", true],
+    ["Infinit-Flow + Infinit-Control", "Organized response + a live view of what is happening", true],
+    ["Your Enterprise Systems", "CMMS | EAM | ERP | ITSM | Collaboration | Other authorized destinations", false],
   ] as const;
 
   return (
