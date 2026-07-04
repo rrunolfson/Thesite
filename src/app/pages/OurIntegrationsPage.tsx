@@ -312,7 +312,7 @@ export function OurIntegrationsPage() {
   };
 
   const currentIndustryLabel = selectedIndustry ? getIndustryLabel(selectedIndustry.industry_slug) : "OEM Vendors";
-  const currentHeading = selectedFunction?.industry_function_name || selectedIndustry?.industry_name || "Integrations";
+  const currentHeading = selectedFunction?.industry_function_name || selectedIndustry?.industry_name || "Available Integration References";
   const currentDescription = selectedFunction?.industry_function_description || selectedIndustry?.industry_description || "";
   const currentContextLabel = selectedFunction
     ? `${selectedIndustry?.industry_name ?? "Industry"} Function`
@@ -321,9 +321,9 @@ export function OurIntegrationsPage() {
   return (
     <>
       <SEO
-        title="Our Integrations"
-        description="Explore Last Mile integrations by industry, OEM vendor, and supported product families in a machine-readable catalog built for both buyers and AI-driven implementation workflows."
-        keywords="integrations, OEM integrations, manufacturing integrations, healthcare integrations, logistics integrations, ServiceNow"
+        title="ServiceNow Integration Library"
+        description="This library contains Last Mile integrations developed for ServiceNow environments and remains available for organizations connecting operational systems with ServiceNow workflows."
+        keywords="integration reference, source profiles, vendor coverage, operational systems, technical reference"
         canonicalPath="/integrations"
         markdownPath="/integrations.md"
       />
@@ -346,11 +346,14 @@ export function OurIntegrationsPage() {
               <div className="grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
                 <div>
                   <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
-                    Our <span className="bg-gradient-to-r from-white via-[#75ADE6] to-[#217ED9] text-transparent bg-clip-text">Integrations</span>
+                    <span className="hero-title-gradient">ServiceNow Integration Library</span>
                   </h1>
 
                   <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl">
-                    We work where you are, supporting the vendors you count on every day to do business with a practical integration catalog built for real operations, faster decisions, and dependable execution. From industrial platforms and fleet systems to healthcare and building technologies, this catalog is designed to help teams see what is already available, understand where coverage is strongest, and move forward with greater confidence.
+                    This library contains Last Mile integrations developed for ServiceNow environments. These integrations remain available for organizations that need to connect operational systems with ServiceNow workflows.
+                  </p>
+                  <p className="mt-4 text-lg text-slate-400 leading-8 max-w-3xl">
+                    The Last Mile Platform extends beyond integration work. It is designed to turn operational signals into shared understanding, workflow, automation, and accountable action across the systems your organization already uses.
                   </p>
                 </div>
 
@@ -361,7 +364,7 @@ export function OurIntegrationsPage() {
                   className="scoreboard-shell glass-panel border border-[#75ADE6]/60 p-3 lg:p-3.5"
                 >
                   <div className="scoreboard-header mb-2.5 flex items-center justify-center rounded-2xl px-4 py-2">
-                    <h2 className="text-lg font-semibold tracking-[0.08em] text-white sm:text-xl">Integration Scoreboard</h2>
+                    <h2 className="text-lg font-semibold tracking-[0.08em] text-white sm:text-xl">Available Integration References</h2>
                   </div>
 
                   <div className="scoreboard-display rounded-[1.4rem] px-4 py-2.5 sm:px-5">
@@ -417,18 +420,18 @@ export function OurIntegrationsPage() {
                   <div className="flex h-full flex-col gap-3 rounded-[1.25rem] border border-white/5 bg-[linear-gradient(135deg,rgba(33,126,217,0.14),rgba(15,23,42,0.12))] px-4 py-3 sm:px-5 sm:py-3.5">
                     <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-[#9cc6ef]">
                       <Sparkles className="h-3.5 w-3.5" />
-                      Request / Submit an Integration
+                      Integration Requirement
                     </div>
 
                     <div className="flex flex-1 flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                       <p className="max-w-xl text-sm leading-relaxed text-slate-400">
-                        If you can't find what you are looking for, please request it here. If you have an API doc already, you can share that as well and we will process it for you.
+                        If you cannot find what you are looking for, discuss the requirement with Last Mile. If you have an API document already, you can share that as part of the conversation.
                       </p>
                       <button
                         type="button"
                         className="inline-flex items-center justify-center rounded-2xl border border-[#75ADE6]/40 bg-[#217ED9]/15 px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-[#75ADE6]/70 hover:bg-[#217ED9]/25"
                       >
-                        Submit Request
+                        Discuss an integration requirement
                       </button>
                     </div>
                   </div>

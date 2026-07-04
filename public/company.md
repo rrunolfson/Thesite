@@ -1,26 +1,26 @@
 # About Last Mile
 
-Last Mile brings operational technology telemetry and asset data into enterprise execution workflows so real-world events turn into action, accountability, and measurable outcomes.
+Last Mile is building the operational intelligence layer between detection and accountable response.
 
 ## Primary URL
 
-- Company page: https://lastmileinc.ai/company
+- About page: https://lastmileinc.ai/about
 
 ## Core positioning
 
-- Built for operations
-- Proven in the field
-- Designed to scale
-- Focused on connecting the physical world to enterprise execution
+- Built for the work between systems and outcomes
+- Focused on the operational action gap
+- Designed to work with customer-approved systems already in place
+- Grounded in semantic context, governed workflows, and visible operational state
 
 ## What Last Mile does
 
-- Builds ServiceNow-native integrations for operational and asset data
-- Brings operational signals into incidents, work orders, compliance actions, and workflow automation
-- Avoids introducing another dashboard when execution should happen in the system of record
+- Uses customer-approved source data and SSOM to create trusted records and qualified Conditions
+- Turns qualified Conditions into governed work and visible response
+- Extends the operational stack without requiring a rip-and-replace program
 
 ## Credibility themes
 
-- Built by operators who have implemented ServiceNow at scale
-- Designed for production environments rather than proof-of-concept deployments
-- Workflow-first rather than telemetry-first
+- Start with one operational gap worth solving
+- Preserve trust, quality, timing, provenance, and evidence
+- Keep humans and policy in the loop where they belong

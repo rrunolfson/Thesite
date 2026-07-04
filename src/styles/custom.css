@@ -2,6 +2,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .font-mono {
@@ -22,10 +24,45 @@ body {
 }
 
 .hero-title-gradient {
-  background: linear-gradient(to right, #ffffff, #217ED9);
+  color: #ffffff;
+  background: linear-gradient(90deg, #ffffff 0%, #1d7cd8 48%, #75bda7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+@supports not (-webkit-background-clip: text) {
+  .hero-title-gradient {
+    color: #ffffff;
+    background: none;
+  }
+}
+
+a,
+button,
+summary {
+  -webkit-tap-highlight-color: rgba(117, 189, 167, 0.22);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #75bda7;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .glass-panel {
+    border-radius: 0.5rem;
+  }
 }
 
 .telemetry-row:hover {

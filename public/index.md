@@ -1,15 +1,20 @@
 # Last Mile
 
-Last Mile brings operational technology asset and performance data into ServiceNow so enterprises can run operations, workforce, and vendors from a single system of execution.
+Last Mile is an operational intelligence platform that turns trusted signals from existing operational systems into governed, accountable action.
 
 ## Primary resources
 
 - Website: https://lastmileinc.ai/
-- Integrations catalog: https://lastmileinc.ai/integrations
+- Platform overview: https://lastmileinc.ai/platform
+- Infinit-Signal: https://lastmileinc.ai/infinit-signal
+- Infinit-Flow: https://lastmileinc.ai/infinit-flow
+- Infinit-Control: https://lastmileinc.ai/infinit-control
+- SSOM: https://lastmileinc.ai/ssom
+- Integrations reference: https://lastmileinc.ai/integrations
 - Machine-readable integrations data: https://lastmileinc.ai/integrations.json
-- Contact: https://lastmileinc.ai/contact
-- Company overview: https://lastmileinc.ai/company
-- Signal 2 Action podcast: https://lastmileinc.ai/signal-2-action
+- Design partner: https://lastmileinc.ai/design-partner
+- About Last Mile: https://lastmileinc.ai/about
+- Signal 2 Action podcast: https://lastmileinc.ai/signal-to-action
 - Podcast feed: https://lastmileinc.ai/podcast-feed.xml
 
 ## Agent discovery
@@ -20,5 +25,6 @@ Last Mile brings operational technology asset and performance data into ServiceN
 
 ## Notes
 
-- The integrations catalog is the main machine-readable public data surface on this site.
-- Contact the Last Mile team for protected integration delivery workflows or private implementation details.
+- Last Mile closes the operational action gap between detection and accountable response.
+- The integrations catalog remains a supporting technical reference rather than the primary product story.
+- Contact the Last Mile team for design-partner discussions, source-profile reviews, or private implementation details.

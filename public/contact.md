@@ -1,20 +1,23 @@
-# Contact Last Mile
+# Request A Design-Partner Conversation
 
-Get in touch with Last Mile to discuss operational workflow transformation, integrations, partnerships, or OEM opportunities.
+Start a focused conversation with Last Mile about a real operational action gap, source environment, and measurable response outcome.
 
 ## Primary URL
 
-- Contact page: https://lastmileinc.ai/contact
+- Design partner page: https://lastmileinc.ai/design-partner
 
-## Contact paths
+## Productive conversations usually include
 
-- Enterprise customers: enterprise@lastmileinc.ai
-- Partners: partners@lastmileinc.ai
-- OEMs: oems@lastmileinc.ai
+- A meaningful operational environment
+- An existing source system that identifies important signals or Conditions
+- A response path that is too manual, fragmented, or hard to govern today
+- A stakeholder who can help define the current state and desired outcome
+- A willingness to start with a narrow, measurable first use case
 
-## When to use this page
+## What Last Mile will discuss
 
-- Schedule a demo
-- Discuss ServiceNow and operational data integration needs
-- Explore partnership opportunities
-- Explore OEM collaboration and equipment insight use cases
+- The operational signal or response gap that matters
+- The assets, people, systems, and current response path involved
+- Source context and customer boundary constraints
+- The governed workflow or action outcome that should follow
+- The evidence needed to make a design-partner engagement worthwhile

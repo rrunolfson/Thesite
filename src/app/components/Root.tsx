@@ -62,34 +62,33 @@ export function Root() {
     const baseUrl = window.location.origin;
     const tools: WebMcpTool[] = [
       {
-        name: "open_integrations_catalog",
-        description: "Open the Last Mile integrations catalog and return its canonical URLs.",
+        name: "open_platform_overview",
+        description: "Open the Last Mile platform overview page and return its canonical URL.",
         inputSchema: {
           type: "object",
           additionalProperties: false,
           properties: {},
         },
         execute: async () => {
-          const url = `${baseUrl}/integrations`;
+          const url = `${baseUrl}/platform`;
           window.location.assign(url);
 
           return {
             ok: true,
             url,
-            dataUrl: `${baseUrl}/integrations.json`,
           };
         },
       },
       {
-        name: "open_contact_page",
-        description: "Open the contact page for sales and partnership outreach.",
+        name: "open_design_partner_page",
+        description: "Open the design-partner page for operational and technical collaboration outreach.",
         inputSchema: {
           type: "object",
           additionalProperties: false,
           properties: {},
         },
         execute: async () => {
-          const url = `${baseUrl}/contact`;
+          const url = `${baseUrl}/design-partner`;
           window.location.assign(url);
 
           return {
@@ -107,7 +106,7 @@ export function Root() {
           properties: {},
         },
         execute: async () => {
-          const url = `${baseUrl}/signal-2-action`;
+          const url = `${baseUrl}/signal-to-action`;
           window.location.assign(url);
 
           return {

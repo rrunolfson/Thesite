@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
+import { TrackedLink } from "@/app/components/TrackedLink";
 
 interface NavItem {
   to: string;
@@ -12,16 +13,23 @@ export function Navbar() {
   const location = useLocation();
 
   const navItems: NavItem[] = [
-    { to: "/", label: "Home" },
-    { to: "/integrations", label: "Our Integrations" },
-    { to: "/signal-2-action", label: "Signal 2 Action" },
-    { to: "/company", label: "Company" },
-    { to: "/contact", label: "Contact" },
+    { to: "/platform", label: "Platform" },
+    { to: "/ssom", label: "SSOM" },
+    { to: "/signal-to-action", label: "Signal 2 Action" },
+    { to: "/about", label: "About" },
+  ];
+
+  const productItems: NavItem[] = [
+    { to: "/infinit-signal", label: "Infinit-Signal" },
+    { to: "/infinit-flow", label: "Infinit-Flow" },
+    { to: "/infinit-control", label: "Infinit-Control" },
   ];
 
   const isActive = (item: NavItem) =>
     location.pathname === item.to ||
     (item.to !== "/" && location.pathname.startsWith(`${item.to}/`));
+
+  const isProductsActive = productItems.some((item) => isActive(item));
 
   return (
     <nav className="fixed w-full z-50 glass-panel border-b border-slate-700/50">
@@ -50,19 +58,38 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="https://store.servicenow.com/store/app/f36920a7975043d06878bd3de053af39"
-              target="_blank"
-              rel="noreferrer"
-              className="ml-2 flex-shrink-0"
-              aria-label="View Last Mile's ServiceNow partner build listing"
+            <div className="relative group">
+              <button
+                type="button"
+                className={`text-sm font-medium transition-colors ${
+                  isProductsActive ? "text-white" : "text-slate-300 group-hover:text-white"
+                }`}
+              >
+                Products
+              </button>
+              <div className="pointer-events-none absolute left-0 top-full pt-4 opacity-0 transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
+                <div className="min-w-[220px] rounded-xl border border-slate-700 bg-slate-950/95 p-3 shadow-2xl">
+                  {productItems.map((item) => (
+                    <TrackedLink
+                      key={item.to}
+                      to={item.to}
+                      eventName="cta_product_click"
+                      eventData={{ product: item.label }}
+                      className="block rounded-lg px-3 py-2 text-sm text-slate-300 transition-colors hover:bg-slate-900 hover:text-white"
+                    >
+                      {item.label}
+                    </TrackedLink>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <TrackedLink
+              to="/design-partner"
+              eventName="cta_design_partner_click"
+              className="ml-2 inline-flex items-center rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-[#0a1929]"
             >
-              <img
-                src="/servicenow-partner-build-badge.png"
-                alt="ServiceNow Partner Build badge"
-                className="h-20 w-auto object-contain"
-              />
-            </a>
+              Request a design-partner conversation
+            </TrackedLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,6 +122,29 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="px-3 pt-3 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Products
+            </div>
+            {productItems.map((link) => (
+              <TrackedLink
+                key={link.to}
+                to={link.to}
+                eventName="cta_product_click"
+                eventData={{ product: link.label }}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white"
+              >
+                {link.label}
+              </TrackedLink>
+            ))}
+            <TrackedLink
+              to="/design-partner"
+              eventName="cta_design_partner_click"
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-3 block rounded-sm border border-[#217ED9] px-3 py-2 text-base font-semibold text-white"
+            >
+              Request a design-partner conversation
+            </TrackedLink>
           </div>
         </div>
       )}

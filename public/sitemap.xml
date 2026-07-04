@@ -6,37 +6,79 @@
 
   <url>
     <loc>https://lastmileinc.ai/</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://lastmileinc.ai/integrations</loc>
-    <lastmod>2026-04-18</lastmod>
+    <loc>https://lastmileinc.ai/platform</loc>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://lastmileinc.ai/company</loc>
-    <lastmod>2026-04-18</lastmod>
+    <loc>https://lastmileinc.ai/infinit-signal</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lastmileinc.ai/infinit-flow</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lastmileinc.ai/infinit-control</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lastmileinc.ai/ssom</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lastmileinc.ai/about</loc>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://lastmileinc.ai/contact</loc>
-    <lastmod>2026-04-18</lastmod>
+    <loc>https://lastmileinc.ai/design-partner</loc>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://lastmileinc.ai/signal-2-action</loc>
-    <lastmod>2026-04-18</lastmod>
+    <loc>https://lastmileinc.ai/signal-to-action</loc>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lastmileinc.ai/integrations</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://lastmileinc.ai/company/newsroom</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 
 </urlset>

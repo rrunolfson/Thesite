@@ -125,10 +125,10 @@ export function IntegrationDetailPage() {
     };
   }, [productSlug, vendorSlug]);
 
-  const pageTitle = detail ? `${detail.product_name} Integration Data Coverage` : "Integration Detail";
+  const pageTitle = detail ? `${detail.product_name} Technical Reference` : "Integration Detail Reference";
   const pageDescription = detail
     ? detail.data_coverage_summary || detail.overview
-    : "Detailed integration metadata for OEM product APIs and accessible data coverage.";
+    : "Detailed technical reference metadata for approved source-profile and integration coverage review.";
 
   return (
     <>

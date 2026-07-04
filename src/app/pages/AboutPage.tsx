@@ -1,192 +1,95 @@
-import { Target, Users, Award, TrendingUp, Mail, MapPin, Linkedin } from "lucide-react";
-import { Link } from "react-router";
+import type { ReactNode } from "react";
+import { ArrowRight } from "lucide-react";
 import { SEO } from "@/app/components/SEO";
+import { TrackedLink } from "@/app/components/TrackedLink";
+import { createBreadcrumbSchema } from "@/app/lib/structuredData";
 
 export function AboutPage() {
   return (
     <>
       <SEO
-        title="About Last Mile"
-        description="Learn about Last Mile's mission, vision, values, and operating philosophy for turning operational data into enterprise action."
-        keywords="about Last Mile, mission, vision, operational intelligence, OT integration, enterprise workflows"
+        title="About Last Mile | Building Operational Intelligence That Reaches Action"
+        description="Learn why Last Mile is building an operational intelligence platform that turns trusted signals into governed, accountable action across existing operational systems."
         canonicalPath="/about"
+        markdownPath="/about.md"
+        jsonLd={createBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About Last Mile", path: "/about" },
+        ])}
       />
-      <div className="relative">
-      {/* Hero Section */}
-      <header className="relative pt-32 pb-20 overflow-hidden border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 reveal">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              About <span className="text-[#217ED9]">Last Mile</span>
-            </h1>
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              We connect operational data to enterprise action—so businesses can move from reactive to proactive
-            </p>
-          </div>
+      <div className="relative min-h-screen pt-20">
+        <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
+        <div className="relative z-10">
+          <header className="border-b border-slate-800 py-20">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="max-w-4xl">
+                <h1 className="hero-title-gradient text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
+                  Built for the work that sits between systems and outcomes.
+                </h1>
+                <p className="mt-6 text-xl leading-8 text-slate-300">
+                  Last Mile exists because operational teams should not have to reconstruct context, ownership, and response every time a system detects something important. We are building an operations-native platform that helps organizations turn the signals their teams care about into faster decisions, automated workflows, and accountable action.
+                </p>
+                <TrackedLink to="/design-partner" eventName="cta_design_partner_click" className="mt-10 inline-flex items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 font-semibold text-white hover:bg-[#0a1929]">
+                  Request a design-partner conversation <ArrowRight className="h-5 w-5" />
+                </TrackedLink>
+              </div>
+            </div>
+          </header>
+
+          <Section title="The last mile in operations is response.">
+            <p>Most organizations do not lack operational tools. They have systems for control, monitoring, telemetry, equipment management, work, enterprise workflow, analytics, and communication. The problem is the operational distance between a detected signal and a coordinated response. That distance is where context is lost, ownership becomes unclear, work is delayed, and evidence becomes difficult to reconstruct.</p>
+            <p className="mt-4">Last Mile is focused on closing that distance.</p>
+          </Section>
+
+          <Section title="Operationally grounded by design.">
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+              <PrincipleCard title="Respect the systems already operating the environment" copy="We work from authorized source data and do not begin with a replacement agenda." />
+              <PrincipleCard title="Preserve trust, context, and uncertainty" copy="Source authority, evidence, quality, timing, and provenance matter when operational decisions carry consequences." />
+              <PrincipleCard title="Separate operational meaning from application behavior" copy="SSOM provides shared semantics; the Last Mile Platform provides workflow, control, tenant, security, and SaaS capabilities." />
+              <PrincipleCard title="Keep humans and policy in the loop where they belong" copy="Automation should be governed, observable, and appropriate to the operational context." />
+              <PrincipleCard title="Start narrow and prove value" copy="A credible platform begins with a real operational use case, measurable outcome, and repeatable source-to-response path." />
+            </div>
+          </Section>
+
+          <Section title="A platform built around useful facts, organized work, and visible operational state.">
+            <div className="grid gap-6 md:grid-cols-3">
+              <PrincipleCard title="Infinit-Signal" copy="Records, evidence, and confirmed issues worth acting on." />
+              <PrincipleCard title="Infinit-Flow" copy="Operational work, approvals, escalation, and authorized automation." />
+              <PrincipleCard title="Infinit-Control" copy="Operational management and visibility." />
+            </div>
+            <TrackedLink to="/platform" eventName="cta_explore_platform_click" className="mt-8 inline-flex items-center gap-2 font-semibold text-[#75ADE6] hover:text-white">
+              Explore the platform <ArrowRight className="h-5 w-5" />
+            </TrackedLink>
+          </Section>
+
+          <Section title="The next version of operational intelligence must be built with real operators.">
+            <p>Last Mile is engaging design partners that can bring a meaningful operational challenge, a realistic source environment, and a clear owner for the response outcome. The objective is not a broad transformation program. It is a focused, evidence-based partnership around one operational gap worth solving.</p>
+            <TrackedLink to="/design-partner" eventName="cta_design_partner_click" className="mt-8 inline-flex items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 font-semibold text-white hover:bg-[#0a1929]">
+              Become a design partner <ArrowRight className="h-5 w-5" />
+            </TrackedLink>
+          </Section>
         </div>
-      </header>
-
-      {/* Mission */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass-panel p-12 mb-16 reveal">
-            <div className="flex items-start gap-6 mb-8">
-              <div className="w-16 h-16 bg-[#217ED9]/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Target className="w-8 h-8 text-[#217ED9]" />
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
-                <p className="text-xl text-slate-400 mb-6">
-                  Operational systems generate billions of signals every day—temperature readings, vibration patterns, runtime data, utilization metrics. But those signals rarely reach the teams that need to act on them. The gap between data and execution costs enterprises millions in downtime, inefficiency, and missed opportunities.
-                </p>
-                <p className="text-xl text-slate-400">
-                  Last Mile exists to close that gap. We connect operational devices to enterprise systems, transform signals into intelligence, and trigger workflows automatically. Our platform helps manufacturers, healthcare systems, and facility operators move from reactive firefighting to proactive execution.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Vision */}
-          <div className="glass-panel p-12 mb-16 reveal">
-            <div className="flex items-start gap-6 mb-8">
-              <div className="w-16 h-16 bg-[#217ED9]/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <TrendingUp className="w-8 h-8 text-[#217ED9]" />
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
-                <p className="text-xl text-slate-400 mb-6">
-                  We envision a world where operational intelligence is as fundamental to business success as financial intelligence. Where equipment failures are predicted and prevented. Where maintenance teams act on data, not guesswork. Where compliance is automatic, not painful.
-                </p>
-                <p className="text-xl text-slate-400">
-                  The enterprises that thrive in the next decade won't be the ones with the most data—they'll be the ones that turn data into action fastest. Last Mile is building the infrastructure to make that possible.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* What Sets Us Apart */}
-          <div className="mb-20 reveal">
-            <h2 className="text-3xl font-bold mb-12 text-center">What Sets Us Apart</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="glass-panel p-8">
-                <div className="w-12 h-12 bg-[#217ED9]/20 rounded-lg flex items-center justify-center mb-6">
-                  <Target className="w-6 h-6 text-[#217ED9]" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">OT-First Approach</h3>
-                <p className="text-slate-400">
-                  We're not an IT platform adapted for OT. We're built from the ground up for industrial and clinical environments.
-                </p>
-              </div>
-
-              <div className="glass-panel p-8">
-                <div className="w-12 h-12 bg-[#217ED9]/20 rounded-lg flex items-center justify-center mb-6">
-                  <Users className="w-6 h-6 text-[#217ED9]" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">Enterprise Expertise</h3>
-                <p className="text-slate-400">
-                  Our team has deployed operational technology solutions for Fortune 500 companies across manufacturing, healthcare, and facilities.
-                </p>
-              </div>
-
-              <div className="glass-panel p-8">
-                <div className="w-12 h-12 bg-[#217ED9]/20 rounded-lg flex items-center justify-center mb-6">
-                  <Award className="w-6 h-6 text-[#217ED9]" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">Proven Outcomes</h3>
-                <p className="text-slate-400">
-                  Our customers see measurable ROI within 90 days—not 12 months. We deliver results, not promises.
-                </p>
-              </div>
-
-              <div className="glass-panel p-8">
-                <div className="w-12 h-12 bg-[#217ED9]/20 rounded-lg flex items-center justify-center mb-6">
-                  <TrendingUp className="w-6 h-6 text-[#217ED9]" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">Outcome-Focused</h3>
-                <p className="text-slate-400">
-                  We don't sell dashboards. We deliver reduced downtime, lower costs, and improved efficiency.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Values */}
-          <div className="glass-panel p-12 reveal">
-            <h2 className="text-3xl font-bold mb-8 text-center">Our Values</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-[#217ED9] mb-3">Outcomes Over Activity</h3>
-                <p className="text-slate-400">
-                  We measure success by customer results, not features shipped. If it doesn't drive measurable business impact, we don't build it.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-[#217ED9] mb-3">Clarity Over Complexity</h3>
-                <p className="text-slate-400">
-                  Enterprise technology is complicated enough. We communicate clearly, design simply, and deliver solutions that people actually use.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-[#217ED9] mb-3">Partnership Over Transactions</h3>
-                <p className="text-slate-400">
-                  We're not here for one-time deals. We succeed when our customers succeed—and we build relationships accordingly.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Info */}
-      <section className="py-20 bg-[#0b1120] border-t border-slate-800">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center reveal">Get in Touch</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="glass-panel p-8 reveal">
-              <div className="flex items-center gap-3 mb-4">
-                <Mail className="w-6 h-6 text-[#217ED9]" />
-                <h3 className="text-xl font-bold">Email Us</h3>
-              </div>
-              <p className="text-slate-400 mb-2">General Inquiries:</p>
-              <a href="mailto:info@lastmileinc.ai" className="text-[#217ED9] hover:text-[#75ADE6] font-medium">
-                info@lastmileinc.ai
-              </a>
-              <p className="text-slate-400 mt-4 mb-2">Partnership Opportunities:</p>
-              <a href="mailto:partners@lastmileinc.ai" className="text-[#217ED9] hover:text-[#75ADE6] font-medium">
-                partners@lastmileinc.ai
-              </a>
-            </div>
-
-            <div className="glass-panel p-8 reveal">
-              <div className="flex items-center gap-3 mb-4">
-                <MapPin className="w-6 h-6 text-[#217ED9]" />
-                <h3 className="text-xl font-bold">Headquarters</h3>
-              </div>
-              <p className="text-slate-400">
-                Last Mile Inc.<br />
-                Enterprise Operations Division<br />
-                United States
-              </p>
-              <div className="mt-6">
-                <a href="https://linkedin.com/company/lastmileinc" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#217ED9] hover:text-[#75ADE6] font-medium">
-                  <Linkedin className="w-5 h-5" />
-                  Follow us on LinkedIn
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-12 reveal">
-            <Link
-              to="/contact"
-              className="inline-block px-8 py-4 rounded-sm bg-[#217ED9] hover:bg-[#1a6bb8] text-white font-semibold transition-all shadow-lg hover:shadow-[#217ED9]/25 uppercase"
-            >
-              Schedule a Consultation
-            </Link>
-          </div>
-        </div>
-      </section>
       </div>
     </>
+  );
+}
+
+function Section({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <section className="border-b border-slate-800 py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-white">{title}</h2>
+        <div className="mt-6 max-w-4xl text-lg leading-8 text-slate-300">{children}</div>
+      </div>
+    </section>
+  );
+}
+
+function PrincipleCard({ title, copy }: { title: string; copy: string }) {
+  return (
+    <div className="glass-panel p-6">
+      <h3 className="text-xl font-semibold text-white">{title}</h3>
+      <p className="mt-4 text-base leading-7 text-slate-300">{copy}</p>
+    </div>
   );
 }

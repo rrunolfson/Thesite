@@ -62,8 +62,7 @@ export function NewsroomPage() {
                     </span>
                   </h1>
                   <p className="max-w-3xl text-xl leading-relaxed text-slate-300">
-                    Follow the latest Last Mile announcements, product milestones, partnership updates,
-                    and customer momentum from across our operational workflow platform.
+                    News and milestones from Last Mile's evolution, including our ServiceNow integration work, partnerships, and the development of the operational intelligence platform.
                   </p>
                 </motion.div>
 
