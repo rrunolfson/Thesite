@@ -23,6 +23,10 @@ export function SSOMPage() {
         eyebrow="PLATFORM FOUNDATION"
         title="Singularity gives your operation a memory."
         intro="Singularity is the shared operational-memory foundation inside the Last Mile Platform. It retains the assets, signals, issues, work, workflow activity, decisions, evidence, and outcomes that help every future response improve."
+        blueprintImage={{
+          src: "/images/blueprint/singularity-blueprint.png",
+          alt: "Blueprint-style operational memory hub connecting assets, signals, workflows, decisions, and outcomes.",
+        }}
         primaryCta={{ label: "Explore the Last Mile Platform", to: "/platform" }}
         secondaryCta={{ label: "See how Infinit-Signal builds the record", to: "/infinit-signal" }}
         overview={{
@@ -132,16 +136,16 @@ function OperationalMemorySection() {
 
 function MemoryVisual() {
   return (
-    <div role="img" aria-label="Assets, signals, issues, workflows, decisions, and outcomes create a growing operational record that improves response over time." className="mt-10 rounded-2xl border border-slate-700 bg-slate-900/60 p-5">
+    <div role="img" aria-label="Assets, signals, issues, workflows, decisions, and outcomes create a growing operational record that improves response over time." className="blueprint-panel mt-10 rounded-2xl p-5">
       <div className="grid gap-3 md:grid-cols-3">
         {["Your Assets", "Your Signals", "Your Issues", "Your Workflows", "Your Decisions", "Your Outcomes"].map((item) => (
-          <div key={item} className="rounded-lg border border-slate-700 bg-slate-950/70 p-4 text-center text-base font-semibold text-white">
+          <div key={item} className="blueprint-card rounded-lg p-4 text-center text-base font-semibold text-white">
             {item}
           </div>
         ))}
       </div>
-      <div className="py-3 text-center text-xl text-[#75ADE6]">↓</div>
-      <div className="rounded-lg border border-[#217ED9]/50 bg-[#0a1929]/75 p-5 text-center text-lg font-semibold text-white">
+      <div className="py-3 text-center text-xl text-[#37F0C2]">↓</div>
+      <div className="rounded-lg border border-[#00C2FF]/50 bg-[#071426]/75 p-5 text-center text-lg font-semibold text-white">
         A growing operational record that improves response over time
       </div>
     </div>

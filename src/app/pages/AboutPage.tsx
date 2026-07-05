@@ -17,10 +17,10 @@ export function AboutPage() {
           { name: "About Last Mile", path: "/about" },
         ])}
       />
-      <div className="relative min-h-screen pt-20">
+      <div className="operational-grid relative min-h-screen pt-20">
         <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
         <div className="relative z-10">
-          <header className="border-b border-slate-800 py-20">
+          <header className="border-b border-cyan-400/15 py-20">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="max-w-4xl">
                 <h1 className="hero-title-gradient text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
@@ -76,9 +76,9 @@ export function AboutPage() {
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="border-b border-slate-800 py-20">
+    <section className="border-b border-cyan-400/15 py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="mx-auto max-w-5xl text-center text-4xl font-bold text-white">{title}</h2>
+        <h2 className="technical-divider mx-auto max-w-5xl text-center text-4xl font-bold text-white">{title}</h2>
         <div className="mt-6 max-w-4xl text-lg leading-8 text-slate-300">{children}</div>
       </div>
     </section>
@@ -87,7 +87,7 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
 
 function PrincipleCard({ title, copy }: { title: string; copy: string }) {
   return (
-    <div className="glass-panel p-6 text-center">
+    <div className="blueprint-card rounded-lg p-6 text-center">
       <h3 className="text-xl font-semibold text-white">{title}</h3>
       <p className="mt-4 text-base leading-7 text-slate-300">{copy}</p>
     </div>

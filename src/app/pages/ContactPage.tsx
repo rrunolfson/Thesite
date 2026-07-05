@@ -24,10 +24,10 @@ export function ContactPage() {
           { name: "Contact Last Mile", path: "/contact" },
         ])}
       />
-      <div className="relative min-h-screen pt-20">
+      <div className="operational-grid relative min-h-screen pt-20">
         <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
         <div className="relative z-10">
-          <section className="border-b border-slate-800 py-16 md:py-20">
+          <section className="border-b border-cyan-400/15 py-16 md:py-20">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="max-w-4xl">
                 <h1 className="hero-title-gradient text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
@@ -40,7 +40,7 @@ export function ContactPage() {
             </div>
           </section>
 
-          <section className="border-b border-slate-800 py-16 md:py-20">
+          <section className="border-b border-cyan-400/15 py-16 md:py-20">
             <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_440px] lg:px-8">
               <div>
                 <h2 className="text-3xl font-bold leading-tight text-white md:text-5xl">Tell us what you are working to improve.</h2>
@@ -52,7 +52,7 @@ export function ContactPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-10 rounded-lg border border-slate-700 bg-slate-900/60 p-5">
+                <div className="blueprint-panel mt-10 rounded-lg p-5">
                   <h3 className="text-xl font-semibold text-white">Prefer to explore first?</h3>
                   <div className="mt-4 flex flex-col gap-3 text-base font-semibold text-[#75ADE6]">
                     <TrackedLink to="/platform" eventName="cta_explore_platform_click">Explore the platform</TrackedLink>
@@ -61,7 +61,7 @@ export function ContactPage() {
                 </div>
               </div>
 
-              <div className="glass-panel rounded-lg p-6 md:p-8">
+              <div className="blueprint-panel rounded-lg p-6 md:p-8">
                 <ContactLastMileForm />
               </div>
             </div>

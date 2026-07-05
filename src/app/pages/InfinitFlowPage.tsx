@@ -23,7 +23,10 @@ export function InfinitFlowPage() {
         eyebrow="INFINIT-FLOW"
         title="Build workflows that mirror how your operation actually works."
         intro="Infinit-Flow gives customers a modern drag-and-drop experience for creating workflow, automation, assignments, escalation, approvals, and authorized remediation."
-        heroImage={{ src: "/images/worker4.png", alt: "Industrial worker representing workflow, automation, and operational response." }}
+        blueprintImage={{
+          src: "/images/blueprint/infinit-flow-blueprint.png",
+          alt: "Blueprint-style workflow diagram showing connected tasks, approvals, automation, and response steps.",
+        }}
         hideHeroCtas
         primaryCta={{ label: "Talk through your workflow", to: "/contact" }}
         secondaryCta={{ label: "Explore Singularity", to: "/singularity" }}

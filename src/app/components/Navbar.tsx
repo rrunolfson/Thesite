@@ -31,7 +31,7 @@ export function Navbar() {
   const isResourcesActive = resourceItems.some((item) => isActive(item));
 
   return (
-    <nav className="fixed w-full z-50 glass-panel border-b border-slate-700/50">
+    <nav className="site-navbar fixed w-full z-[100] overflow-visible glass-panel border-b border-slate-700/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer">
@@ -69,7 +69,7 @@ export function Navbar() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-slate-900 border-b border-slate-800 absolute w-full">
+        <div className="lg:hidden absolute z-[110] w-full border-b border-slate-800 bg-slate-900">
           <div className="px-4 pt-2 pb-6 space-y-2">
             <MobileLink to="/" label="Home" onClick={() => setMobileMenuOpen(false)} />
             <MobileLink to="/platform" label="Platform" onClick={() => setMobileMenuOpen(false)} />
@@ -85,12 +85,12 @@ export function Navbar() {
 
 function Dropdown({ label, active, items }: { label: string; active: boolean; items: NavItem[] }) {
   return (
-    <div className="relative group">
+    <div className="relative z-[110] group">
       <button type="button" className={`text-sm font-medium transition-colors ${active ? "text-white" : "text-slate-300 group-hover:text-white"}`}>
         {label}
       </button>
-      <div className="pointer-events-none absolute left-0 top-full pt-4 opacity-0 transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
-        <div className="min-w-[250px] rounded-xl border border-slate-700 bg-slate-950/95 p-3 shadow-2xl">
+      <div className="nav-dropdown-panel pointer-events-none absolute left-0 top-full z-[120] pt-4 opacity-0 transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
+        <div className="min-w-[250px] rounded-xl border border-cyan-400/25 bg-[#071426]/98 p-3 shadow-2xl shadow-cyan-950/40 backdrop-blur-xl">
           {items.map((item) => (
             <Link key={item.to} to={item.to} className="block rounded-lg px-3 py-2 text-sm text-slate-300 transition-colors hover:bg-slate-900 hover:text-white">
               {item.label}

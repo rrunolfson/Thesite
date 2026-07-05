@@ -20,7 +20,10 @@ export default defineConfig({
   server: {
     // Allow the Cloudflare Tunnel preview hostname to reach the local Vite server.
     // Keep this explicit. Do not use allowedHosts: true.
-    allowedHosts: ['review.lastmileinc.ai'],
+    host: '0.0.0.0',
+    allowedHosts: [
+      'review.lastmileinc.ai',
+    ],
   },
   publicDir: 'public',
   build: {

@@ -147,7 +147,10 @@ export function PlatformOverviewPage() {
         intro="Last Mile is a state-of-the-art, cloud-native, AI-native platform built to ingest operational data 24x7 at internet scale and turn it into action across your physical operations."
         heroSecondary="Built from decades of global enterprise platform operations experience, Last Mile brings the technology, operating discipline, and intelligence layer needed to optimize physical operations. Every company. Every industry. Every day."
         heroNote="We work just like YOU: practical, reliable, and focused on getting the work done."
-        heroImage={{ src: "/images/worker1.png", alt: "Industrial worker representing the people who keep operations moving." }}
+        blueprintImage={{
+          src: "/images/blueprint/platform-core-blueprint.png",
+          alt: "Blueprint-style operational platform core connecting industrial systems, dashboards, workflows, and data services.",
+        }}
         hideHeroCtas
         primaryCta={{ label: "Talk through your operation", to: "/contact" }}
         secondaryCta={{ label: "Explore the platform", to: "#platform-at-work" }}
@@ -229,11 +232,11 @@ function ThePlatformAtWork() {
   }, []);
 
   return (
-    <section id="platform-at-work" className="scroll-mt-36 border-b border-slate-800 py-16 md:py-20" aria-labelledby="platform-at-work-heading">
+    <section id="platform-at-work" className="scroll-mt-36 border-b border-cyan-400/15 py-16 md:py-20" aria-labelledby="platform-at-work-heading">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#75bda7]">The Platform at Work</p>
-          <h3 id="platform-at-work-heading" className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl">
+          <p className="section-kicker">The Platform at Work</p>
+          <h3 id="platform-at-work-heading" className="technical-divider mt-3 text-3xl font-bold leading-tight text-white md:text-4xl">
             One platform foundation. Three product experiences. One operational record.
           </h3>
           <p className="mt-4 text-base leading-7 text-slate-300 md:text-lg md:leading-8">
@@ -337,16 +340,26 @@ function PlatformHotspotPanel({ item, onClose }: { item: PlatformHotspot; onClos
 
 function InsidePlatformCore() {
   return (
-    <section id="platform-core" className="scroll-mt-36 border-b border-slate-800 py-16 md:py-20" aria-labelledby="platform-core-heading">
+    <section id="platform-core" className="scroll-mt-36 border-b border-cyan-400/15 py-16 md:py-20" aria-labelledby="platform-core-heading">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-4xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#75bda7]">Inside the Platform Core</p>
-        <h3 id="platform-core-heading" className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl">
-          The operating system behind operational intelligence.
-        </h3>
-        <p className="mt-4 text-base leading-7 text-slate-300 md:text-lg md:leading-8">
-          Behind every Last Mile product is a cloud-native, AI-native platform foundation designed for secure scale, governed automation, tenant isolation, observability, reliability, and continuous operational learning.
-        </p>
+      <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_380px]">
+        <div className="mx-auto max-w-4xl text-center lg:text-left">
+          <p className="section-kicker">Inside the Platform Core</p>
+          <h3 id="platform-core-heading" className="mt-3 text-3xl font-bold leading-tight text-white md:text-4xl">
+            The operating system behind operational intelligence.
+          </h3>
+          <p className="mt-4 text-base leading-7 text-slate-300 md:text-lg md:leading-8">
+            Behind every Last Mile product is a cloud-native, AI-native platform foundation designed for secure scale, governed automation, tenant isolation, observability, reliability, and continuous operational learning.
+          </p>
+        </div>
+        <figure className="blueprint-art-frame">
+          <img
+            src="/images/blueprint/platform-core-blueprint.png"
+            alt="Blueprint-style operational platform core connecting industrial systems, dashboards, workflows, and data services."
+            className="max-h-[260px]"
+            loading="lazy"
+          />
+        </figure>
       </div>
       <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {coreCapabilities.map((capability, index) => (
@@ -360,8 +373,8 @@ function InsidePlatformCore() {
 
 function CoreCapabilityCard({ capability, featured = false, centeredOnDesktop = false }: { capability: (typeof coreCapabilities)[number]; featured?: boolean; centeredOnDesktop?: boolean }) {
   return (
-    <article className={`platform-core-card rounded-xl border border-slate-700 bg-slate-900/60 p-5 ${featured ? "xl:col-span-1" : ""} ${centeredOnDesktop ? "xl:col-start-2" : ""}`}>
-      <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-[#217ED9]/40 bg-[#0a1929]/80 text-[#75ADE6]">{capability.icon}</div>
+    <article className={`platform-core-card blueprint-card rounded-xl p-5 ${featured ? "xl:col-span-1" : ""} ${centeredOnDesktop ? "xl:col-start-2" : ""}`}>
+      <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-[#00C2FF]/40 bg-[#071426]/80 text-[#00C2FF]">{capability.icon}</div>
       <h4 className="mt-4 text-center text-xl font-semibold text-white">{capability.title}</h4>
       <p className="mt-3 text-base leading-7 text-slate-300">{capability.copy}</p>
       <ul className="mt-5 space-y-2">

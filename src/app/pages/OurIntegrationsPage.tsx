@@ -118,14 +118,10 @@ const industryLabels: Record<string, string> = {
 };
 
 const vendorAccentClasses = [
-  "from-[#217ED9] to-cyan-300",
-  "from-amber-400 to-orange-500",
-  "from-emerald-400 to-teal-400",
-  "from-rose-400 to-pink-500",
-  "from-sky-400 to-blue-500",
-  "from-violet-400 to-fuchsia-500",
-  "from-lime-300 to-emerald-500",
-  "from-yellow-300 to-amber-500",
+  "from-[#00C2FF] to-[#37F0C2]",
+  "from-[#2E7BFF] to-[#00C2FF]",
+  "from-[#37F0C2] to-[#7DF0B6]",
+  "from-[#00C2FF] to-[#2E7BFF]",
 ];
 
 function buildNoStoreUrl(path: string) {
@@ -332,7 +328,7 @@ export function OurIntegrationsPage() {
         <meta name="lastmile:integrations-data" content={discoveredIntegrationsDataUrl} />
       </Helmet>
 
-      <div className="pt-20 relative min-h-screen overflow-hidden">
+      <div className="operational-grid pt-20 relative min-h-screen overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 data-grid-bg opacity-20"></div>
           <div className="absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#217ED9]/20 blur-3xl"></div>
@@ -343,7 +339,7 @@ export function OurIntegrationsPage() {
         <div className="relative z-10">
           <section className="relative py-14 lg:py-16 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+              <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                 <div>
                   <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
                     <span className="hero-title-gradient">ServiceNow Integration Library</span>
@@ -361,18 +357,28 @@ export function OurIntegrationsPage() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="scoreboard-shell glass-panel border border-[#75ADE6]/60 p-3 lg:p-3.5"
+                  className="grid gap-4"
                 >
-                  <div className="scoreboard-header mb-2.5 flex items-center justify-center rounded-2xl px-4 py-2">
-                    <h2 className="text-lg font-semibold tracking-[0.08em] text-white sm:text-xl">Available Integration References</h2>
-                  </div>
+                  <figure className="blueprint-art-frame">
+                    <img
+                      src="/images/blueprint/servicenow-integrations-blueprint.png"
+                      alt="Blueprint-style ServiceNow integration interface for operational system connections."
+                      className="max-h-[280px]"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div className="scoreboard-shell blueprint-panel rounded-2xl p-3 lg:p-3.5">
+                    <div className="scoreboard-header mb-2.5 flex items-center justify-center rounded-2xl px-4 py-2">
+                      <h2 className="text-lg font-semibold tracking-[0.08em] text-white sm:text-xl">Available Integration References</h2>
+                    </div>
 
-                  <div className="scoreboard-display rounded-[1.4rem] px-4 py-2.5 sm:px-5">
-                    <div className="space-y-1.5">
-                      <ScoreboardMetric value={String(totalProducts).padStart(2, "0")} label="Integrations Available" />
-                      <ScoreboardMetric value={String(integrationGroups.length).padStart(2, "0")} label="Industries Covered" />
-                      <ScoreboardMetric value={String(totalVendors).padStart(2, "0")} label="Vendors Available" />
-                      <ScoreboardMetric value={String(totalRepresentedFunctions).padStart(2, "0")} label="Functions Represented" />
+                    <div className="scoreboard-display rounded-[1.4rem] px-4 py-2.5 sm:px-5">
+                      <div className="space-y-1.5">
+                        <ScoreboardMetric value={String(totalProducts).padStart(2, "0")} label="Integrations Available" />
+                        <ScoreboardMetric value={String(integrationGroups.length).padStart(2, "0")} label="Industries Covered" />
+                        <ScoreboardMetric value={String(totalVendors).padStart(2, "0")} label="Vendors Available" />
+                        <ScoreboardMetric value={String(totalRepresentedFunctions).padStart(2, "0")} label="Functions Represented" />
+                      </div>
                     </div>
                   </div>
                 </motion.div>

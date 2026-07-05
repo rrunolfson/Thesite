@@ -8,7 +8,7 @@ export interface ProductPageLayoutProps {
   intro: string;
   heroSecondary?: string;
   heroNote?: string;
-  heroImage?: { src: string; alt: string };
+  blueprintImage?: { src: string; alt: string };
   hideHeroCtas?: boolean;
   primaryCta: { label: string; to: string };
   secondaryCta: { label: string; to: string };
@@ -41,7 +41,7 @@ export function ProductPageLayout({
   intro,
   heroSecondary,
   heroNote,
-  heroImage,
+  blueprintImage,
   hideHeroCtas = false,
   primaryCta,
   secondaryCta,
@@ -68,13 +68,13 @@ export function ProductPageLayout({
   const hasCustomNav = Boolean(localNavItems);
 
   return (
-    <div className="relative min-h-screen pt-20">
+    <div className="operational-grid relative min-h-screen pt-20">
       <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
       <div className="relative z-10">
-        <section className="border-b border-slate-800 py-16 md:py-20">
-          <div className={`mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:px-8 ${heroImage ? "lg:grid-cols-[minmax(0,1fr)_440px] lg:items-center" : ""}`}>
+        <section className="border-b border-cyan-400/15 pb-14 pt-10 md:pb-16 md:pt-12">
+          <div className={`mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:px-8 ${blueprintImage ? "lg:grid-cols-[minmax(0,1fr)_460px] lg:items-center" : ""}`}>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#75ADE6]">{eyebrow}</p>
+              <p className="section-kicker">{eyebrow}</p>
               <h1 className="hero-title-gradient mt-6 max-w-5xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
                 {title}
               </h1>
@@ -100,10 +100,12 @@ export function ProductPageLayout({
                 </div>
               ) : null}
             </div>
-            {heroImage ? (
-              <figure className="product-hero-image-frame">
-                <img src={heroImage.src} alt={heroImage.alt} className="product-hero-image" />
-              </figure>
+            {blueprintImage ? (
+              <div className="product-hero-visual-stack">
+                <figure className="blueprint-art-frame product-hero-blueprint-frame">
+                  <img src={blueprintImage.src} alt={blueprintImage.alt} className="product-blueprint-image" />
+                </figure>
+              </div>
             ) : null}
           </div>
         </section>
@@ -111,8 +113,8 @@ export function ProductPageLayout({
         <nav
           className={`sticky top-20 z-30 border-b backdrop-blur ${
             hasCustomNav
-              ? "border-[#1d7cd8]/30 bg-[#082334]/95 shadow-lg shadow-[#1d7cd8]/10"
-              : "border-slate-800 bg-[#0b1120]/95"
+              ? "border-cyan-400/25 bg-[#0B1530]/95 shadow-lg shadow-cyan-500/10"
+              : "border-cyan-400/15 bg-[#0B1530]/95"
           }`}
           aria-label="Product page sections"
         >
@@ -124,8 +126,8 @@ export function ProductPageLayout({
                   href={`#${item.id}`}
                   className={`inline-flex min-h-11 items-center rounded-sm border px-3 text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#75bda7] ${
                     hasCustomNav
-                      ? "border-transparent text-[#75bda7] hover:border-[#75bda7]/35 hover:bg-[#0a1929]/90 hover:text-white"
-                      : "border-transparent text-slate-300 hover:bg-slate-900 hover:text-white"
+                      ? "border-transparent text-[#37F0C2] hover:border-[#37F0C2]/35 hover:bg-[#071426]/90 hover:text-white"
+                      : "border-transparent text-slate-300 hover:bg-[#071426] hover:text-white"
                   }`}
                 >
                   {item.label}
@@ -165,7 +167,7 @@ export function ProductPageLayout({
         <PageSection id="use-cases" title="Use Cases">
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {useCases.map((useCase) => (
-              <div key={useCase} className="rounded-lg border border-slate-700 bg-slate-900/60 p-4 text-center text-base leading-7 text-slate-200">
+              <div key={useCase} className="blueprint-card rounded-lg p-4 text-center text-base leading-7 text-slate-200">
                 {useCase}
               </div>
             ))}
@@ -180,7 +182,7 @@ export function ProductPageLayout({
                 to={product.to}
                 eventName="cta_product_click"
                 eventData={{ product: product.label }}
-                className="rounded-lg border border-slate-700 bg-slate-900/60 p-5 text-center transition-colors hover:border-[#217ED9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#75bda7]"
+                className="blueprint-card rounded-lg p-5 text-center transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#37F0C2]"
               >
                 <span className="block text-lg font-semibold text-white">{product.label}</span>
                 {product.copy ? <span className="mt-3 block text-base font-normal leading-7 text-slate-300">{product.copy}</span> : null}
@@ -192,7 +194,7 @@ export function ProductPageLayout({
         <PageSection id="faqs" title="FAQs">
           <div className="space-y-4">
             {faqs.map((faq) => (
-              <details key={faq.question} className="rounded-lg border border-slate-700 bg-slate-900/60 p-5">
+              <details key={faq.question} className="blueprint-card rounded-lg p-5">
                 <summary className="cursor-pointer text-lg font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#75bda7]">
                   {faq.question}
                 </summary>
@@ -210,12 +212,12 @@ export function ProductPageLayout({
                   key={resource.label}
                   to={resource.to}
                   eventName={resource.to === "/signal-to-action" ? "cta_podcast_click" : "cta_explore_platform_click"}
-                  className="rounded-lg border border-slate-700 bg-slate-900/60 p-5 text-center text-base font-semibold text-[#75ADE6] hover:border-[#217ED9] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#75bda7]"
+                  className="blueprint-card rounded-lg p-5 text-center text-base font-semibold text-[#00C2FF] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#37F0C2]"
                 >
                   {resource.label}
                 </TrackedLink>
               ) : (
-                <div key={resource.label} className="rounded-lg border border-slate-700 bg-slate-900/60 p-5 text-center text-base font-semibold text-slate-200">
+                <div key={resource.label} className="blueprint-card rounded-lg p-5 text-center text-base font-semibold text-slate-200">
                   {resource.label}
                 </div>
               ),
@@ -223,7 +225,7 @@ export function ProductPageLayout({
           </div>
         </PageSection>
 
-            <section className="border-t border-slate-800 py-16 md:py-20">
+            <section className="border-t border-cyan-400/15 py-16 md:py-20">
               <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
                 <h2 className="text-3xl font-bold leading-tight text-white md:text-5xl">{finalCta.heading}</h2>
                 {finalCta.copy.map((paragraph) => (
@@ -249,9 +251,9 @@ export function ProductPageLayout({
 
 function PageSection({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return (
-    <section id={id} className="scroll-mt-36 border-b border-slate-800 py-16 md:py-20">
+    <section id={id} className="scroll-mt-36 border-b border-cyan-400/15 py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="mx-auto max-w-5xl text-center text-3xl font-bold leading-tight text-white md:text-5xl">{title}</h2>
+        <h2 className="technical-divider mx-auto max-w-5xl text-center text-3xl font-bold leading-tight text-white md:text-5xl">{title}</h2>
         <div className="mt-6 space-y-5 text-lg leading-8 text-slate-300">{children}</div>
       </div>
     </section>
@@ -260,7 +262,7 @@ function PageSection({ id, title, children }: { id: string; title: string; child
 
 function ArticleCard({ title, copy }: { title: string; copy?: string }) {
   return (
-    <article className="glass-panel h-full rounded-lg p-5 text-center">
+    <article className="blueprint-card h-full rounded-lg p-5 text-center">
       <h3 className="text-xl font-semibold text-white">{title}</h3>
       {copy ? <p className="mt-3 text-base leading-7 text-slate-300">{copy}</p> : null}
     </article>

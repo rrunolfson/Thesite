@@ -23,7 +23,10 @@ export function InfinitControlPage() {
         eyebrow="INFINIT-CONTROL"
         title="Build the operational view your team needs."
         intro="Infinit-Control lets customers create their own views using alerts, widgets, work, trends, asset context, evidence, and system health."
-        heroImage={{ src: "/images/worker3.png", alt: "Industrial worker representing operational visibility and control-room decision making." }}
+        blueprintImage={{
+          src: "/images/blueprint/infinit-control-blueprint.png",
+          alt: "Blueprint-style operational control interface showing dashboards, maps, alerts, and industrial visibility.",
+        }}
         hideHeroCtas
         primaryCta={{ label: "Talk through your operational view", to: "/contact" }}
         secondaryCta={{ label: "Explore Singularity", to: "/singularity" }}

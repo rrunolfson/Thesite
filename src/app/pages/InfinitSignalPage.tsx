@@ -23,7 +23,10 @@ export function InfinitSignalPage() {
         eyebrow="INFINIT-SIGNAL"
         title="Turn operational signals into facts your team can act on."
         intro="Bring operational information into action. Infinit-Signal connects to source systems, adds context, and injects the operational information your teams need into Singularity."
-        heroImage={{ src: "/images/worker2.png", alt: "Operational worker representing source-system data and field operations." }}
+        blueprintImage={{
+          src: "/images/blueprint/infinit-signal-blueprint.png",
+          alt: "Blueprint-style visualization of operational data flowing from industrial systems into a central intelligence layer.",
+        }}
         hideHeroCtas
         primaryCta={{ label: "Talk through your source environment", to: "/contact" }}
         secondaryCta={{ label: "Explore the platform architecture", to: "/platform" }}

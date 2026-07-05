@@ -59,14 +59,14 @@ export function Signal2ActionPage() {
         markdownPath="/signal-to-action.md"
         jsonLd={jsonLd}
       />
-      <div className="pt-20 relative min-h-screen">
+      <div className="operational-grid pt-20 relative min-h-screen">
         <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
 
         <div className="relative z-10">
-          <section className="relative overflow-hidden pt-16 pb-10 border-b border-slate-800">
+          <section className="relative overflow-hidden pt-16 pb-10 border-b border-cyan-400/15">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center">
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#75ADE6]">Signal 2 Action</p>
+                <p className="section-kicker">Signal 2 Action</p>
                 <h1 className="hero-title-gradient mt-6 text-4xl font-bold tracking-tight leading-tight mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
                   Conversations about the work between detection and resolution.
                 </h1>
@@ -85,11 +85,11 @@ export function Signal2ActionPage() {
             </div>
           </section>
 
-          <section className="border-b border-slate-800 pt-8 pb-20 md:pt-10">
+          <section className="border-b border-cyan-400/15 pt-8 pb-20 md:pt-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h2 className="text-4xl font-bold mb-6">What Signal 2 Action explores</h2>
+                  <h2 className="technical-divider text-center text-4xl font-bold mb-6 lg:text-left">What Signal 2 Action explores</h2>
                   <ul className="space-y-4 text-lg leading-8 text-slate-300">
                     {[
                       "The operational action gap",
@@ -104,10 +104,10 @@ export function Signal2ActionPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="glass-panel overflow-hidden p-3">
+                <div className="blueprint-art-frame">
                   <img
-                    src="/signal-2-action-cover.svg"
-                    alt="Signal 2 Action podcast artwork featuring the Last Mile podcast brand"
+                    src="/images/blueprint/signal-2-action-blueprint.png"
+                    alt="Blueprint-style media and podcast production scene for operational intelligence conversations."
                     className="h-full w-full rounded object-cover"
                     loading="lazy"
                   />
@@ -116,7 +116,7 @@ export function Signal2ActionPage() {
             </div>
           </section>
 
-          <section className="py-20 border-b border-slate-800">
+          <section className="py-20 border-b border-cyan-400/15">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-4xl">
                 <h2 className="text-4xl font-bold text-white">Operational data does not create operational action on its own.</h2>
@@ -128,7 +128,7 @@ export function Signal2ActionPage() {
             </div>
           </section>
 
-          <section id="latest-episode" className="py-20 border-b border-slate-800">
+          <section id="latest-episode" className="py-20 border-b border-cyan-400/15">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="mb-10">
                 <h2 className="text-4xl font-bold text-white">Current Series: Operational Intelligence in Action</h2>
@@ -140,7 +140,7 @@ export function Signal2ActionPage() {
                   ))}
                 </div>
               ) : (
-                <div className="glass-panel p-8 text-slate-300">
+                  <div className="blueprint-panel rounded-lg p-8 text-slate-300">
                   New conversations on operational intelligence are being prepared. Subscribe to be notified when the next episode is released.
                 </div>
               )}
@@ -249,7 +249,7 @@ function EpisodeRow({ episode }: { episode: PodcastEpisode }) {
   const progress = duration ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="glass-panel border border-slate-700/40 hover:border-[#217ED9]/50 transition-colors rounded-lg">
+    <div className="blueprint-card rounded-lg">
       <div className="p-6">
         {available ? (
           <audio

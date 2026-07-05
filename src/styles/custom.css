@@ -4,6 +4,8 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.6;
+  background: #030816;
+  color: #e6ecff;
 }
 
 .font-mono {
@@ -11,21 +13,38 @@ body {
 }
 
 .glass-panel {
-  background: rgba(30, 41, 59, 0.7);
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(13, 35, 66, 0.82), rgba(7, 20, 38, 0.9)),
+    radial-gradient(circle at 0% 0%, rgba(0, 194, 255, 0.14), transparent 34%);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 194, 255, 0.22);
+  box-shadow:
+    inset 0 1px 0 rgba(230, 236, 255, 0.08),
+    0 18px 54px rgba(0, 12, 32, 0.32);
+}
+
+.site-navbar {
+  overflow: visible !important;
+}
+
+.site-navbar .nav-dropdown-panel {
+  z-index: 120;
 }
 
 .data-grid-bg {
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(0, 194, 255, 0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.11) 1px, transparent 1px),
+    linear-gradient(rgba(46, 123, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 123, 255, 0.06) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
 .hero-title-gradient {
   color: #ffffff;
-  background: linear-gradient(90deg, #ffffff 0%, #1d7cd8 48%, #75bda7 100%);
+  background: linear-gradient(90deg, #ffffff 0%, #00c2ff 48%, #37f0c2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -50,8 +69,136 @@ summary:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #75bda7;
+  outline: 2px solid #37f0c2;
   outline-offset: 3px;
+}
+
+.operational-grid {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(0, 194, 255, 0.18), transparent 28rem),
+    radial-gradient(circle at 84% 20%, rgba(55, 240, 194, 0.11), transparent 24rem),
+    linear-gradient(180deg, #030816 0%, #071426 46%, #030816 100%);
+}
+
+.operational-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(rgba(0, 194, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.1) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.28));
+  pointer-events: none;
+}
+
+.operational-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, transparent 0 9%, rgba(0, 194, 255, 0.16) 9.05%, transparent 9.2% 90.8%, rgba(0, 194, 255, 0.12) 90.95%, transparent 91.1%),
+    linear-gradient(180deg, transparent 0 14%, rgba(55, 240, 194, 0.09) 14.08%, transparent 14.2% 84.8%, rgba(0, 194, 255, 0.1) 84.92%, transparent 85.05%);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.blueprint-panel,
+.blueprint-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 194, 255, 0.22);
+  background:
+    linear-gradient(180deg, rgba(13, 35, 66, 0.76), rgba(7, 20, 38, 0.9)),
+    radial-gradient(circle at top left, rgba(0, 194, 255, 0.12), transparent 42%);
+  box-shadow:
+    inset 0 1px 0 rgba(230, 236, 255, 0.08),
+    0 20px 58px rgba(0, 12, 32, 0.28);
+}
+
+.blueprint-card {
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.blueprint-card::before,
+.blueprint-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 194, 255, 0.18), transparent 28%) top left / 6rem 1px no-repeat,
+    linear-gradient(180deg, rgba(0, 194, 255, 0.18), transparent 28%) top left / 1px 6rem no-repeat,
+    linear-gradient(270deg, rgba(55, 240, 194, 0.16), transparent 28%) bottom right / 6rem 1px no-repeat,
+    linear-gradient(0deg, rgba(55, 240, 194, 0.16), transparent 28%) bottom right / 1px 6rem no-repeat;
+  pointer-events: none;
+}
+
+.blueprint-card:hover,
+.blueprint-card:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(55, 240, 194, 0.48);
+  box-shadow:
+    inset 0 1px 0 rgba(230, 236, 255, 0.1),
+    0 22px 64px rgba(0, 194, 255, 0.16);
+}
+
+.blueprint-art-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 194, 255, 0.28);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0, 194, 255, 0.18), transparent 44%),
+    linear-gradient(180deg, rgba(7, 20, 38, 0.92), rgba(3, 8, 22, 0.98));
+  padding: 0.65rem;
+  box-shadow: 0 26px 80px rgba(0, 194, 255, 0.14);
+}
+
+.blueprint-art-frame img {
+  display: block;
+  width: 100%;
+  border-radius: 0.7rem;
+  object-fit: contain;
+}
+
+.section-kicker {
+  color: #37f0c2;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.technical-divider {
+  position: relative;
+}
+
+.technical-divider::after {
+  content: "";
+  display: block;
+  width: min(12rem, 46vw);
+  height: 1px;
+  margin: 1rem auto 0;
+  background: linear-gradient(90deg, transparent, rgba(0, 194, 255, 0.72), rgba(55, 240, 194, 0.64), transparent);
+}
+
+.blueprint-panel input,
+.blueprint-panel textarea,
+.blueprint-panel select {
+  border-color: rgba(0, 194, 255, 0.24) !important;
+  background-color: rgba(3, 8, 22, 0.76) !important;
+  color: #e6ecff !important;
+}
+
+.blueprint-panel input:focus,
+.blueprint-panel textarea:focus,
+.blueprint-panel select:focus {
+  border-color: rgba(55, 240, 194, 0.72) !important;
+  box-shadow: 0 0 0 1px rgba(55, 240, 194, 0.28);
 }
 
 @media (max-width: 640px) {
@@ -110,7 +257,7 @@ select:focus-visible {
 
 /* Selection color */
 ::selection {
-  background-color: rgba(33, 126, 217, 0.3);
+  background-color: rgba(0, 194, 255, 0.3);
   color: #ffffff;
 }
 
@@ -180,38 +327,20 @@ html {
   padding-left: 0.35rem;
 }
 
-.product-hero-image-frame {
-  position: relative;
-  overflow: hidden;
+.product-hero-visual-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.product-hero-blueprint-frame {
   align-self: center;
-  border-radius: 1rem;
-  border: 1px solid rgba(33, 126, 217, 0.34);
-  background:
-    radial-gradient(circle at 50% 0%, rgba(117, 189, 167, 0.16), transparent 42%),
-    linear-gradient(180deg, rgba(8, 14, 30, 0.9), rgba(2, 6, 23, 0.96));
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.06),
-    0 24px 70px rgba(29, 124, 216, 0.16);
 }
 
-.product-hero-image-frame::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(135deg, rgba(29, 124, 216, 0.22), transparent 38%),
-    linear-gradient(0deg, rgba(2, 6, 23, 0.26), transparent 45%);
-  pointer-events: none;
-}
-
-.product-hero-image {
-  display: block;
-  width: 100%;
-  min-height: 280px;
-  max-height: 500px;
-  object-fit: cover;
-  filter: grayscale(100%) contrast(1.08) brightness(0.9);
+.product-blueprint-image {
+  aspect-ratio: 16 / 9;
+  min-height: 250px;
+  max-height: 360px;
+  filter: saturate(1.06) contrast(1.08);
 }
 
 .platform-image-frame,
@@ -224,10 +353,10 @@ html {
 
 .platform-image-frame {
   border-radius: 1.25rem;
-  border: 1px solid rgba(117, 189, 167, 0.28);
+  border: 1px solid rgba(0, 194, 255, 0.3);
   background:
-    radial-gradient(circle at 50% 0%, rgba(29, 124, 216, 0.16), transparent 42%),
-    linear-gradient(180deg, rgba(8, 14, 30, 0.9), rgba(3, 7, 18, 0.96));
+    radial-gradient(circle at 50% 0%, rgba(0, 194, 255, 0.18), transparent 42%),
+    linear-gradient(180deg, rgba(7, 20, 38, 0.9), rgba(3, 8, 22, 0.96));
   padding: clamp(0.85rem, 2vw, 1.4rem);
   overflow: hidden;
 }
@@ -279,11 +408,11 @@ html {
 .platform-hotspot:hover,
 .platform-hotspot:focus-visible,
 .platform-hotspot.is-active {
-  border-color: rgba(117, 240, 206, 0.72);
-  background: rgba(117, 189, 167, 0.08);
+  border-color: rgba(55, 240, 194, 0.72);
+  background: rgba(0, 194, 255, 0.08);
   box-shadow:
-    0 0 0 1px rgba(117, 240, 206, 0.18),
-    0 0 32px rgba(33, 126, 217, 0.3);
+    0 0 0 1px rgba(55, 240, 194, 0.18),
+    0 0 32px rgba(0, 194, 255, 0.3);
   outline: 0;
 }
 
@@ -298,11 +427,11 @@ html {
   bottom: 1.25rem;
   z-index: 5;
   width: min(25rem, calc(100% - 2.5rem));
-  border: 1px solid rgba(117, 189, 167, 0.44);
+  border: 1px solid rgba(0, 194, 255, 0.44);
   border-radius: 1rem;
   background:
-    linear-gradient(180deg, rgba(8, 14, 30, 0.94), rgba(3, 7, 18, 0.96)),
-    radial-gradient(circle at 100% 0%, rgba(33, 126, 217, 0.18), transparent 45%);
+    linear-gradient(180deg, rgba(7, 20, 38, 0.94), rgba(3, 8, 22, 0.96)),
+    radial-gradient(circle at 100% 0%, rgba(0, 194, 255, 0.18), transparent 45%);
   padding: 1.25rem;
   backdrop-filter: blur(16px);
   animation: platform-panel-in 160ms ease-out;
@@ -337,7 +466,7 @@ html {
 }
 
 .platform-mobile-hotspot-card {
-  border: 1px solid rgba(33, 126, 217, 0.26);
+  border: 1px solid rgba(0, 194, 255, 0.26);
   border-radius: 0.85rem;
   background: rgba(15, 23, 42, 0.7);
   padding: 1rem;
@@ -384,8 +513,8 @@ html {
 
 .platform-core-card {
   background:
-    linear-gradient(180deg, rgba(30, 41, 59, 0.66), rgba(15, 23, 42, 0.72)),
-    radial-gradient(circle at top left, rgba(29, 124, 216, 0.12), transparent 34%);
+    linear-gradient(180deg, rgba(13, 35, 66, 0.76), rgba(7, 20, 38, 0.9)),
+    radial-gradient(circle at top left, rgba(0, 194, 255, 0.12), transparent 34%);
 }
 
 @keyframes platform-panel-in {
@@ -447,6 +576,15 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
   .platform-hotspot-panel {
     animation: none !important;
   }
@@ -457,14 +595,14 @@ html {
 }
 
 @media (max-width: 767px) {
-  .product-hero-image-frame {
+  .product-hero-blueprint-frame {
     max-width: 24rem;
     margin: 0 auto;
   }
 
-  .product-hero-image {
-    min-height: 220px;
-    max-height: 310px;
+  .product-blueprint-image {
+    min-height: 190px;
+    max-height: 250px;
   }
 
   .platform-image-frame {

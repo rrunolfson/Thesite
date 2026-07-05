@@ -44,11 +44,11 @@ export function NewsroomPage() {
         keywords="Last Mile newsroom, press releases, company announcements, product updates, partnership news"
         canonicalPath="/company/newsroom"
       />
-      <div className="pt-20 relative min-h-screen">
+      <div className="operational-grid pt-20 relative min-h-screen">
         <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
 
         <div className="relative z-10">
-          <section className="relative overflow-hidden border-b border-slate-800/80 py-20">
+          <section className="relative overflow-hidden border-b border-cyan-400/15 py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_420px]">
                 <motion.div
@@ -57,7 +57,7 @@ export function NewsroomPage() {
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
                   <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
-                    <span className="bg-gradient-to-r from-white via-[#217ED9]/60 to-[#217ED9] text-transparent bg-clip-text">
+                    <span className="hero-title-gradient">
                       Newsroom
                     </span>
                   </h1>
@@ -72,10 +72,10 @@ export function NewsroomPage() {
                   transition={{ duration: 0.55, ease: "easeOut", delay: 0.08 }}
                   className="relative"
                 >
-                  <div className="glass-panel overflow-hidden border border-slate-700/70">
+                  <div className="blueprint-art-frame">
                     <img
-                      src="/newsroom_image.jpg"
-                      alt="Last Mile newsroom"
+                      src="/images/blueprint/newsroom-blueprint.png"
+                      alt="Blueprint-style news and updates panel for company announcements."
                       className="h-full w-full object-cover"
                     />
                   </div>
@@ -86,7 +86,7 @@ export function NewsroomPage() {
 
           <section className="py-16">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="mb-10 flex flex-col gap-4 border-b border-slate-800 pb-8 sm:flex-row sm:items-end sm:justify-between">
+              <div className="mb-10 flex flex-col gap-4 border-b border-cyan-400/15 pb-8 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
                     Press Releases
@@ -119,7 +119,7 @@ export function NewsroomPage() {
                     initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.35, delay: index * 0.05, ease: "easeOut" }}
-                    className="border-b border-slate-800 py-8"
+                    className="blueprint-card mb-4 rounded-lg p-6"
                   >
                     <div className="grid gap-4 md:grid-cols-[220px_minmax(0,1fr)] md:items-start">
                       <p className="text-sm font-medium uppercase tracking-[0.14em] text-slate-400">
@@ -145,7 +145,7 @@ export function NewsroomPage() {
                 ))}
 
                 {visibleReleases.length === 0 ? (
-                  <div className="glass-panel rounded-sm px-8 py-12 text-center text-slate-300">
+                  <div className="blueprint-panel rounded-sm px-8 py-12 text-center text-slate-300">
                     No press releases are currently published for {selectedYear}.
                   </div>
                 ) : null}
