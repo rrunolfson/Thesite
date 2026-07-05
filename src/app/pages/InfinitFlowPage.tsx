@@ -22,13 +22,16 @@ export function InfinitFlowPage() {
       <ProductPageLayout
         eyebrow="INFINIT-FLOW"
         title="Build workflows that mirror how your operation actually works."
-        intro="Infinit-Flow gives customers a modern, intuitive drag-and-drop experience for building workflows around the signals, assets, alerts, and issues that matter to their operation. It combines human work, automation, approvals, escalation, and authorized remediation in one response path."
+        intro="Infinit-Flow gives customers a modern drag-and-drop experience for creating workflow, automation, assignments, escalation, approvals, and authorized remediation."
+        heroImage={{ src: "/images/worker4.png", alt: "Industrial worker representing workflow, automation, and operational response." }}
+        hideHeroCtas
         primaryCta={{ label: "Talk through your workflow", to: "/contact" }}
         secondaryCta={{ label: "Explore Singularity", to: "/singularity" }}
         overview={{
           heading: "Let software handle the scramble.",
           copy: [
             "When an issue is confirmed, operations teams should not have to hunt through dashboards, build a ticket by hand, find the right owner, chase approvals, and reconstruct what happened later.",
+            "Infinit-Flow gives customers a modern, intuitive drag-and-drop experience for building workflows around the signals, assets, alerts, and issues that matter to their operation.",
             "Infinit-Flow lets customers create workflows that match their own operating processes and use the shared context already available in Singularity.",
           ],
         }}
@@ -68,8 +71,9 @@ export function InfinitFlowPage() {
         relatedProducts={[
           { label: "Infinit-Signal", to: "/infinit-signal" },
           { label: "Infinit-Control", to: "/infinit-control" },
-          { label: "Operational Memory: Singularity", to: "/singularity" },
+          { label: "Platform Foundation: Singularity", to: "/singularity" },
         ]}
+        relatedHeading="Related Products and Foundation"
         faqs={[
           {
             question: "Who designs the workflows?",

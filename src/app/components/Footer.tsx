@@ -2,21 +2,21 @@ import { TrackedLink } from "@/app/components/TrackedLink";
 import { Linkedin } from "lucide-react";
 
 const platformLinks = [
-  { to: "/platform", label: "Platform Overview", eventName: "cta_explore_platform_click" as const },
+  { to: "/platform", label: "Overview", eventName: "cta_explore_platform_click" as const },
   { to: "/infinit-signal", label: "Infinit-Signal", eventName: "cta_product_click" as const },
   { to: "/infinit-control", label: "Infinit-Control", eventName: "cta_product_click" as const },
   { to: "/infinit-flow", label: "Infinit-Flow", eventName: "cta_product_click" as const },
-  { to: "/singularity", label: "Operational Memory: Singularity", eventName: "cta_product_click" as const },
+  { to: "/singularity", label: "Singularity", eventName: "cta_product_click" as const },
 ];
 
 const companyLinks = [
-  { to: "/about", label: "About Last Mile", eventName: "cta_explore_platform_click" as const },
-  { to: "/contact", label: "Contact Last Mile", eventName: "cta_contact_click" as const },
+  { to: "/about", label: "About", eventName: "cta_explore_platform_click" as const },
+  { to: "/contact", label: "Contact", eventName: "cta_contact_click" as const },
 ];
 
 const referenceLinks = [
   { to: "/signal-to-action", label: "Signal 2 Action", eventName: "cta_podcast_click" as const },
-  { to: "/integrations", label: "Existing ServiceNow Integrations", eventName: "cta_explore_platform_click" as const },
+  { to: "/integrations", label: "ServiceNow Integrations", eventName: "cta_explore_platform_click" as const },
   { to: "/company/newsroom", label: "News and Updates", eventName: "cta_explore_platform_click" as const },
 ];
 
@@ -39,7 +39,7 @@ export function Footer() {
                 </a>
               </div>
               <p className="text-slate-400 text-sm mb-3">
-                Operational intelligence that reaches action.
+                Operational intelligence creates actionable insights.
               </p>
               <p className="text-slate-600 text-sm whitespace-nowrap">
                 © 2026 Last Mile Inc. All rights reserved.
@@ -48,10 +48,10 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 text-left md:text-right mb-3">
-              Platform
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 text-left mb-3">
+              Last Mile Platform
             </p>
-            <ul className="space-y-3 text-sm text-slate-400 text-left md:text-right">
+            <ul className="space-y-3 text-sm text-slate-400 text-left">
               {platformLinks.map((item) => (
                 <li key={item.to}>
                   <TrackedLink to={item.to} eventName={item.eventName} eventData={{ product: item.label }} className="hover:text-[#217ED9] transition-colors">
@@ -63,10 +63,10 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 text-left md:text-right mb-3">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 text-left mb-3">
               Company
             </p>
-            <ul className="space-y-3 text-sm text-slate-400 text-left md:text-right">
+            <ul className="space-y-3 text-sm text-slate-400 text-left">
               {companyLinks.map((item) => (
                 <li key={item.to}>
                   <TrackedLink to={item.to} eventName={item.eventName} className="hover:text-[#217ED9] transition-colors">
@@ -78,10 +78,10 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 text-left md:text-right mb-3">
-              Reference
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 text-left mb-3">
+              Resources
             </p>
-            <ul className="space-y-3 text-sm text-slate-400 text-left md:text-right">
+            <ul className="space-y-3 text-sm text-slate-400 text-left">
               {referenceLinks.map((item) => (
                 <li key={item.to}>
                   <TrackedLink to={item.to} eventName={item.eventName} className="hover:text-[#217ED9] transition-colors">

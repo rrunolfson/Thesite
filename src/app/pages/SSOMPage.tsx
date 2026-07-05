@@ -22,16 +22,18 @@ export function SSOMPage() {
       <ProductPageLayout
         eyebrow="PLATFORM FOUNDATION"
         title="Singularity gives your operation a memory."
-        intro="Singularity is the shared operational-memory foundation inside the Last Mile Platform. It keeps the history of your assets, signals, issues, work, workflow decisions, evidence, timing, quality, and outcomes connected over time."
+        intro="Singularity is the shared operational-memory foundation inside the Last Mile Platform. It retains the assets, signals, issues, work, workflow activity, decisions, evidence, and outcomes that help every future response improve."
         primaryCta={{ label: "Explore the Last Mile Platform", to: "/platform" }}
         secondaryCta={{ label: "See how Infinit-Signal builds the record", to: "/infinit-signal" }}
         overview={{
           heading: "The operating record behind every product.",
           copy: [
-            "Infinit-Signal injects operational information into Singularity. Infinit-Control uses Singularity to surface a customer-defined view of the operating estate. Infinit-Flow uses Singularity to trigger, guide, and improve workflows.",
+            "The shared operational memory behind every product retains the assets, signals, issues, work, workflow activity, decisions, evidence, and outcomes that help every future response improve.",
+            "Infinit-Signal injects operational information into Singularity.",
+            "Infinit-Control uses Singularity to surface a customer-defined view of the operating estate. Infinit-Flow uses Singularity to trigger, guide, and improve workflows.",
             "As the record grows, teams can identify patterns, tune maintenance, improve workflows, strengthen automation, and give AI a more complete understanding of the specific operating environment.",
           ],
-          children: <MemoryVisual />,
+          children: <OperationalMemorySection />,
         }}
         benefits={[
           { title: "Preserve operational history across shifts, teams, and systems" },
@@ -102,6 +104,29 @@ export function SSOMPage() {
         }}
       />
     </>
+  );
+}
+
+function OperationalMemorySection() {
+  return (
+    <div className="mt-10">
+      <div className="mx-auto max-w-4xl text-center">
+        <h3 className="text-3xl font-semibold leading-tight text-white">Your operation gets smarter when it can remember.</h3>
+        <p className="mt-4 text-base leading-7 text-slate-300">
+          Singularity records the operational story of your environment: assets, signals, issues, work, decisions, outcomes, quality, timing, and evidence.
+        </p>
+        <p className="mt-3 text-base leading-7 text-slate-300">
+          The longer that history grows, the more useful it becomes. Teams can tune maintenance, strengthen response playbooks, identify recurring problems, improve automation, and give AI better operational context.
+        </p>
+        <p className="mt-3 text-base font-semibold leading-7 text-white">
+          Last Mile becomes more useful because it remembers your operation, not because it collects more random data.
+        </p>
+        <p className="mt-3 text-base leading-7 text-slate-300">
+          SSOM gives Singularity a consistent way to retain operational meaning across the systems your team already uses.
+        </p>
+      </div>
+      <MemoryVisual />
+    </div>
   );
 }
 

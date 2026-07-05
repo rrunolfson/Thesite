@@ -22,13 +22,16 @@ export function InfinitControlPage() {
       <ProductPageLayout
         eyebrow="INFINIT-CONTROL"
         title="Build the operational view your team needs."
-        intro="Infinit-Control gives customers a flexible, user-defined single pane of glass for their operating estate. It brings together the widgets, alerts, assets, trends, active work, system health, evidence, and operational context that matter to each team."
+        intro="Infinit-Control lets customers create their own views using alerts, widgets, work, trends, asset context, evidence, and system health."
+        heroImage={{ src: "/images/worker3.png", alt: "Industrial worker representing operational visibility and control-room decision making." }}
+        hideHeroCtas
         primaryCta={{ label: "Talk through your operational view", to: "/contact" }}
         secondaryCta={{ label: "Explore Singularity", to: "/singularity" }}
         overview={{
           heading: "See the operation without hunting through systems.",
           copy: [
             "Operational information is usually spread across dashboards, historians, SCADA screens, ticket systems, email, spreadsheets, and tribal knowledge. Infinit-Control helps customers create their own view of operations using the shared record in Singularity.",
+            "It brings together the widgets, alerts, assets, trends, active work, system health, evidence, and operational context that matter to each team.",
             "Infinit-Control does not replace HMI, SCADA, historian, BI, or operations-management systems. It works above them to help teams manage cross-system operational response.",
           ],
         }}
@@ -64,8 +67,9 @@ export function InfinitControlPage() {
         relatedProducts={[
           { label: "Infinit-Signal", to: "/infinit-signal" },
           { label: "Infinit-Flow", to: "/infinit-flow" },
-          { label: "Operational Memory: Singularity", to: "/singularity" },
+          { label: "Platform Foundation: Singularity", to: "/singularity" },
         ]}
+        relatedHeading="Related Products and Foundation"
         faqs={[
           {
             question: "Is Infinit-Control a generic dashboard product?",

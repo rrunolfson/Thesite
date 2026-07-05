@@ -9,6 +9,9 @@
     "integrations:sync-sheet": "node scripts/generate-integrations-json.mjs --config data/integrations-source.json --save-source",
     "build": "npm run integrations:generate && npm run newsroom:generate && vite build",
     "dev": "vite",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src",
+    "validate": "npm run typecheck && npm run lint && npm run build",
     "newsroom:generate": "node scripts/generate-newsroom-content.mjs"
   },
   "dependencies": {
@@ -72,9 +75,19 @@
     "vaul": "1.1.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.4",
     "@tailwindcss/vite": "4.1.12",
+    "@types/node": "^26.1.0",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "4.7.0",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
     "tailwindcss": "4.1.12",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.62.1",
     "vite": "6.4.2"
   },
   "overrides": {

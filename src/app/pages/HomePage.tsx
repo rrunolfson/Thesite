@@ -1,29 +1,8 @@
 import type { ReactElement, ReactNode } from "react";
-import { ArrowRight, CheckCircle2, GitBranch, Layers3, Repeat2, ShieldCheck, Workflow } from "lucide-react";
+import { ArrowRight, Layers3, Repeat2, Workflow } from "lucide-react";
 import { SEO } from "@/app/components/SEO";
 import { TrackedLink } from "@/app/components/TrackedLink";
 import { createOrganizationSchema, createWebsiteSchema } from "@/app/lib/structuredData";
-
-const productCards = [
-  {
-    title: "Infinit-Signal",
-    to: "/infinit-signal",
-    lead: "Understand what happened, where it happened, and whether it matters.",
-    copy: "Turns source data into operational facts and confirmed issues worth acting on.",
-  },
-  {
-    title: "Infinit-Control",
-    to: "/infinit-control",
-    lead: "See the work, the problem, and the response in one place.",
-    copy: "Gives teams a live operational view of issues, assets, work, system health, quality, and evidence.",
-  },
-  {
-    title: "Infinit-Flow",
-    to: "/infinit-flow",
-    lead: "Turn confirmed problems into organized response.",
-    copy: "Coordinates people, workflow, approvals, tasks, escalations, and authorized automation.",
-  },
-];
 
 export function HomePage() {
   return (
@@ -43,38 +22,29 @@ export function HomePage() {
         <header className="relative z-10 overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-20">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-center lg:px-8">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#75ADE6]">
-                OPERATIONAL INTELLIGENCE FOR ENTERPRISE OPERATIONS
-              </p>
-              <h1 className="hero-title-gradient mt-6 max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="hero-title-gradient max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
                 Raise your operational intelligence.
               </h1>
               <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
                 Last Mile turns the signals coming from your operation into coordinated work, authorized automation, and a clear view of what happens next. It helps teams understand the issue, move the right response, and improve how operations run over time.
               </p>
-              <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <TrackedLink to="/contact" eventName="cta_contact_click" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 text-base font-semibold text-white hover:bg-[#0a1929]">
-                  Contact Last Mile <ArrowRight className="h-5 w-5" />
-                </TrackedLink>
-                <a href="#platform-path" className="inline-flex min-h-11 items-center justify-center rounded-sm border border-slate-600 bg-slate-900/60 px-7 py-3 text-base font-semibold text-white hover:border-[#217ED9]">
-                  Explore the platform
-                </a>
-              </div>
             </div>
 
             <figure className="relative overflow-hidden rounded-2xl border border-slate-700 bg-slate-950/80 shadow-2xl">
               <div className="absolute inset-0 z-10 bg-gradient-to-br from-[#1d7cd8]/25 via-transparent to-[#3a8f98]/25"></div>
-              <div className="absolute inset-x-0 bottom-0 z-10 h-1/2 bg-gradient-to-t from-[#020617] via-[#020617]/75 to-transparent"></div>
               <div className="relative min-h-[320px]">
                 <img
                   src="/images/Chuck1.png"
                   alt="Operations professional representing the people who keep enterprise operations moving"
                   className="h-full min-h-[320px] w-full object-cover"
                 />
+                <div className="absolute left-1/2 top-5 z-20 w-[88%] -translate-x-1/2 text-center font-['Arial_Black',Arial,Helvetica,sans-serif] text-2xl font-black uppercase leading-none tracking-[0.08em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] sm:text-3xl">
+                  Meet Chuck
+                </div>
+                <div className="absolute bottom-6 left-1/2 z-20 w-[92%] -translate-x-1/2 rounded bg-slate-950/45 px-2 py-2 text-center font-['Arial_Black',Arial,Helvetica,sans-serif] text-[12px] font-black leading-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] sm:text-base lg:text-lg whitespace-nowrap">
+                  Last Mile Is His Platform To Do Work
+                </div>
               </div>
-              <figcaption className="relative z-20 border-t border-slate-700 bg-slate-950/85 px-6 py-4 text-sm font-semibold text-slate-200">
-                Built for the people who keep operations moving.
-              </figcaption>
             </figure>
           </div>
         </header>
@@ -83,24 +53,14 @@ export function HomePage() {
           <p>Operations already have data, alarms, dashboards, and alerts. The problem is what happens next.</p>
           <p>When an issue appears, someone still has to understand what it affects, decide whether it matters, find the right owner, start the right work, manage approvals, follow the response, and prove it was resolved.</p>
           <p>Last Mile brings that work together.</p>
-          <div className="mt-10 grid gap-4 md:grid-cols-5">
-            {["Signal detected", "Understand the issue", "Coordinate people, systems, and workflow", "Automate the repeatable response", "Improve the next response"].map((item) => (
-              <div key={item} className="rounded-lg border border-slate-700 bg-slate-900/60 p-5 text-base font-semibold leading-7 text-white">
-                {item}
-              </div>
-            ))}
-          </div>
-        </HomeSection>
-
-        <HomeSection title="See more. Coordinate faster. Improve every response.">
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
             <OutcomeCard title="Understand what matters" copy="Connect the signal to the equipment, location, operating history, urgency, data quality, and evidence needed to understand the issue." icon={<Layers3 />} />
             <OutcomeCard title="Move work faster" copy="Turn confirmed issues into coordinated work, automated handoffs, escalations, approvals, and authorized actions across the systems your organization already uses." icon={<Workflow />} />
             <OutcomeCard title="Learn from every outcome" copy="Build an operating history that helps teams tune maintenance, improve response playbooks, identify recurring issues, and automate safely over time." icon={<Repeat2 />} />
           </div>
         </HomeSection>
 
-        <HomeSection title="Machine-speed coordination. Human judgment where it matters.">
+        <HomeSection title="Machine-speed coordination. Human judgment where it matters." centered>
           <p>Last Mile automates the repetitive scramble that slows operations down: gathering context, identifying affected assets, creating work, routing approvals, notifying the right people, applying response playbooks, and keeping a complete record of what happened.</p>
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             <SmallCard title="Automated workflow" copy="Turn confirmed issues into assigned, visible, trackable work." />
@@ -111,59 +71,6 @@ export function HomePage() {
           <p className="mt-8 rounded-lg border border-slate-700 bg-slate-900/60 p-5 text-base font-semibold text-slate-200">
             Automation is visible, policy-bound, and reversible. People remain in control when judgment, approval, or operating authority is required.
           </p>
-        </HomeSection>
-
-        <HomeSection id="platform-path" title="One platform. One operational record. Multiple ways to act.">
-          <p>The Last Mile Platform gives Infinit-Signal, Infinit-Control, and Infinit-Flow a shared foundation. Infinit-Signal brings operating information in. Singularity preserves the context and history. Infinit-Control helps teams see what is happening. Infinit-Flow helps them build and automate the response.</p>
-          <PlatformPath />
-        </HomeSection>
-
-        <HomeSection title="Your operation gets smarter when it can remember.">
-          <p>Singularity records the operational story of your environment: assets, signals, issues, work, decisions, outcomes, quality, timing, and evidence.</p>
-          <p>The longer that history grows, the more useful it becomes. Teams can tune maintenance, strengthen response playbooks, identify recurring problems, improve automation, and give AI better operational context.</p>
-          <p className="font-semibold text-white">Last Mile becomes more useful because it remembers your operation, not because it collects more random data.</p>
-          <p>SSOM gives Singularity a consistent way to retain operational meaning across the systems your team already uses.</p>
-          <div className="mt-10 rounded-2xl border border-slate-700 bg-slate-900/60 p-5">
-            <div className="grid gap-3 md:grid-cols-3">
-              {["Your Assets", "Your Signals", "Your Issues", "Your Workflows", "Your Decisions", "Your Outcomes"].map((item) => (
-                <div key={item} className="rounded-lg border border-slate-700 bg-slate-950/70 p-4 text-center text-base font-semibold text-white">{item}</div>
-              ))}
-            </div>
-            <div className="py-3 text-center text-xl text-[#75ADE6]">↓</div>
-            <div className="rounded-lg border border-[#217ED9]/50 bg-[#0a1929]/75 p-5 text-center text-lg font-semibold text-white">A growing operational record that improves response over time</div>
-          </div>
-        </HomeSection>
-
-        <HomeSection title="A cooling problem should not depend on someone noticing the right dashboard.">
-          <p>A temperature trend, equipment alarm, or performance drop is only the beginning. Last Mile can identify the affected equipment, verify the quality of the signal, determine whether the issue is real, launch the right response, and show the team what is happening until the work is complete.</p>
-          <ol className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {[
-              "Detect a cooling-performance issue",
-              "Identify affected equipment and operating context",
-              "Confirm the issue is worth acting on",
-              "Create or update the right work",
-              "Escalate, automate, or route authorized response steps",
-              "See progress, evidence, and outcome",
-            ].map((step, index) => (
-              <li key={step} className="rounded-lg border border-slate-700 bg-slate-900/60 p-5 text-base leading-7 text-slate-200">
-                <span className="block text-sm font-semibold uppercase tracking-[0.18em] text-[#75ADE6]">Step {index + 1}</span>
-                <span className="mt-2 block font-semibold text-white">{step}</span>
-              </li>
-            ))}
-          </ol>
-        </HomeSection>
-
-        <HomeSection title="The products that make operational intelligence real.">
-          <div className="grid gap-5 md:grid-cols-3">
-            {productCards.map((product) => (
-              <TrackedLink key={product.to} to={product.to} eventName="cta_product_click" eventData={{ product: product.title }} className="glass-panel flex h-full flex-col rounded-lg p-6 hover:border-[#217ED9]">
-                <h3 className="text-2xl font-semibold text-white">{product.title}</h3>
-                <p className="mt-4 text-base font-semibold leading-7 text-slate-200">{product.lead}</p>
-                <p className="mt-3 flex-1 text-base leading-7 text-slate-300">{product.copy}</p>
-                <span className="mt-6 inline-flex items-center gap-2 font-semibold text-[#75ADE6]">Explore <ArrowRight className="h-4 w-4" /></span>
-              </TrackedLink>
-            ))}
-          </div>
         </HomeSection>
 
         <section className="relative z-10 border-t border-slate-800 py-16 md:py-20">
@@ -184,7 +91,7 @@ function HomeSection({ id, title, centered = false, children }: { id?: string; t
   return (
     <section id={id} className="relative z-10 scroll-mt-28 border-t border-slate-800 py-16 md:py-20">
       <div className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${centered ? "text-center" : ""}`}>
-        <h2 className="max-w-5xl text-3xl font-bold leading-tight text-white md:text-5xl">{title}</h2>
+        <h2 className="mx-auto max-w-5xl text-center text-3xl font-bold leading-tight text-white md:text-5xl">{title}</h2>
         <div className={`mt-6 space-y-5 text-lg leading-8 text-slate-300 ${centered ? "mx-auto max-w-4xl" : "max-w-4xl"}`}>{children}</div>
       </div>
     </section>
@@ -193,8 +100,8 @@ function HomeSection({ id, title, centered = false, children }: { id?: string; t
 
 function OutcomeCard({ title, copy, icon }: { title: string; copy: string; icon: ReactElement }) {
   return (
-    <article className="glass-panel rounded-lg p-6">
-      <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[#217ED9]/40 bg-[#0a1929]/70 text-[#75ADE6]">{icon}</div>
+    <article className="glass-panel rounded-lg p-6 text-center">
+      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg border border-[#217ED9]/40 bg-[#0a1929]/70 text-[#75ADE6]">{icon}</div>
       <h3 className="mt-5 text-2xl font-semibold text-white">{title}</h3>
       <p className="mt-3 text-base leading-7 text-slate-300">{copy}</p>
     </article>
@@ -203,59 +110,9 @@ function OutcomeCard({ title, copy, icon }: { title: string; copy: string; icon:
 
 function SmallCard({ title, copy }: { title: string; copy: string }) {
   return (
-    <article className="rounded-lg border border-slate-700 bg-slate-900/60 p-5">
+    <article className="rounded-lg border border-slate-700 bg-slate-900/60 p-5 text-center">
       <h3 className="text-xl font-semibold text-white">{title}</h3>
       <p className="mt-3 text-base leading-7 text-slate-300">{copy}</p>
     </article>
-  );
-}
-
-function PlatformPath() {
-  const blocks = [
-    ["Your Operational Source Systems", "SCADA | BMS | Historians | MES | Fleet | Quality | Enterprise Systems", false],
-    ["Infinit-Signal", "Ingests, normalizes, and contextualizes operating information", true],
-    ["Singularity", "Shared operational memory, built on SSOM semantic structure", true],
-  ] as const;
-
-  return (
-    <div className="mt-10 rounded-2xl border border-slate-700 bg-slate-900/60 p-5">
-      {blocks.map(([title, copy, accent], index) => (
-        <div key={title}>
-          <div className={`rounded-lg border p-5 ${accent ? "border-[#217ED9]/50 bg-[#0a1929]/75" : "border-slate-700 bg-slate-950/70"}`}>
-            <h3 className="text-lg font-semibold text-white">{title}</h3>
-            <p className="mt-2 text-base leading-7 text-slate-300">{copy}</p>
-          </div>
-          {index < blocks.length - 1 ? <div className="py-2 text-center text-xl text-[#75ADE6]">↓</div> : null}
-        </div>
-      ))}
-      <div className="grid gap-4 lg:grid-cols-2">
-        <div className="rounded-lg border border-[#217ED9]/50 bg-[#0a1929]/75 p-5">
-          <h3 className="text-lg font-semibold text-white">Infinit-Control</h3>
-          <p className="mt-2 text-base leading-7 text-slate-300">Customer-defined views: alerts, widgets, trends, work, assets, evidence, state, and health.</p>
-          <div className="py-2 text-center text-xl text-[#75ADE6]">↓</div>
-          <p className="text-base font-semibold text-white">Operations users</p>
-        </div>
-        <div className="rounded-lg border border-[#217ED9]/50 bg-[#0a1929]/75 p-5">
-          <h3 className="text-lg font-semibold text-white">Infinit-Flow</h3>
-          <p className="mt-2 text-base leading-7 text-slate-300">Customer-defined workflows: drag-and-drop automation, tasks, escalation, approvals, and authorized remediation.</p>
-          <div className="py-2 text-center text-xl text-[#75ADE6]">↓</div>
-          <p className="text-base font-semibold text-white">Enterprise destinations</p>
-        </div>
-      </div>
-      <div className="py-2 text-center text-xl text-[#75ADE6]">↓</div>
-      <div className="rounded-lg border border-slate-700 bg-slate-950/70 p-5">
-        <h3 className="text-lg font-semibold text-white">Actions, decisions, evidence, and outcomes</h3>
-        <p className="mt-2 text-base leading-7 text-slate-300">Work gets assigned, approved when needed, completed, and recorded so the operating record improves.</p>
-      </div>
-      <div className="py-2 text-center text-xl text-[#75ADE6]">returns to</div>
-      <div className="rounded-lg border border-[#217ED9]/50 bg-[#0a1929]/75 p-5">
-        <h3 className="text-lg font-semibold text-white">Singularity retains the resulting operational history</h3>
-      </div>
-      <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-slate-300">
-        <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#75ADE6]" /> Machine-speed coordination.</span>
-        <span className="inline-flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[#75ADE6]" /> Human judgment where it matters.</span>
-        <span className="inline-flex items-center gap-2"><GitBranch className="h-4 w-4 text-[#75ADE6]" /> Existing systems stay in place.</span>
-      </div>
-    </div>
   );
 }

@@ -45,7 +45,7 @@ export function AboutPage() {
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
               <PrincipleCard title="Respect the systems already operating the environment" copy="We work from authorized source data and do not begin with a replacement agenda." />
               <PrincipleCard title="Preserve trust, context, and uncertainty" copy="Source authority, evidence, quality, timing, and provenance matter when operational decisions carry consequences." />
-              <PrincipleCard title="Separate operational meaning from application behavior" copy="Singularity uses SSOM to preserve meaning; the Last Mile Platform provides workflow, visibility, tenant, security, and SaaS capabilities." />
+              <PrincipleCard title="Separate operational meaning from application behavior" copy="Singularity uses SSOM to preserve meaning across assets, signals, issues, workflows, evidence, and outcomes. The Last Mile Platform provides the secure services, workflow runtime, visibility, tenancy, and controls around it." />
               <PrincipleCard title="Keep humans and policy in the loop where they belong" copy="Automation should be governed, observable, and appropriate to the operational context." />
               <PrincipleCard title="Start narrow and prove value" copy="A credible platform begins with a real operational use case, measurable outcome, and repeatable source-to-response path." />
             </div>
@@ -53,9 +53,9 @@ export function AboutPage() {
 
           <Section title="A platform built around useful facts, organized work, and a live operational view.">
             <div className="grid gap-6 md:grid-cols-3">
-              <PrincipleCard title="Infinit-Signal" copy="Records, evidence, and confirmed issues worth acting on." />
+              <PrincipleCard title="Infinit-Signal" copy="Source information, evidence, and confirmed issues worth acting on." />
+              <PrincipleCard title="Infinit-Control" copy="Customer-defined operational views for issues, assets, work, health, and evidence." />
               <PrincipleCard title="Infinit-Flow" copy="Operational work, approvals, escalation, and authorized automation." />
-              <PrincipleCard title="Infinit-Control" copy="Operational management and visibility." />
             </div>
             <TrackedLink to="/platform" eventName="cta_explore_platform_click" className="mt-8 inline-flex items-center gap-2 font-semibold text-[#75ADE6] hover:text-white">
               Explore the platform <ArrowRight className="h-5 w-5" />
@@ -78,7 +78,7 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section className="border-b border-slate-800 py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-white">{title}</h2>
+        <h2 className="mx-auto max-w-5xl text-center text-4xl font-bold text-white">{title}</h2>
         <div className="mt-6 max-w-4xl text-lg leading-8 text-slate-300">{children}</div>
       </div>
     </section>
@@ -87,7 +87,7 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
 
 function PrincipleCard({ title, copy }: { title: string; copy: string }) {
   return (
-    <div className="glass-panel p-6">
+    <div className="glass-panel p-6 text-center">
       <h3 className="text-xl font-semibold text-white">{title}</h3>
       <p className="mt-4 text-base leading-7 text-slate-300">{copy}</p>
     </div>

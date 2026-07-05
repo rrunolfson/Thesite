@@ -22,13 +22,16 @@ export function InfinitSignalPage() {
       <ProductPageLayout
         eyebrow="INFINIT-SIGNAL"
         title="Turn operational signals into facts your team can act on."
-        intro="Infinit-Signal brings together the data, source history, quality, and asset context around an event so your team can tell the difference between a raw alert and a real issue worth acting on."
+        intro="Bring operational information into action. Infinit-Signal connects to source systems, adds context, and injects the operational information your teams need into Singularity."
+        heroImage={{ src: "/images/worker2.png", alt: "Operational worker representing source-system data and field operations." }}
+        hideHeroCtas
         primaryCta={{ label: "Talk through your source environment", to: "/contact" }}
         secondaryCta={{ label: "Explore the platform architecture", to: "/platform" }}
         overview={{
           heading: "A signal is not automatically a problem.",
           copy: [
             "A temperature spike, alarm, robot exception, quality event, or performance change may be important. Or it may be stale, duplicated, incomplete, expected, or unrelated to the work your team needs to do.",
+            "Infinit-Signal brings together the data, source history, quality, and asset context around an event so your team can tell the difference between a raw alert and a real issue worth acting on.",
             "Infinit-Signal helps determine what happened, what it affects, whether the information is reliable, and whether the issue should trigger a response.",
           ],
         }}
@@ -36,7 +39,7 @@ export function InfinitSignalPage() {
           { title: "Separate noise from issues", copy: "Help teams understand which signals are real, current, complete, and worth acting on." },
           { title: "Preserve source context", copy: "Keep where information came from, how fresh it is, and what evidence supports it connected to the issue." },
           { title: "Connect signals to assets", copy: "Link source events to the equipment, location, operating history, and urgency needed for response." },
-          { title: "Improve downstream workflow", copy: "Inject normalized, contextualized operational information into Singularity so Control and Flow can use it." },
+          { title: "Improve downstream response", copy: "Inject normalized, contextualized operational information into Singularity so Infinit-Control and Infinit-Flow can use it in parallel." },
           { title: "Support trusted automation", copy: "Give workflows better inputs before tasks, approvals, escalations, or authorized actions begin." },
         ]}
         features={[
@@ -59,9 +62,10 @@ export function InfinitSignalPage() {
         relatedProducts={[
           { label: "Infinit-Control", to: "/infinit-control" },
           { label: "Infinit-Flow", to: "/infinit-flow" },
-          { label: "Operational Memory: Singularity", to: "/singularity" },
+          { label: "Platform Foundation: Singularity", to: "/singularity" },
           { label: "Last Mile Platform", to: "/platform" },
         ]}
+        relatedHeading="Related Products and Capabilities"
         faqs={[
           {
             question: "Does Infinit-Signal replace the historian?",
