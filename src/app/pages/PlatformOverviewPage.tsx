@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Activity, Bot, Building2, Check, Cloud, Eye, GitBranch, LockKeyhole, Network, RefreshCcw, ShieldCheck, X } from "lucide-react";
 import { SEO } from "@/app/components/SEO";
 import { ProductPageLayout } from "@/app/components/ProductPageLayout";
@@ -143,7 +143,13 @@ export function PlatformOverviewPage() {
       />
       <ProductPageLayout
         eyebrow="LAST MILE PLATFORM"
-        title="Raise your operational intelligence."
+        title={
+          <>
+            The Platform
+            <br />
+            For Real Operators
+          </>
+        }
         intro="Last Mile is a state-of-the-art, cloud-native, AI-native platform built to ingest operational data 24x7 at internet scale and turn it into action across your physical operations."
         heroSecondary="Built from decades of global enterprise platform operations experience, Last Mile brings the technology, operating discipline, and intelligence layer needed to optimize physical operations. Every company. Every industry. Every day."
         heroNote="We work just like YOU: practical, reliable, and focused on getting the work done."
@@ -187,16 +193,34 @@ function ThePlatformAtWork() {
   const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const lastActiveIdRef = useRef<PlatformHotspot["id"] | null>(null);
   const suppressFocusOpenRef = useRef(false);
+  const hoverCloseTimerRef = useRef<number | null>(null);
+
+  const clearHoverCloseTimer = useCallback(() => {
+    if (hoverCloseTimerRef.current !== null) {
+      window.clearTimeout(hoverCloseTimerRef.current);
+      hoverCloseTimerRef.current = null;
+    }
+  }, []);
+
+  const scheduleHoverClose = () => {
+    clearHoverCloseTimer();
+    hoverCloseTimerRef.current = window.setTimeout(() => {
+      setActiveId(null);
+      hoverCloseTimerRef.current = null;
+    }, 140);
+  };
 
   const openHotspot = (id: PlatformHotspot["id"]) => {
     if (suppressFocusOpenRef.current) {
       return;
     }
+    clearHoverCloseTimer();
     lastActiveIdRef.current = id;
     setActiveId(id);
   };
 
-  const closeHotspot = ({ returnFocus = false }: { returnFocus?: boolean } = {}) => {
+  const closeHotspot = useCallback(({ returnFocus = false }: { returnFocus?: boolean } = {}) => {
+    clearHoverCloseTimer();
     const lastId = lastActiveIdRef.current;
     setActiveId(null);
     if (returnFocus && lastId) {
@@ -208,7 +232,7 @@ function ThePlatformAtWork() {
         }, 80);
       });
     }
-  };
+  }, [clearHoverCloseTimer]);
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -226,10 +250,11 @@ function ThePlatformAtWork() {
     window.addEventListener("keydown", closeOnEscape);
     document.addEventListener("mousedown", closeOnOutsideClick);
     return () => {
+      clearHoverCloseTimer();
       window.removeEventListener("keydown", closeOnEscape);
       document.removeEventListener("mousedown", closeOnOutsideClick);
     };
-  }, []);
+  }, [clearHoverCloseTimer, closeHotspot]);
 
   return (
     <section id="platform-at-work" className="scroll-mt-36 border-b border-cyan-400/15 py-16 md:py-20" aria-labelledby="platform-at-work-heading">
@@ -250,7 +275,7 @@ function ThePlatformAtWork() {
 
         <div ref={frameRef} className="platform-image-frame mt-8">
           <div className="platform-image-scroll" aria-describedby="platform-image-description">
-            <div className="platform-image-stage">
+            <div className="platform-image-stage" onMouseEnter={clearHoverCloseTimer} onMouseLeave={scheduleHoverClose}>
               <img
                 src="/images/last-mile-platform.png"
                 alt="Last Mile Platform architecture showing Infinit-Signal, Infinit-Control, Infinit-Flow, and Singularity above common OT platform ecosystems and operational source systems."

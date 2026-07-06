@@ -338,8 +338,8 @@ html {
 
 .product-blueprint-image {
   aspect-ratio: 16 / 9;
-  min-height: 250px;
-  max-height: 360px;
+  min-height: 320px;
+  max-height: 460px;
   filter: saturate(1.06) contrast(1.08);
 }
 
@@ -406,19 +406,20 @@ html {
 }
 
 .platform-hotspot:hover,
-.platform-hotspot:focus-visible,
 .platform-hotspot.is-active {
-  border-color: rgba(55, 240, 194, 0.72);
-  background: rgba(0, 194, 255, 0.08);
+  border-color: rgba(0, 194, 255, 0.08);
+  background: rgba(0, 194, 255, 0.045);
   box-shadow:
-    0 0 0 1px rgba(55, 240, 194, 0.18),
-    0 0 32px rgba(0, 194, 255, 0.3);
+    0 0 24px rgba(0, 194, 255, 0.18),
+    inset 0 0 24px rgba(55, 240, 194, 0.045);
   outline: 0;
 }
 
 .platform-hotspot:focus-visible {
-  outline: 2px solid #75bda7;
-  outline-offset: 3px;
+  border-color: rgba(55, 240, 194, 0.35);
+  background: rgba(0, 194, 255, 0.055);
+  outline: 2px solid #37f0c2;
+  outline-offset: 4px;
 }
 
 .platform-hotspot-panel {
@@ -601,8 +602,8 @@ html {
   }
 
   .product-blueprint-image {
-    min-height: 190px;
-    max-height: 250px;
+    min-height: 220px;
+    max-height: 300px;
   }
 
   .platform-image-frame {

@@ -4,7 +4,7 @@ import { TrackedLink } from "@/app/components/TrackedLink";
 
 export interface ProductPageLayoutProps {
   eyebrow: string;
-  title: string;
+  title: ReactNode;
   intro: string;
   heroSecondary?: string;
   heroNote?: string;
@@ -71,8 +71,8 @@ export function ProductPageLayout({
     <div className="operational-grid relative min-h-screen pt-20">
       <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
       <div className="relative z-10">
-        <section className="border-b border-cyan-400/15 pb-14 pt-10 md:pb-16 md:pt-12">
-          <div className={`mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:px-8 ${blueprintImage ? "lg:grid-cols-[minmax(0,1fr)_460px] lg:items-center" : ""}`}>
+        <section className="border-b border-cyan-400/15 pb-14 pt-6 md:pb-16 md:pt-8">
+          <div className={`mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:px-8 ${blueprintImage ? "lg:grid-cols-2 lg:items-center" : ""}`}>
             <div>
               <p className="section-kicker">{eyebrow}</p>
               <h1 className="hero-title-gradient mt-6 max-w-5xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">

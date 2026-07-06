@@ -20,11 +20,12 @@ export function HomePage() {
         </div>
 
         <header className="relative z-10 overflow-hidden border-b border-cyan-400/15 pb-14 pt-24 lg:pb-16 lg:pt-28">
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-center lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
             <div>
-              <h1 className="hero-title-gradient max-w-4xl text-[1.8rem] font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-                <span className="block whitespace-nowrap">Raise your</span>
-                <span className="block whitespace-nowrap">operational intelligence</span>
+              <h1 className="hero-title-gradient max-w-4xl text-5xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-8xl">
+                <span className="block">Raise Your</span>
+                <span className="block">Operational</span>
+                <span className="block">Intelligence</span>
               </h1>
               <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
                 Last Mile turns the signals coming from your operation into coordinated work, authorized automation, and a clear view of what happens next. It helps teams understand the issue, move the right response, and improve how operations run over time.
@@ -33,11 +34,11 @@ export function HomePage() {
 
             <figure className="blueprint-panel relative overflow-hidden rounded-2xl shadow-2xl">
               <div className="absolute inset-0 z-10 bg-gradient-to-br from-[#00C2FF]/18 via-transparent to-[#37F0C2]/16"></div>
-              <div className="relative min-h-[320px]">
+              <div className="relative min-h-[300px] lg:min-h-[430px]">
                 <img
                   src="/images/Chuck1.png"
                   alt="Operations professional representing the people who keep enterprise operations moving"
-                  className="h-full min-h-[320px] w-full object-cover"
+                  className="h-full min-h-[300px] w-full object-cover lg:min-h-[430px]"
                 />
                 <div className="absolute left-1/2 top-5 z-20 w-[88%] -translate-x-1/2 text-center font-['Arial_Black',Arial,Helvetica,sans-serif] text-2xl font-black uppercase leading-none tracking-[0.08em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] sm:text-3xl">
                   Meet Chuck
