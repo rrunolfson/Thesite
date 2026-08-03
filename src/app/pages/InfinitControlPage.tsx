@@ -3,103 +3,15 @@ import { ProductPageLayout } from "@/app/components/ProductPageLayout";
 import { createBreadcrumbSchema, createProductSchema } from "@/app/lib/structuredData";
 
 export function InfinitControlPage() {
-  const description = "Infinit-Control gives operations teams a live view of issues, affected assets, active work, system health, data quality, and evidence.";
-
-  return (
-    <>
-      <SEO
-        title="Infinit-Control | Customer-Defined Operational Views | Last Mile"
-        description={description}
-        canonicalPath="/infinit-control"
-        jsonLd={[
-          createProductSchema("Infinit-Control", "/infinit-control", description),
-          createBreadcrumbSchema([
-            { name: "Home", path: "/" },
-            { name: "Infinit-Control", path: "/infinit-control" },
-          ]),
-        ]}
-      />
-      <ProductPageLayout
-        eyebrow="INFINIT-CONTROL"
-        title="Build the operational view your team needs."
-        intro="Infinit-Control lets customers create their own views using alerts, widgets, work, trends, asset context, evidence, and system health."
-        blueprintImage={{
-          src: "/images/blueprint/infinit-control-blueprint.png",
-          alt: "Blueprint-style operational control interface showing dashboards, maps, alerts, and industrial visibility.",
-        }}
-        hideHeroCtas
-        primaryCta={{ label: "Talk through your operational view", to: "/contact" }}
-        secondaryCta={{ label: "Explore Singularity", to: "/singularity" }}
-        overview={{
-          heading: "See the operation without hunting through systems.",
-          copy: [
-            "Operational information is usually spread across dashboards, historians, SCADA screens, ticket systems, email, spreadsheets, and tribal knowledge. Infinit-Control helps customers create their own view of operations using the shared record in Singularity.",
-            "It brings together the widgets, alerts, assets, trends, active work, system health, evidence, and operational context that matter to each team.",
-            "Infinit-Control does not replace HMI, SCADA, historian, BI, or operations-management systems. It works above them to help teams manage cross-system operational response.",
-          ],
-        }}
-        benefits={[
-          { title: "Let each team see what matters" },
-          { title: "Bring alerts, work, asset context, and evidence together" },
-          { title: "Reduce time spent hunting for information" },
-          { title: "Surface active work and unresolved issues" },
-          { title: "Support faster operational decisions" },
-        ]}
-        features={[
-          { title: "Customer-defined views and layouts" },
-          { title: "Configurable widgets" },
-          { title: "Alert and issue visibility" },
-          { title: "Asset and location views" },
-          { title: "Active work and workflow status" },
-          { title: "Source-system health" },
-          { title: "Data-quality indicators" },
-          { title: "Evidence and timeline views" },
-          { title: "Historical trends from Singularity" },
-          { title: "Role-based experiences", copy: "Operators, supervisors, reliability leaders, and executives can see the context they need." },
-          { title: "Built from the operational record in Singularity", copy: "Infinit-Control does not create a separate version of operational truth. It draws from the shared history and context in Singularity so customers can build views around the assets, alerts, work, evidence, and operational conditions that matter to them." },
-        ]}
-        useCases={[
-          "Operations command view.",
-          "Maintenance supervisor workboard.",
-          "Shift handoff view.",
-          "Asset-health visibility.",
-          "Cooling-response coordination.",
-          "Data-quality and source-health monitoring.",
-          "Multi-site operations overview.",
-        ]}
-        relatedProducts={[
-          { label: "Infinit-Signal", to: "/infinit-signal" },
-          { label: "Infinit-Flow", to: "/infinit-flow" },
-          { label: "Platform Foundation: Singularity", to: "/singularity" },
-        ]}
-        relatedHeading="Related Products and Foundation"
-        faqs={[
-          {
-            question: "Is Infinit-Control a generic dashboard product?",
-            answer: "No. Infinit-Control is designed around live operational context. It brings together issues, assets, work, source health, quality, evidence, and response progress so customers can build views that reflect how their operation actually runs.",
-          },
-          {
-            question: "Does it replace an HMI or SCADA screen?",
-            answer: "No. It works above those tools to help teams manage the cross-system operational response.",
-          },
-          {
-            question: "Can different teams create different operational views?",
-            answer: "Yes. Customers can create role-specific views around the assets, workflows, alerts, and operational situations each team needs to manage.",
-          },
-        ]}
-        resources={[
-          { label: "Infinit-Control architecture" },
-          { label: "Platform overview", to: "/platform" },
-          { label: "Signal 2 Action", to: "/signal-to-action" },
-          { label: "News and Updates", to: "/company/newsroom" },
-        ]}
-        finalCta={{
-          heading: "Talk through your operational view.",
-          copy: ["Tell us what your team needs to see across issues, assets, active work, health, quality, evidence, and response progress."],
-          label: "Talk through your operational view",
-          to: "/contact",
-        }}
-      />
-    </>
-  );
+  const description="Infinit-Control is the role-based command surface for a live Condition, affected topology, evidence, coordinated work, current telemetry, and verified outcomes.";
+  return <><SEO title="Infinit-Control | See and Verify Physical Outcomes" description={description} canonicalPath="/infinit-control" jsonLd={[createProductSchema("Infinit-Control","/infinit-control",description),createBreadcrumbSchema([{name:"Home",path:"/"},{name:"Infinit-Control",path:"/infinit-control"}])]} />
+  <ProductPageLayout eyebrow="See + Verify" title="See the live Condition, coordinated work, and verified physical outcome in one command surface." intro="Infinit-Control gives operators and leaders one role-based view of the Condition, affected assets, evidence, active work, decisions, current telemetry, and verified outcome." primaryCta={{label:"Discuss Your Command Surface",to:"/contact?intent=operation"}} secondaryCta={{label:"Explore the Platform",to:"/platform"}}
+    overview={{heading:"A command surface, not another generic dashboard.",copy:["Infinit-Control draws from Singularity and the active platform response. It does not create a separate truth store. It gives each role the context needed to understand the Condition, see who owns the response, inspect current evidence, and determine whether the physical operation recovered."],children:<div className="lm-experience-list">{["Live Condition and affected topology","Evidence and confidence","Active response and owner","Workflow state and approvals","Current telemetry and freshness","Verified recovery or recurrence","Cross-site learning and comparison where policy permits"].map((item)=><span key={item}>{item}</span>)}</div>}}
+    benefits={[{title:"One view of Condition and response"},{title:"Evidence and confidence in context"},{title:"Live ownership and approval state"},{title:"Return telemetry beside completed work"},{title:"Role-based operational focus"},{title:"Recurrence visible after recovery"}]}
+    features={[{title:"Condition and topology views"},{title:"Evidence timeline"},{title:"Owner, work, and acknowledgement state"},{title:"Approval and workflow state"},{title:"Telemetry freshness and quality"},{title:"Verified outcome contract"}]}
+    useCases={["Data Center Cooling command view","Operations and maintenance response board","Shift handoff with unresolved Conditions","Asset and affected-topology review","Evidence and source-health review","Verified recovery and recurrence monitoring"]}
+    relatedProducts={[{label:"Infinit-Signal",to:"/infinit-signal",copy:"Qualifies evidence and creates the Condition."},{label:"Singularity",to:"/singularity",copy:"Provides shared operational context."},{label:"Infinit-Flow",to:"/infinit-flow",copy:"Coordinates work and action."},{label:"Last Mile Platform",to:"/platform"}]}
+    faqs={[{question:"Is Infinit-Control a generic dashboard?",answer:"No. It is a role-based operational command surface centered on accountable Conditions, active response, current evidence, and verified physical outcomes."},{question:"Does it replace HMI, SCADA, or historian interfaces?",answer:"No. Those systems retain their control and source roles. Infinit-Control presents cross-system accountability above them."},{question:"Does it create another truth store?",answer:"No. It draws from the shared operational identity and memory in Singularity."}]}
+    resources={[{label:"Platform overview",to:"/platform"},{label:"Data Center Cooling reference use case",to:"/data-center-cooling"},{label:"Signal 2 Action",to:"/signal-to-action"}]} />
+  </>;
 }

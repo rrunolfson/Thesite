@@ -1,225 +1,45 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { CheckCircle2, Loader2 } from "lucide-react";
-import { Button } from "@/app/components/ui/button";
-import { Input } from "@/app/components/ui/input";
-import { Label } from "@/app/components/ui/label";
+import { CheckCircle2, ChevronDown, Loader2 } from "lucide-react";
+import { useSearchParams } from "react-router";
 import { trackEvent } from "@/app/lib/analytics";
 
-interface FormData {
-  firstname: string;
-  lastname: string;
-  email: string;
-  company: string;
-  roleResponsibility: string;
-  improvement: string;
-  operationalEnvironment: string;
-  systemsInvolved: string;
-  supportingContext: string;
-}
+interface FormData { firstname: string; lastname: string; email: string; company: string; roleResponsibility: string; intent: string; improvement: string; operationalEnvironment: string; systemsInvolved: string; supportingContext: string; }
+const intents = [
+  ["operation", "Discuss a physical operations use case"], ["data-center-cooling", "Explore Data Center Cooling"], ["design-partnership", "Explore a design partnership"], ["partner", "Discuss a partner relationship"], ["architecture", "Technical or architecture inquiry"], ["media", "Media or podcast inquiry"], ["integration", "Legacy integration requirement"],
+] as const;
+const environments = ["Mission-critical facilities / data centers", "Manufacturing / industrial operations", "Utilities / infrastructure", "Distributed facilities portfolio", "Fleet / robotics / mobile assets", "Other"];
 
-const environmentOptions = [
-  "Mission-critical facilities / data centers",
-  "Manufacturing / industrial operations",
-  "Utilities / infrastructure",
-  "Distributed facilities portfolio",
-  "Fleet / robotics / mobile assets",
-  "Other",
-];
-
-function buildMessage(data: FormData) {
-  return [
-    `Role or responsibility: ${data.roleResponsibility}`,
-    `Operational environment: ${data.operationalEnvironment || "Not provided"}`,
-    "",
-    "What they are working to improve:",
-    data.improvement,
-    "",
-    "Systems involved:",
-    data.systemsInvolved || "Not provided",
-    "",
-    "Additional context or link:",
-    data.supportingContext || "Not provided",
-  ].join("\n");
-}
+function buildMessage(data: FormData) { return [`Intent: ${data.intent}`, `Role or responsibility: ${data.roleResponsibility}`, `Operational environment: ${data.operationalEnvironment || "Not provided"}`, "", "Operational challenge:", data.improvement, "", "Systems involved:", data.systemsInvolved || "Not provided", "", "Additional context:", data.supportingContext || "Not provided"].join("\n"); }
 
 export function ContactLastMileForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [hasStarted, setHasStarted] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormData>();
-
-  useEffect(() => {
-    if (isSuccess) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+  const [params] = useSearchParams();
+  const requested = params.get("intent") ?? "operation";
+  const initialIntent = intents.some(([value]) => value === requested) ? requested : "operation";
+  const [submitting, setSubmitting] = useState(false); const [success, setSuccess] = useState(false); const [failed, setFailed] = useState(false); const [started, setStarted] = useState(false);
+  const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm<FormData>({ defaultValues: { intent: initialIntent } });
+  useEffect(() => { setValue("intent", initialIntent); }, [initialIntent, setValue]);
+  useEffect(() => { if (success) window.scrollTo({ top: 0, behavior: "smooth" }); }, [success]);
+  const start = () => { if (!started) { setStarted(true); trackEvent("form_contact_start", { form_name: "contact_last_mile", intent: initialIntent }); } };
+  const onSubmit = async (data: FormData) => { setSubmitting(true); setFailed(false); try {
+    if (import.meta.env.PROD) {
+      const response = await fetch("https://api.hsforms.com/submissions/v3/integration/submit/245388543/df5ed043-2fec-4e13-ae18-e1d17257e1da", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ fields: [{ name: "firstname", value: data.firstname }, { name: "lastname", value: data.lastname }, { name: "email", value: data.email }, { name: "company", value: data.company }, { name: "hs_role", value: data.roleResponsibility }, { name: "message", value: buildMessage(data) }], context: { pageUri: "https://lastmileinc.ai/contact", pageName: "Discuss Your Operation" } }) });
+      if (!response.ok) throw new Error(`HubSpot submission failed with ${response.status}`);
     }
-  }, [isSuccess]);
-
-  const markStarted = () => {
-    if (hasStarted) return;
-    setHasStarted(true);
-    trackEvent("form_contact_start", { form_name: "contact_last_mile" });
-  };
-
-  const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-    setIsError(false);
-
-    try {
-      const response = await fetch(
-        "https://api.hsforms.com/submissions/v3/integration/submit/245388543/df5ed043-2fec-4e13-ae18-e1d17257e1da",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            fields: [
-              { name: "firstname", value: data.firstname },
-              { name: "lastname", value: data.lastname },
-              { name: "email", value: data.email },
-              { name: "company", value: data.company },
-              { name: "hs_role", value: data.roleResponsibility },
-              { name: "message", value: buildMessage(data) },
-            ],
-            context: {
-              pageUri: "https://lastmileinc.ai/contact",
-              pageName: "Contact Last Mile",
-            },
-          }),
-        },
-      );
-
-      if (!response.ok) {
-        throw new Error(`HubSpot submission failed with ${response.status}`);
-      }
-
-      trackEvent("form_contact_submit", {
-        form_name: "contact_last_mile",
-        operational_environment: data.operationalEnvironment,
-      });
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      reset();
-    } catch (error) {
-      console.error("Contact form submission failed", error);
-      setIsSubmitting(false);
-      setIsError(true);
-    }
-  };
-
-  if (isSuccess) {
-    return (
-      <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-8 text-center">
-        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/15">
-          <CheckCircle2 className="h-8 w-8 text-emerald-400" />
-        </div>
-        <h3 className="text-2xl font-semibold text-white">Thank you.</h3>
-        <p className="mt-3 text-slate-300">
-          A Last Mile team member will review what you shared and respond with the most appropriate next step.
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <form onSubmit={handleSubmit(onSubmit)} onFocusCapture={markStarted} className="space-y-6">
-      <div>
-        <h3 className="text-2xl font-semibold text-white">Contact Last Mile</h3>
-      </div>
-
-      <div className="grid gap-4 md:grid-cols-2">
-        <div>
-          <Label htmlFor="firstname" className="text-white">First name *</Label>
-          <Input id="firstname" {...register("firstname", { required: "First name is required" })} className="mt-2 min-h-11 border-slate-700 bg-slate-900/70 text-white" />
-          {errors.firstname ? <p className="mt-1 text-sm text-red-400">{errors.firstname.message}</p> : null}
-        </div>
-        <div>
-          <Label htmlFor="lastname" className="text-white">Last name *</Label>
-          <Input id="lastname" {...register("lastname", { required: "Last name is required" })} className="mt-2 min-h-11 border-slate-700 bg-slate-900/70 text-white" />
-          {errors.lastname ? <p className="mt-1 text-sm text-red-400">{errors.lastname.message}</p> : null}
-        </div>
-      </div>
-
-      <div>
-        <Label htmlFor="email" className="text-white">Work email *</Label>
-        <Input
-          id="email"
-          type="email"
-          {...register("email", {
-            required: "Work email is required",
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: "Enter a valid email address",
-            },
-          })}
-          className="mt-2 min-h-11 border-slate-700 bg-slate-900/70 text-white"
-        />
-        {errors.email ? <p className="mt-1 text-sm text-red-400">{errors.email.message}</p> : null}
-      </div>
-
-      <div>
-        <Label htmlFor="company" className="text-white">Company *</Label>
-        <Input id="company" {...register("company", { required: "Company is required" })} className="mt-2 min-h-11 border-slate-700 bg-slate-900/70 text-white" />
-        {errors.company ? <p className="mt-1 text-sm text-red-400">{errors.company.message}</p> : null}
-      </div>
-
-      <div>
-        <Label htmlFor="roleResponsibility" className="text-white">Role or responsibility *</Label>
-        <Input id="roleResponsibility" {...register("roleResponsibility", { required: "Role or responsibility is required" })} className="mt-2 min-h-11 border-slate-700 bg-slate-900/70 text-white" />
-        {errors.roleResponsibility ? <p className="mt-1 text-sm text-red-400">{errors.roleResponsibility.message}</p> : null}
-      </div>
-
-      <div>
-        <Label htmlFor="improvement" className="text-white">What are you working to improve? *</Label>
-        <textarea id="improvement" {...register("improvement", { required: "This field is required" })} className="mt-2 min-h-[140px] w-full rounded-md border border-slate-700 bg-slate-900/70 px-3 py-2 text-white" />
-        {errors.improvement ? <p className="mt-1 text-sm text-red-400">{errors.improvement.message}</p> : null}
-      </div>
-
-      <div>
-        <Label htmlFor="operationalEnvironment" className="text-white">Operational environment</Label>
-        <select id="operationalEnvironment" {...register("operationalEnvironment")} className="mt-2 min-h-11 w-full rounded-md border border-slate-700 bg-slate-900/70 px-3 py-2 text-white">
-          <option value="" className="bg-slate-950">Select an environment</option>
-          {environmentOptions.map((option) => (
-            <option key={option} value={option} className="bg-slate-950">{option}</option>
-          ))}
-        </select>
-      </div>
-
-      <div>
-        <Label htmlFor="systemsInvolved" className="text-white">Systems involved</Label>
-        <textarea id="systemsInvolved" {...register("systemsInvolved")} className="mt-2 min-h-[110px] w-full rounded-md border border-slate-700 bg-slate-900/70 px-3 py-2 text-white" />
-      </div>
-
-      <div>
-        <Label htmlFor="supportingContext" className="text-white">Additional context or link</Label>
-        <textarea id="supportingContext" {...register("supportingContext")} className="mt-2 min-h-[110px] w-full rounded-md border border-slate-700 bg-slate-900/70 px-3 py-2 text-white" />
-      </div>
-
-      <p className="text-sm leading-6 text-slate-400">
-        Please do not include credentials, proprietary source data, regulated personal information, or sensitive facility details.
-      </p>
-
-      {isError ? (
-        <p className="text-sm text-red-400">
-          Something went wrong. Please try again or email <a href="mailto:contact@lastmileinc.ai" className="underline">contact@lastmileinc.ai</a>.
-        </p>
-      ) : null}
-
-      <Button type="submit" disabled={isSubmitting} className="min-h-11 w-full bg-[#217ED9] text-white hover:bg-[#1a6bb8]">
-        {isSubmitting ? (
-          <>
-            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-            Sending...
-          </>
-        ) : (
-          "Contact Last Mile"
-        )}
-      </Button>
-    </form>
-  );
+    trackEvent("form_contact_submit", { form_name: "contact_last_mile", intent: data.intent, review_mode: !import.meta.env.PROD }); setSuccess(true); reset();
+  } catch (error) { console.error("Contact form submission failed", error); setFailed(true); } finally { setSubmitting(false); } };
+  if (success) return <div className="lm-form-success"><CheckCircle2 /><h2>Thank you.</h2><p>We will review the Condition and response context you shared. A Last Mile team member will follow up within two business days with the most relevant next step.</p>{!import.meta.env.PROD ? <small>Review mode: no CRM record was created.</small> : null}</div>;
+  return <form className="lm-form" onSubmit={handleSubmit(onSubmit)} onFocusCapture={start}><div><p className="lm-eyebrow">Operational conversation</p><h2>Tell us where the response breaks.</h2></div>
+    <div className="lm-form__two"><Field label="First name" error={errors.firstname?.message}><input {...register("firstname", { required: "First name is required" })} /></Field><Field label="Last name" error={errors.lastname?.message}><input {...register("lastname", { required: "Last name is required" })} /></Field></div>
+    <Field label="Work email" error={errors.email?.message}><input type="email" {...register("email", { required: "Work email is required", pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Enter a valid email address" } })} /></Field>
+    <div className="lm-form__two"><Field label="Company" error={errors.company?.message}><input {...register("company", { required: "Company is required" })} /></Field><Field label="Role" error={errors.roleResponsibility?.message}><input {...register("roleResponsibility", { required: "Role is required" })} /></Field></div>
+    <Field label="Conversation intent"><select {...register("intent", { onChange: (event) => trackEvent("form_conversation_type_selected", { intent: event.target.value }) })}>{intents.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></Field>
+    <Field label="Operational challenge" error={errors.improvement?.message}><textarea rows={5} placeholder="Describe the Condition, where context or ownership breaks, and what evidence would prove recovery." {...register("improvement", { required: "Operational challenge is required" })} /></Field>
+    <details className="lm-form__optional"><summary>Optional environment details <ChevronDown /></summary><div><Field label="Operational environment"><select {...register("operationalEnvironment")}><option value="">Select an environment</option>{environments.map((item) => <option key={item}>{item}</option>)}</select></Field><Field label="Systems involved"><textarea rows={3} {...register("systemsInvolved")} /></Field><Field label="Additional context or link"><textarea rows={3} {...register("supportingContext")} /></Field></div></details>
+    <p className="lm-form__warning">Do not submit credentials, proprietary source data, regulated personal information, or sensitive facility details. By submitting, you agree to our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms</a>.</p>
+    {failed ? <p className="lm-form__error">Submission failed. Try again or email <a href="mailto:contact@lastmileinc.ai">contact@lastmileinc.ai</a>.</p> : null}
+    <button className="lm-form__submit" type="submit" disabled={submitting}>{submitting ? <><Loader2 className="animate-spin" />Sending…</> : "Discuss Your Operation"}</button>
+  </form>;
 }
+
+function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) { return <label className="lm-field"><span>{label}</span>{children}{error ? <small>{error}</small> : null}</label>; }

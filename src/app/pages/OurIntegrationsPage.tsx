@@ -272,15 +272,6 @@ export function OurIntegrationsPage() {
     (total, group) => total + group.vendors.reduce((groupTotal, vendor) => groupTotal + vendor.products.length, 0),
     0,
   );
-  const totalDetailedProducts = integrationGroups.reduce(
-    (total, group) =>
-      total +
-      group.vendors.reduce(
-        (groupTotal, vendor) => groupTotal + vendor.products.filter((product) => product.has_detail).length,
-        0,
-      ),
-    0,
-  );
   const totalRepresentedFunctions = integrationGroups.reduce(
     (total, group) => total + group.functions.filter((entry) => entry.product_count > 0).length,
     0,
@@ -308,7 +299,7 @@ export function OurIntegrationsPage() {
   };
 
   const currentIndustryLabel = selectedIndustry ? getIndustryLabel(selectedIndustry.industry_slug) : "OEM Vendors";
-  const currentHeading = selectedFunction?.industry_function_name || selectedIndustry?.industry_name || "Available Integration References";
+  const currentHeading = selectedFunction?.industry_function_name || selectedIndustry?.industry_name || "Archived Integration References";
   const currentDescription = selectedFunction?.industry_function_description || selectedIndustry?.industry_description || "";
   const currentContextLabel = selectedFunction
     ? `${selectedIndustry?.industry_name ?? "Industry"} Function`
@@ -317,11 +308,12 @@ export function OurIntegrationsPage() {
   return (
     <>
       <SEO
-        title="ServiceNow Integration Library"
-        description="This library contains Last Mile integrations developed for ServiceNow environments and remains available for organizations connecting operational systems with ServiceNow workflows."
+        title="Legacy ServiceNow Integration Archive"
+        description="Historical integration references from an earlier ServiceNow-focused chapter of Last Mile. These entries do not define or form a requirement for the Last Mile Platform."
         keywords="integration reference, source profiles, vendor coverage, operational systems, technical reference"
         canonicalPath="/integrations"
         markdownPath="/integrations.md"
+        robots="noindex, follow"
       />
       <Helmet>
         <link rel="alternate" type="application/json" href={discoveredIntegrationsDataUrl} title="Last Mile Integrations Catalog Data" />
@@ -329,6 +321,9 @@ export function OurIntegrationsPage() {
       </Helmet>
 
       <div className="operational-grid pt-20 relative min-h-screen overflow-hidden">
+        <div className="relative z-20 border-b border-[#75bda7]/30 bg-[#0b211d] px-4 py-4 text-center text-sm leading-6 text-slate-200">
+          These integrations were developed during an earlier chapter of Last Mile and remain cataloged for organizations with a specific ServiceNow requirement. They are not required by, and do not define, the Last Mile Physical Operations Platform.
+        </div>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 data-grid-bg opacity-20"></div>
           <div className="absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#217ED9]/20 blur-3xl"></div>
@@ -342,11 +337,11 @@ export function OurIntegrationsPage() {
               <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                 <div>
                   <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
-                    <span className="hero-title-gradient">ServiceNow Integration Library</span>
+                    <span className="hero-title-gradient">Legacy ServiceNow Integration Archive</span>
                   </h1>
 
                   <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl">
-                    This library contains Last Mile integrations developed for ServiceNow environments. These integrations remain available for organizations that need to connect operational systems with ServiceNow workflows.
+                    Historical integration references developed for ServiceNow environments. Support and deliverability must be confirmed for any specific requirement.
                   </p>
                   <p className="mt-4 text-lg text-slate-400 leading-8 max-w-3xl">
                     The Last Mile Platform extends beyond integration work. It is designed to turn operational signals into shared understanding, workflow, automation, and accountable action across the systems your organization already uses.
@@ -369,14 +364,14 @@ export function OurIntegrationsPage() {
                   </figure>
                   <div className="scoreboard-shell blueprint-panel rounded-2xl p-3 lg:p-3.5">
                     <div className="scoreboard-header mb-2.5 flex items-center justify-center rounded-2xl px-4 py-2">
-                      <h2 className="text-lg font-semibold tracking-[0.08em] text-white sm:text-xl">Available Integration References</h2>
+                      <h2 className="text-lg font-semibold tracking-[0.08em] text-white sm:text-xl">Archived Integration References</h2>
                     </div>
 
                     <div className="scoreboard-display rounded-[1.4rem] px-4 py-2.5 sm:px-5">
                       <div className="space-y-1.5">
-                        <ScoreboardMetric value={String(totalProducts).padStart(2, "0")} label="Integrations Available" />
+                        <ScoreboardMetric value={String(totalProducts).padStart(2, "0")} label="Catalog Entries" />
                         <ScoreboardMetric value={String(integrationGroups.length).padStart(2, "0")} label="Industries Covered" />
-                        <ScoreboardMetric value={String(totalVendors).padStart(2, "0")} label="Vendors Available" />
+                        <ScoreboardMetric value={String(totalVendors).padStart(2, "0")} label="Vendors Cataloged" />
                         <ScoreboardMetric value={String(totalRepresentedFunctions).padStart(2, "0")} label="Functions Represented" />
                       </div>
                     </div>
@@ -433,12 +428,12 @@ export function OurIntegrationsPage() {
                       <p className="max-w-xl text-sm leading-relaxed text-slate-400">
                         If you cannot find what you are looking for, discuss the requirement with Last Mile. If you have an API document already, you can share that as part of the conversation.
                       </p>
-                      <button
-                        type="button"
-                        className="inline-flex items-center justify-center rounded-2xl border border-[#75ADE6]/40 bg-[#217ED9]/15 px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-[#75ADE6]/70 hover:bg-[#217ED9]/25"
+                      <Link
+                        to="/contact?intent=integration"
+                        className="lm-button lm-button--primary"
                       >
                         Discuss an integration requirement
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -916,7 +911,7 @@ function getStatusLabel(status: string) {
     case "in-progress":
       return "In Progress";
     case "built":
-      return "Available Now";
+      return "Archived Reference";
     case "deprecated":
       return "Deprecated";
     default:

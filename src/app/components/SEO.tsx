@@ -9,17 +9,19 @@ interface SEOProps {
   canonicalPath?: string;
   markdownPath?: string;
   jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
+  robots?: string;
 }
 
 export function SEO({
   title,
   description,
-  keywords = 'Last Mile, operational intelligence, operational workflows, automation, industrial operations, accountable action, enterprise workflow',
-  ogImage = 'https://lastmileinc.ai/logo.png',
+  keywords = 'Last Mile, Physical Operations Platform, operational accountability, governed action, verified physical outcomes, industrial operations',
+  ogImage = 'https://lastmileinc.ai/images/last-mile-og.jpg',
   ogType = 'website',
   canonicalPath = '',
   markdownPath,
   jsonLd,
+  robots = 'index, follow',
 }: SEOProps) {
   const baseUrl = 'https://lastmileinc.ai';
   const fullTitle = title.includes('Last Mile') ? title : `${title} | Last Mile`;
@@ -50,7 +52,7 @@ export function SEO({
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="Last Mile operational intelligence platform" />
+      <meta property="og:image:alt" content="Last Mile Physical Operations Platform architecture" />
       <meta property="og:site_name" content="Last Mile Inc." />
 
       {/* Twitter */}
@@ -59,10 +61,10 @@ export function SEO({
       <meta property="twitter:title" content={fullTitle} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={ogImage} />
-      <meta property="twitter:image:alt" content="Last Mile operational intelligence platform" />
+      <meta property="twitter:image:alt" content="Last Mile Physical Operations Platform architecture" />
 
       {/* Additional SEO */}
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content={robots} />
       <meta name="language" content="English" />
       <meta name="author" content="Last Mile Inc." />
       {jsonLdEntries.map((entry, index) => (

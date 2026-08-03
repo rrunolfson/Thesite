@@ -1,23 +1,7 @@
-# Contact Last Mile
+# Discuss Your Operation
 
-Tell Last Mile what you are trying to improve across operational response, workflow, automation, visibility, and operating history.
+Tell Last Mile about a Condition that crosses systems, teams, sites, or service providers—and what evidence would prove the physical operation recovered.
 
-## Primary URL
+Primary URL: https://lastmileinc.ai/contact
 
-- Contact page: https://lastmileinc.ai/contact
-
-## Productive conversations usually include
-
-- A meaningful operational environment
-- A source system that identifies important signals, alarms, events, or exceptions
-- A response path that is too manual, fragmented, or hard to track today
-- A stakeholder who can help define the current state and desired outcome
-- A practical outcome the organization wants to improve
-
-## What Last Mile will discuss
-
-- The operational issue or response gap that matters
-- The assets, people, systems, and current response path involved
-- Where the information comes from and whether it is current, complete, and reliable
-- The work, workflow, approval, escalation, or authorized action that should follow
-- The evidence needed to understand whether the response improved
+Useful context includes the affected assets, source evidence, current ownership and handoffs, systems and providers involved, authorized actions, and measurable recovery criteria. Do not submit credentials or sensitive facility data.

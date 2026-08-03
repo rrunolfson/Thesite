@@ -59,25 +59,25 @@ export function Signal2ActionPage() {
         markdownPath="/signal-to-action.md"
         jsonLd={jsonLd}
       />
-      <div className="operational-grid pt-20 relative min-h-screen">
+      <div className="lm-podcast relative min-h-screen">
         <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
 
         <div className="relative z-10">
           <section className="relative overflow-hidden pt-16 pb-10 border-b border-cyan-400/15">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center">
-                <p className="section-kicker">Signal 2 Action</p>
+                <p className="lm-eyebrow">Signal 2 Action</p>
                 <h1 className="hero-title-gradient mt-6 text-4xl font-bold tracking-tight leading-tight mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
-                  Conversations about the work between detection and resolution.
+                  Conversations about the operating layer between detection and verified outcome.
                 </h1>
                 <p className="text-2xl text-slate-300 leading-relaxed max-w-4xl mx-auto">
                   Signal 2 Action is the Last Mile podcast about operational intelligence, workflow, automation, real operators, and accountable action.
                 </p>
                 <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                  <TrackedLink to="/signal-to-action#latest-episode" eventName="cta_podcast_click" className="inline-flex items-center justify-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-7 py-3 font-semibold text-white hover:bg-[#0a1929]">
+                  <TrackedLink to="/signal-to-action#latest-episode" eventName="cta_podcast_click" className="lm-button lm-button--primary">
                     Listen to the latest episode <ArrowRight className="h-5 w-5" />
                   </TrackedLink>
-                  <TrackedAnchor href="/podcast-feed.xml" eventName="podcast_subscribe_click" className="inline-flex items-center justify-center rounded-sm border border-slate-600 bg-slate-900/60 px-7 py-3 font-semibold text-white hover:border-[#217ED9]">
+                  <TrackedAnchor href="/podcast-feed.xml" eventName="podcast_subscribe_click" className="lm-button lm-button--secondary">
                     Subscribe to Signal 2 Action
                   </TrackedAnchor>
                 </div>
@@ -89,28 +89,33 @@ export function Signal2ActionPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                  <h2 className="technical-divider text-center text-4xl font-bold mb-6 lg:text-left">What Signal 2 Action explores</h2>
+                  <h2 className="lm-podcast__section-title text-center font-bold mb-6 lg:text-left">What Signal 2 Action explores</h2>
                   <ul className="space-y-4 text-lg leading-8 text-slate-300">
                     {[
-                      "The operational action gap",
-                      "Industrial and enterprise operational intelligence",
-                      "OT, IT, and workflow convergence",
-                      "Semantic models, source authority, quality, and trust",
-                      "What AI can and cannot safely do in operations",
-                      "The practical path from signal to accountable action",
-                      "The operating realities of facilities, manufacturing, infrastructure, fleets, and distributed operations",
+                      "Physical Operations Platforms",
+                      "Operational accountability",
+                      "Condition-to-work orchestration",
+                      "Trusted operational semantics",
+                      "Governed AI and automation",
+                      "Telemetry-verified outcomes",
+                      "Cross-vendor operational coordination",
                     ].map((topic) => (
                       <li key={topic} className="flex gap-3"><span className="mt-3 h-2 w-2 rounded-full bg-[#75ADE6]"></span><span>{topic}</span></li>
                     ))}
                   </ul>
                 </div>
                 <div className="blueprint-art-frame">
+                  <picture>
+                    <source type="image/avif" srcSet="/images/blueprint/signal-2-action-blueprint-960.avif" />
+                    <source type="image/webp" srcSet="/images/blueprint/signal-2-action-blueprint-960.webp" />
                   <img
                     src="/images/blueprint/signal-2-action-blueprint.png"
+                    width="1672"
+                    height="941"
                     alt="Blueprint-style media and podcast production scene for operational intelligence conversations."
                     className="h-full w-full rounded object-cover"
                     loading="lazy"
-                  />
+                  /></picture>
                 </div>
               </div>
             </div>
@@ -119,7 +124,7 @@ export function Signal2ActionPage() {
           <section className="py-20 border-b border-cyan-400/15">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-4xl">
-                <h2 className="text-4xl font-bold text-white">Operational data does not create operational action on its own.</h2>
+                <h2 className="lm-podcast__section-title font-bold">Operational data does not create operational action on its own.</h2>
                 <p className="mt-6 text-lg leading-8 text-slate-300">
                   Signal 2 Action brings together operators, engineers, platform builders, systems integrators, and enterprise leaders to discuss the hard practical questions behind modern operations: What makes a signal trustworthy? How do teams avoid drowning in alerts? When should automation act, and when should a human decide? How can organizations coordinate work across systems without losing context or accountability?
                 </p>
@@ -131,7 +136,7 @@ export function Signal2ActionPage() {
           <section id="latest-episode" className="py-20 border-b border-cyan-400/15">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="mb-10">
-                <h2 className="text-4xl font-bold text-white">Current Series: Operational Intelligence in Action</h2>
+                <h2 className="lm-podcast__section-title font-bold">Current Series: Operational Intelligence in Action</h2>
               </div>
               {feedAvailable && currentEpisodes.length > 0 ? (
                 <div className="space-y-4">
@@ -146,7 +151,7 @@ export function Signal2ActionPage() {
               )}
               {archiveEpisodes.length > 0 ? (
                 <div className="mt-14">
-                  <h2 className="text-3xl font-bold text-white">From the Archive</h2>
+                  <h2 className="lm-podcast__section-title font-bold">Archive — Prior ServiceNow Chapter</h2>
                   <div className="mt-8 space-y-4">
                     {archiveEpisodes.map((episode) => (
                       <EpisodeRow key={episode.guid} episode={episode} />
@@ -162,7 +167,7 @@ export function Signal2ActionPage() {
                     eventName="podcast_subscribe_click"
                     target={platform.href.startsWith("http") ? "_blank" : undefined}
                     rel={platform.href.startsWith("http") ? "noreferrer" : undefined}
-                    className="inline-flex items-center gap-2 rounded border border-slate-700 px-5 py-2.5 text-sm font-medium text-slate-300 transition-colors hover:border-[#217ED9] hover:text-white"
+                    className="lm-button lm-button--secondary"
                   >
                     <Rss className="h-4 w-4 text-[#217ED9]" />
                     {platform.label}
@@ -174,11 +179,11 @@ export function Signal2ActionPage() {
 
           <section className="py-20">
             <div className="max-w-4xl mx-auto px-4 text-center sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-bold text-white">Want to join the conversation?</h2>
+              <h2 className="lm-podcast__section-title font-bold">Want to join the conversation?</h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
                 Signal 2 Action is interested in operators, system builders, researchers, and practitioners with a grounded point of view on how operational signals become real work.
               </p>
-              <TrackedLink to="/contact" eventName="cta_contact_click" eventData={{ conversation_type: "podcast" }} className="mt-10 inline-flex min-h-11 items-center gap-2 rounded-sm border-2 border-[#217ED9] bg-[#0a1929]/80 px-8 py-3 font-semibold text-white hover:bg-[#0a1929]">
+              <TrackedLink to="/contact?intent=media" eventName="cta_contact_click" eventData={{ conversation_type: "podcast" }} className="lm-button lm-button--primary mt-10">
                 Propose a conversation <ArrowRight className="h-5 w-5" />
               </TrackedLink>
             </div>

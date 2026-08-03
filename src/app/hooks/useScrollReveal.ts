@@ -5,38 +5,37 @@ export function useScrollReveal() {
   const location = useLocation();
 
   useEffect(() => {
-    // Add class to enable scroll reveal after initial mount
-    const timer = setTimeout(() => {
-      document.body.classList.add('scroll-reveal-active');
-    }, 100);
+    const root = document.querySelector(".lm-main");
+    if (!root) return;
 
-    const revealOnScroll = () => {
-      const revealElements = document.querySelectorAll(".reveal");
-      const windowHeight = window.innerHeight;
-      const elementVisible = 150;
+    const revealElements = root.querySelectorAll<HTMLElement>(".lm-section__head, .lm-card-grid, .lm-product-grid, .lm-advances, .lm-diagram, .lm-operator, .lm-cooling-flow");
 
-      revealElements.forEach((reveal) => {
-        const elementTop = reveal.getBoundingClientRect().top;
-        if (elementTop < windowHeight - elementVisible) {
-          reveal.classList.add("visible");
-        }
-      });
-    };
+    revealElements.forEach((element, index) => {
+      element.classList.add("lm-reveal");
+      element.style.setProperty("--reveal-delay", `${(index % 4) * 55}ms`);
+    });
 
-    // Run immediately
-    revealOnScroll();
-    
-    // Run after a short delay to catch any delayed renders
-    const revealTimer = setTimeout(revealOnScroll, 150);
+    if (!("IntersectionObserver" in window)) {
+      revealElements.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
 
-    window.addEventListener("scroll", revealOnScroll);
-    window.addEventListener("resize", revealOnScroll);
-    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -10%", threshold: 0.06 },
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
+
     return () => {
-      clearTimeout(timer);
-      clearTimeout(revealTimer);
-      window.removeEventListener("scroll", revealOnScroll);
-      window.removeEventListener("resize", revealOnScroll);
+      observer.disconnect();
     };
-  }, [location.pathname]); // Re-run when route changes
+  }, [location.pathname]);
 }

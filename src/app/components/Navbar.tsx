@@ -1,124 +1,50 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router";
-import { Menu, X } from "lucide-react";
 
-interface NavItem {
-  to: string;
-  label: string;
-}
-
-const productItems: NavItem[] = [
-  { to: "/infinit-signal", label: "Infinit-Signal" },
-  { to: "/infinit-control", label: "Infinit-Control" },
-  { to: "/infinit-flow", label: "Infinit-Flow" },
-];
-
-const resourceItems: NavItem[] = [
-  { to: "/signal-to-action", label: "Signal 2 Action" },
-  { to: "/integrations", label: "ServiceNow Integration Library" },
-  { to: "/company/newsroom", label: "News and Updates" },
-];
+const products = [
+  ["/infinit-signal", "Infinit-Signal"],
+  ["/singularity", "Singularity"],
+  ["/infinit-flow", "Infinit-Flow"],
+  ["/infinit-control", "Infinit-Control"],
+] as const;
+const resources = [["/signal-to-action", "Signal 2 Action"], ["/company/newsroom", "News and Updates"]] as const;
 
 export function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
   const location = useLocation();
+  const active = (to: string) => location.pathname === to || (to !== "/" && location.pathname.startsWith(`${to}/`));
 
-  const isActive = (item: NavItem) =>
-    location.pathname === item.to ||
-    (item.to !== "/" && location.pathname.startsWith(`${item.to}/`));
-
-  const isProductsActive = productItems.some((item) => isActive(item));
-  const isResourcesActive = resourceItems.some((item) => isActive(item));
+  useEffect(() => { setMobileOpen(false); setOpenMenu(null); }, [location.pathname]);
 
   return (
-    <nav className="site-navbar fixed w-full z-[100] overflow-visible glass-panel border-b border-slate-700/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer">
-            <img src="/logo.png" alt="Last Mile" className="h-6 w-auto rounded-md" />
-            <span className="font-bold text-2xl tracking-tight text-white uppercase">
-              Last <span className="text-[#217ED9]">Mile</span>
-            </span>
-          </Link>
-
-          <div className="hidden lg:flex items-center space-x-6">
-            <Link to="/" className={`text-sm font-medium transition-colors ${location.pathname === "/" ? "text-white" : "text-slate-300 hover:text-white"}`}>
-              Home
-            </Link>
-            <Link to="/platform" className={`text-sm font-medium transition-colors ${location.pathname === "/platform" ? "text-white" : "text-slate-300 hover:text-white"}`}>
-              Platform
-            </Link>
-            <Dropdown label="Products" active={isProductsActive} items={productItems} />
-            <Dropdown label="Resources" active={isResourcesActive} items={resourceItems} />
-            <Link to="/about" className={`text-sm font-medium transition-colors ${location.pathname === "/about" ? "text-white" : "text-slate-300 hover:text-white"}`}>
-              About
-            </Link>
-          </div>
-
-          <div className="lg:hidden flex items-center">
-            <button
-              type="button"
-              aria-label={mobileMenuOpen ? "Close navigation" : "Open navigation"}
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="min-h-11 min-w-11 text-slate-300 hover:text-white p-2"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+    <nav className="lm-nav" aria-label="Primary navigation" onMouseLeave={() => setOpenMenu(null)}>
+      <div className="lm-nav__inner">
+        <Link to="/" className="lm-nav__brand"><img src="/logo.png" width="64" height="41" alt="" /><strong><span>Last</span> <span>Mile</span></strong></Link>
+        <div className="lm-nav__links">
+          <NavLink to="/" label="Home" active={active("/")} />
+          <NavLink to="/platform" label="Platform" active={active("/platform")} />
+          <Dropdown label="Products" active={products.some(([to]) => active(to))} open={openMenu === "products"} onOpen={() => setOpenMenu("products")} items={products} isActive={active} />
+          <Dropdown label="Use Case" active={active("/data-center-cooling")} open={openMenu === "use-case"} onOpen={() => setOpenMenu("use-case")} items={[["/data-center-cooling", "Data Center Cooling"]]} isActive={active} />
+          <Dropdown label="Resources" active={resources.some(([to]) => active(to))} open={openMenu === "resources"} onOpen={() => setOpenMenu("resources")} items={resources} isActive={active} />
+          <NavLink to="/about" label="About" active={active("/about")} />
         </div>
+        <Link to="/contact?intent=operation" className="lm-nav__cta">Discuss Your Operation</Link>
+        <button type="button" className="lm-nav__toggle" aria-label={mobileOpen ? "Close navigation" : "Open navigation"} aria-expanded={mobileOpen} onClick={() => setMobileOpen((value) => !value)}>{mobileOpen ? <X /> : <Menu />}</button>
+        {mobileOpen ? <div className="lm-nav__mobile">
+          <NavLink to="/" label="Home" active={active("/")} /><NavLink to="/platform" label="Platform" active={active("/platform")} />
+          <strong>Products</strong>{products.map(([to,label]) => <NavLink key={to} to={to} label={label} active={active(to)} />)}
+          <strong>Use Case</strong><NavLink to="/data-center-cooling" label="Data Center Cooling" active={active("/data-center-cooling")} />
+          <strong>Resources</strong>{resources.map(([to,label]) => <NavLink key={to} to={to} label={label} active={active(to)} />)}
+          <NavLink to="/about" label="About" active={active("/about")} /><NavLink to="/contact?intent=operation" label="Discuss Your Operation" active={active("/contact")} />
+        </div> : null}
       </div>
-
-      {mobileMenuOpen && (
-        <div className="lg:hidden absolute z-[110] w-full border-b border-slate-800 bg-slate-900">
-          <div className="px-4 pt-2 pb-6 space-y-2">
-            <MobileLink to="/" label="Home" onClick={() => setMobileMenuOpen(false)} />
-            <MobileLink to="/platform" label="Platform" onClick={() => setMobileMenuOpen(false)} />
-            <MobileGroup label="Products" items={productItems} onClick={() => setMobileMenuOpen(false)} />
-            <MobileGroup label="Resources" items={resourceItems} onClick={() => setMobileMenuOpen(false)} />
-            <MobileLink to="/about" label="About" onClick={() => setMobileMenuOpen(false)} />
-          </div>
-        </div>
-      )}
     </nav>
   );
 }
 
-function Dropdown({ label, active, items }: { label: string; active: boolean; items: NavItem[] }) {
-  return (
-    <div className="relative z-[110] group">
-      <button type="button" className={`text-sm font-medium transition-colors ${active ? "text-white" : "text-slate-300 group-hover:text-white"}`}>
-        {label}
-      </button>
-      <div className="nav-dropdown-panel pointer-events-none absolute left-0 top-full z-[120] pt-4 opacity-0 transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
-        <div className="min-w-[250px] rounded-xl border border-cyan-400/25 bg-[#071426]/98 p-3 shadow-2xl shadow-cyan-950/40 backdrop-blur-xl">
-          {items.map((item) => (
-            <Link key={item.to} to={item.to} className="block rounded-lg px-3 py-2 text-sm text-slate-300 transition-colors hover:bg-slate-900 hover:text-white">
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function MobileGroup({ label, items, onClick }: { label: string; items: NavItem[]; onClick: () => void }) {
-  return (
-    <>
-      <div className="px-3 pt-3 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{label}</div>
-      {items.map((link) => (
-        <Link key={link.to} to={link.to} onClick={onClick} className="flex min-h-11 items-center px-3 py-2 text-base font-medium text-slate-300 hover:text-white">
-          {link.label}
-        </Link>
-      ))}
-    </>
-  );
-}
-
-function MobileLink({ to, label, onClick }: NavItem & { onClick: () => void }) {
-  return (
-    <Link to={to} onClick={onClick} className="flex min-h-11 items-center px-3 py-2 text-base font-medium text-slate-300 hover:text-white">
-      {label}
-    </Link>
-  );
+function NavLink({ to, label, active }: { to: string; label: string; active: boolean }) { return <div className="lm-nav__item"><Link to={to} className={active ? "is-active" : ""}>{label}</Link></div>; }
+function Dropdown({ label, items, open, onOpen, active, isActive }: { label: string; items: readonly (readonly [string,string])[]; open: boolean; onOpen: () => void; active: boolean; isActive: (to:string)=>boolean }) {
+  return <div className="lm-nav__item" onMouseEnter={onOpen}><button type="button" className={active ? "is-active" : ""} aria-expanded={open} onClick={onOpen}>{label}<ChevronDown /></button>{open ? <div className="lm-nav__dropdown">{items.map(([to,item]) => <Link key={to} to={to} className={isActive(to) ? "is-active" : ""}>{item}</Link>)}</div> : null}</div>;
 }

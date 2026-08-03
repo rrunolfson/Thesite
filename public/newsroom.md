@@ -1,5 +1,5 @@
-# Last Mile Newsroom
+# Last Mile News and Updates
 
-News and milestones from Last Mile's evolution, including our ServiceNow integration work, partnerships, and the development of the operational intelligence platform.
+Company news, platform milestones, partnerships, and progress toward a vendor-independent Physical Operations Platform.
 
-Browse the newsroom on the website to filter releases by year and open each announcement on its own detail page.
+ServiceNow-era releases are preserved under Company Archive — Prior Strategic Chapter and are not silently rewritten.

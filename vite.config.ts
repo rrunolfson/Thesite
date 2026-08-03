@@ -31,5 +31,6 @@ export default defineConfig({
     assetsDir: 'assets',
     // Ensure public files are copied to build output
     copyPublicDir: true,
+    sourcemap: false,
   },
 })

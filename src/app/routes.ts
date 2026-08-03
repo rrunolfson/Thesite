@@ -29,6 +29,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, lazy: lazyPage(() => import("./pages/HomePage"), "HomePage") },
       { path: "platform", lazy: lazyPage(() => import("./pages/PlatformOverviewPage"), "PlatformOverviewPage") },
+      { path: "data-center-cooling", lazy: lazyPage(() => import("./pages/DataCenterCoolingPage"), "DataCenterCoolingPage") },
       { path: "infinit-signal", lazy: lazyPage(() => import("./pages/InfinitSignalPage"), "InfinitSignalPage") },
       { path: "infinit-flow", lazy: lazyPage(() => import("./pages/InfinitFlowPage"), "InfinitFlowPage") },
       { path: "infinit-control", lazy: lazyPage(() => import("./pages/InfinitControlPage"), "InfinitControlPage") },
@@ -49,7 +50,9 @@ export const router = createBrowserRouter([
       },
       { path: "careers", loader: redirectTo("/about") },
       { path: "contact", lazy: lazyPage(() => import("./pages/ContactPage"), "ContactPage") },
-      { path: "design-partner", loader: redirectTo("/contact") },
+      { path: "design-partner", loader: redirectTo("/contact?intent=design-partnership") },
+      { path: "privacy", lazy: lazyPage(() => import("./pages/LegalPage"), "PrivacyPage") },
+      { path: "terms", lazy: lazyPage(() => import("./pages/LegalPage"), "TermsPage") },
       { path: "signal-to-action", lazy: lazyPage(() => import("./pages/Signal2ActionPage"), "Signal2ActionPage") },
       { path: "signal-2-action", loader: redirectTo("/signal-to-action") },
       { path: "*", lazy: lazyPage(() => import("./pages/NotFound"), "NotFound") },

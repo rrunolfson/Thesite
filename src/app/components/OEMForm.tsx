@@ -308,7 +308,7 @@ export function OEMForm() {
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#217ED9] hover:bg-[#1a6bb8] text-white"
+        className="w-full lm-button--primary"
       >
         {isSubmitting ? (
           <>

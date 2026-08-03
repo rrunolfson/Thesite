@@ -96,6 +96,25 @@ export function Root() {
         },
       },
       {
+        name: "open_data_center_cooling",
+        description: "Open the Data Center Cooling reference use case and design-partnership path.",
+        inputSchema: {
+          type: "object",
+          additionalProperties: false,
+          properties: {},
+        },
+        execute: async () => {
+          const url = `${baseUrl}/data-center-cooling`;
+          window.location.assign(url);
+
+          return {
+            ok: true,
+            url,
+            status: "commercial proof being developed",
+          };
+        },
+      },
+      {
         name: "open_signal_2_action",
         description: "Open the Signal 2 Action podcast page and expose the podcast feed URL.",
         inputSchema: {
@@ -120,12 +139,10 @@ export function Root() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0f172a] text-slate-200">
+    <div className="lm-site">
       <Navbar />
       <NetworkBackground />
-      <main>
-        <Outlet />
-      </main>
+      <main key={location.pathname} className="lm-main"><Outlet /></main>
       <Footer />
     </div>
   );

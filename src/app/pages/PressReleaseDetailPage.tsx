@@ -29,10 +29,11 @@ export function PressReleaseDetailPage() {
         keywords="Last Mile press release, Last Mile newsroom, company news, product announcement"
         canonicalPath={`/company/newsroom/${release.slug}`}
       />
-      <div className="pt-20 relative min-h-screen">
+      <div className="lm-release relative min-h-screen">
         <div className="absolute inset-0 data-grid-bg opacity-20 pointer-events-none"></div>
 
         <div className="relative z-10">
+          <div className="lm-release__archive">Company Archive — Prior Strategic Chapter. This historical release is preserved as published; current inquiries should be directed to <a href="mailto:contact@lastmileinc.ai">contact@lastmileinc.ai</a>.</div>
           <section className="border-b border-slate-800/80 py-16">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div

@@ -1,20 +1,7 @@
 # About Last Mile
 
-Last Mile is building the operational intelligence layer between detection and accountable response.
+Last Mile was founded to close the distance between operational systems and physical outcomes. Enterprise platforms transformed digital work, but physical operations still lack a vendor-independent layer connecting evidence to governed action and verified recovery.
 
-## Primary URL
+Rodney Runolfson brings decades of enterprise-platform strategy and implementation experience, including building and leading a major ServiceNow practice at Deloitte. That experience informed the category insight; the Last Mile Platform itself is vendor-independent by design.
 
-- About page: https://lastmileinc.ai/about
-
-## Company narrative
-
-- Focuses on the operational action gap between a detected issue and a coordinated response
-- Works from authorized source data rather than a replacement agenda
-- Uses Singularity as the shared operational-memory foundation inside the Last Mile Platform
-
-## Operating principles
-
-- Respect the systems already operating the environment
-- Preserve quality, timing, evidence, and where information came from
-- Keep humans and policy in the loop where they belong
-- Start narrow and prove value with a measurable operational use case
+Primary URL: https://lastmileinc.ai/about
