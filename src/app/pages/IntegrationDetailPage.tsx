@@ -138,7 +138,7 @@ export function IntegrationDetailPage() {
         canonicalPath={`/integrations/${vendorSlug}/${productSlug}`}
       />
 
-      <div className="relative min-h-screen overflow-hidden pt-20">
+      <div className="lm-integration-detail relative min-h-screen overflow-hidden pt-20">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 data-grid-bg opacity-20"></div>
           <div className="absolute -top-28 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#217ED9]/15 blur-3xl"></div>

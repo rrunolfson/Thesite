@@ -30,7 +30,7 @@ export function DashboardDemo() {
             <div className="telemetry-row p-3 border-b border-slate-800 cursor-pointer border-l-2 border-[#217ED9] bg-slate-800/30">
               <div className="flex justify-between mb-1">
                 <span className="text-white font-semibold">CNC_UNIT_04</span>
-                <span className="text-[#10b981]">NORMAL</span>
+                <span className="text-[#4c86c6]">NORMAL</span>
               </div>
               <div className="text-slate-500">Floor 2, Sector B</div>
             </div>
@@ -46,7 +46,7 @@ export function DashboardDemo() {
             <div className="telemetry-row p-3 border-b border-slate-800 cursor-pointer border-l-2 border-transparent hover:border-slate-600">
               <div className="flex justify-between mb-1">
                 <span className="text-white font-semibold">INFUSION_PUMP_X</span>
-                <span className="text-[#10b981]">ACTIVE</span>
+                <span className="text-[#4c86c6]">ACTIVE</span>
               </div>
               <div className="text-slate-500">ICU, Room 304</div>
             </div>
@@ -92,7 +92,7 @@ export function DashboardDemo() {
               <div className="p-4 bg-slate-800/30 border border-slate-700 rounded">
                 <div className="text-xs text-slate-500 uppercase mb-1">Temperature</div>
                 <div className="text-2xl font-mono text-white">184.5°F</div>
-                <div className="text-xs text-[#10b981] mt-1">Within limits</div>
+                <div className="text-xs text-[#4c86c6] mt-1">Within limits</div>
               </div>
               <div className="p-4 bg-slate-800/30 border border-slate-700 rounded">
                 <div className="text-xs text-slate-500 uppercase mb-1">Op Time</div>

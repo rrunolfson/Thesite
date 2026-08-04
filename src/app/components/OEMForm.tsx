@@ -136,8 +136,8 @@ export function OEMForm() {
   if (isSuccess) {
     return (
       <div className="text-center py-12 animate-in fade-in zoom-in duration-500">
-        <div className="w-20 h-20 bg-[#10b981]/20 rounded-full flex items-center justify-center mx-auto mb-6">
-          <CheckCircle2 className="text-[#10b981] w-10 h-10" />
+        <div className="w-20 h-20 bg-[#4c86c6]/20 rounded-full flex items-center justify-center mx-auto mb-6">
+          <CheckCircle2 className="text-[#4c86c6] w-10 h-10" />
         </div>
         <h3 className="text-2xl font-bold text-white mb-2">Technical Data Received</h3>
         <p className="text-slate-400 mb-8">

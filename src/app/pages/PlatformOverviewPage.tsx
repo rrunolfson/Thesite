@@ -5,10 +5,9 @@ import { AdvancesGrid, ArchitectureNarrative, CtaLink, GoverningDiagram, Operati
 import { createBreadcrumbSchema, createProductSchema } from "@/app/lib/structuredData";
 
 const layers = [
-  { title: "Plant, site, and OT environment", copy: "Sensors, controllers, operator interfaces, SCADA, safety systems, MES, historians, equipment, and site teams remain the systems closest to the process." },
-  { title: "Existing OT, data, work, and service ecosystem", copy: "Brokers, control platforms, historians, CMMS and facilities systems, enterprise workflows, and industrial providers continue doing the jobs they were built to do." },
-  { title: "Condition-to-outcome accountability layer", copy: "Last Mile closes the gap where identity fragments, signals remain alarms, handoffs lose context, ticket status substitutes for recovery, and evidence disappears." },
   { title: "Last Mile Platform", copy: "Infinit-Signal, Singularity, Infinit-Flow, and Infinit-Control carry one accountable Condition from trusted evidence to governed response and verified physical outcome." },
+  { title: "Existing OT, data, work, and service ecosystem", copy: "Brokers, control platforms, historians, CMMS and facilities systems, enterprise workflows, and industrial providers continue doing the jobs they were built to do." },
+  { title: "Plant, site, and OT environment", copy: "Sensors, controllers, operator interfaces, SCADA, safety systems, MES, historians, equipment, and site teams remain the systems closest to the process." },
 ];
 
 const principles = [
@@ -26,7 +25,7 @@ export function PlatformOverviewPage() {
     <SEO title="Last Mile Platform | Physical Operations Accountability" description={description} canonicalPath="/platform" jsonLd={[createProductSchema("Last Mile Platform", "/platform", description), createBreadcrumbSchema([{name:"Home",path:"/"},{name:"Platform",path:"/platform"}])]} />
     <PageHero eyebrow="Last Mile Platform" title="Command physical operations as one connected system." intro="Last Mile is the independent operational accountability layer above your OT, data, work, and service ecosystem—from Condition to work to verified physical outcome." supporting="It does not replace control systems, brokers, historians, CMMS platforms, enterprise workflows, or service providers. It gives them one shared operational identity, one governed response path, and one evidence chain." actions={<><CtaLink to="/contact?intent=architecture">Discuss Your Operational Stack</CtaLink><CtaLink to="/data-center-cooling" variant="secondary" eventName="cta_explore_platform_click">Explore Data Center Cooling</CtaLink></>} />
 
-    <Section eyebrow="Platform architecture" title="Where Last Mile sits." intro="The supplied architecture is shown at full resolution on desktop. On mobile, the same narrative is rendered as readable HTML rather than reduced text.">
+    <Section eyebrow="Platform architecture" title="Where Last Mile sits." intro="Industrial operations have long lacked a connective layer between what their systems detect and the outcomes the business must deliver. Last Mile fills that legacy void by unifying evidence, operational context, governed action, and verified recovery across the existing technology stack—completing the last mile required for truly optimized industrial operations.">
       <GoverningDiagram type="physical" mobileFallback={<ArchitectureNarrative />} />
       <div className="lm-layer-grid">{layers.map((layer,index)=><article className="lm-layer" key={layer.title}><span>{String(index+1).padStart(2,"0")}</span><h3>{layer.title}</h3><p>{layer.copy}</p></article>)}</div>
     </Section>

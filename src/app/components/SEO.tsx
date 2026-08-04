@@ -16,7 +16,7 @@ export function SEO({
   title,
   description,
   keywords = 'Last Mile, Physical Operations Platform, operational accountability, governed action, verified physical outcomes, industrial operations',
-  ogImage = 'https://lastmileinc.ai/images/last-mile-og.jpg',
+  ogImage = 'https://lastmileinc.ai/images/last-mile-og-4k.jpg',
   ogType = 'website',
   canonicalPath = '',
   markdownPath,
@@ -50,8 +50,8 @@ export function SEO({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <meta property="og:image:width" content="3840" />
+      <meta property="og:image:height" content="2160" />
       <meta property="og:image:alt" content="Last Mile Physical Operations Platform architecture" />
       <meta property="og:site_name" content="Last Mile Inc." />
 

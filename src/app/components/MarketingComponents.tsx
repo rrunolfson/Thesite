@@ -129,7 +129,6 @@ export function ArchitectureNarrative({ compact = false }: { compact?: boolean }
         <div>{platformProducts.map((product) => <strong key={product.name}>{product.name}</strong>)}</div>
       </div>
       <div className="lm-architecture__path" aria-hidden="true"><i /><b>Condition</b><i /><b>Governed work</b><i /><b>Verified outcome</b></div>
-      <div className="lm-architecture__gap"><span>The missing accountability layer</span><p>Shared identity · coordinated response · complete evidence · verified recovery</p></div>
       <div className="lm-architecture__systems">{systems.map((system) => <span key={system}>{system}</span>)}</div>
       <p className="lm-architecture__base">Plant / site / OT environment</p>
     </div>
@@ -138,8 +137,9 @@ export function ArchitectureNarrative({ compact = false }: { compact?: boolean }
 
 export function GoverningDiagram({ type, mobileFallback }: { type: "physical" | "operating"; mobileFallback: ReactNode }) {
   const [expanded, setExpanded] = useState(false);
-  const file = type === "physical" ? "last-mile-physical-operations-platform" : "last-mile-operating-layer";
-  const title = type === "physical" ? "Last Mile: The Physical Operations Platform" : "Last Mile: The Operating Layer Industry Has Been Missing";
+  const file = type === "physical" ? "last-mile-physical-operations-platform-pale-blue-v1" : "last-mile-operating-layer-pale-4k";
+  const title = type === "physical" ? "The Last Mile Physical Operations Platform" : "Last Mile: The Operating Layer Industry Has Been Missing";
+  const imageVersion = "";
 
   useEffect(() => {
     if (!expanded) return;
@@ -150,15 +150,15 @@ export function GoverningDiagram({ type, mobileFallback }: { type: "physical" | 
 
   const picture = (
     <picture>
-      <source type="image/avif" srcSet={`/images/platform/${file}-960.avif 960w, /images/platform/${file}-1440.avif 1440w`} sizes="(min-width: 1200px) 1120px, 92vw" />
-      <source type="image/webp" srcSet={`/images/platform/${file}-960.webp 960w, /images/platform/${file}-1440.webp 1440w`} sizes="(min-width: 1200px) 1120px, 92vw" />
-      <img src={`/images/platform/${file}.png`} width="1672" height="941" alt={title} loading="lazy" />
+      <source type="image/avif" srcSet={`/images/platform/${file}-960.avif${imageVersion} 960w, /images/platform/${file}-1440.avif${imageVersion} 1440w`} sizes="(min-width: 1200px) 1120px, 92vw" />
+      <source type="image/webp" srcSet={`/images/platform/${file}-960.webp${imageVersion} 960w, /images/platform/${file}-1440.webp${imageVersion} 1440w`} sizes="(min-width: 1200px) 1120px, 92vw" />
+      <img src={`/images/platform/${file}.png${imageVersion}`} width="3840" height="2160" alt={title} loading="lazy" />
     </picture>
   );
 
   return (
     <>
-      <figure className="lm-diagram">
+      <figure className={`lm-diagram lm-diagram--${type}`}>
         <div className="lm-diagram__desktop">{picture}<button type="button" onClick={() => setExpanded(true)} aria-label={`Expand ${title}`}><Expand aria-hidden="true" /></button></div>
         <div className="lm-diagram__mobile">{mobileFallback}</div>
         <figcaption>{title}. A complete HTML explanation follows the visual.</figcaption>

@@ -33,7 +33,11 @@ export function HomePage() {
       actions={<CtaLink to="/platform" eventName="cta_explore_platform_click">Explore the Platform</CtaLink>}
     >
       <figure className="lm-home-blueprint">
-        <img src="/images/blueprint/platform-core-blueprint.png" width="1672" height="941" fetchPriority="high" alt="Blueprint of the Last Mile platform core connecting signals, operational memory, coordinated flow, and operator control" />
+        <picture>
+          <source type="image/avif" srcSet="/images/blueprint/platform-core-blueprint-pale-4k-960.avif 960w, /images/blueprint/platform-core-blueprint-pale-4k-1440.avif 1440w" sizes="(min-width: 1200px) 560px, 92vw" />
+          <source type="image/webp" srcSet="/images/blueprint/platform-core-blueprint-pale-4k-960.webp 960w, /images/blueprint/platform-core-blueprint-pale-4k-1440.webp 1440w" sizes="(min-width: 1200px) 560px, 92vw" />
+          <img src="/images/blueprint/platform-core-blueprint-pale-4k.png" width="3840" height="2160" fetchPriority="high" alt="Blueprint of the Last Mile platform core connecting signals, operational memory, coordinated flow, and operator control" />
+        </picture>
       </figure>
     </PageHero>
 
@@ -48,7 +52,7 @@ export function HomePage() {
 
     <Section eyebrow="The operator" title="Built for the people accountable for the physical result.">
       <div className="lm-operator">
-        <figure><picture><source type="image/avif" srcSet="/images/chuck-720.avif" /><source type="image/webp" srcSet="/images/chuck-720.webp" /><img src="/images/chuck.png" width="971" height="1098" loading="lazy" alt="Experienced industrial operator working near production equipment" /></picture></figure>
+        <figure><picture><source type="image/avif" srcSet="/images/chuck-operator-pale-4k-960.avif 960w, /images/chuck-operator-pale-4k-1440.avif 1440w" sizes="(min-width: 900px) 50vw, 92vw" /><source type="image/webp" srcSet="/images/chuck-operator-pale-4k-960.webp 960w, /images/chuck-operator-pale-4k-1440.webp 1440w" sizes="(min-width: 900px) 50vw, 92vw" /><img src="/images/chuck-operator-pale-4k.png" width="3840" height="2160" loading="lazy" alt="Experienced industrial operator working near production equipment" /></picture></figure>
         <div><p>Chuck does not need another alert.  He has to be at his sons football game.  What he needs is context.  He needs to know what happened, what it affects, who owns the response, what action is authorized, and whether the operation actually recovered after attempts to fix it.  Now!</p><div className="lm-operator__learn">Learn <TrackedLink to="/about" eventName="cta_explore_platform_click" className="lm-text-link">why Last Mile was built <ArrowRight /></TrackedLink></div></div>
       </div>
     </Section>

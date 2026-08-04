@@ -118,10 +118,10 @@ const industryLabels: Record<string, string> = {
 };
 
 const vendorAccentClasses = [
-  "from-[#00C2FF] to-[#37F0C2]",
+  "from-[#8BB4CF] to-[#4C86C6]",
   "from-[#2E7BFF] to-[#00C2FF]",
-  "from-[#37F0C2] to-[#7DF0B6]",
-  "from-[#00C2FF] to-[#2E7BFF]",
+  "from-[#A8BCCB] to-[#5E8FAF]",
+  "from-[#8BB4CF] to-[#315F91]",
 ];
 
 function buildNoStoreUrl(path: string) {
@@ -321,7 +321,7 @@ export function OurIntegrationsPage() {
       </Helmet>
 
       <div className="operational-grid pt-20 relative min-h-screen overflow-hidden">
-        <div className="relative z-20 border-b border-[#75bda7]/30 bg-[#0b211d] px-4 py-4 text-center text-sm leading-6 text-slate-200">
+        <div className="relative z-20 border-b border-[#4c86c6]/25 bg-[#e7edf3] px-4 py-4 text-center text-sm leading-6 text-slate-700">
           These integrations were developed during an earlier chapter of Last Mile and remain cataloged for organizations with a specific ServiceNow requirement. They are not required by, and do not define, the Last Mile Physical Operations Platform.
         </div>
         <div className="absolute inset-0 pointer-events-none">
@@ -355,12 +355,18 @@ export function OurIntegrationsPage() {
                   className="grid gap-4"
                 >
                   <figure className="blueprint-art-frame">
-                    <img
-                      src="/images/blueprint/servicenow-integrations-blueprint.png"
-                      alt="Blueprint-style ServiceNow integration interface for operational system connections."
-                      className="max-h-[280px]"
-                      loading="lazy"
-                    />
+                    <picture>
+                      <source type="image/avif" srcSet="/images/blueprint/servicenow-integrations-blueprint-pale-4k-960.avif 960w, /images/blueprint/servicenow-integrations-blueprint-pale-4k-1440.avif 1440w" sizes="(min-width: 1024px) 50vw, 92vw" />
+                      <source type="image/webp" srcSet="/images/blueprint/servicenow-integrations-blueprint-pale-4k-960.webp 960w, /images/blueprint/servicenow-integrations-blueprint-pale-4k-1440.webp 1440w" sizes="(min-width: 1024px) 50vw, 92vw" />
+                      <img
+                        src="/images/blueprint/servicenow-integrations-blueprint-pale-4k.png"
+                        width="3840"
+                        height="2160"
+                        alt="Blueprint-style ServiceNow integration interface for operational system connections."
+                        className="max-h-[280px]"
+                        loading="lazy"
+                      />
+                    </picture>
                   </figure>
                   <div className="scoreboard-shell blueprint-panel rounded-2xl p-3 lg:p-3.5">
                     <div className="scoreboard-header mb-2.5 flex items-center justify-center rounded-2xl px-4 py-2">

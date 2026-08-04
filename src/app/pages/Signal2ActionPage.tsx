@@ -106,12 +106,12 @@ export function Signal2ActionPage() {
                 </div>
                 <div className="blueprint-art-frame">
                   <picture>
-                    <source type="image/avif" srcSet="/images/blueprint/signal-2-action-blueprint-960.avif" />
-                    <source type="image/webp" srcSet="/images/blueprint/signal-2-action-blueprint-960.webp" />
+                    <source type="image/avif" srcSet="/images/blueprint/signal-2-action-blueprint-pale-4k-960.avif 960w, /images/blueprint/signal-2-action-blueprint-pale-4k-1440.avif 1440w" sizes="(min-width: 1024px) 50vw, 92vw" />
+                    <source type="image/webp" srcSet="/images/blueprint/signal-2-action-blueprint-pale-4k-960.webp 960w, /images/blueprint/signal-2-action-blueprint-pale-4k-1440.webp 1440w" sizes="(min-width: 1024px) 50vw, 92vw" />
                   <img
-                    src="/images/blueprint/signal-2-action-blueprint.png"
-                    width="1672"
-                    height="941"
+                    src="/images/blueprint/signal-2-action-blueprint-pale-4k.png"
+                    width="3840"
+                    height="2160"
                     alt="Blueprint-style media and podcast production scene for operational intelligence conversations."
                     className="h-full w-full rounded object-cover"
                     loading="lazy"

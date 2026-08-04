@@ -2,51 +2,51 @@
 
 :root {
   --font-size: 16px;
-  --background: #0f172a;
-  --foreground: #f8fafc;
-  --card: rgba(30, 41, 59, 0.7);
-  --card-foreground: #f8fafc;
-  --popover: rgba(30, 41, 59, 0.9);
-  --popover-foreground: #f8fafc;
-  --primary: #217ED9;
+  --background: #f1f3f6;
+  --foreground: #263244;
+  --card: #ffffff;
+  --card-foreground: #263244;
+  --popover: #ffffff;
+  --popover-foreground: #263244;
+  --primary: #4c86c6;
   --primary-foreground: #ffffff;
-  --secondary: #334155;
-  --secondary-foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #217ED9;
+  --secondary: #e7edf3;
+  --secondary-foreground: #263244;
+  --muted: #e7edf3;
+  --muted-foreground: #58687a;
+  --accent: #8bb4cf;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: rgba(255, 255, 255, 0.08);
-  --input: transparent;
-  --input-background: rgba(30, 41, 59, 0.7);
-  --switch-background: #334155;
+  --border: rgba(38, 50, 68, 0.13);
+  --input: rgba(38, 50, 68, 0.13);
+  --input-background: #ffffff;
+  --switch-background: #a8bccb;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #217ED9;
-  --chart-1: #217ED9;
+  --ring: #4c86c6;
+  --chart-1: #4c86c6;
   --chart-2: #75ADE6;
-  --chart-3: #10b981;
+  --chart-3: #8bb4cf;
   --chart-4: #f59e0b;
   --chart-5: #ef4444;
   --radius: 0.5rem;
-  --sidebar: #1e293b;
-  --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #217ED9;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #263244;
+  --sidebar-primary: #4c86c6;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #334155;
-  --sidebar-accent-foreground: #f8fafc;
-  --sidebar-border: rgba(255, 255, 255, 0.08);
-  --sidebar-ring: #217ED9;
+  --sidebar-accent: #e7edf3;
+  --sidebar-accent-foreground: #263244;
+  --sidebar-border: rgba(38, 50, 68, 0.13);
+  --sidebar-ring: #4c86c6;
   
   /* Brand colors */
-  --brand-50: #f0fdfa;
-  --brand-100: #ccfbf1;
+  --brand-50: #f1f3f6;
+  --brand-100: #e7edf3;
   --brand-400: #217ED9;
   --brand-500: #75ADE6;
   --brand-600: #217ED9;
-  --brand-900: #134e4a;
+  --brand-900: #315f91;
   
   /* Industrial colors */
   --industrial-blue: #0f172a;
@@ -54,7 +54,7 @@
   --industrial-surface: #1e293b;
   
   /* Status colors */
-  --status-ok: #10b981;
+  --status-ok: #4c86c6;
   --status-warn: #f59e0b;
   --status-crit: #ef4444;
 }
