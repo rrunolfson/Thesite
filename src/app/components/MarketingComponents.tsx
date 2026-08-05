@@ -138,7 +138,7 @@ export function ArchitectureNarrative({ compact = false }: { compact?: boolean }
 export function GoverningDiagram({ type, mobileFallback }: { type: "physical" | "operating"; mobileFallback: ReactNode }) {
   const [expanded, setExpanded] = useState(false);
   const file = type === "physical" ? "last-mile-physical-operations-platform-pale-blue-v1" : "last-mile-operating-layer-pale-4k";
-  const title = type === "physical" ? "The Last Mile Physical Operations Platform" : "Last Mile: The Operating Layer Industry Has Been Missing";
+  const title = type === "physical" ? "The Last Mile Physical Operations Platform" : "The Last Mile Platform Across Existing Operational Systems";
   const imageVersion = "";
 
   useEffect(() => {

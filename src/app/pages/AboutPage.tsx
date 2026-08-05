@@ -1,16 +1,28 @@
 import { SEO } from "@/app/components/SEO";
-import { CtaLink, PageHero, ProductGrid, Section } from "@/app/components/MarketingComponents";
+import { EditorialHero, EditorialSection, NextStep } from "@/app/components/NarrativeComponents";
+import { companyStage } from "@/app/content/siteContent";
 import { createBreadcrumbSchema } from "@/app/lib/structuredData";
 
-const whyNow = ["Operational data volume has outgrown manual correlation.", "Operations span more systems, vendors, and service providers.", "AI requires trustworthy identity, evidence, and time-correct context.", "Closed tickets no longer provide enough proof of operational recovery.", "Industry needs accountable automation, not more disconnected alerts."];
+const principles = ["Keep source authority visible.", "Create operational records once.", "Preserve uncertainty instead of hiding it.", "Put policy before consequential action.", "Treat work completion and physical recovery as different states.", "Make failure and degraded data visible.", "Earn the right to automate through evidence."] as const;
+
 export function AboutPage() {
-  const description = "Last Mile was founded to create the vendor-independent operating layer between operational evidence, governed action, and verified physical recovery.";
-  return <><SEO title="About Last Mile | Closing the Physical Operations Loop" description={description} canonicalPath="/about" markdownPath="/about.md" jsonLd={createBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])} />
-    <PageHero eyebrow="About Last Mile" title="Built to close the distance between operational systems and physical outcomes." intro="Last Mile was founded on a simple observation: enterprise platforms transformed digital work, but physical operations still lack a vendor-independent layer that connects operational evidence to coordinated action and verified recovery." actions={<CtaLink to="/contact?intent=operation">Discuss Your Operation</CtaLink>} />
-    <Section eyebrow="The category insight" title="The last mile in operations is accountability."><div className="lm-copy-stack"><p>Organizations already have strong systems for control, monitoring, telemetry, equipment management, work, enterprise workflow, analytics, and service execution. The unresolved problem is the complete path between those systems.</p><p>That is where identity fragments, context is rebuilt, ownership becomes unclear, action crosses authority boundaries, and a closed ticket is mistaken for physical recovery. Last Mile is building the Physical Operations Platform to make that path accountable.</p></div></Section>
-    <Section eyebrow="Founder" title="Experience across enterprise platforms revealed the missing operating layer." tone="wash"><div className="lm-founder"><div><h3>Rodney Runolfson</h3><p>Founder and CEO</p></div><div><p>Rodney brings decades of enterprise-platform strategy and implementation experience, including building and leading a major ServiceNow practice at Deloitte. That work showed how a shared platform could transform digital workflows—and where physical operations remained disconnected across controls, data, work, providers, and evidence.</p><p>That experience is the source of the Last Mile insight, not a continuing dependency. The Last Mile Platform is vendor-independent by design and works above the operational and enterprise systems customers already trust.</p></div></div></Section>
-    <Section eyebrow="Why now" title="Physical operations have outgrown disconnected response."><ol className="lm-why-now">{whyNow.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ol></Section>
-    <Section eyebrow="One platform" title="Four integrated capabilities, one accountable response." tone="wash"><ProductGrid /></Section>
-    <Section eyebrow="Build with operators" title="Prove the loop with real Conditions and measurable outcomes." tone="dark"><div className="lm-copy-stack"><p>Last Mile begins with a consequential operational Condition, the systems and people involved, the authority required to respond, and the live evidence that proves recovery.</p><CtaLink to="/contact?intent=design-partnership">Explore a Design Partnership</CtaLink></div></Section>
+  const description = "Last Mile exists to make industrial response visible, coordinated, and measurable across the control, data, work, provider, and evidence systems already in place.";
+  return <><SEO title="About Last Mile | Built for the Operational Handoffs" description={description} canonicalPath="/about" markdownPath="/about.md" jsonLd={createBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])} />
+    <div className="lm-v2-page">
+      <EditorialHero eyebrow="About Last Mile" title="We built Last Mile because industrial response still breaks at the handoffs." intro="Enterprise platforms transformed digital work. Physical operations still depend on disconnected control, data, work, provider, and evidence systems. Last Mile exists to make the complete response visible, coordinated, and measurable without forcing customers into another vendor silo." primary={{ label: "Discuss Your Operation", to: "/contact?intent=operation" }} />
+
+      <EditorialSection title="Built from decades of enterprise-platform experience—and its limits." tone="grid">
+        <div className="lm-founder-v2"><div className="lm-founder-v2__identity"><span className="lm-v2-card-label">Founder and CEO</span><h3>Rodney Runolfson</h3></div><div className="lm-founder-v2__copy"><p>Rodney Runolfson brings three decades of experience across enterprise platforms, including roles as a customer, ServiceNow employee, and founder of Deloitte’s U.S. ServiceNow practice. That experience demonstrated what shared platforms can accomplish—and where physical operations remain fundamentally different.</p><p>Last Mile applies those lessons without depending on ServiceNow or any other single enterprise vendor. The company is building an operations-native platform on GCP for the cross-system work that established platforms leave unresolved.</p></div></div>
+      </EditorialSection>
+
+      <EditorialSection eyebrow="Working principles" title="Evidence earns authority." tone="dark">
+        <ul className="lm-principles-v2">{principles.map((principle) => <li key={principle}>{principle}</li>)}</ul>
+      </EditorialSection>
+
+      <EditorialSection eyebrow={companyStage.label} title="Clear about the stage. Serious about the proof.">
+        <div className="lm-v2-columns-2"><p className="lm-v2-large-copy">{companyStage.summary}</p><p className="lm-v2-large-copy">{companyStage.evidence}</p></div>
+      </EditorialSection>
+      <NextStep title="Bring the operational handoff your team cannot make accountable." copy="We will start with what happens today, who holds authority, and which live measurements would establish recovery." label="Discuss Your Operation" to="/contact?intent=operation" secondary={{ label: "See What We Are Proving", to: "/data-center-cooling" }} />
+    </div>
   </>;
 }

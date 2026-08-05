@@ -1,6 +1,7 @@
 import type { ComponentType } from "react";
 import { createBrowserRouter, redirect } from "react-router";
 import { Root } from "./components/Root";
+import { RouteLoading } from "./components/RouteLoading";
 
 function lazyPage<T extends Record<string, unknown>>(
   loader: () => Promise<T>,
@@ -26,6 +27,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
+    HydrateFallback: RouteLoading,
     children: [
       { index: true, lazy: lazyPage(() => import("./pages/HomePage"), "HomePage") },
       { path: "platform", lazy: lazyPage(() => import("./pages/PlatformOverviewPage"), "PlatformOverviewPage") },
@@ -36,7 +38,8 @@ export const router = createBrowserRouter([
       { path: "singularity", lazy: lazyPage(() => import("./pages/SSOMPage"), "SSOMPage") },
       { path: "ssom", loader: redirectTo("/singularity") },
       { path: "solutions", loader: redirectTo("/platform") },
-      { path: "integrations", lazy: lazyPage(() => import("./pages/OurIntegrationsPage"), "OurIntegrationsPage") },
+      { path: "ecosystem", lazy: lazyPage(() => import("./pages/EcosystemPage"), "EcosystemPage") },
+      { path: "integrations", loader: redirectTo("/ecosystem") },
       {
         path: "integrations/:vendorSlug/:productSlug",
         lazy: lazyPage(() => import("./pages/IntegrationDetailPage"), "IntegrationDetailPage"),
@@ -44,6 +47,7 @@ export const router = createBrowserRouter([
       { path: "about", lazy: lazyPage(() => import("./pages/AboutPage"), "AboutPage") },
       { path: "company", loader: redirectTo("/about") },
       { path: "company/newsroom", lazy: lazyPage(() => import("./pages/NewsroomPage"), "NewsroomPage") },
+      { path: "resources", lazy: lazyPage(() => import("./pages/ResourcesPage"), "ResourcesPage") },
       {
         path: "company/newsroom/:slug",
         lazy: lazyPage(() => import("./pages/PressReleaseDetailPage"), "PressReleaseDetailPage"),

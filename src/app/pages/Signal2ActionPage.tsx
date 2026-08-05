@@ -68,7 +68,7 @@ export function Signal2ActionPage() {
               <div className="text-center">
                 <p className="lm-eyebrow">Signal 2 Action</p>
                 <h1 className="hero-title-gradient mt-6 text-4xl font-bold tracking-tight leading-tight mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
-                  Conversations about the operating layer between detection and verified outcome.
+                  Conversations about the response between detection and a proven operating result.
                 </h1>
                 <p className="text-2xl text-slate-300 leading-relaxed max-w-4xl mx-auto">
                   Signal 2 Action is the Last Mile podcast about operational intelligence, workflow, automation, real operators, and accountable action.

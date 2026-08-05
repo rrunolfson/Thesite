@@ -1,17 +1,29 @@
 import { SEO } from "@/app/components/SEO";
-import { ProductPageLayout } from "@/app/components/ProductPageLayout";
+import { EditorialHero, EditorialSection, NextStep } from "@/app/components/NarrativeComponents";
 import { createBreadcrumbSchema, createProductSchema } from "@/app/lib/structuredData";
 
+const roleViews = ["Facilities operator", "Maintenance or reliability leader", "Regional operations leader", "Service provider", "Platform administrator"] as const;
+const resultStates = ["Recovery verified", "Partially recovered", "Intervention unsuccessful", "Recurrence detected", "Verification unavailable because data is stale or missing"] as const;
+
 export function InfinitControlPage() {
-  const description="Infinit-Control is the role-based command surface for a live Condition, affected topology, evidence, coordinated work, current telemetry, and verified outcomes.";
-  return <><SEO title="Infinit-Control | See and Verify Physical Outcomes" description={description} canonicalPath="/infinit-control" jsonLd={[createProductSchema("Infinit-Control","/infinit-control",description),createBreadcrumbSchema([{name:"Home",path:"/"},{name:"Infinit-Control",path:"/infinit-control"}])]} />
-  <ProductPageLayout eyebrow="See + Verify" title="See the live Condition, coordinated work, and verified physical outcome in one command surface." intro="Infinit-Control gives operators and leaders one role-based view of the Condition, affected assets, evidence, active work, decisions, current telemetry, and verified outcome." primaryCta={{label:"Discuss Your Command Surface",to:"/contact?intent=operation"}} secondaryCta={{label:"Explore the Platform",to:"/platform"}}
-    overview={{heading:"A command surface, not another generic dashboard.",copy:["Infinit-Control draws from Singularity and the active platform response. It does not create a separate truth store. It gives each role the context needed to understand the Condition, see who owns the response, inspect current evidence, and determine whether the physical operation recovered."],children:<div className="lm-experience-list">{["Live Condition and affected topology","Evidence and confidence","Active response and owner","Workflow state and approvals","Current telemetry and freshness","Verified recovery or recurrence","Cross-site learning and comparison where policy permits"].map((item)=><span key={item}>{item}</span>)}</div>}}
-    benefits={[{title:"One view of Condition and response"},{title:"Evidence and confidence in context"},{title:"Live ownership and approval state"},{title:"Return telemetry beside completed work"},{title:"Role-based operational focus"},{title:"Recurrence visible after recovery"}]}
-    features={[{title:"Condition and topology views"},{title:"Evidence timeline"},{title:"Owner, work, and acknowledgement state"},{title:"Approval and workflow state"},{title:"Telemetry freshness and quality"},{title:"Verified outcome contract"}]}
-    useCases={["Data Center Cooling command view","Operations and maintenance response board","Shift handoff with unresolved Conditions","Asset and affected-topology review","Evidence and source-health review","Verified recovery and recurrence monitoring"]}
-    relatedProducts={[{label:"Infinit-Signal",to:"/infinit-signal",copy:"Qualifies evidence and creates the Condition."},{label:"Singularity",to:"/singularity",copy:"Provides shared operational context."},{label:"Infinit-Flow",to:"/infinit-flow",copy:"Coordinates work and action."},{label:"Last Mile Platform",to:"/platform"}]}
-    faqs={[{question:"Is Infinit-Control a generic dashboard?",answer:"No. It is a role-based operational command surface centered on accountable Conditions, active response, current evidence, and verified physical outcomes."},{question:"Does it replace HMI, SCADA, or historian interfaces?",answer:"No. Those systems retain their control and source roles. Infinit-Control presents cross-system accountability above them."},{question:"Does it create another truth store?",answer:"No. It draws from the shared operational identity and memory in Singularity."}]}
-    resources={[{label:"Platform overview",to:"/platform"},{label:"Data Center Cooling reference use case",to:"/data-center-cooling"},{label:"Signal 2 Action",to:"/signal-to-action"}]} />
+  const description = "Infinit-Control gives authorized roles a live view of affected equipment, ownership, work, source quality, return telemetry, and recovery status.";
+  return <><SEO title="Infinit-Control | See Whether the Operation Recovered" description={description} canonicalPath="/infinit-control" jsonLd={[createProductSchema("Infinit-Control", "/infinit-control", description), createBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Infinit-Control", path: "/infinit-control" }])]} />
+    <div className="lm-v2-page">
+      <EditorialHero eyebrow="Infinit-Control · See the result" title="See whether the operation actually recovered." intro="Infinit-Control gives each authorized role a live view of the affected equipment, current operating state, ownership, work, decisions, source quality, return telemetry, and recovery status." primary={{ label: "Discuss Your Command Experience", to: "/contact?intent=operation" }} secondary={{ label: "See the Cooling Use Case", to: "/data-center-cooling" }} />
+
+      <EditorialSection title="A command experience, not dashboard wallpaper." tone="dark">
+        <div className="lm-command-surface"><div className="lm-command-surface__bar"><strong>Cooling Loop B · Active response</strong><span>Operating on reduced protection</span></div><div className="lm-command-surface__grid"><article><span>Affected topology</span><strong>CHWP-02 · Loop B · Hall 04</strong><p>Command ON · run feedback OFF<br />Source fresh · identity resolved</p></article><article><span>Ownership</span><strong>Facilities</strong><p>Provider acknowledged · approval granted</p></article><article><span>Return telemetry</span><strong>ΔP · 11.8 psi</strong><p>Amperage rising · run state changing</p></article><article><span>Protected environment</span><strong>Rack inlet · 23.4°C</strong><p>Within approved band</p></article><article><span>Recovery contract</span><strong>Evaluating</strong><p>Stability and recurrence window active</p></article></div></div>
+      </EditorialSection>
+
+      <EditorialSection title="The same issue appears differently to each authorized role." intro="Permissions and data scope remain visible; a provider does not receive the same view or authority as a platform administrator.">
+        <div className="lm-role-views">{roleViews.map((role) => <article key={role}><h3>{role}</h3><p>Role-specific operating context, actions, evidence, and scope.</p></article>)}</div>
+      </EditorialSection>
+
+      <EditorialSection eyebrow="Result states" title="Work completion does not determine the operating result." tone="grid">
+        <div className="lm-result-states">{resultStates.map((state, index) => <article key={state}><span>{String(index + 1).padStart(2, "0")}</span><h3>{state}</h3></article>)}</div>
+        <p className="lm-v2-caveat">A green completion state appears only when the recovery contract has sufficient, current evidence—not because a task or ticket was closed.</p>
+      </EditorialSection>
+      <NextStep title="See the result model in a complete operating scenario." copy="The Data Center Cooling use case applies source evidence, shared equipment context, governed work, and a telemetry-based recovery contract to one response." label="Review the Cooling Use Case" to="/data-center-cooling" secondary={{ label: "Discuss Your Command Experience", to: "/contact?intent=operation" }} />
+    </div>
   </>;
 }

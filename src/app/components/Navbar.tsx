@@ -8,7 +8,8 @@ const products = [
   ["/infinit-flow", "Infinit-Flow"],
   ["/infinit-control", "Infinit-Control"],
 ] as const;
-const resources = [["/signal-to-action", "Signal 2 Action"], ["/company/newsroom", "News and Updates"]] as const;
+const useCases = [["/data-center-cooling", "Data Center Cooling"], ["/#where-else-it-applies", "Where Else It Applies"]] as const;
+const resources = [["/resources", "Build and Proof"], ["/resources", "Perspectives"], ["/signal-to-action", "Signal 2 Action"], ["/company/newsroom", "News and Updates"]] as const;
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -25,9 +26,9 @@ export function Navbar() {
         <div className="lm-nav__links">
           <NavLink to="/" label="Home" active={active("/")} />
           <NavLink to="/platform" label="Platform" active={active("/platform")} />
-          <Dropdown label="Products" active={products.some(([to]) => active(to))} open={openMenu === "products"} onOpen={() => setOpenMenu("products")} items={products} isActive={active} />
-          <Dropdown label="Use Case" active={active("/data-center-cooling")} open={openMenu === "use-case"} onOpen={() => setOpenMenu("use-case")} items={[["/data-center-cooling", "Data Center Cooling"]]} isActive={active} />
-          <Dropdown label="Resources" active={resources.some(([to]) => active(to))} open={openMenu === "resources"} onOpen={() => setOpenMenu("resources")} items={resources} isActive={active} />
+          <Dropdown label="Products" active={products.some(([to]) => active(to))} open={openMenu === "products"} onOpen={() => setOpenMenu((value) => value === "products" ? null : "products")} items={products} isActive={active} />
+          <Dropdown label="Use Cases" active={active("/data-center-cooling")} open={openMenu === "use-cases"} onOpen={() => setOpenMenu((value) => value === "use-cases" ? null : "use-cases")} items={useCases} isActive={active} />
+          <Dropdown label="Resources" active={resources.some(([to]) => active(to))} open={openMenu === "resources"} onOpen={() => setOpenMenu((value) => value === "resources" ? null : "resources")} items={resources} isActive={active} />
           <NavLink to="/about" label="About" active={active("/about")} />
         </div>
         <Link to="/contact?intent=operation" className="lm-nav__cta">Discuss Your Operation</Link>
@@ -35,8 +36,8 @@ export function Navbar() {
         {mobileOpen ? <div className="lm-nav__mobile">
           <NavLink to="/" label="Home" active={active("/")} /><NavLink to="/platform" label="Platform" active={active("/platform")} />
           <strong>Products</strong>{products.map(([to,label]) => <NavLink key={to} to={to} label={label} active={active(to)} />)}
-          <strong>Use Case</strong><NavLink to="/data-center-cooling" label="Data Center Cooling" active={active("/data-center-cooling")} />
-          <strong>Resources</strong>{resources.map(([to,label]) => <NavLink key={to} to={to} label={label} active={active(to)} />)}
+          <strong>Use Cases</strong>{useCases.map(([to,label]) => <NavLink key={to} to={to} label={label} active={active(to)} />)}
+          <strong>Resources</strong>{resources.map(([to,label]) => <NavLink key={`${to}-${label}`} to={to} label={label} active={active(to)} />)}
           <NavLink to="/about" label="About" active={active("/about")} /><NavLink to="/contact?intent=operation" label="Discuss Your Operation" active={active("/contact")} />
         </div> : null}
       </div>
@@ -46,5 +47,5 @@ export function Navbar() {
 
 function NavLink({ to, label, active }: { to: string; label: string; active: boolean }) { return <div className="lm-nav__item"><Link to={to} className={active ? "is-active" : ""}>{label}</Link></div>; }
 function Dropdown({ label, items, open, onOpen, active, isActive }: { label: string; items: readonly (readonly [string,string])[]; open: boolean; onOpen: () => void; active: boolean; isActive: (to:string)=>boolean }) {
-  return <div className="lm-nav__item" onMouseEnter={onOpen}><button type="button" className={active ? "is-active" : ""} aria-expanded={open} onClick={onOpen}>{label}<ChevronDown /></button>{open ? <div className="lm-nav__dropdown">{items.map(([to,item]) => <Link key={to} to={to} className={isActive(to) ? "is-active" : ""}>{item}</Link>)}</div> : null}</div>;
+  return <div className="lm-nav__item" onMouseEnter={() => { if (!open) onOpen(); }} onKeyDown={(event) => { if (event.key === "Escape" && open) onOpen(); }}><button type="button" className={active ? "is-active" : ""} aria-expanded={open} onClick={onOpen}>{label}<ChevronDown /></button>{open ? <div className="lm-nav__dropdown">{items.map(([to,item]) => <Link key={`${to}-${item}`} to={to} className={isActive(to) ? "is-active" : ""}>{item}</Link>)}</div> : null}</div>;
 }

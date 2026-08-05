@@ -136,6 +136,7 @@ export function IntegrationDetailPage() {
         title={pageTitle}
         description={pageDescription}
         canonicalPath={`/integrations/${vendorSlug}/${productSlug}`}
+        robots="noindex, follow"
       />
 
       <div className="lm-integration-detail relative min-h-screen overflow-hidden pt-20">

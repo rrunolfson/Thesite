@@ -28,8 +28,12 @@ export function Root() {
 
   // Scroll to top on route change
   useEffect(() => {
+    if (location.hash) {
+      window.requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: "start" }));
+      return;
+    }
     window.scrollTo(0, 0);
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   // Set favicon
   useEffect(() => {

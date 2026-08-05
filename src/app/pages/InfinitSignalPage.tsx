@@ -1,20 +1,38 @@
+import { ArrowRight } from "lucide-react";
 import { SEO } from "@/app/components/SEO";
-import { ProductPageLayout } from "@/app/components/ProductPageLayout";
+import { EditorialHero, EditorialSection, NextStep } from "@/app/components/NarrativeComponents";
 import { createBreadcrumbSchema, createProductSchema } from "@/app/lib/structuredData";
 
+const signalStates = ["Fresh event", "Duplicate", "Retained message", "Replay", "Late arrival", "Bad-quality measurement", "Unknown asset", "Qualified operating issue"] as const;
+const pipeline = [
+  { title: "Enters", items: ["MQTT and Sparkplug B", "OPC UA", "Approved UNS topics", "Historian or data-platform outputs", "REST APIs and webhooks", "Source-system metadata"] },
+  { title: "Checked", items: ["Source identity and authority", "Source time and receipt time", "Freshness and quality", "Duplicate and replay classification", "Mapping version", "Asset and topology resolution", "Policy eligibility"] },
+  { title: "Leaves", items: ["SSOM-conformant observations and events", "Qualified issues", "Asset and relationship references", "Quality and confidence", "Provenance and lineage", "Quarantine or rejection evidence", "Replay and forensic references"] },
+] as const;
+
 export function InfinitSignalPage() {
-  const description="Infinit-Signal acquires and qualifies operational evidence, preserving quality, timing, source context, lineage, and accountable Conditions for Singularity.";
-  return <><SEO title="Infinit-Signal | Observe and Qualify Operational Evidence" description={description} canonicalPath="/infinit-signal" jsonLd={[createProductSchema("Infinit-Signal","/infinit-signal",description),createBreadcrumbSchema([{name:"Home",path:"/"},{name:"Infinit-Signal",path:"/infinit-signal"}])]} />
-  <ProductPageLayout eyebrow="Observe + Qualify" title="Turn raw operational signals into one accountable Condition." intro="Infinit-Signal acquires operational evidence from the systems customers already use, validates its quality and timing, resolves source context, and creates trusted SSOM-conformant operational records for Singularity." primaryCta={{label:"Discuss Your Source Environment",to:"/contact?intent=architecture"}} secondaryCta={{label:"Explore Data Center Cooling",to:"/data-center-cooling"}}
-    overview={{heading:"Qualify evidence before response begins.",copy:["A signal is not automatically a problem. It may be stale, duplicated, late, replayed, incomplete, expected, or disconnected from the affected asset. Infinit-Signal establishes whether the evidence is trustworthy and whether it represents an accountable operational Condition."],children:<RolePanel rows={[["Receives","Telemetry, events, alarms, equipment state, and source metadata"],["Determines","Quality, freshness, duplicates, late data, replay, affected asset, and operational meaning"],["Produces","Assets, Observations, evidence, lineage, and accountable Conditions"],["Does not replace","MQTT brokers, OPC UA systems, historians, SCADA, MES, or BMS"]]} />}}
-    benefits={[{title:"Separate noise from Conditions",copy:"Qualify evidence before work, approvals, or automation begin."},{title:"Preserve source context",copy:"Keep timing, quality, provenance, and lineage connected to the Condition."},{title:"Resolve affected assets",copy:"Connect observations to identity, topology, location, and operational impact."}]}
-    features={[{title:"Source profiles and acquisition"},{title:"Quality and freshness evaluation"},{title:"Duplicate, replay, and late-data classification"},{title:"Asset and topology resolution"},{title:"SSOM-conformant Observations"},{title:"Condition evidence and lineage"}]}
-    useCases={["Data Center Cooling thermal excursions","Equipment-state and performance degradation","Quality exceptions tied to affected production assets","Energy anomalies requiring accountable investigation","Source-health and evidence-quality failures"]}
-    relatedProducts={[{label:"Singularity",to:"/singularity",copy:"Understands and remembers the qualified evidence."},{label:"Infinit-Flow",to:"/infinit-flow",copy:"Coordinates the governed response."},{label:"Infinit-Control",to:"/infinit-control",copy:"Shows the live Condition and outcome."},{label:"Last Mile Platform",to:"/platform"}]}
-    faqs={[{question:"Does Infinit-Signal replace a broker or historian?",answer:"No. It acquires evidence from existing source systems and preserves the context needed to qualify and act on that evidence."},{question:"What is a Condition?",answer:"A Condition is a qualified operational issue with identity, affected topology, severity, confidence, evidence, lifecycle, and response context."}]}
-    resources={[{label:"Platform overview",to:"/platform"},{label:"Data Center Cooling reference use case",to:"/data-center-cooling"},{label:"Signal 2 Action",to:"/signal-to-action"}]}
-    finalCta={{heading:"Bring one consequential Condition into focus.",copy:["Show us the source systems, evidence gaps, and response path your team needs to make accountable."],label:"Discuss Your Source Environment",to:"/contact?intent=architecture"}} />
+  const description = "Infinit-Signal acquires approved operational data, evaluates source time and quality, resolves affected assets, and creates trusted records for the Last Mile Platform.";
+  return <><SEO title="Infinit-Signal | Know Which Signals Deserve a Response" description={description} canonicalPath="/infinit-signal" jsonLd={[createProductSchema("Infinit-Signal", "/infinit-signal", description), createBreadcrumbSchema([{ name: "Home", path: "/" }, { name: "Infinit-Signal", path: "/infinit-signal" }])]} />
+    <div className="lm-v2-page">
+      <EditorialHero eyebrow="Infinit-Signal · Trust the input" title="Know which signals deserve a response." intro="Infinit-Signal acquires approved outputs from operational systems, preserves source authority, evaluates time and quality, resolves the affected asset, and creates trusted records for the rest of the Last Mile Platform." primary={{ label: "Discuss Your Source Environment", to: "/contact?intent=architecture" }} secondary={{ label: "See the Cooling Use Case", to: "/data-center-cooling" }} />
+
+      <EditorialSection title="Raw telemetry can look authoritative and still be wrong." intro="A measurement may be current, stale, repeated, replayed, delayed, incomplete, or disconnected from the asset it appears to describe." tone="grid">
+        <div className="lm-signal-states">{signalStates.map((state, index) => <article key={state}><span>{String(index + 1).padStart(2, "0")}</span><h3>{state}</h3></article>)}</div>
+      </EditorialSection>
+
+      <EditorialSection title="What enters. What is checked. What leaves.">
+        <div className="lm-pipeline">{pipeline.map((stage) => <article key={stage.title}><h3>{stage.title}</h3><ul className="lm-v2-list">{stage.items.map((item) => <li key={item}>{item}</li>)}</ul></article>)}</div>
+        <p className="lm-v2-caveat">These are supported connection patterns, not a claim that every protocol or customer environment has already been production-validated.</p>
+      </EditorialSection>
+
+      <EditorialSection eyebrow="Cooling example" title="The same apparent failure can produce three responsible decisions." tone="dark">
+        <div className="lm-example-decision"><article><h3>Reject</h3><p>A known replay duplicates evidence already processed.</p></article><ArrowRight /><article><h3>Quarantine</h3><p>Fresh data names equipment that cannot be resolved confidently.</p></article><ArrowRight /><article><h3>Accept</h3><p>Fresh, good-quality evidence resolves to the approved pump and indicates command ON with run feedback OFF.</p></article></div>
+      </EditorialSection>
+
+      <EditorialSection eyebrow="Ecosystem maturity" title="Support labels should say what is actually known.">
+        <div className="lm-v2-columns-3">{["Profiled", "Validated", "Reference Architecture", "Partner-Supported", "Customer-Specific"].map((label) => <article key={label}><h3>{label}</h3><p>A precise maturity category—not an implied certification or production claim.</p></article>)}</div>
+      </EditorialSection>
+      <NextStep title="Bring one consequential signal into focus." copy="Start with the source, its timing and quality, the affected equipment, and the decision your team must make when the evidence arrives." label="Discuss Your Source Environment" to="/contact?intent=architecture" secondary={{ label: "Continue to Singularity", to: "/singularity" }} />
+    </div>
   </>;
 }
-
-function RolePanel({rows}:{rows:string[][]}) { return <dl className="lm-role-panel">{rows.map(([term,detail])=><div key={term}><dt>{term}</dt><dd>{detail}</dd></div>)}</dl>; }
