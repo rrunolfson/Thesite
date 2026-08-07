@@ -125,10 +125,10 @@ export function IntegrationDetailPage() {
     };
   }, [productSlug, vendorSlug]);
 
-  const pageTitle = detail ? `${detail.product_name} Integration Data Coverage` : "Integration Detail";
+  const pageTitle = detail ? `${detail.product_name} Technical Reference` : "Integration Detail Reference";
   const pageDescription = detail
     ? detail.data_coverage_summary || detail.overview
-    : "Detailed integration metadata for OEM product APIs and accessible data coverage.";
+    : "Detailed technical reference metadata for approved source-profile and integration coverage review.";
 
   return (
     <>
@@ -136,9 +136,10 @@ export function IntegrationDetailPage() {
         title={pageTitle}
         description={pageDescription}
         canonicalPath={`/integrations/${vendorSlug}/${productSlug}`}
+        robots="noindex, follow"
       />
 
-      <div className="relative min-h-screen overflow-hidden pt-20">
+      <div className="lm-integration-detail relative min-h-screen overflow-hidden pt-20">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 data-grid-bg opacity-20"></div>
           <div className="absolute -top-28 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#217ED9]/15 blur-3xl"></div>

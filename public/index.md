@@ -1,24 +1,30 @@
 # Last Mile
 
-Last Mile brings operational technology asset and performance data into ServiceNow so enterprises can run operations, workforce, and vendors from a single system of execution.
+Last Mile is the Physical Operations Platform: the independent operating layer above existing OT, data, work, and service systems. It turns trusted operational Conditions into governed action and verifies the physical outcome.
+
+## Core category
+
+- The operating layer industry has been waiting for.
+- Unified visibility. Governed command. Verified physical outcomes.
+- Observe → Understand → Coordinate → Act → Verify → Learn
 
 ## Primary resources
 
-- Website: https://lastmileinc.ai/
-- Integrations catalog: https://lastmileinc.ai/integrations
-- Machine-readable integrations data: https://lastmileinc.ai/integrations.json
-- Contact: https://lastmileinc.ai/contact
-- Company overview: https://lastmileinc.ai/company
-- Signal 2 Action podcast: https://lastmileinc.ai/signal-2-action
-- Podcast feed: https://lastmileinc.ai/podcast-feed.xml
+- Platform: https://lastmileinc.ai/platform
+- Infinit-Signal: https://lastmileinc.ai/infinit-signal
+- Singularity: https://lastmileinc.ai/singularity
+- Infinit-Flow: https://lastmileinc.ai/infinit-flow
+- Infinit-Control: https://lastmileinc.ai/infinit-control
+- About: https://lastmileinc.ai/about
+- Discuss an operation: https://lastmileinc.ai/contact
+- Signal 2 Action: https://lastmileinc.ai/signal-to-action
+- News and updates: https://lastmileinc.ai/company/newsroom
 
-## Agent discovery
+## Platform doctrine
 
-- API catalog: https://lastmileinc.ai/.well-known/api-catalog
-- Agent skills index: https://lastmileinc.ai/.well-known/agent-skills/index.json
-- MCP server card: https://lastmileinc.ai/.well-known/mcp/server-card.json
-
-## Notes
-
-- The integrations catalog is the main machine-readable public data surface on this site.
-- Contact the Last Mile team for protected integration delivery workflows or private implementation details.
+- Infinit-Signal acquires and qualifies operational evidence.
+- Singularity is the SSOM-based operational memory and OT world model.
+- Infinit-Flow coordinates governed work and authorized enterprise-system action.
+- Infinit-Control shows the live Condition, response, evidence, and verified outcome.
+- Last Mile works above existing controls and systems of record; it does not replace safety-critical control.
+- A verified outcome requires live post-action telemetry, not only a closed ticket.

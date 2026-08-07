@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Signal 2 Action</title>
+  <desc id="desc">For the people who keep operations moving</desc>
+  <rect width="1200" height="1200" fill="#0b1120"/>
+  <path d="M0 220h1200M0 420h1200M0 620h1200M0 820h1200M0 1020h1200M220 0v1200M420 0v1200M620 0v1200M820 0v1200M1020 0v1200" stroke="#1d7cd8" stroke-opacity=".12" stroke-width="2"/>
+  <circle cx="930" cy="240" r="210" fill="#1d7cd8" opacity=".18"/>
+  <circle cx="250" cy="930" r="260" fill="#3a8f98" opacity=".16"/>
+  <path d="M232 625h160l58-112 90 232 86-318 74 198h268" fill="none" stroke="#75bda7" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M232 625h160l58-112 90 232 86-318 74 198h268" fill="none" stroke="#1d7cd8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="120" y="165" fill="#75ADE6" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="8">LAST MILE</text>
+  <text x="120" y="880" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="138" font-weight="800">Signal 2 Action</text>
+  <text x="126" y="955" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="500">For the people who keep operations moving</text>
+</svg>

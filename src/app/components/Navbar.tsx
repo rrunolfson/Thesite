@@ -1,103 +1,51 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router";
-import { Menu, X } from "lucide-react";
 
-interface NavItem {
-  to: string;
-  label: string;
-}
+const products = [
+  ["/infinit-signal", "Infinit-Signal"],
+  ["/singularity", "Singularity"],
+  ["/infinit-flow", "Infinit-Flow"],
+  ["/infinit-control", "Infinit-Control"],
+] as const;
+const useCases = [["/data-center-cooling", "Data Center Cooling"], ["/#where-else-it-applies", "Where Else It Applies"]] as const;
+const resources = [["/resources", "Build and Proof"], ["/resources", "Perspectives"], ["/signal-to-action", "Signal 2 Action"], ["/company/newsroom", "News and Updates"]] as const;
 
 export function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
   const location = useLocation();
+  const active = (to: string) => location.pathname === to || (to !== "/" && location.pathname.startsWith(`${to}/`));
 
-  const navItems: NavItem[] = [
-    { to: "/", label: "Home" },
-    { to: "/integrations", label: "Our Integrations" },
-    { to: "/signal-2-action", label: "Signal 2 Action" },
-    { to: "/company", label: "Company" },
-    { to: "/contact", label: "Contact" },
-  ];
-
-  const isActive = (item: NavItem) =>
-    location.pathname === item.to ||
-    (item.to !== "/" && location.pathname.startsWith(`${item.to}/`));
+  useEffect(() => { setMobileOpen(false); setOpenMenu(null); }, [location.pathname]);
 
   return (
-    <nav className="fixed w-full z-50 glass-panel border-b border-slate-700/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer">
-            <img src="/logo.png" alt="Last Mile" className="h-6 w-auto rounded-md" />
-            <span className="font-bold text-2xl tracking-tight text-white uppercase">
-              Last <span className="text-[#217ED9]">Mile</span>
-            </span>
-          </Link>
-
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-6">
-            {navItems.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(link)
-                    ? "text-white"
-                    : "text-slate-300 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <a
-              href="https://store.servicenow.com/store/app/f36920a7975043d06878bd3de053af39"
-              target="_blank"
-              rel="noreferrer"
-              className="ml-2 flex-shrink-0"
-              aria-label="View Last Mile's ServiceNow partner build listing"
-            >
-              <img
-                src="/servicenow-partner-build-badge.png"
-                alt="ServiceNow Partner Build badge"
-                className="h-20 w-auto object-contain"
-              />
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-slate-300 hover:text-white p-2"
-            >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
-          </div>
+    <nav className="lm-nav" aria-label="Primary navigation" onMouseLeave={() => setOpenMenu(null)}>
+      <div className="lm-nav__inner">
+        <Link to="/" className="lm-nav__brand"><img src="/logo.png" width="64" height="41" alt="" /><strong><span>Last</span> <span>Mile</span></strong></Link>
+        <div className="lm-nav__links">
+          <NavLink to="/" label="Home" active={active("/")} />
+          <NavLink to="/platform" label="Platform" active={active("/platform")} />
+          <Dropdown label="Products" active={products.some(([to]) => active(to))} open={openMenu === "products"} onOpen={() => setOpenMenu((value) => value === "products" ? null : "products")} items={products} isActive={active} />
+          <Dropdown label="Use Cases" active={active("/data-center-cooling")} open={openMenu === "use-cases"} onOpen={() => setOpenMenu((value) => value === "use-cases" ? null : "use-cases")} items={useCases} isActive={active} />
+          <Dropdown label="Resources" active={resources.some(([to]) => active(to))} open={openMenu === "resources"} onOpen={() => setOpenMenu((value) => value === "resources" ? null : "resources")} items={resources} isActive={active} />
+          <NavLink to="/about" label="About" active={active("/about")} />
         </div>
+        <Link to="/contact?intent=operation" className="lm-nav__cta">Discuss Your Operation</Link>
+        <button type="button" className="lm-nav__toggle" aria-label={mobileOpen ? "Close navigation" : "Open navigation"} aria-expanded={mobileOpen} onClick={() => setMobileOpen((value) => !value)}>{mobileOpen ? <X /> : <Menu />}</button>
+        {mobileOpen ? <div className="lm-nav__mobile">
+          <NavLink to="/" label="Home" active={active("/")} /><NavLink to="/platform" label="Platform" active={active("/platform")} />
+          <strong>Products</strong>{products.map(([to,label]) => <NavLink key={to} to={to} label={label} active={active(to)} />)}
+          <strong>Use Cases</strong>{useCases.map(([to,label]) => <NavLink key={to} to={to} label={label} active={active(to)} />)}
+          <strong>Resources</strong>{resources.map(([to,label]) => <NavLink key={`${to}-${label}`} to={to} label={label} active={active(to)} />)}
+          <NavLink to="/about" label="About" active={active("/about")} /><NavLink to="/contact?intent=operation" label="Discuss Your Operation" active={active("/contact")} />
+        </div> : null}
       </div>
-
-      {/* Mobile Menu Panel */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-slate-900 border-b border-slate-800 absolute w-full">
-          <div className="px-4 pt-2 pb-6 space-y-2">
-            {navItems.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
     </nav>
   );
+}
+
+function NavLink({ to, label, active }: { to: string; label: string; active: boolean }) { return <div className="lm-nav__item"><Link to={to} className={active ? "is-active" : ""}>{label}</Link></div>; }
+function Dropdown({ label, items, open, onOpen, active, isActive }: { label: string; items: readonly (readonly [string,string])[]; open: boolean; onOpen: () => void; active: boolean; isActive: (to:string)=>boolean }) {
+  return <div className="lm-nav__item" onMouseEnter={() => { if (!open) onOpen(); }} onKeyDown={(event) => { if (event.key === "Escape" && open) onOpen(); }}><button type="button" className={active ? "is-active" : ""} aria-expanded={open} onClick={onOpen}>{label}<ChevronDown /></button>{open ? <div className="lm-nav__dropdown">{items.map(([to,item]) => <Link key={`${to}-${item}`} to={to} className={isActive(to) ? "is-active" : ""}>{item}</Link>)}</div> : null}</div>;
 }

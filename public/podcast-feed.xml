@@ -5,25 +5,40 @@
   xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Signal 2 Action</title>
-    <link>https://lastmileinc.ai/signal-2-action</link>
+    <link>https://lastmileinc.ai/signal-to-action</link>
     <language>en-us</language>
-    <description>Conversations at the intersection of operational technology, enterprise workflows, and the future of industrial intelligence. Hosted by Last Mile Inc.</description>
+    <description>Signal 2 Action is the Last Mile podcast about operational intelligence, workflow, automation, real operators, and accountable action.</description>
     <copyright>© 2026 Last Mile Inc. All rights reserved.</copyright>
     <itunes:author>Last Mile Inc.</itunes:author>
     <itunes:owner>
       <itunes:name>Last Mile Inc.</itunes:name>
       <itunes:email>info@lastmileinc.ai</itunes:email>
     </itunes:owner>
-    <itunes:image href="https://lastmileinc.ai/logo.png"/>
+    <itunes:image href="https://lastmileinc.ai/signal-2-action-cover.svg"/>
     <image>
-      <url>https://lastmileinc.ai/logo.png</url>
+      <url>https://lastmileinc.ai/signal-2-action-cover.svg</url>
       <title>Signal 2 Action</title>
-      <link>https://lastmileinc.ai/signal-2-action</link>
+      <link>https://lastmileinc.ai/signal-to-action</link>
     </image>
     <itunes:category text="Technology"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
     <atom:link href="https://lastmileinc.ai/podcast-feed.xml" rel="self" type="application/rss+xml"/>
+
+    <!-- Episode 003 -->
+    <item>
+      <title>Last Mile - Knowledge '26 Wrap Up</title>
+      <description>Highlights from Knowledge '26, including key themes from the event and Last Mile's announcement of a radically partner-friendly model with its new delivery partner, Sgital.</description>
+      <content:encoded><![CDATA[Highlights from Knowledge '26, including key themes from the event and Last Mile's announcement of a radically partner-friendly model with its new delivery partner, Sgital.]]></content:encoded>
+      <enclosure url="https://lastmileinc.ai/audio/last_mile_k26_wrap_up.m4a" length="0" type="audio/x-m4a"/>
+      <guid isPermaLink="false">signal2action-ep003</guid>
+      <pubDate>Mon, 11 May 2026 08:00:00 +0000</pubDate>
+      <itunes:duration>20:20</itunes:duration>
+      <itunes:episode>3</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:author>Last Mile Inc.</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
 
     <!-- Episode 001 -->
     <item>

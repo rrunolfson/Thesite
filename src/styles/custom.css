@@ -2,6 +2,10 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #eaf1f4;
+  color: #445a64;
 }
 
 .font-mono {
@@ -9,23 +13,182 @@ body {
 }
 
 .glass-panel {
-  background: rgba(30, 41, 59, 0.7);
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(13, 35, 66, 0.82), rgba(7, 20, 38, 0.9)),
+    radial-gradient(circle at 0% 0%, rgba(0, 194, 255, 0.14), transparent 34%);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 194, 255, 0.22);
+  box-shadow:
+    inset 0 1px 0 rgba(230, 236, 255, 0.08),
+    0 18px 54px rgba(0, 12, 32, 0.32);
+}
+
+.site-navbar {
+  overflow: visible !important;
+}
+
+.site-navbar .nav-dropdown-panel {
+  z-index: 120;
 }
 
 .data-grid-bg {
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(0, 194, 255, 0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.11) 1px, transparent 1px),
+    linear-gradient(rgba(46, 123, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 123, 255, 0.06) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
 .hero-title-gradient {
-  background: linear-gradient(to right, #ffffff, #217ED9);
+  color: #263244;
+  background: linear-gradient(90deg, #263244 0%, #315f91 48%, #4c86c6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+@supports not (-webkit-background-clip: text) {
+  .hero-title-gradient {
+    color: #ffffff;
+    background: none;
+  }
+}
+
+a,
+button,
+summary {
+  -webkit-tap-highlight-color: rgba(76, 134, 198, 0.2);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #4c86c6;
+  outline-offset: 3px;
+}
+
+.operational-grid {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(0, 194, 255, 0.18), transparent 28rem),
+    radial-gradient(circle at 84% 20%, rgba(76, 134, 198, 0.11), transparent 24rem),
+    linear-gradient(180deg, #030816 0%, #071426 46%, #030816 100%);
+}
+
+.operational-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(rgba(0, 194, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.1) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.28));
+  pointer-events: none;
+}
+
+.operational-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, transparent 0 9%, rgba(0, 194, 255, 0.16) 9.05%, transparent 9.2% 90.8%, rgba(0, 194, 255, 0.12) 90.95%, transparent 91.1%),
+    linear-gradient(180deg, transparent 0 14%, rgba(76, 134, 198, 0.09) 14.08%, transparent 14.2% 84.8%, rgba(76, 134, 198, 0.1) 84.92%, transparent 85.05%);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.blueprint-panel,
+.blueprint-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 194, 255, 0.22);
+  background:
+    linear-gradient(180deg, rgba(13, 35, 66, 0.76), rgba(7, 20, 38, 0.9)),
+    radial-gradient(circle at top left, rgba(0, 194, 255, 0.12), transparent 42%);
+  box-shadow:
+    inset 0 1px 0 rgba(230, 236, 255, 0.08),
+    0 20px 58px rgba(0, 12, 32, 0.28);
+}
+
+.blueprint-card {
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.blueprint-card::before,
+.blueprint-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 194, 255, 0.18), transparent 28%) top left / 6rem 1px no-repeat,
+    linear-gradient(180deg, rgba(0, 194, 255, 0.18), transparent 28%) top left / 1px 6rem no-repeat,
+    linear-gradient(270deg, rgba(76, 134, 198, 0.16), transparent 28%) bottom right / 6rem 1px no-repeat,
+    linear-gradient(0deg, rgba(76, 134, 198, 0.16), transparent 28%) bottom right / 1px 6rem no-repeat;
+  pointer-events: none;
+}
+
+.blueprint-card:hover,
+.blueprint-card:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(76, 134, 198, 0.48);
+  box-shadow:
+    inset 0 1px 0 rgba(230, 236, 255, 0.1),
+    0 22px 64px rgba(0, 194, 255, 0.16);
+}
+
+.blueprint-art-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 194, 255, 0.28);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0, 194, 255, 0.18), transparent 44%),
+    linear-gradient(180deg, rgba(7, 20, 38, 0.92), rgba(3, 8, 22, 0.98));
+  padding: 0.65rem;
+  box-shadow: 0 26px 80px rgba(0, 194, 255, 0.14);
+}
+
+.blueprint-art-frame img {
+  display: block;
+  width: 100%;
+  border-radius: 0.7rem;
+  object-fit: contain;
+}
+
+.blueprint-panel input,
+.blueprint-panel textarea,
+.blueprint-panel select {
+  border-color: rgba(0, 194, 255, 0.24) !important;
+  background-color: rgba(3, 8, 22, 0.76) !important;
+  color: #e6ecff !important;
+}
+
+.blueprint-panel input:focus,
+.blueprint-panel textarea:focus,
+.blueprint-panel select:focus {
+  border-color: rgba(76, 134, 198, 0.72) !important;
+  box-shadow: 0 0 0 1px rgba(76, 134, 198, 0.28);
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .glass-panel {
+    border-radius: 0.5rem;
+  }
 }
 
 .telemetry-row:hover {
@@ -55,14 +218,6 @@ body {
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-/* Ensure content doesn't stay hidden if JS fails */
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
-
 /* Make first-screen content visible immediately */
 @media (min-width: 768px) {
   .reveal:first-of-type {
@@ -73,7 +228,7 @@ body {
 
 /* Selection color */
 ::selection {
-  background-color: rgba(33, 126, 217, 0.3);
+  background-color: rgba(0, 194, 255, 0.3);
   color: #ffffff;
 }
 
@@ -143,6 +298,209 @@ html {
   padding-left: 0.35rem;
 }
 
+.product-hero-visual-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.product-hero-blueprint-frame {
+  align-self: center;
+}
+
+.product-blueprint-image {
+  aspect-ratio: 16 / 9;
+  min-height: 320px;
+  max-height: 460px;
+  filter: saturate(1.06) contrast(1.08);
+}
+
+.platform-image-frame,
+.platform-hotspot-panel,
+.platform-core-card {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 24px 70px rgba(29, 124, 216, 0.12);
+}
+
+.platform-image-frame {
+  border-radius: 1.25rem;
+  border: 1px solid rgba(0, 194, 255, 0.3);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0, 194, 255, 0.18), transparent 42%),
+    linear-gradient(180deg, rgba(7, 20, 38, 0.9), rgba(3, 8, 22, 0.96));
+  padding: clamp(0.85rem, 2vw, 1.4rem);
+  overflow: hidden;
+}
+
+.platform-image-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: rgba(76, 134, 198, 0.5) rgba(38, 50, 68, 0.12);
+  scrollbar-width: thin;
+}
+
+.platform-image-stage {
+  position: relative;
+  margin: 0 auto;
+  width: min(100%, 1120px);
+  min-width: 760px;
+}
+
+.platform-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(33, 126, 217, 0.28);
+  background: #020617;
+  box-shadow: 0 20px 55px rgba(2, 6, 23, 0.34);
+}
+
+.platform-hotspot {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid transparent;
+  border-radius: 0.85rem;
+  background: rgba(76, 134, 198, 0);
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.platform-hotspot--signal,
+.platform-hotspot--control,
+.platform-hotspot--flow,
+.platform-hotspot--singularity {
+  z-index: 3;
+}
+
+.platform-hotspot:hover,
+.platform-hotspot.is-active {
+  border-color: rgba(0, 194, 255, 0.08);
+  background: rgba(0, 194, 255, 0.045);
+  box-shadow:
+    0 0 24px rgba(0, 194, 255, 0.18),
+    inset 0 0 24px rgba(76, 134, 198, 0.045);
+  outline: 0;
+}
+
+.platform-hotspot:focus-visible {
+  border-color: rgba(76, 134, 198, 0.35);
+  background: rgba(0, 194, 255, 0.055);
+  outline: 2px solid #4c86c6;
+  outline-offset: 4px;
+}
+
+.platform-hotspot-panel {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 5;
+  width: min(25rem, calc(100% - 2.5rem));
+  border: 1px solid rgba(0, 194, 255, 0.44);
+  border-radius: 1rem;
+  background:
+    linear-gradient(180deg, rgba(7, 20, 38, 0.94), rgba(3, 8, 22, 0.96)),
+    radial-gradient(circle at 100% 0%, rgba(0, 194, 255, 0.18), transparent 45%);
+  padding: 1.25rem;
+  backdrop-filter: blur(16px);
+  animation: platform-panel-in 160ms ease-out;
+}
+
+.platform-hotspot-panel__close {
+  display: inline-flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  color: #e2e8f0;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
+}
+
+.platform-hotspot-panel__close:hover,
+.platform-hotspot-panel__close:focus-visible {
+  border-color: rgba(76, 134, 198, 0.74);
+  background: rgba(76, 134, 198, 0.12);
+  color: #ffffff;
+  outline: 0;
+}
+
+.platform-mobile-hotspot-list {
+  display: none;
+}
+
+.platform-mobile-hotspot-card {
+  border: 1px solid rgba(0, 194, 255, 0.26);
+  border-radius: 0.85rem;
+  background: rgba(15, 23, 42, 0.7);
+  padding: 1rem;
+}
+
+.platform-mobile-hotspot-card h4 {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.platform-mobile-hotspot-card p {
+  margin-top: 0.5rem;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.platform-mobile-hotspot-card ul {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.platform-mobile-hotspot-card li {
+  color: #e2e8f0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.platform-mobile-hotspot-card li::before {
+  content: "\2713";
+  margin-right: 0.45rem;
+  color: #4c86c6;
+}
+
+.platform-mobile-hotspot-card a {
+  display: inline-flex;
+  margin-top: 0.85rem;
+  color: #4c86c6;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.platform-core-card {
+  background:
+    linear-gradient(180deg, rgba(13, 35, 66, 0.76), rgba(7, 20, 38, 0.9)),
+    radial-gradient(circle at top left, rgba(0, 194, 255, 0.12), transparent 34%);
+}
+
+@keyframes platform-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.4rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .flip-scoreboard__digit {
   position: relative;
   display: inline-flex;
@@ -187,4 +545,129 @@ html {
   background: rgba(148, 163, 184, 0.2);
   box-shadow: 0 1px 0 rgba(2, 6, 23, 0.7);
   pointer-events: none;
+}
+
+
+@media (max-width: 767px) {
+  .product-hero-blueprint-frame {
+    max-width: 24rem;
+    margin: 0 auto;
+  }
+
+  .product-blueprint-image {
+    min-height: 220px;
+    max-height: 300px;
+  }
+
+  .platform-image-frame {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+  }
+
+  .platform-image-stage {
+    width: 780px;
+    min-width: 780px;
+  }
+
+  .platform-hotspot-panel {
+    position: sticky;
+    left: 0.85rem;
+    right: auto;
+    bottom: 0.85rem;
+    width: min(21.5rem, calc(100vw - 2.5rem));
+    margin-top: -1rem;
+  }
+
+  .platform-mobile-hotspot-list {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Pale blue archive and catalog treatment. */
+.operational-grid,
+.lm-integration-detail {
+  background: #f1f3f6;
+  color: #58687a;
+}
+.operational-grid::before,
+.operational-grid::after { opacity: .16; filter: hue-rotate(20deg) saturate(.55); }
+.operational-grid .data-grid-bg,
+.lm-integration-detail .data-grid-bg { opacity: .08 !important; }
+.operational-grid section > div,
+.lm-integration-detail section > div {
+  position: relative;
+  border: 1px solid rgba(38,50,68,.13);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 14px 38px rgba(38,50,68,.08);
+}
+.operational-grid section > div { padding-top: 2rem; padding-bottom: 2rem; }
+.lm-integration-detail section > div { padding-top: 2rem; padding-bottom: 2rem; }
+
+.glass-panel,
+.blueprint-panel,
+.blueprint-card,
+.blueprint-art-frame,
+.scoreboard-shell,
+.operational-grid [class*="bg-slate-950"],
+.operational-grid [class*="bg-slate-900"],
+.operational-grid [class*="rgba(15,23,42"],
+.lm-integration-detail [class*="bg-slate-950"],
+.lm-integration-detail [class*="bg-slate-900"] {
+  border-color: rgba(38,50,68,.13) !important;
+  background: #fff !important;
+  box-shadow: 0 8px 24px rgba(38,50,68,.06) !important;
+}
+.blueprint-card::before,
+.blueprint-panel::before { opacity: .22; filter: hue-rotate(20deg) saturate(.5); }
+.blueprint-art-frame { padding: .65rem; }
+
+.operational-grid [class*="text-white"],
+.lm-integration-detail [class*="text-white"],
+.lm-podcast [class*="text-white"] { color: #263244 !important; }
+.operational-grid [class*="text-slate-200"],
+.operational-grid [class*="text-slate-300"],
+.operational-grid [class*="text-slate-400"],
+.lm-integration-detail [class*="text-slate-200"],
+.lm-integration-detail [class*="text-slate-300"],
+.lm-integration-detail [class*="text-slate-400"],
+.lm-podcast [class*="text-slate-200"],
+.lm-podcast [class*="text-slate-300"],
+.lm-podcast [class*="text-slate-400"] { color: #58687a !important; }
+.operational-grid [class*="text-slate-500"],
+.lm-integration-detail [class*="text-slate-500"],
+.lm-podcast [class*="text-slate-500"] { color: #718096 !important; }
+.operational-grid [class*="border-slate-"],
+.lm-integration-detail [class*="border-slate-"] { border-color: rgba(38,50,68,.13) !important; }
+.operational-grid input,
+.lm-integration-detail input,
+.blueprint-panel input,
+.blueprint-panel textarea,
+.blueprint-panel select {
+  border-color: rgba(38,50,68,.16) !important;
+  background: #f8fafc !important;
+  color: #263244 !important;
+}
+.operational-grid input:focus,
+.lm-integration-detail input:focus,
+.blueprint-panel input:focus,
+.blueprint-panel textarea:focus,
+.blueprint-panel select:focus {
+  border-color: #4c86c6 !important;
+  box-shadow: 0 0 0 4px rgba(76,134,198,.14);
+}
+.telemetry-row:hover { background: #eef3f8; }
+.scoreboard-header,
+.scoreboard-display,
+.scoreboard-row,
+.flip-scoreboard__digit { border-color: rgba(38,50,68,.13) !important; background: #f8fafc !important; color: #263244 !important; box-shadow: none !important; }
+
+@media (max-width: 767px) {
+  .operational-grid section > div,
+  .lm-integration-detail section > div { width: calc(100% - 24px); padding: 1.5rem 1.25rem; border-radius: 18px; }
 }

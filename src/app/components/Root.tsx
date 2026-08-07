@@ -28,8 +28,12 @@ export function Root() {
 
   // Scroll to top on route change
   useEffect(() => {
+    if (location.hash) {
+      window.requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: "start" }));
+      return;
+    }
     window.scrollTo(0, 0);
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   // Set favicon
   useEffect(() => {
@@ -45,8 +49,6 @@ export function Root() {
       link.href = '/favicon.png';
       document.head.appendChild(link);
 
-      // Also set the document title
-      document.title = 'Last Mile';
     };
 
     setFavicon();
@@ -62,27 +64,26 @@ export function Root() {
     const baseUrl = window.location.origin;
     const tools: WebMcpTool[] = [
       {
-        name: "open_integrations_catalog",
-        description: "Open the Last Mile integrations catalog and return its canonical URLs.",
+        name: "open_platform_overview",
+        description: "Open the Last Mile platform overview page and return its canonical URL.",
         inputSchema: {
           type: "object",
           additionalProperties: false,
           properties: {},
         },
         execute: async () => {
-          const url = `${baseUrl}/integrations`;
+          const url = `${baseUrl}/platform`;
           window.location.assign(url);
 
           return {
             ok: true,
             url,
-            dataUrl: `${baseUrl}/integrations.json`,
           };
         },
       },
       {
         name: "open_contact_page",
-        description: "Open the contact page for sales and partnership outreach.",
+        description: "Open the Contact Last Mile page for operational and technical outreach.",
         inputSchema: {
           type: "object",
           additionalProperties: false,
@@ -99,6 +100,25 @@ export function Root() {
         },
       },
       {
+        name: "open_data_center_cooling",
+        description: "Open the Data Center Cooling reference use case and design-partnership path.",
+        inputSchema: {
+          type: "object",
+          additionalProperties: false,
+          properties: {},
+        },
+        execute: async () => {
+          const url = `${baseUrl}/data-center-cooling`;
+          window.location.assign(url);
+
+          return {
+            ok: true,
+            url,
+            status: "commercial proof being developed",
+          };
+        },
+      },
+      {
         name: "open_signal_2_action",
         description: "Open the Signal 2 Action podcast page and expose the podcast feed URL.",
         inputSchema: {
@@ -107,7 +127,7 @@ export function Root() {
           properties: {},
         },
         execute: async () => {
-          const url = `${baseUrl}/signal-2-action`;
+          const url = `${baseUrl}/signal-to-action`;
           window.location.assign(url);
 
           return {
@@ -123,12 +143,10 @@ export function Root() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0f172a] text-slate-200">
+    <div className="lm-site">
       <Navbar />
       <NetworkBackground />
-      <main>
-        <Outlet />
-      </main>
+      <main key={location.pathname} className="lm-main"><Outlet /></main>
       <Footer />
     </div>
   );

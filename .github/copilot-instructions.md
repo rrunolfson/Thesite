@@ -32,6 +32,26 @@
 - Keep layouts responsive by default.
 - Avoid one-off visual hacks when a shared component or reusable pattern is the better fix.
 
+### Last Mile Color Constitution
+- This is a non-negotiable, repository-wide design constraint. Apply it to every page, component, diagram, illustration, generated image, and future redesign unless the user explicitly approves a replacement palette.
+- The visual reference is `public/images/Theme Colors.png`. The implementation source of truth is the `:root` token block in `src/styles/last-mile-system.css`.
+- Use the approved pale-blue, steel, and neutral panel palette:
+  - Surface: `#FFFFFF` (`--lm-surface`)
+  - Ink: `#263244` (`--lm-ink` / `--lm-deep`), primarily for text and fine details
+  - Body copy: `#58687A` (`--lm-copy`)
+  - Canvas: `#F1F3F6` (`--lm-canvas`)
+  - Panel wash: `#E7EDF3` (`--lm-wash`)
+  - Primary blue: `#4C86C6` (`--lm-blue` / `--lm-cta`)
+  - Blue-grey: `#5E8FAF` (`--lm-teal`; the legacy token name does not indicate a green hue)
+  - Pale blue: `#8BB4CF` (`--lm-mint`; the legacy token name does not indicate a green hue)
+  - Steel: `#A8BCCB` (`--lm-steel`)
+  - Dark blue: `#315F91` (`--lm-blue-dark`), reserved for emphasis and interaction states
+- Build pages as white panels/cards on the very light grey canvas. Use subtle blue-grey borders and restrained shadows rather than large colored section fills.
+- Do not introduce green, sage, mint-green, neon, yellow-green, or ServiceNow-like hues. Do not use black or near-black backgrounds, and do not use the ink color as a broad page or section background.
+- Do not create page-local substitute palettes or hard-code near-duplicate colors when an approved `--lm-*` token is suitable. If a new semantic color is genuinely needed, derive it from this palette and add it centrally to `src/styles/last-mile-system.css`.
+- Keep diagrams and image assets visually consistent with the same palette. Preserve transparency where required and avoid gradients that drift into green.
+- Before completing visual work, inspect new or changed color values and verify that no unapproved green or dark-background treatment was introduced.
+
 ## Forms And Integrations
 - Treat marketing forms as production paths.
 - Do not change submission endpoints, payload keys, or tracking behavior without checking the current integration logic first.

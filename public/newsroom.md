@@ -1,5 +1,5 @@
-# Last Mile Newsroom
+# Last Mile News and Updates
 
-The Last Mile newsroom is the public archive for press releases, product announcements, partnership updates, and company news.
+Company news, platform milestones, partnerships, and progress toward a vendor-independent Physical Operations Platform.
 
-Browse the newsroom on the website to filter releases by year and open each announcement on its own detail page.
+ServiceNow-era releases are preserved under Company Archive — Prior Strategic Chapter and are not silently rewritten.

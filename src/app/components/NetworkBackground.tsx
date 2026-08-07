@@ -19,7 +19,7 @@ export function NetworkBackground() {
     if (!ctx) return;
 
     let nodes: Node[] = [];
-    let animationFrameId: number;
+    let animationFrameId = 0;
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -51,16 +51,16 @@ export function NetworkBackground() {
     const drawNode = (node: Node) => {
       ctx.beginPath();
       if (node.type === "hub") {
-        ctx.fillStyle = "#217ED9";
+        ctx.fillStyle = "#5E8DAF";
         ctx.arc(node.x, node.y, 3, 0, Math.PI * 2);
       } else {
-        ctx.fillStyle = "#64748b";
+        ctx.fillStyle = "#7DA6BC";
         ctx.arc(node.x, node.y, 1.5, 0, Math.PI * 2);
       }
       ctx.fill();
     };
 
-    const animate = () => {
+    const drawFrame = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.lineWidth = 0.5;
 
@@ -74,7 +74,7 @@ export function NetworkBackground() {
           const dist = Math.hypot(nodeA.x - nodeB.x, nodeA.y - nodeB.y);
 
           if (dist < 150) {
-            ctx.strokeStyle = `rgba(33, 126, 217, ${0.15 * (1 - dist / 150)})`;
+            ctx.strokeStyle = `rgba(94, 141, 175, ${0.22 * (1 - dist / 150)})`;
             ctx.beginPath();
             ctx.moveTo(nodeA.x, nodeA.y);
             ctx.lineTo(nodeB.x, nodeB.y);
@@ -84,7 +84,10 @@ export function NetworkBackground() {
 
         drawNode(nodeA);
       }
+    };
 
+    const animate = () => {
+      drawFrame();
       animationFrameId = requestAnimationFrame(animate);
     };
 
@@ -102,7 +105,7 @@ export function NetworkBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full pointer-events-none opacity-30"
+      className="lm-network fixed top-0 left-0 h-full w-full pointer-events-none"
       style={{ zIndex: 0 }}
     />
   );

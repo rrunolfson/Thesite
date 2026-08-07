@@ -3,7 +3,8 @@
   "status": "ok",
   "public_resources": {
     "homepage": "https://lastmileinc.ai/",
-    "integrations_catalog": "https://lastmileinc.ai/integrations.json",
+    "platform": "https://lastmileinc.ai/platform",
+    "data_center_cooling": "https://lastmileinc.ai/data-center-cooling",
     "podcast_feed": "https://lastmileinc.ai/podcast-feed.xml"
   }
 }

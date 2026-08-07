@@ -118,14 +118,10 @@ const industryLabels: Record<string, string> = {
 };
 
 const vendorAccentClasses = [
-  "from-[#217ED9] to-cyan-300",
-  "from-amber-400 to-orange-500",
-  "from-emerald-400 to-teal-400",
-  "from-rose-400 to-pink-500",
-  "from-sky-400 to-blue-500",
-  "from-violet-400 to-fuchsia-500",
-  "from-lime-300 to-emerald-500",
-  "from-yellow-300 to-amber-500",
+  "from-[#8BB4CF] to-[#4C86C6]",
+  "from-[#2E7BFF] to-[#00C2FF]",
+  "from-[#A8BCCB] to-[#5E8FAF]",
+  "from-[#8BB4CF] to-[#315F91]",
 ];
 
 function buildNoStoreUrl(path: string) {
@@ -276,15 +272,6 @@ export function OurIntegrationsPage() {
     (total, group) => total + group.vendors.reduce((groupTotal, vendor) => groupTotal + vendor.products.length, 0),
     0,
   );
-  const totalDetailedProducts = integrationGroups.reduce(
-    (total, group) =>
-      total +
-      group.vendors.reduce(
-        (groupTotal, vendor) => groupTotal + vendor.products.filter((product) => product.has_detail).length,
-        0,
-      ),
-    0,
-  );
   const totalRepresentedFunctions = integrationGroups.reduce(
     (total, group) => total + group.functions.filter((entry) => entry.product_count > 0).length,
     0,
@@ -312,7 +299,7 @@ export function OurIntegrationsPage() {
   };
 
   const currentIndustryLabel = selectedIndustry ? getIndustryLabel(selectedIndustry.industry_slug) : "OEM Vendors";
-  const currentHeading = selectedFunction?.industry_function_name || selectedIndustry?.industry_name || "Integrations";
+  const currentHeading = selectedFunction?.industry_function_name || selectedIndustry?.industry_name || "Archived Integration References";
   const currentDescription = selectedFunction?.industry_function_description || selectedIndustry?.industry_description || "";
   const currentContextLabel = selectedFunction
     ? `${selectedIndustry?.industry_name ?? "Industry"} Function`
@@ -321,18 +308,22 @@ export function OurIntegrationsPage() {
   return (
     <>
       <SEO
-        title="Our Integrations"
-        description="Explore Last Mile integrations by industry, OEM vendor, and supported product families in a machine-readable catalog built for both buyers and AI-driven implementation workflows."
-        keywords="integrations, OEM integrations, manufacturing integrations, healthcare integrations, logistics integrations, ServiceNow"
+        title="Legacy ServiceNow Integration Archive"
+        description="Historical integration references from an earlier ServiceNow-focused chapter of Last Mile. These entries do not define or form a requirement for the Last Mile Platform."
+        keywords="integration reference, source profiles, vendor coverage, operational systems, technical reference"
         canonicalPath="/integrations"
         markdownPath="/integrations.md"
+        robots="noindex, follow"
       />
       <Helmet>
         <link rel="alternate" type="application/json" href={discoveredIntegrationsDataUrl} title="Last Mile Integrations Catalog Data" />
         <meta name="lastmile:integrations-data" content={discoveredIntegrationsDataUrl} />
       </Helmet>
 
-      <div className="pt-20 relative min-h-screen overflow-hidden">
+      <div className="operational-grid pt-20 relative min-h-screen overflow-hidden">
+        <div className="relative z-20 border-b border-[#4c86c6]/25 bg-[#e7edf3] px-4 py-4 text-center text-sm leading-6 text-slate-700">
+          These integrations were developed during an earlier chapter of Last Mile and remain cataloged for organizations with a specific ServiceNow requirement. They are not required by, and do not define, the Last Mile Physical Operations Platform.
+        </div>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 data-grid-bg opacity-20"></div>
           <div className="absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#217ED9]/20 blur-3xl"></div>
@@ -343,14 +334,17 @@ export function OurIntegrationsPage() {
         <div className="relative z-10">
           <section className="relative py-14 lg:py-16 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+              <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                 <div>
                   <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
-                    Our <span className="bg-gradient-to-r from-white via-[#75ADE6] to-[#217ED9] text-transparent bg-clip-text">Integrations</span>
+                    <span className="hero-title-gradient">Legacy ServiceNow Integration Archive</span>
                   </h1>
 
                   <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl">
-                    We work where you are, supporting the vendors you count on every day to do business with a practical integration catalog built for real operations, faster decisions, and dependable execution. From industrial platforms and fleet systems to healthcare and building technologies, this catalog is designed to help teams see what is already available, understand where coverage is strongest, and move forward with greater confidence.
+                    Historical integration references developed for ServiceNow environments. Support and deliverability must be confirmed for any specific requirement.
+                  </p>
+                  <p className="mt-4 text-lg text-slate-400 leading-8 max-w-3xl">
+                    The Last Mile Platform extends beyond integration work. It is designed to turn operational signals into shared understanding, workflow, automation, and accountable action across the systems your organization already uses.
                   </p>
                 </div>
 
@@ -358,18 +352,34 @@ export function OurIntegrationsPage() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="scoreboard-shell glass-panel border border-[#75ADE6]/60 p-3 lg:p-3.5"
+                  className="grid gap-4"
                 >
-                  <div className="scoreboard-header mb-2.5 flex items-center justify-center rounded-2xl px-4 py-2">
-                    <h2 className="text-lg font-semibold tracking-[0.08em] text-white sm:text-xl">Integration Scoreboard</h2>
-                  </div>
+                  <figure className="blueprint-art-frame">
+                    <picture>
+                      <source type="image/avif" srcSet="/images/blueprint/servicenow-integrations-blueprint-pale-4k-960.avif 960w, /images/blueprint/servicenow-integrations-blueprint-pale-4k-1440.avif 1440w" sizes="(min-width: 1024px) 50vw, 92vw" />
+                      <source type="image/webp" srcSet="/images/blueprint/servicenow-integrations-blueprint-pale-4k-960.webp 960w, /images/blueprint/servicenow-integrations-blueprint-pale-4k-1440.webp 1440w" sizes="(min-width: 1024px) 50vw, 92vw" />
+                      <img
+                        src="/images/blueprint/servicenow-integrations-blueprint-pale-4k.png"
+                        width="3840"
+                        height="2160"
+                        alt="Blueprint-style ServiceNow integration interface for operational system connections."
+                        className="max-h-[280px]"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </figure>
+                  <div className="scoreboard-shell blueprint-panel rounded-2xl p-3 lg:p-3.5">
+                    <div className="scoreboard-header mb-2.5 flex items-center justify-center rounded-2xl px-4 py-2">
+                      <h2 className="text-lg font-semibold tracking-[0.08em] text-white sm:text-xl">Archived Integration References</h2>
+                    </div>
 
-                  <div className="scoreboard-display rounded-[1.4rem] px-4 py-2.5 sm:px-5">
-                    <div className="space-y-1.5">
-                      <ScoreboardMetric value={String(totalProducts).padStart(2, "0")} label="Integrations Available" />
-                      <ScoreboardMetric value={String(integrationGroups.length).padStart(2, "0")} label="Industries Covered" />
-                      <ScoreboardMetric value={String(totalVendors).padStart(2, "0")} label="Vendors Available" />
-                      <ScoreboardMetric value={String(totalRepresentedFunctions).padStart(2, "0")} label="Functions Represented" />
+                    <div className="scoreboard-display rounded-[1.4rem] px-4 py-2.5 sm:px-5">
+                      <div className="space-y-1.5">
+                        <ScoreboardMetric value={String(totalProducts).padStart(2, "0")} label="Catalog Entries" />
+                        <ScoreboardMetric value={String(integrationGroups.length).padStart(2, "0")} label="Industries Covered" />
+                        <ScoreboardMetric value={String(totalVendors).padStart(2, "0")} label="Vendors Cataloged" />
+                        <ScoreboardMetric value={String(totalRepresentedFunctions).padStart(2, "0")} label="Functions Represented" />
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -417,19 +427,19 @@ export function OurIntegrationsPage() {
                   <div className="flex h-full flex-col gap-3 rounded-[1.25rem] border border-white/5 bg-[linear-gradient(135deg,rgba(33,126,217,0.14),rgba(15,23,42,0.12))] px-4 py-3 sm:px-5 sm:py-3.5">
                     <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-[#9cc6ef]">
                       <Sparkles className="h-3.5 w-3.5" />
-                      Request / Submit an Integration
+                      Integration Requirement
                     </div>
 
                     <div className="flex flex-1 flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                       <p className="max-w-xl text-sm leading-relaxed text-slate-400">
-                        If you can't find what you are looking for, please request it here. If you have an API doc already, you can share that as well and we will process it for you.
+                        If you cannot find what you are looking for, discuss the requirement with Last Mile. If you have an API document already, you can share that as part of the conversation.
                       </p>
-                      <button
-                        type="button"
-                        className="inline-flex items-center justify-center rounded-2xl border border-[#75ADE6]/40 bg-[#217ED9]/15 px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-[#75ADE6]/70 hover:bg-[#217ED9]/25"
+                      <Link
+                        to="/contact?intent=integration"
+                        className="lm-button lm-button--primary"
                       >
-                        Submit Request
-                      </button>
+                        Discuss an integration requirement
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -907,7 +917,7 @@ function getStatusLabel(status: string) {
     case "in-progress":
       return "In Progress";
     case "built":
-      return "Available Now";
+      return "Archived Reference";
     case "deprecated":
       return "Deprecated";
     default:
